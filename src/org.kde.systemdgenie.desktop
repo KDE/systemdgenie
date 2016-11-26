@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=SystemdGenie
+GenericName=Systemd Management Tool
+Comment=Manage the systemd daemon
+Type=Application
+Icon=preferences-desktop
+Exec=systemdgenie
+Categories=Qt;KDE;System;
+X-DBUS-StartupType=Multi
+X-DBUS-ServiceName=org.kde.systemdgenie
+
