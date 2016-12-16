@@ -1093,15 +1093,17 @@ void MainWindow::setupActions()
     QSignalMapper *systemDaemonMapper = new QSignalMapper(this);
 
     m_reloadSystemDaemonAction = new QAction(this);
-    m_reloadSystemDaemonAction->setText(i18n("Re&load system systemd"));
-    m_reloadSystemDaemonAction->setIcon(QIcon::fromTheme(QStringLiteral("applications-system")));
+    m_reloadSystemDaemonAction->setText(i18n("Re&load systemd"));
+    m_reloadSystemDaemonAction->setToolTip(i18nc("@info:tooltip", "Click to reload all unit files"));
+    m_reloadSystemDaemonAction->setIcon(QIcon::fromTheme(QStringLiteral("configure-shortcuts")));
     actionCollection()->addAction(QStringLiteral("reload-daemon-system"), m_reloadSystemDaemonAction);
     connect(m_reloadSystemDaemonAction, &QAction::triggered, systemDaemonMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
     systemDaemonMapper->setMapping(m_reloadSystemDaemonAction, QStringLiteral("Reload"));
 
     m_reexecSystemDaemonAction = new QAction(this);
-    m_reexecSystemDaemonAction->setText(i18n("Re-e&xecute system systemd"));
-    m_reexecSystemDaemonAction->setIcon(QIcon::fromTheme(QStringLiteral("applications-system")));
+    m_reexecSystemDaemonAction->setText(i18n("Re-e&xecute systemd"));
+    m_reexecSystemDaemonAction->setToolTip(i18nc("@info:tooltip", "Click to re-execute the systemd daemon"));
+    m_reexecSystemDaemonAction->setIcon(QIcon::fromTheme(QStringLiteral("configure-shortcuts")));
     actionCollection()->addAction(QStringLiteral("reexec-daemon-system"), m_reexecSystemDaemonAction);
     connect(m_reexecSystemDaemonAction, &QAction::triggered, systemDaemonMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
     systemDaemonMapper->setMapping(m_reexecSystemDaemonAction, QStringLiteral("Reexecute"));
@@ -1113,6 +1115,7 @@ void MainWindow::setupActions()
 
     m_reloadUserDaemonAction = new QAction(this);
     m_reloadUserDaemonAction->setText(i18n("Re&load user systemd"));
+    m_reloadUserDaemonAction->setToolTip(i18nc("@info:tooltip", "Click to reload all user unit files"));
     m_reloadUserDaemonAction->setIcon(QIcon::fromTheme(QStringLiteral("user")));
     actionCollection()->addAction(QStringLiteral("reload-daemon-user"), m_reloadUserDaemonAction);
     connect(m_reloadUserDaemonAction, &QAction::triggered, userDaemonMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
@@ -1120,6 +1123,7 @@ void MainWindow::setupActions()
 
     m_reexecUserDaemonAction = new QAction(this);
     m_reexecUserDaemonAction->setText(i18n("Re-e&xecute user systemd"));
+    m_reexecUserDaemonAction->setToolTip(i18nc("@info:tooltip", "Click to re-execute the user systemd daemon"));
     m_reexecUserDaemonAction->setIcon(QIcon::fromTheme(QStringLiteral("user")));
     actionCollection()->addAction(QStringLiteral("reexec-daemon-user"), m_reexecUserDaemonAction);
     connect(m_reexecUserDaemonAction, &QAction::triggered, userDaemonMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
