@@ -459,6 +459,8 @@ void MainWindow::setupConfFilelist()
 
 void MainWindow::slotRefreshConfFileList()
 {
+    qDebug() << "Refreshing config files list...";
+
     foreach (const conffile &f, m_confFileList) {
         if (!QFileInfo::exists(f.filePath)) {
             continue;
@@ -682,7 +684,7 @@ void MainWindow::slotRefreshSessionList()
 void MainWindow::slotRefreshTimerList()
 {
     // Updates the timer list
-    // qDebug() << "Refreshing timer list...";
+    qDebug() << "Refreshing timer list...";
 
     m_timerModel->removeRows(0, m_timerModel->rowCount());
 
@@ -1273,12 +1275,10 @@ void MainWindow::slotExecuteUserDaemonAction(const QString &method)
 
 void MainWindow::slotRefreshAll()
 {
-    qDebug() << "Refresh";
-
-    foreach (const SystemdUnit &u, m_systemUnitsList) {
-        if (u.unit_file.isEmpty())
-            qDebug() << "empty:" << u.id;
-    }
+    slotRefreshUnitsList(false, sys);
+    slotRefreshUnitsList(false, user);
+    slotRefreshConfFileList();
+    slotRefreshSessionList();
 }
 
 void MainWindow::slotSessionContextMenu(const QPoint &pos)
