@@ -1,7 +1,25 @@
 [Desktop Entry]
 Name=SystemdGenie
+Name[ca]=SystemdGenie
+Name[nl]=SystemdGenie
+Name[pt]=SystemdGenie
+Name[sv]=SystemdGenie
+Name[uk]=SystemdGenie
+Name[x-test]=xxSystemdGeniexx
 GenericName=Systemd Management Tool
+GenericName[ca]=Eina per a la gestió del «systemd»
+GenericName[nl]=Hulpprogramma voor systemd
+GenericName[pt]=Ferramenta de Gestão do Systemd
+GenericName[sv]=Hanteringsverktyg för systemd
+GenericName[uk]=Засіб керування systemd
+GenericName[x-test]=xxSystemd Management Toolxx
 Comment=Manage the systemd daemon
+Comment[ca]=Gestiona el dimoni «systemd»
+Comment[nl]=De systemd-daemon beheren
+Comment[pt]=Faz a gestão do servidor 'systemd'
+Comment[sv]=Hantera systemd-demonen
+Comment[uk]=Керування фоновою службою systemd
+Comment[x-test]=xxManage the systemd daemonxx
 Type=Application
 Icon=preferences-desktop
 Exec=systemdgenie

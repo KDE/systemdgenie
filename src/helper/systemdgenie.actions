@@ -1,15 +1,45 @@
 [Domain]
 Name=Systemd Genie
+Name[ca]=Systemd Genie
+Name[nl]=Systemd Genie
+Name[pt]=Génio do Systemd
+Name[sv]=Systemd Genie
+Name[uk]=Systemd Genie
+Name[x-test]=xxSystemd Geniexx
 Icon=system-run
 
 [org.kde.kcontrol.systemdgenie.saveunitfile]
 Name=Save a systemd unit file
+Name[ca]=Desa un fitxer d'una unitat del «systemd»
+Name[nl]=Een systemd eenheidbestand opslaan
+Name[pt]=Gravar um ficheiro de unidade do 'systemd'
+Name[sv]=Spara en systemd-enhetsfil
+Name[uk]=Збереження файла модуля systemd
+Name[x-test]=xxSave a systemd unit filexx
 Description=Administrator authorization is required to save the systemd unit file
+Description[ca]=Es requereix autorització com a administrador per a desar el fitxer d'una unitat del «systemd»
+Description[nl]=Autorisatie als systeembeheerder is vereist om het eenheidsbestand van systemd op te slaan
+Description[pt]=É necessária a autorização do administrador para gravar o ficheiro de unidade do 'systemd'
+Description[sv]=Administratörsbehörighet krävs för att spara systemd-enhetsfilen
+Description[uk]=Для збереження файла модуля systemd слід пройти розпізнавання на доступ до адміністративних функцій
+Description[x-test]=xxAdministrator authorization is required to save the systemd unit filexx
 Policy=auth_admin
 Persistence=session
 
 [org.kde.kcontrol.systemdgenie.dbusaction]
 Name=Manipulate systemd over D-Bus
+Name[ca]=Manipula el «systemd» sobre D-Bus
+Name[nl]=Systemd via D-Bus besturen
+Name[pt]=Manipulação do 'systemd' com o D-Bus
+Name[sv]=Hantera systemd via D-Bus
+Name[uk]=Керування systemd за допомогою D-Bus
+Name[x-test]=xxManipulate systemd over D-Busxx
 Description=Administrator authorization is required to manipulate systemd
+Description[ca]=Es requereix autorització com a administrador per a manipular el «systemd»
+Description[nl]=Autorisatie als administrator is vereist om systemd te besturen
+Description[pt]=É necessária a autorização do administrador para manipular o 'systemd'
+Description[sv]=Administratörsbehörighet krävs för att hantera systemd
+Description[uk]=Для керування systemd слід пройти розпізнавання на доступ до адміністративних функцій
+Description[x-test]=xxAdministrator authorization is required to manipulate systemdxx
 Policy=auth_admin
 Persistence=session
