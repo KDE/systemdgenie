@@ -335,7 +335,9 @@ void MainWindow::setupUnitslist()
     m_systemUnitFilterModel->setSourceModel(m_systemUnitModel);
     ui.tblUnits->setModel(m_systemUnitFilterModel);
     ui.tblUnits->sortByColumn(0, Qt::AscendingOrder);
+    ui.tblUnits->resizeColumnsToContents();
     ui.tblUnits->setColumnWidth(0, 400);
+    ui.tblUnits->resizeRowsToContents();
 
     // Setup the user unit model
     ui.tblUserUnits->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
@@ -346,7 +348,9 @@ void MainWindow::setupUnitslist()
     m_userUnitFilterModel->setSourceModel(m_userUnitModel);
     ui.tblUserUnits->setModel(m_userUnitFilterModel);
     ui.tblUserUnits->sortByColumn(0, Qt::AscendingOrder);
+    ui.tblUserUnits->resizeColumnsToContents();
     ui.tblUserUnits->setColumnWidth(0, 400);
+    ui.tblUserUnits->resizeRowsToContents();
 
     slotChkShowUnits(-1);
 }
@@ -679,6 +683,8 @@ void MainWindow::slotRefreshSessionList()
         for (int col = 0; col < m_sessionModel->columnCount(); ++col)
             m_sessionModel->setData(m_sessionModel->index(row,col), QVariant(newcolor), Qt::ForegroundRole);
     }
+    ui.tblSessions->resizeColumnsToContents();
+    ui.tblSessions->resizeRowsToContents();
 }
 
 void MainWindow::slotRefreshTimerList()
@@ -710,6 +716,7 @@ void MainWindow::slotRefreshTimerList()
     slotUpdateTimers();
 
     ui.tblTimers->resizeColumnsToContents();
+    ui.tblTimers->resizeRowsToContents();
     ui.tblTimers->sortByColumn(ui.tblTimers->horizontalHeader()->sortIndicatorSection(),
                                ui.tblTimers->horizontalHeader()->sortIndicatorOrder());
 }

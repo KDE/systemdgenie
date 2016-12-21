@@ -150,8 +150,11 @@
              <attribute name="verticalHeaderVisible">
               <bool>false</bool>
              </attribute>
-             <attribute name="verticalHeaderDefaultSectionSize">
+             <attribute name="verticalHeaderMinimumSectionSize">
               <number>20</number>
+             </attribute>
+             <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+              <bool>true</bool>
              </attribute>
             </widget>
            </item>
@@ -222,7 +225,7 @@
              <attribute name="verticalHeaderVisible">
               <bool>false</bool>
              </attribute>
-             <attribute name="verticalHeaderDefaultSectionSize">
+             <attribute name="verticalHeaderMinimumSectionSize">
               <number>20</number>
              </attribute>
             </widget>
@@ -260,11 +263,17 @@
                <property name="showGrid">
                 <bool>false</bool>
                </property>
+               <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                <bool>true</bool>
+               </attribute>
                <attribute name="horizontalHeaderStretchLastSection">
                 <bool>true</bool>
                </attribute>
                <attribute name="verticalHeaderVisible">
                 <bool>false</bool>
+               </attribute>
+               <attribute name="verticalHeaderMinimumSectionSize">
+                <number>20</number>
                </attribute>
               </widget>
              </item>
@@ -305,6 +314,9 @@
                <property name="showGrid">
                 <bool>false</bool>
                </property>
+               <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                <bool>true</bool>
+               </attribute>
                <attribute name="horizontalHeaderStretchLastSection">
                 <bool>true</bool>
                </attribute>
@@ -312,6 +324,9 @@
                 <bool>false</bool>
                </attribute>
                <attribute name="verticalHeaderDefaultSectionSize">
+                <number>30</number>
+               </attribute>
+               <attribute name="verticalHeaderMinimumSectionSize">
                 <number>20</number>
                </attribute>
               </widget>
@@ -359,7 +374,7 @@
                <attribute name="verticalHeaderVisible">
                 <bool>false</bool>
                </attribute>
-               <attribute name="verticalHeaderDefaultSectionSize">
+               <attribute name="verticalHeaderMinimumSectionSize">
                 <number>20</number>
                </attribute>
               </widget>
