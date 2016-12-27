@@ -1,6 +1,7 @@
 [Domain]
 Name=Systemd Genie
 Name[ca]=Systemd Genie
+Name[en_GB]=Systemd Genie
 Name[it]=Systemd Genie
 Name[nl]=Systemd Genie
 Name[pl]=Systemd Genie

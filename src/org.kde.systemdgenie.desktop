@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=SystemdGenie
 Name[ca]=SystemdGenie
+Name[en_GB]=SystemdGenie
 Name[it]=SystemdGenie
 Name[nl]=SystemdGenie
 Name[pl]=SystemdGenie
@@ -10,6 +11,7 @@ Name[uk]=SystemdGenie
 Name[x-test]=xxSystemdGeniexx
 GenericName=Systemd Management Tool
 GenericName[ca]=Eina per a la gestió del «systemd»
+GenericName[en_GB]=Systemd Management Tool
 GenericName[it]=Strumento per la gestione di systemd
 GenericName[nl]=Hulpprogramma voor systemd
 GenericName[pl]=Zarządzanie Systemd
@@ -19,6 +21,7 @@ GenericName[uk]=Засіб керування systemd
 GenericName[x-test]=xxSystemd Management Toolxx
 Comment=Manage the systemd daemon
 Comment[ca]=Gestiona el dimoni «systemd»
+Comment[en_GB]=Manage the systemd daemon
 Comment[it]=Gestisce il demone systemd
 Comment[nl]=De systemd-daemon beheren
 Comment[pl]=Zarządzanie usługą systemd
