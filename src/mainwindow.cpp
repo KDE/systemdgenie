@@ -929,6 +929,7 @@ void MainWindow::updateActions()
         bool CanStart = false;
         bool CanStop = false;
         bool CanReload = false;
+        bool hasUnitObject = true;
         //bool CanIsolate = false;
         QString LoadState;
         QString ActiveState;
@@ -946,6 +947,7 @@ void MainWindow::updateActions()
 
             unitFileState = getDbusProperty(QStringLiteral("UnitFileState"), sysdUnit, pathUnit, bus).toString();
         } else {
+            hasUnitObject = false;
             // Get UnitFileState from Manager object.
             unitFileState = callDbusMethod(QStringLiteral("GetUnitFileState"), sysdMgr, bus, QVariantList{unit}).arguments().at(0).toString();
         }
@@ -960,7 +962,7 @@ void MainWindow::updateActions()
         bool isUnitSelected = !unit.isEmpty();
 
         m_startUnitAction->setEnabled(isUnitSelected &&
-                                      CanStart &&
+                                      (CanStart || !hasUnitObject) &&
                                       ActiveState != QLatin1String("active"));
 
         m_stopUnitAction->setEnabled(isUnitSelected &&
