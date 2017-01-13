@@ -1,5 +1,6 @@
 [Domain]
 Name=Systemd Genie
+Name[ast]=Systemd Genie
 Name[ca]=Systemd Genie
 Name[ca@valencia]=Systemd Genie
 Name[de]=Systemd Genie
@@ -17,6 +18,7 @@ Icon=system-run
 [org.kde.kcontrol.systemdgenie.saveunitfile]
 Name=Save a systemd unit file
 Name[ar]=احفظ ملفّ وحدة Systemd
+Name[ast]=Guardar un ficheru d'unidá de systemd
 Name[ca]=Desa un fitxer d'una unitat del «systemd»
 Name[ca@valencia]=Guarda un fitxer d'una unitat del «systemd»
 Name[de]=Eine Systemd-Einheitendateien speichern
@@ -39,6 +41,7 @@ Name[zh_CN]=保存一个 systemd 单元文件
 Name[zh_TW]=儲存 systemd 單位檔案
 Description=Administrator authorization is required to save the systemd unit file
 Description[ar]=استيثاق المدير مطلوب لحفظ ملفّ وحدة Systemd
+Description[ast]=Ríquese l'autorización del alministrador pa guardar el ficheru d'unidá de systemd
 Description[ca]=Es requereix autorització com a administrador per a desar el fitxer d'una unitat del «systemd»
 Description[ca@valencia]=Es requereix autorització com a administrador per a guardar el fitxer d'una unitat del «systemd»
 Description[de]=Zum Speichern der Systemd-Einheitendatei sind Systemverwalterrechte erforderlich.
@@ -65,6 +68,7 @@ Persistence=session
 [org.kde.kcontrol.systemdgenie.dbusaction]
 Name=Manipulate systemd over D-Bus
 Name[ar]=تلاعب ب‍Systemd عبر D-Bus
+Name[ast]=Manipular systemd sobro D-Bus
 Name[bg]=Управление на systemd през D-Bus
 Name[ca]=Manipula el «systemd» sobre D-Bus
 Name[ca@valencia]=Manipula el «systemd» sobre D-Bus
@@ -90,6 +94,7 @@ Name[zh_CN]=通过 D-Bus 操作 systemd
 Name[zh_TW]=使用 D-Bus 操作 systemd
 Description=Administrator authorization is required to manipulate systemd
 Description[ar]=استيثاق المدير مطلوب للتّلاعب ب‍Systemd
+Description[ast]=Ríquese l'autorización d'alministrador pa manipular systemd
 Description[bg]=За управление на systemd е нужно одобрение от администратор
 Description[ca]=Es requereix autorització com a administrador per a manipular el «systemd»
 Description[ca@valencia]=Es requereix autorització com a administrador per a manipular el «systemd»
