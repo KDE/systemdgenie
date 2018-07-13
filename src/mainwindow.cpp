@@ -1605,7 +1605,7 @@ void MainWindow::openEditor(const QString &file)
     connect(buttonBox, SIGNAL(rejected()), dlgEditor, SLOT(reject()));
     buttonBox->button(QDialogButtonBox::Save)->setEnabled(false);
 
-    QLabel *lblFilepath = new QLabel(QStringLiteral("Editing file: %1").arg(file));
+    QLabel *lblFilepath = new QLabel(i18n("Editing file: %1", file));
     QVBoxLayout *vlayout = new QVBoxLayout(dlgEditor);
     vlayout->addWidget(lblFilepath);
     vlayout->addWidget(textEdit);
