@@ -19,6 +19,7 @@ Name[sv]=Systemd Genie
 Name[tr]=Systemd Genie
 Name[uk]=Systemd Genie
 Name[x-test]=xxSystemd Geniexx
+Name[zh_TW]=Systemd 精靈
 Icon=system-run
 
 [org.kde.kcontrol.systemdgenie.saveunitfile]
