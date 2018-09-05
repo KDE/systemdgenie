@@ -115,6 +115,10 @@ private:
     QVariant getDbusProperty(QString prop, dbusIface ifaceName, QDBusObjectPath path = QDBusObjectPath("/org/freedesktop/systemd1"), dbusBus bus = sys);
     QDBusMessage callDbusMethod(QString method, dbusIface ifaceName, dbusBus bus = sys, const QList<QVariant> &args = QList<QVariant> ());
     QList<QStandardItem *> buildTimerListRow(const SystemdUnit &unit, const QVector<SystemdUnit> &list, dbusBus bus);
+    void executeUnitAction(const QString &method);
+    void executeSystemDaemonAction(const QString &method);
+    void executeUserDaemonAction(const QString &method);
+    void executeSessionAction(const QString &method);
 
 
     SortFilterUnitModel *m_systemUnitFilterModel;
@@ -219,10 +223,6 @@ private slots:
     void slotLeSearchUnitChanged(QString);
     void slotUpdateTimers();
     void slotRefreshAll();
-    void slotExecuteSystemDaemonAction(const QString &method);
-    void slotExecuteUserDaemonAction(const QString &method);
-    void slotExecuteUnitAction(const QString &method);
-    void slotExecuteSessionAction(const QString &method);
 
     void slotEditUnitFile();
     void slotEditConfFile();

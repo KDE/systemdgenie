@@ -1040,108 +1040,81 @@ void MainWindow::setupActions()
     actionCollection()->addAction(QStringLiteral("refresh"), m_refreshAction);
     connect(m_refreshAction, &QAction::triggered, this, &MainWindow::slotRefreshAll);
 
-    QSignalMapper *unitActionMapper = new QSignalMapper(this);
-
     m_startUnitAction = new QAction(this);
     m_startUnitAction->setText(i18n("Start Unit"));
     m_startUnitAction->setIcon(QIcon::fromTheme(QStringLiteral("kt-start")));
     actionCollection()->addAction(QStringLiteral("start-unit"), m_startUnitAction);
-    connect(m_startUnitAction, &QAction::triggered, unitActionMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    unitActionMapper->setMapping(m_startUnitAction, QStringLiteral("StartUnit"));
+    connect(m_startUnitAction, &QAction::triggered, this, [this]() { executeUnitAction(QStringLiteral("StartUnit")); });
 
     m_stopUnitAction = new QAction(this);
     m_stopUnitAction->setText(i18n("Stop Unit"));
     m_stopUnitAction->setIcon(QIcon::fromTheme(QStringLiteral("kt-stop")));
     actionCollection()->addAction(QStringLiteral("stop-unit"), m_stopUnitAction);
-    connect(m_stopUnitAction, &QAction::triggered, unitActionMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    unitActionMapper->setMapping(m_stopUnitAction, QStringLiteral("StopUnit"));
+    connect(m_stopUnitAction, &QAction::triggered, this, [this]() { executeUnitAction(QStringLiteral("StopUnit")); });
 
     m_reloadUnitAction = new QAction(this);
     m_reloadUnitAction->setText(i18n("Reload Unit"));
     m_reloadUnitAction->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
     actionCollection()->addAction(QStringLiteral("reload-unit"), m_reloadUnitAction);
-    connect(m_reloadUnitAction, &QAction::triggered, unitActionMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    unitActionMapper->setMapping(m_reloadUnitAction, QStringLiteral("ReloadUnit"));
+    connect(m_reloadUnitAction, &QAction::triggered, this, [this]() { executeUnitAction(QStringLiteral("ReloadUnit")); });
 
     m_restartUnitAction = new QAction(this);
     m_restartUnitAction->setText(i18n("Restart Unit"));
     m_restartUnitAction->setIcon(QIcon::fromTheme(QStringLiteral("start-over")));
     actionCollection()->addAction(QStringLiteral("restart-unit"), m_restartUnitAction);
-    connect(m_restartUnitAction, &QAction::triggered, unitActionMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    unitActionMapper->setMapping(m_restartUnitAction, QStringLiteral("RestartUnit"));
+    connect(m_restartUnitAction, &QAction::triggered, this, [this]() { executeUnitAction(QStringLiteral("RestartUnit")); });
 
     m_enableUnitAction = new QAction(this);
     m_enableUnitAction->setText(i18n("Enable Unit"));
     m_enableUnitAction->setIcon(QIcon::fromTheme(QStringLiteral("archive-insert")));
     actionCollection()->addAction(QStringLiteral("enable-unit"), m_enableUnitAction);
-    connect(m_enableUnitAction, &QAction::triggered, unitActionMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    unitActionMapper->setMapping(m_enableUnitAction, QStringLiteral("EnableUnitFiles"));
+    connect(m_enableUnitAction, &QAction::triggered, this, [this]() { executeUnitAction(QStringLiteral("EnableUnitFiles")); });
 
     m_disableUnitAction = new QAction(this);
     m_disableUnitAction->setText(i18n("Disable Unit"));
     m_disableUnitAction->setIcon(QIcon::fromTheme(QStringLiteral("document-close")));
     actionCollection()->addAction(QStringLiteral("disable-unit"), m_disableUnitAction);
-    connect(m_disableUnitAction, &QAction::triggered, unitActionMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    unitActionMapper->setMapping(m_disableUnitAction, QStringLiteral("DisableUnitFiles"));
+    connect(m_disableUnitAction, &QAction::triggered, this, [this]() { executeUnitAction(QStringLiteral("DisableUnitFiles")); });
 
     m_maskUnitAction = new QAction(this);
     m_maskUnitAction->setText(i18n("Mask Unit"));
     m_maskUnitAction->setIcon(QIcon::fromTheme(QStringLiteral("password-show-off")));
     actionCollection()->addAction(QStringLiteral("mask-unit"), m_maskUnitAction);
-    connect(m_maskUnitAction, &QAction::triggered, unitActionMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    unitActionMapper->setMapping(m_maskUnitAction, QStringLiteral("MaskUnitFiles"));
+    connect(m_maskUnitAction, &QAction::triggered, this, [this]() { executeUnitAction(QStringLiteral("MaskUnitFiles")); });
 
     m_unmaskUnitAction = new QAction(this);
     m_unmaskUnitAction->setText(i18n("Unmask Unit"));
     m_unmaskUnitAction->setIcon(QIcon::fromTheme(QStringLiteral("password-show-on")));
     actionCollection()->addAction(QStringLiteral("unmask-unit"), m_unmaskUnitAction);
-    connect(m_unmaskUnitAction, &QAction::triggered, unitActionMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    unitActionMapper->setMapping(m_unmaskUnitAction, QStringLiteral("UnmaskUnitFiles"));
-
-    connect(unitActionMapper, static_cast<void (QSignalMapper::*)(const QString&)>(&QSignalMapper::mapped),
-            this, &MainWindow::slotExecuteUnitAction);
-
-    QSignalMapper *systemDaemonMapper = new QSignalMapper(this);
+    connect(m_unmaskUnitAction, &QAction::triggered, this, [this]() { executeUnitAction(QStringLiteral("UnmaskUnitFiles")); });
 
     m_reloadSystemDaemonAction = new QAction(this);
     m_reloadSystemDaemonAction->setText(i18n("Re&load systemd"));
     m_reloadSystemDaemonAction->setToolTip(i18nc("@info:tooltip", "Click to reload all unit files"));
     m_reloadSystemDaemonAction->setIcon(QIcon::fromTheme(QStringLiteral("configure-shortcuts")));
     actionCollection()->addAction(QStringLiteral("reload-daemon-system"), m_reloadSystemDaemonAction);
-    connect(m_reloadSystemDaemonAction, &QAction::triggered, systemDaemonMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    systemDaemonMapper->setMapping(m_reloadSystemDaemonAction, QStringLiteral("Reload"));
+    connect(m_reloadSystemDaemonAction, &QAction::triggered, this, [this]() { executeSystemDaemonAction(QStringLiteral("Reload")); });
 
     m_reexecSystemDaemonAction = new QAction(this);
     m_reexecSystemDaemonAction->setText(i18n("Re-e&xecute systemd"));
     m_reexecSystemDaemonAction->setToolTip(i18nc("@info:tooltip", "Click to re-execute the systemd daemon"));
     m_reexecSystemDaemonAction->setIcon(QIcon::fromTheme(QStringLiteral("configure-shortcuts")));
     actionCollection()->addAction(QStringLiteral("reexec-daemon-system"), m_reexecSystemDaemonAction);
-    connect(m_reexecSystemDaemonAction, &QAction::triggered, systemDaemonMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    systemDaemonMapper->setMapping(m_reexecSystemDaemonAction, QStringLiteral("Reexecute"));
-
-    connect(systemDaemonMapper, static_cast<void (QSignalMapper::*)(const QString&)>(&QSignalMapper::mapped),
-            this, &MainWindow::slotExecuteSystemDaemonAction);
-
-    QSignalMapper *userDaemonMapper = new QSignalMapper(this);
+    connect(m_reexecSystemDaemonAction, &QAction::triggered, this, [this]() { executeSystemDaemonAction(QStringLiteral("Reexecute")); });
 
     m_reloadUserDaemonAction = new QAction(this);
     m_reloadUserDaemonAction->setText(i18n("Re&load user systemd"));
     m_reloadUserDaemonAction->setToolTip(i18nc("@info:tooltip", "Click to reload all user unit files"));
     m_reloadUserDaemonAction->setIcon(QIcon::fromTheme(QStringLiteral("user")));
     actionCollection()->addAction(QStringLiteral("reload-daemon-user"), m_reloadUserDaemonAction);
-    connect(m_reloadUserDaemonAction, &QAction::triggered, userDaemonMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    userDaemonMapper->setMapping(m_reloadUserDaemonAction, QStringLiteral("Reload"));
+    connect(m_reloadUserDaemonAction, &QAction::triggered, this, [this]() { executeUserDaemonAction(QStringLiteral("Reload")); });
 
     m_reexecUserDaemonAction = new QAction(this);
     m_reexecUserDaemonAction->setText(i18n("Re-e&xecute user systemd"));
     m_reexecUserDaemonAction->setToolTip(i18nc("@info:tooltip", "Click to re-execute the user systemd daemon"));
     m_reexecUserDaemonAction->setIcon(QIcon::fromTheme(QStringLiteral("user")));
     actionCollection()->addAction(QStringLiteral("reexec-daemon-user"), m_reexecUserDaemonAction);
-    connect(m_reexecUserDaemonAction, &QAction::triggered, userDaemonMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    userDaemonMapper->setMapping(m_reexecUserDaemonAction, QStringLiteral("Reexecute"));
-
-    connect(userDaemonMapper, static_cast<void (QSignalMapper::*)(const QString&)>(&QSignalMapper::mapped),
-            this, &MainWindow::slotExecuteUserDaemonAction);
+    connect(m_reexecUserDaemonAction, &QAction::triggered, this, [this]() { executeUserDaemonAction(QStringLiteral("Reexecute")); });
 
     m_editUnitFileAction = new QAction(this);
     m_editUnitFileAction->setText(i18n("Edit Unit File"));
@@ -1161,31 +1134,23 @@ void MainWindow::setupActions()
     actionCollection()->addAction(QStringLiteral("open-manpage"), m_openManPageAction);
     connect(m_openManPageAction, &QAction::triggered, this, &MainWindow::slotOpenManPage);
 
-    QSignalMapper *sessionActionMapper = new QSignalMapper(this);
-
     m_activateSessionAction = new QAction(this);
     m_activateSessionAction->setText(i18n("Activate Session"));
     m_activateSessionAction->setIcon(QIcon::fromTheme(QStringLiteral("kt-start")));
     actionCollection()->addAction(QStringLiteral("activate-session"), m_activateSessionAction);
-    connect(m_activateSessionAction, &QAction::triggered, sessionActionMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    sessionActionMapper->setMapping(m_activateSessionAction, QStringLiteral("Activate"));
+    connect(m_activateSessionAction, &QAction::triggered, this, [this]() { executeSessionAction(QStringLiteral("Activate")); });
 
     m_terminateSessionAction = new QAction(this);
     m_terminateSessionAction->setText(i18n("Terminate Session"));
     m_terminateSessionAction->setIcon(QIcon::fromTheme(QStringLiteral("kt-remove")));
     actionCollection()->addAction(QStringLiteral("terminate-session"), m_terminateSessionAction);
-    connect(m_terminateSessionAction, &QAction::triggered, sessionActionMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    sessionActionMapper->setMapping(m_terminateSessionAction, QStringLiteral("Terminate"));
+    connect(m_terminateSessionAction, &QAction::triggered, this, [this]() { executeSessionAction(QStringLiteral("Terminate")); });
 
     m_lockSessionAction = new QAction(this);
     m_lockSessionAction->setText(i18n("Lock Session"));
     m_lockSessionAction->setIcon(QIcon::fromTheme(QStringLiteral("lock")));
     actionCollection()->addAction(QStringLiteral("lock-session"), m_lockSessionAction);
-    connect(m_lockSessionAction, &QAction::triggered, sessionActionMapper, static_cast<void (QSignalMapper::*)()>(&QSignalMapper::map));
-    sessionActionMapper->setMapping(m_lockSessionAction, QStringLiteral("Lock"));
-
-    connect(sessionActionMapper, static_cast<void (QSignalMapper::*)(const QString&)>(&QSignalMapper::mapped),
-            this, &MainWindow::slotExecuteSessionAction);
+    connect(m_lockSessionAction, &QAction::triggered, this, [this]() { executeSessionAction(QStringLiteral("Lock")); });
 
     updateActions();
 }
@@ -1211,7 +1176,7 @@ void MainWindow::slotOpenManPage()
     helpcenter->start(KHelpCenterExec, QStringList{QStringLiteral("man:/%1").arg(manPage)});
 }
 
-void MainWindow::slotExecuteUnitAction(const QString &method)
+void MainWindow::executeUnitAction(const QString &method)
 {
     QTableView *tblView;
     if (ui.tabWidget->currentIndex() == 0) {
@@ -1249,7 +1214,7 @@ void MainWindow::slotExecuteUnitAction(const QString &method)
     }
 }
 
-void MainWindow::slotExecuteSessionAction(const QString &method)
+void MainWindow::executeSessionAction(const QString &method)
 {
     if (ui.tblSessions->selectionModel()->selectedRows(0).isEmpty()) {
         return;
@@ -1263,7 +1228,7 @@ void MainWindow::slotExecuteSessionAction(const QString &method)
     authServiceAction(connLogind, pathSession.path(), ifaceSession, method, QVariantList());
 }
 
-void MainWindow::slotExecuteSystemDaemonAction(const QString &method)
+void MainWindow::executeSystemDaemonAction(const QString &method)
 {
     // Execute the DBus actions
     if (!method.isEmpty()) {
@@ -1271,7 +1236,7 @@ void MainWindow::slotExecuteSystemDaemonAction(const QString &method)
     }
 }
 
-void MainWindow::slotExecuteUserDaemonAction(const QString &method)
+void MainWindow::executeUserDaemonAction(const QString &method)
 {
     if (!method.isEmpty())
     {
