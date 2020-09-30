@@ -89,6 +89,7 @@ Description[nl]=Autorisatie als systeembeheerder is vereist om het eenheidsbesta
 Description[pl]=Aby zapisać plik jednostki systemd, wymagane są uprawnienia administratora
 Description[pt]=É necessária a autorização do administrador para gravar o ficheiro de unidade do 'systemd'
 Description[pt_BR]=É necessária a autorização do administrador para salvar o arquivo de unidade do systemd
+Description[ro]=Este necesară autorizarea ca administrator pentru a salva fișierul cu unitate systemd
 Description[sk]=Vyžaduje sa overenie administrátora na ukladanie unit súborov systemd
 Description[sl]=Za shranitev datoteke enote za systemd je zahtevana pooblastitev skrbnika
 Description[sv]=Administratörsbehörighet krävs för att spara systemd-enhetsfilen
