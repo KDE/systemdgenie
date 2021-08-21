@@ -111,6 +111,7 @@ Name[az]=D-Bus vasitəsi ilə Sytemd idarə olunması
 Name[bg]=Управление на systemd през D-Bus
 Name[ca]=Manipula el «systemd» sobre D-Bus
 Name[ca@valencia]=Manipula el «systemd» sobre D-Bus
+Name[cs]=Pracujte se systemd přes D-Bus
 Name[da]=Manipulér systemd over D-Bus
 Name[de]=Systemd über D-Bus steuern
 Name[en_GB]=Manipulate systemd over D-Bus
