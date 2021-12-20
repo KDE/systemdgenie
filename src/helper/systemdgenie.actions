@@ -1,5 +1,6 @@
 [Domain]
 Name=Systemd Genie
+Name[ar]=جني Systemd
 Name[ast]=Systemd Genie
 Name[az]=Systemd
 Name[ca]=Systemd Genie
