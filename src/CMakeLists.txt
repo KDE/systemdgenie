@@ -20,4 +20,4 @@ target_link_libraries(systemdgenie
 install(TARGETS systemdgenie ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES systemdgenieui.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/systemdgenie)
-install(FILES org.kde.systemdgenie.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(FILES org.kde.systemdgenie.desktop DESTINATION ${KDE_INSTALL_APPDIR})
