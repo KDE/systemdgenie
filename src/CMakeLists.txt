@@ -16,7 +16,7 @@ target_link_libraries(systemdgenie
                       KF5::Crash
                       KF5::I18n
                       KF5::XmlGui
-                      ${JOURNALD_LIBRARIES})
+                      PkgConfig::JOURNALD)
 install(TARGETS systemdgenie ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES systemdgenieui.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/systemdgenie)

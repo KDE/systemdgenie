@@ -40,8 +40,8 @@ ecm_setup_version(${PROJECT_VERSION}
                   VERSION_HEADER "systemdgenie_version.h")
 
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(SYSTEMD "systemd>=209" REQUIRED)
-pkg_check_modules(JOURNALD "libsystemd>=209" REQUIRED)
+pkg_check_modules(SYSTEMD "systemd>=209" REQUIRED IMPORTED_TARGET)
+pkg_check_modules(JOURNALD "libsystemd>=209" REQUIRED IMPORTED_TARGET)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fexceptions")
 
