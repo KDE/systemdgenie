@@ -18,7 +18,7 @@
 #ifndef HELPER_H
 #define HELPER_H
 
-#include <KAuth>
+#include <KAuth/ActionReply>
 using namespace KAuth;
 
 class Helper : public QObject

@@ -18,7 +18,8 @@
 #include "mainwindow.h"
 
 #include <KActionCollection>
-#include <KAuth>
+#include <KAuth/Action>
+#include <KAuth/ExecuteJob>
 #include <KColorScheme>
 #include <KLocalizedString>
 #include <KMessageBox>

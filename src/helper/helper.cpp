@@ -20,6 +20,8 @@
 #include <QtDBus>
 #include <QFile>
 
+#include <KAuth/HelperSupport>
+
 ActionReply Helper::saveunitfile(const QVariantMap& args)
 {
     ActionReply reply;
