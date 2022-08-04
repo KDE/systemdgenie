@@ -13,6 +13,12 @@ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+include(KDEInstallDirs)
+include(KDECompilerSettings)
+include(KDECMakeSettings)
+include(FeatureSummary)
+include(CheckIncludeFiles)
+
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
              DBus
              Gui
@@ -24,12 +30,6 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
              Crash
              I18n
              XmlGui)
-
-include(KDEInstallDirs)
-include(KDECompilerSettings)
-include(KDECMakeSettings)
-include(FeatureSummary)
-include(CheckIncludeFiles)
 
 add_definitions(-DQT_NO_CAST_FROM_ASCII
                 -DQT_NO_URL_CAST_FROM_STRING)
