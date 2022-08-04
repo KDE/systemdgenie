@@ -19,7 +19,7 @@ include(KDECMakeSettings)
 include(FeatureSummary)
 include(CheckIncludeFiles)
 
-find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
              DBus
              Gui
              Widgets)
