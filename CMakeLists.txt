@@ -2,8 +2,8 @@ project(SYSTEMD-GENIE)
 set(PROJECT_VERSION "0.99.0")
 
 cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
-set(QT_MIN_VERSION "5.4.0")
-set(KF5_MIN_VERSION "5.15.0")
+set(QT_MIN_VERSION "5.15.0")
+set(KF5_MIN_VERSION "5.95.0")
 
 # Silence a warning
 cmake_policy(SET CMP0063 NEW)
