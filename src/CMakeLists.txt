@@ -11,7 +11,7 @@ ki18n_wrap_ui(systemdgenie_SRCS mainwindow.ui)
 
 add_executable(systemdgenie ${systemdgenie_SRCS})
 target_link_libraries(systemdgenie
-                      KF5::Auth
+                      KF5::AuthCore
                       KF5::CoreAddons
                       KF5::Crash
                       KF5::I18n
