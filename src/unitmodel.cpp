@@ -118,7 +118,6 @@ QVariant UnitModel::data(const QModelIndex & index, int role) const
         const QString selUnitFile = m_unitList->at(index.row()).unit_file;
 
         QString toolTipText;
-        toolTipText.append(QStringLiteral("<FONT COLOR=white>"));
         toolTipText.append(QStringLiteral("<b>%1</b><hr>").arg(selUnit));
 
         // Create a DBus interface
