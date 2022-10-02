@@ -1,0 +1,736 @@
+# Copyright (C) 2015 Ragnar Thomsen
+# This file is distributed under the same license as the kcmsystemd package.
+# Ragnar Thomsen <rthomsen6@gmail.com>, 2015.
+# scootergrisen, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: systemdgenie\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-09 00:49+0000\n"
+"PO-Revision-Date: 2017-11-13 19:59+0200\n"
+"Last-Translator: scootergrisen\n"
+"Language-Team: Danish\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
+#: src/main.cpp:43 src/mainwindow.cpp:50 src/mainwindow.ui:14
+#, kde-format
+msgid "SystemdGenie"
+msgstr "SystemdGenie"
+
+#: src/main.cpp:45
+#, kde-format
+msgid "Systemd management utility"
+msgstr "Systemd-håndteringsværktøj"
+
+#: src/main.cpp:47
+#, kde-format
+msgid "(c) 2016, Ragnar Thomsen"
+msgstr "(c) 2016, Ragnar Thomsen"
+
+#: src/main.cpp:54
+#, kde-format
+msgid "Ragnar Thomsen"
+msgstr "Ragnar Thomsen"
+
+#: src/main.cpp:55
+#, kde-format
+msgid "Maintainer"
+msgstr "Vedligeholder"
+
+#: src/mainwindow.cpp:50
+#, kde-format
+msgid "Unable to contact the systemd daemon. Quitting..."
+msgstr "Kan ikke kontakte systemd-dæmonen. Afslutter..."
+
+#: src/mainwindow.cpp:62
+#, kde-format
+msgid "User dbus not found. Support for user units disabled."
+msgstr "Bruger-dbus ikke fundet. Understøttelse af bruger-units deaktiveret."
+
+#: src/mainwindow.cpp:66
+#, kde-format
+msgid "All"
+msgstr "Alle"
+
+#: src/mainwindow.cpp:66
+#, kde-format
+msgid "Services"
+msgstr "Services"
+
+#: src/mainwindow.cpp:66
+#, kde-format
+msgid "Automounts"
+msgstr "Automounts"
+
+#: src/mainwindow.cpp:66
+#, kde-format
+msgid "Devices"
+msgstr "Devices"
+
+#: src/mainwindow.cpp:67
+#, kde-format
+msgid "Mounts"
+msgstr "Mounts"
+
+#: src/mainwindow.cpp:67
+#, kde-format
+msgid "Paths"
+msgstr "Paths"
+
+#: src/mainwindow.cpp:67
+#, kde-format
+msgid "Scopes"
+msgstr "Scopes"
+
+#: src/mainwindow.cpp:67
+#, kde-format
+msgid "Slices"
+msgstr "Slices"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabTimers)
+#: src/mainwindow.cpp:68 src/mainwindow.ui:343
+#, kde-format
+msgid "Timers"
+msgstr "Timere"
+
+#: src/mainwindow.cpp:68
+#, kde-format
+msgid "Sockets"
+msgstr "Sockets"
+
+#: src/mainwindow.cpp:68
+#, kde-format
+msgid "Swaps"
+msgstr "Swaps"
+
+#: src/mainwindow.cpp:68
+#, kde-format
+msgid "Targets"
+msgstr "Targets"
+
+#: src/mainwindow.cpp:373
+#, kde-format
+msgid "Session ID"
+msgstr "Sessions-id"
+
+#: src/mainwindow.cpp:374
+#, kde-format
+msgid "Session Object Path"
+msgstr "Sessions-objektsti"
+
+#: src/mainwindow.cpp:375
+#, kde-format
+msgid "State"
+msgstr "Tilstand"
+
+#: src/mainwindow.cpp:376
+#, kde-format
+msgid "User ID"
+msgstr "Bruger-id"
+
+#: src/mainwindow.cpp:377
+#, kde-format
+msgid "User Name"
+msgstr "Brugernavn"
+
+#: src/mainwindow.cpp:378
+#, kde-format
+msgid "Seat ID"
+msgstr "Sæde-id"
+
+#: src/mainwindow.cpp:400
+#, kde-format
+msgid "Timer"
+msgstr "Timer"
+
+#: src/mainwindow.cpp:401
+#, kde-format
+msgid "Next"
+msgstr "Næste"
+
+#: src/mainwindow.cpp:402
+#, kde-format
+msgid "Left"
+msgstr "Tilbage"
+
+#: src/mainwindow.cpp:403
+#, kde-format
+msgid "Last"
+msgstr "Sidste"
+
+#: src/mainwindow.cpp:404
+#, kde-format
+msgid "Passed"
+msgstr "Videregivet"
+
+#: src/mainwindow.cpp:405
+#, kde-format
+msgid "Activates"
+msgstr "Aktiveringer"
+
+#: src/mainwindow.cpp:423
+#, kde-format
+msgid "File"
+msgstr "Fil"
+
+#: src/mainwindow.cpp:424
+#, kde-format
+msgid "Modified"
+msgstr "Ændret"
+
+#: src/mainwindow.cpp:425
+#, kde-format
+msgid "Description"
+msgstr "Beskrivelse"
+
+#: src/mainwindow.cpp:433
+#, kde-format
+msgid "Coredump generation and storage"
+msgstr "Coredump-generering og -lagring"
+
+#: src/mainwindow.cpp:436
+#, kde-format
+msgid "Send journal messages over network"
+msgstr "Send journalmeddelelse over netværk"
+
+#: src/mainwindow.cpp:439
+#, kde-format
+msgid "Journal manager settings"
+msgstr "Indstillinger for journalhåndtering"
+
+#: src/mainwindow.cpp:442
+#, kde-format
+msgid "Login manager configuration"
+msgstr "Konfiguration af loginhåndtering"
+
+#: src/mainwindow.cpp:445
+#, kde-format
+msgid "Network name resolution configuration"
+msgstr "Konfiguration af netværksnavneopløsning"
+
+#: src/mainwindow.cpp:448
+#, kde-format
+msgid "Systemd daemon configuration"
+msgstr "Konfiguration af systemd-dæmon"
+
+#: src/mainwindow.cpp:451
+#, kde-format
+msgid "Time synchronization settings"
+msgstr "Indstillinger for tidssynkronisering"
+
+#: src/mainwindow.cpp:454
+#, kde-format
+msgid "Systemd user daemon configuration"
+msgstr "Konfiguration af systemd bruger-dæmon"
+
+#: src/mainwindow.cpp:817 src/mainwindow.cpp:826
+#, kde-format
+msgctxt "First part of 'Total: %1, %2, %3'"
+msgid "1 unit"
+msgid_plural "%1 units"
+msgstr[0] "1 enhed"
+msgstr[1] "%1 enheder"
+
+#: src/mainwindow.cpp:819 src/mainwindow.cpp:828
+#, kde-format
+msgctxt "Second part of 'Total: %1, %2, %3'"
+msgid "1 active"
+msgid_plural "%1 active"
+msgstr[0] "1 aktiv"
+msgstr[1] "%1 aktiv"
+
+#: src/mainwindow.cpp:821 src/mainwindow.cpp:830
+#, kde-format
+msgctxt "Third part of 'Total: %1, %2, %3'"
+msgid "1 displayed"
+msgid_plural "%1 displayed"
+msgstr[0] "1 vist"
+msgstr[1] "%1 viste"
+
+#: src/mainwindow.cpp:823 src/mainwindow.cpp:832
+#, kde-format
+msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
+msgid "Total: %1, %2, %3"
+msgstr "Samlet: %1, %2, %3"
+
+#: src/mainwindow.cpp:857 src/mainwindow.cpp:1610
+#, kde-format
+msgid "Unable to authenticate/execute the action: %1"
+msgstr "Kan ikke autenticere/udføre handlingen: %1"
+
+#: src/mainwindow.cpp:1037
+#, kde-format
+msgid "&Refresh"
+msgstr "&Genopfrisk"
+
+#: src/mainwindow.cpp:1039
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Refresh"
+msgstr "Genopfrisk"
+
+#: src/mainwindow.cpp:1045
+#, kde-format
+msgid "Start Unit"
+msgstr "Start enhed"
+
+#: src/mainwindow.cpp:1051
+#, kde-format
+msgid "Stop Unit"
+msgstr "Stop enhed"
+
+#: src/mainwindow.cpp:1057
+#, kde-format
+msgid "Reload Unit"
+msgstr "Genindlæs enhed"
+
+#: src/mainwindow.cpp:1063
+#, kde-format
+msgid "Restart Unit"
+msgstr "Genstart enhed"
+
+#: src/mainwindow.cpp:1069
+#, kde-format
+msgid "Enable Unit"
+msgstr "Aktivér enhed"
+
+#: src/mainwindow.cpp:1075
+#, kde-format
+msgid "Disable Unit"
+msgstr "Deaktivér enhed"
+
+#: src/mainwindow.cpp:1081
+#, kde-format
+msgid "Mask Unit"
+msgstr "Maskér enhed"
+
+#: src/mainwindow.cpp:1087
+#, kde-format
+msgid "Unmask Unit"
+msgstr "Fjern maskering af enhed"
+
+#: src/mainwindow.cpp:1093
+#, kde-format
+msgid "Re&load systemd"
+msgstr "G&enindlæs systemd"
+
+#: src/mainwindow.cpp:1094
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Click to reload all unit files"
+msgstr "Klik for at genindlæse alle enhedsfiler"
+
+#: src/mainwindow.cpp:1100
+#, kde-format
+msgid "Re-e&xecute systemd"
+msgstr "Gen&start systemd"
+
+#: src/mainwindow.cpp:1101
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Click to re-execute the systemd daemon"
+msgstr "Klik for at udføre systemd-dæmonen"
+
+#: src/mainwindow.cpp:1107
+#, kde-format
+msgid "Re&load user systemd"
+msgstr "Gen&indlæs bruger-systemd"
+
+#: src/mainwindow.cpp:1108
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Click to reload all user unit files"
+msgstr "Klik for at genindlæse alle brugerens enhedsfiler"
+
+#: src/mainwindow.cpp:1114
+#, kde-format
+msgid "Re-e&xecute user systemd"
+msgstr "Gen&start bruger-systemd"
+
+#: src/mainwindow.cpp:1115
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Click to re-execute the user systemd daemon"
+msgstr "Klik for at udføre brugerens systemd-dæmonen"
+
+#: src/mainwindow.cpp:1121
+#, kde-format
+msgid "Edit Unit File"
+msgstr "Redigér enhedsfil"
+
+#: src/mainwindow.cpp:1127
+#, kde-format
+msgid "Edit Configuration File"
+msgstr "Redigér konfigurationsfil"
+
+#: src/mainwindow.cpp:1133
+#, kde-format
+msgid "Open Man Page"
+msgstr "Åbn man-side"
+
+#: src/mainwindow.cpp:1139
+#, kde-format
+msgid "Activate Session"
+msgstr "Aktivér session"
+
+#: src/mainwindow.cpp:1145
+#, kde-format
+msgid "Terminate Session"
+msgstr "Afslut session"
+
+#: src/mainwindow.cpp:1151
+#, kde-format
+msgid "Lock Session"
+msgstr "Lås session"
+
+#: src/mainwindow.cpp:1172
+#, kde-format
+msgid ""
+"KHelpCenter executable not found in path. Please install KHelpCenter to view "
+"man pages."
+msgstr ""
+"KHelpCenter-kørbar blev ikke fundet i stien. Installér venligst KHelpCenter "
+"for at vise man-sider."
+
+#: src/mainwindow.cpp:1303
+#, kde-format
+msgid "<b>VT:</b> %1"
+msgstr "<b>VT:</b> %1"
+
+#: src/mainwindow.cpp:1308
+#, kde-format
+msgid "<br><b>Remote host:</b> %1"
+msgstr "<br><b>Fjernvært:</b> %1"
+
+#: src/mainwindow.cpp:1309
+#, kde-format
+msgid "<br><b>Remote user:</b> %1"
+msgstr "<br><b>Fjernbruger:</b> %1"
+
+#: src/mainwindow.cpp:1311
+#, kde-format
+msgid "<br><b>Service:</b> %1"
+msgstr "<br><b>Tjeneste:</b> %1"
+
+#: src/mainwindow.cpp:1312
+#, kde-format
+msgid "<br><b>Leader (PID):</b> %1"
+msgstr "<br><b>Leder (PID):</b> %1"
+
+#: src/mainwindow.cpp:1315
+#, kde-format
+msgid "<br><b>Type:</b> %1"
+msgstr "<br><b>Type:</b> %1"
+
+#: src/mainwindow.cpp:1317
+#, kde-format
+msgid " (display %1)"
+msgstr " (vis %1)"
+
+#: src/mainwindow.cpp:1327
+#, kde-format
+msgid "<br><b>Class:</b> %1"
+msgstr "<br><b>Klasse:</b> %1"
+
+#: src/mainwindow.cpp:1328
+#, kde-format
+msgid "<br><b>State:</b> %1"
+msgstr "<br><b>Tilstand:</b> %1"
+
+#: src/mainwindow.cpp:1329
+#, kde-format
+msgid "<br><b>Scope:</b> %1"
+msgstr "<br><b>Område:</b> %1"
+
+#: src/mainwindow.cpp:1332
+#, kde-format
+msgid "<br><b>Created: </b>"
+msgstr "<br><b>Oprettet: </b>"
+
+#: src/mainwindow.cpp:1361
+#, kde-format
+msgid "%1: Systemd daemon reloaded..."
+msgstr "%1: Systemd-dæmon genindlæst..."
+
+#: src/mainwindow.cpp:1372
+#, kde-format
+msgid "%1: User daemon reloaded..."
+msgstr "%1: Bruger-dæmon genindlæst..."
+
+#: src/mainwindow.cpp:1415
+#, kde-format
+msgid "%1: System units changed..."
+msgstr "%1: Systemenheder ændret..."
+
+#: src/mainwindow.cpp:1562
+#, kde-format
+msgid "Editing %1"
+msgstr "Redigerer %1"
+
+#: src/mainwindow.cpp:1574
+#, kde-format
+msgid "Editing file: %1"
+msgstr "Redigerer filen: %1"
+
+#: src/mainwindow.cpp:1584
+#, kde-format
+msgid ""
+"Failed to open the unit file:\n"
+"%1"
+msgstr ""
+"Kunne ikke åbne enhedsfilen:\n"
+"%1"
+
+#. i18n("Unit file successfully written."));
+#: src/mainwindow.cpp:1614
+#, kde-format
+msgid "%1: %2 successfully written..."
+msgstr "%1: %2 skrevet..."
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
+#: src/mainwindow.ui:52
+#, kde-format
+msgid "System Units"
+msgstr "Systemenheder"
+
+#. i18n: ectx: property (text), widget (QLabel, lblUnitCount)
+#. i18n: ectx: property (text), widget (QLabel, lblUserUnitCount)
+#: src/mainwindow.ui:58 src/mainwindow.ui:236
+#, kde-format
+msgid "Overall stats:"
+msgstr "Samlede stats:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, cmbUnitTypes)
+#: src/mainwindow.ui:73
+#, kde-format
+msgid "<html><head/><body><p>Filter unit types.</p></body></html>"
+msgstr "<html><head/><body><p>Filtrer enhedstyper.</p></body></html>"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUnits)
+#: src/mainwindow.ui:83
+#, kde-format
+msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+msgstr "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUnits)
+#. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUserUnits)
+#: src/mainwindow.ui:86 src/mainwindow.ui:176
+#, kde-format
+msgid "Show inactive"
+msgstr "Vis inaktive"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUnits)
+#. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUserUnits)
+#: src/mainwindow.ui:96 src/mainwindow.ui:183
+#, kde-format
+msgid "Show unloaded"
+msgstr "Vis ikke-loadede"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabUserUnits)
+#: src/mainwindow.ui:165
+#, kde-format
+msgid "User Units"
+msgstr "Brugerenheder"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabConf)
+#: src/mainwindow.ui:244
+#, kde-format
+msgid "Config Files"
+msgstr "Konfigurationsfiler"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabSessions)
+#: src/mainwindow.ui:289
+#, kde-format
+msgid "Sessions"
+msgstr "Sessioner"
+
+#. i18n: ectx: Menu (file)
+#: src/systemdgenieui.rc:10
+#, kde-format
+msgid "&File"
+msgstr "&Fil"
+
+#. i18n: ectx: Menu (view)
+#: src/systemdgenieui.rc:13
+#, kde-format
+msgid "&View"
+msgstr "&Vis"
+
+#. i18n: ectx: Menu (daemon)
+#: src/systemdgenieui.rc:17
+#, kde-format
+msgid "&Daemon"
+msgstr "&Dæmon"
+
+#. i18n: ectx: Menu (unit)
+#: src/systemdgenieui.rc:25
+#, kde-format
+msgid "&Unit"
+msgstr "&Enhed"
+
+#. i18n: ectx: Menu (session)
+#: src/systemdgenieui.rc:41
+#, kde-format
+msgid "&Session"
+msgstr "&Session"
+
+#. i18n: ectx: ToolBar (unitToolBar)
+#: src/systemdgenieui.rc:49
+#, kde-format
+msgid "Unit Toolbar"
+msgstr "Enhedsværktøjslinje"
+
+#. i18n: ectx: ToolBar (confFileToolBar)
+#: src/systemdgenieui.rc:56
+#, kde-format
+msgid "Config File Toolbar"
+msgstr "Konfigurationsfilværktøjslinje"
+
+#: src/unitmodel.cpp:54
+#, kde-format
+msgid "Unit"
+msgstr "Enhed"
+
+#: src/unitmodel.cpp:56
+#, kde-format
+msgid "Load State"
+msgstr "Indlæs tilstand"
+
+#: src/unitmodel.cpp:58
+#, kde-format
+msgid "Active State"
+msgstr "Aktiv tilstand"
+
+#: src/unitmodel.cpp:60
+#, kde-format
+msgid "Unit State"
+msgstr "Enhedstilstand"
+
+#: src/unitmodel.cpp:142
+#, kde-format
+msgid "<b>Description: </b>"
+msgstr "<b>Beskrivelse: </b>"
+
+#: src/unitmodel.cpp:147
+#, kde-format
+msgid "<br><b>Unit file: </b>%1"
+msgstr "<br><b>Enhdedsfil: </b>%1"
+
+#: src/unitmodel.cpp:148 src/unitmodel.cpp:198
+#, kde-format
+msgid "<br><b>Unit file state: </b>"
+msgstr "<br><b>Enhedsfiltilstand: </b>"
+
+#: src/unitmodel.cpp:154
+#, kde-format
+msgid "<br><b>Source path: </b>%1"
+msgstr "<br><b>Kildesti: </b>%1"
+
+#: src/unitmodel.cpp:158
+#, kde-format
+msgid "<br><b>Activated: </b>"
+msgstr "<br><b>Aktiveret: </b>"
+
+#: src/unitmodel.cpp:169
+#, kde-format
+msgid "<br><b>Deactivated: </b>"
+msgstr "<br><b>Deaktiveret: </b>"
+
+#: src/unitmodel.cpp:193
+#, kde-format
+msgid "<b>Unit file: </b>"
+msgstr "<b>Enhedsfil: </b>"
+
+#: src/unitmodel.cpp:207
+#, kde-format
+msgid "<hr><b>Last log entries:</b>"
+msgstr "<hr><b>Seneste logbeskeder:</b>"
+
+#: src/unitmodel.cpp:210
+#, kde-format
+msgid "<br><i>No log entries found for this unit.</i>"
+msgstr "<br><i>Ingen logbeskeder fundet for denne enhed.</i>"
+
+#~ msgid "<p>Set the level of log entries in systemd.</p>"
+#~ msgstr "<p>Indstil logningsniveau for systemd.</p>"
+
+#~ msgid "<p>Set target for logs.</p>"
+#~ msgstr "<p>Indstil modtager af logning.</p>"
+
+#~ msgid "<p>Use color to highlight important log messages.</p>"
+#~ msgstr "<p>Anvend farve til at markere vigtige logbeskeder.</p>"
+
+#, fuzzy
+#~| msgid "kcmsystemd"
+#~ msgid "systemd-kcm"
+#~ msgstr "kcmsystemd"
+
+#~ msgid "Unable to find directory with systemd configuration files."
+#~ msgstr "Kunne ikke finde folder med systemd konfigurationsfiler."
+
+#~ msgid "Snapshots"
+#~ msgstr "Snapshots"
+
+#~ msgid ""
+#~ "\"%1\" is not a valid value for %2. Using default value for this "
+#~ "parameter."
+#~ msgstr ""
+#~ "\"%1\" er ikke en gyldig værdi for %2. Anvender standardværdi for denne "
+#~ "parameter."
+
+#~ msgid "Failed to read %1/%2. Using default values."
+#~ msgstr "Kunne ikke læse %1/%2. Anvender standardindstillinger."
+
+#~ msgid "Load default settings for all files?"
+#~ msgstr "Indlæs standardindstillinger for alle filer?"
+
+#~ msgid "Unable to find directory for configuration files."
+#~ msgstr "Kunne ikke finde folder med konfigurationsfiler"
+
+#, fuzzy
+#~| msgid "Configuration files succesfully written to: %1"
+#~ msgid "Configuration files successfully written to: %1"
+#~ msgstr "Konfigurationsfiler skrevet til: %1"
+
+#~ msgid "&Isolate unit"
+#~ msgstr "&Isoler enhed"
+
+#~ msgid "File to be written: %1/%2"
+#~ msgstr "Fil som skrives til: %1/%2"
+
+#~ msgid "kcmsystemd"
+#~ msgstr "kcmsystemd"
+
+#~ msgid "Units"
+#~ msgstr "Enheder"
+
+#~ msgid "Conf"
+#~ msgstr "Konf"
+
+#~ msgid "Total: %1 units, %2 active, %3 displayed"
+#~ msgstr "Total: %1 enheder, %2 aktive, %3 vist"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Reload the list of units from systemd.</p></body></"
+#~ "html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>Genindlæs listen af enheder fra systemd.</p></"
+#~ "body></html>"
+
+#~ msgid "kdesu executable not found. Unable to start kwrite!"
+#~ msgstr "Programfil kdesu ej fundet. Kunne ikke starte kwrite!"

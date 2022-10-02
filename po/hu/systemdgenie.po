@@ -1,0 +1,710 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2015.
+# Kiszel Kristóf <kiszel.kristof@gmail.com>, 2017.
+# Kristof Kiszel <ulysses@fsf.hu>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-09 00:49+0000\n"
+"PO-Revision-Date: 2022-02-01 11:45+0100\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.07.70\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Kiszel Kristóf"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ulysses@fsf.hu"
+
+#. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
+#: src/main.cpp:43 src/mainwindow.cpp:50 src/mainwindow.ui:14
+#, kde-format
+msgid "SystemdGenie"
+msgstr "SystemdGenie"
+
+#: src/main.cpp:45
+#, kde-format
+msgid "Systemd management utility"
+msgstr "Systemd kezelőprogram"
+
+#: src/main.cpp:47
+#, kde-format
+msgid "(c) 2016, Ragnar Thomsen"
+msgstr "(c) Ragnar Thomsen, 2016."
+
+#: src/main.cpp:54
+#, kde-format
+msgid "Ragnar Thomsen"
+msgstr "Ragnar Thomsen"
+
+#: src/main.cpp:55
+#, kde-format
+msgid "Maintainer"
+msgstr "Karbantartó"
+
+#: src/mainwindow.cpp:50
+#, kde-format
+msgid "Unable to contact the systemd daemon. Quitting..."
+msgstr "Nem lehet kapcsolódni a systemd démonhoz. Kilépés…"
+
+#: src/mainwindow.cpp:62
+#, kde-format
+msgid "User dbus not found. Support for user units disabled."
+msgstr ""
+"A dbus felhasználó nem található. A felhasználói unitok kezelése ki lesz "
+"kapcsolva."
+
+#: src/mainwindow.cpp:66
+#, kde-format
+msgid "All"
+msgstr "Mind"
+
+#: src/mainwindow.cpp:66
+#, kde-format
+msgid "Services"
+msgstr "Szolgáltatások"
+
+#: src/mainwindow.cpp:66
+#, kde-format
+msgid "Automounts"
+msgstr "Automatikus csatolások"
+
+#: src/mainwindow.cpp:66
+#, kde-format
+msgid "Devices"
+msgstr "Eszközök"
+
+#: src/mainwindow.cpp:67
+#, kde-format
+msgid "Mounts"
+msgstr "Csatolások"
+
+#: src/mainwindow.cpp:67
+#, kde-format
+msgid "Paths"
+msgstr "Elérési utak"
+
+#: src/mainwindow.cpp:67
+#, kde-format
+msgid "Scopes"
+msgstr "Hatókörök"
+
+#: src/mainwindow.cpp:67
+#, kde-format
+msgid "Slices"
+msgstr "Slice-ok"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabTimers)
+#: src/mainwindow.cpp:68 src/mainwindow.ui:343
+#, kde-format
+msgid "Timers"
+msgstr "Időzítők"
+
+#: src/mainwindow.cpp:68
+#, kde-format
+msgid "Sockets"
+msgstr "Socketek"
+
+#: src/mainwindow.cpp:68
+#, kde-format
+msgid "Swaps"
+msgstr "Swapek"
+
+#: src/mainwindow.cpp:68
+#, kde-format
+msgid "Targets"
+msgstr "Célok"
+
+#: src/mainwindow.cpp:373
+#, kde-format
+msgid "Session ID"
+msgstr "Munkamenetazonosító"
+
+#: src/mainwindow.cpp:374
+#, kde-format
+msgid "Session Object Path"
+msgstr "Munkamenet-objektum elérési útja"
+
+#: src/mainwindow.cpp:375
+#, kde-format
+msgid "State"
+msgstr "Állapot"
+
+#: src/mainwindow.cpp:376
+#, kde-format
+msgid "User ID"
+msgstr "Felhasználóazonosító"
+
+#: src/mainwindow.cpp:377
+#, kde-format
+msgid "User Name"
+msgstr "Felhasználónév"
+
+#: src/mainwindow.cpp:378
+#, kde-format
+msgid "Seat ID"
+msgstr "Munkaállomás azonosító"
+
+#: src/mainwindow.cpp:400
+#, kde-format
+msgid "Timer"
+msgstr "Időzítő"
+
+#: src/mainwindow.cpp:401
+#, kde-format
+msgid "Next"
+msgstr "Következő"
+
+#: src/mainwindow.cpp:402
+#, kde-format
+msgid "Left"
+msgstr "Hátralévő"
+
+#: src/mainwindow.cpp:403
+#, kde-format
+msgid "Last"
+msgstr "Utolsó"
+
+#: src/mainwindow.cpp:404
+#, kde-format
+msgid "Passed"
+msgstr "Megfelelt"
+
+#: src/mainwindow.cpp:405
+#, kde-format
+msgid "Activates"
+msgstr "Aktiválás"
+
+#: src/mainwindow.cpp:423
+#, kde-format
+msgid "File"
+msgstr "Fájl"
+
+#: src/mainwindow.cpp:424
+#, kde-format
+msgid "Modified"
+msgstr "Módosítva"
+
+#: src/mainwindow.cpp:425
+#, kde-format
+msgid "Description"
+msgstr "Leírás"
+
+#: src/mainwindow.cpp:433
+#, kde-format
+msgid "Coredump generation and storage"
+msgstr "Coredump generálás és tárolás"
+
+#: src/mainwindow.cpp:436
+#, kde-format
+msgid "Send journal messages over network"
+msgstr "Naplóüzenetek küldése hálózaton keresztül"
+
+#: src/mainwindow.cpp:439
+#, kde-format
+msgid "Journal manager settings"
+msgstr "Naplókezelő beállításai"
+
+#: src/mainwindow.cpp:442
+#, kde-format
+msgid "Login manager configuration"
+msgstr "Bejelentkezéskezelő beállításai"
+
+#: src/mainwindow.cpp:445
+#, kde-format
+msgid "Network name resolution configuration"
+msgstr "Hálózati névfeloldás beállításai"
+
+#: src/mainwindow.cpp:448
+#, kde-format
+msgid "Systemd daemon configuration"
+msgstr "Systemd démon beállításai"
+
+#: src/mainwindow.cpp:451
+#, kde-format
+msgid "Time synchronization settings"
+msgstr "Időszinkronizáció beállításai"
+
+#: src/mainwindow.cpp:454
+#, kde-format
+msgid "Systemd user daemon configuration"
+msgstr "Systemd felhasználói démon beállításai"
+
+#: src/mainwindow.cpp:817 src/mainwindow.cpp:826
+#, kde-format
+msgctxt "First part of 'Total: %1, %2, %3'"
+msgid "1 unit"
+msgid_plural "%1 units"
+msgstr[0] "1 unit"
+msgstr[1] "%1 unit"
+
+#: src/mainwindow.cpp:819 src/mainwindow.cpp:828
+#, kde-format
+msgctxt "Second part of 'Total: %1, %2, %3'"
+msgid "1 active"
+msgid_plural "%1 active"
+msgstr[0] "1 aktív"
+msgstr[1] "%1 aktív"
+
+#: src/mainwindow.cpp:821 src/mainwindow.cpp:830
+#, kde-format
+msgctxt "Third part of 'Total: %1, %2, %3'"
+msgid "1 displayed"
+msgid_plural "%1 displayed"
+msgstr[0] "1 megjelenített"
+msgstr[1] "%1 megjelenített"
+
+#: src/mainwindow.cpp:823 src/mainwindow.cpp:832
+#, kde-format
+msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
+msgid "Total: %1, %2, %3"
+msgstr "Összesen: %1, %2, %3"
+
+#: src/mainwindow.cpp:857 src/mainwindow.cpp:1610
+#, kde-format
+msgid "Unable to authenticate/execute the action: %1"
+msgstr "Nem sikerült hitelesíteni/végrehajtani a műveletet: %1"
+
+#: src/mainwindow.cpp:1037
+#, kde-format
+msgid "&Refresh"
+msgstr "&Frissítés"
+
+#: src/mainwindow.cpp:1039
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Refresh"
+msgstr "Frissítés"
+
+#: src/mainwindow.cpp:1045
+#, kde-format
+msgid "Start Unit"
+msgstr "Unit indítása"
+
+#: src/mainwindow.cpp:1051
+#, kde-format
+msgid "Stop Unit"
+msgstr "Unit leállítása"
+
+#: src/mainwindow.cpp:1057
+#, kde-format
+msgid "Reload Unit"
+msgstr "Unit újratöltése"
+
+#: src/mainwindow.cpp:1063
+#, kde-format
+msgid "Restart Unit"
+msgstr "Unit újraindítása"
+
+#: src/mainwindow.cpp:1069
+#, kde-format
+msgid "Enable Unit"
+msgstr "Unit engedélyezése"
+
+#: src/mainwindow.cpp:1075
+#, kde-format
+msgid "Disable Unit"
+msgstr "Unit letiltása"
+
+#: src/mainwindow.cpp:1081
+#, kde-format
+msgid "Mask Unit"
+msgstr "Unit maszkolása"
+
+#: src/mainwindow.cpp:1087
+#, kde-format
+msgid "Unmask Unit"
+msgstr "Unit maszkolásának megszüntetése"
+
+#: src/mainwindow.cpp:1093
+#, kde-format
+msgid "Re&load systemd"
+msgstr "Systemd újratö&ltése"
+
+#: src/mainwindow.cpp:1094
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Click to reload all unit files"
+msgstr "Kattintson az összes unit fájl újratöltéséhez"
+
+#: src/mainwindow.cpp:1100
+#, kde-format
+msgid "Re-e&xecute systemd"
+msgstr "Systemd újra &végrehajtása"
+
+#: src/mainwindow.cpp:1101
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Click to re-execute the systemd daemon"
+msgstr "Kattintson a systemd démon újra végrehajtásához"
+
+#: src/mainwindow.cpp:1107
+#, kde-format
+msgid "Re&load user systemd"
+msgstr "Felhasználói systemd újratö&ltése"
+
+#: src/mainwindow.cpp:1108
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Click to reload all user unit files"
+msgstr "Kattintson az összes felhasználói unit fájl újratöltéséhez"
+
+#: src/mainwindow.cpp:1114
+#, kde-format
+msgid "Re-e&xecute user systemd"
+msgstr "Felhasználói systemd újra &végrehajtása"
+
+#: src/mainwindow.cpp:1115
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Click to re-execute the user systemd daemon"
+msgstr "Kattintson a felhasználói systemd démon újra végrehajtásához"
+
+#: src/mainwindow.cpp:1121
+#, kde-format
+msgid "Edit Unit File"
+msgstr "Unit fájl szerkesztése"
+
+#: src/mainwindow.cpp:1127
+#, kde-format
+msgid "Edit Configuration File"
+msgstr "Konfigurációs fájl szerkesztése"
+
+#: src/mainwindow.cpp:1133
+#, kde-format
+msgid "Open Man Page"
+msgstr "Man oldal megnyitása"
+
+#: src/mainwindow.cpp:1139
+#, kde-format
+msgid "Activate Session"
+msgstr "Munkamenet aktiválása"
+
+#: src/mainwindow.cpp:1145
+#, kde-format
+msgid "Terminate Session"
+msgstr "Munkamenet befejezése"
+
+#: src/mainwindow.cpp:1151
+#, kde-format
+msgid "Lock Session"
+msgstr "Munkamenet zárolása"
+
+#: src/mainwindow.cpp:1172
+#, kde-format
+msgid ""
+"KHelpCenter executable not found in path. Please install KHelpCenter to view "
+"man pages."
+msgstr ""
+"A KHelpCenter binárisa nem található az elérési útban. Telepítse a "
+"KHelpCentert a man oldalak megtekintéséhez."
+
+#: src/mainwindow.cpp:1303
+#, kde-format
+msgid "<b>VT:</b> %1"
+msgstr "<b>VT:</b> %1"
+
+#: src/mainwindow.cpp:1308
+#, kde-format
+msgid "<br><b>Remote host:</b> %1"
+msgstr "<br><b>Távoli gép:</b> %1"
+
+#: src/mainwindow.cpp:1309
+#, kde-format
+msgid "<br><b>Remote user:</b> %1"
+msgstr "<br><b>Távoli felhasználó:</b> %1"
+
+#: src/mainwindow.cpp:1311
+#, kde-format
+msgid "<br><b>Service:</b> %1"
+msgstr "<br><b>Szolgáltatás:</b> %1"
+
+#: src/mainwindow.cpp:1312
+#, kde-format
+msgid "<br><b>Leader (PID):</b> %1"
+msgstr "<br><b>Vezető (PID):</b> %1"
+
+#: src/mainwindow.cpp:1315
+#, kde-format
+msgid "<br><b>Type:</b> %1"
+msgstr "<br><b>Típus:</b> %1"
+
+#: src/mainwindow.cpp:1317
+#, kde-format
+msgid " (display %1)"
+msgstr " (%1 megjelenítése)"
+
+#: src/mainwindow.cpp:1327
+#, kde-format
+msgid "<br><b>Class:</b> %1"
+msgstr "<br><b>Osztály:</b> %1"
+
+#: src/mainwindow.cpp:1328
+#, kde-format
+msgid "<br><b>State:</b> %1"
+msgstr "<br><b>Állapot:</b> %1"
+
+#: src/mainwindow.cpp:1329
+#, kde-format
+msgid "<br><b>Scope:</b> %1"
+msgstr "<br><b>Hatókör:</b> %1"
+
+#: src/mainwindow.cpp:1332
+#, kde-format
+msgid "<br><b>Created: </b>"
+msgstr "<br><b>Létrehozva: </b>"
+
+#: src/mainwindow.cpp:1361
+#, kde-format
+msgid "%1: Systemd daemon reloaded..."
+msgstr "%1: systemd démon újratöltve"
+
+#: src/mainwindow.cpp:1372
+#, kde-format
+msgid "%1: User daemon reloaded..."
+msgstr "%1: felhasználói démon újratöltve…"
+
+#: src/mainwindow.cpp:1415
+#, kde-format
+msgid "%1: System units changed..."
+msgstr "%1: a rendszerunitok megváltoztak…"
+
+#: src/mainwindow.cpp:1562
+#, kde-format
+msgid "Editing %1"
+msgstr "%1 szerkesztése"
+
+#: src/mainwindow.cpp:1574
+#, kde-format
+msgid "Editing file: %1"
+msgstr "Fájl szerkesztése: %1"
+
+#: src/mainwindow.cpp:1584
+#, kde-format
+msgid ""
+"Failed to open the unit file:\n"
+"%1"
+msgstr ""
+"Nem sikerült megnyitni a unit fájlt:\n"
+"%1"
+
+#. i18n("Unit file successfully written."));
+#: src/mainwindow.cpp:1614
+#, kde-format
+msgid "%1: %2 successfully written..."
+msgstr "%1: %2 sikeresen írva…"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
+#: src/mainwindow.ui:52
+#, kde-format
+msgid "System Units"
+msgstr "Rendszerunitok"
+
+#. i18n: ectx: property (text), widget (QLabel, lblUnitCount)
+#. i18n: ectx: property (text), widget (QLabel, lblUserUnitCount)
+#: src/mainwindow.ui:58 src/mainwindow.ui:236
+#, kde-format
+msgid "Overall stats:"
+msgstr "Összesített statisztikák:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, cmbUnitTypes)
+#: src/mainwindow.ui:73
+#, kde-format
+msgid "<html><head/><body><p>Filter unit types.</p></body></html>"
+msgstr "<html><head/><body><p>Unittípusok szűrése.</p></body></html>"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUnits)
+#: src/mainwindow.ui:83
+#, kde-format
+msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+msgstr ""
+"<html><head/><body><p>Inaktív unitok megjelenítésének be-/kikapcsolása.</p></"
+"body></html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUnits)
+#. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUserUnits)
+#: src/mainwindow.ui:86 src/mainwindow.ui:176
+#, kde-format
+msgid "Show inactive"
+msgstr "Inaktív megjelenítése"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUnits)
+#. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUserUnits)
+#: src/mainwindow.ui:96 src/mainwindow.ui:183
+#, kde-format
+msgid "Show unloaded"
+msgstr "Betöltetlen megjelenítése"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabUserUnits)
+#: src/mainwindow.ui:165
+#, kde-format
+msgid "User Units"
+msgstr "Felhasználói unitok"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabConf)
+#: src/mainwindow.ui:244
+#, kde-format
+msgid "Config Files"
+msgstr "Konfigurációs fájlok"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabSessions)
+#: src/mainwindow.ui:289
+#, kde-format
+msgid "Sessions"
+msgstr "Munkamenetek"
+
+#. i18n: ectx: Menu (file)
+#: src/systemdgenieui.rc:10
+#, kde-format
+msgid "&File"
+msgstr "&Fájl"
+
+#. i18n: ectx: Menu (view)
+#: src/systemdgenieui.rc:13
+#, kde-format
+msgid "&View"
+msgstr "&Nézet"
+
+#. i18n: ectx: Menu (daemon)
+#: src/systemdgenieui.rc:17
+#, kde-format
+msgid "&Daemon"
+msgstr "&Démon"
+
+#. i18n: ectx: Menu (unit)
+#: src/systemdgenieui.rc:25
+#, kde-format
+msgid "&Unit"
+msgstr "&Unit"
+
+#. i18n: ectx: Menu (session)
+#: src/systemdgenieui.rc:41
+#, kde-format
+msgid "&Session"
+msgstr "&Munkamenetek"
+
+#. i18n: ectx: ToolBar (unitToolBar)
+#: src/systemdgenieui.rc:49
+#, kde-format
+msgid "Unit Toolbar"
+msgstr "Unit eszköztár"
+
+#. i18n: ectx: ToolBar (confFileToolBar)
+#: src/systemdgenieui.rc:56
+#, kde-format
+msgid "Config File Toolbar"
+msgstr "Konfigurációs fájl eszköztár"
+
+#: src/unitmodel.cpp:54
+#, kde-format
+msgid "Unit"
+msgstr "Unit"
+
+#: src/unitmodel.cpp:56
+#, kde-format
+msgid "Load State"
+msgstr "Betöltési állapot"
+
+#: src/unitmodel.cpp:58
+#, kde-format
+msgid "Active State"
+msgstr "Aktív állapot"
+
+#: src/unitmodel.cpp:60
+#, kde-format
+msgid "Unit State"
+msgstr "Unit állapot"
+
+#: src/unitmodel.cpp:142
+#, kde-format
+msgid "<b>Description: </b>"
+msgstr "<b>Leírás: </b>"
+
+#: src/unitmodel.cpp:147
+#, kde-format
+msgid "<br><b>Unit file: </b>%1"
+msgstr "<br><b>Unit fájl: </b>%1"
+
+#: src/unitmodel.cpp:148 src/unitmodel.cpp:198
+#, kde-format
+msgid "<br><b>Unit file state: </b>"
+msgstr "<br><b>Unit fájl állapota: </b>"
+
+#: src/unitmodel.cpp:154
+#, kde-format
+msgid "<br><b>Source path: </b>%1"
+msgstr "<br><b>Forrás elérési út: </b>%1"
+
+#: src/unitmodel.cpp:158
+#, kde-format
+msgid "<br><b>Activated: </b>"
+msgstr "<br><b>Aktivált: </b>"
+
+#: src/unitmodel.cpp:169
+#, kde-format
+msgid "<br><b>Deactivated: </b>"
+msgstr "<br><b>Deaktivált: </b>"
+
+#: src/unitmodel.cpp:193
+#, kde-format
+msgid "<b>Unit file: </b>"
+msgstr "<b>Unit fájl: </b>"
+
+#: src/unitmodel.cpp:207
+#, kde-format
+msgid "<hr><b>Last log entries:</b>"
+msgstr "<hr><b>Utolsó naplóbejegyzések:</b>"
+
+#: src/unitmodel.cpp:210
+#, kde-format
+msgid "<br><i>No log entries found for this unit.</i>"
+msgstr "<br><i>Nincsenek naplóbejegyzések ehhez a unithoz.</i>"
+
+#~ msgid "Item"
+#~ msgstr "Elem"
+
+#~ msgid "Value"
+#~ msgstr "Érték"
+
+#~ msgctxt "configuration name (unit)"
+#~ msgid "%1 (%)"
+#~ msgstr "%1 (%)"
+
+#~ msgctxt "configuration name (unit)"
+#~ msgid "%1 (MB)"
+#~ msgstr "%1 (MB)"
+
+#~ msgctxt "configuration name (unit)"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "systemd-kcm"
+#~ msgstr "systemd-kcm"
+
+#~ msgid "KDE Systemd Control Module"
+#~ msgstr "KDE Systemd beállítómodul"
+
+#~ msgid "Main Developer"
+#~ msgstr "Vezető fejlesztő"
+
+#~ msgid "Snapshots"
+#~ msgstr "Pillanatképek"
+
+#~ msgid "kcmsystemd"
+#~ msgstr "kcmsystemd"
+
+#~ msgid "Conf"
+#~ msgstr "Konf."

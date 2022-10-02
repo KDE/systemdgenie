@@ -1,0 +1,1205 @@
+# Translation of systemd-kcm.po to Brazilian Portuguese
+# Copyright (C) 2015-2016 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# André Marcelo Alvarenga <alvarenga@kde.org>, 2015, 2016.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2015, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: systemd-kcm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-09 00:49+0000\n"
+"PO-Revision-Date: 2020-07-29 10:39-0300\n"
+"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 20.04.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "André Marcelo Alvarenga"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "alvarenga@kde.org"
+
+#. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
+#: src/main.cpp:43 src/mainwindow.cpp:50 src/mainwindow.ui:14
+#, kde-format
+msgid "SystemdGenie"
+msgstr "SystemdGenie"
+
+#: src/main.cpp:45
+#, kde-format
+msgid "Systemd management utility"
+msgstr "Utilitário de gerenciamento do systemd"
+
+#: src/main.cpp:47
+#, kde-format
+msgid "(c) 2016, Ragnar Thomsen"
+msgstr "(c) 2016, Ragnar Thomsen"
+
+#: src/main.cpp:54
+#, kde-format
+msgid "Ragnar Thomsen"
+msgstr "Ragnar Thomsen"
+
+#: src/main.cpp:55
+#, kde-format
+msgid "Maintainer"
+msgstr "Mantenedor"
+
+#: src/mainwindow.cpp:50
+#, kde-format
+msgid "Unable to contact the systemd daemon. Quitting..."
+msgstr "Não foi possível contatar o serviço systemd. Saindo..."
+
+#: src/mainwindow.cpp:62
+#, kde-format
+msgid "User dbus not found. Support for user units disabled."
+msgstr ""
+"D-Bus do usuário não encontrado. O suporte para unidades do usuário foi "
+"desabilitado."
+
+#: src/mainwindow.cpp:66
+#, kde-format
+msgid "All"
+msgstr "Tudo"
+
+#: src/mainwindow.cpp:66
+#, kde-format
+msgid "Services"
+msgstr "Serviços"
+
+#: src/mainwindow.cpp:66
+#, kde-format
+msgid "Automounts"
+msgstr "Montagens automáticas"
+
+#: src/mainwindow.cpp:66
+#, kde-format
+msgid "Devices"
+msgstr "Dispositivos"
+
+#: src/mainwindow.cpp:67
+#, kde-format
+msgid "Mounts"
+msgstr "Montagens"
+
+#: src/mainwindow.cpp:67
+#, kde-format
+msgid "Paths"
+msgstr "Caminhos"
+
+#: src/mainwindow.cpp:67
+#, kde-format
+msgid "Scopes"
+msgstr "Escopos"
+
+#: src/mainwindow.cpp:67
+#, kde-format
+msgid "Slices"
+msgstr "Fatias"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabTimers)
+#: src/mainwindow.cpp:68 src/mainwindow.ui:343
+#, kde-format
+msgid "Timers"
+msgstr "Temporizadores"
+
+#: src/mainwindow.cpp:68
+#, kde-format
+msgid "Sockets"
+msgstr "Sockets"
+
+#: src/mainwindow.cpp:68
+#, kde-format
+msgid "Swaps"
+msgstr "Memórias virtuais"
+
+#: src/mainwindow.cpp:68
+#, kde-format
+msgid "Targets"
+msgstr "Destinos"
+
+#: src/mainwindow.cpp:373
+#, kde-format
+msgid "Session ID"
+msgstr "ID da sessão"
+
+#: src/mainwindow.cpp:374
+#, kde-format
+msgid "Session Object Path"
+msgstr "Caminho do objeto da sessão"
+
+#: src/mainwindow.cpp:375
+#, kde-format
+msgid "State"
+msgstr "Estado"
+
+#: src/mainwindow.cpp:376
+#, kde-format
+msgid "User ID"
+msgstr "ID do usuário"
+
+#: src/mainwindow.cpp:377
+#, kde-format
+msgid "User Name"
+msgstr "Nome do usuário"
+
+#: src/mainwindow.cpp:378
+#, kde-format
+msgid "Seat ID"
+msgstr "ID do local"
+
+#: src/mainwindow.cpp:400
+#, kde-format
+msgid "Timer"
+msgstr "Temporizador"
+
+#: src/mainwindow.cpp:401
+#, kde-format
+msgid "Next"
+msgstr "Próximo"
+
+#: src/mainwindow.cpp:402
+#, kde-format
+msgid "Left"
+msgstr "Esquerda"
+
+#: src/mainwindow.cpp:403
+#, kde-format
+msgid "Last"
+msgstr "Último"
+
+#: src/mainwindow.cpp:404
+#, kde-format
+msgid "Passed"
+msgstr "Passou"
+
+#: src/mainwindow.cpp:405
+#, kde-format
+msgid "Activates"
+msgstr "Ativa"
+
+#: src/mainwindow.cpp:423
+#, kde-format
+msgid "File"
+msgstr "Arquivo"
+
+#: src/mainwindow.cpp:424
+#, kde-format
+msgid "Modified"
+msgstr "Modificado"
+
+#: src/mainwindow.cpp:425
+#, kde-format
+msgid "Description"
+msgstr "Descrição"
+
+#: src/mainwindow.cpp:433
+#, kde-format
+msgid "Coredump generation and storage"
+msgstr "Geração e armazenamento de coredumps"
+
+#: src/mainwindow.cpp:436
+#, kde-format
+msgid "Send journal messages over network"
+msgstr "Enviar as mensagens das transações via rede"
+
+#: src/mainwindow.cpp:439
+#, kde-format
+msgid "Journal manager settings"
+msgstr "Configurações do gerenciador de transações"
+
+#: src/mainwindow.cpp:442
+#, kde-format
+msgid "Login manager configuration"
+msgstr "Configuração do gerenciador de login"
+
+#: src/mainwindow.cpp:445
+#, kde-format
+msgid "Network name resolution configuration"
+msgstr "Configuração de resolução de nomes da rede"
+
+#: src/mainwindow.cpp:448
+#, kde-format
+msgid "Systemd daemon configuration"
+msgstr "Configuração do serviço systemd"
+
+#: src/mainwindow.cpp:451
+#, kde-format
+msgid "Time synchronization settings"
+msgstr "Configurações de sincronização do tempo"
+
+#: src/mainwindow.cpp:454
+#, kde-format
+msgid "Systemd user daemon configuration"
+msgstr "Configuração do serviço systemd do usuário"
+
+#: src/mainwindow.cpp:817 src/mainwindow.cpp:826
+#, kde-format
+msgctxt "First part of 'Total: %1, %2, %3'"
+msgid "1 unit"
+msgid_plural "%1 units"
+msgstr[0] "%1 unidade"
+msgstr[1] "%1 unidades"
+
+#: src/mainwindow.cpp:819 src/mainwindow.cpp:828
+#, kde-format
+msgctxt "Second part of 'Total: %1, %2, %3'"
+msgid "1 active"
+msgid_plural "%1 active"
+msgstr[0] "%1 ativa"
+msgstr[1] "%1 ativas"
+
+#: src/mainwindow.cpp:821 src/mainwindow.cpp:830
+#, kde-format
+msgctxt "Third part of 'Total: %1, %2, %3'"
+msgid "1 displayed"
+msgid_plural "%1 displayed"
+msgstr[0] "%1 visível"
+msgstr[1] "%1 visíveis"
+
+#: src/mainwindow.cpp:823 src/mainwindow.cpp:832
+#, kde-format
+msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
+msgid "Total: %1, %2, %3"
+msgstr "Total: %1, %2, %3"
+
+#: src/mainwindow.cpp:857 src/mainwindow.cpp:1610
+#, kde-format
+msgid "Unable to authenticate/execute the action: %1"
+msgstr "Não foi possível executar/autenticar a ação: %1"
+
+#: src/mainwindow.cpp:1037
+#, kde-format
+msgid "&Refresh"
+msgstr "A&tualizar"
+
+#: src/mainwindow.cpp:1039
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Refresh"
+msgstr "Atualizar"
+
+#: src/mainwindow.cpp:1045
+#, kde-format
+msgid "Start Unit"
+msgstr "Iniciar a unidade"
+
+#: src/mainwindow.cpp:1051
+#, kde-format
+msgid "Stop Unit"
+msgstr "Parar a unidade"
+
+#: src/mainwindow.cpp:1057
+#, kde-format
+msgid "Reload Unit"
+msgstr "Recarregar a unidade"
+
+#: src/mainwindow.cpp:1063
+#, kde-format
+msgid "Restart Unit"
+msgstr "Reiniciar a unidade"
+
+#: src/mainwindow.cpp:1069
+#, kde-format
+msgid "Enable Unit"
+msgstr "Habilitar a unidade"
+
+#: src/mainwindow.cpp:1075
+#, kde-format
+msgid "Disable Unit"
+msgstr "Desabilitar a unidade"
+
+#: src/mainwindow.cpp:1081
+#, kde-format
+msgid "Mask Unit"
+msgstr "Mascarar a unidade"
+
+#: src/mainwindow.cpp:1087
+#, kde-format
+msgid "Unmask Unit"
+msgstr "Retirar a máscara da unidade"
+
+#: src/mainwindow.cpp:1093
+#, kde-format
+msgid "Re&load systemd"
+msgstr "Re&carregar o systemd"
+
+#: src/mainwindow.cpp:1094
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Click to reload all unit files"
+msgstr "Clique para recarregar todos os arquivos da unidade"
+
+#: src/mainwindow.cpp:1100
+#, kde-format
+msgid "Re-e&xecute systemd"
+msgstr "Ree&xecutar o systemd"
+
+#: src/mainwindow.cpp:1101
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Click to re-execute the systemd daemon"
+msgstr "Clique para reexecutar o serviço systemd"
+
+#: src/mainwindow.cpp:1107
+#, kde-format
+msgid "Re&load user systemd"
+msgstr "Re&carregar o systemd do usuário"
+
+#: src/mainwindow.cpp:1108
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Click to reload all user unit files"
+msgstr "Clique para recarregar todos os arquivos da unidade do usuário"
+
+#: src/mainwindow.cpp:1114
+#, kde-format
+msgid "Re-e&xecute user systemd"
+msgstr "Ree&xecutar o systemd do usuário"
+
+#: src/mainwindow.cpp:1115
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Click to re-execute the user systemd daemon"
+msgstr "Clique para reexecutar o serviço systemd do usuário"
+
+#: src/mainwindow.cpp:1121
+#, kde-format
+msgid "Edit Unit File"
+msgstr "Editar o arquivo da unidade"
+
+#: src/mainwindow.cpp:1127
+#, kde-format
+msgid "Edit Configuration File"
+msgstr "Editar arquivo de configuração"
+
+#: src/mainwindow.cpp:1133
+#, kde-format
+msgid "Open Man Page"
+msgstr "Abrir página de manual"
+
+#: src/mainwindow.cpp:1139
+#, kde-format
+msgid "Activate Session"
+msgstr "Ativar sessão"
+
+#: src/mainwindow.cpp:1145
+#, kde-format
+msgid "Terminate Session"
+msgstr "Terminar sessão"
+
+#: src/mainwindow.cpp:1151
+#, kde-format
+msgid "Lock Session"
+msgstr "Bloquear sessão"
+
+#: src/mainwindow.cpp:1172
+#, kde-format
+msgid ""
+"KHelpCenter executable not found in path. Please install KHelpCenter to view "
+"man pages."
+msgstr ""
+"O executável do KHelpCenter não foi encontrado no caminho. Instale o "
+"KHelpCenter para visualizar as páginas de manual."
+
+#: src/mainwindow.cpp:1303
+#, kde-format
+msgid "<b>VT:</b> %1"
+msgstr "<b>VT:</b> %1"
+
+#: src/mainwindow.cpp:1308
+#, kde-format
+msgid "<br><b>Remote host:</b> %1"
+msgstr "<br><b>Máquina remota:</b> %1"
+
+#: src/mainwindow.cpp:1309
+#, kde-format
+msgid "<br><b>Remote user:</b> %1"
+msgstr "<br><b>Usuário remoto:</b> %1"
+
+#: src/mainwindow.cpp:1311
+#, kde-format
+msgid "<br><b>Service:</b> %1"
+msgstr "<br><b>Serviço:</b> %1"
+
+#: src/mainwindow.cpp:1312
+#, kde-format
+msgid "<br><b>Leader (PID):</b> %1"
+msgstr "<br><b>Líder (PID):</b> %1"
+
+#: src/mainwindow.cpp:1315
+#, kde-format
+msgid "<br><b>Type:</b> %1"
+msgstr "<br><b>Tipo:</b> %1"
+
+#: src/mainwindow.cpp:1317
+#, kde-format
+msgid " (display %1)"
+msgstr " (tela %1)"
+
+#: src/mainwindow.cpp:1327
+#, kde-format
+msgid "<br><b>Class:</b> %1"
+msgstr "<br><b>Classe:</b> %1"
+
+#: src/mainwindow.cpp:1328
+#, kde-format
+msgid "<br><b>State:</b> %1"
+msgstr "<br><b>Estado:</b> %1"
+
+#: src/mainwindow.cpp:1329
+#, kde-format
+msgid "<br><b>Scope:</b> %1"
+msgstr "<br><b>Escopo:</b> %1"
+
+#: src/mainwindow.cpp:1332
+#, kde-format
+msgid "<br><b>Created: </b>"
+msgstr "<br><b>Criado em: </b>"
+
+#: src/mainwindow.cpp:1361
+#, kde-format
+msgid "%1: Systemd daemon reloaded..."
+msgstr "%1: Serviço systemd recarregado..."
+
+#: src/mainwindow.cpp:1372
+#, kde-format
+msgid "%1: User daemon reloaded..."
+msgstr "%1: Serviço do usuário recarregado..."
+
+#: src/mainwindow.cpp:1415
+#, kde-format
+msgid "%1: System units changed..."
+msgstr "%1: Unidades do sistema alteradas..."
+
+#: src/mainwindow.cpp:1562
+#, kde-format
+msgid "Editing %1"
+msgstr "Editando %1"
+
+#: src/mainwindow.cpp:1574
+#, kde-format
+msgid "Editing file: %1"
+msgstr "Editando arquivo: %1"
+
+#: src/mainwindow.cpp:1584
+#, kde-format
+msgid ""
+"Failed to open the unit file:\n"
+"%1"
+msgstr ""
+"Não foi possível abrir o arquivo da unidade:\n"
+"%1"
+
+#. i18n("Unit file successfully written."));
+#: src/mainwindow.cpp:1614
+#, kde-format
+msgid "%1: %2 successfully written..."
+msgstr "%1: %2 gravado com sucesso..."
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
+#: src/mainwindow.ui:52
+#, kde-format
+msgid "System Units"
+msgstr "Unidades do sistema"
+
+#. i18n: ectx: property (text), widget (QLabel, lblUnitCount)
+#. i18n: ectx: property (text), widget (QLabel, lblUserUnitCount)
+#: src/mainwindow.ui:58 src/mainwindow.ui:236
+#, kde-format
+msgid "Overall stats:"
+msgstr "Estatísticas globais:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, cmbUnitTypes)
+#: src/mainwindow.ui:73
+#, kde-format
+msgid "<html><head/><body><p>Filter unit types.</p></body></html>"
+msgstr "<html><head/><body><p>Filtra os tipos de unidade.</p></body></html>"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUnits)
+#: src/mainwindow.ui:83
+#, kde-format
+msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+msgstr ""
+"<html><head/><body><p>Alternar a apresentação de unidades inativas.</p></"
+"body></html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUnits)
+#. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUserUnits)
+#: src/mainwindow.ui:86 src/mainwindow.ui:176
+#, kde-format
+msgid "Show inactive"
+msgstr "Mostrar inativas"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUnits)
+#. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUserUnits)
+#: src/mainwindow.ui:96 src/mainwindow.ui:183
+#, kde-format
+msgid "Show unloaded"
+msgstr "Mostrar não-carregadas"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabUserUnits)
+#: src/mainwindow.ui:165
+#, kde-format
+msgid "User Units"
+msgstr "Unidades do usuário"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabConf)
+#: src/mainwindow.ui:244
+#, kde-format
+msgid "Config Files"
+msgstr "Arquivos de configuração"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabSessions)
+#: src/mainwindow.ui:289
+#, kde-format
+msgid "Sessions"
+msgstr "Sessões"
+
+#. i18n: ectx: Menu (file)
+#: src/systemdgenieui.rc:10
+#, kde-format
+msgid "&File"
+msgstr "&Arquivo"
+
+#. i18n: ectx: Menu (view)
+#: src/systemdgenieui.rc:13
+#, kde-format
+msgid "&View"
+msgstr "E&xibir"
+
+#. i18n: ectx: Menu (daemon)
+#: src/systemdgenieui.rc:17
+#, kde-format
+msgid "&Daemon"
+msgstr "&Serviço"
+
+#. i18n: ectx: Menu (unit)
+#: src/systemdgenieui.rc:25
+#, kde-format
+msgid "&Unit"
+msgstr "&Unidade"
+
+#. i18n: ectx: Menu (session)
+#: src/systemdgenieui.rc:41
+#, kde-format
+msgid "&Session"
+msgstr "&Sessão"
+
+#. i18n: ectx: ToolBar (unitToolBar)
+#: src/systemdgenieui.rc:49
+#, kde-format
+msgid "Unit Toolbar"
+msgstr "Barra de ferramentas da unidade"
+
+#. i18n: ectx: ToolBar (confFileToolBar)
+#: src/systemdgenieui.rc:56
+#, kde-format
+msgid "Config File Toolbar"
+msgstr "Barra de ferramentas de configuração do arquivo"
+
+#: src/unitmodel.cpp:54
+#, kde-format
+msgid "Unit"
+msgstr "Unidade"
+
+#: src/unitmodel.cpp:56
+#, kde-format
+msgid "Load State"
+msgstr "Carregar o estado"
+
+#: src/unitmodel.cpp:58
+#, kde-format
+msgid "Active State"
+msgstr "Ativar o estado"
+
+#: src/unitmodel.cpp:60
+#, kde-format
+msgid "Unit State"
+msgstr "Estado da unidade"
+
+#: src/unitmodel.cpp:142
+#, kde-format
+msgid "<b>Description: </b>"
+msgstr "<b>Descrição: </b>"
+
+#: src/unitmodel.cpp:147
+#, kde-format
+msgid "<br><b>Unit file: </b>%1"
+msgstr "<br><b>Arquivo da unidade: </b>%1"
+
+#: src/unitmodel.cpp:148 src/unitmodel.cpp:198
+#, kde-format
+msgid "<br><b>Unit file state: </b>"
+msgstr "<br><b>Estado do arquivo da unidade: </b>"
+
+#: src/unitmodel.cpp:154
+#, kde-format
+msgid "<br><b>Source path: </b>%1"
+msgstr "<br><b>Caminho da origem:</b> %1"
+
+#: src/unitmodel.cpp:158
+#, kde-format
+msgid "<br><b>Activated: </b>"
+msgstr "<br><b>Ativado: </b>"
+
+#: src/unitmodel.cpp:169
+#, kde-format
+msgid "<br><b>Deactivated: </b>"
+msgstr "<br><b>Desativado: </b>"
+
+#: src/unitmodel.cpp:193
+#, kde-format
+msgid "<b>Unit file: </b>"
+msgstr "<b>Arquivo da unidade: </b>"
+
+#: src/unitmodel.cpp:207
+#, kde-format
+msgid "<hr><b>Last log entries:</b>"
+msgstr "<hr><b>Últimos itens de registro:</b>"
+
+#: src/unitmodel.cpp:210
+#, kde-format
+msgid "<br><i>No log entries found for this unit.</i>"
+msgstr "<br><i>Não foram encontrados itens de registro para esta unidade.</i>"
+
+#~ msgid "Item"
+#~ msgstr "Item"
+
+#~ msgid "Value"
+#~ msgstr "Valor"
+
+#~ msgctxt "configuration name (unit)"
+#~ msgid "%1 (%)"
+#~ msgstr "%1 (%)"
+
+#~ msgctxt "configuration name (unit)"
+#~ msgid "%1 (MB)"
+#~ msgstr "%1 (MB)"
+
+#~ msgctxt "configuration name (unit)"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "<p>Set the level of log entries in systemd.</p>"
+#~ msgstr "<p>Definir o nível de itens de registro no systemd.</p>"
+
+#~ msgid "<p>Set target for logs.</p>"
+#~ msgstr "<p>Definir o alvo dos registros.</p>"
+
+#~ msgid "<p>Use color to highlight important log messages.</p>"
+#~ msgstr ""
+#~ "<p>Usar uma cor para realçar as mensagens de registro importantes.</p>"
+
+#~ msgid "<p>Include code location in log messages.</p>"
+#~ msgstr "<p>Incluir a localização do código nas mensagens de registro.</p>"
+
+#~ msgid "<p>Dump core on systemd crash.</p>"
+#~ msgstr "<p>Gerar o arquivo 'core' em falha do systemd.</p>"
+
+#~ msgid ""
+#~ "<p>Spawn a shell when systemd crashes. Note: The shell is not password-"
+#~ "protected.</p>"
+#~ msgstr ""
+#~ "<p>Abrir um console quando o systemd falhar. Nota: Este console não está "
+#~ "protegido com nenhuma senha.</p>"
+
+#~ msgid "<p>Show terse service status information while booting.</p>"
+#~ msgstr ""
+#~ "<p>Mostrar uma breve informação de status do serviço na inicialização.</p>"
+
+#~ msgid ""
+#~ "<p>Activate the specified virtual terminal when systemd crashes (-1 to "
+#~ "deactivate).</p>"
+#~ msgstr ""
+#~ "<p>Ativar o terminal virtual indicado quando o systemd falhar (-1 para "
+#~ "desativar).</p>"
+
+#~ msgid "<p>The initial CPU affinity for the systemd init process.</p>"
+#~ msgstr ""
+#~ "<p>A afinidade inicial da CPU para o processo de inicialização do systemd."
+#~ "</p>"
+
+#~ msgid ""
+#~ "<p>Controllers that shall be mounted in a single hierarchy. Takes a space-"
+#~ "separated list of comma-separated controller names, in order to allow "
+#~ "multiple joined hierarchies. Pass an empty string to ensure that systemd "
+#~ "mounts all controllers in separate hierarchies.</p>"
+#~ msgstr ""
+#~ "<p>Os controladores que deverão ser montados em uma única hierarquia. "
+#~ "Recebe uma lista separada por espaços, de nomes de controladores "
+#~ "separados por vírgulas, de modo a permitir várias hierarquias conjuntas. "
+#~ "Passe uma string vazia para garantir que o systemd monte todos os "
+#~ "controladores em hierarquias separadas.</p>"
+
+#~ msgid ""
+#~ "<p>Configures in which control group hierarchies to create per-service "
+#~ "cgroups automatically, in addition to the name=systemd named hierarchy. "
+#~ "Takes a space-separated list of controller names. Pass the empty string "
+#~ "to ensure that systemd does not touch any hierarchies but its own.</p>"
+#~ msgstr ""
+#~ "<p>Configura em quais hierarquias de grupo de controle devem ser criados "
+#~ "automaticamente os 'cgroups' por serviço, além da hierarquia por nomes "
+#~ "'nome=systemd'. Recebe uma lista, separada por espaços, de nomes de "
+#~ "controladores. Passe uma string vazia para garantir que o systemd não "
+#~ "toca em nenhuma hierarquia, além das suas próprias.</p>"
+
+#~ msgid ""
+#~ "<p>The watchdog hardware (/dev/watchdog) will be programmed to "
+#~ "automatically reboot the system if it is not contacted within the "
+#~ "specified timeout interval. The system manager will ensure to contact it "
+#~ "at least once in half the specified timeout interval. This feature "
+#~ "requires a hardware watchdog device.</p>"
+#~ msgstr ""
+#~ "<p>O hardware de vigilância (/dev/watchdog) será programado para "
+#~ "reiniciar automaticamente o sistema, caso não seja contactado durante o "
+#~ "período de tempo indicado. O gerenciador do sistema irá garantir que irá "
+#~ "contactar pelo menos uma vez na metade do intervalo de tempo indicado. "
+#~ "Esta funcionalidade necessita de um dispositivo de vigilância por "
+#~ "hardware.</p>"
+
+#~ msgid ""
+#~ "<p>This setting may be used to configure the hardware watchdog when the "
+#~ "system is asked to reboot. It works as a safety net to ensure that the "
+#~ "reboot takes place even if a clean reboot attempt times out. This feature "
+#~ "requires a hardware watchdog device.</p>"
+#~ msgstr ""
+#~ "<p>Esta definição pode ser usada para configurar o hardware de vigilância "
+#~ "quando for solicitado ao sistema para reiniciar. Funciona como uma rede "
+#~ "de segurança para garantir que a reinicialização ocorra mesmo que uma "
+#~ "tentativa limpa de reinício expire o seu tempo limite. Essa "
+#~ "funcionalidade necessita de um dispositivo de vigilância por hardware.</p>"
+
+#~ msgid "<p>Capabilities for the systemd daemon and its children.</p>"
+#~ msgstr "<p>Capacidades do serviço systemd e seus filhos.</p>"
+
+#~ msgid ""
+#~ "<p>Architectures of which system calls may be invoked on the system.</p>"
+#~ msgstr ""
+#~ "<p>Arquiteturas das chamadas de sistema que poderão ser carregadas no "
+#~ "sistema.</p>"
+
+#~ msgid ""
+#~ "<p>Sets the timer slack for PID 1 which is then inherited to all executed "
+#~ "processes, unless overridden individually. The timer slack controls the "
+#~ "accuracy of wake-ups triggered by timers.</p>"
+#~ msgstr ""
+#~ "<p>Define a folga do temporizador do PID 1, a qual é herdada para todos "
+#~ "os processos executados, a menos que seja substituída individualmente. A "
+#~ "folga do temporizador controla a precisão das ativações acionadas pelos "
+#~ "temporizadores.</p>"
+
+#~ msgid ""
+#~ "<p>The default accuracy of timer units. Note that the accuracy of timer "
+#~ "units is also affected by the configured timer slack for PID 1.</p>"
+#~ msgstr ""
+#~ "<p>A precisão padrão das unidades de temporização. Lembre-se de que a "
+#~ "precisão das unidades de temporização também é afetada pela folga "
+#~ "configurada para o PID 1.</p>"
+
+#~ msgid "<p>Sets the default output for all services and sockets.</p>"
+#~ msgstr "<p>Define a saída padrão para todos os serviços e sockets.</p>"
+
+#~ msgid "<p>Sets the default error output for all services and sockets.</p>"
+#~ msgstr ""
+#~ "<p>Define a saída de erros padrão para todos os serviços e sockets.</p>"
+
+#~ msgid "<p>The default timeout for starting of units.</p>"
+#~ msgstr "<p>Tempo limite padrão para iniciar as unidades.</p>"
+
+#~ msgid "<p>The default timeout for stopping of units.</p>"
+#~ msgstr "<p>Tempo limite padrão para parar as unidades.</p>"
+
+#~ msgid "<p>The default time to sleep between automatic restart of units.</p>"
+#~ msgstr ""
+#~ "<p>Tempo padrão de espera entre os reinícios automáticos das unidades.</p>"
+
+#~ msgid "<p>Time interval used in start rate limit for services.</p>"
+#~ msgstr ""
+#~ "<p>Intervalo de tempo usado no limite de inicialização dos serviços.</p>"
+
+#~ msgid ""
+#~ "<p>Services are not allowed to start more than this number of times "
+#~ "within the time interval defined in DefaultStartLimitInterval.</p>"
+#~ msgstr ""
+#~ "<p>Os erviços não poderão iniciar mais vezes do que o número aqui "
+#~ "indicado, dentro do intervalo de tempo definido em "
+#~ "DefaultStartLimitInterval.</p>"
+
+#~ msgid ""
+#~ "<p>Manager environment variables passed to all executed processes. Takes "
+#~ "a space-separated list of variable assignments.</p>"
+#~ msgstr ""
+#~ "<p>Variáveis de ambiente do gerenciador passadas a todos os processos "
+#~ "executados. Recebe uma lista separada por espaços das atribuições de "
+#~ "variáveis.</p>"
+
+#~ msgid "<p>Default CPU usage accounting.</p>"
+#~ msgstr "<p>Contabilização padrão do uso da CPU.</p>"
+
+#~ msgid "<p>Default block IO accounting.</p>"
+#~ msgstr "<p>Contabilização padrão de E/S em bloco.</p>"
+
+#~ msgid "<p>Default process and kernel memory accounting.</p>"
+#~ msgstr "<p>Contabilização padrão de memória do kernel e dos processos.</p>"
+
+#~ msgid "<p>Default resource limit for units. Set to -1 for no limit.</p>"
+#~ msgstr ""
+#~ "<p>Limite de recursos para as unidades. Defina como -1 para sem limite.</"
+#~ "p>"
+
+#~ msgid "<p>Where to store log files.</p>"
+#~ msgstr "<p>Onde armazenar os arquivos de registro.</p>"
+
+#~ msgid "<p>Compress log files.</p>"
+#~ msgstr "<p>Comprime os arquivos de registro.</p>"
+
+#~ msgid ""
+#~ "<p>Enable Forward Secure Sealing (FSS) for all persistent journal files.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p>Ativar o Forward Secure Sealing (FSS) para todos os arquivos de "
+#~ "transações persistentes.</p>"
+
+#~ msgid ""
+#~ "<p>Whether and how to split log files. If <i>uid</i>, all users will get "
+#~ "each their own journal files regardless of whether they possess a login "
+#~ "session or not, however system users will log into the system journal. If "
+#~ "<i>login</i>, actually logged-in users will get each their own journal "
+#~ "files, but users without login session and system users will log into the "
+#~ "system journal. If <i>none</i>, journal files are not split up by user "
+#~ "and all messages are instead stored in the single system journal.</p>"
+#~ msgstr ""
+#~ "<p>Se e como os arquivos de registro (log) devem ser divididos. Se for "
+#~ "<i>uid</i>, todos os usuários terão seus próprios arquivos de registro de "
+#~ "transações (journal), independentemente de terem uma sessão de login ou "
+#~ "não; contudo, os usuários do sistema irão registrar nas transações de "
+#~ "sistema. Se for <i>login</i>, os usuários que estiverem autenticados "
+#~ "terão seus arquivos de transações próprios, mas os usuários sem sessão e "
+#~ "os usuários do sistema serão registrados nas transações de sistema. Se "
+#~ "for <i>none</i>, os arquivos de registro de transações não serão "
+#~ "divididos por usuário e todas as mensagens serão armazenadas em um único "
+#~ "registro de transações do sistema.</p>"
+
+#~ msgid "<p>The timeout before synchronizing journal files to disk.</p>"
+#~ msgstr ""
+#~ "<p>O tempo limite antes da sincronização dos arquivos de registro de "
+#~ "transações (journal) com o disco.</p>"
+
+#~ msgid ""
+#~ "<p>Time interval for rate limiting of log messages. Set to 0 to turn off "
+#~ "rate-limiting.</p>"
+#~ msgstr ""
+#~ "<p>Intervalo de tempo para limitar a frequência das mensagens de "
+#~ "registro. Defina como 0 para desativar a limitação.</p>"
+
+#~ msgid ""
+#~ "<p>Maximum number of messages logged for a unit in the interval specified "
+#~ "in RateLimitInterval. Set to 0 to turn off rate-limiting.</p>"
+#~ msgstr ""
+#~ "<p>Número máximo de mensagens registradas para uma unidade no intervalo "
+#~ "indicado em RateLimitInterval. Defina como 0 para desativar a limitação.</"
+#~ "p>"
+
+#~ msgid ""
+#~ "<p>Maximum disk space the persistent journal may take up. Defaults to 10% "
+#~ "of file system size.</p>"
+#~ msgstr ""
+#~ "<p>Espaço máximo em disco que as transações persistentes poderão ocupar. "
+#~ "O valor padrão é 10% do tamanho do sistema de arquivos.</p>"
+
+#~ msgid ""
+#~ "<p>Minimum disk space the persistent journal should keep free for other "
+#~ "uses. Defaults to 15% of file system size.</p>"
+#~ msgstr ""
+#~ "<p>Espaço mínimo em disco que as transações persistentes poderão manter "
+#~ "livres para outros usos. O valor padrão é 15% do tamanho do sistema de "
+#~ "arquivos.</p>"
+
+#~ msgid ""
+#~ "<p>Maximum size of individual journal files on persistent storage. "
+#~ "Defaults to 1/8 of SystemMaxUse.</p>"
+#~ msgstr ""
+#~ "<p>Tamanho máximo dos arquivos de transações individuais no armazenamento "
+#~ "persistente. O valor padrão é 1/8 do SystemMaxUse.</p>"
+
+#~ msgid ""
+#~ "<p>Maximum disk space the volatile journal may take up. Defaults to 10% "
+#~ "of file system size.</p>"
+#~ msgstr ""
+#~ "<p>Espaço máximo em disco que as transações voláteis poderão ocupar. O "
+#~ "valor padrão é 10% do tamanho do sistema de arquivos.</p>"
+
+#~ msgid ""
+#~ "<p>Minimum disk space the volatile journal should keep free for other "
+#~ "uses. Defaults to 15% of file system size.</p>"
+#~ msgstr ""
+#~ "<p>Espaço mínimo em disco que as transações voláteis poderão manter "
+#~ "livres para outros usos. O valor padrão é 15% do tamanho do sistema de "
+#~ "arquivos.</p>"
+
+#~ msgid ""
+#~ "<p>Maximum size of individual journal files on volatile storage. Defaults "
+#~ "to 1/8 of RuntimeMaxUse.</p>"
+#~ msgstr ""
+#~ "<p>Tamanho máximo dos arquivos de transações individuais no armazenamento "
+#~ "volátil. O valor padrão é 1/8 do RuntimeMaxUse.</p>"
+
+#~ msgid "<p>Maximum time to store journal entries. Set to 0 to disable.</p>"
+#~ msgstr ""
+#~ "<p>Tempo máximo para armazenar os itens de transação. Defina como 0 para "
+#~ "desativar.</p>"
+
+#~ msgid ""
+#~ "<p>Maximum time to store entries in a single journal file before rotating "
+#~ "to the next one. Set to 0 to disable.</p>"
+#~ msgstr ""
+#~ "<p>Tempo máximo para armazenar itens em um único arquivo de transações "
+#~ "antes de passar ao próximo. Defina como 0 para desativar.</p>"
+
+#~ msgid "<p>Forward journal messages to syslog.</p>"
+#~ msgstr "<p>Encaminhar as mensagens das transações para o syslog.</p>"
+
+#~ msgid ""
+#~ "<p>Forward journal messages to the system console. The console can be "
+#~ "changed with TTYPath.</p>"
+#~ msgstr ""
+#~ "<p>Encaminhar as mensagens das transações para o console do sistema. O "
+#~ "console pode ser alterado com o TTYPath.</p>"
+
+#~ msgid ""
+#~ "<p>Forward journal messages as wall messages to all logged-in users.</p>"
+#~ msgstr ""
+#~ "<p>Encaminhar as mensagens das transações como mensagens de difusão para "
+#~ "todos os usuários autenticados.</p>"
+
+#~ msgid ""
+#~ "<p>Forward journal messages to this TTY if ForwardToConsole is set.</p>"
+#~ msgstr ""
+#~ "<p>Encaminhar as mensagens das transações para este TTY, caso esteja "
+#~ "definido o ForwardToConsole.</p>"
+
+#~ msgid "<p>Max log level to forward/store to the specified target.</p>"
+#~ msgstr ""
+#~ "<p>Nível máximo de registro a encaminhar/armazenar para o alvo indicado.</"
+#~ "p>"
+
+#~ msgid ""
+#~ "<p>Number of virtual terminals (VTs) to allocate by default and which "
+#~ "will autospawn. Set to 0 to disable.</p>"
+#~ msgstr ""
+#~ "<p>O número de terminais virtuais (VTs) a alocar por padrão e que serão "
+#~ "gerados automaticamente. Defina como 0 para desativar.</p>"
+
+#~ msgid ""
+#~ "<p>Virtual terminal that shall unconditionally be reserved for "
+#~ "autospawning. Set to 0 to disable.</p>"
+#~ msgstr ""
+#~ "<p>Terminal virtual que deverá ser reservado de forma incondicional para "
+#~ "geração automática. Defina como 0 para desativar.</p>"
+
+#~ msgid ""
+#~ "<p>Kill the processes of a user when the user completely logs out.</p>"
+#~ msgstr ""
+#~ "<p>Interromper os processos de um usuário quando encerrar a sua sessão "
+#~ "por completo.</p>"
+
+#~ msgid ""
+#~ "<p>Space-separated list of usernames for which only processes will be "
+#~ "killed if KillUserProcesses is enabled.</p>"
+#~ msgstr ""
+#~ "<p>Uma lista separada por espaços de usuários para os quais os processos "
+#~ "serão interrompidos, caso o KillUserProcesses esteja ativo.</p>"
+
+#~ msgid ""
+#~ "<p>Space-separated list of usernames for which processes will be excluded "
+#~ "from being killed if KillUserProcesses is enabled.</p>"
+#~ msgstr ""
+#~ "<p>Uma lista separada por espaços de usuários para os quais os processos "
+#~ "não serão interrompidos, caso o KillUserProcesses esteja ativo.</p>"
+
+#~ msgid ""
+#~ "<p>Specifies the maximum time a system shutdown or sleep request is "
+#~ "delayed due to an inhibitor lock of type delay being active before the "
+#~ "inhibitor is ignored and the operation executes anyway.</p>"
+#~ msgstr ""
+#~ "<p>Indica o tempo máximo de atraso que uma solicitação de desligamento ou "
+#~ "suspensão do sistema será adiado, devido a um bloqueio inibidor ser "
+#~ "ativado, antes desse inibidor ser ignorado e a operação ser executada de "
+#~ "qualquer maneira.</p>"
+
+#~ msgid ""
+#~ "<p>Controls whether logind shall handle the system power and sleep keys "
+#~ "and the lid switch to trigger power actions.</p>"
+#~ msgstr ""
+#~ "<p>Controla se o logind deverá tratar das teclas de suspensão e "
+#~ "desligamento ou fechamento da tampa do notebook para acionar as ações de "
+#~ "gerenciamento de energia.</p>"
+
+#~ msgid ""
+#~ "<p>Controls whether actions triggered by the power key are subject to "
+#~ "inhibitor locks.</p>"
+#~ msgstr ""
+#~ "<p>Controla se as ações acionadas pela tecla para ligar/desligar estão "
+#~ "sujeitas aos bloqueios inibidores.</p>"
+
+#~ msgid ""
+#~ "<p>Controls whether actions triggered by the suspend key are subject to "
+#~ "inhibitor locks.</p>"
+#~ msgstr ""
+#~ "<p>Controla se as ações acionadas pela tecla para suspensão estão "
+#~ "sujeitas aos bloqueios inibidores.</p>"
+
+#~ msgid ""
+#~ "<p>Controls whether actions triggered by the hibernate key are subject to "
+#~ "inhibitor locks.</p>"
+#~ msgstr ""
+#~ "<p>Controla se as ações acionadas pela tecla para hibernar estão sujeitas "
+#~ "aos bloqueios inibidores.</p>"
+
+#~ msgid ""
+#~ "<p>Controls whether actions triggered by the lid switch are subject to "
+#~ "inhibitor locks.</p>"
+#~ msgstr ""
+#~ "<p>Controla se as ações acionadas pela tampa do notebook estão sujeitas "
+#~ "aos bloqueios inibidores.</p>"
+
+#~ msgid ""
+#~ "<p>Timeout after system startup or system resume in which systemd will "
+#~ "hold off on reacting to lid events.</p>"
+#~ msgstr ""
+#~ "<p>Tempo limite após a inicialização ou recuperação do sistema, que o "
+#~ "systemd irá manter inativos os eventos da tampa.</p>"
+
+#~ msgid "<p>Configures the action to take when the system is idle.</p>"
+#~ msgstr "<p>Configura a ação a realizar quando o sistema estiver ocioso.</p>"
+
+#~ msgid ""
+#~ "<p>Configures the delay after which the action configured in IdleAction "
+#~ "is taken after the system is idle.</p>"
+#~ msgstr ""
+#~ "<p>Configura o atraso após o qual a ação configurada em IdleAction será "
+#~ "executada, após o sistema ficar ocioso.</p>"
+
+#~ msgid ""
+#~ "<p>Sets the size limit on the $XDG_RUNTIME_DIR runtime directory for each "
+#~ "user who logs in. Percentage of physical RAM.</p>"
+#~ msgstr ""
+#~ "<p>Configura o limite de tamanho da pasta de execução $XDG_RUNTIME_DIR "
+#~ "para cada usuário que se autenticar. É uma porcentagem da RAM física.</p>"
+
+#~ msgid ""
+#~ "<p>Controls whether System V and POSIX IPC objects belonging to the user "
+#~ "shall be removed when the user fully logs out.</p>"
+#~ msgstr ""
+#~ "<p>Controla se os objetos IPC do System V e do POSIX que pertencem ao "
+#~ "usuário deverão ser removidos quando ele encerrar sua sessão por completo."
+#~ "</p>"
+
+#~ msgid ""
+#~ "<p>Controls where to store cores. When <i>none</i>, the coredumps will be "
+#~ "logged but not stored permanently. When <i>external</i>, cores will be "
+#~ "stored in /var/lib/systemd/coredump. When <i>journal</i>, cores will be "
+#~ "stored in the journal and rotated following normal journal rotation "
+#~ "patterns.</p>"
+#~ msgstr ""
+#~ "<p>Controla onde são armazenados os arquivos 'core'. Quando for igual a "
+#~ "<i>none</i>, os 'coredumps' serão apontados mas não armazenados de forma "
+#~ "permanente. Quando o valor é <i>external</i>, os arquivos serão "
+#~ "armazenados em /var/lib/systemd/coredump. Quando for igual a <i>journal</"
+#~ "i>, arquivos serão armazenados no registro de transações e serão girados "
+#~ "de acordo com os padrões de rotação normais.</p>"
+
+#~ msgid "<p>Controls compression for external storage.</p>"
+#~ msgstr "<p>Controla a compressão para armazenamento externo.</p>"
+
+#~ msgid ""
+#~ "<p>The maximum size of a core which will be processed. Coredumps "
+#~ "exceeding this size will be logged, but the backtrace will not be "
+#~ "generated and the core will not be stored.</p>"
+#~ msgstr ""
+#~ "<p>Tamanho máximo de um arquivo 'core' que será processado. Os coredumps "
+#~ "que ultrapassarem esse tamanho serão registrados, mas o backtrace não "
+#~ "será gerado e o arquivo não será armazenado.</p>"
+
+#~ msgid "<p>The maximum (uncompressed) size of a core to be saved.</p>"
+#~ msgstr ""
+#~ "<p>Tamanho máximo (sem compressão) de um arquivo 'core' a ser gravado.</p>"
+
+#~ msgid ""
+#~ "<p>Old coredumps are removed as soon as the total disk space taken up by "
+#~ "coredumps grows beyond this limit. Defaults to 10% of the total disk size."
+#~ "</p>"
+#~ msgstr ""
+#~ "<p>Os 'coredumps' antigos são removidos assim que o espaço total do disco "
+#~ "ocupado esses arquivos cresça além desse limite. O valor padrão é de 10% "
+#~ "do tamanho total do disco.</p>"
+
+#~ msgid ""
+#~ "<p>Minimum disk space to keep free. Defaults to 15% of the total disk "
+#~ "size.</p>"
+#~ msgstr ""
+#~ "<p>Espaço mínimo em disco para manter livre. O valor padrão é de 15% do "
+#~ "tamanho total do disco.</p>"
+
+#~ msgid "systemd-kcm"
+#~ msgstr "systemd-kcm"
+
+#~ msgid "KDE Systemd Control Module"
+#~ msgstr "Módulo de controle do Systemd para o KDE"
+
+#~ msgid "Main Developer"
+#~ msgstr "Desenvolvedor principal"
+
+#~ msgid "Unable to find directory with systemd configuration files."
+#~ msgstr ""
+#~ "Não foi possível encontrar o diretório com os arquivos de configuração do "
+#~ "systemd."
+
+#~ msgid "Snapshots"
+#~ msgstr "Capturas"
+
+#~ msgid ""
+#~ "\"%1\" is not a valid value for %2. Using default value for this "
+#~ "parameter."
+#~ msgstr ""
+#~ "\"%1\" não é um valor válido para o %2. Usando o valor padrão para este "
+#~ "parâmetro."
+
+#~ msgid "Failed to read %1/%2. Using default values."
+#~ msgstr "Não foi possível ler o %1/%2. Usando os valores padrão."
+
+#~ msgid "Load default settings for all files?"
+#~ msgstr "Carregar as configurações padrão para todos os arquivos?"
+
+#~ msgid "Unable to find directory for configuration files."
+#~ msgstr ""
+#~ "Não foi possível localizar o diretório para os arquivos de configuração."
+
+#~ msgid "Configuration files successfully written to: %1"
+#~ msgstr "Os arquivos de configuração foram gravados com sucesso em: %1"
+
+#~ msgid "&Isolate unit"
+#~ msgstr "&Isolar a unidade"
+
+#~ msgid "File to be written: %1/%2"
+#~ msgstr "Arquivo a ser gravado: %1/%2"
+
+#~ msgid "kcmsystemd"
+#~ msgstr "kcmsystemd"
+
+#~ msgid "Units"
+#~ msgstr "Unidades"
+
+#~ msgid "Conf"
+#~ msgstr "Configuração"
