@@ -18,11 +18,11 @@ Installation
 
 Dependencies
 ------------
-*   Qt >= 5.4
-*   KF5Auth
-*   KF5CoreAddons
-*   KF5Crash
-*   KF5I18n
+*   Qt >= 5.15.2
+*   KF5Auth >= 5.95.0
+*   KF5CoreAddons >= 5.95.0
+*   KF5Crash >= 5.95.0
+*   KF5I18n >= 5.95.0
 *   Systemd >= 209
 
 
