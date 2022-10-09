@@ -340,7 +340,7 @@ msgstr "Torna a carregar «systemd»"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all unit files"
-msgstr "Feu clic per tornar a carregar tots els fitxers de la unitat"
+msgstr "Feu clic per a tornar a carregar tots els fitxers de la unitat"
 
 #: src/mainwindow.cpp:1100
 #, kde-format
@@ -363,7 +363,7 @@ msgstr "Torna a carre&gar «systemd» de l'usuari"
 msgctxt "@info:tooltip"
 msgid "Click to reload all user unit files"
 msgstr ""
-"Feu clic per tornar a carregar tots els fitxers de la unitat de l'usuari"
+"Feu clic per a tornar a carregar tots els fitxers de la unitat de l'usuari"
 
 #: src/mainwindow.cpp:1114
 #, kde-format
