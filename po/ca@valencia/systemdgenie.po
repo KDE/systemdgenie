@@ -218,32 +218,32 @@ msgstr "Envia els missatges de diari a través de la xarxa"
 #: src/mainwindow.cpp:439
 #, kde-format
 msgid "Journal manager settings"
-msgstr "Configuració del gestor del diari"
+msgstr "Configureu el gestor del diari"
 
 #: src/mainwindow.cpp:442
 #, kde-format
 msgid "Login manager configuration"
-msgstr "Configuració de la gestió d'inici de sessió"
+msgstr "Configureu la gestió d'inici de sessió"
 
 #: src/mainwindow.cpp:445
 #, kde-format
 msgid "Network name resolution configuration"
-msgstr "Configuració de la resolució del nom de la xarxa"
+msgstr "Configureu la resolució del nom de la xarxa"
 
 #: src/mainwindow.cpp:448
 #, kde-format
 msgid "Systemd daemon configuration"
-msgstr "Configuració del dimoni «systemd»"
+msgstr "Configureu el dimoni «systemd»"
 
 #: src/mainwindow.cpp:451
 #, kde-format
 msgid "Time synchronization settings"
-msgstr "Configuració de la sincronització del temps"
+msgstr "Configureu la sincronització del temps"
 
 #: src/mainwindow.cpp:454
 #, kde-format
 msgid "Systemd user daemon configuration"
-msgstr "Configuració del dimoni d'usuari de «systemd»"
+msgstr "Configureu el dimoni d'usuari de «systemd»"
 
 #: src/mainwindow.cpp:817 src/mainwindow.cpp:826
 #, kde-format
