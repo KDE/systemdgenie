@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2021.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-09 00:49+0000\n"
-"PO-Revision-Date: 2022-10-20 12:03+0300\n"
+"PO-Revision-Date: 2023-01-27 20:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.08.1\n"
+"X-Generator: Lokalize 22.12.1\n"
 "X-POOTLE-MTIME: 1497621220.000000\n"
 
 #, kde-format
@@ -38,7 +38,7 @@ msgstr "SystemdGenie"
 #: src/main.cpp:45
 #, kde-format
 msgid "Systemd management utility"
-msgstr "Systemd yönetim uygulaması"
+msgstr "Systemd yönetim izlencesi"
 
 #: src/main.cpp:47
 #, kde-format
@@ -78,7 +78,7 @@ msgstr "Servisler"
 #: src/mainwindow.cpp:66
 #, kde-format
 msgid "Automounts"
-msgstr "Otomatik bağlamalar"
+msgstr "Otomatik Bağlamalar"
 
 #: src/mainwindow.cpp:66
 #, kde-format
@@ -154,7 +154,7 @@ msgstr "Kullanıcı Adı"
 #: src/mainwindow.cpp:378
 #, kde-format
 msgid "Seat ID"
-msgstr "Seat ID"
+msgstr "Koltuk Kimliği"
 
 #: src/mainwindow.cpp:400
 #, kde-format
