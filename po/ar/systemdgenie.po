@@ -808,7 +808,7 @@ msgstr "<br><i>لم تُعثر على مدخلات سجلّ لهذه الوحد�
 #~ msgstr "systemd-kcm"
 
 #~ msgid "KDE Systemd Control Module"
-#~ msgstr "وحدة تحكّم كدي ل‍ Systemd"
+#~ msgstr "وحدة تحكّم كِيدِي ل‍ Systemd"
 
 #~ msgid "Main Developer"
 #~ msgstr "المطوّر الرّئيسيّ"
