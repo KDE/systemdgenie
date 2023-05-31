@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
@@ -243,7 +243,6 @@ msgctxt "First part of 'Total: %1, %2, %3'"
 msgid "1 unit"
 msgid_plural "%1 units"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/mainwindow.cpp:819 src/mainwindow.cpp:828
 #, kde-format
@@ -251,7 +250,6 @@ msgctxt "Second part of 'Total: %1, %2, %3'"
 msgid "1 active"
 msgid_plural "%1 active"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/mainwindow.cpp:821 src/mainwindow.cpp:830
 #, kde-format
@@ -259,7 +257,6 @@ msgctxt "Third part of 'Total: %1, %2, %3'"
 msgid "1 displayed"
 msgid_plural "%1 displayed"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/mainwindow.cpp:823 src/mainwindow.cpp:832
 #, kde-format
