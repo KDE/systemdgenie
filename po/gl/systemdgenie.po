@@ -263,8 +263,8 @@ msgstr[1] "%1 activas"
 msgctxt "Third part of 'Total: %1, %2, %3'"
 msgid "1 displayed"
 msgid_plural "%1 displayed"
-msgstr[0] "1 mostrada"
-msgstr[1] "%1 mostradas"
+msgstr[0] "1 amosada"
+msgstr[1] "%1 amosadas"
 
 #: src/mainwindow.cpp:823 src/mainwindow.cpp:832
 #, kde-format
@@ -537,14 +537,14 @@ msgstr ""
 #: src/mainwindow.ui:86 src/mainwindow.ui:176
 #, kde-format
 msgid "Show inactive"
-msgstr "Mostrar as inactivas"
+msgstr "Amosar as inactivas"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUnits)
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUserUnits)
 #: src/mainwindow.ui:96 src/mainwindow.ui:183
 #, kde-format
 msgid "Show unloaded"
-msgstr "Mostrar as non cargadas"
+msgstr "Amosar as non cargadas"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabUserUnits)
 #: src/mainwindow.ui:165
