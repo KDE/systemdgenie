@@ -57,7 +57,7 @@ msgstr "Mantedor."
 #: src/mainwindow.cpp:50
 #, kde-format
 msgid "Unable to contact the systemd daemon. Quitting..."
-msgstr "Non se pode contactar co servizo de systemd. Saíndo…"
+msgstr "Non é posíbel contactar co servizo de systemd. Saíndo…"
 
 #: src/mainwindow.cpp:62
 #, kde-format
@@ -275,7 +275,7 @@ msgstr "Total: %1, %2, %3."
 #: src/mainwindow.cpp:857 src/mainwindow.cpp:1610
 #, kde-format
 msgid "Unable to authenticate/execute the action: %1"
-msgstr "Non se pode autenticar/executar a acción: %1"
+msgstr "Non é posíbel autenticar/executar a acción: %1"
 
 #: src/mainwindow.cpp:1037
 #, kde-format
@@ -497,7 +497,7 @@ msgid ""
 "Failed to open the unit file:\n"
 "%1"
 msgstr ""
-"Non se puido abrir o ficheiro de unidade:\n"
+"Non foi posíbel abrir o ficheiro de unidade:\n"
 "%1"
 
 #. i18n("Unit file successfully written."));
