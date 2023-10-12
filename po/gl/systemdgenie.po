@@ -150,7 +150,7 @@ msgstr "Identificador de usuario"
 #: src/mainwindow.cpp:377
 #, kde-format
 msgid "User Name"
-msgstr "Nome de usuario"
+msgstr "Nome de usuaria"
 
 #: src/mainwindow.cpp:378
 #, kde-format
