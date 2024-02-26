@@ -5,8 +5,6 @@ set(systemdgenie_SRCS main.cpp
                       unitmodel.cpp
                       sortfilterunitmodel.cpp)
 
-include_directories (${CMAKE_CURRENT_BINARY_DIR}/src)
-
 ki18n_wrap_ui(systemdgenie_SRCS mainwindow.ui)
 
 add_executable(systemdgenie ${systemdgenie_SRCS})
