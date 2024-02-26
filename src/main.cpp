@@ -30,11 +30,6 @@ int main(int argc, char *argv[])
 {
     QApplication application(argc, argv);
 
-    /**
-     * enable high dpi support
-     */
-    application.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-
     KCrash::initialize();
 
     KLocalizedString::setApplicationDomain("systemdgenie");
