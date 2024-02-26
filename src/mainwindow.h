@@ -106,7 +106,7 @@ private:
     void setupTimerlist();
     void setupConfFilelist();
     void authServiceAction(const QString &, const QString &, const QString &, const QString &, const QList<QVariant> &);
-    bool eventFilter(QObject *, QEvent*);
+    bool eventFilter(QObject *, QEvent*) override;
     void updateUnitCount();
     void displayMsgWidget(KMessageWidget::MessageType type, QString msg);
     void setupActions();

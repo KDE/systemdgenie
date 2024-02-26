@@ -29,10 +29,10 @@ class UnitModel : public QAbstractTableModel
 public:
     explicit UnitModel(QObject *parent = 0);
     explicit UnitModel(QObject *parent = 0, const QVector<SystemdUnit> *list = NULL, QString userBusPath = QString());
-    int rowCount(const QModelIndex & parent = QModelIndex()) const;
-    int columnCount(const QModelIndex & parent = QModelIndex()) const;
-    QVariant headerData(int section, Qt::Orientation orientation, int role) const;
-    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
+    int rowCount(const QModelIndex & parent = QModelIndex()) const override;
+    int columnCount(const QModelIndex & parent = QModelIndex()) const override;
+    QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
+    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const override;
 
 private:
     QStringList getLastJrnlEntries(QString unit) const;

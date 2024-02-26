@@ -35,7 +35,7 @@ public:
     void addFilterRegExp(filterType type, const QString &pattern);
 
 protected:
-    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
+    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
 
 private:
     QMap<filterType, QString> filtersMap;
