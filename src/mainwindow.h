@@ -189,7 +189,7 @@ private:
     QAction *m_terminateSessionAction;
     QAction *m_lockSessionAction;
 
-private slots:
+private Q_SLOTS:
     void quit();
 
     void updateActions();

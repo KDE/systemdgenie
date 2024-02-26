@@ -457,7 +457,7 @@ void MainWindow::setupConfFilelist()
 
     QFileSystemWatcher *m_fileWatcher = new QFileSystemWatcher;
     connect(m_fileWatcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::slotRefreshConfFileList);
-    foreach (const conffile &f, m_confFileList) {
+    for (const conffile &f : m_confFileList) {
         m_fileWatcher->addPath(f.filePath);
     }
 }
@@ -466,7 +466,7 @@ void MainWindow::slotRefreshConfFileList()
 {
     qDebug() << "Refreshing config files list...";
 
-    foreach (const conffile &f, m_confFileList) {
+    for (const conffile &f : m_confFileList) {
         if (!QFileInfo::exists(f.filePath)) {
             continue;
         }
@@ -563,7 +563,7 @@ void MainWindow::slotRefreshUnitsList(bool initial, dbusBus bus)
         m_systemUnitsList.clear();
         m_systemUnitsList = getUnitsFromDbus(sys);
         m_noActSystemUnits = 0;
-        foreach (const SystemdUnit &unit, m_systemUnitsList)
+        for (const SystemdUnit &unit : m_systemUnitsList)
         {
             if (unit.active_state == QLatin1String("active"))
                 m_noActSystemUnits++;
@@ -584,7 +584,7 @@ void MainWindow::slotRefreshUnitsList(bool initial, dbusBus bus)
         m_userUnitsList.clear();
         m_userUnitsList = getUnitsFromDbus(user);
         m_noActUserUnits = 0;
-        foreach (const SystemdUnit &unit, m_userUnitsList)
+        for (const SystemdUnit &unit : m_userUnitsList)
         {
             if (unit.active_state == QLatin1String("active"))
                 m_noActUserUnits++;
@@ -625,7 +625,7 @@ void MainWindow::slotRefreshSessionList()
     }
 
     // Iterate through the new list and compare to model
-    foreach (const SystemdSession &s, m_sessionList) {
+    for (const SystemdSession &s : m_sessionList) {
         // This is needed to get the "State" property
 
         QList<QStandardItem *> items = m_sessionModel->findItems(s.session_id, Qt::MatchExactly, 0);
@@ -664,7 +664,7 @@ void MainWindow::slotRefreshSessionList()
             }
         }
         // Delete the identified units from model
-        foreach (const QPersistentModelIndex &i, indexes)
+        for (const QPersistentModelIndex &i : indexes)
             m_sessionModel->removeRow(i.row());
     }
 
@@ -696,7 +696,7 @@ void MainWindow::slotRefreshTimerList()
     m_timerModel->removeRows(0, m_timerModel->rowCount());
 
     // Iterate through system unitlist and add timers to the model
-    foreach (const SystemdUnit &unit, m_systemUnitsList)
+    for (const SystemdUnit &unit : m_systemUnitsList)
     {
         if (unit.id.endsWith(QLatin1String(".timer")) &&
                 unit.load_state != QLatin1String("unloaded")) {
@@ -705,7 +705,7 @@ void MainWindow::slotRefreshTimerList()
     }
 
     // Iterate through user unitlist and add timers to the model
-    foreach (const SystemdUnit &unit, m_userUnitsList)
+    for (const SystemdUnit &unit : m_userUnitsList)
     {
         if (unit.id.endsWith(QLatin1String(".timer")) &&
                 unit.load_state != QLatin1String("unloaded")) {
@@ -1661,7 +1661,7 @@ QVector<SystemdUnit> MainWindow::getUnitsFromDbus(dbusBus bus)
         argUnitFiles.endArray();
 
         // Add unloaded units to the list
-        foreach (const unitfile &f, unitfileslist)
+        for (const unitfile &f : unitfileslist)
         {
             int index = list.indexOf(SystemdUnit(f.name.section(QLatin1Char('/'), -1)));
             if (index > -1)
@@ -1726,7 +1726,7 @@ QVariant MainWindow::getDbusProperty(QString prop, dbusIface ifaceName, QDBusObj
     QDBusInterface *iface = new QDBusInterface (conn, path.path(), ifc, abus, this);
     if (iface->isValid())
     {
-        r = iface->property(prop.toLatin1());
+        r = iface->property(prop.toLatin1().constData());
         delete iface;
         return r;
     }

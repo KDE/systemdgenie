@@ -255,14 +255,14 @@ QStringList UnitModel::getLastJrnlEntries(QString unit) const
 
     sd_journal_flush_matches(journal);
 
-    r = sd_journal_add_match(journal, match1.toUtf8(), 0);
+    r = sd_journal_add_match(journal, match1.toUtf8().constData(), 0);
     if (r != 0)
         return reply;
 
     if (!match2.isEmpty())
     {
         sd_journal_add_disjunction(journal);
-        r = sd_journal_add_match(journal, match2.toUtf8(), 0);
+        r = sd_journal_add_match(journal, match2.toUtf8().constData(), 0);
         if (r != 0)
             return reply;
     }
