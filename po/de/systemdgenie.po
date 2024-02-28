@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2024-02-28 00:39+0000\n"
 "PO-Revision-Date: 2021-05-28 05:19+0200\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -25,27 +25,27 @@ msgid "Your emails"
 msgstr "atalanttore@gmail.com"
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
-#: src/main.cpp:43 src/mainwindow.cpp:50 src/mainwindow.ui:14
+#: src/main.cpp:38 src/mainwindow.cpp:50 src/mainwindow.ui:14
 #, kde-format
 msgid "SystemdGenie"
 msgstr "SystemdGenie"
 
-#: src/main.cpp:45
+#: src/main.cpp:40
 #, kde-format
 msgid "Systemd management utility"
 msgstr "Systemd-Verwaltungsprogramm"
 
-#: src/main.cpp:47
+#: src/main.cpp:42
 #, kde-format
 msgid "(c) 2016, Ragnar Thomsen"
 msgstr "(c) 2016, Ragnar Thomsen"
 
-#: src/main.cpp:54
+#: src/main.cpp:49
 #, kde-format
 msgid "Ragnar Thomsen"
 msgstr "Ragnar Thomsen"
 
-#: src/main.cpp:55
+#: src/main.cpp:50
 #, kde-format
 msgid "Maintainer"
 msgstr "Betreuer"

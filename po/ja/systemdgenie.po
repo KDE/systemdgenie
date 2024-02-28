@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmsystemd\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2024-02-28 00:39+0000\n"
 "PO-Revision-Date: 2015-04-19 15:46-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -26,27 +26,27 @@ msgid "Your emails"
 msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
-#: src/main.cpp:43 src/mainwindow.cpp:50 src/mainwindow.ui:14
+#: src/main.cpp:38 src/mainwindow.cpp:50 src/mainwindow.ui:14
 #, kde-format
 msgid "SystemdGenie"
 msgstr ""
 
-#: src/main.cpp:45
+#: src/main.cpp:40
 #, kde-format
 msgid "Systemd management utility"
 msgstr ""
 
-#: src/main.cpp:47
+#: src/main.cpp:42
 #, kde-format
 msgid "(c) 2016, Ragnar Thomsen"
 msgstr ""
 
-#: src/main.cpp:54
+#: src/main.cpp:49
 #, kde-format
 msgid "Ragnar Thomsen"
 msgstr ""
 
-#: src/main.cpp:55
+#: src/main.cpp:50
 #, kde-format
 msgid "Maintainer"
 msgstr ""

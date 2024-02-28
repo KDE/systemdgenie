@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
-"PO-Revision-Date: 2024-02-26 21:30+0100\n"
+"POT-Creation-Date: 2024-02-28 00:39+0000\n"
+"PO-Revision-Date: 2024-02-27 21:53+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo.org>\n"
 "Language: eo\n"
@@ -21,35 +21,35 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Oliver Kellogg"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "okellogg@users.sourceforge.net"
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
-#: src/main.cpp:43 src/mainwindow.cpp:50 src/mainwindow.ui:14
+#: src/main.cpp:38 src/mainwindow.cpp:50 src/mainwindow.ui:14
 #, kde-format
 msgid "SystemdGenie"
 msgstr "SystemdGenie"
 
-#: src/main.cpp:45
+#: src/main.cpp:40
 #, kde-format
 msgid "Systemd management utility"
-msgstr ""
+msgstr "Systemd-administra utilaĵo"
 
-#: src/main.cpp:47
+#: src/main.cpp:42
 #, kde-format
 msgid "(c) 2016, Ragnar Thomsen"
-msgstr ""
+msgstr "(c) 2016, Ragnar Thomsen"
 
-#: src/main.cpp:54
+#: src/main.cpp:49
 #, kde-format
 msgid "Ragnar Thomsen"
 msgstr "Ragnar Thomsen"
 
-#: src/main.cpp:55
+#: src/main.cpp:50
 #, kde-format
 msgid "Maintainer"
 msgstr "Prizorganto"
@@ -57,12 +57,12 @@ msgstr "Prizorganto"
 #: src/mainwindow.cpp:50
 #, kde-format
 msgid "Unable to contact the systemd daemon. Quitting..."
-msgstr ""
+msgstr "Ne eblas kontakti la systemd-demonon. Rezignante..."
 
 #: src/mainwindow.cpp:62
 #, kde-format
 msgid "User dbus not found. Support for user units disabled."
-msgstr ""
+msgstr "Uzanto dbus ne trovita. Subteno por uzantunuoj malebligita."
 
 #: src/mainwindow.cpp:66
 #, kde-format
@@ -77,7 +77,7 @@ msgstr "Servoj"
 #: src/mainwindow.cpp:66
 #, kde-format
 msgid "Automounts"
-msgstr ""
+msgstr "Aŭtomataj muntoj"
 
 #: src/mainwindow.cpp:66
 #, kde-format
@@ -87,7 +87,7 @@ msgstr "Aparatoj"
 #: src/mainwindow.cpp:67
 #, kde-format
 msgid "Mounts"
-msgstr ""
+msgstr "Muntoj"
 
 #: src/mainwindow.cpp:67
 #, kde-format
@@ -97,12 +97,12 @@ msgstr "Vojetoj"
 #: src/mainwindow.cpp:67
 #, kde-format
 msgid "Scopes"
-msgstr ""
+msgstr "Ampleksoj"
 
 #: src/mainwindow.cpp:67
 #, kde-format
 msgid "Slices"
-msgstr ""
+msgstr "Tranĉaĵoj"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabTimers)
 #: src/mainwindow.cpp:68 src/mainwindow.ui:343
@@ -118,7 +118,7 @@ msgstr "Ingoj"
 #: src/mainwindow.cpp:68
 #, kde-format
 msgid "Swaps"
-msgstr ""
+msgstr "Interŝanĝoj"
 
 #: src/mainwindow.cpp:68
 #, kde-format
@@ -133,7 +133,7 @@ msgstr "ID de seanco"
 #: src/mainwindow.cpp:374
 #, kde-format
 msgid "Session Object Path"
-msgstr ""
+msgstr "Vojo de Seanc-Objekto"
 
 #: src/mainwindow.cpp:375
 #, kde-format
@@ -148,12 +148,12 @@ msgstr "Uzant-ID"
 #: src/mainwindow.cpp:377
 #, kde-format
 msgid "User Name"
-msgstr ""
+msgstr "Uzantnomo"
 
 #: src/mainwindow.cpp:378
 #, kde-format
 msgid "Seat ID"
-msgstr ""
+msgstr "Sidlok-ID"
 
 #: src/mainwindow.cpp:400
 #, kde-format
@@ -183,7 +183,7 @@ msgstr "Pasita"
 #: src/mainwindow.cpp:405
 #, kde-format
 msgid "Activates"
-msgstr ""
+msgstr "Aktivigas"
 
 #: src/mainwindow.cpp:423
 #, kde-format
@@ -203,77 +203,77 @@ msgstr "Priskribo"
 #: src/mainwindow.cpp:433
 #, kde-format
 msgid "Coredump generation and storage"
-msgstr ""
+msgstr "Nekropsio-generado kaj konservado"
 
 #: src/mainwindow.cpp:436
 #, kde-format
 msgid "Send journal messages over network"
-msgstr ""
+msgstr "Sendi taglibrajn mesaĝojn per reto"
 
 #: src/mainwindow.cpp:439
 #, kde-format
 msgid "Journal manager settings"
-msgstr ""
+msgstr "Agordo de taglibra administrilo"
 
 #: src/mainwindow.cpp:442
 #, kde-format
 msgid "Login manager configuration"
-msgstr ""
+msgstr "Agordo de ensaluta administrilo"
 
 #: src/mainwindow.cpp:445
 #, kde-format
 msgid "Network name resolution configuration"
-msgstr ""
+msgstr "Agordo de retnom-solvado"
 
 #: src/mainwindow.cpp:448
 #, kde-format
 msgid "Systemd daemon configuration"
-msgstr ""
+msgstr "Agordo de Systemd-demono"
 
 #: src/mainwindow.cpp:451
 #, kde-format
 msgid "Time synchronization settings"
-msgstr ""
+msgstr "Agordo de temposinkronigo"
 
 #: src/mainwindow.cpp:454
 #, kde-format
 msgid "Systemd user daemon configuration"
-msgstr ""
+msgstr "Agordo de Systemd-uzantdemono"
 
 #: src/mainwindow.cpp:817 src/mainwindow.cpp:826
 #, kde-format
 msgctxt "First part of 'Total: %1, %2, %3'"
 msgid "1 unit"
 msgid_plural "%1 units"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 unuo"
+msgstr[1] "%1 unuoj"
 
 #: src/mainwindow.cpp:819 src/mainwindow.cpp:828
 #, kde-format
 msgctxt "Second part of 'Total: %1, %2, %3'"
 msgid "1 active"
 msgid_plural "%1 active"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 aktiva"
+msgstr[1] "%1 aktivaj"
 
 #: src/mainwindow.cpp:821 src/mainwindow.cpp:830
 #, kde-format
 msgctxt "Third part of 'Total: %1, %2, %3'"
 msgid "1 displayed"
 msgid_plural "%1 displayed"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 montrita"
+msgstr[1] "%1 montritaj"
 
 #: src/mainwindow.cpp:823 src/mainwindow.cpp:832
 #, kde-format
 msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
 msgid "Total: %1, %2, %3"
-msgstr ""
+msgstr "Sumoj: %1, %2, %3"
 
 #: src/mainwindow.cpp:857 src/mainwindow.cpp:1610
 #, kde-format
 msgid "Unable to authenticate/execute the action: %1"
-msgstr ""
+msgstr "Ne eblas aŭtentikigi/efektivigi la agon: %1"
 
 #: src/mainwindow.cpp:1037
 #, kde-format
@@ -289,111 +289,111 @@ msgstr "Refreŝigi"
 #: src/mainwindow.cpp:1045
 #, kde-format
 msgid "Start Unit"
-msgstr ""
+msgstr "Startigi Unuon"
 
 #: src/mainwindow.cpp:1051
 #, kde-format
 msgid "Stop Unit"
-msgstr ""
+msgstr "Haltigi Unuon"
 
 #: src/mainwindow.cpp:1057
 #, kde-format
 msgid "Reload Unit"
-msgstr ""
+msgstr "Reŝargi Unuon"
 
 #: src/mainwindow.cpp:1063
 #, kde-format
 msgid "Restart Unit"
-msgstr ""
+msgstr "Restartigi Unuon"
 
 #: src/mainwindow.cpp:1069
 #, kde-format
 msgid "Enable Unit"
-msgstr ""
+msgstr "Ebligi Unuon"
 
 #: src/mainwindow.cpp:1075
 #, kde-format
 msgid "Disable Unit"
-msgstr ""
+msgstr "Malebligi Unuon"
 
 #: src/mainwindow.cpp:1081
 #, kde-format
 msgid "Mask Unit"
-msgstr ""
+msgstr "Maski Unuon"
 
 #: src/mainwindow.cpp:1087
 #, kde-format
 msgid "Unmask Unit"
-msgstr ""
+msgstr "Malmaski Unuon"
 
 #: src/mainwindow.cpp:1093
 #, kde-format
 msgid "Re&load systemd"
-msgstr ""
+msgstr "Re&ŝargi systemd"
 
 #: src/mainwindow.cpp:1094
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all unit files"
-msgstr ""
+msgstr "Alklaku por reŝargi ĉiujn unuodosierojn"
 
 #: src/mainwindow.cpp:1100
 #, kde-format
 msgid "Re-e&xecute systemd"
-msgstr ""
+msgstr "Re-e&fektivigi systemd"
 
 #: src/mainwindow.cpp:1101
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the systemd daemon"
-msgstr ""
+msgstr "Alklaku por reruligi la systemd-demonon"
 
 #: src/mainwindow.cpp:1107
 #, kde-format
 msgid "Re&load user systemd"
-msgstr ""
+msgstr "Re&ŝargi uzant-systemd"
 
 #: src/mainwindow.cpp:1108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all user unit files"
-msgstr ""
+msgstr "Alklaku por reŝargi ĉiujn unuodosierojn de uzantoj"
 
 #: src/mainwindow.cpp:1114
 #, kde-format
 msgid "Re-e&xecute user systemd"
-msgstr ""
+msgstr "Re-e&fektivigi uzant-systemd"
 
 #: src/mainwindow.cpp:1115
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the user systemd daemon"
-msgstr ""
+msgstr "Alklaku por reruligi la uzantan systemd-demonon"
 
 #: src/mainwindow.cpp:1121
 #, kde-format
 msgid "Edit Unit File"
-msgstr ""
+msgstr "Redakti Unuo-Dosieron"
 
 #: src/mainwindow.cpp:1127
 #, kde-format
 msgid "Edit Configuration File"
-msgstr ""
+msgstr "Redakti Agord-Dosieron"
 
 #: src/mainwindow.cpp:1133
 #, kde-format
 msgid "Open Man Page"
-msgstr ""
+msgstr "Malfermi Manlibran Paĝon"
 
 #: src/mainwindow.cpp:1139
 #, kde-format
 msgid "Activate Session"
-msgstr ""
+msgstr "Aktivigi Seancon"
 
 #: src/mainwindow.cpp:1145
 #, kde-format
 msgid "Terminate Session"
-msgstr ""
+msgstr "Fini Seancon"
 
 #: src/mainwindow.cpp:1151
 #, kde-format
@@ -406,31 +406,33 @@ msgid ""
 "KHelpCenter executable not found in path. Please install KHelpCenter to view "
 "man pages."
 msgstr ""
+"KHelpCenter efektivigebla ne trovita en vojo. Bonvolu instali KHelpCenter "
+"por vidi 'man'-paĝojn."
 
 #: src/mainwindow.cpp:1303
 #, kde-format
 msgid "<b>VT:</b> %1"
-msgstr ""
+msgstr "<b>VT:</b> %1"
 
 #: src/mainwindow.cpp:1308
 #, kde-format
 msgid "<br><b>Remote host:</b> %1"
-msgstr ""
+msgstr "<br><b>Fora gastiganto:</b> %1"
 
 #: src/mainwindow.cpp:1309
 #, kde-format
 msgid "<br><b>Remote user:</b> %1"
-msgstr ""
+msgstr "<br><b>Fora uzanto:</b> %1"
 
 #: src/mainwindow.cpp:1311
 #, kde-format
 msgid "<br><b>Service:</b> %1"
-msgstr ""
+msgstr "<br><b>Servo:</b> %1"
 
 #: src/mainwindow.cpp:1312
 #, kde-format
 msgid "<br><b>Leader (PID):</b> %1"
-msgstr ""
+msgstr "<br><b>Gvidanto (PID):</b> %1"
 
 #: src/mainwindow.cpp:1315
 #, kde-format
@@ -440,42 +442,42 @@ msgstr "<br><b>Tipo:</b> %1"
 #: src/mainwindow.cpp:1317
 #, kde-format
 msgid " (display %1)"
-msgstr ""
+msgstr " (ekrano %1)"
 
 #: src/mainwindow.cpp:1327
 #, kde-format
 msgid "<br><b>Class:</b> %1"
-msgstr ""
+msgstr "<br><b>Klaso:</b> %1"
 
 #: src/mainwindow.cpp:1328
 #, kde-format
 msgid "<br><b>State:</b> %1"
-msgstr ""
+msgstr "<br><b>Stato:</b> %1"
 
 #: src/mainwindow.cpp:1329
 #, kde-format
 msgid "<br><b>Scope:</b> %1"
-msgstr ""
+msgstr "<br><b>Amplekso:</b> %1"
 
 #: src/mainwindow.cpp:1332
 #, kde-format
 msgid "<br><b>Created: </b>"
-msgstr ""
+msgstr "<br><b>Kreita: </b>"
 
 #: src/mainwindow.cpp:1361
 #, kde-format
 msgid "%1: Systemd daemon reloaded..."
-msgstr ""
+msgstr "%1: Systemd-demono reŝargita..."
 
 #: src/mainwindow.cpp:1372
 #, kde-format
 msgid "%1: User daemon reloaded..."
-msgstr ""
+msgstr "%1: Uzanta demono reŝargita..."
 
 #: src/mainwindow.cpp:1415
 #, kde-format
 msgid "%1: System units changed..."
-msgstr ""
+msgstr "%1: Sistemunuoj ŝanĝiĝis..."
 
 #: src/mainwindow.cpp:1562
 #, kde-format
@@ -485,7 +487,7 @@ msgstr "Redaktante %1"
 #: src/mainwindow.cpp:1574
 #, kde-format
 msgid "Editing file: %1"
-msgstr ""
+msgstr "Redakta dosiero: %1"
 
 #: src/mainwindow.cpp:1584
 #, kde-format
@@ -493,63 +495,66 @@ msgid ""
 "Failed to open the unit file:\n"
 "%1"
 msgstr ""
+"Malsukcesis malfermi la unuodosieron:\n"
+"%1"
 
 #. i18n("Unit file successfully written."));
 #: src/mainwindow.cpp:1614
 #, kde-format
 msgid "%1: %2 successfully written..."
-msgstr ""
+msgstr "%1: %2 sukcese skribita..."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
 #: src/mainwindow.ui:52
 #, kde-format
 msgid "System Units"
-msgstr ""
+msgstr "Sistemunuoj"
 
 #. i18n: ectx: property (text), widget (QLabel, lblUnitCount)
 #. i18n: ectx: property (text), widget (QLabel, lblUserUnitCount)
 #: src/mainwindow.ui:58 src/mainwindow.ui:236
 #, kde-format
 msgid "Overall stats:"
-msgstr ""
+msgstr "Ĝeneralaj statistikoj:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbUnitTypes)
 #: src/mainwindow.ui:73
 #, kde-format
 msgid "<html><head/><body><p>Filter unit types.</p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p>Filtrilaj unuotipoj.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUnits)
 #: src/mainwindow.ui:83
 #, kde-format
 msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
 msgstr ""
+"<html><head/><body><p> Ŝalku montri neaktivajn unuojn.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUnits)
 #. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUserUnits)
 #: src/mainwindow.ui:86 src/mainwindow.ui:176
 #, kde-format
 msgid "Show inactive"
-msgstr ""
+msgstr "Montri neaktivajn"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUnits)
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUserUnits)
 #: src/mainwindow.ui:96 src/mainwindow.ui:183
 #, kde-format
 msgid "Show unloaded"
-msgstr ""
+msgstr "Montri malŝargitajn"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabUserUnits)
 #: src/mainwindow.ui:165
 #, kde-format
 msgid "User Units"
-msgstr ""
+msgstr "Uzant-Unuoj"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabConf)
 #: src/mainwindow.ui:244
 #, kde-format
 msgid "Config Files"
-msgstr ""
+msgstr "Agordaj Dosieroj"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabSessions)
 #: src/mainwindow.ui:289
@@ -573,7 +578,7 @@ msgstr "&Vido"
 #: src/systemdgenieui.rc:17
 #, kde-format
 msgid "&Daemon"
-msgstr ""
+msgstr "&Demono"
 
 #. i18n: ectx: Menu (unit)
 #: src/systemdgenieui.rc:25
@@ -591,13 +596,13 @@ msgstr "&Seanco"
 #: src/systemdgenieui.rc:49
 #, kde-format
 msgid "Unit Toolbar"
-msgstr ""
+msgstr "Unuo-Ilobreto"
 
 #. i18n: ectx: ToolBar (confFileToolBar)
 #: src/systemdgenieui.rc:56
 #, kde-format
 msgid "Config File Toolbar"
-msgstr ""
+msgstr "Agord-Dosiera Ilobreto"
 
 #: src/unitmodel.cpp:54
 #, kde-format
@@ -607,59 +612,59 @@ msgstr "Unuo"
 #: src/unitmodel.cpp:56
 #, kde-format
 msgid "Load State"
-msgstr ""
+msgstr "Ŝargostato"
 
 #: src/unitmodel.cpp:58
 #, kde-format
 msgid "Active State"
-msgstr ""
+msgstr "Aktiva Stato"
 
 #: src/unitmodel.cpp:60
 #, kde-format
 msgid "Unit State"
-msgstr ""
+msgstr "Unuostato"
 
 #: src/unitmodel.cpp:142
 #, kde-format
 msgid "<b>Description: </b>"
-msgstr ""
+msgstr "<b>Priskribo: </b>"
 
 #: src/unitmodel.cpp:147
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
-msgstr ""
+msgstr "<br><b>Unuodosiero: </b>%1"
 
 #: src/unitmodel.cpp:148 src/unitmodel.cpp:198
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
-msgstr ""
+msgstr "<br><b>Dosierstato de unuo: </b>"
 
 #: src/unitmodel.cpp:154
 #, kde-format
 msgid "<br><b>Source path: </b>%1"
-msgstr ""
+msgstr "<br><b>Fontovojo: </b>%1"
 
 #: src/unitmodel.cpp:158
 #, kde-format
 msgid "<br><b>Activated: </b>"
-msgstr ""
+msgstr "<br><b>Aktivigita: </b>"
 
 #: src/unitmodel.cpp:169
 #, kde-format
 msgid "<br><b>Deactivated: </b>"
-msgstr ""
+msgstr "<br><b>Malaktivigita: </b>"
 
 #: src/unitmodel.cpp:193
 #, kde-format
 msgid "<b>Unit file: </b>"
-msgstr ""
+msgstr "<b>Unuodosiero: </b>"
 
 #: src/unitmodel.cpp:207
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
-msgstr ""
+msgstr "<hr><b>Lastaj protokolaj enskriboj:</b>"
 
 #: src/unitmodel.cpp:210
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
-msgstr ""
+msgstr "<br><i>Neniaj protokoloj trovitaj por ĉi tiu unuo.</i>"
