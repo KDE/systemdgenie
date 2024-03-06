@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-28 00:39+0000\n"
-"PO-Revision-Date: 2024-03-04 12:08+0100\n"
+"PO-Revision-Date: 2024-03-05 11:38+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -56,12 +56,13 @@ msgstr "Mantenitor"
 #: src/mainwindow.cpp:50
 #, kde-format
 msgid "Unable to contact the systemd daemon. Quitting..."
-msgstr ""
+msgstr "Incapace a continger le demon de systemd. Abandona ..."
 
 #: src/mainwindow.cpp:62
 #, kde-format
 msgid "User dbus not found. Support for user units disabled."
 msgstr ""
+"Dbus de usator non trovate. Supporto per unitate de usator dishabilitate."
 
 #: src/mainwindow.cpp:66
 #, kde-format
@@ -86,7 +87,7 @@ msgstr "Dispositivos"
 #: src/mainwindow.cpp:67
 #, kde-format
 msgid "Mounts"
-msgstr ""
+msgstr "Monta"
 
 #: src/mainwindow.cpp:67
 #, kde-format
@@ -202,42 +203,42 @@ msgstr "Description"
 #: src/mainwindow.cpp:433
 #, kde-format
 msgid "Coredump generation and storage"
-msgstr ""
+msgstr "Generation e immagazinage de Coredump (instantaneo de memoria)"
 
 #: src/mainwindow.cpp:436
 #, kde-format
 msgid "Send journal messages over network"
-msgstr ""
+msgstr "Invia messages de jornal supra le rete "
 
 #: src/mainwindow.cpp:439
 #, kde-format
 msgid "Journal manager settings"
-msgstr ""
+msgstr "Preferentia de gerente de Jornal"
 
 #: src/mainwindow.cpp:442
 #, kde-format
 msgid "Login manager configuration"
-msgstr ""
+msgstr "Configuration de gerente de accesso (login)"
 
 #: src/mainwindow.cpp:445
 #, kde-format
 msgid "Network name resolution configuration"
-msgstr ""
+msgstr "Configuration de resolution de nomine de rete"
 
 #: src/mainwindow.cpp:448
 #, kde-format
 msgid "Systemd daemon configuration"
-msgstr ""
+msgstr "Configuration de demon de Systemd"
 
 #: src/mainwindow.cpp:451
 #, kde-format
 msgid "Time synchronization settings"
-msgstr ""
+msgstr "Preferentias de synchronisation de tempore"
 
 #: src/mainwindow.cpp:454
 #, kde-format
 msgid "Systemd user daemon configuration"
-msgstr ""
+msgstr "Configuration de demon de usator de systemd"
 
 #: src/mainwindow.cpp:817 src/mainwindow.cpp:826
 #, kde-format
@@ -345,39 +346,39 @@ msgstr "Re-e&xecuta systemd"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the systemd daemon"
-msgstr ""
+msgstr "Clicca per re-executar le demon de systemd"
 
 #: src/mainwindow.cpp:1107
 #, kde-format
 msgid "Re&load user systemd"
-msgstr ""
+msgstr "Recarga &le systemd de usator"
 
 #: src/mainwindow.cpp:1108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all user unit files"
-msgstr ""
+msgstr "Clicca per recargar omne files de unitate de usator"
 
 #: src/mainwindow.cpp:1114
 #, kde-format
 msgid "Re-e&xecute user systemd"
-msgstr ""
+msgstr "Re-e&xecuta systemd de usator"
 
 #: src/mainwindow.cpp:1115
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the user systemd daemon"
-msgstr ""
+msgstr "Clicca per re-executar le demon de systemd de usator"
 
 #: src/mainwindow.cpp:1121
 #, kde-format
 msgid "Edit Unit File"
-msgstr ""
+msgstr "Modifica File de Unitate"
 
 #: src/mainwindow.cpp:1127
 #, kde-format
 msgid "Edit Configuration File"
-msgstr ""
+msgstr "Modifica File de Configuration"
 
 #: src/mainwindow.cpp:1133
 #, kde-format
@@ -405,6 +406,8 @@ msgid ""
 "KHelpCenter executable not found in path. Please install KHelpCenter to view "
 "man pages."
 msgstr ""
+"Executabile de KHelpCenter non trovate in percurso. Pro favor tu installa "
+"KHelpCenter per vider paginas de man."
 
 #: src/mainwindow.cpp:1303
 #, kde-format
@@ -414,12 +417,12 @@ msgstr "<b>VT:</b> %1"
 #: src/mainwindow.cpp:1308
 #, kde-format
 msgid "<br><b>Remote host:</b> %1"
-msgstr ""
+msgstr "<br><b>Hospite remote :</b> %1"
 
 #: src/mainwindow.cpp:1309
 #, kde-format
 msgid "<br><b>Remote user:</b> %1"
-msgstr ""
+msgstr "<br><b>Usator Remote:</b> %1"
 
 #: src/mainwindow.cpp:1311
 #, kde-format
@@ -429,7 +432,7 @@ msgstr "<br><b>Servicio:</b> %1"
 #: src/mainwindow.cpp:1312
 #, kde-format
 msgid "<br><b>Leader (PID):</b> %1"
-msgstr ""
+msgstr "<br><b>Leader (PID):</b> %1"
 
 #: src/mainwindow.cpp:1315
 #, kde-format
@@ -464,17 +467,17 @@ msgstr "<br><b>Create: </b>"
 #: src/mainwindow.cpp:1361
 #, kde-format
 msgid "%1: Systemd daemon reloaded..."
-msgstr ""
+msgstr "%1: Demon de Systemd recargate..."
 
 #: src/mainwindow.cpp:1372
 #, kde-format
 msgid "%1: User daemon reloaded..."
-msgstr ""
+msgstr "%1: Demon de usator recargate..."
 
 #: src/mainwindow.cpp:1415
 #, kde-format
 msgid "%1: System units changed..."
-msgstr ""
+msgstr "%1: unitates de Systema modificate..."
 
 #: src/mainwindow.cpp:1562
 #, kde-format
@@ -492,63 +495,66 @@ msgid ""
 "Failed to open the unit file:\n"
 "%1"
 msgstr ""
+"Falleva a aperir le file de unitate:\n"
+"%1"
 
 #. i18n("Unit file successfully written."));
 #: src/mainwindow.cpp:1614
 #, kde-format
 msgid "%1: %2 successfully written..."
-msgstr ""
+msgstr "%1: %2 scribite con successo..."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
 #: src/mainwindow.ui:52
 #, kde-format
 msgid "System Units"
-msgstr ""
+msgstr "Unitates de Systema"
 
 #. i18n: ectx: property (text), widget (QLabel, lblUnitCount)
 #. i18n: ectx: property (text), widget (QLabel, lblUserUnitCount)
 #: src/mainwindow.ui:58 src/mainwindow.ui:236
 #, kde-format
 msgid "Overall stats:"
-msgstr ""
+msgstr "Statisticas Global:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbUnitTypes)
 #: src/mainwindow.ui:73
 #, kde-format
 msgid "<html><head/><body><p>Filter unit types.</p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p>Filtra typos de  unitate.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUnits)
 #: src/mainwindow.ui:83
 #, kde-format
 msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Alterna monstrar unitates inactive.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUnits)
 #. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUserUnits)
 #: src/mainwindow.ui:86 src/mainwindow.ui:176
 #, kde-format
 msgid "Show inactive"
-msgstr ""
+msgstr "Monstra inactive"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUnits)
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUserUnits)
 #: src/mainwindow.ui:96 src/mainwindow.ui:183
 #, kde-format
 msgid "Show unloaded"
-msgstr ""
+msgstr "Monstra non cargate"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabUserUnits)
 #: src/mainwindow.ui:165
 #, kde-format
 msgid "User Units"
-msgstr ""
+msgstr "Unitates de usator"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabConf)
 #: src/mainwindow.ui:244
 #, kde-format
 msgid "Config Files"
-msgstr ""
+msgstr "Files de configurar"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabSessions)
 #: src/mainwindow.ui:289
@@ -596,7 +602,7 @@ msgstr "Barra de Instrumento de Unitate"
 #: src/systemdgenieui.rc:56
 #, kde-format
 msgid "Config File Toolbar"
-msgstr ""
+msgstr "Barra de instrumento de File de configurar"
 
 #: src/unitmodel.cpp:54
 #, kde-format
@@ -606,17 +612,17 @@ msgstr "Unitate"
 #: src/unitmodel.cpp:56
 #, kde-format
 msgid "Load State"
-msgstr ""
+msgstr "Carga Stato"
 
 #: src/unitmodel.cpp:58
 #, kde-format
 msgid "Active State"
-msgstr ""
+msgstr "Stato Active"
 
 #: src/unitmodel.cpp:60
 #, kde-format
 msgid "Unit State"
-msgstr ""
+msgstr "Stato de Unitate"
 
 #: src/unitmodel.cpp:142
 #, kde-format
@@ -626,17 +632,17 @@ msgstr "<b>Description: </b>"
 #: src/unitmodel.cpp:147
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
-msgstr ""
+msgstr "<br><b>File de Unitate: </b>%1"
 
 #: src/unitmodel.cpp:148 src/unitmodel.cpp:198
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
-msgstr ""
+msgstr "<br><b>Stato de File de Unitate: </b>"
 
 #: src/unitmodel.cpp:154
 #, kde-format
 msgid "<br><b>Source path: </b>%1"
-msgstr ""
+msgstr "<br><b>Percurso de Fonte: </b>%1"
 
 #: src/unitmodel.cpp:158
 #, kde-format
@@ -651,14 +657,14 @@ msgstr "<br><b>Deactivate: </b>"
 #: src/unitmodel.cpp:193
 #, kde-format
 msgid "<b>Unit file: </b>"
-msgstr ""
+msgstr "<b>File de Unitate: </b>"
 
 #: src/unitmodel.cpp:207
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
-msgstr ""
+msgstr "<hr><b>Ultime entratas de regiostro:</b>"
 
 #: src/unitmodel.cpp:210
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
-msgstr ""
+msgstr "<br><i>Nulle entratas de registro trovate per iste unitate.</i>"
