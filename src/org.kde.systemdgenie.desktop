@@ -105,6 +105,7 @@ Comment[pt_BR]=Gerenciar o serviço systemd
 Comment[ro]=Gestionează demonul systemd
 Comment[sl]=Upravljajte z ozadnjim programom systemd
 Comment[sv]=Hantera systemd-demonen
+Comment[ta]=systemd பின்னணி சேவையை நிர்வகிக்க உதவும்
 Comment[tr]=Systemd ardalan sürecini yönet
 Comment[uk]=Керування фоновою службою systemd
 Comment[x-test]=xxManage the systemd daemonxx
