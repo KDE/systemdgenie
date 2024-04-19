@@ -1,0 +1,675 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the systemdgenie package.
+#
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: systemdgenie\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-02-28 00:39+0000\n"
+"PO-Revision-Date: 2024-04-18 08:52+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "צוות התרגום של KDE ישראל"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-l10n-he@kde.org"
+
+#. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
+#: src/main.cpp:38 src/mainwindow.cpp:50 src/mainwindow.ui:14
+#, kde-format
+msgid "SystemdGenie"
+msgstr "SystemdGenie"
+
+#: src/main.cpp:40
+#, kde-format
+msgid "Systemd management utility"
+msgstr "כלי לניהול systemd"
+
+#: src/main.cpp:42
+#, kde-format
+msgid "(c) 2016, Ragnar Thomsen"
+msgstr "(c) 2016, רגנר תומסן"
+
+#: src/main.cpp:49
+#, kde-format
+msgid "Ragnar Thomsen"
+msgstr "רגנר תומסן"
+
+#: src/main.cpp:50
+#, kde-format
+msgid "Maintainer"
+msgstr "מתחזק"
+
+#: src/mainwindow.cpp:50
+#, kde-format
+msgid "Unable to contact the systemd daemon. Quitting..."
+msgstr "לא ניתן ליצור קשר עם סוכן systemd. היישום נסגר…"
+
+#: src/mainwindow.cpp:62
+#, kde-format
+msgid "User dbus not found. Support for user units disabled."
+msgstr "המשתמש dbus לא נמצא. התמיכה ביחידות משתמשים מושבתת."
+
+#: src/mainwindow.cpp:66
+#, kde-format
+msgid "All"
+msgstr "הכול"
+
+#: src/mainwindow.cpp:66
+#, kde-format
+msgid "Services"
+msgstr "שירותים"
+
+#: src/mainwindow.cpp:66
+#, kde-format
+msgid "Automounts"
+msgstr "עיגונים אוטומטיים"
+
+#: src/mainwindow.cpp:66
+#, kde-format
+msgid "Devices"
+msgstr "התקנים"
+
+#: src/mainwindow.cpp:67
+#, kde-format
+msgid "Mounts"
+msgstr "עיגונים"
+
+#: src/mainwindow.cpp:67
+#, kde-format
+msgid "Paths"
+msgstr "נתיבים"
+
+#: src/mainwindow.cpp:67
+#, kde-format
+msgid "Scopes"
+msgstr "טווחים"
+
+#: src/mainwindow.cpp:67
+#, kde-format
+msgid "Slices"
+msgstr "פילוחים"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabTimers)
+#: src/mainwindow.cpp:68 src/mainwindow.ui:343
+#, kde-format
+msgid "Timers"
+msgstr "קוצבי זמן"
+
+#: src/mainwindow.cpp:68
+#, kde-format
+msgid "Sockets"
+msgstr "שקעים"
+
+#: src/mainwindow.cpp:68
+#, kde-format
+msgid "Swaps"
+msgstr "שטחי החלפה"
+
+#: src/mainwindow.cpp:68
+#, kde-format
+msgid "Targets"
+msgstr "יעדים"
+
+#: src/mainwindow.cpp:373
+#, kde-format
+msgid "Session ID"
+msgstr "מזהה הפעלה"
+
+#: src/mainwindow.cpp:374
+#, kde-format
+msgid "Session Object Path"
+msgstr "נתיב עצם הפעלה"
+
+#: src/mainwindow.cpp:375
+#, kde-format
+msgid "State"
+msgstr "מצב"
+
+#: src/mainwindow.cpp:376
+#, kde-format
+msgid "User ID"
+msgstr "מזהה משתמש"
+
+#: src/mainwindow.cpp:377
+#, kde-format
+msgid "User Name"
+msgstr "שם משתמש"
+
+#: src/mainwindow.cpp:378
+#, kde-format
+msgid "Seat ID"
+msgstr "מזהה מושב"
+
+#: src/mainwindow.cpp:400
+#, kde-format
+msgid "Timer"
+msgstr "קוצב זמן"
+
+#: src/mainwindow.cpp:401
+#, kde-format
+msgid "Next"
+msgstr "הבא"
+
+#: src/mainwindow.cpp:402
+#, kde-format
+msgid "Left"
+msgstr "שמאל"
+
+#: src/mainwindow.cpp:403
+#, kde-format
+msgid "Last"
+msgstr "אחרון"
+
+#: src/mainwindow.cpp:404
+#, kde-format
+msgid "Passed"
+msgstr "דולג"
+
+#: src/mainwindow.cpp:405
+#, kde-format
+msgid "Activates"
+msgstr "מפעיל"
+
+#: src/mainwindow.cpp:423
+#, kde-format
+msgid "File"
+msgstr "קובץ"
+
+#: src/mainwindow.cpp:424
+#, kde-format
+msgid "Modified"
+msgstr "נערך"
+
+#: src/mainwindow.cpp:425
+#, kde-format
+msgid "Description"
+msgstr "תיאור"
+
+#: src/mainwindow.cpp:433
+#, kde-format
+msgid "Coredump generation and storage"
+msgstr "יצירת ואחסון היטל ליבה (Coredump)"
+
+#: src/mainwindow.cpp:436
+#, kde-format
+msgid "Send journal messages over network"
+msgstr "שליחת הודעות יומן (journal) דרך הרשת"
+
+#: src/mainwindow.cpp:439
+#, kde-format
+msgid "Journal manager settings"
+msgstr "הגדרות מנהל יומנים (Journal)"
+
+#: src/mainwindow.cpp:442
+#, kde-format
+msgid "Login manager configuration"
+msgstr "הגדרות מנהל כניסה"
+
+#: src/mainwindow.cpp:445
+#, kde-format
+msgid "Network name resolution configuration"
+msgstr "הגדרות פתרון שם רשת"
+
+#: src/mainwindow.cpp:448
+#, kde-format
+msgid "Systemd daemon configuration"
+msgstr "הגדרות סוכן systemd"
+
+#: src/mainwindow.cpp:451
+#, kde-format
+msgid "Time synchronization settings"
+msgstr "הגדרות סנכרון שעון"
+
+#: src/mainwindow.cpp:454
+#, kde-format
+msgid "Systemd user daemon configuration"
+msgstr "הגדרות סוכן משתמש systemd"
+
+#: src/mainwindow.cpp:817 src/mainwindow.cpp:826
+#, kde-format
+msgctxt "First part of 'Total: %1, %2, %3'"
+msgid "1 unit"
+msgid_plural "%1 units"
+msgstr[0] "יחידה"
+msgstr[1] "שתי יחידות"
+msgstr[2] "%1 יחידות"
+msgstr[3] "%1 יחידות"
+
+#: src/mainwindow.cpp:819 src/mainwindow.cpp:828
+#, kde-format
+msgctxt "Second part of 'Total: %1, %2, %3'"
+msgid "1 active"
+msgid_plural "%1 active"
+msgstr[0] "פעילה"
+msgstr[1] "שתיים פעילות"
+msgstr[2] "%1 פעילות"
+msgstr[3] "%1 פעילות"
+
+#: src/mainwindow.cpp:821 src/mainwindow.cpp:830
+#, kde-format
+msgctxt "Third part of 'Total: %1, %2, %3'"
+msgid "1 displayed"
+msgid_plural "%1 displayed"
+msgstr[0] "מוצגת"
+msgstr[1] "שתיים מוצגות"
+msgstr[2] "%1 מוצגות"
+msgstr[3] "%1 מוצגות"
+
+#: src/mainwindow.cpp:823 src/mainwindow.cpp:832
+#, kde-format
+msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
+msgid "Total: %1, %2, %3"
+msgstr "סך הכול: %1, %2, %3"
+
+#: src/mainwindow.cpp:857 src/mainwindow.cpp:1610
+#, kde-format
+msgid "Unable to authenticate/execute the action: %1"
+msgstr "לא ניתן ליצור אימות/להריץ את הפעולה: %1"
+
+#: src/mainwindow.cpp:1037
+#, kde-format
+msgid "&Refresh"
+msgstr "&רענון"
+
+#: src/mainwindow.cpp:1039
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Refresh"
+msgstr "רענון"
+
+#: src/mainwindow.cpp:1045
+#, kde-format
+msgid "Start Unit"
+msgstr "התחלת יחידה"
+
+#: src/mainwindow.cpp:1051
+#, kde-format
+msgid "Stop Unit"
+msgstr "עצירת יחידה"
+
+#: src/mainwindow.cpp:1057
+#, kde-format
+msgid "Reload Unit"
+msgstr "רענון יחידה"
+
+#: src/mainwindow.cpp:1063
+#, kde-format
+msgid "Restart Unit"
+msgstr "הפעלת יחידה מחדש"
+
+#: src/mainwindow.cpp:1069
+#, kde-format
+msgid "Enable Unit"
+msgstr "הפעלת יחידה"
+
+#: src/mainwindow.cpp:1075
+#, kde-format
+msgid "Disable Unit"
+msgstr "השבתת יחידה"
+
+#: src/mainwindow.cpp:1081
+#, kde-format
+msgid "Mask Unit"
+msgstr "מיסוך יחידה"
+
+#: src/mainwindow.cpp:1087
+#, kde-format
+msgid "Unmask Unit"
+msgstr "ביטול מיסוך יחידה"
+
+#: src/mainwindow.cpp:1093
+#, kde-format
+msgid "Re&load systemd"
+msgstr "&רענון systemd"
+
+#: src/mainwindow.cpp:1094
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Click to reload all unit files"
+msgstr "לחיצה לרענון כל קובצי היחידה"
+
+#: src/mainwindow.cpp:1100
+#, kde-format
+msgid "Re-e&xecute systemd"
+msgstr "הפעלת systemd מ&חדש"
+
+#: src/mainwindow.cpp:1101
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Click to re-execute the systemd daemon"
+msgstr "לחיצה תפעיל את סוכן systemd מחדש"
+
+#: src/mainwindow.cpp:1107
+#, kde-format
+msgid "Re&load user systemd"
+msgstr "רענון ה־systemd של ה&משתמש"
+
+#: src/mainwindow.cpp:1108
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Click to reload all user unit files"
+msgstr "לחיצה לרענון כל קובצי היחידה של המשתמש"
+
+#: src/mainwindow.cpp:1114
+#, kde-format
+msgid "Re-e&xecute user systemd"
+msgstr "הפעלת systemd של המשתמש מ&חדש"
+
+#: src/mainwindow.cpp:1115
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Click to re-execute the user systemd daemon"
+msgstr "לחיצה תפעיל את סוכן systemd של המשתמש מחדש"
+
+#: src/mainwindow.cpp:1121
+#, kde-format
+msgid "Edit Unit File"
+msgstr "עריכת קובץ יחידה"
+
+#: src/mainwindow.cpp:1127
+#, kde-format
+msgid "Edit Configuration File"
+msgstr "עריכת קובץ הגדרות"
+
+#: src/mainwindow.cpp:1133
+#, kde-format
+msgid "Open Man Page"
+msgstr "פתיחת עמוד ההדרכה (Man)"
+
+#: src/mainwindow.cpp:1139
+#, kde-format
+msgid "Activate Session"
+msgstr "הפעלת הפעלה"
+
+#: src/mainwindow.cpp:1145
+#, kde-format
+msgid "Terminate Session"
+msgstr "חיסול הפעלה"
+
+#: src/mainwindow.cpp:1151
+#, kde-format
+msgid "Lock Session"
+msgstr "נעילת הפעלה"
+
+#: src/mainwindow.cpp:1172
+#, kde-format
+msgid ""
+"KHelpCenter executable not found in path. Please install KHelpCenter to view "
+"man pages."
+msgstr ""
+"קובץ ההפעלה של KHelpCenter לא נמצא בנתיב (path). נא להתקין את KHelpCenter "
+"כדי לצפות בעמודי הדרכה (man pages)."
+
+#: src/mainwindow.cpp:1303
+#, kde-format
+msgid "<b>VT:</b> %1"
+msgstr "<b>מסוף וירטואלי:</b> %1"
+
+#: src/mainwindow.cpp:1308
+#, kde-format
+msgid "<br><b>Remote host:</b> %1"
+msgstr "<br><b>מארח מרוחק:</b> %1"
+
+#: src/mainwindow.cpp:1309
+#, kde-format
+msgid "<br><b>Remote user:</b> %1"
+msgstr "<br><b>משתמש מרוחק:</b> %1"
+
+#: src/mainwindow.cpp:1311
+#, kde-format
+msgid "<br><b>Service:</b> %1"
+msgstr "<br><b>שירות:</b> %1"
+
+#: src/mainwindow.cpp:1312
+#, kde-format
+msgid "<br><b>Leader (PID):</b> %1"
+msgstr "<br><b>מוביל (מזהה תהליך):</b> %1"
+
+#: src/mainwindow.cpp:1315
+#, kde-format
+msgid "<br><b>Type:</b> %1"
+msgstr "<br><b>סוג:</b> %1"
+
+#: src/mainwindow.cpp:1317
+#, kde-format
+msgid " (display %1)"
+msgstr " (תצוגה %1)"
+
+#: src/mainwindow.cpp:1327
+#, kde-format
+msgid "<br><b>Class:</b> %1"
+msgstr "<br><b>מחלקה:</b> %1"
+
+#: src/mainwindow.cpp:1328
+#, kde-format
+msgid "<br><b>State:</b> %1"
+msgstr "<br><b>מצב:</b> %1"
+
+#: src/mainwindow.cpp:1329
+#, kde-format
+msgid "<br><b>Scope:</b> %1"
+msgstr "<br><b>טווח:</b> %1"
+
+#: src/mainwindow.cpp:1332
+#, kde-format
+msgid "<br><b>Created: </b>"
+msgstr "<br><b>יצירה: </b>"
+
+#: src/mainwindow.cpp:1361
+#, kde-format
+msgid "%1: Systemd daemon reloaded..."
+msgstr "%1: סוכן Systemd נטען מחדש…"
+
+#: src/mainwindow.cpp:1372
+#, kde-format
+msgid "%1: User daemon reloaded..."
+msgstr "%1: סוכן המשתמש נטען מחדש…"
+
+#: src/mainwindow.cpp:1415
+#, kde-format
+msgid "%1: System units changed..."
+msgstr "%1: יחידות המערכת השתנו…"
+
+#: src/mainwindow.cpp:1562
+#, kde-format
+msgid "Editing %1"
+msgstr "%1 בעריכה"
+
+#: src/mainwindow.cpp:1574
+#, kde-format
+msgid "Editing file: %1"
+msgstr "נערך קובץ: %1"
+
+#: src/mainwindow.cpp:1584
+#, kde-format
+msgid ""
+"Failed to open the unit file:\n"
+"%1"
+msgstr ""
+"פתיחת קובץ היחידה נכשלה:\n"
+"%1"
+
+#. i18n("Unit file successfully written."));
+#: src/mainwindow.cpp:1614
+#, kde-format
+msgid "%1: %2 successfully written..."
+msgstr "%1: %2 נכתב בהצלחה…"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
+#: src/mainwindow.ui:52
+#, kde-format
+msgid "System Units"
+msgstr "יחידות מערכת"
+
+#. i18n: ectx: property (text), widget (QLabel, lblUnitCount)
+#. i18n: ectx: property (text), widget (QLabel, lblUserUnitCount)
+#: src/mainwindow.ui:58 src/mainwindow.ui:236
+#, kde-format
+msgid "Overall stats:"
+msgstr "סטטיסטיקה כוללת:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, cmbUnitTypes)
+#: src/mainwindow.ui:73
+#, kde-format
+msgid "<html><head/><body><p>Filter unit types.</p></body></html>"
+msgstr "<html><head/><body><p>סינון סוגי יחידות.</p></body></html>"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUnits)
+#: src/mainwindow.ui:83
+#, kde-format
+msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+msgstr "<html><head/><body><p>החלפת הצגת יחידות בלתי פעילות.</p></body></html>"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUnits)
+#. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUserUnits)
+#: src/mainwindow.ui:86 src/mainwindow.ui:176
+#, kde-format
+msgid "Show inactive"
+msgstr "הצגת בלתי פעילות"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUnits)
+#. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUserUnits)
+#: src/mainwindow.ui:96 src/mainwindow.ui:183
+#, kde-format
+msgid "Show unloaded"
+msgstr "הצגת בלתי טעונות"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabUserUnits)
+#: src/mainwindow.ui:165
+#, kde-format
+msgid "User Units"
+msgstr "יחידות משתמש"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabConf)
+#: src/mainwindow.ui:244
+#, kde-format
+msgid "Config Files"
+msgstr "קובצי הגדרות"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tabSessions)
+#: src/mainwindow.ui:289
+#, kde-format
+msgid "Sessions"
+msgstr "הפעלות"
+
+#. i18n: ectx: Menu (file)
+#: src/systemdgenieui.rc:10
+#, kde-format
+msgid "&File"
+msgstr "&קובץ"
+
+#. i18n: ectx: Menu (view)
+#: src/systemdgenieui.rc:13
+#, kde-format
+msgid "&View"
+msgstr "&תצוגה"
+
+#. i18n: ectx: Menu (daemon)
+#: src/systemdgenieui.rc:17
+#, kde-format
+msgid "&Daemon"
+msgstr "&סוכן"
+
+#. i18n: ectx: Menu (unit)
+#: src/systemdgenieui.rc:25
+#, kde-format
+msgid "&Unit"
+msgstr "י&חידה"
+
+#. i18n: ectx: Menu (session)
+#: src/systemdgenieui.rc:41
+#, kde-format
+msgid "&Session"
+msgstr "ה&פעלה"
+
+#. i18n: ectx: ToolBar (unitToolBar)
+#: src/systemdgenieui.rc:49
+#, kde-format
+msgid "Unit Toolbar"
+msgstr "סרגל כלי יחידה"
+
+#. i18n: ectx: ToolBar (confFileToolBar)
+#: src/systemdgenieui.rc:56
+#, kde-format
+msgid "Config File Toolbar"
+msgstr "סרגל קובץ הגדרות"
+
+#: src/unitmodel.cpp:54
+#, kde-format
+msgid "Unit"
+msgstr "יחידה"
+
+#: src/unitmodel.cpp:56
+#, kde-format
+msgid "Load State"
+msgstr "מצב טעינה"
+
+#: src/unitmodel.cpp:58
+#, kde-format
+msgid "Active State"
+msgstr "מצב פעיל"
+
+#: src/unitmodel.cpp:60
+#, kde-format
+msgid "Unit State"
+msgstr "מצב יחידה"
+
+#: src/unitmodel.cpp:142
+#, kde-format
+msgid "<b>Description: </b>"
+msgstr "<b>תיאור: </b>"
+
+#: src/unitmodel.cpp:147
+#, kde-format
+msgid "<br><b>Unit file: </b>%1"
+msgstr "<br><b>קובץ יחידה: </b>%1"
+
+#: src/unitmodel.cpp:148 src/unitmodel.cpp:198
+#, kde-format
+msgid "<br><b>Unit file state: </b>"
+msgstr "<br><b>מצב קובץ יחידה: </b>"
+
+#: src/unitmodel.cpp:154
+#, kde-format
+msgid "<br><b>Source path: </b>%1"
+msgstr "<br><b>נתיב מקור: </b>%1"
+
+#: src/unitmodel.cpp:158
+#, kde-format
+msgid "<br><b>Activated: </b>"
+msgstr "<br><b>מופעל: </b>"
+
+#: src/unitmodel.cpp:169
+#, kde-format
+msgid "<br><b>Deactivated: </b>"
+msgstr "<br><b>מושבת: </b>"
+
+#: src/unitmodel.cpp:193
+#, kde-format
+msgid "<b>Unit file: </b>"
+msgstr "<b>קובץ יחידה: </b>"
+
+#: src/unitmodel.cpp:207
+#, kde-format
+msgid "<hr><b>Last log entries:</b>"
+msgstr "<hr><b>רשומות אחרונות ביומן:</b>"
+
+#: src/unitmodel.cpp:210
+#, kde-format
+msgid "<br><i>No log entries found for this unit.</i>"
+msgstr "<br><i>לא נמצאו רשומות יומן ליחידה הזאת.</i>"
