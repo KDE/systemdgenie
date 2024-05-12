@@ -60,7 +60,7 @@ msgstr "Mantenidor"
 #: src/mainwindow.cpp:50
 #, kde-format
 msgid "Unable to contact the systemd daemon. Quitting..."
-msgstr "No s'ha pogut contactar amb el dimoni «systemd». S'està eixint..."
+msgstr "No s'ha pogut contactar amb el dimoni «systemd». S'està eixint…"
 
 #: src/mainwindow.cpp:62
 #, kde-format
@@ -473,17 +473,17 @@ msgstr "<br><b>Creat: </b>"
 #: src/mainwindow.cpp:1361
 #, kde-format
 msgid "%1: Systemd daemon reloaded..."
-msgstr "%1: S'ha tornat a carregar el dimoni «systemd»..."
+msgstr "%1: S'ha tornat a carregar el dimoni «systemd»…"
 
 #: src/mainwindow.cpp:1372
 #, kde-format
 msgid "%1: User daemon reloaded..."
-msgstr "%1: S'ha tornat a carregar el dimoni de l'usuari..."
+msgstr "%1: S'ha tornat a carregar el dimoni de l'usuari…"
 
 #: src/mainwindow.cpp:1415
 #, kde-format
 msgid "%1: System units changed..."
-msgstr "%1: S'han canviat les unitats del sistema..."
+msgstr "%1: S'han canviat les unitats del sistema…"
 
 #: src/mainwindow.cpp:1562
 #, kde-format
@@ -508,7 +508,7 @@ msgstr ""
 #: src/mainwindow.cpp:1614
 #, kde-format
 msgid "%1: %2 successfully written..."
-msgstr "%1: %2 s'ha escrit amb èxit..."
+msgstr "%1: %2 s'ha escrit amb èxit…"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
 #: src/mainwindow.ui:52
