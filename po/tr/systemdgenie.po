@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2021.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-28 00:39+0000\n"
-"PO-Revision-Date: 2023-05-24 01:25+0300\n"
+"PO-Revision-Date: 2024-08-06 11:44+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.07.70\n"
+"X-Generator: Lokalize 24.11.70\n"
 "X-POOTLE-MTIME: 1497621220.000000\n"
 
 #, kde-format
@@ -43,7 +43,7 @@ msgstr "Systemd yönetim izlencesi"
 #: src/main.cpp:42
 #, kde-format
 msgid "(c) 2016, Ragnar Thomsen"
-msgstr "(c) 2016, Ragnar Thomsen"
+msgstr "© 2016, Ragnar Thomsen"
 
 #: src/main.cpp:49
 #, kde-format
@@ -58,7 +58,7 @@ msgstr "Proje Yöneticisi"
 #: src/mainwindow.cpp:50
 #, kde-format
 msgid "Unable to contact the systemd daemon. Quitting..."
-msgstr "Systemd ardalan süreci ile bağlantı kurulamadı. Çıkılıyor..."
+msgstr "Systemd ardalan süreci ile bağlantı kurulamadı. Çıkılıyor…"
 
 #: src/mainwindow.cpp:62
 #, kde-format
@@ -234,7 +234,7 @@ msgstr "Systemd ardalan süreci yapılandırması"
 #: src/mainwindow.cpp:451
 #, kde-format
 msgid "Time synchronization settings"
-msgstr "Zama eşitleme ayarları"
+msgstr "Zaman eşzamanlama ayarları"
 
 #: src/mainwindow.cpp:454
 #, kde-format
@@ -330,7 +330,7 @@ msgstr "Birimi Maskelemeyi Kaldı"
 #: src/mainwindow.cpp:1093
 #, kde-format
 msgid "Re&load systemd"
-msgstr "Systemd'yi yeniden &yükle"
+msgstr "Systemd’yi Yeniden &Yükle"
 
 #: src/mainwindow.cpp:1094
 #, kde-format
@@ -341,7 +341,7 @@ msgstr "Tüm birim dosyalarını yeniden yüklemek için tıkla"
 #: src/mainwindow.cpp:1100
 #, kde-format
 msgid "Re-e&xecute systemd"
-msgstr "Systemd'yi yeniden &yürüt"
+msgstr "Systemd’yi Yeniden &Yürüt"
 
 #: src/mainwindow.cpp:1101
 #, kde-format
@@ -352,7 +352,7 @@ msgstr "Systemd ardalan sürecini yeniden yürütmek için tıkla"
 #: src/mainwindow.cpp:1107
 #, kde-format
 msgid "Re&load user systemd"
-msgstr "Kullanıcı systemd'yi yeniden yük&le"
+msgstr "Kullanıcı systemd’sini Yeniden Yük&le"
 
 #: src/mainwindow.cpp:1108
 #, kde-format
@@ -363,7 +363,7 @@ msgstr "Kullanıcı birim dosyalarını yeniden yüklemek için tıkla"
 #: src/mainwindow.cpp:1114
 #, kde-format
 msgid "Re-e&xecute user systemd"
-msgstr "Kullanıcı systemd'sini yeniden yü&rüt"
+msgstr "Kullanıcı systemd’sini Yeniden Yü&rüt"
 
 #: src/mainwindow.cpp:1115
 #, kde-format
@@ -408,7 +408,7 @@ msgid ""
 "man pages."
 msgstr ""
 "K Yardım Merkezi yürütülebiliri bulunamadı. Lütfen, kılavuz sayfalarını "
-"görüntülemek için K Yardım Merkezi'ni kurun."
+"görüntülemek için K Yardım Merkezi’ni kurun."
 
 #: src/mainwindow.cpp:1303
 #, kde-format
@@ -468,17 +468,17 @@ msgstr "<br><b>Oluşturulma: </b>"
 #: src/mainwindow.cpp:1361
 #, kde-format
 msgid "%1: Systemd daemon reloaded..."
-msgstr "%1: Systemd ardalan süreci yeniden yüklendi..."
+msgstr "%1: Systemd ardalan süreci yeniden yüklendi…"
 
 #: src/mainwindow.cpp:1372
 #, kde-format
 msgid "%1: User daemon reloaded..."
-msgstr "%1: Kullanıcı ardalan süreci yeniden yüklendi..."
+msgstr "%1: Kullanıcı ardalan süreci yeniden yüklendi…"
 
 #: src/mainwindow.cpp:1415
 #, kde-format
 msgid "%1: System units changed..."
-msgstr "%1: Sistem birimleri değiştirildi..."
+msgstr "%1: Sistem birimleri değiştirildi…"
 
 #: src/mainwindow.cpp:1562
 #, kde-format
@@ -503,7 +503,7 @@ msgstr ""
 #: src/mainwindow.cpp:1614
 #, kde-format
 msgid "%1: %2 successfully written..."
-msgstr "%1: %2 başarıyla yazıldı..."
+msgstr "%1: %2 başarıyla yazıldı…"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
 #: src/mainwindow.ui:52
