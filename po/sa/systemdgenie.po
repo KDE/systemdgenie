@@ -20,12 +20,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
 #: src/main.cpp:38 src/mainwindow.cpp:50 src/mainwindow.ui:14
@@ -244,30 +244,30 @@ msgstr "Systemd उपयोक्तृ-डेमन-विन्यासः"
 msgctxt "First part of 'Total: %1, %2, %3'"
 msgid "1 unit"
 msgid_plural "%1 units"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "१ एककम्"
+msgstr[1] "%1 एककाः"
 
 #: src/mainwindow.cpp:819 src/mainwindow.cpp:828
 #, kde-format
 msgctxt "Second part of 'Total: %1, %2, %3'"
 msgid "1 active"
 msgid_plural "%1 active"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "१ सक्रियः"
+msgstr[1] "%1 सक्रियः"
 
 #: src/mainwindow.cpp:821 src/mainwindow.cpp:830
 #, kde-format
 msgctxt "Third part of 'Total: %1, %2, %3'"
 msgid "1 displayed"
 msgid_plural "%1 displayed"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "१ प्रदर्शितम्"
+msgstr[1] "%1 प्रदर्शितम्"
 
 #: src/mainwindow.cpp:823 src/mainwindow.cpp:832
 #, kde-format
 msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
 msgid "Total: %1, %2, %3"
-msgstr ""
+msgstr "कुलम् : %1, %2, %3"
 
 #: src/mainwindow.cpp:857 src/mainwindow.cpp:1610
 #, kde-format
@@ -283,7 +283,7 @@ msgstr "&ताजगी"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
-msgstr ""
+msgstr "ताजगी"
 
 #: src/mainwindow.cpp:1045
 #, kde-format
@@ -334,7 +334,7 @@ msgstr "पुनः&भार प्रणालीd"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all unit files"
-msgstr ""
+msgstr "सर्वाणि unit files पुनः लोड् कर्तुं क्लिक् कुर्वन्तु"
 
 #: src/mainwindow.cpp:1100
 #, kde-format
@@ -345,7 +345,7 @@ msgstr "पुनः e&execute systemd"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the systemd daemon"
-msgstr ""
+msgstr "systemd डेमन् पुनः निष्पादयितुं क्लिक् कुर्वन्तु"
 
 #: src/mainwindow.cpp:1107
 #, kde-format
@@ -356,7 +356,7 @@ msgstr "पुनः&लोड उपयोक्ता systemd"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all user unit files"
-msgstr ""
+msgstr "सर्वाणि उपयोक्तृ-एकक-सञ्चिकाः पुनः लोड् कर्तुं क्लिक् कुर्वन्तु"
 
 #: src/mainwindow.cpp:1114
 #, kde-format
@@ -367,7 +367,7 @@ msgstr "पुनः e&execute user systemd"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the user systemd daemon"
-msgstr ""
+msgstr "उपयोक्तृ systemd डेमन् पुनः निष्पादयितुं क्लिक् कुर्वन्तु"
 
 #: src/mainwindow.cpp:1121
 #, kde-format
