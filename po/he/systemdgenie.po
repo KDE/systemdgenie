@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-28 00:39+0000\n"
-"PO-Revision-Date: 2024-04-18 08:52+0300\n"
+"PO-Revision-Date: 2025-01-24 09:27+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -284,13 +284,13 @@ msgstr "לא ניתן ליצור אימות/להריץ את הפעולה: %1"
 #: src/mainwindow.cpp:1037
 #, kde-format
 msgid "&Refresh"
-msgstr "&רענון"
+msgstr "&ריענון"
 
 #: src/mainwindow.cpp:1039
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
-msgstr "רענון"
+msgstr "ריענון"
 
 #: src/mainwindow.cpp:1045
 #, kde-format
@@ -305,7 +305,7 @@ msgstr "עצירת יחידה"
 #: src/mainwindow.cpp:1057
 #, kde-format
 msgid "Reload Unit"
-msgstr "רענון יחידה"
+msgstr "ריענון יחידה"
 
 #: src/mainwindow.cpp:1063
 #, kde-format
@@ -335,13 +335,13 @@ msgstr "ביטול מיסוך יחידה"
 #: src/mainwindow.cpp:1093
 #, kde-format
 msgid "Re&load systemd"
-msgstr "&רענון systemd"
+msgstr "&ריענון systemd"
 
 #: src/mainwindow.cpp:1094
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all unit files"
-msgstr "לחיצה לרענון כל קובצי היחידה"
+msgstr "לחיצה לריענון כל קובצי היחידה"
 
 #: src/mainwindow.cpp:1100
 #, kde-format
@@ -357,13 +357,13 @@ msgstr "לחיצה תפעיל את סוכן systemd מחדש"
 #: src/mainwindow.cpp:1107
 #, kde-format
 msgid "Re&load user systemd"
-msgstr "רענון ה־systemd של ה&משתמש"
+msgstr "ריענון ה־systemd של ה&משתמש"
 
 #: src/mainwindow.cpp:1108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all user unit files"
-msgstr "לחיצה לרענון כל קובצי היחידה של המשתמש"
+msgstr "לחיצה לריענון כל קובצי היחידה של המשתמש"
 
 #: src/mainwindow.cpp:1114
 #, kde-format
