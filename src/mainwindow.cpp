@@ -101,6 +101,8 @@ MainWindow::MainWindow(QWidget *parent)
     m_lblLog->setText(QString());
     statusBar()->addPermanentWidget(m_lblLog, 20);
 
+    ui.tabWidget->tabBar()->setExpanding(true);
+
     setupGUI(Default, QStringLiteral("systemdgenieui.rc"));
 }
 
@@ -1657,7 +1659,7 @@ void MainWindow::displayMsgWidget(KMessageWidget::MessageType type, QString msg)
     KMessageWidget *msgWidget = new KMessageWidget;
     msgWidget->setText(msg);
     msgWidget->setMessageType(type);
+    msgWidget->setPosition(KMessageWidget::Header);
     ui.verticalLayoutMsg->insertWidget(0, msgWidget);
     msgWidget->animatedShow();
 }
-
