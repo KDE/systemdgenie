@@ -1118,13 +1118,13 @@ void MainWindow::setupActions()
     connect(m_reexecUserDaemonAction, &QAction::triggered, this, [this]() { executeUserDaemonAction(QStringLiteral("Reexecute")); });
 
     m_editUnitFileAction = new QAction(this);
-    m_editUnitFileAction->setText(i18n("Edit Unit File"));
+    m_editUnitFileAction->setText(i18n("Edit Unit File…"));
     m_editUnitFileAction->setIcon(QIcon::fromTheme(QStringLiteral("editor")));
     actionCollection()->addAction(QStringLiteral("edit-unitfile"), m_editUnitFileAction);
     connect(m_editUnitFileAction, &QAction::triggered, this, &MainWindow::slotEditUnitFile);
 
     m_editConfFileAction = new QAction(this);
-    m_editConfFileAction->setText(i18n("Edit Configuration File"));
+    m_editConfFileAction->setText(i18n("Edit Configuration File…"));
     m_editConfFileAction->setIcon(QIcon::fromTheme(QStringLiteral("editor")));
     actionCollection()->addAction(QStringLiteral("edit-conffile"), m_editConfFileAction);
     connect(m_editConfFileAction, &QAction::triggered, this, &MainWindow::slotEditConfFile);
