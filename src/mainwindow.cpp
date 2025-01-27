@@ -492,7 +492,7 @@ void MainWindow::slotChkShowUnits(int state)
         QObject::sender()->objectName() == QLatin1String("chkUnloadedUnits"))
     {
         // System units
-        if (ui.chkInactiveUnits->isChecked())
+        if (!ui.chkInactiveUnits->isChecked())
         {
             ui.chkUnloadedUnits->setEnabled(true);
             if (ui.chkUnloadedUnits->isChecked())
@@ -514,7 +514,7 @@ void MainWindow::slotChkShowUnits(int state)
         QObject::sender()->objectName() == QLatin1String("chkUnloadedUserUnits"))
     {
         // User units
-        if (ui.chkInactiveUserUnits->isChecked())
+        if (!ui.chkInactiveUserUnits->isChecked())
         {
             ui.chkUnloadedUserUnits->setEnabled(true);
             if (ui.chkUnloadedUserUnits->isChecked())
