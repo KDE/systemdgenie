@@ -14,6 +14,7 @@ target_link_libraries(systemdgenie
                       KF${QT_MAJOR_VERSION}::Crash
                       KF${QT_MAJOR_VERSION}::I18n
                       KF${QT_MAJOR_VERSION}::XmlGui
+                      KF${QT_MAJOR_VERSION}::TextEditor
                       PkgConfig::JOURNALD)
 install(TARGETS systemdgenie ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
