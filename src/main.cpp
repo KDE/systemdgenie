@@ -34,6 +34,8 @@ int main(int argc, char *argv[])
 
     KLocalizedString::setApplicationDomain("systemdgenie");
 
+    QGuiApplication::setDesktopFileName(QStringLiteral("org.kde.systemdgenie"));
+
     KAboutData aboutData(QStringLiteral("systemdgenie"),
                          i18n("SystemdGenie"),
                          QStringLiteral(SYSTEMDGENIE_VERSION_STRING),
@@ -50,7 +52,7 @@ int main(int argc, char *argv[])
                         i18n("Maintainer"),
                         QStringLiteral("rthomsen6@gmail.com"));
 
-    application.setWindowIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop")));
+    application.setWindowIcon(QIcon::fromTheme(QStringLiteral("preferences-system-services")));
 
     QCommandLineParser parser;
     parser.setApplicationDescription(aboutData.shortDescription());
