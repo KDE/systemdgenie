@@ -26,9 +26,9 @@ int main(int argc, char *argv[])
     QGuiApplication::setDesktopFileName(QStringLiteral("org.kde.systemdgenie"));
 
     KAboutData aboutData(QStringLiteral("systemdgenie"),
-                         i18n("SystemdGenie"),
+                         i18n("Services Manager"),
                          QStringLiteral(SYSTEMDGENIE_VERSION_STRING),
-                         i18n("Systemd management utility"),
+                         i18n("Manage systemd units, timers, sessions and config files"),
                          KAboutLicense::GPL,
                          i18n("(c) 2016, Ragnar Thomsen"),
                          QString(),
