@@ -9,3 +9,4 @@ repo
 build*
 CMakeLists.txt.user
 *.kdev4
+.vscode/
