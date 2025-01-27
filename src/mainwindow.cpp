@@ -24,6 +24,10 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KXMLGUIFactory>
+#include <KSeparator>
+#include <KTextEditor/Document>
+#include <KTextEditor/Editor>
+#include <KTextEditor/View>
 
 #include <QDebug>
 #include <QPlainTextEdit>
@@ -1556,13 +1560,16 @@ void MainWindow::slotEditConfFile()
 
 void MainWindow::openEditor(const QString &file)
 {
+    auto editorInstance = KTextEditor::Editor::instance();
+    auto document = editorInstance->createDocument(this);
+
     // Using a QPointer is safer for modal dialogs.
     // See: https://blogs.kde.org/node/3919
     QPointer<QDialog> dlgEditor = new QDialog(this);
     dlgEditor->setWindowTitle(i18n("Editing %1", file.section(QLatin1Char('/'), -1)));
+    dlgEditor->setMinimumSize(800, 600);
 
-    QPlainTextEdit *textEdit = new QPlainTextEdit(dlgEditor);
-    textEdit->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
+    auto editorView = document->createView(dlgEditor);
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Save |
                                                        QDialogButtonBox::Cancel,
@@ -1571,24 +1578,37 @@ void MainWindow::openEditor(const QString &file)
     connect(buttonBox, SIGNAL(rejected()), dlgEditor, SLOT(reject()));
     buttonBox->button(QDialogButtonBox::Save)->setEnabled(false);
 
-    QLabel *lblFilepath = new QLabel(i18n("Editing file: %1", file));
+    QLabel *lblFilePath = new QLabel(i18n("Editing file: <code>%1</code>", file));
+    lblFilePath->setTextFormat(Qt::RichText);
+
     QVBoxLayout *vlayout = new QVBoxLayout(dlgEditor);
-    vlayout->addWidget(lblFilepath);
-    vlayout->addWidget(textEdit);
-    vlayout->addWidget(buttonBox);
+    vlayout->setContentsMargins(0, 0, 0, 0);
+    vlayout->setSpacing(0);
+
+    QVBoxLayout *lblFilepathLayout = new QVBoxLayout();
+    lblFilepathLayout->addWidget(lblFilePath);
+    lblFilepathLayout->setContentsMargins(6, 6, 6, 6);
+    lblFilepathLayout->setSpacing(QStyle::PixelMetric::PM_LayoutVerticalSpacing);
+
+    QVBoxLayout *buttonBoxLayout = new QVBoxLayout();
+    buttonBoxLayout->addWidget(buttonBox);
+    buttonBoxLayout->setContentsMargins(6, 6, 6, 6);
+    buttonBoxLayout->setSpacing(QStyle::PixelMetric::PM_LayoutVerticalSpacing);
+
+    vlayout->addLayout(lblFilepathLayout);
+    vlayout->addWidget(new KSeparator());
+    vlayout->addWidget(editorView);
+    vlayout->addWidget(new KSeparator());
+    vlayout->addLayout(buttonBoxLayout);
 
     // Read contents of unit file.
-    QFile f(file);
-    if (!f.open(QFile::ReadOnly | QFile::Text)) {
+    if (!document->openUrl(QUrl::fromLocalFile(file))) {
         displayMsgWidget(KMessageWidget::Error,
                          i18n("Failed to open the unit file:\n%1", file));
         return;
     }
-    QTextStream in(&f);
-    textEdit->setPlainText(in.readAll());
-    textEdit->setMinimumSize(500,300);
 
-    connect(textEdit, &QPlainTextEdit::textChanged, [=]{
+    connect(document, &KTextEditor::Document::textChanged, [=]{
         buttonBox->button(QDialogButtonBox::Save)->setEnabled(true);
     });
 
@@ -1597,7 +1617,7 @@ void MainWindow::openEditor(const QString &file)
         // Declare a QVariantMap with arguments for the helper.
         QVariantMap helperArgs;
         helperArgs[QStringLiteral("file")] = file;
-        helperArgs[QStringLiteral("contents")] = textEdit->toPlainText();
+        helperArgs[QStringLiteral("contents")] = document->text();
 
         // Create the action.
         KAuth::Action action(QStringLiteral("org.kde.kcontrol.systemdgenie.saveunitfile"));

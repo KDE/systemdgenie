@@ -27,7 +27,8 @@ find_package(KF${QT_MAJOR_VERSION} REQUIRED COMPONENTS
              CoreAddons
              Crash
              I18n
-             XmlGui)
+             XmlGui
+             TextEditor)
 
 include(ECMSetupVersion)
 ecm_setup_version(${PROJECT_VERSION}
