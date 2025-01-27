@@ -191,10 +191,10 @@
              <item>
               <widget class="QCheckBox" name="chkInactiveUnits">
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toggle show inactive units.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toggle hiding inactive units.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
-                <string>Show inactive</string>
+                <string>Hide inactive</string>
                </property>
                <property name="checked">
                 <bool>false</bool>
@@ -203,8 +203,14 @@
              </item>
              <item>
               <widget class="QCheckBox" name="chkUnloadedUnits">
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toggle hiding unloaded units.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
                <property name="text">
-                <string>Show unloaded</string>
+                <string>Hide unloaded</string>
+               </property>
+               <property name="checked">
+                <bool>false</bool>
                </property>
               </widget>
              </item>
@@ -290,15 +296,27 @@
              </item>
              <item>
               <widget class="QCheckBox" name="chkInactiveUserUnits">
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toggle hiding inactive units.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
                <property name="text">
-                <string>Show inactive</string>
+                <string>Hide inactive</string>
+               </property>
+               <property name="checked">
+                <bool>false</bool>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QCheckBox" name="chkUnloadedUserUnits">
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toggle hiding unloaded units.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
                <property name="text">
-                <string>Show unloaded</string>
+                <string>Hide unloaded</string>
+               </property>
+               <property name="checked">
+                <bool>false</bool>
                </property>
               </widget>
              </item>
