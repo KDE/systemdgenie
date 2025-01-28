@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-28 00:39+0000\n"
+"POT-Creation-Date: 2025-01-28 00:43+0000\n"
 "PO-Revision-Date: 2022-07-08 14:51+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -377,13 +377,15 @@ msgid "Click to re-execute the user systemd daemon"
 msgstr "Feu clic per a tornar a executar el dimoni «systemd» de l'usuari"
 
 #: src/mainwindow.cpp:1121
-#, kde-format
-msgid "Edit Unit File"
+#, fuzzy, kde-format
+#| msgid "Edit Unit File"
+msgid "Edit Unit File…"
 msgstr "Edita el fitxer de la unitat"
 
 #: src/mainwindow.cpp:1127
-#, kde-format
-msgid "Edit Configuration File"
+#, fuzzy, kde-format
+#| msgid "Edit Configuration File"
+msgid "Edit Configuration File…"
 msgstr "Edita el fitxer de configuració"
 
 #: src/mainwindow.cpp:1133

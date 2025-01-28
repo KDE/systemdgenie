@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-28 00:39+0000\n"
+"POT-Creation-Date: 2025-01-28 00:43+0000\n"
 "PO-Revision-Date: 2024-02-27 21:12+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -374,13 +374,15 @@ msgid "Click to re-execute the user systemd daemon"
 msgstr "Apăsați pentru a reexecuta demonul systemd pentru utilizator"
 
 #: src/mainwindow.cpp:1121
-#, kde-format
-msgid "Edit Unit File"
+#, fuzzy, kde-format
+#| msgid "Edit Unit File"
+msgid "Edit Unit File…"
 msgstr "Modifică fișierul unității"
 
 #: src/mainwindow.cpp:1127
-#, kde-format
-msgid "Edit Configuration File"
+#, fuzzy, kde-format
+#| msgid "Edit Configuration File"
+msgid "Edit Configuration File…"
 msgstr "Modifică fișierul de configurare"
 
 #: src/mainwindow.cpp:1133

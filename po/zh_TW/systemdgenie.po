@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.2.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-28 00:39+0000\n"
+"POT-Creation-Date: 2025-01-28 00:43+0000\n"
 "PO-Revision-Date: 2019-01-03 18:38+0800\n"
 "Last-Translator: pan93412 <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -368,13 +368,15 @@ msgid "Click to re-execute the user systemd daemon"
 msgstr "按此重新執行使用者 Systemd 守護程式"
 
 #: src/mainwindow.cpp:1121
-#, kde-format
-msgid "Edit Unit File"
+#, fuzzy, kde-format
+#| msgid "Edit Unit File"
+msgid "Edit Unit File…"
 msgstr "編輯單元檔案"
 
 #: src/mainwindow.cpp:1127
-#, kde-format
-msgid "Edit Configuration File"
+#, fuzzy, kde-format
+#| msgid "Edit Configuration File"
+msgid "Edit Configuration File…"
 msgstr "編輯設定檔"
 
 #: src/mainwindow.cpp:1133

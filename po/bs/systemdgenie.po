@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: d 664cf4f-342c-46fd-8dc1-63f78e432d04\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-28 00:39+0000\n"
+"POT-Creation-Date: 2025-01-28 00:43+0000\n"
 "PO-Revision-Date: 2017-01-01 03:53+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -373,12 +373,12 @@ msgstr ""
 
 #: src/mainwindow.cpp:1121
 #, kde-format
-msgid "Edit Unit File"
+msgid "Edit Unit File…"
 msgstr ""
 
 #: src/mainwindow.cpp:1127
 #, kde-format
-msgid "Edit Configuration File"
+msgid "Edit Configuration File…"
 msgstr ""
 
 #: src/mainwindow.cpp:1133

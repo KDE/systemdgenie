@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-28 00:39+0000\n"
+"POT-Creation-Date: 2025-01-28 00:43+0000\n"
 "PO-Revision-Date: 2021-08-20 12:53+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -374,13 +374,15 @@ msgid "Click to re-execute the user systemd daemon"
 msgstr ""
 
 #: src/mainwindow.cpp:1121
-#, kde-format
-msgid "Edit Unit File"
+#, fuzzy, kde-format
+#| msgid "Edit Unit File"
+msgid "Edit Unit File…"
 msgstr "Upravit soubor jednotky"
 
 #: src/mainwindow.cpp:1127
-#, kde-format
-msgid "Edit Configuration File"
+#, fuzzy, kde-format
+#| msgid "Edit Configuration File"
+msgid "Edit Configuration File…"
 msgstr "Upravit soubor nastavení"
 
 #: src/mainwindow.cpp:1133

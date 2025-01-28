@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-28 00:39+0000\n"
+"POT-Creation-Date: 2025-01-28 00:43+0000\n"
 "PO-Revision-Date: 2021-12-19 20:27+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -383,13 +383,15 @@ msgid "Click to re-execute the user systemd daemon"
 msgstr "انقر لتعيد تنفيذ Systemd للمستخدم"
 
 #: src/mainwindow.cpp:1121
-#, kde-format
-msgid "Edit Unit File"
+#, fuzzy, kde-format
+#| msgid "Edit Unit File"
+msgid "Edit Unit File…"
 msgstr "حرّر ملفّ الوحدة"
 
 #: src/mainwindow.cpp:1127
-#, kde-format
-msgid "Edit Configuration File"
+#, fuzzy, kde-format
+#| msgid "Edit Configuration File"
+msgid "Edit Configuration File…"
 msgstr "حرر ملفّ الضّبط"
 
 #: src/mainwindow.cpp:1133
