@@ -1,16 +1,16 @@
 # Translation for systemdgenie.po to Euskara/Basque (eu).
-# Copyright (C) 2020, This file is copyright:
+# Copyright (C) 2020-2025 This file is copyright:
 # This file is distributed under the same license as the systemdgenie package.
-# KDE euskaratzeko proiektuko arduraduna <xalba@euskalnet.net>.
+# SPDX-FileCopyrightText: 2025 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2020.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2020, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-28 00:43+0000\n"
-"PO-Revision-Date: 2020-08-23 19:21+0200\n"
+"PO-Revision-Date: 2025-01-28 18:26+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.08.0\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -375,16 +375,14 @@ msgid "Click to re-execute the user systemd daemon"
 msgstr "Egin klik erabiltzaile «systemd» daimona berriz exekutatzeko"
 
 #: src/mainwindow.cpp:1121
-#, fuzzy, kde-format
-#| msgid "Edit Unit File"
+#, kde-format
 msgid "Edit Unit File…"
-msgstr "Editatu unitate fitxategia"
+msgstr "Editatu unitate-fitxategia..."
 
 #: src/mainwindow.cpp:1127
-#, fuzzy, kde-format
-#| msgid "Edit Configuration File"
+#, kde-format
 msgid "Edit Configuration File…"
-msgstr "Editatu konfiguratzeko fitxategia"
+msgstr "Editatu konfiguratzeko fitxategia..."
 
 #: src/mainwindow.cpp:1133
 #, kde-format
