@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the systemd-kcm package.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2016, 2017, 2019, 2020.
+# SPDX-FileCopyrightText: 2016, 2017, 2019, 2020, 2025 Luigi Toscano <luigi.toscano@tiscali.it>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-28 00:43+0000\n"
-"PO-Revision-Date: 2020-12-17 00:27+0100\n"
+"PO-Revision-Date: 2025-01-30 18:05+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.08.2\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -372,16 +372,14 @@ msgid "Click to re-execute the user systemd daemon"
 msgstr "Fai clic per rieseguire il demone systemd utente"
 
 #: src/mainwindow.cpp:1121
-#, fuzzy, kde-format
-#| msgid "Edit Unit File"
+#, kde-format
 msgid "Edit Unit File…"
-msgstr "Modifica file dell'unità"
+msgstr "Modifica file dell'unità…"
 
 #: src/mainwindow.cpp:1127
-#, fuzzy, kde-format
-#| msgid "Edit Configuration File"
+#, kde-format
 msgid "Edit Configuration File…"
-msgstr "Modifica file di configurazione"
+msgstr "Modifica file di configurazione…"
 
 #: src/mainwindow.cpp:1133
 #, kde-format
