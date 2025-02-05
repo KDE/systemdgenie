@@ -3,13 +3,13 @@
 #
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2015.
 # Kiszel Kristóf <kiszel.kristof@gmail.com>, 2017.
-# Kristof Kiszel <ulysses@fsf.hu>, 2022.
+# SPDX-FileCopyrightText: 2022, 2025 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-28 00:43+0000\n"
-"PO-Revision-Date: 2022-02-01 11:45+0100\n"
+"PO-Revision-Date: 2025-02-04 21:39+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.07.70\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -374,16 +374,14 @@ msgid "Click to re-execute the user systemd daemon"
 msgstr "Kattintson a felhasználói systemd démon újra végrehajtásához"
 
 #: src/mainwindow.cpp:1121
-#, fuzzy, kde-format
-#| msgid "Edit Unit File"
+#, kde-format
 msgid "Edit Unit File…"
-msgstr "Unit fájl szerkesztése"
+msgstr "Unit fájl szerkesztése…"
 
 #: src/mainwindow.cpp:1127
-#, fuzzy, kde-format
-#| msgid "Edit Configuration File"
+#, kde-format
 msgid "Edit Configuration File…"
-msgstr "Konfigurációs fájl szerkesztése"
+msgstr "Konfigurációs fájl szerkesztése…"
 
 #: src/mainwindow.cpp:1133
 #, kde-format
