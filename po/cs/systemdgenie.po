@@ -374,16 +374,14 @@ msgid "Click to re-execute the user systemd daemon"
 msgstr ""
 
 #: src/mainwindow.cpp:1121
-#, fuzzy, kde-format
-#| msgid "Edit Unit File"
+#, kde-format
 msgid "Edit Unit File…"
-msgstr "Upravit soubor jednotky"
+msgstr ""
 
 #: src/mainwindow.cpp:1127
-#, fuzzy, kde-format
-#| msgid "Edit Configuration File"
+#, kde-format
 msgid "Edit Configuration File…"
-msgstr "Upravit soubor nastavení"
+msgstr ""
 
 #: src/mainwindow.cpp:1133
 #, kde-format
