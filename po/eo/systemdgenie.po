@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-12 00:43+0000\n"
-"PO-Revision-Date: 2024-02-27 21:53+0100\n"
+"PO-Revision-Date: 2025-02-12 22:59+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -371,16 +371,14 @@ msgid "Click to re-execute the user systemd daemon"
 msgstr "Alklaku por reruligi la uzantan systemd-demonon"
 
 #: src/mainwindow.cpp:1125
-#, fuzzy, kde-format
-#| msgid "Edit Unit File"
+#, kde-format
 msgid "Edit Unit File…"
-msgstr "Redakti Unuo-Dosieron"
+msgstr "Redakti Unuo-Dosieron…"
 
 #: src/mainwindow.cpp:1131
-#, fuzzy, kde-format
-#| msgid "Edit Configuration File"
+#, kde-format
 msgid "Edit Configuration File…"
-msgstr "Redakti Agord-Dosieron"
+msgstr "Redakti Agord-Dosieron…"
 
 #: src/mainwindow.cpp:1137
 #, kde-format
@@ -487,10 +485,9 @@ msgid "Editing %1"
 msgstr "Redaktante %1"
 
 #: src/mainwindow.cpp:1581
-#, fuzzy, kde-format
-#| msgid "Editing file: %1"
+#, kde-format
 msgid "Editing file: <code>%1</code>"
-msgstr "Redakta dosiero: %1"
+msgstr "Redaktante dosieron: <code>%1</code>"
 
 #: src/mainwindow.cpp:1607
 #, kde-format

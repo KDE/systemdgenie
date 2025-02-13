@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-12 00:43+0000\n"
-"PO-Revision-Date: 2025-01-28 07:24+0100\n"
+"PO-Revision-Date: 2025-02-12 06:27+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -493,10 +493,9 @@ msgid "Editing %1"
 msgstr "Urejam %1"
 
 #: src/mainwindow.cpp:1581
-#, fuzzy, kde-format
-#| msgid "Editing file: %1"
+#, kde-format
 msgid "Editing file: <code>%1</code>"
-msgstr "Urejam datoteko: %1"
+msgstr "Urejanje datoteke: <code>%1</code>"
 
 #: src/mainwindow.cpp:1607
 #, kde-format

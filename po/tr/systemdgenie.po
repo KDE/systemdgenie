@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-12 00:43+0000\n"
-"PO-Revision-Date: 2025-01-28 16:39+0300\n"
+"PO-Revision-Date: 2025-02-12 09:11+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -486,10 +486,9 @@ msgid "Editing %1"
 msgstr "%1 Düzenleniyor"
 
 #: src/mainwindow.cpp:1581
-#, fuzzy, kde-format
-#| msgid "Editing file: %1"
+#, kde-format
 msgid "Editing file: <code>%1</code>"
-msgstr "Düzenlenen dosya: %1"
+msgstr "Düzenlenen dosya: <code>%1</code>"
 
 #: src/mainwindow.cpp:1607
 #, kde-format
@@ -635,7 +634,7 @@ msgstr "<b>Açıklama: </b>"
 #: src/unitmodel.cpp:147
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
-msgstr "<br><b>Birim dosyası: </b>%1"
+msgstr "<br><b>Birim dosyası:</b> %1"
 
 #: src/unitmodel.cpp:148 src/unitmodel.cpp:198
 #, kde-format
@@ -645,7 +644,7 @@ msgstr "<br><b>Birim dosyası durumu: </b>"
 #: src/unitmodel.cpp:154
 #, kde-format
 msgid "<br><b>Source path: </b>%1"
-msgstr "<br><b>Kaynak dizini: </b>%1"
+msgstr "<br><b>Kaynak dizini:</b> %1"
 
 #: src/unitmodel.cpp:158
 #, kde-format
@@ -665,7 +664,7 @@ msgstr "<b>Birim dosyası: </b>"
 #: src/unitmodel.cpp:207
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
-msgstr "<hr><b>Son günlük girdisi:</b>"
+msgstr "<hr><b>Son günlük girdisi: </b>"
 
 #: src/unitmodel.cpp:210
 #, kde-format

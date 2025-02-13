@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-12 00:43+0000\n"
-"PO-Revision-Date: 2025-01-28 21:35+0200\n"
+"PO-Revision-Date: 2025-02-12 14:05+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -498,10 +498,9 @@ msgid "Editing %1"
 msgstr "Редагування %1"
 
 #: src/mainwindow.cpp:1581
-#, fuzzy, kde-format
-#| msgid "Editing file: %1"
+#, kde-format
 msgid "Editing file: <code>%1</code>"
-msgstr "Редагуємо файл: %1"
+msgstr "Редагуємо файл: <code>%1</code>"
 
 #: src/mainwindow.cpp:1607
 #, kde-format

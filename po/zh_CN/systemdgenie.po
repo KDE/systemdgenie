@@ -367,16 +367,14 @@ msgid "Click to re-execute the user systemd daemon"
 msgstr "点击以重新执行用户 systemd 守护进程"
 
 #: src/mainwindow.cpp:1125
-#, fuzzy, kde-format
-#| msgid "Edit Unit File"
+#, kde-format
 msgid "Edit Unit File…"
-msgstr "编辑单元文件"
+msgstr "编辑单元文件…"
 
 #: src/mainwindow.cpp:1131
-#, fuzzy, kde-format
-#| msgid "Edit Configuration File"
+#, kde-format
 msgid "Edit Configuration File…"
-msgstr "编辑配置文件"
+msgstr "编辑配置文件…"
 
 #: src/mainwindow.cpp:1137
 #, kde-format
@@ -482,10 +480,9 @@ msgid "Editing %1"
 msgstr "正在编辑 %1"
 
 #: src/mainwindow.cpp:1581
-#, fuzzy, kde-format
-#| msgid "Editing file: %1"
+#, kde-format
 msgid "Editing file: <code>%1</code>"
-msgstr "正在编辑文件：%1"
+msgstr ""
 
 #: src/mainwindow.cpp:1607
 #, kde-format
