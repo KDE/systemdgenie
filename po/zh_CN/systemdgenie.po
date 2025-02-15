@@ -482,7 +482,7 @@ msgstr "正在编辑 %1"
 #: src/mainwindow.cpp:1581
 #, kde-format
 msgid "Editing file: <code>%1</code>"
-msgstr ""
+msgstr "正在编辑文件：<code>%1</code>"
 
 #: src/mainwindow.cpp:1607
 #, kde-format
