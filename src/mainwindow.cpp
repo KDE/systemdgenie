@@ -38,12 +38,19 @@
 
 #include <unistd.h>
 
+#include "systemdunit.h"
+#include "unitsfetchjob.h"
+
+using namespace Qt::StringLiterals;
+
 MainWindow::MainWindow(QWidget *parent)
     : KXmlGuiWindow(parent)
 {
     ui.setupUi(this);
 
     ui.leSearchUnit->setFocus();
+
+    m_systemManagerInterface = new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd1"_s, u"/org/freedesktop/systemd1"_s, QDBusConnection::systemBus(), this);
 
     // See if systemd is reachable via dbus
     if (getDbusProperty(QStringLiteral("Version"), sysdMgr) != QLatin1String("invalidIface")) {
@@ -65,6 +72,11 @@ MainWindow::MainWindow(QWidget *parent)
         ui.tabWidget->setTabEnabled(1, false);
         ui.tabWidget->setTabToolTip(1, i18n("User dbus not found. Support for user units disabled."));
         enableUserUnits = false;
+    }
+
+    if (!m_userBusPath.isEmpty()) {
+        auto connection = QDBusConnection::connectToBus(m_userBusPath, connSystemd);
+        m_sessionManagerInterface = new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd.Manager"_s, u"/org/freedesktop/systemd1"_s, connection, this);
     }
 
     QStringList allowUnitTypes = QStringList{i18n("All"), i18n("Services"), i18n("Automounts"), i18n("Devices"),
@@ -99,65 +111,6 @@ MainWindow::~MainWindow()
 void MainWindow::quit()
 {
     close();
-}
-
-
-QDBusArgument &operator<<(QDBusArgument &argument, const SystemdUnit &unit)
-{
-    argument.beginStructure();
-    argument << unit.id
-             << unit.description
-             << unit.load_state
-             << unit.active_state
-             << unit.sub_state
-             << unit.following
-             << unit.unit_path
-             << unit.job_id
-             << unit.job_type
-             << unit.job_path;
-    argument.endStructure();
-    return argument;
-}
-
-const QDBusArgument &operator>>(const QDBusArgument &argument, SystemdUnit &unit)
-{
-    argument.beginStructure();
-    argument >> unit.id
-            >> unit.description
-            >> unit.load_state
-            >> unit.active_state
-            >> unit.sub_state
-            >> unit.following
-            >> unit.unit_path
-            >> unit.job_id
-            >> unit.job_type
-            >> unit.job_path;
-    argument.endStructure();
-    return argument;
-}
-
-QDBusArgument &operator<<(QDBusArgument &argument, const SystemdSession &session)
-{
-    argument.beginStructure();
-    argument << session.session_id
-             << session.user_id
-             << session.user_name
-             << session.seat_id
-             << session.session_path;
-    argument.endStructure();
-    return argument;
-}
-
-const QDBusArgument &operator>>(const QDBusArgument &argument, SystemdSession &session)
-{
-    argument.beginStructure();
-    argument >> session.session_id
-            >> session.user_id
-            >> session.user_name
-            >> session.seat_id
-            >> session.session_path;
-    argument.endStructure();
-    return argument;
 }
 
 void MainWindow::setupSignalSlots()
@@ -320,9 +273,6 @@ void MainWindow::setupUnitslist()
 {
     // Sets up the units list initially
 
-    // Register the meta type for storing units
-    qDBusRegisterMetaType<SystemdUnit>();
-
     QMap<filterType, QString> filters;
     filters[activeState] = QString();
     filters[unitType] = QString();
@@ -363,9 +313,6 @@ void MainWindow::setupUnitslist()
 void MainWindow::setupSessionlist()
 {
     // Sets up the session list initially
-
-    // Register the meta type for storing units
-    qDBusRegisterMetaType<SystemdSession>();
 
     // Setup model for session list
     m_sessionModel = new QStandardItemModel(this);
@@ -557,50 +504,45 @@ void MainWindow::slotCmbUnitTypes(int index)
 
 void MainWindow::slotRefreshUnitsList(bool initial, dbusBus bus)
 {
-    // Updates the unit lists
+    if (bus == user && !enableUserUnits) {
+        return;
+    }
 
-    if (bus == sys) {
+    OrgFreedesktopSystemd1ManagerInterface *interface = bus == sys ? m_systemManagerInterface : m_sessionManagerInterface;
 
-        qDebug() << "Refreshing system units...";
+    auto job = new UnitsFetchJob(m_systemManagerInterface);
+    connect(job, &UnitsFetchJob::finished, this, [this, bus, job](KJob *) {
+        if (bus == user) {
+            m_userUnitsList.clear();
+            m_userUnitsList = job->units();
+            m_noActUserUnits = 0;
+            for (const SystemdUnit &unit : m_userUnitsList)
+            {
+                if (unit.active_state == QLatin1String("active"))
+                    m_noActUserUnits++;
+            }
+            m_userUnitModel->dataChanged(m_userUnitModel->index(0, 0), m_userUnitModel->index(m_userUnitModel->rowCount(), 0));
+            m_userUnitFilterModel->invalidate();
+            updateUnitCount();
+            slotRefreshTimerList();
+            updateActions();
+        } else {
+            m_systemUnitsList.clear();
+            m_systemUnitsList = job->units();
 
-        // get an updated list of system units via dbus
-        m_systemUnitsList.clear();
-        m_systemUnitsList = getUnitsFromDbus(sys);
-        m_noActSystemUnits = 0;
-        for (const SystemdUnit &unit : m_systemUnitsList)
-        {
-            if (unit.active_state == QLatin1String("active"))
-                m_noActSystemUnits++;
-        }
-        if (!initial) {
+            for (const SystemdUnit &unit : m_systemUnitsList) {
+                if (unit.active_state == QLatin1String("active"))
+                    m_noActSystemUnits++;
+            }
+
             m_systemUnitModel->dataChanged(m_systemUnitModel->index(0, 0), m_systemUnitModel->index(m_systemUnitModel->rowCount(), 0));
             m_systemUnitFilterModel->invalidate();
             updateUnitCount();
             slotRefreshTimerList();
             updateActions();
         }
-
-    } else if (enableUserUnits && bus == user) {
-
-        qDebug() << "Refreshing user units...";
-
-        // get an updated list of user units via dbus
-        m_userUnitsList.clear();
-        m_userUnitsList = getUnitsFromDbus(user);
-        m_noActUserUnits = 0;
-        for (const SystemdUnit &unit : m_userUnitsList)
-        {
-            if (unit.active_state == QLatin1String("active"))
-                m_noActUserUnits++;
-        }
-        if (!initial) {
-            m_userUnitModel->dataChanged(m_userUnitModel->index(0, 0), m_userUnitModel->index(m_userUnitModel->rowCount(), 0));
-            m_userUnitFilterModel->invalidate();
-            updateUnitCount();
-            slotRefreshTimerList();
-            updateActions();
-        }
-    }
+    });
+    job->start();
 }
 
 void MainWindow::slotRefreshSessionList()
@@ -1635,83 +1577,6 @@ void MainWindow::openEditor(const QString &file)
         }
     }
     delete dlgEditor;
-}
-
-QVector<SystemdUnit> MainWindow::getUnitsFromDbus(dbusBus bus)
-{
-    // get an updated list of units via dbus
-
-    QVector<SystemdUnit> list;
-    QVector<unitfile> unitfileslist;
-    QDBusMessage dbusreply;
-
-    dbusreply = callDbusMethod(QStringLiteral("ListUnits"), sysdMgr, bus);
-
-    if (dbusreply.type() == QDBusMessage::ReplyMessage)
-    {
-
-        const QDBusArgument argUnits = dbusreply.arguments().at(0).value<QDBusArgument>();
-        if (argUnits.currentType() == QDBusArgument::ArrayType)
-        {
-            argUnits.beginArray();
-            while (!argUnits.atEnd())
-            {
-                SystemdUnit unit;
-                argUnits >> unit;
-                if (unit.following.isEmpty()) {
-                    list.append(unit);
-                }
-            }
-            argUnits.endArray();
-        }
-        //qDebug() << "Added " << list.size() << " units on bus " << bus;
-
-        // Get a list of unit files
-        dbusreply = callDbusMethod(QStringLiteral("ListUnitFiles"), sysdMgr, bus);
-        const QDBusArgument argUnitFiles = dbusreply.arguments().at(0).value<QDBusArgument>();
-        argUnitFiles.beginArray();
-        while (!argUnitFiles.atEnd())
-        {
-            unitfile u;
-            argUnitFiles.beginStructure();
-            argUnitFiles >> u.name >> u.status;
-            argUnitFiles.endStructure();
-            unitfileslist.append(u);
-        }
-        argUnitFiles.endArray();
-
-        // Add unloaded units to the list
-        for (const unitfile &f : unitfileslist)
-        {
-            int index = list.indexOf(SystemdUnit(f.name.section(QLatin1Char('/'), -1)));
-            if (index > -1)
-            {
-                // The unit was already in the list, add unit file and its status
-                list[index].unit_file = f.name;
-                list[index].unit_file_status = f.status;
-            }
-            else
-            {
-                // Unit not in the list, add it.
-                QFile unitfile(f.name);
-                if (unitfile.symLinkTarget().isEmpty())
-                {
-                    SystemdUnit unit;
-                    unit.id = f.name.section(QLatin1Char('/'), -1);
-                    unit.load_state = QStringLiteral("unloaded");
-                    unit.active_state = QLatin1Char('-');
-                    unit.sub_state = QLatin1Char('-');
-                    unit.unit_file = f.name;
-                    unit.unit_file_status= f.status;
-                    list.append(unit);
-                }
-            }
-        }
-        // qDebug() << "Added " << tal << " units from files on bus " << bus;
-
-    }
-
-    return list;
 }
 
 QVariant MainWindow::getDbusProperty(QString prop, dbusIface ifaceName, QDBusObjectPath path, dbusBus bus)

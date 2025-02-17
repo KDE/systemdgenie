@@ -20,6 +20,7 @@
 
 #include <QString>
 #include <QDBusObjectPath>
+#include <QDBusArgument>
 
 // struct for storing units retrieved from systemd via DBus
 struct SystemdUnit
@@ -46,6 +47,9 @@ struct SystemdUnit
 };
 Q_DECLARE_METATYPE(SystemdUnit)
 
+QDBusArgument &operator<<(QDBusArgument &argument, const SystemdUnit &unit);
+const QDBusArgument &operator>>(const QDBusArgument &argument, SystemdUnit &unit);
+
 // struct for storing sessions retrieved from logind via DBus
 struct SystemdSession
 {
@@ -65,9 +69,26 @@ struct SystemdSession
 };
 Q_DECLARE_METATYPE(SystemdSession)
 
+QDBusArgument &operator<<(QDBusArgument &argument, const SystemdSession &session);
+const QDBusArgument &operator>>(const QDBusArgument &argument, SystemdSession &session);
+
 enum dbusBus
 {
   sys, session, user
 };
+
+struct UnitFile
+{
+    QString name;
+    QString status;
+
+    bool operator==(const UnitFile& right) const
+    {
+        return name.section(QLatin1Char('/'), -1) == right.name;
+    }
+};
+
+QDBusArgument &operator<<(QDBusArgument &argument, const UnitFile &unitFile);
+const QDBusArgument &operator>>(const QDBusArgument &argument, UnitFile &unitFile);
 
 #endif // SYSTEMDUNIT_H
