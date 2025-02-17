@@ -7,30 +7,17 @@ viewing and controlling systemd units, logind sessions as well as easy
 modification of configuration and unit files.
 
 
-Installation
-------------
-    mkdir build  
-    cd build  
-    cmake -DCMAKE_INSTALL_PREFIX=\`kf5-config --prefix\` ..  
-    make  
-    make install  
+Building
+--------
 
-
-Dependencies
-------------
-*   Qt >= 5.15.2
-*   KF5Auth >= 5.95.0
-*   KF5CoreAddons >= 5.95.0
-*   KF5Crash >= 5.95.0
-*   KF5I18n >= 5.95.0
-*   Systemd >= 209
+The easiest way to make changes and test SystemdGenie during development
+is to [build it with kdesrc-build](https://community.kde.org/Get_Involved/development/Build_software_with_kdesrc-build).
 
 
 Execution
 ---------
 SystemdGenie can be accessed through the application menu or by issuing
 the command `systemdgenie` from a terminal.
-
 
 Developed by:
 * Ragnar Thomsen <rthomsen6@gmail.com>
