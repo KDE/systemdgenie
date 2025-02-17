@@ -29,8 +29,6 @@
 #include <QDBusConnection>
 #include <QStandardItemModel>
 
-#include "systemd_manager_interface.h"
-
 struct conffile
 {
     QString filePath;
@@ -190,9 +188,6 @@ private:
     QAction *m_activateSessionAction;
     QAction *m_terminateSessionAction;
     QAction *m_lockSessionAction;
-
-    OrgFreedesktopSystemd1ManagerInterface *m_systemManagerInterface = nullptr;
-    OrgFreedesktopSystemd1ManagerInterface *m_sessionManagerInterface = nullptr;
 
 private Q_SLOTS:
     void quit();

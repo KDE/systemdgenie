@@ -67,15 +67,6 @@ int main(int argc, char *argv[])
     // Handle standard options.
     aboutData.processCommandLine(&parser);
 
-    qDBusRegisterMetaType<SystemdUnit>();
-    qDBusRegisterMetaType<QList<SystemdUnit>>();
-
-    qDBusRegisterMetaType<SystemdSession>();
-    qDBusRegisterMetaType<QList<SystemdSession>>();
-
-    qDBusRegisterMetaType<UnitFile>();
-    qDBusRegisterMetaType<QList<UnitFile>>();
-
     MainWindow *window = new MainWindow;
     window->show();
 
