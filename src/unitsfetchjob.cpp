@@ -20,7 +20,6 @@ void UnitsFetchJob::start()
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
     connect(watcher, &QDBusPendingCallWatcher::finished, this,
                      &UnitsFetchJob::slotListUnitsFinished);
-
 }
 
 void UnitsFetchJob::slotListUnitsFinished(QDBusPendingCallWatcher *call)
@@ -30,6 +29,7 @@ void UnitsFetchJob::slotListUnitsFinished(QDBusPendingCallWatcher *call)
         setErrorText(reply.error().message());
         setError(KJob::UserDefinedError);
         Q_EMIT emitResult();
+        call->deleteLater();
         return;
     } else {
         m_units = reply.value();
@@ -46,10 +46,11 @@ void UnitsFetchJob::slotListUnitFilesFinished(QDBusPendingCallWatcher *call)
 {
     QDBusPendingReply<QList<UnitFile>> reply = *call;
     if (reply.isError()) {
-        qWarning() << reply.error();
+        qWarning() << "Error fetching units from dbus" << reply.error();
         setErrorText(reply.error().message());
         setError(KJob::UserDefinedError);
         Q_EMIT emitResult();
+        call->deleteLater();
         return;
     }
 
