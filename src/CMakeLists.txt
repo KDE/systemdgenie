@@ -1,9 +1,21 @@
 add_subdirectory(helper)
 
+set_source_files_properties(dbus/org.freedesktop.systemd1.Manager.xml PROPERTIES
+    NO_NAMESPACE TRUE
+    INCLUDE "systemdunit.h"
+)
+
+qt_add_dbus_interface(systemd_DBUS_SRCS
+    dbus/org.freedesktop.systemd1.Manager.xml
+    systemd_manager_interface
+)
+
 set(systemdgenie_SRCS main.cpp
                       mainwindow.cpp
                       unitmodel.cpp
-                      sortfilterunitmodel.cpp)
+                      unitsfetchjob.cpp
+                      systemdunit.cpp
+                      sortfilterunitmodel.cpp ${systemd_DBUS_SRCS})
 
 ki18n_wrap_ui(systemdgenie_SRCS mainwindow.ui)
 
