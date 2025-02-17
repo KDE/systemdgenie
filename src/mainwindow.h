@@ -19,6 +19,7 @@
 #include <QStandardItemModel>
 
 #include "systemd_manager_interface.h"
+#include "login_manager_interface.h"
 
 struct conffile
 {
@@ -165,8 +166,9 @@ private:
     QAction *m_terminateSessionAction;
     QAction *m_lockSessionAction;
 
-    OrgFreedesktopSystemd1ManagerInterface *m_systemManagerInterface = nullptr;
+    OrgFreedesktopSystemd1ManagerInterface * const m_systemManagerInterface;
     OrgFreedesktopSystemd1ManagerInterface *m_sessionManagerInterface = nullptr;
+    OrgFreedesktopLogin1ManagerInterface * const m_loginManagerInterface;
 
 private Q_SLOTS:
     void quit();

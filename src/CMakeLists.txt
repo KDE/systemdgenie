@@ -5,17 +5,31 @@ set_source_files_properties(dbus/org.freedesktop.systemd1.Manager.xml PROPERTIES
     INCLUDE "systemdunit.h"
 )
 
+set_source_files_properties(dbus/org.freedesktop.login1.Manager.xml PROPERTIES
+    NO_NAMESPACE TRUE
+    INCLUDE "systemdunit.h"
+)
+
 qt_add_dbus_interface(systemd_DBUS_SRCS
     dbus/org.freedesktop.systemd1.Manager.xml
     systemd_manager_interface
+)
+
+qt_add_dbus_interface(systemd_DBUS_SRCS
+    dbus/org.freedesktop.login1.Manager.xml
+    login_manager_interface
 )
 
 set(systemdgenie_SRCS main.cpp
                       mainwindow.cpp
                       unitmodel.cpp
                       unitsfetchjob.cpp
+                      unitsfetchjob.h
+                      sessionsfetchjob.cpp
+                      sessionsfetchjob.h
+                      sortfilterunitmodel.cpp
                       systemdunit.cpp
-                      sortfilterunitmodel.cpp ${systemd_DBUS_SRCS})
+                      ${systemd_DBUS_SRCS})
 
 ki18n_wrap_ui(systemdgenie_SRCS mainwindow.ui)
 

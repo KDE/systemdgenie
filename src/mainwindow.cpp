@@ -29,17 +29,19 @@
 
 #include "systemdunit.h"
 #include "unitsfetchjob.h"
+#include "sessionsfetchjob.h"
 
 using namespace Qt::StringLiterals;
 
 MainWindow::MainWindow(QWidget *parent)
     : KXmlGuiWindow(parent)
+    , m_systemManagerInterface(new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd1"_s, u"/org/freedesktop/systemd1"_s, QDBusConnection::systemBus(), this))
+    , m_loginManagerInterface(new OrgFreedesktopLogin1ManagerInterface(u"org.freedesktop.login1"_s, u"/org/freedesktop/login1"_s, QDBusConnection::systemBus(), this))
 {
     ui.setupUi(this);
 
     ui.leSearchUnit->setFocus();
 
-    m_systemManagerInterface = new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd1"_s, u"/org/freedesktop/systemd1"_s, QDBusConnection::systemBus(), this);
 
     // See if systemd is reachable via dbus
     if (getDbusProperty(QStringLiteral("Version"), sysdMgr) != QLatin1String("invalidIface")) {
@@ -544,85 +546,80 @@ void MainWindow::slotRefreshSessionList()
     // clear list
     m_sessionList.clear();
 
-    // get an updated list of sessions via dbus
-    QDBusMessage dbusreply = callDbusMethod(QStringLiteral("ListSessions"), logdMgr);
-
-    // extract the list of sessions from the reply
-    const QDBusArgument arg = dbusreply.arguments().at(0).value<QDBusArgument>();
-    if (arg.currentType() == QDBusArgument::ArrayType)
-    {
-        arg.beginArray();
-        while (!arg.atEnd())
-        {
-            SystemdSession session;
-            arg >> session;
-            m_sessionList.append(session);
+    auto job = new SessionsFetchJob(m_loginManagerInterface);
+    connect(job, &SessionsFetchJob::finished, this, [this, job](KJob *) {
+        if (job->error()) {
+            displayMsgWidget(KMessageWidget::Error, i18n("Unable to fetch sessions list: %1", job->error()));
+            return;
         }
-        arg.endArray();
-    }
 
-    // Iterate through the new list and compare to model
-    for (const SystemdSession &s : m_sessionList) {
-        // This is needed to get the "State" property
+        m_sessionList = job->sessions();
 
-        QList<QStandardItem *> items = m_sessionModel->findItems(s.session_id, Qt::MatchExactly, 0);
+        // Iterate through the new list and compare to model
+        for (const SystemdSession &s : m_sessionList) {
+            // This is needed to get the "State" property
 
-        if (items.isEmpty())
-        {
-            // New session discovered so add it to the model
-            QList<QStandardItem *> row;
-            row <<
-                   new QStandardItem(s.session_id) <<
-                   new QStandardItem(s.session_path.path()) <<
-                   new QStandardItem(getDbusProperty(QStringLiteral("State"), logdSession, s.session_path).toString()) <<
-                   new QStandardItem(QString::number(s.user_id)) <<
-                   new QStandardItem(s.user_name) <<
-                   new QStandardItem(s.seat_id);
-            m_sessionModel->appendRow(row);
-        } else {
-            m_sessionModel->item(items.at(0)->row(), 2)->setData(getDbusProperty(QStringLiteral("State"), logdSession, s.session_path).toString(), Qt::DisplayRole);
-        }
-    }
+            QList<QStandardItem *> items = m_sessionModel->findItems(s.session_id, Qt::MatchExactly, 0);
 
-    // Check to see if any sessions were removed
-    if (m_sessionModel->rowCount() != m_sessionList.size())
-    {
-        QList<QPersistentModelIndex> indexes;
-        // Loop through model and compare to retrieved m_sessionList
-        for (int row = 0; row < m_sessionModel->rowCount(); ++row)
-        {
-            SystemdSession session;
-            session.session_id = m_sessionModel->index(row,0).data().toString();
-            if (!m_sessionList.contains(session))
+            if (items.isEmpty())
             {
-                // Add removed units to list for deletion
-                // qDebug() << "Unit removed: " << systemUnitModel->index(row,0).data().toString();
-                indexes << m_sessionModel->index(row,0);
+                // New session discovered so add it to the model
+                QList<QStandardItem *> row;
+                row <<
+                       new QStandardItem(s.session_id) <<
+                       new QStandardItem(s.session_path.path()) <<
+                       new QStandardItem(getDbusProperty(QStringLiteral("State"), logdSession, s.session_path).toString()) <<
+                       new QStandardItem(QString::number(s.user_id)) <<
+                       new QStandardItem(s.user_name) <<
+                       new QStandardItem(s.seat_id);
+                m_sessionModel->appendRow(row);
+            } else {
+                m_sessionModel->item(items.at(0)->row(), 2)->setData(getDbusProperty(QStringLiteral("State"), logdSession, s.session_path).toString(), Qt::DisplayRole);
             }
         }
-        // Delete the identified units from model
-        for (const QPersistentModelIndex &i : indexes)
-            m_sessionModel->removeRow(i.row());
-    }
 
-    // Update the text color in model
-    QColor newcolor;
-    for (int row = 0; row < m_sessionModel->rowCount(); ++row)
-    {
-        QBrush newcolor;
-        const KColorScheme scheme(QPalette::Normal);
-        if (m_sessionModel->data(m_sessionModel->index(row,2), Qt::DisplayRole) == QLatin1String("active"))
-            newcolor = scheme.foreground(KColorScheme::PositiveText);
-        else if (m_sessionModel->data(m_sessionModel->index(row,2), Qt::DisplayRole) == QLatin1String("closing"))
-            newcolor = scheme.foreground(KColorScheme::InactiveText);
-        else
-            newcolor = scheme.foreground(KColorScheme::NormalText);
+        // Check to see if any sessions were removed
+        if (m_sessionModel->rowCount() != m_sessionList.size())
+        {
+            QList<QPersistentModelIndex> indexes;
+            // Loop through model and compare to retrieved m_sessionList
+            for (int row = 0; row < m_sessionModel->rowCount(); ++row)
+            {
+                SystemdSession session;
+                session.session_id = m_sessionModel->index(row,0).data().toString();
+                if (!m_sessionList.contains(session))
+                {
+                    // Add removed units to list for deletion
+                    // qDebug() << "Unit removed: " << systemUnitModel->index(row,0).data().toString();
+                    indexes << m_sessionModel->index(row,0);
+                }
+            }
+            // Delete the identified units from model
+            for (const QPersistentModelIndex &i : indexes)
+                m_sessionModel->removeRow(i.row());
+        }
 
-        for (int col = 0; col < m_sessionModel->columnCount(); ++col)
-            m_sessionModel->setData(m_sessionModel->index(row,col), QVariant(newcolor), Qt::ForegroundRole);
-    }
-    ui.tblSessions->resizeColumnsToContents();
-    ui.tblSessions->resizeRowsToContents();
+        // Update the text color in model
+        QColor newcolor;
+        for (int row = 0; row < m_sessionModel->rowCount(); ++row)
+        {
+            QBrush newcolor;
+            const KColorScheme scheme(QPalette::Normal);
+            if (m_sessionModel->data(m_sessionModel->index(row,2), Qt::DisplayRole) == QLatin1String("active"))
+                newcolor = scheme.foreground(KColorScheme::PositiveText);
+            else if (m_sessionModel->data(m_sessionModel->index(row,2), Qt::DisplayRole) == QLatin1String("closing"))
+                newcolor = scheme.foreground(KColorScheme::InactiveText);
+            else
+                newcolor = scheme.foreground(KColorScheme::NormalText);
+
+            for (int col = 0; col < m_sessionModel->columnCount(); ++col)
+                m_sessionModel->setData(m_sessionModel->index(row,col), QVariant(newcolor), Qt::ForegroundRole);
+        }
+        ui.tblSessions->resizeColumnsToContents();
+        ui.tblSessions->resizeRowsToContents();
+    });
+
+    job->start();
 }
 
 void MainWindow::slotRefreshTimerList()
