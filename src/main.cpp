@@ -41,16 +41,12 @@ int main(int argc, char *argv[])
                         i18n("Maintainer"),
                         QStringLiteral("rthomsen6@gmail.com"));
 
+    KAboutData::setApplicationData(aboutData);
+
     application.setWindowIcon(QIcon::fromTheme(QStringLiteral("preferences-system-services")));
 
     QCommandLineParser parser;
-    parser.setApplicationDescription(aboutData.shortDescription());
-    parser.addHelpOption();
-    parser.addVersionOption();
-
     aboutData.setupCommandLine(&parser);
-
-    KAboutData::setApplicationData(aboutData);
 
     // Do the command line parsing.
     parser.process(application);
