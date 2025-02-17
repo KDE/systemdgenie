@@ -76,7 +76,6 @@ const QDBusArgument &operator>>(const QDBusArgument &argument, UnitFile &unitFil
     argument.beginStructure();
     argument >> unitFile.name
             >> unitFile.status;
-    qWarning() << unitFile.name;
     argument.endStructure();
     return argument;
 }
