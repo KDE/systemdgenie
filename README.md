@@ -22,12 +22,13 @@ the command `systemdgenie` from a terminal.
 Developed by:
 * Ragnar Thomsen <rthomsen6@gmail.com>
 
-
+<!--
 Source packages can be downloaded at:
 http://download.kde.org/stable/systemdgenie/
+-->
 
 Please report bugs and feature requests at:
 https://bugs.kde.org/
 
 Git repository can be found at:
-http://cgit.kde.org/systemdgenie.git
+https://invent.kde.org/system/systemdgenie
