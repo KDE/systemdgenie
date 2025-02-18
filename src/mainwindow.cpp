@@ -435,7 +435,7 @@ void MainWindow::slotChkShowUnits(int state)
         if (!ui.chkInactiveUnits->isChecked())
         {
             ui.chkUnloadedUnits->setEnabled(true);
-            if (ui.chkUnloadedUnits->isChecked())
+            if (!ui.chkUnloadedUnits->isChecked())
                 m_systemUnitFilterModel->addFilterRegExp(activeState, QString());
             else
                 m_systemUnitFilterModel->addFilterRegExp(activeState, QStringLiteral("active"));
@@ -457,7 +457,7 @@ void MainWindow::slotChkShowUnits(int state)
         if (!ui.chkInactiveUserUnits->isChecked())
         {
             ui.chkUnloadedUserUnits->setEnabled(true);
-            if (ui.chkUnloadedUserUnits->isChecked())
+            if (!ui.chkUnloadedUserUnits->isChecked())
                 m_userUnitFilterModel->addFilterRegExp(activeState, QString());
             else
                 m_userUnitFilterModel->addFilterRegExp(activeState, QStringLiteral("active"));
