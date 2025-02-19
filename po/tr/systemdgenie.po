@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-18 00:43+0000\n"
-"PO-Revision-Date: 2025-02-12 09:11+0300\n"
+"PO-Revision-Date: 2025-02-18 11:15+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -38,6 +38,8 @@ msgstr "SystemdGenie"
 #, kde-format
 msgid "Manage systemd units, timers, sessions and config files"
 msgstr ""
+"SystemD birimlerini, sayaçlarını, oturumlarını ve yapılandırma dosyalarını "
+"yönetin"
 
 #: src/main.cpp:33
 #, kde-format
@@ -243,7 +245,7 @@ msgstr "System kullanıcı ardalan süreci yapılandırması"
 #: src/mainwindow.cpp:552
 #, kde-format
 msgid "Unable to fetch sessions list: %1"
-msgstr ""
+msgstr "Oturumlar listesi getirilemedi: %1"
 
 #: src/mainwindow.cpp:751 src/mainwindow.cpp:760
 #, kde-format
@@ -511,10 +513,9 @@ msgstr "%1: %2 başarıyla yazıldı…"
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
 #: src/mainwindow.ui:14
-#, fuzzy, kde-format
-#| msgid "Services"
+#, kde-format
 msgid "Services Manager"
-msgstr "Hizmetler"
+msgstr "Hizmetler Yöneticisi"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
 #: src/mainwindow.ui:85
@@ -531,38 +532,34 @@ msgstr "<html><head/><body><p>Birim türlerini süz.</p></body></html>"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUnits)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUserUnits)
 #: src/mainwindow.ui:194 src/mainwindow.ui:300
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+#, kde-format
 msgid "<html><head/><body><p>Toggle hiding inactive units.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Seçim, etkin olmayan birimleri gösterir.</p></body></"
-"html>"
+"<html><head/><body><p>Etkin olmayan birimleri gizlemeyi açın/kapatın.</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUnits)
 #. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUserUnits)
 #: src/mainwindow.ui:197 src/mainwindow.ui:303
-#, fuzzy, kde-format
-#| msgid "Show inactive"
+#, kde-format
 msgid "Hide inactive"
-msgstr "Etkin olmayanları göster"
+msgstr "Etkin olmayanları gizle"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUnits)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUserUnits)
 #: src/mainwindow.ui:207 src/mainwindow.ui:313
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+#, kde-format
 msgid "<html><head/><body><p>Toggle hiding unloaded units.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Seçim, etkin olmayan birimleri gösterir.</p></body></"
-"html>"
+"<html><head/><body><p>Yüklenmemiş birimleri gizlemeyi açın/kapatın.</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUnits)
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUserUnits)
 #: src/mainwindow.ui:210 src/mainwindow.ui:316
-#, fuzzy, kde-format
-#| msgid "Show unloaded"
+#, kde-format
 msgid "Hide unloaded"
-msgstr "Yüklenmemişleri göster"
+msgstr "Yüklenmemişleri gizle"
 
 #. i18n: ectx: property (text), widget (QLabel, lblUnitCount)
 #. i18n: ectx: property (text), widget (QLabel, lblUserUnitCount)

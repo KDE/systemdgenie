@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-18 00:43+0000\n"
-"PO-Revision-Date: 2025-02-12 17:39+0400\n"
+"PO-Revision-Date: 2025-02-18 22:09+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -37,17 +37,17 @@ msgstr "جني Systemd"
 #: src/main.cpp:31
 #, kde-format
 msgid "Manage systemd units, timers, sessions and config files"
-msgstr ""
+msgstr "أدر وحدات systemd والمؤقتات والجلسات وملفات الضبط"
 
 #: src/main.cpp:33
 #, kde-format
 msgid "(c) 2016, Ragnar Thomsen"
-msgstr "(c) 2016, Ragnar Thomsen"
+msgstr "(c) 2016، راجنار تومسون"
 
 #: src/main.cpp:40
 #, kde-format
 msgid "Ragnar Thomsen"
-msgstr "Ragnar Thomsen"
+msgstr "راجنار تومسون"
 
 #: src/main.cpp:41
 #, kde-format
@@ -243,7 +243,7 @@ msgstr "ضبط عفريت Systemd للمستخدم"
 #: src/mainwindow.cpp:552
 #, kde-format
 msgid "Unable to fetch sessions list: %1"
-msgstr ""
+msgstr "غير قادر على جلب قائمة الجلسات: %1"
 
 #: src/mainwindow.cpp:751 src/mainwindow.cpp:760
 #, kde-format
@@ -523,10 +523,9 @@ msgstr "‏%1: %2 كُتب بنجاح."
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
 #: src/mainwindow.ui:14
-#, fuzzy, kde-format
-#| msgid "Services"
+#, kde-format
 msgid "Services Manager"
-msgstr "الخدمات"
+msgstr "مدير الخدمات"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
 #: src/mainwindow.ui:85
@@ -543,36 +542,31 @@ msgstr "<html><head/><body><p>رشّح أنواع الوحدات.</p></body></ht
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUnits)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUserUnits)
 #: src/mainwindow.ui:194 src/mainwindow.ui:300
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+#, kde-format
 msgid "<html><head/><body><p>Toggle hiding inactive units.</p></body></html>"
-msgstr ""
-"<html><head/><body><p>يبدّل بين عرض الوحدات الخاملة أم لا.</p></body></html>"
+msgstr "<html><head/><body><p>يظهر أو يخفي الوحدات الخاملة.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUnits)
 #. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUserUnits)
 #: src/mainwindow.ui:197 src/mainwindow.ui:303
-#, fuzzy, kde-format
-#| msgid "Show inactive"
+#, kde-format
 msgid "Hide inactive"
-msgstr "أظهر الخاملة"
+msgstr "أخفِ غير النّشطة"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUnits)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUserUnits)
 #: src/mainwindow.ui:207 src/mainwindow.ui:313
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+#, kde-format
 msgid "<html><head/><body><p>Toggle hiding unloaded units.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>يبدّل بين عرض الوحدات الخاملة أم لا.</p></body></html>"
+"<html><head/><body><p>يبدّل بين عرض الوحدات غير المحملة.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUnits)
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUserUnits)
 #: src/mainwindow.ui:210 src/mainwindow.ui:316
-#, fuzzy, kde-format
-#| msgid "Show unloaded"
+#, kde-format
 msgid "Hide unloaded"
-msgstr "أظهر غير المحمّلة"
+msgstr "أخفِ غير المحمّلة"
 
 #. i18n: ectx: property (text), widget (QLabel, lblUnitCount)
 #. i18n: ectx: property (text), widget (QLabel, lblUserUnitCount)
