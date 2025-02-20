@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-18 00:43+0000\n"
-"PO-Revision-Date: 2025-02-14 08:35+0100\n"
+"PO-Revision-Date: 2025-02-19 07:30+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -37,6 +37,8 @@ msgstr "SystemdGenie"
 #, kde-format
 msgid "Manage systemd units, timers, sessions and config files"
 msgstr ""
+"Xestionar as unidades, temporizadores, sesións e ficheiros de configuración "
+"de systemd."
 
 #: src/main.cpp:33
 #, kde-format
@@ -244,7 +246,7 @@ msgstr "Configuración do servizo Systemd do usuario"
 #: src/mainwindow.cpp:552
 #, kde-format
 msgid "Unable to fetch sessions list: %1"
-msgstr ""
+msgstr "Non é posíbel obter a lista de sesións: %1"
 
 #: src/mainwindow.cpp:751 src/mainwindow.cpp:760
 #, kde-format
@@ -512,10 +514,9 @@ msgstr "%1: %2 gardouse correctamente…"
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
 #: src/mainwindow.ui:14
-#, fuzzy, kde-format
-#| msgid "Services"
+#, kde-format
 msgid "Services Manager"
-msgstr "Servizos"
+msgstr "Xestor de servizos"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
 #: src/mainwindow.ui:85
@@ -532,36 +533,34 @@ msgstr "<html><head/><body><p>Filtrar por tipo de unidade.</p></body></html>"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUnits)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUserUnits)
 #: src/mainwindow.ui:194 src/mainwindow.ui:300
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+#, kde-format
 msgid "<html><head/><body><p>Toggle hiding inactive units.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Conmutar as unidades inactivas.</p></body></html>"
+"<html><head/><body><p>Conmutar a ocultación das unidades inactivas.</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUnits)
 #. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUserUnits)
 #: src/mainwindow.ui:197 src/mainwindow.ui:303
-#, fuzzy, kde-format
-#| msgid "Show inactive"
+#, kde-format
 msgid "Hide inactive"
-msgstr "Amosar as inactivas."
+msgstr "Agochar as inactivas."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUnits)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUserUnits)
 #: src/mainwindow.ui:207 src/mainwindow.ui:313
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+#, kde-format
 msgid "<html><head/><body><p>Toggle hiding unloaded units.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Conmutar as unidades inactivas.</p></body></html>"
+"<html><head/><body><p>Conmutar a ocultación das unidades descargadas.</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUnits)
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUserUnits)
 #: src/mainwindow.ui:210 src/mainwindow.ui:316
-#, fuzzy, kde-format
-#| msgid "Show unloaded"
+#, kde-format
 msgid "Hide unloaded"
-msgstr "Amosar as non cargadas."
+msgstr "Agochar as descargadas."
 
 #. i18n: ectx: property (text), widget (QLabel, lblUnitCount)
 #. i18n: ectx: property (text), widget (QLabel, lblUserUnitCount)

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-18 00:43+0000\n"
-"PO-Revision-Date: 2025-02-13 01:26+0100\n"
+"PO-Revision-Date: 2025-02-19 03:36+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -38,6 +38,8 @@ msgstr "SystemdGenie"
 #, kde-format
 msgid "Manage systemd units, timers, sessions and config files"
 msgstr ""
+"Gestión de unidades de systemd, temporizadores, sesiones y archivos de "
+"configuración"
 
 #: src/main.cpp:33
 #, kde-format
@@ -57,7 +59,7 @@ msgstr "Responsable"
 #: src/mainwindow.cpp:52
 #, kde-format
 msgid "Unable to contact the systemd daemon. Quitting..."
-msgstr "No se ha podido contactar con el demonio systemd. Saliendo..."
+msgstr "No se ha podido contactar con el demonio systemd. Saliendo…"
 
 #: src/mainwindow.cpp:64
 #, kde-format
@@ -245,7 +247,7 @@ msgstr "Configuración de usuario del servicio de systemd"
 #: src/mainwindow.cpp:552
 #, kde-format
 msgid "Unable to fetch sessions list: %1"
-msgstr ""
+msgstr "No se ha podido obtener la lista de sesiones: %1"
 
 #: src/mainwindow.cpp:751 src/mainwindow.cpp:760
 #, kde-format
@@ -380,12 +382,12 @@ msgstr "Pulse para volver a ejecutar el servicio systemd del usuario"
 #: src/mainwindow.cpp:1055
 #, kde-format
 msgid "Edit Unit File…"
-msgstr "Editar archivo de la unidad..."
+msgstr "Editar archivo de la unidad…"
 
 #: src/mainwindow.cpp:1061
 #, kde-format
 msgid "Edit Configuration File…"
-msgstr "Editar archivo de configuración..."
+msgstr "Editar archivo de configuración…"
 
 #: src/mainwindow.cpp:1067
 #, kde-format
@@ -474,17 +476,17 @@ msgstr "<br><b>Creación: </b>"
 #: src/mainwindow.cpp:1295
 #, kde-format
 msgid "%1: Systemd daemon reloaded..."
-msgstr "%1: El servicio systemd se ha vuelto a cargar..."
+msgstr "%1: El servicio systemd se ha vuelto a cargar…"
 
 #: src/mainwindow.cpp:1306
 #, kde-format
 msgid "%1: User daemon reloaded..."
-msgstr "%1: El servicio del usuario se ha vuelto a cargar..."
+msgstr "%1: El servicio del usuario se ha vuelto a cargar…"
 
 #: src/mainwindow.cpp:1349
 #, kde-format
 msgid "%1: System units changed..."
-msgstr "%1: Unidades del sistema cambiadas..."
+msgstr "%1: Unidades del sistema cambiadas…"
 
 #: src/mainwindow.cpp:1499
 #, kde-format
@@ -509,14 +511,13 @@ msgstr ""
 #: src/mainwindow.cpp:1564
 #, kde-format
 msgid "%1: %2 successfully written..."
-msgstr "%1: %2 se ha escrito con éxito..."
+msgstr "%1: %2 se ha escrito con éxito…"
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
 #: src/mainwindow.ui:14
-#, fuzzy, kde-format
-#| msgid "Services"
+#, kde-format
 msgid "Services Manager"
-msgstr "Servicios"
+msgstr "Gestor de servicios"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
 #: src/mainwindow.ui:85
@@ -533,38 +534,34 @@ msgstr "<html><head/><body><p>Filtrar tipos de unidades.</p></body></html>"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUnits)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUserUnits)
 #: src/mainwindow.ui:194 src/mainwindow.ui:300
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+#, kde-format
 msgid "<html><head/><body><p>Toggle hiding inactive units.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Mostrar u ocultar las unidades inactivas.</p></body></"
-"html>"
+"<html><head/><body><p>Conmutar la ocultación de las unidades inactivas.</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUnits)
 #. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUserUnits)
 #: src/mainwindow.ui:197 src/mainwindow.ui:303
-#, fuzzy, kde-format
-#| msgid "Show inactive"
+#, kde-format
 msgid "Hide inactive"
-msgstr "Mostrar inactivas"
+msgstr "Ocultar inactivas"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUnits)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUserUnits)
 #: src/mainwindow.ui:207 src/mainwindow.ui:313
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+#, kde-format
 msgid "<html><head/><body><p>Toggle hiding unloaded units.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Mostrar u ocultar las unidades inactivas.</p></body></"
-"html>"
+"<html><head/><body><p>Conmutar la ocultación de las unidades descargadas.</"
+"p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUnits)
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUserUnits)
 #: src/mainwindow.ui:210 src/mainwindow.ui:316
-#, fuzzy, kde-format
-#| msgid "Show unloaded"
+#, kde-format
 msgid "Hide unloaded"
-msgstr "Mostrar descargadas"
+msgstr "Ocultar descargadas"
 
 #. i18n: ectx: property (text), widget (QLabel, lblUnitCount)
 #. i18n: ectx: property (text), widget (QLabel, lblUserUnitCount)
