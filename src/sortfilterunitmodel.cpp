@@ -18,11 +18,9 @@ void SortFilterUnitModel::initFilterMap(const QMap<filterType, QString> &map)
 {
     filtersMap.clear();
 
-    for(QMap<filterType, QString>::const_iterator iter = map.constBegin(); iter != map.constEnd(); ++iter)
-    {
+    for (QMap<filterType, QString>::const_iterator iter = map.constBegin(); iter != map.constEnd(); ++iter) {
         filtersMap[iter.key()] = iter.value();
     }
-
 }
 
 void SortFilterUnitModel::addFilterRegExp(filterType type, const QString &pattern)
@@ -36,14 +34,13 @@ void SortFilterUnitModel::addFilterRegExp(filterType type, const QString &patter
 
 bool SortFilterUnitModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
 {
-    if(filtersMap.isEmpty()) {
+    if (filtersMap.isEmpty()) {
         return true;
     }
 
     bool ret = false;
 
-    for(QMap<filterType, QString>::const_iterator iter = filtersMap.constBegin(); iter != filtersMap.constEnd(); ++iter)
-    {
+    for (QMap<filterType, QString>::const_iterator iter = filtersMap.constBegin(); iter != filtersMap.constEnd(); ++iter) {
         QModelIndex indexActiveState = sourceModel()->index(sourceRow, 2, sourceParent);
         QModelIndex indexUnitName = sourceModel()->index(sourceRow, 0, sourceParent);
 
@@ -55,11 +52,10 @@ bool SortFilterUnitModel::filterAcceptsRow(int sourceRow, const QModelIndex &sou
             ret = (indexUnitName.data().toString().contains(QRegularExpression(iter.value(), QRegularExpression::CaseInsensitiveOption)));
         }
 
-        if(!ret) {
+        if (!ret) {
             return ret;
         }
     }
 
     return ret;
 }
-

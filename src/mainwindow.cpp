@@ -12,11 +12,11 @@
 #include <KColorScheme>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KXMLGUIFactory>
 #include <KSeparator>
 #include <KTextEditor/Document>
 #include <KTextEditor/Editor>
 #include <KTextEditor/View>
+#include <KXMLGUIFactory>
 
 #include <QDebug>
 #include <QPlainTextEdit>
@@ -28,22 +28,23 @@
 #include <unistd.h>
 
 #include "configfilemodel.h"
+#include "sessionsfetchjob.h"
 #include "systemdunit.h"
 #include "unitsfetchjob.h"
-#include "sessionsfetchjob.h"
 
 using namespace Qt::StringLiterals;
 
 MainWindow::MainWindow(QWidget *parent)
     : KXmlGuiWindow(parent)
     , m_configFileModel(new ConfigFileModel(parent))
-    , m_systemManagerInterface(new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd1"_s, u"/org/freedesktop/systemd1"_s, QDBusConnection::systemBus(), this))
-    , m_loginManagerInterface(new OrgFreedesktopLogin1ManagerInterface(u"org.freedesktop.login1"_s, u"/org/freedesktop/login1"_s, QDBusConnection::systemBus(), this))
+    , m_systemManagerInterface(
+          new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd1"_s, u"/org/freedesktop/systemd1"_s, QDBusConnection::systemBus(), this))
+    , m_loginManagerInterface(
+          new OrgFreedesktopLogin1ManagerInterface(u"org.freedesktop.login1"_s, u"/org/freedesktop/login1"_s, QDBusConnection::systemBus(), this))
 {
     ui.setupUi(this);
 
     ui.leSearchUnit->setFocus();
-
 
     // See if systemd is reachable via dbus
     if (getDbusProperty(QStringLiteral("Version"), sysdMgr) != QLatin1String("invalidIface")) {
@@ -69,12 +70,22 @@ MainWindow::MainWindow(QWidget *parent)
 
     if (!m_userBusPath.isEmpty()) {
         auto connection = QDBusConnection::connectToBus(m_userBusPath, connSystemd);
-        m_sessionManagerInterface = new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd.Manager"_s, u"/org/freedesktop/systemd1"_s, connection, this);
+        m_sessionManagerInterface =
+            new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd.Manager"_s, u"/org/freedesktop/systemd1"_s, connection, this);
     }
 
-    QStringList allowUnitTypes = QStringList{i18n("All"), i18n("Services"), i18n("Automounts"), i18n("Devices"),
-                                             i18n("Mounts"), i18n("Paths"), i18n("Scopes"), i18n("Slices"),
-                                             i18n("Sockets"), i18n("Swaps"), i18n("Targets"), i18n("Timers")};
+    QStringList allowUnitTypes = QStringList{i18n("All"),
+                                             i18n("Services"),
+                                             i18n("Automounts"),
+                                             i18n("Devices"),
+                                             i18n("Mounts"),
+                                             i18n("Paths"),
+                                             i18n("Scopes"),
+                                             i18n("Slices"),
+                                             i18n("Sockets"),
+                                             i18n("Swaps"),
+                                             i18n("Targets"),
+                                             i18n("Timers")};
     ui.cmbUnitTypes->addItems(allowUnitTypes);
     ui.cmbUserUnitTypes->addItems(allowUnitTypes);
 
@@ -115,8 +126,8 @@ void MainWindow::setupSignalSlots()
     connect(ui.chkUnloadedUnits, &QCheckBox::stateChanged, this, &MainWindow::slotChkShowUnits);
     connect(ui.chkInactiveUserUnits, &QCheckBox::stateChanged, this, &MainWindow::slotChkShowUnits);
     connect(ui.chkUnloadedUserUnits, &QCheckBox::stateChanged, this, &MainWindow::slotChkShowUnits);
-    connect(ui.cmbUnitTypes, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::slotCmbUnitTypes);
-    connect(ui.cmbUserUnitTypes,static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::slotCmbUnitTypes);
+    connect(ui.cmbUnitTypes, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::slotCmbUnitTypes);
+    connect(ui.cmbUserUnitTypes, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &MainWindow::slotCmbUnitTypes);
     connect(ui.tblUnits, &QTableView::customContextMenuRequested, this, &MainWindow::slotUnitContextMenu);
     connect(ui.tblUserUnits, &QTableView::customContextMenuRequested, this, &MainWindow::slotUnitContextMenu);
     connect(ui.tblConfFiles, &QTableView::customContextMenuRequested, this, &MainWindow::slotConfFileContextMenu);
@@ -128,7 +139,7 @@ void MainWindow::setupSignalSlots()
     connect(ui.tblSessions->selectionModel(), &QItemSelectionModel::selectionChanged, this, &MainWindow::updateActions);
     connect(ui.tabWidget, &QTabWidget::currentChanged, this, &MainWindow::updateActions);
 
-    connect(ui.tabWidget, &QTabWidget::currentChanged, [=]{
+    connect(ui.tabWidget, &QTabWidget::currentChanged, [=] {
         if (ui.tabWidget->currentIndex() == 0)
             ui.leSearchUnit->setFocus();
         else if (ui.tabWidget->currentIndex() == 1)
@@ -140,12 +151,7 @@ void MainWindow::setupSignalSlots()
 
     // Subscribe to dbus signals from systemd system daemon and connect them to slots.
     callDbusMethod(QStringLiteral("Subscribe"), sysdMgr);
-    m_systemBus.connect(connSystemd,
-                        pathSysdMgr,
-                        ifaceMgr,
-                        QStringLiteral("Reloading"),
-                        this,
-                        SLOT(slotSystemSystemdReloading(bool)));
+    m_systemBus.connect(connSystemd, pathSysdMgr, ifaceMgr, QStringLiteral("Reloading"), this, SLOT(slotSystemSystemdReloading(bool)));
     /*m_systemBus.connect(connSystemd,
                         pathSysdMgr,
                         ifaceMgr,
@@ -159,43 +165,28 @@ void MainWindow::setupSignalSlots()
                         this,
                         SLOT(slotSystemUnitRemoved(const QString&, const QDBusObjectPath&)));*/
 
-    m_systemBus.connect(connSystemd,
-                        pathSysdMgr,
-                        ifaceMgr,
-                        QStringLiteral("JobNew"),
-                        this,
-                        SLOT(slotSystemJobNew(uint, const QDBusObjectPath&, const QString&)));
+    m_systemBus
+        .connect(connSystemd, pathSysdMgr, ifaceMgr, QStringLiteral("JobNew"), this, SLOT(slotSystemJobNew(uint, const QDBusObjectPath &, const QString &)));
     // We need to use the JobRemoved signal, because stopping units does not emit PropertiesChanged signal
     m_systemBus.connect(connSystemd,
                         pathSysdMgr,
                         ifaceMgr,
                         QStringLiteral("JobRemoved"),
                         this,
-                        SLOT(slotSystemJobRemoved(uint, const QDBusObjectPath&, const QString&, const QString&)));
+                        SLOT(slotSystemJobRemoved(uint, const QDBusObjectPath &, const QString &, const QString &)));
 
-    m_systemBus.connect(connSystemd,
-                        pathSysdMgr,
-                        ifaceMgr,
-                        QStringLiteral("UnitFilesChanged"),
-                        this,
-                        SLOT(slotSystemUnitFilesChanged()));
+    m_systemBus.connect(connSystemd, pathSysdMgr, ifaceMgr, QStringLiteral("UnitFilesChanged"), this, SLOT(slotSystemUnitFilesChanged()));
     m_systemBus.connect(connSystemd,
                         QString(),
                         ifaceDbusProp,
                         QStringLiteral("PropertiesChanged"),
                         this,
-                        SLOT(slotSystemPropertiesChanged(const QString&, const QVariantMap&, const QStringList&)));
-
+                        SLOT(slotSystemPropertiesChanged(const QString &, const QVariantMap &, const QStringList &)));
 
     // Subscribe to dbus signals from systemd user daemon and connect them to slots
     callDbusMethod(QStringLiteral("Subscribe"), sysdMgr, user);
     QDBusConnection userbus = QDBusConnection::connectToBus(m_userBusPath, connSystemd);
-    userbus.connect(connSystemd,
-                    pathSysdMgr,
-                    ifaceMgr,
-                    QStringLiteral("Reloading"),
-                    this,
-                    SLOT(slotUserSystemdReloading(bool)));
+    userbus.connect(connSystemd, pathSysdMgr, ifaceMgr, QStringLiteral("Reloading"), this, SLOT(slotUserSystemdReloading(bool)));
     /*userbus.connect(connSystemd,
                     pathSysdMgr,
                     ifaceMgr,
@@ -209,32 +200,22 @@ void MainWindow::setupSignalSlots()
                     this,
                     SLOT(slotUnitRemoved(const QString&, const QDBusObjectPath&)));*/
 
-    userbus.connect(connSystemd,
-                    pathSysdMgr,
-                    ifaceMgr,
-                    QStringLiteral("JobNew"),
-                    this,
-                    SLOT(slotUserJobNew(uint, const QDBusObjectPath&, const QString&)));
+    userbus.connect(connSystemd, pathSysdMgr, ifaceMgr, QStringLiteral("JobNew"), this, SLOT(slotUserJobNew(uint, const QDBusObjectPath &, const QString &)));
     // We need to use the JobRemoved signal, because stopping units does not emit PropertiesChanged signal
     userbus.connect(connSystemd,
                     pathSysdMgr,
                     ifaceMgr,
                     QStringLiteral("JobRemoved"),
                     this,
-                    SLOT(slotUserJobRemoved(uint, const QDBusObjectPath&, const QString&, const QString&)));
+                    SLOT(slotUserJobRemoved(uint, const QDBusObjectPath &, const QString &, const QString &)));
 
-    userbus.connect(connSystemd,
-                    pathSysdMgr,
-                    ifaceMgr,
-                    QStringLiteral("UnitFilesChanged"),
-                    this,
-                    SLOT(slotUserUnitFilesChanged()));
+    userbus.connect(connSystemd, pathSysdMgr, ifaceMgr, QStringLiteral("UnitFilesChanged"), this, SLOT(slotUserUnitFilesChanged()));
     userbus.connect(connSystemd,
                     QString(),
                     ifaceDbusProp,
                     QStringLiteral("PropertiesChanged"),
                     this,
-                    SLOT(slotUserPropertiesChanged(const QString&, const QVariantMap&, const QStringList&)));
+                    SLOT(slotUserPropertiesChanged(const QString &, const QVariantMap &, const QStringList &)));
 
     /*
     userbus.connect(connSystemd,
@@ -260,9 +241,8 @@ void MainWindow::setupSignalSlots()
                         ifaceDbusProp,
                         QStringLiteral("PropertiesChanged"),
                         this,
-                        SLOT(slotLogindPropertiesChanged(QString,QVariantMap,QStringList)));
+                        SLOT(slotLogindPropertiesChanged(QString, QVariantMap, QStringList)));
 }
-
 
 void MainWindow::setupUnitslist()
 {
@@ -374,49 +354,37 @@ void MainWindow::setupConfFilelist()
 
 void MainWindow::slotChkShowUnits(int state)
 {
-    if (state == -1 ||
-        QObject::sender()->objectName() == QLatin1String("chkInactiveUnits") ||
-        QObject::sender()->objectName() == QLatin1String("chkUnloadedUnits"))
-    {
+    if (state == -1 || QObject::sender()->objectName() == QLatin1String("chkInactiveUnits")
+        || QObject::sender()->objectName() == QLatin1String("chkUnloadedUnits")) {
         // System units
-        if (!ui.chkInactiveUnits->isChecked())
-        {
+        if (!ui.chkInactiveUnits->isChecked()) {
             ui.chkUnloadedUnits->setEnabled(true);
             if (!ui.chkUnloadedUnits->isChecked())
                 m_systemUnitFilterModel->addFilterRegExp(activeState, QString());
             else
                 m_systemUnitFilterModel->addFilterRegExp(activeState, QStringLiteral("active"));
-        }
-        else
-        {
+        } else {
             ui.chkUnloadedUnits->setEnabled(false);
             m_systemUnitFilterModel->addFilterRegExp(activeState, QStringLiteral("^(active)"));
         }
         m_systemUnitFilterModel->invalidate();
-        ui.tblUnits->sortByColumn(ui.tblUnits->horizontalHeader()->sortIndicatorSection(),
-                                  ui.tblUnits->horizontalHeader()->sortIndicatorOrder());
+        ui.tblUnits->sortByColumn(ui.tblUnits->horizontalHeader()->sortIndicatorSection(), ui.tblUnits->horizontalHeader()->sortIndicatorOrder());
     }
-    if (state == -1 ||
-        QObject::sender()->objectName() == QLatin1String("chkInactiveUserUnits") ||
-        QObject::sender()->objectName() == QLatin1String("chkUnloadedUserUnits"))
-    {
+    if (state == -1 || QObject::sender()->objectName() == QLatin1String("chkInactiveUserUnits")
+        || QObject::sender()->objectName() == QLatin1String("chkUnloadedUserUnits")) {
         // User units
-        if (!ui.chkInactiveUserUnits->isChecked())
-        {
+        if (!ui.chkInactiveUserUnits->isChecked()) {
             ui.chkUnloadedUserUnits->setEnabled(true);
             if (!ui.chkUnloadedUserUnits->isChecked())
                 m_userUnitFilterModel->addFilterRegExp(activeState, QString());
             else
                 m_userUnitFilterModel->addFilterRegExp(activeState, QStringLiteral("active"));
-        }
-        else
-        {
+        } else {
             ui.chkUnloadedUserUnits->setEnabled(false);
             m_userUnitFilterModel->addFilterRegExp(activeState, QStringLiteral("^(active)"));
         }
         m_userUnitFilterModel->invalidate();
-        ui.tblUserUnits->sortByColumn(ui.tblUserUnits->horizontalHeader()->sortIndicatorSection(),
-                                      ui.tblUserUnits->horizontalHeader()->sortIndicatorOrder());
+        ui.tblUserUnits->sortByColumn(ui.tblUserUnits->horizontalHeader()->sortIndicatorSection(), ui.tblUserUnits->horizontalHeader()->sortIndicatorOrder());
     }
     updateUnitCount();
 }
@@ -425,19 +393,14 @@ void MainWindow::slotCmbUnitTypes(int index)
 {
     // Filter unit list for a selected unit type
 
-    if (QObject::sender()->objectName() == QLatin1String("cmbUnitTypes"))
-    {
-        m_systemUnitFilterModel->addFilterRegExp(unitType,  QStringLiteral("(%1)$").arg(unitTypeSufx.at(index)));
+    if (QObject::sender()->objectName() == QLatin1String("cmbUnitTypes")) {
+        m_systemUnitFilterModel->addFilterRegExp(unitType, QStringLiteral("(%1)$").arg(unitTypeSufx.at(index)));
         m_systemUnitFilterModel->invalidate();
-        ui.tblUnits->sortByColumn(ui.tblUnits->horizontalHeader()->sortIndicatorSection(),
-                                  ui.tblUnits->horizontalHeader()->sortIndicatorOrder());
-    }
-    else if (QObject::sender()->objectName() == QLatin1String("cmbUserUnitTypes"))
-    {
+        ui.tblUnits->sortByColumn(ui.tblUnits->horizontalHeader()->sortIndicatorSection(), ui.tblUnits->horizontalHeader()->sortIndicatorOrder());
+    } else if (QObject::sender()->objectName() == QLatin1String("cmbUserUnitTypes")) {
         m_userUnitFilterModel->addFilterRegExp(unitType, QStringLiteral("(%1)$").arg(unitTypeSufx.at(index)));
         m_userUnitFilterModel->invalidate();
-        ui.tblUserUnits->sortByColumn(ui.tblUserUnits->horizontalHeader()->sortIndicatorSection(),
-                                      ui.tblUserUnits->horizontalHeader()->sortIndicatorOrder());
+        ui.tblUserUnits->sortByColumn(ui.tblUserUnits->horizontalHeader()->sortIndicatorSection(), ui.tblUserUnits->horizontalHeader()->sortIndicatorOrder());
     }
     updateUnitCount();
 }
@@ -456,8 +419,7 @@ void MainWindow::slotRefreshUnitsList(bool initial, dbusBus bus)
             m_userUnitsList.clear();
             m_userUnitsList = job->units();
             m_noActUserUnits = 0;
-            for (const SystemdUnit &unit : m_userUnitsList)
-            {
+            for (const SystemdUnit &unit : m_userUnitsList) {
                 if (unit.active_state == QLatin1String("active"))
                     m_noActUserUnits++;
             }
@@ -508,37 +470,30 @@ void MainWindow::slotRefreshSessionList()
 
             QList<QStandardItem *> items = m_sessionModel->findItems(s.session_id, Qt::MatchExactly, 0);
 
-            if (items.isEmpty())
-            {
+            if (items.isEmpty()) {
                 // New session discovered so add it to the model
                 QList<QStandardItem *> row;
-                row <<
-                       new QStandardItem(s.session_id) <<
-                       new QStandardItem(s.session_path.path()) <<
-                       new QStandardItem(getDbusProperty(QStringLiteral("State"), logdSession, s.session_path).toString()) <<
-                       new QStandardItem(QString::number(s.user_id)) <<
-                       new QStandardItem(s.user_name) <<
-                       new QStandardItem(s.seat_id);
+                row << new QStandardItem(s.session_id) << new QStandardItem(s.session_path.path())
+                    << new QStandardItem(getDbusProperty(QStringLiteral("State"), logdSession, s.session_path).toString())
+                    << new QStandardItem(QString::number(s.user_id)) << new QStandardItem(s.user_name) << new QStandardItem(s.seat_id);
                 m_sessionModel->appendRow(row);
             } else {
-                m_sessionModel->item(items.at(0)->row(), 2)->setData(getDbusProperty(QStringLiteral("State"), logdSession, s.session_path).toString(), Qt::DisplayRole);
+                m_sessionModel->item(items.at(0)->row(), 2)
+                    ->setData(getDbusProperty(QStringLiteral("State"), logdSession, s.session_path).toString(), Qt::DisplayRole);
             }
         }
 
         // Check to see if any sessions were removed
-        if (m_sessionModel->rowCount() != m_sessionList.size())
-        {
+        if (m_sessionModel->rowCount() != m_sessionList.size()) {
             QList<QPersistentModelIndex> indexes;
             // Loop through model and compare to retrieved m_sessionList
-            for (int row = 0; row < m_sessionModel->rowCount(); ++row)
-            {
+            for (int row = 0; row < m_sessionModel->rowCount(); ++row) {
                 SystemdSession session;
-                session.session_id = m_sessionModel->index(row,0).data().toString();
-                if (!m_sessionList.contains(session))
-                {
+                session.session_id = m_sessionModel->index(row, 0).data().toString();
+                if (!m_sessionList.contains(session)) {
                     // Add removed units to list for deletion
                     // qDebug() << "Unit removed: " << systemUnitModel->index(row,0).data().toString();
-                    indexes << m_sessionModel->index(row,0);
+                    indexes << m_sessionModel->index(row, 0);
                 }
             }
             // Delete the identified units from model
@@ -548,19 +503,18 @@ void MainWindow::slotRefreshSessionList()
 
         // Update the text color in model
         QColor newcolor;
-        for (int row = 0; row < m_sessionModel->rowCount(); ++row)
-        {
+        for (int row = 0; row < m_sessionModel->rowCount(); ++row) {
             QBrush newcolor;
             const KColorScheme scheme(QPalette::Normal);
-            if (m_sessionModel->data(m_sessionModel->index(row,2), Qt::DisplayRole) == QLatin1String("active"))
+            if (m_sessionModel->data(m_sessionModel->index(row, 2), Qt::DisplayRole) == QLatin1String("active"))
                 newcolor = scheme.foreground(KColorScheme::PositiveText);
-            else if (m_sessionModel->data(m_sessionModel->index(row,2), Qt::DisplayRole) == QLatin1String("closing"))
+            else if (m_sessionModel->data(m_sessionModel->index(row, 2), Qt::DisplayRole) == QLatin1String("closing"))
                 newcolor = scheme.foreground(KColorScheme::InactiveText);
             else
                 newcolor = scheme.foreground(KColorScheme::NormalText);
 
             for (int col = 0; col < m_sessionModel->columnCount(); ++col)
-                m_sessionModel->setData(m_sessionModel->index(row,col), QVariant(newcolor), Qt::ForegroundRole);
+                m_sessionModel->setData(m_sessionModel->index(row, col), QVariant(newcolor), Qt::ForegroundRole);
         }
         ui.tblSessions->resizeColumnsToContents();
         ui.tblSessions->resizeRowsToContents();
@@ -577,19 +531,15 @@ void MainWindow::slotRefreshTimerList()
     m_timerModel->removeRows(0, m_timerModel->rowCount());
 
     // Iterate through system unitlist and add timers to the model
-    for (const SystemdUnit &unit : m_systemUnitsList)
-    {
-        if (unit.id.endsWith(QLatin1String(".timer")) &&
-                unit.load_state != QLatin1String("unloaded")) {
+    for (const SystemdUnit &unit : m_systemUnitsList) {
+        if (unit.id.endsWith(QLatin1String(".timer")) && unit.load_state != QLatin1String("unloaded")) {
             m_timerModel->appendRow(buildTimerListRow(unit, m_systemUnitsList, sys));
         }
     }
 
     // Iterate through user unitlist and add timers to the model
-    for (const SystemdUnit &unit : m_userUnitsList)
-    {
-        if (unit.id.endsWith(QLatin1String(".timer")) &&
-                unit.load_state != QLatin1String("unloaded")) {
+    for (const SystemdUnit &unit : m_userUnitsList) {
+        if (unit.id.endsWith(QLatin1String(".timer")) && unit.load_state != QLatin1String("unloaded")) {
             m_timerModel->appendRow(buildTimerListRow(unit, m_userUnitsList, user));
         }
     }
@@ -599,8 +549,7 @@ void MainWindow::slotRefreshTimerList()
 
     ui.tblTimers->resizeColumnsToContents();
     ui.tblTimers->resizeRowsToContents();
-    ui.tblTimers->sortByColumn(ui.tblTimers->horizontalHeader()->sortIndicatorSection(),
-                               ui.tblTimers->horizontalHeader()->sortIndicatorOrder());
+    ui.tblTimers->sortByColumn(ui.tblTimers->horizontalHeader()->sortIndicatorSection(), ui.tblTimers->horizontalHeader()->sortIndicatorOrder());
 }
 
 QList<QStandardItem *> MainWindow::buildTimerListRow(const SystemdUnit &unit, const QVector<SystemdUnit> &list, dbusBus bus)
@@ -622,27 +571,24 @@ QList<QStandardItem *> MainWindow::buildTimerListRow(const SystemdUnit &unit, co
     qlonglong nextElapseRealtimeMsec = getDbusProperty(QStringLiteral("NextElapseUSecRealtime"), sysdTimer, path, bus).toULongLong() / 1000;
     qlonglong lastTriggerMSec = getDbusProperty(QStringLiteral("LastTriggerUSec"), sysdTimer, path, bus).toULongLong() / 1000;
 
-    if (nextElapseMonotonicMsec == 0)
-    {
+    if (nextElapseMonotonicMsec == 0) {
         // Timer is calendar-based
         time.setMSecsSinceEpoch(nextElapseRealtimeMsec);
-    }
-    else
-    {
+    } else {
         // Timer is monotonic
         time = QDateTime().currentDateTime();
         time = time.addMSecs(nextElapseMonotonicMsec);
 
         // Get the monotonic system clock
         struct timespec ts;
-        if (clock_gettime( CLOCK_MONOTONIC, &ts ) != 0)
+        if (clock_gettime(CLOCK_MONOTONIC, &ts) != 0)
             qDebug() << "Failed to get the monotonic system clock!";
 
         // Convert the monotonic system clock to microseconds
         qlonglong now_mono_usec = ts.tv_sec * 1000000 + ts.tv_nsec / 1000;
 
         // And subtract it.
-        time = time.addMSecs(-now_mono_usec/1000);
+        time = time.addMSecs(-now_mono_usec / 1000);
     }
 
     QString next = time.toString(QStringLiteral("yyyy.MM.dd hh:mm:ss"));
@@ -651,25 +597,20 @@ QList<QStandardItem *> MainWindow::buildTimerListRow(const SystemdUnit &unit, co
 
     // use unit object to get last time for activated service
     int index = list.indexOf(SystemdUnit(unitToActivate));
-    if (index != -1)
-    {
+    if (index != -1) {
         qlonglong inactivateExitTimestampMsec =
-                getDbusProperty(QStringLiteral("InactiveExitTimestamp"), sysdUnit, list.at(index).unit_path, bus).toULongLong() / 1000;
+            getDbusProperty(QStringLiteral("InactiveExitTimestamp"), sysdUnit, list.at(index).unit_path, bus).toULongLong() / 1000;
 
-        if (inactivateExitTimestampMsec == 0)
-        {
+        if (inactivateExitTimestampMsec == 0) {
             // The unit has not run in this boot
             // Use LastTrigger to see if the timer is persistent
             if (lastTriggerMSec == 0)
                 last = QStringLiteral("n/a");
-            else
-            {
+            else {
                 time.setMSecsSinceEpoch(lastTriggerMSec);
                 last = time.toString(QStringLiteral("yyyy.MM.dd hh:mm:ss"));
             }
-        }
-        else
-        {
+        } else {
             QDateTime time;
             time.setMSecsSinceEpoch(inactivateExitTimestampMsec);
             last = time.toString(QStringLiteral("yyyy.MM.dd hh:mm:ss"));
@@ -682,35 +623,24 @@ QList<QStandardItem *> MainWindow::buildTimerListRow(const SystemdUnit &unit, co
 
     // Build a row from QStandardItems
     QList<QStandardItem *> row;
-    row << id <<
-           new QStandardItem(next) <<
-           new QStandardItem() <<
-           new QStandardItem(last) <<
-           new QStandardItem() <<
-           new QStandardItem(unitToActivate);
+    row << id << new QStandardItem(next) << new QStandardItem() << new QStandardItem(last) << new QStandardItem() << new QStandardItem(unitToActivate);
 
     return row;
 }
 
 void MainWindow::updateUnitCount()
 {
-    QString systemUnits = i18ncp("First part of 'Total: %1, %2, %3'",
-                                 "1 unit", "%1 units", m_systemUnitModel->rowCount());
-    QString systemActive = i18ncp("Second part of 'Total: %1, %2, %3'",
-                                  "1 active", "%1 active", m_noActSystemUnits);
-    QString systemDisplayed = i18ncp("Third part of 'Total: %1, %2, %3'",
-                                     "1 displayed", "%1 displayed", m_systemUnitFilterModel->rowCount());
-    ui.lblUnitCount->setText(i18nc("%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'",
-                                   "Total: %1, %2, %3", systemUnits, systemActive, systemDisplayed));
+    QString systemUnits = i18ncp("First part of 'Total: %1, %2, %3'", "1 unit", "%1 units", m_systemUnitModel->rowCount());
+    QString systemActive = i18ncp("Second part of 'Total: %1, %2, %3'", "1 active", "%1 active", m_noActSystemUnits);
+    QString systemDisplayed = i18ncp("Third part of 'Total: %1, %2, %3'", "1 displayed", "%1 displayed", m_systemUnitFilterModel->rowCount());
+    ui.lblUnitCount->setText(
+        i18nc("%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'", "Total: %1, %2, %3", systemUnits, systemActive, systemDisplayed));
 
-    QString userUnits = i18ncp("First part of 'Total: %1, %2, %3'",
-                               "1 unit", "%1 units", m_userUnitModel->rowCount());
-    QString userActive = i18ncp("Second part of 'Total: %1, %2, %3'",
-                                "1 active", "%1 active", m_noActUserUnits);
-    QString userDisplayed = i18ncp("Third part of 'Total: %1, %2, %3'",
-                                   "1 displayed", "%1 displayed", m_userUnitFilterModel->rowCount());
-    ui.lblUserUnitCount->setText(i18nc("%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'",
-                                       "Total: %1, %2, %3", userUnits, userActive, userDisplayed));
+    QString userUnits = i18ncp("First part of 'Total: %1, %2, %3'", "1 unit", "%1 units", m_userUnitModel->rowCount());
+    QString userActive = i18ncp("Second part of 'Total: %1, %2, %3'", "1 active", "%1 active", m_noActUserUnits);
+    QString userDisplayed = i18ncp("Third part of 'Total: %1, %2, %3'", "1 displayed", "%1 displayed", m_userUnitFilterModel->rowCount());
+    ui.lblUserUnitCount->setText(
+        i18nc("%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'", "Total: %1, %2, %3", userUnits, userActive, userDisplayed));
 }
 
 void MainWindow::authServiceAction(const QString &service, const QString &path, const QString &iface, const QString &method, const QList<QVariant> &args)
@@ -734,10 +664,8 @@ void MainWindow::authServiceAction(const QString &service, const QString &path, 
     job->exec();
 
     if (!job->exec())
-        displayMsgWidget(KMessageWidget::Error,
-                         i18n("Unable to authenticate/execute the action: %1", job->errorString()));
-    else
-    {
+        displayMsgWidget(KMessageWidget::Error, i18n("Unable to authenticate/execute the action: %1", job->errorString()));
+    else {
         qDebug() << "DBus action successful.";
         // KMessageBox::information(this, i18n("DBus action successful."));
     }
@@ -771,11 +699,10 @@ void MainWindow::slotUnitContextMenu(const QPoint &pos)
 
 void MainWindow::updateActions()
 {
-    //qDebug() << "Updating actions...";
+    // qDebug() << "Updating actions...";
 
-    if ((ui.tabWidget->currentIndex() == 0 && !ui.tblUnits->selectionModel()->selectedRows(0).isEmpty()) ||
-        (ui.tabWidget->currentIndex() == 1 && !ui.tblUserUnits->selectionModel()->selectedRows(0).isEmpty()))
-    {
+    if ((ui.tabWidget->currentIndex() == 0 && !ui.tblUnits->selectionModel()->selectedRows(0).isEmpty())
+        || (ui.tabWidget->currentIndex() == 1 && !ui.tblUserUnits->selectionModel()->selectedRows(0).isEmpty())) {
         QTableView *tblView;
         QVector<SystemdUnit> *list;
         dbusBus bus;
@@ -800,7 +727,6 @@ void MainWindow::updateActions()
             return;
         }
 
-
         // Find name and object path of unit
         const QString unit = tblView->selectionModel()->selectedRows(0).at(0).data().toString();
         Q_ASSERT(!unit.isEmpty());
@@ -812,20 +738,18 @@ void MainWindow::updateActions()
         bool CanStop = false;
         bool CanReload = false;
         bool hasUnitObject = true;
-        //bool CanIsolate = false;
+        // bool CanIsolate = false;
         QString LoadState;
         QString ActiveState;
         QString unitFileState;
-        if (!pathUnit.path().isEmpty() &&
-            getDbusProperty(QStringLiteral("Test"), sysdUnit, pathUnit, bus).toString() != QLatin1String("invalidIface"))
-        {
+        if (!pathUnit.path().isEmpty() && getDbusProperty(QStringLiteral("Test"), sysdUnit, pathUnit, bus).toString() != QLatin1String("invalidIface")) {
             // Unit has a Unit DBus object, fetch properties
             LoadState = getDbusProperty(QStringLiteral("LoadState"), sysdUnit, pathUnit, bus).toString();
             ActiveState = getDbusProperty(QStringLiteral("ActiveState"), sysdUnit, pathUnit, bus).toString();
             CanStart = getDbusProperty(QStringLiteral("CanStart"), sysdUnit, pathUnit, bus).toBool();
             CanStop = getDbusProperty(QStringLiteral("CanStop"), sysdUnit, pathUnit, bus).toBool();
             CanReload = getDbusProperty(QStringLiteral("CanReload"), sysdUnit, pathUnit, bus).toBool();
-            //CanIsolate = getDbusProperty(QStringLiteral("CanIsolate"), sysdUnit, pathUnit, bus).toBool();
+            // CanIsolate = getDbusProperty(QStringLiteral("CanIsolate"), sysdUnit, pathUnit, bus).toBool();
 
             unitFileState = getDbusProperty(QStringLiteral("UnitFileState"), sysdUnit, pathUnit, bus).toString();
         } else {
@@ -843,40 +767,24 @@ void MainWindow::updateActions()
 
         bool isUnitSelected = !unit.isEmpty();
 
-        m_startUnitAction->setEnabled(isUnitSelected &&
-                                      (CanStart || !hasUnitObject) &&
-                                      ActiveState != QLatin1String("active"));
+        m_startUnitAction->setEnabled(isUnitSelected && (CanStart || !hasUnitObject) && ActiveState != QLatin1String("active"));
 
-        m_stopUnitAction->setEnabled(isUnitSelected &&
-                                     CanStop &&
-                                     ActiveState != QLatin1String("inactive") &&
-                                     ActiveState != QLatin1String("failed"));
+        m_stopUnitAction->setEnabled(isUnitSelected && CanStop && ActiveState != QLatin1String("inactive") && ActiveState != QLatin1String("failed"));
 
-        m_restartUnitAction->setEnabled(isUnitSelected &&
-                                        CanStart &&
-                                        ActiveState != QLatin1String("inactive") &&
-                                        ActiveState != QLatin1String("failed") &&
-                                        !LoadState.isEmpty());
+        m_restartUnitAction->setEnabled(isUnitSelected && CanStart && ActiveState != QLatin1String("inactive") && ActiveState != QLatin1String("failed")
+                                        && !LoadState.isEmpty());
 
-        m_reloadUnitAction->setEnabled(isUnitSelected &&
-                                       CanReload &&
-                                       ActiveState != QLatin1String("inactive") &&
-                                       ActiveState != QLatin1String("failed"));
+        m_reloadUnitAction->setEnabled(isUnitSelected && CanReload && ActiveState != QLatin1String("inactive") && ActiveState != QLatin1String("failed"));
 
-        m_enableUnitAction->setEnabled(isUnitSelected &&
-                                       unitFileState == QLatin1String("disabled"));
+        m_enableUnitAction->setEnabled(isUnitSelected && unitFileState == QLatin1String("disabled"));
 
-        m_disableUnitAction->setEnabled(isUnitSelected &&
-                                        unitFileState == QLatin1String("enabled"));
+        m_disableUnitAction->setEnabled(isUnitSelected && unitFileState == QLatin1String("enabled"));
 
-        m_maskUnitAction->setEnabled(isUnitSelected &&
-                                     LoadState != QLatin1String("masked"));
+        m_maskUnitAction->setEnabled(isUnitSelected && LoadState != QLatin1String("masked"));
 
-        m_unmaskUnitAction->setEnabled(isUnitSelected &&
-                                       LoadState == QLatin1String("masked"));
+        m_unmaskUnitAction->setEnabled(isUnitSelected && LoadState == QLatin1String("masked"));
 
-        m_editUnitFileAction->setEnabled(isUnitSelected &&
-                                         !frpath.isEmpty());
+        m_editUnitFileAction->setEnabled(isUnitSelected && !frpath.isEmpty());
     } else {
         m_startUnitAction->setEnabled(false);
         m_stopUnitAction->setEnabled(false);
@@ -889,25 +797,20 @@ void MainWindow::updateActions()
         m_editUnitFileAction->setEnabled(false);
     }
 
-    m_editConfFileAction->setEnabled(ui.tabWidget->currentIndex() == 2 &&
-                                     !ui.tblConfFiles->selectionModel()->selectedRows(0).isEmpty());
-    m_openManPageAction->setEnabled(ui.tabWidget->currentIndex() == 2 &&
-                                   !ui.tblConfFiles->selectionModel()->selectedRows(0).isEmpty());
+    m_editConfFileAction->setEnabled(ui.tabWidget->currentIndex() == 2 && !ui.tblConfFiles->selectionModel()->selectedRows(0).isEmpty());
+    m_openManPageAction->setEnabled(ui.tabWidget->currentIndex() == 2 && !ui.tblConfFiles->selectionModel()->selectedRows(0).isEmpty());
 
-    m_activateSessionAction->setEnabled(ui.tabWidget->currentIndex() == 3 &&
-                                        !ui.tblSessions->selectionModel()->selectedRows(0).isEmpty() &&
-                                        ui.tblSessions->selectionModel()->selectedRows(2).at(0).data().toString() != QLatin1String("active"));
+    m_activateSessionAction->setEnabled(ui.tabWidget->currentIndex() == 3 && !ui.tblSessions->selectionModel()->selectedRows(0).isEmpty()
+                                        && ui.tblSessions->selectionModel()->selectedRows(2).at(0).data().toString() != QLatin1String("active"));
 
-    m_terminateSessionAction->setEnabled(ui.tabWidget->currentIndex() == 3 &&
-                                         !ui.tblSessions->selectionModel()->selectedRows(0).isEmpty());
+    m_terminateSessionAction->setEnabled(ui.tabWidget->currentIndex() == 3 && !ui.tblSessions->selectionModel()->selectedRows(0).isEmpty());
 
     QDBusObjectPath pathSession;
     if (!ui.tblSessions->selectionModel()->selectedRows(0).isEmpty()) {
         pathSession = QDBusObjectPath(ui.tblSessions->selectionModel()->selectedRows(1).at(0).data().toString());
     }
-    m_lockSessionAction->setEnabled(ui.tabWidget->currentIndex() == 3 &&
-                                   !ui.tblSessions->selectionModel()->selectedRows(0).isEmpty() &&
-                                   getDbusProperty(QStringLiteral("Type"), logdSession, pathSession).toString() != QLatin1String("tty"));
+    m_lockSessionAction->setEnabled(ui.tabWidget->currentIndex() == 3 && !ui.tblSessions->selectionModel()->selectedRows(0).isEmpty()
+                                    && getDbusProperty(QStringLiteral("Type"), logdSession, pathSession).toString() != QLatin1String("tty"));
 }
 
 void MainWindow::setupActions()
@@ -926,77 +829,101 @@ void MainWindow::setupActions()
     m_startUnitAction->setText(i18n("Start Unit"));
     m_startUnitAction->setIcon(QIcon::fromTheme(QStringLiteral("kt-start")));
     actionCollection()->addAction(QStringLiteral("start-unit"), m_startUnitAction);
-    connect(m_startUnitAction, &QAction::triggered, this, [this]() { executeUnitAction(QStringLiteral("StartUnit")); });
+    connect(m_startUnitAction, &QAction::triggered, this, [this]() {
+        executeUnitAction(QStringLiteral("StartUnit"));
+    });
 
     m_stopUnitAction = new QAction(this);
     m_stopUnitAction->setText(i18n("Stop Unit"));
     m_stopUnitAction->setIcon(QIcon::fromTheme(QStringLiteral("kt-stop")));
     actionCollection()->addAction(QStringLiteral("stop-unit"), m_stopUnitAction);
-    connect(m_stopUnitAction, &QAction::triggered, this, [this]() { executeUnitAction(QStringLiteral("StopUnit")); });
+    connect(m_stopUnitAction, &QAction::triggered, this, [this]() {
+        executeUnitAction(QStringLiteral("StopUnit"));
+    });
 
     m_reloadUnitAction = new QAction(this);
     m_reloadUnitAction->setText(i18n("Reload Unit"));
     m_reloadUnitAction->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
     actionCollection()->addAction(QStringLiteral("reload-unit"), m_reloadUnitAction);
-    connect(m_reloadUnitAction, &QAction::triggered, this, [this]() { executeUnitAction(QStringLiteral("ReloadUnit")); });
+    connect(m_reloadUnitAction, &QAction::triggered, this, [this]() {
+        executeUnitAction(QStringLiteral("ReloadUnit"));
+    });
 
     m_restartUnitAction = new QAction(this);
     m_restartUnitAction->setText(i18n("Restart Unit"));
     m_restartUnitAction->setIcon(QIcon::fromTheme(QStringLiteral("start-over")));
     actionCollection()->addAction(QStringLiteral("restart-unit"), m_restartUnitAction);
-    connect(m_restartUnitAction, &QAction::triggered, this, [this]() { executeUnitAction(QStringLiteral("RestartUnit")); });
+    connect(m_restartUnitAction, &QAction::triggered, this, [this]() {
+        executeUnitAction(QStringLiteral("RestartUnit"));
+    });
 
     m_enableUnitAction = new QAction(this);
     m_enableUnitAction->setText(i18n("Enable Unit"));
     m_enableUnitAction->setIcon(QIcon::fromTheme(QStringLiteral("archive-insert")));
     actionCollection()->addAction(QStringLiteral("enable-unit"), m_enableUnitAction);
-    connect(m_enableUnitAction, &QAction::triggered, this, [this]() { executeUnitAction(QStringLiteral("EnableUnitFiles")); });
+    connect(m_enableUnitAction, &QAction::triggered, this, [this]() {
+        executeUnitAction(QStringLiteral("EnableUnitFiles"));
+    });
 
     m_disableUnitAction = new QAction(this);
     m_disableUnitAction->setText(i18n("Disable Unit"));
     m_disableUnitAction->setIcon(QIcon::fromTheme(QStringLiteral("document-close")));
     actionCollection()->addAction(QStringLiteral("disable-unit"), m_disableUnitAction);
-    connect(m_disableUnitAction, &QAction::triggered, this, [this]() { executeUnitAction(QStringLiteral("DisableUnitFiles")); });
+    connect(m_disableUnitAction, &QAction::triggered, this, [this]() {
+        executeUnitAction(QStringLiteral("DisableUnitFiles"));
+    });
 
     m_maskUnitAction = new QAction(this);
     m_maskUnitAction->setText(i18n("Mask Unit"));
     m_maskUnitAction->setIcon(QIcon::fromTheme(QStringLiteral("password-show-off")));
     actionCollection()->addAction(QStringLiteral("mask-unit"), m_maskUnitAction);
-    connect(m_maskUnitAction, &QAction::triggered, this, [this]() { executeUnitAction(QStringLiteral("MaskUnitFiles")); });
+    connect(m_maskUnitAction, &QAction::triggered, this, [this]() {
+        executeUnitAction(QStringLiteral("MaskUnitFiles"));
+    });
 
     m_unmaskUnitAction = new QAction(this);
     m_unmaskUnitAction->setText(i18n("Unmask Unit"));
     m_unmaskUnitAction->setIcon(QIcon::fromTheme(QStringLiteral("password-show-on")));
     actionCollection()->addAction(QStringLiteral("unmask-unit"), m_unmaskUnitAction);
-    connect(m_unmaskUnitAction, &QAction::triggered, this, [this]() { executeUnitAction(QStringLiteral("UnmaskUnitFiles")); });
+    connect(m_unmaskUnitAction, &QAction::triggered, this, [this]() {
+        executeUnitAction(QStringLiteral("UnmaskUnitFiles"));
+    });
 
     m_reloadSystemDaemonAction = new QAction(this);
     m_reloadSystemDaemonAction->setText(i18n("Re&load systemd"));
     m_reloadSystemDaemonAction->setToolTip(i18nc("@info:tooltip", "Click to reload all unit files"));
     m_reloadSystemDaemonAction->setIcon(QIcon::fromTheme(QStringLiteral("configure-shortcuts")));
     actionCollection()->addAction(QStringLiteral("reload-daemon-system"), m_reloadSystemDaemonAction);
-    connect(m_reloadSystemDaemonAction, &QAction::triggered, this, [this]() { executeSystemDaemonAction(QStringLiteral("Reload")); });
+    connect(m_reloadSystemDaemonAction, &QAction::triggered, this, [this]() {
+        executeSystemDaemonAction(QStringLiteral("Reload"));
+    });
 
     m_reexecSystemDaemonAction = new QAction(this);
     m_reexecSystemDaemonAction->setText(i18n("Re-e&xecute systemd"));
     m_reexecSystemDaemonAction->setToolTip(i18nc("@info:tooltip", "Click to re-execute the systemd daemon"));
     m_reexecSystemDaemonAction->setIcon(QIcon::fromTheme(QStringLiteral("configure-shortcuts")));
     actionCollection()->addAction(QStringLiteral("reexec-daemon-system"), m_reexecSystemDaemonAction);
-    connect(m_reexecSystemDaemonAction, &QAction::triggered, this, [this]() { executeSystemDaemonAction(QStringLiteral("Reexecute")); });
+    connect(m_reexecSystemDaemonAction, &QAction::triggered, this, [this]() {
+        executeSystemDaemonAction(QStringLiteral("Reexecute"));
+    });
 
     m_reloadUserDaemonAction = new QAction(this);
     m_reloadUserDaemonAction->setText(i18n("Re&load user systemd"));
     m_reloadUserDaemonAction->setToolTip(i18nc("@info:tooltip", "Click to reload all user unit files"));
     m_reloadUserDaemonAction->setIcon(QIcon::fromTheme(QStringLiteral("user")));
     actionCollection()->addAction(QStringLiteral("reload-daemon-user"), m_reloadUserDaemonAction);
-    connect(m_reloadUserDaemonAction, &QAction::triggered, this, [this]() { executeUserDaemonAction(QStringLiteral("Reload")); });
+    connect(m_reloadUserDaemonAction, &QAction::triggered, this, [this]() {
+        executeUserDaemonAction(QStringLiteral("Reload"));
+    });
 
     m_reexecUserDaemonAction = new QAction(this);
     m_reexecUserDaemonAction->setText(i18n("Re-e&xecute user systemd"));
     m_reexecUserDaemonAction->setToolTip(i18nc("@info:tooltip", "Click to re-execute the user systemd daemon"));
     m_reexecUserDaemonAction->setIcon(QIcon::fromTheme(QStringLiteral("user")));
     actionCollection()->addAction(QStringLiteral("reexec-daemon-user"), m_reexecUserDaemonAction);
-    connect(m_reexecUserDaemonAction, &QAction::triggered, this, [this]() { executeUserDaemonAction(QStringLiteral("Reexecute")); });
+    connect(m_reexecUserDaemonAction, &QAction::triggered, this, [this]() {
+        executeUserDaemonAction(QStringLiteral("Reexecute"));
+    });
 
     m_editUnitFileAction = new QAction(this);
     m_editUnitFileAction->setText(i18n("Edit Unit File…"));
@@ -1020,19 +947,25 @@ void MainWindow::setupActions()
     m_activateSessionAction->setText(i18n("Activate Session"));
     m_activateSessionAction->setIcon(QIcon::fromTheme(QStringLiteral("kt-start")));
     actionCollection()->addAction(QStringLiteral("activate-session"), m_activateSessionAction);
-    connect(m_activateSessionAction, &QAction::triggered, this, [this]() { executeSessionAction(QStringLiteral("Activate")); });
+    connect(m_activateSessionAction, &QAction::triggered, this, [this]() {
+        executeSessionAction(QStringLiteral("Activate"));
+    });
 
     m_terminateSessionAction = new QAction(this);
     m_terminateSessionAction->setText(i18n("Terminate Session"));
     m_terminateSessionAction->setIcon(QIcon::fromTheme(QStringLiteral("kt-remove")));
     actionCollection()->addAction(QStringLiteral("terminate-session"), m_terminateSessionAction);
-    connect(m_terminateSessionAction, &QAction::triggered, this, [this]() { executeSessionAction(QStringLiteral("Terminate")); });
+    connect(m_terminateSessionAction, &QAction::triggered, this, [this]() {
+        executeSessionAction(QStringLiteral("Terminate"));
+    });
 
     m_lockSessionAction = new QAction(this);
     m_lockSessionAction->setText(i18n("Lock Session"));
     m_lockSessionAction->setIcon(QIcon::fromTheme(QStringLiteral("lock")));
     actionCollection()->addAction(QStringLiteral("lock-session"), m_lockSessionAction);
-    connect(m_lockSessionAction, &QAction::triggered, this, [this]() { executeSessionAction(QStringLiteral("Lock")); });
+    connect(m_lockSessionAction, &QAction::triggered, this, [this]() {
+        executeSessionAction(QStringLiteral("Lock"));
+    });
 
     updateActions();
 }
@@ -1053,7 +986,7 @@ void MainWindow::executeUnitAction(const QString &method)
 {
     QTableView *tblView;
     if (ui.tabWidget->currentIndex() == 0) {
-         tblView = ui.tblUnits;
+        tblView = ui.tblUnits;
     } else {
         tblView = ui.tblUserUnits;
     }
@@ -1066,14 +999,12 @@ void MainWindow::executeUnitAction(const QString &method)
     Q_ASSERT(index.isValid());
 
     QString unit = index.data().toString();
-    //qDebug() << "unit:" << unit;
+    // qDebug() << "unit:" << unit;
 
     QVariantList args;
-    if (method == QLatin1String("EnableUnitFiles") ||
-        method == QLatin1String("MaskUnitFiles")) {
+    if (method == QLatin1String("EnableUnitFiles") || method == QLatin1String("MaskUnitFiles")) {
         args << QVariant(QStringList{unit}) << false << true;
-    } else if (method == QLatin1String("DisableUnitFiles") ||
-               method == QLatin1String("UnmaskUnitFiles")) {
+    } else if (method == QLatin1String("DisableUnitFiles") || method == QLatin1String("UnmaskUnitFiles")) {
         args << QVariant(QStringList{unit}) << false;
     } else {
         args = QVariantList{unit, QStringLiteral("replace")};
@@ -1111,8 +1042,7 @@ void MainWindow::executeSystemDaemonAction(const QString &method)
 
 void MainWindow::executeUserDaemonAction(const QString &method)
 {
-    if (!method.isEmpty())
-    {
+    if (!method.isEmpty()) {
         callDbusMethod(method, sysdMgr, user, QVariantList());
         if (QRegularExpression(QStringLiteral("EnableUnitFiles|DisableUnitFiles|MaskUnitFiles|UnmaskUnitFiles")).match(method).hasMatch()) {
             callDbusMethod(QStringLiteral("Reload"), sysdMgr, user);
@@ -1141,41 +1071,36 @@ void MainWindow::slotSessionContextMenu(const QPoint &pos)
     popup->popup(QCursor::pos());
 }
 
-
-bool MainWindow::eventFilter(QObject *obj, QEvent* event)
+bool MainWindow::eventFilter(QObject *obj, QEvent *event)
 {
     // Eventfilter for catching mouse move events over session list
     // Used for dynamically generating tooltips
 
-    if (event->type() == QEvent::MouseMove && obj->parent()->objectName() == QLatin1String("tblSessions"))
-    {
+    if (event->type() == QEvent::MouseMove && obj->parent()->objectName() == QLatin1String("tblSessions")) {
         // Session list
-        QMouseEvent *me = static_cast<QMouseEvent*>(event);
+        QMouseEvent *me = static_cast<QMouseEvent *>(event);
         QModelIndex inSessionModel = ui.tblSessions->indexAt(me->pos());
         if (!inSessionModel.isValid())
             return false;
 
-        if (m_sessionModel->itemFromIndex(inSessionModel)->row() != lastSessionRowChecked)
-        {
+        if (m_sessionModel->itemFromIndex(inSessionModel)->row() != lastSessionRowChecked) {
             // Cursor moved to a different row. Only build tooltips when moving
             // cursor to a new row to avoid excessive DBus calls.
 
-            QString selSession = ui.tblSessions->model()->index(ui.tblSessions->indexAt(me->pos()).row(),0).data().toString();
-            QDBusObjectPath spath = QDBusObjectPath(ui.tblSessions->model()->index(ui.tblSessions->indexAt(me->pos()).row(),1).data().toString());
+            QString selSession = ui.tblSessions->model()->index(ui.tblSessions->indexAt(me->pos()).row(), 0).data().toString();
+            QDBusObjectPath spath = QDBusObjectPath(ui.tblSessions->model()->index(ui.tblSessions->indexAt(me->pos()).row(), 1).data().toString());
 
             QString toolTipText;
             toolTipText.append(QStringLiteral("<FONT COLOR=white>"));
             toolTipText.append(QStringLiteral("<b>%1</b><hr>").arg(selSession));
 
             // Use the DBus interface to get session properties
-            if (getDbusProperty(QStringLiteral("test"), logdSession, spath) != QLatin1String("invalidIface"))
-            {
+            if (getDbusProperty(QStringLiteral("test"), logdSession, spath) != QLatin1String("invalidIface")) {
                 // Session has a valid session DBus object
                 toolTipText.append(i18n("<b>VT:</b> %1", getDbusProperty(QStringLiteral("VTNr"), logdSession, spath).toString()));
 
                 QString remoteHost = getDbusProperty(QStringLiteral("RemoteHost"), logdSession, spath).toString();
-                if (getDbusProperty(QStringLiteral("Remote"), logdSession, spath).toBool())
-                {
+                if (getDbusProperty(QStringLiteral("Remote"), logdSession, spath).toBool()) {
                     toolTipText.append(i18n("<br><b>Remote host:</b> %1", remoteHost));
                     toolTipText.append(i18n("<br><b>Remote user:</b> %1", getDbusProperty(QStringLiteral("RemoteUser"), logdSession, spath).toString()));
                 }
@@ -1186,8 +1111,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent* event)
                 toolTipText.append(i18n("<br><b>Type:</b> %1", type));
                 if (type == QLatin1String("x11"))
                     toolTipText.append(i18n(" (display %1)", getDbusProperty(QStringLiteral("Display"), logdSession, spath).toString()));
-                else if (type == QLatin1String("tty"))
-                {
+                else if (type == QLatin1String("tty")) {
                     QString path, tty = getDbusProperty(QStringLiteral("TTY"), logdSession, spath).toString();
                     if (!tty.isEmpty())
                         path = tty;
@@ -1199,14 +1123,12 @@ bool MainWindow::eventFilter(QObject *obj, QEvent* event)
                 toolTipText.append(i18n("<br><b>State:</b> %1", getDbusProperty(QStringLiteral("State"), logdSession, spath).toString()));
                 toolTipText.append(i18n("<br><b>Scope:</b> %1", getDbusProperty(QStringLiteral("Scope"), logdSession, spath).toString()));
 
-
                 toolTipText.append(i18n("<br><b>Created: </b>"));
                 if (getDbusProperty(QStringLiteral("Timestamp"), logdSession, spath).toULongLong() == 0)
                     toolTipText.append(QStringLiteral("n/a"));
-                else
-                {
+                else {
                     QDateTime time;
-                    time.setMSecsSinceEpoch(getDbusProperty(QStringLiteral("Timestamp"), logdSession, spath).toULongLong()/1000);
+                    time.setMSecsSinceEpoch(getDbusProperty(QStringLiteral("Timestamp"), logdSession, spath).toULongLong() / 1000);
                     toolTipText.append(time.toString());
                 }
             }
@@ -1281,14 +1203,14 @@ void MainWindow::slotUserJobRemoved(uint id, const QDBusObjectPath &path, const 
 
 void MainWindow::slotSystemUnitFilesChanged()
 {
-    //qDebug() << "System unitFilesChanged";
+    // qDebug() << "System unitFilesChanged";
     slotRefreshUnitsList(false, sys);
     m_lblLog->setText(i18n("%1: System units changed...", QDateTime::currentDateTime().toString(QStringLiteral("hh:mm:ss"))));
 }
 
 void MainWindow::slotUserUnitFilesChanged()
 {
-    //qDebug() << "User unitFilesChanged";
+    // qDebug() << "User unitFilesChanged";
     slotRefreshUnitsList(false, user);
 }
 
@@ -1322,19 +1244,14 @@ void MainWindow::slotLogindPropertiesChanged(const QString &iface, const QVarian
 
 void MainWindow::slotLeSearchUnitChanged(QString term)
 {
-    if (QObject::sender()->objectName() == QLatin1String("leSearchUnit"))
-    {
+    if (QObject::sender()->objectName() == QLatin1String("leSearchUnit")) {
         m_systemUnitFilterModel->addFilterRegExp(unitName, term);
         m_systemUnitFilterModel->invalidate();
-        ui.tblUnits->sortByColumn(ui.tblUnits->horizontalHeader()->sortIndicatorSection(),
-                                  ui.tblUnits->horizontalHeader()->sortIndicatorOrder());
-    }
-    else if (QObject::sender()->objectName() == QLatin1String("leSearchUserUnit"))
-    {
+        ui.tblUnits->sortByColumn(ui.tblUnits->horizontalHeader()->sortIndicatorSection(), ui.tblUnits->horizontalHeader()->sortIndicatorOrder());
+    } else if (QObject::sender()->objectName() == QLatin1String("leSearchUserUnit")) {
         m_userUnitFilterModel->addFilterRegExp(unitName, term);
         m_userUnitFilterModel->invalidate();
-        ui.tblUserUnits->sortByColumn(ui.tblUserUnits->horizontalHeader()->sortIndicatorSection(),
-                                      ui.tblUserUnits->horizontalHeader()->sortIndicatorOrder());
+        ui.tblUserUnits->sortByColumn(ui.tblUserUnits->horizontalHeader()->sortIndicatorSection(), ui.tblUserUnits->horizontalHeader()->sortIndicatorOrder());
     }
     updateUnitCount();
 }
@@ -1342,8 +1259,7 @@ void MainWindow::slotLeSearchUnitChanged(QString term)
 void MainWindow::slotUpdateTimers()
 {
     // Updates the left and passed columns in the timers list
-    for (int row = 0; row < m_timerModel->rowCount(); ++row)
-    {
+    for (int row = 0; row < m_timerModel->rowCount(); ++row) {
         QDateTime next = m_timerModel->index(row, 1).data().toDateTime();
         QDateTime last = m_timerModel->index(row, 3).data().toDateTime();
         QDateTime current = QDateTime().currentDateTime();
@@ -1393,8 +1309,8 @@ void MainWindow::slotEditUnitFile()
     QTableView *tblView;
     QVector<SystemdUnit> *list;
     if (ui.tabWidget->currentIndex() == 0) {
-         tblView = ui.tblUnits;
-         list = &m_systemUnitsList;
+        tblView = ui.tblUnits;
+        list = &m_systemUnitsList;
     } else {
         tblView = ui.tblUserUnits;
         list = &m_userUnitsList;
@@ -1438,9 +1354,7 @@ void MainWindow::openEditor(const QString &file)
 
     auto editorView = document->createView(dlgEditor);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Save |
-                                                       QDialogButtonBox::Cancel,
-                                                       dlgEditor);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Save | QDialogButtonBox::Cancel, dlgEditor);
     connect(buttonBox, SIGNAL(accepted()), dlgEditor, SLOT(accept()));
     connect(buttonBox, SIGNAL(rejected()), dlgEditor, SLOT(reject()));
     buttonBox->button(QDialogButtonBox::Save)->setEnabled(false);
@@ -1470,17 +1384,15 @@ void MainWindow::openEditor(const QString &file)
 
     // Read contents of unit file.
     if (!document->openUrl(QUrl::fromLocalFile(file))) {
-        displayMsgWidget(KMessageWidget::Error,
-                         i18n("Failed to open the unit file:\n%1", file));
+        displayMsgWidget(KMessageWidget::Error, i18n("Failed to open the unit file:\n%1", file));
         return;
     }
 
-    connect(document, &KTextEditor::Document::textChanged, [=]{
+    connect(document, &KTextEditor::Document::textChanged, [=] {
         buttonBox->button(QDialogButtonBox::Save)->setEnabled(true);
     });
 
     if (dlgEditor->exec() == QDialog::Accepted) {
-
         // Declare a QVariantMap with arguments for the helper.
         QVariantMap helperArgs;
         helperArgs[QStringLiteral("file")] = file;
@@ -1493,12 +1405,12 @@ void MainWindow::openEditor(const QString &file)
 
         KAuth::ExecuteJob *job = action.execute();
         if (!job->exec()) {
-            displayMsgWidget(KMessageWidget::Error,
-                             i18n("Unable to authenticate/execute the action: %1", job->error()));
+            displayMsgWidget(KMessageWidget::Error, i18n("Unable to authenticate/execute the action: %1", job->error()));
         } else {
-            //displayMsgWidget(KMessageWidget::Positive,
-            //                 i18n("Unit file successfully written."));
-            m_lblLog->setText(i18n("%1: %2 successfully written...", QDateTime::currentDateTime().toString(QStringLiteral("hh:mm:ss")), file.section(QLatin1Char('/'), -1)));
+            // displayMsgWidget(KMessageWidget::Positive,
+            //                  i18n("Unit file successfully written."));
+            m_lblLog->setText(
+                i18n("%1: %2 successfully written...", QDateTime::currentDateTime().toString(QStringLiteral("hh:mm:ss")), file.section(QLatin1Char('/'), -1)));
         }
     }
     delete dlgEditor;
@@ -1512,30 +1424,22 @@ QVariant MainWindow::getDbusProperty(QString prop, dbusIface ifaceName, QDBusObj
     if (bus == user)
         abus = QDBusConnection::connectToBus(m_userBusPath, connSystemd);
 
-    if (ifaceName == sysdMgr)
-    {
+    if (ifaceName == sysdMgr) {
         conn = connSystemd;
         ifc = ifaceMgr;
-    }
-    else if (ifaceName == sysdUnit)
-    {
+    } else if (ifaceName == sysdUnit) {
         conn = connSystemd;
         ifc = ifaceUnit;
-    }
-    else if (ifaceName == sysdTimer)
-    {
+    } else if (ifaceName == sysdTimer) {
         conn = connSystemd;
         ifc = ifaceTimer;
-    }
-    else if (ifaceName == logdSession)
-    {
+    } else if (ifaceName == logdSession) {
         conn = connLogind;
         ifc = ifaceSession;
     }
     QVariant r;
-    QDBusInterface *iface = new QDBusInterface (conn, path.path(), ifc, abus, this);
-    if (iface->isValid())
-    {
+    QDBusInterface *iface = new QDBusInterface(conn, path.path(), ifc, abus, this);
+    if (iface->isValid()) {
         r = iface->property(prop.toLatin1().constData());
         delete iface;
         return r;
@@ -1546,7 +1450,7 @@ QVariant MainWindow::getDbusProperty(QString prop, dbusIface ifaceName, QDBusObj
 
 QDBusMessage MainWindow::callDbusMethod(QString method, dbusIface ifaceName, dbusBus bus, const QList<QVariant> &args)
 {
-    //qDebug() << "Calling method" << method << "with iface" << ifaceName << "on bus" << bus;
+    // qDebug() << "Calling method" << method << "with iface" << ifaceName << "on bus" << bus;
 
     QDBusConnection abus(m_systemBus);
     if (bus == user)
@@ -1559,8 +1463,7 @@ QDBusMessage MainWindow::callDbusMethod(QString method, dbusIface ifaceName, dbu
         iface = new QDBusInterface(connLogind, pathLogdMgr, ifaceLogdMgr, abus, this);
 
     QDBusMessage msg;
-    if (iface->isValid())
-    {
+    if (iface->isValid()) {
         if (args.isEmpty())
             msg = iface->call(QDBus::AutoDetect, method);
         else
@@ -1568,9 +1471,7 @@ QDBusMessage MainWindow::callDbusMethod(QString method, dbusIface ifaceName, dbu
         delete iface;
         if (msg.type() == QDBusMessage::ErrorMessage)
             qDebug() << "DBus method call failed: " << msg.errorMessage();
-    }
-    else
-    {
+    } else {
         qDebug() << "Invalid DBus interface on bus" << bus;
         delete iface;
     }

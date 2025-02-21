@@ -9,9 +9,10 @@
 
 #include <QSortFilterProxyModel>
 
-enum filterType
-{
-    activeState, unitType, unitName
+enum filterType {
+    activeState,
+    unitType,
+    unitName
 };
 
 class SortFilterUnitModel : public QSortFilterProxyModel

@@ -8,9 +8,9 @@
 #define MAINWINDOW_H
 
 #include "configfilemodel.h"
-#include "ui_mainwindow.h"
-#include "systemdunit.h"
 #include "sortfilterunitmodel.h"
+#include "systemdunit.h"
+#include "ui_mainwindow.h"
 #include "unitmodel.h"
 
 #include <KMessageWidget>
@@ -19,17 +19,20 @@
 #include <QDBusConnection>
 #include <QStandardItemModel>
 
-#include "systemd_manager_interface.h"
 #include "login_manager_interface.h"
+#include "systemd_manager_interface.h"
 
-enum dbusConn
-{
-    systemd, logind
+enum dbusConn {
+    systemd,
+    logind
 };
 
-enum dbusIface
-{
-    sysdMgr, sysdUnit, sysdTimer, logdMgr, logdSession
+enum dbusIface {
+    sysdMgr,
+    sysdUnit,
+    sysdTimer,
+    logdMgr,
+    logdSession
 };
 
 class MainWindow : public KXmlGuiWindow
@@ -48,25 +51,24 @@ private:
     void setupConfFilelist();
     void setupTimerlist();
     void authServiceAction(const QString &, const QString &, const QString &, const QString &, const QList<QVariant> &);
-    bool eventFilter(QObject *, QEvent*) override;
+    bool eventFilter(QObject *, QEvent *) override;
     void updateUnitCount();
     void displayMsgWidget(KMessageWidget::MessageType type, QString msg);
     void setupActions();
     void openEditor(const QString &file);
     QVariant getDbusProperty(QString prop, dbusIface ifaceName, QDBusObjectPath path = QDBusObjectPath("/org/freedesktop/systemd1"), dbusBus bus = sys);
-    QDBusMessage callDbusMethod(QString method, dbusIface ifaceName, dbusBus bus = sys, const QList<QVariant> &args = QList<QVariant> ());
+    QDBusMessage callDbusMethod(QString method, dbusIface ifaceName, dbusBus bus = sys, const QList<QVariant> &args = QList<QVariant>());
     QList<QStandardItem *> buildTimerListRow(const SystemdUnit &unit, const QVector<SystemdUnit> &list, dbusBus bus);
     void executeUnitAction(const QString &method);
     void executeSystemDaemonAction(const QString &method);
     void executeUserDaemonAction(const QString &method);
     void executeSessionAction(const QString &method);
 
-
     SortFilterUnitModel *m_systemUnitFilterModel;
     SortFilterUnitModel *m_userUnitFilterModel;
     QStandardItemModel *m_sessionModel;
     QStandardItemModel *m_timerModel;
-    ConfigFileModel * const m_configFileModel;
+    ConfigFileModel *const m_configFileModel;
     UnitModel *m_systemUnitModel;
     UnitModel *m_userUnitModel;
     QVector<SystemdUnit> m_systemUnitsList;
@@ -129,9 +131,9 @@ private:
     QAction *m_terminateSessionAction;
     QAction *m_lockSessionAction;
 
-    OrgFreedesktopSystemd1ManagerInterface * const m_systemManagerInterface;
+    OrgFreedesktopSystemd1ManagerInterface *const m_systemManagerInterface;
     OrgFreedesktopSystemd1ManagerInterface *m_sessionManagerInterface = nullptr;
-    OrgFreedesktopLogin1ManagerInterface * const m_loginManagerInterface;
+    OrgFreedesktopLogin1ManagerInterface *const m_loginManagerInterface;
 
 private Q_SLOTS:
     void quit();
@@ -148,16 +150,16 @@ private Q_SLOTS:
 
     void slotSystemSystemdReloading(bool);
     void slotSystemUnitFilesChanged();
-    //void slotSystemUnitNew(const QString &id, const QDBusObjectPath &path);
-    //void slotSystemUnitRemoved(const QString &id, const QDBusObjectPath &path);
+    // void slotSystemUnitNew(const QString &id, const QDBusObjectPath &path);
+    // void slotSystemUnitRemoved(const QString &id, const QDBusObjectPath &path);
     void slotSystemJobNew(uint id, const QDBusObjectPath &path, const QString &unit);
     void slotSystemJobRemoved(uint id, const QDBusObjectPath &path, const QString &unit, const QString &result);
     void slotSystemPropertiesChanged(const QString &iface, const QVariantMap &changedProps, const QStringList &invalidatedProps);
 
     void slotUserSystemdReloading(bool);
     void slotUserUnitFilesChanged();
-    //void slotUserUnitNew(const QString &id, const QDBusObjectPath &path);
-    //void slotUserUnitRemoved(const QString &id, const QDBusObjectPath &path);
+    // void slotUserUnitNew(const QString &id, const QDBusObjectPath &path);
+    // void slotUserUnitRemoved(const QString &id, const QDBusObjectPath &path);
     void slotUserJobNew(uint id, const QDBusObjectPath &path, const QString &unit);
     void slotUserJobRemoved(uint id, const QDBusObjectPath &path, const QString &unit, const QString &result);
     void slotUserPropertiesChanged(const QString &iface, const QVariantMap &changedProps, const QStringList &invalidatedProps);

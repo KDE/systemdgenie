@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include <KJob>
-#include "systemdunit.h"
 #include "systemd_manager_interface.h"
+#include "systemdunit.h"
+#include <KJob>
 
 class UnitsFetchJob : public KJob
 {
@@ -23,5 +23,5 @@ private:
     void slotListUnitFilesFinished(QDBusPendingCallWatcher *call);
 
     QVector<SystemdUnit> m_units;
-    OrgFreedesktopSystemd1ManagerInterface * const m_systemdManagerInterface;
+    OrgFreedesktopSystemd1ManagerInterface *const m_systemdManagerInterface;
 };

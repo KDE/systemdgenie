@@ -18,8 +18,7 @@ void SessionsFetchJob::start()
 {
     auto reply = m_loginManagerInterface->ListSessions();
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-    connect(watcher, &QDBusPendingCallWatcher::finished, this,
-                     &SessionsFetchJob::slotListSessionsFinished);
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, &SessionsFetchJob::slotListSessionsFinished);
 }
 
 void SessionsFetchJob::slotListSessionsFinished(QDBusPendingCallWatcher *call)
@@ -37,7 +36,6 @@ void SessionsFetchJob::slotListSessionsFinished(QDBusPendingCallWatcher *call)
     Q_EMIT emitResult();
     call->deleteLater();
 }
-
 
 QList<SystemdSession> SessionsFetchJob::sessions() const
 {

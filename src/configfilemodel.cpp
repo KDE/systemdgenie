@@ -3,45 +3,33 @@
 
 #include "configfilemodel.h"
 
-#include <QIcon>
 #include <QFileInfo>
-#include <QLocale>
 #include <QFileSystemWatcher>
+#include <QIcon>
+#include <QLocale>
 
-#include <KLocalizedString>
-#include <KService>
 #include <KIO/ApplicationLauncherJob>
 #include <KIO/JobUiDelegateFactory>
+#include <KLocalizedString>
+#include <KService>
 
 using namespace Qt::StringLiterals;
 
 ConfigFileModel::ConfigFileModel(QObject *parent)
     : QAbstractTableModel(parent)
 {
-    m_configFiles.push_back(ConfigFile{QStringLiteral("/etc/systemd/coredump.conf"),
-                                   QStringLiteral("coredump.conf"),
-                                   i18n("Coredump generation and storage")});
-    m_configFiles.push_back(ConfigFile{QStringLiteral("/etc/systemd/journal-upload.conf"),
-                                   QStringLiteral("journal-upload.conf"),
-                                   i18n("Send journal messages over network")});
-    m_configFiles.push_back(ConfigFile{QStringLiteral("/etc/systemd/journald.conf"),
-                                   QStringLiteral("journald.conf"),
-                                   i18n("Journal manager settings")});
-    m_configFiles.push_back(ConfigFile{QStringLiteral("/etc/systemd/logind.conf"),
-                                   QStringLiteral("logind.conf"),
-                                   i18n("Login manager configuration")});
-    m_configFiles.push_back(ConfigFile{QStringLiteral("/etc/systemd/resolved.conf"),
-                                   QStringLiteral("resolved.conf"),
-                                   i18n("Network name resolution configuration")});
-    m_configFiles.push_back(ConfigFile{QStringLiteral("/etc/systemd/system.conf"),
-                                   QStringLiteral("systemd-system.conf"),
-                                   i18n("Systemd daemon configuration")});
-    m_configFiles.push_back(ConfigFile{QStringLiteral("/etc/systemd/timesyncd.conf"),
-                                   QStringLiteral("timesyncd.conf"),
-                                   i18n("Time synchronization settings")});
-    m_configFiles.push_back(ConfigFile{QStringLiteral("/etc/systemd/user.conf"),
-                                   QStringLiteral("systemd-system.conf"),
-                                   i18n("Systemd user daemon configuration")});
+    m_configFiles.push_back(ConfigFile{QStringLiteral("/etc/systemd/coredump.conf"), QStringLiteral("coredump.conf"), i18n("Coredump generation and storage")});
+    m_configFiles.push_back(
+        ConfigFile{QStringLiteral("/etc/systemd/journal-upload.conf"), QStringLiteral("journal-upload.conf"), i18n("Send journal messages over network")});
+    m_configFiles.push_back(ConfigFile{QStringLiteral("/etc/systemd/journald.conf"), QStringLiteral("journald.conf"), i18n("Journal manager settings")});
+    m_configFiles.push_back(ConfigFile{QStringLiteral("/etc/systemd/logind.conf"), QStringLiteral("logind.conf"), i18n("Login manager configuration")});
+    m_configFiles.push_back(
+        ConfigFile{QStringLiteral("/etc/systemd/resolved.conf"), QStringLiteral("resolved.conf"), i18n("Network name resolution configuration")});
+    m_configFiles.push_back(
+        ConfigFile{QStringLiteral("/etc/systemd/system.conf"), QStringLiteral("systemd-system.conf"), i18n("Systemd daemon configuration")});
+    m_configFiles.push_back(ConfigFile{QStringLiteral("/etc/systemd/timesyncd.conf"), QStringLiteral("timesyncd.conf"), i18n("Time synchronization settings")});
+    m_configFiles.push_back(
+        ConfigFile{QStringLiteral("/etc/systemd/user.conf"), QStringLiteral("systemd-system.conf"), i18n("Systemd user daemon configuration")});
 
     QFileSystemWatcher *m_fileWatcher = new QFileSystemWatcher;
     connect(m_fileWatcher, &QFileSystemWatcher::fileChanged, this, &ConfigFileModel::slotFileChanged);
@@ -105,9 +93,9 @@ QVariant ConfigFileModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> ConfigFileModel::roleNames() const
 {
     return {
-        { FileRole, "file" },
-        { ModifiedRole, "modified" },
-        { DescriptionRole, "description" },
+        {FileRole, "file"},
+        {ModifiedRole, "modified"},
+        {DescriptionRole, "description"},
     };
 }
 

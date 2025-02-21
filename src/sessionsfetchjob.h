@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include <KJob>
-#include "systemdunit.h"
 #include "login_manager_interface.h"
+#include "systemdunit.h"
+#include <KJob>
 
 class SessionsFetchJob : public KJob
 {
@@ -22,5 +22,5 @@ private:
     void slotListSessionsFinished(QDBusPendingCallWatcher *call);
 
     QVector<SystemdSession> m_sessions;
-    OrgFreedesktopLogin1ManagerInterface * const m_loginManagerInterface;
+    OrgFreedesktopLogin1ManagerInterface *const m_loginManagerInterface;
 };

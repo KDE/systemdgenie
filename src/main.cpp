@@ -4,8 +4,8 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "systemdgenie_version.h"
 #include "mainwindow.h"
+#include "systemdgenie_version.h"
 
 #include <QApplication>
 #include <QCommandLineParser>
@@ -32,14 +32,11 @@ int main(int argc, char *argv[])
                          KAboutLicense::GPL,
                          i18n("(c) 2016, Ragnar Thomsen"),
                          QString(),
-                         QString()
-                         );
+                         QString());
 
     aboutData.setOrganizationDomain("kde.org");
 
-    aboutData.addAuthor(i18n("Ragnar Thomsen"),
-                        i18n("Maintainer"),
-                        QStringLiteral("rthomsen6@gmail.com"));
+    aboutData.addAuthor(i18n("Ragnar Thomsen"), i18n("Maintainer"), QStringLiteral("rthomsen6@gmail.com"));
 
     KAboutData::setApplicationData(aboutData);
 

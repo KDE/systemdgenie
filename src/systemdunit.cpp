@@ -7,16 +7,8 @@
 QDBusArgument &operator<<(QDBusArgument &argument, const SystemdUnit &unit)
 {
     argument.beginStructure();
-    argument << unit.id
-             << unit.description
-             << unit.load_state
-             << unit.active_state
-             << unit.sub_state
-             << unit.following
-             << unit.unit_path
-             << unit.job_id
-             << unit.job_type
-             << unit.job_path;
+    argument << unit.id << unit.description << unit.load_state << unit.active_state << unit.sub_state << unit.following << unit.unit_path << unit.job_id
+             << unit.job_type << unit.job_path;
     argument.endStructure();
     return argument;
 }
@@ -24,16 +16,8 @@ QDBusArgument &operator<<(QDBusArgument &argument, const SystemdUnit &unit)
 const QDBusArgument &operator>>(const QDBusArgument &argument, SystemdUnit &unit)
 {
     argument.beginStructure();
-    argument >> unit.id
-            >> unit.description
-            >> unit.load_state
-            >> unit.active_state
-            >> unit.sub_state
-            >> unit.following
-            >> unit.unit_path
-            >> unit.job_id
-            >> unit.job_type
-            >> unit.job_path;
+    argument >> unit.id >> unit.description >> unit.load_state >> unit.active_state >> unit.sub_state >> unit.following >> unit.unit_path >> unit.job_id
+        >> unit.job_type >> unit.job_path;
     argument.endStructure();
     return argument;
 }
@@ -41,11 +25,7 @@ const QDBusArgument &operator>>(const QDBusArgument &argument, SystemdUnit &unit
 QDBusArgument &operator<<(QDBusArgument &argument, const SystemdSession &session)
 {
     argument.beginStructure();
-    argument << session.session_id
-             << session.user_id
-             << session.user_name
-             << session.seat_id
-             << session.session_path;
+    argument << session.session_id << session.user_id << session.user_name << session.seat_id << session.session_path;
     argument.endStructure();
     return argument;
 }
@@ -53,11 +33,7 @@ QDBusArgument &operator<<(QDBusArgument &argument, const SystemdSession &session
 const QDBusArgument &operator>>(const QDBusArgument &argument, SystemdSession &session)
 {
     argument.beginStructure();
-    argument >> session.session_id
-            >> session.user_id
-            >> session.user_name
-            >> session.seat_id
-            >> session.session_path;
+    argument >> session.session_id >> session.user_id >> session.user_name >> session.seat_id >> session.session_path;
     argument.endStructure();
     return argument;
 }
@@ -65,8 +41,7 @@ const QDBusArgument &operator>>(const QDBusArgument &argument, SystemdSession &s
 QDBusArgument &operator<<(QDBusArgument &argument, const UnitFile &unitFile)
 {
     argument.beginStructure();
-    argument << unitFile.name
-             << unitFile.status;
+    argument << unitFile.name << unitFile.status;
     argument.endStructure();
     return argument;
 }
@@ -74,8 +49,7 @@ QDBusArgument &operator<<(QDBusArgument &argument, const UnitFile &unitFile)
 const QDBusArgument &operator>>(const QDBusArgument &argument, UnitFile &unitFile)
 {
     argument.beginStructure();
-    argument >> unitFile.name
-            >> unitFile.status;
+    argument >> unitFile.name >> unitFile.status;
     argument.endStructure();
     return argument;
 }

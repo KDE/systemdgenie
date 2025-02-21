@@ -6,12 +6,12 @@
 
 #include "helper.h"
 
-#include <QtDBus>
 #include <QFile>
+#include <QtDBus>
 
 #include <KAuth/HelperSupport>
 
-ActionReply Helper::saveunitfile(const QVariantMap& args)
+ActionReply Helper::saveunitfile(const QVariantMap &args)
 {
     ActionReply reply;
 
@@ -19,8 +19,8 @@ ActionReply Helper::saveunitfile(const QVariantMap& args)
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         reply = ActionReply::HelperErrorReply();
         reply.addData(QStringLiteral("errorDescription"), file.errorString());
-        //reply.setErrorCode(file.error());
-        //reply.addData("filename", iter.key());
+        // reply.setErrorCode(file.error());
+        // reply.addData("filename", iter.key());
         return reply;
     }
     QTextStream stream(&file);
@@ -30,7 +30,7 @@ ActionReply Helper::saveunitfile(const QVariantMap& args)
     return reply;
 }
 
-ActionReply Helper::dbusaction(const QVariantMap& args)
+ActionReply Helper::dbusaction(const QVariantMap &args)
 {
     ActionReply reply;
     QDBusMessage dbusreply;
@@ -42,20 +42,14 @@ ActionReply Helper::dbusaction(const QVariantMap& args)
     QString method = args[QStringLiteral("method")].toString();
     QList<QVariant> argsForCall = args[QStringLiteral("argsForCall")].toList();
 
-    QDBusInterface *iface = new QDBusInterface(service,
-                                               path,
-                                               interface,
-                                               QDBusConnection::systemBus(),
-                                               this);
+    QDBusInterface *iface = new QDBusInterface(service, path, interface, QDBusConnection::systemBus(), this);
     if (iface->isValid())
         dbusreply = iface->callWithArgumentList(QDBus::AutoDetect, method, argsForCall);
     delete iface;
 
     // Error handling
-    if (method != QLatin1String("Reexecute"))
-    {
-        if (dbusreply.type() == QDBusMessage::ErrorMessage)
-        {
+    if (method != QLatin1String("Reexecute")) {
+        if (dbusreply.type() == QDBusMessage::ErrorMessage) {
             reply.setErrorCode(ActionReply::DBusError);
             reply.setErrorDescription(dbusreply.errorMessage());
         }
@@ -63,15 +57,14 @@ ActionReply Helper::dbusaction(const QVariantMap& args)
 
     // Reload systemd daemon to update the enabled/disabled status
     QRegularExpression rxMethods(QStringLiteral("EnableUnitFiles|DisableUnitFiles|MaskUnitFiles|UnmaskUnitFiles"));
-    if (rxMethods.match(method).hasMatch())
-    {
+    if (rxMethods.match(method).hasMatch()) {
         // systemd does not update properties when these methods are called so we
         // need to reload the systemd daemon.
-        iface = new QDBusInterface (QStringLiteral("org.freedesktop.systemd1"),
-                                    QStringLiteral("/org/freedesktop/systemd1"),
-                                    QStringLiteral("org.freedesktop.systemd1.Manager"),
-                                    QDBusConnection::systemBus(),
-                                    this);
+        iface = new QDBusInterface(QStringLiteral("org.freedesktop.systemd1"),
+                                   QStringLiteral("/org/freedesktop/systemd1"),
+                                   QStringLiteral("org.freedesktop.systemd1.Manager"),
+                                   QDBusConnection::systemBus(),
+                                   this);
         dbusreply = iface->call(QDBus::AutoDetect, QStringLiteral("Reload"));
         delete iface;
     }

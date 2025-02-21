@@ -6,8 +6,8 @@
 
 #include "unitmodel.h"
 
-#include <KLocalizedString>
 #include <KColorScheme>
+#include <KLocalizedString>
 
 #include <QColor>
 #include <QIcon>
@@ -51,15 +51,13 @@ QVariant UnitModel::headerData(int section, Qt::Orientation orientation, int rol
     return QVariant();
 }
 
-QVariant UnitModel::data(const QModelIndex & index, int role) const
+QVariant UnitModel::data(const QModelIndex &index, int role) const
 {
-
     if (!index.isValid()) {
         return QVariant();
     }
 
-    if (role == Qt::DisplayRole)
-    {
+    if (role == Qt::DisplayRole) {
         if (index.column() == 0)
             return m_unitList->at(index.row()).id;
         else if (index.column() == 1)
@@ -70,8 +68,7 @@ QVariant UnitModel::data(const QModelIndex & index, int role) const
             return m_unitList->at(index.row()).sub_state;
     }
 
-    else if (role == Qt::ForegroundRole)
-    {
+    else if (role == Qt::ForegroundRole) {
         const KColorScheme scheme(QPalette::Normal);
         if (m_unitList->at(index.row()).active_state == QLatin1String("active"))
             return scheme.foreground(KColorScheme::PositiveText);
@@ -83,8 +80,7 @@ QVariant UnitModel::data(const QModelIndex & index, int role) const
             return QVariant();
     }
 
-    else if (role == Qt::DecorationRole)
-    {
+    else if (role == Qt::DecorationRole) {
         if (index.column() == 0) {
             if (m_unitList->at(index.row()).active_state == QLatin1String("active")) {
                 return QIcon::fromTheme(QStringLiteral("emblem-success"));
@@ -100,8 +96,7 @@ QVariant UnitModel::data(const QModelIndex & index, int role) const
         }
     }
 
-    else if (role == Qt::ToolTipRole)
-    {
+    else if (role == Qt::ToolTipRole) {
         const QString selUnit = m_unitList->at(index.row()).id;
         const QString selUnitPath = m_unitList->at(index.row()).unit_path.path();
         const QString selUnitFile = m_unitList->at(index.row()).unit_file;
@@ -117,16 +112,11 @@ QVariant UnitModel::data(const QModelIndex & index, int role) const
         QDBusInterface *iface;
 
         // Use the DBus interface to get unit properties
-        if (!selUnitPath.isEmpty())
-        {
+        if (!selUnitPath.isEmpty()) {
             // Unit has a valid path
 
-            iface = new QDBusInterface (QStringLiteral("org.freedesktop.systemd1"),
-                                        selUnitPath,
-                                        QStringLiteral("org.freedesktop.systemd1.Unit"),
-                                        bus);
-            if (iface->isValid())
-            {
+            iface = new QDBusInterface(QStringLiteral("org.freedesktop.systemd1"), selUnitPath, QStringLiteral("org.freedesktop.systemd1.Unit"), bus);
+            if (iface->isValid()) {
                 // Unit has a valid unit DBus object
                 toolTipText.append(i18n("<b>Description: </b>"));
                 toolTipText.append(iface->property("Description").toString());
@@ -147,10 +137,9 @@ QVariant UnitModel::data(const QModelIndex & index, int role) const
                 toolTipText.append(i18n("<br><b>Activated: </b>"));
                 if (ActiveEnterTimestamp == 0)
                     toolTipText.append(QStringLiteral("n/a"));
-                else
-                {
+                else {
                     QDateTime timeActivated;
-                    timeActivated.setMSecsSinceEpoch(ActiveEnterTimestamp/1000);
+                    timeActivated.setMSecsSinceEpoch(ActiveEnterTimestamp / 1000);
                     toolTipText.append(timeActivated.toString());
                 }
 
@@ -158,24 +147,22 @@ QVariant UnitModel::data(const QModelIndex & index, int role) const
                 toolTipText.append(i18n("<br><b>Deactivated: </b>"));
                 if (InactiveEnterTimestamp == 0)
                     toolTipText.append(QStringLiteral("n/a"));
-                else
-                {
+                else {
                     QDateTime timeDeactivated;
-                    timeDeactivated.setMSecsSinceEpoch(InactiveEnterTimestamp/1000);
+                    timeDeactivated.setMSecsSinceEpoch(InactiveEnterTimestamp / 1000);
                     toolTipText.append(timeDeactivated.toString());
                 }
             }
             delete iface;
 
         } else {
-
             // Unit does not have a valid unit DBus object (typically unloaded units).
             // Retrieve UnitFileState from Manager object.
 
-            iface = new QDBusInterface (QStringLiteral("org.freedesktop.systemd1"),
-                                        QStringLiteral("/org/freedesktop/systemd1"),
-                                        QStringLiteral("org.freedesktop.systemd1.Manager"),
-                                        bus);
+            iface = new QDBusInterface(QStringLiteral("org.freedesktop.systemd1"),
+                                       QStringLiteral("/org/freedesktop/systemd1"),
+                                       QStringLiteral("org.freedesktop.systemd1.Manager"),
+                                       bus);
             QList<QVariant> args;
             args << selUnit;
 
@@ -198,8 +185,7 @@ QVariant UnitModel::data(const QModelIndex & index, int role) const
         if (log.isEmpty()) {
             toolTipText.append(i18n("<br><i>No log entries found for this unit.</i>"));
         } else {
-            for(int i = log.count()-1; i >= 0; --i)
-            {
+            for (int i = log.count() - 1; i >= 0; --i) {
                 if (!log.at(i).isEmpty())
                     toolTipText.append(QStringLiteral("<br>%1").arg(log.at(i)));
             }
@@ -223,21 +209,17 @@ QStringList UnitModel::getLastJrnlEntries(QString unit) const
     uint64_t time;
     sd_journal *journal;
 
-    if (!m_userBus.isEmpty())
-    {
+    if (!m_userBus.isEmpty()) {
         match1 = QStringLiteral("USER_UNIT=%1").arg(unit);
         jflags = (SD_JOURNAL_LOCAL_ONLY | SD_JOURNAL_CURRENT_USER);
-    }
-    else
-    {
+    } else {
         match1 = QStringLiteral("_SYSTEMD_UNIT=%1").arg(unit);
         match2 = QStringLiteral("UNIT=%1").arg(unit);
         jflags = (SD_JOURNAL_LOCAL_ONLY | SD_JOURNAL_SYSTEM);
     }
 
     r = sd_journal_open(&journal, jflags);
-    if (r != 0)
-    {
+    if (r != 0) {
         qDebug() << "Failed to open journal";
         return reply;
     }
@@ -248,41 +230,35 @@ QStringList UnitModel::getLastJrnlEntries(QString unit) const
     if (r != 0)
         return reply;
 
-    if (!match2.isEmpty())
-    {
+    if (!match2.isEmpty()) {
         sd_journal_add_disjunction(journal);
         r = sd_journal_add_match(journal, match2.toUtf8().constData(), 0);
         if (r != 0)
             return reply;
     }
 
-
     r = sd_journal_seek_tail(journal);
     if (r != 0)
         return reply;
 
     // Fetch the last 5 entries
-    for (int i = 0; i < 5; ++i)
-    {
+    for (int i = 0; i < 5; ++i) {
         r = sd_journal_previous(journal);
-        if (r == 1)
-        {
+        if (r == 1) {
             QString line;
 
             // Get the date and time
             r = sd_journal_get_realtime_usec(journal, &time);
-            if (r == 0)
-            {
+            if (r == 0) {
                 QDateTime date;
-                date.setMSecsSinceEpoch(time/1000);
+                date.setMSecsSinceEpoch(time / 1000);
                 line.append(date.toString(QStringLiteral("yyyy.MM.dd hh:mm")));
             }
 
             // Color messages according to priority
             r = sd_journal_get_data(journal, "PRIORITY", &data, &length);
-            if (r == 0)
-            {
-                int prio = QString::fromUtf8((const char *)data, length).section(QLatin1Char('='),1).toInt();
+            if (r == 0) {
+                int prio = QString::fromUtf8((const char *)data, length).section(QLatin1Char('='), 1).toInt();
                 if (prio <= 3)
                     line.append(QStringLiteral("<span style='color:tomato;'>"));
                 else if (prio == 4)
@@ -293,15 +269,13 @@ QStringList UnitModel::getLastJrnlEntries(QString unit) const
 
             // Get the message itself
             r = sd_journal_get_data(journal, "MESSAGE", &data, &length);
-            if (r == 0)
-            {
-                line.append(QStringLiteral(": %1</span>").arg(QString::fromUtf8((const char *)data, length).section(QLatin1Char('='),1)));
+            if (r == 0) {
+                line.append(QStringLiteral(": %1</span>").arg(QString::fromUtf8((const char *)data, length).section(QLatin1Char('='), 1)));
                 if (line.length() > 195)
                     line = QStringLiteral("%1...</span>").arg(line.left(195));
                 reply << line;
             }
-        }
-        else // previous failed, no more entries
+        } else // previous failed, no more entries
             return reply;
     }
 

@@ -18,8 +18,7 @@ void UnitsFetchJob::start()
 {
     auto reply = m_systemdManagerInterface->ListUnits();
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-    connect(watcher, &QDBusPendingCallWatcher::finished, this,
-                     &UnitsFetchJob::slotListUnitsFinished);
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, &UnitsFetchJob::slotListUnitsFinished);
 }
 
 void UnitsFetchJob::slotListUnitsFinished(QDBusPendingCallWatcher *call)
@@ -38,8 +37,7 @@ void UnitsFetchJob::slotListUnitsFinished(QDBusPendingCallWatcher *call)
 
     auto replyFile = m_systemdManagerInterface->ListUnitFiles();
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(replyFile, this);
-    connect(watcher, &QDBusPendingCallWatcher::finished, this,
-                     &UnitsFetchJob::slotListUnitFilesFinished);
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, &UnitsFetchJob::slotListUnitFilesFinished);
 }
 
 void UnitsFetchJob::slotListUnitFilesFinished(QDBusPendingCallWatcher *call)
@@ -73,7 +71,7 @@ void UnitsFetchJob::slotListUnitFilesFinished(QDBusPendingCallWatcher *call)
                 unit.active_state = QLatin1Char('-');
                 unit.sub_state = QLatin1Char('-');
                 unit.unit_file = unitFile.name;
-                unit.unit_file_status= unitFile.status;
+                unit.unit_file_status = unitFile.status;
                 m_units.append(unit);
             }
         }
@@ -82,7 +80,6 @@ void UnitsFetchJob::slotListUnitFilesFinished(QDBusPendingCallWatcher *call)
 
     Q_EMIT emitResult();
 }
-
 
 QList<SystemdUnit> UnitsFetchJob::units() const
 {

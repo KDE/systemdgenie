@@ -15,8 +15,8 @@ class Helper : public QObject
     Q_OBJECT
 
 public Q_SLOTS:
-    ActionReply saveunitfile(const QVariantMap& args);
-    ActionReply dbusaction(const QVariantMap& args);
+    ActionReply saveunitfile(const QVariantMap &args);
+    ActionReply dbusaction(const QVariantMap &args);
 };
 
 #endif
