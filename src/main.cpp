@@ -4,16 +4,18 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "mainwindow.h"
-#include "systemdgenie_version.h"
+#include <KAboutData>
+#include <KCrash>
+#include <KLocalizedQmlContext>
+#include <KLocalizedString>
 
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDebug>
+#include <QQmlApplicationEngine>
 
-#include <KAboutData>
-#include <KCrash>
-#include <KLocalizedString>
+#include "mainwindow.h"
+#include "systemdgenie_version.h"
 
 int main(int argc, char *argv[])
 {
@@ -43,6 +45,8 @@ int main(int argc, char *argv[])
     application.setWindowIcon(QIcon::fromTheme(QStringLiteral("preferences-system-services")));
 
     QCommandLineParser parser;
+    QCommandLineOption quick(QStringList{QStringLiteral("q"), QStringLiteral("quick")}, QStringLiteral("Use qml view"));
+    parser.addOption(quick);
     aboutData.setupCommandLine(&parser);
 
     // Do the command line parsing.
@@ -60,9 +64,15 @@ int main(int argc, char *argv[])
     qDBusRegisterMetaType<UnitFile>();
     qDBusRegisterMetaType<QList<UnitFile>>();
 
-    MainWindow *window = new MainWindow;
-    window->show();
-
-    qDebug() << "Entering application loop";
-    return application.exec();
+    if (parser.isSet(quick)) {
+        QQmlApplicationEngine engine;
+        KLocalization::setupLocalizedContext(&engine);
+        engine.loadFromModule("org.kde.systemdgenie", "Main");
+        return application.exec();
+    } else {
+        MainWindow *window = new MainWindow;
+        window->show();
+        qDebug() << "Entering application loop";
+        return application.exec();
+    }
 }

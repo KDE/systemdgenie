@@ -4,16 +4,16 @@
 #pragma once
 
 #include <QAbstractTableModel>
+#include <qqmlregistration.h>
 
 class ConfigFileModel : public QAbstractTableModel
 {
     Q_OBJECT
+    QML_ELEMENT
 
 public:
     enum ExtraRoles {
-        FileRole = Qt::DisplayRole,
-        ModifiedRole = Qt::UserRole + 1,
-        DescriptionRole,
+        IconNameRole = Qt::UserRole + 1,
     };
 
     enum Columns {
