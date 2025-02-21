@@ -788,7 +788,7 @@ void MainWindow::authServiceAction(const QString &service, const QString &path, 
 
     if (!job->exec())
         displayMsgWidget(KMessageWidget::Error,
-                         i18n("Unable to authenticate/execute the action: %1", job->error()));
+                         i18n("Unable to authenticate/execute the action: %1", job->errorString()));
     else
     {
         qDebug() << "DBus action successful.";
