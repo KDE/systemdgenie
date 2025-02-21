@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the systemdgenie package.
 #
-# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2024, 2025 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-18 00:43+0000\n"
-"PO-Revision-Date: 2024-08-28 10:16+0300\n"
+"PO-Revision-Date: 2025-02-19 13:09+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -37,6 +37,7 @@ msgstr "SystemdGenie"
 #, kde-format
 msgid "Manage systemd units, timers, sessions and config files"
 msgstr ""
+"Pārvalda „systemd“ vienības, taimerus, sesijas un konfigurācijas datnes"
 
 #: src/main.cpp:33
 #, kde-format
@@ -242,7 +243,7 @@ msgstr "„Systemd“ lietotāja dēmona konfigurācija"
 #: src/mainwindow.cpp:552
 #, kde-format
 msgid "Unable to fetch sessions list: %1"
-msgstr ""
+msgstr "Neizdodas izgūt sesiju sarakstu: %1"
 
 #: src/mainwindow.cpp:751 src/mainwindow.cpp:760
 #, kde-format
@@ -378,16 +379,14 @@ msgid "Click to re-execute the user systemd daemon"
 msgstr "Klikšķiniet, lai no jauna palaistu lietotāja „systemd“ dēmonu"
 
 #: src/mainwindow.cpp:1055
-#, fuzzy, kde-format
-#| msgid "Edit Unit File"
+#, kde-format
 msgid "Edit Unit File…"
-msgstr "Rediģēt vienības datni"
+msgstr "Rediģēt vienības datni…"
 
 #: src/mainwindow.cpp:1061
-#, fuzzy, kde-format
-#| msgid "Edit Configuration File"
+#, kde-format
 msgid "Edit Configuration File…"
-msgstr "Rediģēt konfigurācijas datni"
+msgstr "Rediģēt konfigurācijas datni…"
 
 #: src/mainwindow.cpp:1067
 #, kde-format
@@ -494,10 +493,9 @@ msgid "Editing %1"
 msgstr "Rediģē „%1“"
 
 #: src/mainwindow.cpp:1511
-#, fuzzy, kde-format
-#| msgid "Editing file: %1"
+#, kde-format
 msgid "Editing file: <code>%1</code>"
-msgstr "Rediģē datni: %1"
+msgstr "Rediģē datni: <code>%1</code>"
 
 #: src/mainwindow.cpp:1537
 #, kde-format
@@ -505,7 +503,7 @@ msgid ""
 "Failed to open the unit file:\n"
 "%1"
 msgstr ""
-"Neizdevās atvērt vienību datni:\n"
+"Neizdevās atvērt vienības datni:\n"
 "%1"
 
 #. i18n("Unit file successfully written."));
@@ -516,10 +514,9 @@ msgstr "%1: %2 veiksmīgi ierakstīts..."
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
 #: src/mainwindow.ui:14
-#, fuzzy, kde-format
-#| msgid "Services"
+#, kde-format
 msgid "Services Manager"
-msgstr "Servisi"
+msgstr "Servisu pārvaldnieks"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
 #: src/mainwindow.ui:85
@@ -536,36 +533,32 @@ msgstr "<html><head/><body><p>Filtrēt vienību tipus.</p></body></html>"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUnits)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUserUnits)
 #: src/mainwindow.ui:194 src/mainwindow.ui:300
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+#, kde-format
 msgid "<html><head/><body><p>Toggle hiding inactive units.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Pārslēgt neaktīvo vienību rādīšanu.</p></body></html>"
+"<html><head/><body><p>Pārslēgt neaktīvo vienību slēpšanu.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUnits)
 #. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUserUnits)
 #: src/mainwindow.ui:197 src/mainwindow.ui:303
-#, fuzzy, kde-format
-#| msgid "Show inactive"
+#, kde-format
 msgid "Hide inactive"
-msgstr "Rādīt neaktīvās"
+msgstr "Slēpt neaktīvās"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUnits)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUserUnits)
 #: src/mainwindow.ui:207 src/mainwindow.ui:313
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+#, kde-format
 msgid "<html><head/><body><p>Toggle hiding unloaded units.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Pārslēgt neaktīvo vienību rādīšanu.</p></body></html>"
+"<html><head/><body><p>Pārslēgt neaktīvo vienību slēpšanu.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUnits)
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUserUnits)
 #: src/mainwindow.ui:210 src/mainwindow.ui:316
-#, fuzzy, kde-format
-#| msgid "Show unloaded"
+#, kde-format
 msgid "Hide unloaded"
-msgstr "Rādīt izlādētās"
+msgstr "Slēpt izlādētās"
 
 #. i18n: ectx: property (text), widget (QLabel, lblUnitCount)
 #. i18n: ectx: property (text), widget (QLabel, lblUserUnitCount)
