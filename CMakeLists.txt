@@ -1,12 +1,12 @@
 project(SYSTEMD-GENIE)
 set(PROJECT_VERSION "0.100.0")
 
-cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.20 FATAL_ERROR)
 
 # Silence a warning
 cmake_policy(SET CMP0063 NEW)
 
-find_package(ECM 5.240 REQUIRED NO_MODULE)
+find_package(ECM 6.9.0 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -20,20 +20,21 @@ include(CheckIncludeFiles)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
-             DBus
-             Gui
-             Widgets)
+find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
+    DBus
+    Gui
+    Widgets
+)
 
-find_package(KF${QT_MAJOR_VERSION} REQUIRED COMPONENTS
-     Auth
-     CoreAddons
-     Crash
-     I18n
-     XmlGui
-     TextEditor
-     KIO
- )
+find_package(KF6 REQUIRED COMPONENTS
+    Auth
+    CoreAddons
+    Crash
+    I18n
+    XmlGui
+    TextEditor
+    KIO
+)
 
 include(ECMSetupVersion)
 ecm_setup_version(${PROJECT_VERSION}

@@ -39,13 +39,13 @@ ki18n_wrap_ui(systemdgenie_SRCS mainwindow.ui)
 
 add_executable(systemdgenie ${systemdgenie_SRCS})
 target_link_libraries(systemdgenie
-                      KF${QT_MAJOR_VERSION}::AuthCore
-                      KF${QT_MAJOR_VERSION}::CoreAddons
-                      KF${QT_MAJOR_VERSION}::Crash
-                      KF${QT_MAJOR_VERSION}::I18n
-                      KF${QT_MAJOR_VERSION}::XmlGui
-                      KF${QT_MAJOR_VERSION}::TextEditor
-                      KF${QT_MAJOR_VERSION}::KIOGui
+                      KF6::AuthCore
+                      KF6::CoreAddons
+                      KF6::Crash
+                      KF6::I18n
+                      KF6::XmlGui
+                      KF6::TextEditor
+                      KF6::KIOGui
                       PkgConfig::JOURNALD)
 install(TARGETS systemdgenie ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
