@@ -20,16 +20,20 @@ qt_add_dbus_interface(systemd_DBUS_SRCS
     login_manager_interface
 )
 
-set(systemdgenie_SRCS main.cpp
-                      mainwindow.cpp
-                      unitmodel.cpp
-                      unitsfetchjob.cpp
-                      unitsfetchjob.h
-                      sessionsfetchjob.cpp
-                      sessionsfetchjob.h
-                      sortfilterunitmodel.cpp
-                      systemdunit.cpp
-                      ${systemd_DBUS_SRCS})
+set(systemdgenie_SRCS
+    main.cpp
+    mainwindow.cpp
+    unitmodel.cpp
+    unitsfetchjob.cpp
+    unitsfetchjob.h
+    sessionsfetchjob.cpp
+    sessionsfetchjob.h
+    sortfilterunitmodel.cpp
+    systemdunit.cpp
+    configfilemodel.cpp
+    configfilemodel.h
+    ${systemd_DBUS_SRCS}
+)
 
 ki18n_wrap_ui(systemdgenie_SRCS mainwindow.ui)
 
@@ -41,6 +45,7 @@ target_link_libraries(systemdgenie
                       KF${QT_MAJOR_VERSION}::I18n
                       KF${QT_MAJOR_VERSION}::XmlGui
                       KF${QT_MAJOR_VERSION}::TextEditor
+                      KF${QT_MAJOR_VERSION}::KIOGui
                       PkgConfig::JOURNALD)
 install(TARGETS systemdgenie ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 

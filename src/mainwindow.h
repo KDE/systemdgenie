@@ -7,6 +7,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "configfilemodel.h"
 #include "ui_mainwindow.h"
 #include "systemdunit.h"
 #include "sortfilterunitmodel.h"
@@ -20,43 +21,6 @@
 
 #include "systemd_manager_interface.h"
 #include "login_manager_interface.h"
-
-struct conffile
-{
-    QString filePath;
-    QString manPage;
-    QString description;
-
-    conffile(QString f, QString m, QString d)
-    {
-        filePath = f;
-        manPage = m;
-        description = d;
-    }
-
-    conffile(){}
-
-    conffile(QString f)
-    {
-        filePath = f;
-    }
-
-    bool operator==(const QString& right) const
-    {
-        if (filePath == right)
-            return true;
-        else
-            return false;
-    }
-
-    bool operator==(const conffile& right) const
-    {
-        if (filePath == right.filePath)
-            return true;
-        else
-            return false;
-    }
-};
 
 enum dbusConn
 {
@@ -81,8 +45,8 @@ private:
     void setupSignalSlots();
     void setupUnitslist();
     void setupSessionlist();
-    void setupTimerlist();
     void setupConfFilelist();
+    void setupTimerlist();
     void authServiceAction(const QString &, const QString &, const QString &, const QString &, const QList<QVariant> &);
     bool eventFilter(QObject *, QEvent*) override;
     void updateUnitCount();
@@ -102,13 +66,12 @@ private:
     SortFilterUnitModel *m_userUnitFilterModel;
     QStandardItemModel *m_sessionModel;
     QStandardItemModel *m_timerModel;
-    QStandardItemModel *m_confFileModel;
+    ConfigFileModel * const m_configFileModel;
     UnitModel *m_systemUnitModel;
     UnitModel *m_userUnitModel;
     QVector<SystemdUnit> m_systemUnitsList;
     QVector<SystemdUnit> m_userUnitsList;
     QVector<SystemdSession> m_sessionList;
-    QVector<conffile> m_confFileList;
     QString m_userBusPath;
     int systemdVersion;
     int lastSessionRowChecked = -1;
@@ -182,7 +145,6 @@ private Q_SLOTS:
     void slotRefreshUnitsList(bool inital, dbusBus bus);
     void slotRefreshSessionList();
     void slotRefreshTimerList();
-    void slotRefreshConfFileList();
 
     void slotSystemSystemdReloading(bool);
     void slotSystemUnitFilesChanged();

@@ -17,18 +17,23 @@ include(KDECMakeSettings)
 include(FeatureSummary)
 include(CheckIncludeFiles)
 
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
              DBus
              Gui
              Widgets)
 
 find_package(KF${QT_MAJOR_VERSION} REQUIRED COMPONENTS
-             Auth
-             CoreAddons
-             Crash
-             I18n
-             XmlGui
-             TextEditor)
+     Auth
+     CoreAddons
+     Crash
+     I18n
+     XmlGui
+     TextEditor
+     KIO
+ )
 
 include(ECMSetupVersion)
 ecm_setup_version(${PROJECT_VERSION}

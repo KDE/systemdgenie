@@ -27,6 +27,7 @@
 
 #include <unistd.h>
 
+#include "configfilemodel.h"
 #include "systemdunit.h"
 #include "unitsfetchjob.h"
 #include "sessionsfetchjob.h"
@@ -35,6 +36,7 @@ using namespace Qt::StringLiterals;
 
 MainWindow::MainWindow(QWidget *parent)
     : KXmlGuiWindow(parent)
+    , m_configFileModel(new ConfigFileModel(parent))
     , m_systemManagerInterface(new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd1"_s, u"/org/freedesktop/systemd1"_s, QDBusConnection::systemBus(), this))
     , m_loginManagerInterface(new OrgFreedesktopLogin1ManagerInterface(u"org.freedesktop.login1"_s, u"/org/freedesktop/login1"_s, QDBusConnection::systemBus(), this))
 {
@@ -363,64 +365,9 @@ void MainWindow::setupTimerlist()
 
 void MainWindow::setupConfFilelist()
 {
-    m_confFileModel = new QStandardItemModel(this);
-    m_confFileModel->setHorizontalHeaderItem(0, new QStandardItem(i18n("File")));
-    m_confFileModel->setHorizontalHeaderItem(1, new QStandardItem(i18n("Modified")));
-    m_confFileModel->setHorizontalHeaderItem(2, new QStandardItem(i18n("Description")));
-
     ui.tblConfFiles->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    ui.tblConfFiles->setModel(m_confFileModel);
+    ui.tblConfFiles->setModel(m_configFileModel);
     ui.tblConfFiles->sortByColumn(1, Qt::AscendingOrder);
-
-    m_confFileList.append(conffile(QStringLiteral("/etc/systemd/coredump.conf"),
-                                   QStringLiteral("coredump.conf"),
-                                   i18n("Coredump generation and storage")));
-    m_confFileList.append(conffile(QStringLiteral("/etc/systemd/journal-upload.conf"),
-                                   QStringLiteral("journal-upload.conf"),
-                                   i18n("Send journal messages over network")));
-    m_confFileList.append(conffile(QStringLiteral("/etc/systemd/journald.conf"),
-                                   QStringLiteral("journald.conf"),
-                                   i18n("Journal manager settings")));
-    m_confFileList.append(conffile(QStringLiteral("/etc/systemd/logind.conf"),
-                                   QStringLiteral("logind.conf"),
-                                   i18n("Login manager configuration")));
-    m_confFileList.append(conffile(QStringLiteral("/etc/systemd/resolved.conf"),
-                                   QStringLiteral("resolved.conf"),
-                                   i18n("Network name resolution configuration")));
-    m_confFileList.append(conffile(QStringLiteral("/etc/systemd/system.conf"),
-                                   QStringLiteral("systemd-system.conf"),
-                                   i18n("Systemd daemon configuration")));
-    m_confFileList.append(conffile(QStringLiteral("/etc/systemd/timesyncd.conf"),
-                                   QStringLiteral("timesyncd.conf"),
-                                   i18n("Time synchronization settings")));
-    m_confFileList.append(conffile(QStringLiteral("/etc/systemd/user.conf"),
-                                   QStringLiteral("systemd-system.conf"),
-                                   i18n("Systemd user daemon configuration")));
-
-    slotRefreshConfFileList();
-
-    QFileSystemWatcher *m_fileWatcher = new QFileSystemWatcher;
-    connect(m_fileWatcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::slotRefreshConfFileList);
-    for (const conffile &f : m_confFileList) {
-        m_fileWatcher->addPath(f.filePath);
-    }
-}
-
-void MainWindow::slotRefreshConfFileList()
-{
-    qDebug() << "Refreshing config files list...";
-
-    for (const conffile &f : m_confFileList) {
-        if (!QFileInfo::exists(f.filePath)) {
-            continue;
-        }
-        QStandardItem *item = new QStandardItem(QIcon::fromTheme(QStringLiteral("text-plain")), QStringLiteral("%1").arg(f.filePath));
-        QStandardItem *item2 = new QStandardItem(QFileInfo(f.filePath).lastModified().toString(QStringLiteral("yyyy-MM-dd HH:mm:ss")));
-        QStandardItem *item3 = new QStandardItem(f.description);
-        m_confFileModel->setItem(m_confFileList.indexOf(f), 0, item);
-        m_confFileModel->setItem(m_confFileList.indexOf(f), 1, item2);
-        m_confFileModel->setItem(m_confFileList.indexOf(f), 2, item3);
-    }
     ui.tblConfFiles->resizeColumnsToContents();
     ui.tblConfFiles->resizeRowsToContents();
 }
@@ -1099,16 +1046,7 @@ void MainWindow::slotOpenManPage()
     QModelIndex index = ui.tblConfFiles->selectionModel()->selectedRows(0).at(0);
     Q_ASSERT(index.isValid());
 
-    const QString manPage = m_confFileList.at(m_confFileList.indexOf(conffile(index.data().toString()))).manPage;
-
-    const QString KHelpCenterExec = QStandardPaths::findExecutable(QStringLiteral("khelpcenter"));
-    if (KHelpCenterExec.isEmpty()) {
-        KMessageBox::error(this, i18n("KHelpCenter executable not found in path. Please install KHelpCenter to view man pages."));
-        return;
-    }
-
-    QProcess *helpcenter = new QProcess(this);
-    helpcenter->start(KHelpCenterExec, QStringList{QStringLiteral("man:/%1").arg(manPage)});
+    m_configFileModel->openManPage(index.row());
 }
 
 void MainWindow::executeUnitAction(const QString &method)
@@ -1186,7 +1124,6 @@ void MainWindow::slotRefreshAll()
 {
     slotRefreshUnitsList(false, sys);
     slotRefreshUnitsList(false, user);
-    slotRefreshConfFileList();
     slotRefreshSessionList();
 }
 
