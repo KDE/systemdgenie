@@ -20,6 +20,8 @@ include(KDECMakeSettings)
 include(KDEGitCommitHooks)
 include(KDEClangFormat)
 
+include(ECMQmlModule)
+
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -27,6 +29,7 @@ find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     DBus
     Gui
     Widgets
+    Quick
 )
 
 find_package(KF6 REQUIRED COMPONENTS
