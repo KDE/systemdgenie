@@ -64,10 +64,8 @@ QVariant ConfigFileModel::data(const QModelIndex &index, int role) const
             return configFile.filePath;
         case Qt::DecorationRole:
             return QIcon::fromTheme(QStringLiteral("text-plain"));
-        case ModifiedRole:
-            return QLocale().toString(QFileInfo(configFile.filePath).lastModified(), QLocale::ShortFormat);
-        case DescriptionRole:
-            return configFile.description;
+        case IconNameRole:
+            return u"text-plain"_s;
         default:
             return {};
         }
@@ -93,9 +91,8 @@ QVariant ConfigFileModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> ConfigFileModel::roleNames() const
 {
     return {
-        {FileRole, "file"},
-        {ModifiedRole, "modified"},
-        {DescriptionRole, "description"},
+        {Qt::DisplayRole, "name"},
+        {IconNameRole, "iconName"},
     };
 }
 
@@ -125,7 +122,6 @@ void ConfigFileModel::slotFileChanged(const QString &path)
     for (int i = 0, count = m_configFiles.size(); i < count; i++) {
         if (m_configFiles[i].filePath == path) {
             Q_EMIT dataChanged(index(i, ModifiedColumn), index(i, ModifiedColumn), {Qt::DisplayRole});
-            Q_EMIT dataChanged(index(i, 0), index(i, 0), {ModifiedRole});
             return;
         }
     }
