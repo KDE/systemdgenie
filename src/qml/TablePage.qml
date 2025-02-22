@@ -15,15 +15,12 @@ Kirigami.Page {
 
     required property var model
     required property Component delegate
+    readonly property alias tableView: tableView
 
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
-
-    property var columnWidths: []
-    property real defaultColumnWidth: 0.1
-    property real minimumColumnWidth: Kirigami.Units.gridUnit * 4
 
     Kirigami.Theme.colorSet: Kirigami.Theme.View
     Kirigami.Theme.inherit: false
@@ -68,33 +65,6 @@ Kirigami.Page {
                 }
 
                 contentWidth: availableWidth
-
-                columnWidthProvider: function(index) {
-                    let column = index
-                    const isLast = index === model.columnCount() - 1;
-
-                    // FIXME Until Tableview correctly reverses its columns, see QTBUG-90547
-                    if (LayoutMirroring.enabled) {
-                        column = root.columnWidths.length - index - 1
-                    }
-
-                    // Resizing sets the explicit column width and has no other trigger. If
-                    // we don't make use of that value we can't resize. So read the value,
-                    // convert it to a fraction of total width and write it back to
-                    // columnWidths, then clear the explicit column width again so that
-                    // resizing updates the column width properly. This isn't the prettiest
-                    // of solutions but at least makes things work the way we want.
-                    let explicitWidth = explicitColumnWidth(index)
-                    if (explicitWidth >= 0) {
-                        let w = explicitWidth / width
-                        root.columnWidths[column] = w
-                        root.columnWidthsChanged()
-                        clearColumnWidths()
-                    }
-
-                    let columnWidth = root.columnWidths[column]
-                    return Math.max(Math.floor((columnWidth ?? root.defaultColumnWidth) * scrollView.innerWidth), root.minimumColumnWidth)
-                }
 
                 delegate: root.delegate
             }
