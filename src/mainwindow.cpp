@@ -101,10 +101,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     setupSignalSlots();
 
-    m_lblLog = new QLabel(this);
-    m_lblLog->setText(QString());
-    statusBar()->addPermanentWidget(m_lblLog, 20);
-
     ui.tabWidget->tabBar()->setExpanding(true);
 
     setupGUI(Default, QStringLiteral("systemdgenieui.rc"));
@@ -1152,7 +1148,6 @@ void MainWindow::slotSystemSystemdReloading(bool status)
         qDebug() << "System daemon reloading...";
     } else {
         qDebug() << "System daemon reloaded";
-        m_lblLog->setText(i18n("%1: Systemd daemon reloaded...", QDateTime::currentDateTime().toString(QStringLiteral("hh:mm:ss"))));
         slotRefreshUnitsList(false, sys);
     }
 }
@@ -1163,7 +1158,6 @@ void MainWindow::slotUserSystemdReloading(bool status)
         qDebug() << "User daemon reloading...";
     } else {
         qDebug() << "User daemon reloaded";
-        m_lblLog->setText(i18n("%1: User daemon reloaded...", QDateTime::currentDateTime().toString(QStringLiteral("hh:mm:ss"))));
         slotRefreshUnitsList(false, user);
     }
 }
@@ -1206,7 +1200,6 @@ void MainWindow::slotSystemUnitFilesChanged()
 {
     // qDebug() << "System unitFilesChanged";
     slotRefreshUnitsList(false, sys);
-    m_lblLog->setText(i18n("%1: System units changed...", QDateTime::currentDateTime().toString(QStringLiteral("hh:mm:ss"))));
 }
 
 void MainWindow::slotUserUnitFilesChanged()
@@ -1410,8 +1403,6 @@ void MainWindow::openEditor(const QString &file)
         } else {
             // displayMsgWidget(KMessageWidget::Positive,
             //                  i18n("Unit file successfully written."));
-            m_lblLog->setText(
-                i18n("%1: %2 successfully written...", QDateTime::currentDateTime().toString(QStringLiteral("hh:mm:ss")), file.section(QLatin1Char('/'), -1)));
         }
     }
     delete dlgEditor;
