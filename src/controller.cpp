@@ -48,8 +48,7 @@ Controller::Controller(QObject *parent)
     }
     if (!m_userBusPath.isEmpty()) {
         auto connection = QDBusConnection::connectToBus(m_userBusPath, connSystemd);
-        m_sessionManagerInterface =
-            new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd.Manager"_s, u"/org/freedesktop/systemd1"_s, connection, this);
+        m_sessionManagerInterface = new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd1"_s, u"/org/freedesktop/systemd1"_s, connection, this);
 
         // Subscribe to dbus signals from systemd user daemon and connect them to slots
         m_sessionManagerInterface->Subscribe();
@@ -66,8 +65,8 @@ Controller::Controller(QObject *parent)
         Q_ASSERT(connected);
     }
 
-    m_systemUnitModel = new UnitModel(this, &m_systemUnitsList);
-    m_userUnitModel = new UnitModel(this, &m_userUnitsList, m_userBusPath);
+    m_systemUnitModel = new UnitModel(this);
+    m_userUnitModel = new UnitModel(m_userBusPath, this);
 
     // Set header row
     m_sessionModel->setHorizontalHeaderItem(0, new QStandardItem(i18n("Session ID")));
@@ -111,6 +110,16 @@ int Controller::nonActiveSystemUnits() const
     return m_noActSystemUnits;
 }
 
+void Controller::slotRefreshSystemUnitsList()
+{
+    slotRefreshUnitsList(sys);
+}
+
+void Controller::slotRefreshUserUnitsList()
+{
+    slotRefreshUnitsList(user);
+}
+
 void Controller::slotRefreshUnitsList(dbusBus bus)
 {
     if (bus == user && m_userBusPath.isEmpty()) {
@@ -119,23 +128,22 @@ void Controller::slotRefreshUnitsList(dbusBus bus)
 
     OrgFreedesktopSystemd1ManagerInterface *interface = bus == sys ? m_systemManagerInterface : m_sessionManagerInterface;
 
-    auto job = new UnitsFetchJob(m_systemManagerInterface);
+    auto job = new UnitsFetchJob(interface);
     connect(job, &UnitsFetchJob::finished, this, [this, bus, job](KJob *) {
+        const auto units = job->units();
         if (bus == user) {
-            m_userUnitsList.clear();
-            m_userUnitsList = job->units();
+            m_userUnitModel->setUnits(units);
             m_noActUserUnits = 0;
-            for (const SystemdUnit &unit : m_userUnitsList) {
-                if (unit.active_state == QLatin1StringView("active"))
+            for (const SystemdUnit &unit : units) {
+                if (unit.active_state == "active"_L1)
                     m_noActUserUnits++;
             }
             m_userUnitModel->dataChanged(m_userUnitModel->index(0, 0), m_userUnitModel->index(m_userUnitModel->rowCount(), 0));
             Q_EMIT userUnitsRefreshed();
         } else {
-            m_systemUnitsList.clear();
-            m_systemUnitsList = job->units();
+            m_systemUnitModel->setUnits(units);
 
-            for (const SystemdUnit &unit : m_systemUnitsList) {
+            for (const SystemdUnit &unit : units) {
                 if (unit.active_state == QLatin1String("active"))
                     m_noActSystemUnits++;
             }
@@ -224,12 +232,12 @@ void Controller::slotRefreshSessionList()
 
 SystemdUnit Controller::systemUnit(int index) const
 {
-    return m_systemUnitsList.at(index);
+    return m_systemUnitModel->unitsConst().at(index);
 }
 
 SystemdUnit Controller::userUnit(int index) const
 {
-    return m_userUnitsList.at(index);
+    return m_userUnitModel->unitsConst().at(index);
 }
 
 void Controller::slotUserSystemdReloading(bool status)

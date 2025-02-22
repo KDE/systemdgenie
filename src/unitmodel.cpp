@@ -20,16 +20,32 @@ UnitModel::UnitModel(QObject *parent)
 {
 }
 
-UnitModel::UnitModel(QObject *parent, const QVector<SystemdUnit> *list, QString userBusPath)
+UnitModel::UnitModel(QString userBusPath, QObject *parent)
     : QAbstractTableModel(parent)
 {
-    m_unitList = list;
     m_userBus = userBusPath;
+}
+
+const QList<SystemdUnit> &UnitModel::unitsConst() const
+{
+    return m_units;
+}
+
+QList<SystemdUnit> UnitModel::units() const
+{
+    return m_units;
+}
+
+void UnitModel::setUnits(const QList<SystemdUnit> &units)
+{
+    beginResetModel();
+    m_units = units;
+    endResetModel();
 }
 
 int UnitModel::rowCount(const QModelIndex &) const
 {
-    return m_unitList->size();
+    return m_units.size();
 }
 
 int UnitModel::columnCount(const QModelIndex &) const
@@ -64,24 +80,26 @@ QVariant UnitModel::data(const QModelIndex &index, int role) const
         return QVariant();
     }
 
+    const auto &unit = m_units.at(index.row());
+
     if (role == Qt::DisplayRole) {
         if (index.column() == 0)
-            return m_unitList->at(index.row()).id;
+            return unit.id;
         else if (index.column() == 1)
-            return m_unitList->at(index.row()).load_state;
+            return unit.load_state;
         else if (index.column() == 2)
-            return m_unitList->at(index.row()).active_state;
+            return unit.active_state;
         else if (index.column() == 3)
-            return m_unitList->at(index.row()).sub_state;
+            return unit.sub_state;
     }
 
     else if (role == Qt::ForegroundRole) {
         const KColorScheme scheme(QPalette::Normal);
-        if (m_unitList->at(index.row()).active_state == QLatin1String("active"))
+        if (unit.active_state == QLatin1String("active"))
             return scheme.foreground(KColorScheme::PositiveText);
-        else if (m_unitList->at(index.row()).active_state == QLatin1String("failed"))
+        else if (unit.active_state == QLatin1String("failed"))
             return scheme.foreground(KColorScheme::NegativeText);
-        else if (m_unitList->at(index.row()).active_state == QLatin1String("-"))
+        else if (unit.active_state == QLatin1String("-"))
             return scheme.foreground(KColorScheme::InactiveText);
         else
             return QVariant();
@@ -89,13 +107,13 @@ QVariant UnitModel::data(const QModelIndex &index, int role) const
 
     else if (role == Qt::DecorationRole) {
         if (index.column() == 0) {
-            if (m_unitList->at(index.row()).active_state == QLatin1String("active")) {
+            if (unit.active_state == QLatin1String("active")) {
                 return QIcon::fromTheme(QStringLiteral("emblem-success"));
-            } else if (m_unitList->at(index.row()).active_state == QLatin1String("inactive")) {
+            } else if (unit.active_state == QLatin1String("inactive")) {
                 return QIcon::fromTheme(QStringLiteral("emblem-pause"));
-            } else if (m_unitList->at(index.row()).active_state == QLatin1String("failed")) {
+            } else if (unit.active_state == QLatin1String("failed")) {
                 return QIcon::fromTheme(QStringLiteral("emblem-error"));
-            } else if (m_unitList->at(index.row()).active_state == QLatin1String("-")) {
+            } else if (unit.active_state == QLatin1String("-")) {
                 return QIcon::fromTheme(QStringLiteral("emblem-unavailable"));
             } else {
                 return QVariant();
@@ -104,9 +122,9 @@ QVariant UnitModel::data(const QModelIndex &index, int role) const
     }
 
     else if (role == Qt::ToolTipRole) {
-        const QString selUnit = m_unitList->at(index.row()).id;
-        const QString selUnitPath = m_unitList->at(index.row()).unit_path.path();
-        const QString selUnitFile = m_unitList->at(index.row()).unit_file;
+        const QString selUnit = unit.id;
+        const QString selUnitPath = unit.unit_path.path();
+        const QString selUnitFile = unit.unit_file;
 
         QString toolTipText;
         toolTipText.append(QStringLiteral("<b>%1</b><hr>").arg(selUnit));

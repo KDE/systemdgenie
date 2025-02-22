@@ -18,6 +18,11 @@ TablePage {
     }
 
     model: type === UnitsPage.System ? Controller.systemUnitModel : Controller.userUnitModel
+    Component.onCompleted: if (type === UnitsPage.System) {
+        Controller.slotRefreshSystemUnitsList();
+    } else {
+        Controller.slotRefreshUserUnitsList();
+    }
     delegate: TableDelegate {
         id: delegate
 
