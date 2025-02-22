@@ -784,7 +784,7 @@ void MainWindow::updateActions()
 
         m_unmaskUnitAction->setEnabled(isUnitSelected && LoadState == QLatin1String("masked"));
 
-        m_editUnitFileAction->setEnabled(isUnitSelected && !frpath.isEmpty());
+        m_editUnitFileAction->setVisible(isUnitSelected && !frpath.isEmpty() && QFileInfo(frpath).permission(QFile::WriteOwner));
     } else {
         m_startUnitAction->setEnabled(false);
         m_stopUnitAction->setEnabled(false);
@@ -794,7 +794,7 @@ void MainWindow::updateActions()
         m_disableUnitAction->setEnabled(false);
         m_maskUnitAction->setEnabled(false);
         m_unmaskUnitAction->setEnabled(false);
-        m_editUnitFileAction->setEnabled(false);
+        m_editUnitFileAction->setVisible(false);
     }
 
     m_editConfFileAction->setEnabled(ui.tabWidget->currentIndex() == 2 && !ui.tblConfFiles->selectionModel()->selectedRows(0).isEmpty());
