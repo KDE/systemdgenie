@@ -4,6 +4,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as Controls
+import org.kde.coreaddons as Core
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 
@@ -29,13 +30,10 @@ Kirigami.ApplicationWindow {
             }
         }
 
-        initialPage: Kirigami.Page {
-            Kirigami.InlineMessage {
-                anchors.centerIn: parent
-                text: i18nc("@title", "Welcome")
-            }
-        }
+        initialPage: Kirigami.Page {} // just so that it can be replaced
     }
+
+    Component.onCompleted: systemUnitsAction.trigger();
 
     Kirigami.Action {
         id: systemUnitsAction
@@ -94,14 +92,17 @@ Kirigami.ApplicationWindow {
             Controls.ToolBar {
                 Layout.fillWidth: true
                 Layout.preferredHeight: pageStack.globalToolBar.preferredHeight
-                Layout.bottomMargin: Kirigami.Units.smallSpacing / 2
 
-                leftPadding: 3
-                rightPadding: 3
-                topPadding: 3
-                bottomPadding: 3
+                leftPadding: Kirigami.Units.largeSpacing
+                rightPadding: Kirigami.Units.largeSpacing
+                topPadding: Kirigami.Units.largeSpacing
+                bottomPadding: 0
 
                 visible: !drawer.shouldCollapse
+
+                contentItem: Kirigami.Heading {
+                    text: Core.AboutData.displayName
+                }
             }
 
             Controls.ScrollView {
@@ -141,6 +142,8 @@ Kirigami.ApplicationWindow {
 
                             action: modelData
                             visible: modelData.visible
+                            checkable: true
+                            onClicked: checked = true;
                         }
                     }
 
