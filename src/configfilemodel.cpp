@@ -91,7 +91,7 @@ QVariant ConfigFileModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> ConfigFileModel::roleNames() const
 {
     return {
-        {Qt::DisplayRole, "name"},
+        {Qt::DisplayRole, "displayName"},
         {IconNameRole, "iconName"},
     };
 }
