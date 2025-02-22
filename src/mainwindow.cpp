@@ -797,7 +797,9 @@ void MainWindow::updateActions()
 
     m_editConfFileAction->setVisible(ui.tabWidget->currentIndex() == 2);
     m_editConfFileAction->setEnabled(ui.tabWidget->currentIndex() == 2 && !ui.tblConfFiles->selectionModel()->selectedRows(0).isEmpty());
+    m_openManPageAction->setVisible(ui.tabWidget->currentIndex() == 2);
     m_openManPageAction->setEnabled(ui.tabWidget->currentIndex() == 2 && !ui.tblConfFiles->selectionModel()->selectedRows(0).isEmpty());
+
     bool hasLogViewer = KService::serviceByDesktopName(u"org.kde.kjournaldbrowser"_s) || KService::serviceByDesktopName(u"org.kde.ksystemlog.desktop"_s);
     m_viewLogsAction->setVisible(ui.tabWidget->currentIndex() != 2 && hasLogViewer);
 
