@@ -13,9 +13,11 @@
 #include <QCommandLineParser>
 #include <QDebug>
 #include <QQmlApplicationEngine>
+#include <qdbusmetatype.h>
 
 #include "mainwindow.h"
 #include "systemdgenie_version.h"
+#include "systemdunit.h"
 
 int main(int argc, char *argv[])
 {

@@ -8,19 +8,16 @@
 #define MAINWINDOW_H
 
 #include "configfilemodel.h"
+#include "controller.h"
 #include "sortfilterunitmodel.h"
 #include "systemdunit.h"
 #include "ui_mainwindow.h"
-#include "unitmodel.h"
 
 #include <KMessageWidget>
 #include <KXmlGuiWindow>
 
 #include <QDBusConnection>
 #include <QStandardItemModel>
-
-#include "login_manager_interface.h"
-#include "systemd_manager_interface.h"
 
 enum dbusConn {
     systemd,
@@ -64,21 +61,15 @@ private:
     void executeUserDaemonAction(const QString &method);
     void executeSessionAction(const QString &method);
 
+    Controller *m_controller;
     SortFilterUnitModel *m_systemUnitFilterModel;
     SortFilterUnitModel *m_userUnitFilterModel;
-    QStandardItemModel *m_sessionModel;
     QStandardItemModel *m_timerModel;
     ConfigFileModel *const m_configFileModel;
-    UnitModel *m_systemUnitModel;
-    UnitModel *m_userUnitModel;
-    QVector<SystemdUnit> m_systemUnitsList;
-    QVector<SystemdUnit> m_userUnitsList;
     QVector<SystemdSession> m_sessionList;
     QString m_userBusPath;
     int systemdVersion;
     int lastSessionRowChecked = -1;
-    int m_noActSystemUnits;
-    int m_noActUserUnits;
     bool enableUserUnits = true;
     QTimer *timer;
     const QStringList unitTypeSufx = QStringList{QString(),
@@ -130,10 +121,6 @@ private:
     QAction *m_terminateSessionAction;
     QAction *m_lockSessionAction;
 
-    OrgFreedesktopSystemd1ManagerInterface *const m_systemManagerInterface;
-    OrgFreedesktopSystemd1ManagerInterface *m_sessionManagerInterface = nullptr;
-    OrgFreedesktopLogin1ManagerInterface *const m_loginManagerInterface;
-
 private Q_SLOTS:
     void quit();
 
@@ -143,27 +130,8 @@ private Q_SLOTS:
     void slotUnitContextMenu(const QPoint &pos);
     void slotConfFileContextMenu(const QPoint &pos);
     void slotSessionContextMenu(const QPoint &);
-    void slotRefreshUnitsList(bool inital, dbusBus bus);
-    void slotRefreshSessionList();
     void slotRefreshTimerList();
 
-    void slotSystemSystemdReloading(bool);
-    void slotSystemUnitFilesChanged();
-    // void slotSystemUnitNew(const QString &id, const QDBusObjectPath &path);
-    // void slotSystemUnitRemoved(const QString &id, const QDBusObjectPath &path);
-    void slotSystemJobNew(uint id, const QDBusObjectPath &path, const QString &unit);
-    void slotSystemJobRemoved(uint id, const QDBusObjectPath &path, const QString &unit, const QString &result);
-    void slotSystemPropertiesChanged(const QString &iface, const QVariantMap &changedProps, const QStringList &invalidatedProps);
-
-    void slotUserSystemdReloading(bool);
-    void slotUserUnitFilesChanged();
-    // void slotUserUnitNew(const QString &id, const QDBusObjectPath &path);
-    // void slotUserUnitRemoved(const QString &id, const QDBusObjectPath &path);
-    void slotUserJobNew(uint id, const QDBusObjectPath &path, const QString &unit);
-    void slotUserJobRemoved(uint id, const QDBusObjectPath &path, const QString &unit, const QString &result);
-    void slotUserPropertiesChanged(const QString &iface, const QVariantMap &changedProps, const QStringList &invalidatedProps);
-
-    void slotLogindPropertiesChanged(const QString &iface, const QVariantMap &changedProps, const QStringList &invalidatedProps);
     void slotLeSearchUnitChanged(QString);
     void slotUpdateTimers();
     void slotRefreshAll();
