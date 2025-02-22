@@ -303,18 +303,18 @@ void MainWindow::slotRefreshTimerList()
     m_timerModel->removeRows(0, m_timerModel->rowCount());
 
     // Iterate through system unitlist and add timers to the model
-    // for (const SystemdUnit &unit : m_systemUnitsList) {
-    //    if (unit.id.endsWith(QLatin1String(".timer")) && unit.load_state != QLatin1String("unloaded")) {
-    //        m_timerModel->appendRow(buildTimerListRow(unit, m_systemUnitsList, sys));
-    //    }
-    //}
+    for (const SystemdUnit &unit : m_controller->systemUnitModel()->unitsConst()) {
+        if (unit.id.endsWith(QLatin1String(".timer")) && unit.load_state != QLatin1String("unloaded")) {
+            m_timerModel->appendRow(buildTimerListRow(unit, m_controller->systemUnitModel()->unitsConst(), sys));
+        }
+    }
 
-    //// Iterate through user unitlist and add timers to the model
-    // for (const SystemdUnit &unit : m_userUnitsList) {
-    //     if (unit.id.endsWith(QLatin1String(".timer")) && unit.load_state != QLatin1String("unloaded")) {
-    //         m_timerModel->appendRow(buildTimerListRow(unit, m_userUnitsList, user));
-    //     }
-    // }
+    // Iterate through user unitlist and add timers to the model
+    for (const SystemdUnit &unit : m_controller->userUnitModel()->unitsConst()) {
+        if (unit.id.endsWith(QLatin1String(".timer")) && unit.load_state != QLatin1String("unloaded")) {
+            m_timerModel->appendRow(buildTimerListRow(unit, m_controller->userUnitModel()->unitsConst(), user));
+        }
+    }
 
     // Update the left and passed columns
     slotUpdateTimers();
