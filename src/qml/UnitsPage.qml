@@ -3,8 +3,9 @@
 
 import QtQuick
 import QtQuick.Controls as Controls
-import org.kde.systemdgenie
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.systemdgenie
 
 TablePage {
     id: root
@@ -78,10 +79,24 @@ TablePage {
         id: delegate
 
         required property int index
-        required property string name
+        required property string displayName
+        required property string iconName
+        required property color textColor
+        required property var model
         required selected
 
-        text: name
+        text: displayName
+        icon.name: iconName
+        contentItem: Delegates.DefaultContentItem {
+            itemDelegate: delegate
+            labelItem.color: delegate.textColor
+        }
+
+        Controls.ToolTip {
+            text: hovered ? model.tooltip : '' // only request tooltip when needed
+            delay: Kirigami.Units.toolTipDelay
+            visible: hovered && text.length > 0
+        }
     }
 
     Kirigami.PlaceholderMessage {

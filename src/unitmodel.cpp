@@ -70,7 +70,10 @@ QVariant UnitModel::headerData(int section, Qt::Orientation orientation, int rol
 QHash<int, QByteArray> UnitModel::roleNames() const
 {
     return {
-        {Qt::DisplayRole, "name"},
+        {Qt::DisplayRole, "displayName"},
+        {IconNameRole, "iconName"},
+        {ColorRole, "textColor"},
+        {Qt::ToolTipRole, "tooltip"},
     };
 }
 
@@ -82,18 +85,21 @@ QVariant UnitModel::data(const QModelIndex &index, int role) const
 
     const auto &unit = m_units.at(index.row());
 
-    if (role == Qt::DisplayRole) {
-        if (index.column() == 0)
+    switch (role) {
+    case Qt::DisplayRole:
+        switch (index.column()) {
+        case 0:
             return unit.id;
-        else if (index.column() == 1)
+        case 1:
             return unit.load_state;
-        else if (index.column() == 2)
+        case 2:
             return unit.active_state;
-        else if (index.column() == 3)
+        case 3:
             return unit.sub_state;
-    }
-
-    else if (role == Qt::ForegroundRole) {
+        default:
+            return {};
+        }
+    case Qt::ForegroundRole: {
         const KColorScheme scheme(QPalette::Normal);
         if (unit.active_state == QLatin1String("active"))
             return scheme.foreground(KColorScheme::PositiveText);
@@ -101,11 +107,19 @@ QVariant UnitModel::data(const QModelIndex &index, int role) const
             return scheme.foreground(KColorScheme::NegativeText);
         else if (unit.active_state == QLatin1String("-"))
             return scheme.foreground(KColorScheme::InactiveText);
-        else
-            return QVariant();
+        return QVariant();
     }
-
-    else if (role == Qt::DecorationRole) {
+    case ColorRole: {
+        const KColorScheme scheme(QPalette::Normal);
+        if (unit.active_state == QLatin1String("active"))
+            return scheme.foreground(KColorScheme::PositiveText).color();
+        else if (unit.active_state == QLatin1String("failed"))
+            return scheme.foreground(KColorScheme::NegativeText).color();
+        else if (unit.active_state == QLatin1String("-"))
+            return scheme.foreground(KColorScheme::InactiveText).color();
+        return scheme.foreground(KColorScheme::NormalText).color();
+    }
+    case Qt::DecorationRole:
         if (index.column() == 0) {
             if (unit.active_state == QLatin1String("active")) {
                 return QIcon::fromTheme(QStringLiteral("emblem-success"));
@@ -115,13 +129,25 @@ QVariant UnitModel::data(const QModelIndex &index, int role) const
                 return QIcon::fromTheme(QStringLiteral("emblem-error"));
             } else if (unit.active_state == QLatin1String("-")) {
                 return QIcon::fromTheme(QStringLiteral("emblem-unavailable"));
-            } else {
-                return QVariant();
             }
+            return QVariant();
         }
-    }
-
-    else if (role == Qt::ToolTipRole) {
+    case IconNameRole:
+        if (index.column() == 0) {
+            if (unit.active_state == QLatin1String("active")) {
+                return QStringLiteral("emblem-success");
+            } else if (unit.active_state == QLatin1String("inactive")) {
+                return QStringLiteral("emblem-pause");
+            } else if (unit.active_state == QLatin1String("failed")) {
+                return QStringLiteral("emblem-error");
+            } else if (unit.active_state == QLatin1String("-")) {
+                return QStringLiteral("emblem-unavailable");
+            }
+            return QString{};
+        } else {
+            return QString{};
+        }
+    case Qt::ToolTipRole: {
         const QString selUnit = unit.id;
         const QString selUnitPath = unit.unit_path.path();
         const QString selUnitFile = unit.unit_file;
@@ -220,8 +246,9 @@ QVariant UnitModel::data(const QModelIndex &index, int role) const
 
         return toolTipText;
     }
-
-    return QVariant();
+    default:
+        return QVariant();
+    }
 }
 
 QStringList UnitModel::getLastJrnlEntries(QString unit) const
