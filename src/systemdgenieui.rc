@@ -50,6 +50,7 @@
         <Action name="start-unit" />
         <Action name="stop-unit" />
         <Action name="reload-unit" />
+        <Action name="view-logs" />
     </ToolBar>
 
     <ToolBar name="confFileToolBar">

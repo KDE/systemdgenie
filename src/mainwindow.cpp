@@ -10,6 +10,8 @@
 #include <KAuth/Action>
 #include <KAuth/ExecuteJob>
 #include <KColorScheme>
+#include <KIO/ApplicationLauncherJob>
+#include <KIO/JobUiDelegateFactory>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KSeparator>
@@ -796,6 +798,8 @@ void MainWindow::updateActions()
     m_editConfFileAction->setVisible(ui.tabWidget->currentIndex() == 2);
     m_editConfFileAction->setEnabled(ui.tabWidget->currentIndex() == 2 && !ui.tblConfFiles->selectionModel()->selectedRows(0).isEmpty());
     m_openManPageAction->setEnabled(ui.tabWidget->currentIndex() == 2 && !ui.tblConfFiles->selectionModel()->selectedRows(0).isEmpty());
+    bool hasLogViewer = KService::serviceByDesktopName(u"org.kde.kjournaldbrowser"_s) || KService::serviceByDesktopName(u"org.kde.ksystemlog.desktop"_s);
+    m_viewLogsAction->setVisible(ui.tabWidget->currentIndex() != 2 && hasLogViewer);
 
     m_activateSessionAction->setEnabled(ui.tabWidget->currentIndex() == 3 && !ui.tblSessions->selectionModel()->selectedRows(0).isEmpty()
                                         && ui.tblSessions->selectionModel()->selectedRows(2).at(0).data().toString() != QLatin1String("active"));
@@ -940,6 +944,12 @@ void MainWindow::setupActions()
     actionCollection()->addAction(QStringLiteral("open-manpage"), m_openManPageAction);
     connect(m_openManPageAction, &QAction::triggered, this, &MainWindow::slotOpenManPage);
 
+    m_viewLogsAction = new QAction(this);
+    m_viewLogsAction->setText(i18n("View Logs"));
+    m_viewLogsAction->setIcon(QIcon::fromTheme(QStringLiteral("folder-log-symbolic")));
+    actionCollection()->addAction(QStringLiteral("view-logs"), m_viewLogsAction);
+    connect(m_viewLogsAction, &QAction::triggered, this, &MainWindow::slotViewLogs);
+
     m_activateSessionAction = new QAction(this);
     m_activateSessionAction->setText(i18n("Activate Session"));
     m_activateSessionAction->setIcon(QIcon::fromTheme(QStringLiteral("kt-start")));
@@ -977,6 +987,21 @@ void MainWindow::slotOpenManPage()
     Q_ASSERT(index.isValid());
 
     m_configFileModel->openManPage(index.row());
+}
+
+void MainWindow::slotViewLogs()
+{
+    auto kJournaldBrowser = KService::serviceByDesktopName(u"org.kde.kjournaldbrowser"_s);
+    auto kSystemLog = KService::serviceByDesktopName(u"org.kde.ksystemlog.desktop"_s);
+    if (!kJournaldBrowser && !kSystemLog) {
+        return;
+    }
+
+    auto availableLogViewer = kSystemLog ? kSystemLog : kJournaldBrowser;
+
+    auto job = new KIO::ApplicationLauncherJob(availableLogViewer);
+    job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+    job->start();
 }
 
 void MainWindow::executeUnitAction(const QString &method)

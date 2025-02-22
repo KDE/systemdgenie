@@ -124,6 +124,7 @@ private:
 
     QAction *m_editConfFileAction;
     QAction *m_openManPageAction;
+    QAction *m_viewLogsAction;
 
     QAction *m_activateSessionAction;
     QAction *m_terminateSessionAction;
@@ -170,6 +171,7 @@ private Q_SLOTS:
     void slotEditUnitFile();
     void slotEditConfFile();
     void slotOpenManPage();
+    void slotViewLogs();
 };
 
 #endif // MAINWINDOW_H
