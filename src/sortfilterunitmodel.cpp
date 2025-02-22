@@ -12,23 +12,11 @@
 SortFilterUnitModel::SortFilterUnitModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
+    setDynamicSortFilter(false);
 }
 
-void SortFilterUnitModel::initFilterMap(const QMap<filterType, QString> &map)
+void SortFilterUnitModel::addFilterRegExp(FilterType type, const QString &pattern)
 {
-    filtersMap.clear();
-
-    for (QMap<filterType, QString>::const_iterator iter = map.constBegin(); iter != map.constEnd(); ++iter) {
-        filtersMap[iter.key()] = iter.value();
-    }
-}
-
-void SortFilterUnitModel::addFilterRegExp(filterType type, const QString &pattern)
-{
-    if (!filtersMap.contains(type)) {
-        return;
-    }
-
     filtersMap[type] = pattern;
 }
 
@@ -40,15 +28,15 @@ bool SortFilterUnitModel::filterAcceptsRow(int sourceRow, const QModelIndex &sou
 
     bool ret = false;
 
-    for (QMap<filterType, QString>::const_iterator iter = filtersMap.constBegin(); iter != filtersMap.constEnd(); ++iter) {
+    for (auto iter = filtersMap.constBegin(); iter != filtersMap.constEnd(); ++iter) {
         QModelIndex indexActiveState = sourceModel()->index(sourceRow, 2, sourceParent);
         QModelIndex indexUnitName = sourceModel()->index(sourceRow, 0, sourceParent);
 
-        if (iter.key() == activeState) {
+        if (iter.key() == ActiveState) {
             ret = (indexActiveState.data().toString().contains(QRegularExpression(iter.value())));
-        } else if (iter.key() == unitType) {
+        } else if (iter.key() == UnitType) {
             ret = (indexUnitName.data().toString().contains(QRegularExpression(iter.value())));
-        } else if (iter.key() == unitName) {
+        } else if (iter.key() == UnitName) {
             ret = (indexUnitName.data().toString().contains(QRegularExpression(iter.value(), QRegularExpression::CaseInsensitiveOption)));
         }
 

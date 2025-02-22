@@ -8,27 +8,29 @@
 #define SORTFILTERUNITMODEL_H
 
 #include <QSortFilterProxyModel>
-
-enum filterType {
-    activeState,
-    unitType,
-    unitName
-};
+#include <qqmlregistration.h>
 
 class SortFilterUnitModel : public QSortFilterProxyModel
 {
     Q_OBJECT
+    QML_ELEMENT
 
 public:
+    enum FilterType {
+        ActiveState,
+        UnitType,
+        UnitName
+    };
+    Q_ENUM(FilterType)
+
     explicit SortFilterUnitModel(QObject *parent = nullptr);
-    void initFilterMap(const QMap<filterType, QString> &map);
-    void addFilterRegExp(filterType type, const QString &pattern);
+    Q_SLOT void addFilterRegExp(FilterType type, const QString &pattern);
 
 protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
 
 private:
-    QMap<filterType, QString> filtersMap;
+    QHash<FilterType, QString> filtersMap;
 };
 
 #endif // SORTFILTERUNITMODEL_H

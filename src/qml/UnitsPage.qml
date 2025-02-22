@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 import QtQuick
+import QtQuick.Controls as Controls
 import org.kde.systemdgenie
 import org.kde.kirigami as Kirigami
 
@@ -17,7 +18,57 @@ TablePage {
         User
     }
 
-    model: type === UnitsPage.System ? Controller.systemUnitModel : Controller.userUnitModel
+    model: SortFilterUnitModel {
+        id: sortFilter
+
+        sourceModel: root.type === UnitsPage.System ? Controller.systemUnitModel : Controller.userUnitModel
+
+        function updateFilter(): void {
+            if (!checkInactiveUnits.checked) {
+                if (!checkUnloadedUnits.checked) {
+                    addFilterRegExp(SortFilterUnitModel.ActiveState, "");
+                } else {
+                    addFilterRegExp(SortFilterUnitModel.ActiveState, "active");
+                }
+            } else {
+                addFilterRegExp(SortFilterUnitModel.ActiveState, "^(active)");
+            }
+            invalidate();
+        }
+    }
+
+    actions: [
+        Kirigami.Action {
+            id: checkInactiveUnits
+            checkable: true
+            displayComponent: Controls.Switch {
+                checkable: true
+                text: i18nc("@option:check", "Hide innactive")
+                onCheckedChanged: checkInactiveUnits.checked = checked;
+            }
+            onCheckedChanged: sortFilter.updateFilter();
+        },
+        Kirigami.Action {
+            id: checkUnloadedUnits
+            checkable: true
+            displayComponent: Controls.Switch {
+                checkable: true
+                text: i18nc("@option:check", "Hide unloaded")
+                enabled: !checkInactiveUnits.checked
+                onCheckedChanged: checkUnloadedUnits.checked = checked;
+            }
+            onCheckedChanged: sortFilter.updateFilter();
+        },
+        Kirigami.Action {
+            displayComponent: Kirigami.SearchField {
+                onAccepted: {
+                    sortFilter.addFilterRegExp(SortFilterUnitModel.UnitName, text);
+                    sortFilter.invalidate();
+                }
+            }
+        }
+    ]
+
     Component.onCompleted: if (type === UnitsPage.System) {
         Controller.slotRefreshSystemUnitsList();
     } else {
