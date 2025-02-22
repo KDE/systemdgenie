@@ -105,8 +105,6 @@ private:
     const QString ifaceDbusProp = QStringLiteral("org.freedesktop.DBus.Properties");
     QDBusConnection m_systemBus = QDBusConnection::systemBus();
 
-    QLabel *m_lblLog;
-
     QAction *m_refreshAction;
     QAction *m_reloadSystemDaemonAction;
     QAction *m_reexecSystemDaemonAction;
