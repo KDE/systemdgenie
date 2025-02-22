@@ -37,7 +37,7 @@ Kirigami.Page {
 
             syncView: tableView
             clip: true
-            textRole: "name"
+            textRole: "displayName"
         }
 
         Controls.ScrollView {
@@ -67,6 +67,14 @@ Kirigami.Page {
                 contentWidth: availableWidth
 
                 delegate: root.delegate
+
+                columnWidthProvider: function(column) {
+                    const w = explicitColumnWidth(column)
+                    if (w >= 0)
+                        return w;
+                    const implicit = implicitColumnWidth(column)
+                    return Math.min(width / 2, implicit)
+                }
             }
         }
     }

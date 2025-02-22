@@ -16,6 +16,11 @@ class UnitModel : public QAbstractTableModel
     Q_OBJECT
 
 public:
+    enum ExtraRoles {
+        ColorRole = Qt::UserRole + 1,
+        IconNameRole,
+    };
+
     explicit UnitModel(QObject *parent = nullptr);
     explicit UnitModel(QString userBusPath, QObject *parent = nullptr);
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;

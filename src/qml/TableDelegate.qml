@@ -41,6 +41,20 @@ T.ItemDelegate {
         selectionModel.select(root.TableView.view.model.index(delegate.row, 0), ItemSelectionModel.Select | ItemSelectionModel.Rows)
     }
 
+    icon {
+        width: if (contentItem instanceof Delegates.SubtitleContentItem) {
+            return Kirigami.Units.iconSizes.large
+        } else {
+            return Kirigami.Settings.tabletMode ? Kirigami.Units.iconSizes.smallMedium : Kirigami.Units.iconSizes.sizeForLabels
+        }
+
+        height: if (contentItem instanceof Delegates.SubtitleContentItem) {
+            return Kirigami.Units.iconSizes.large
+        } else {
+            return Kirigami.Settings.tabletMode ? Kirigami.Units.iconSizes.smallMedium : Kirigami.Units.iconSizes.sizeForLabels
+        }
+    }
+
     background: Rectangle {
         color: if (root.highlighted || root.selected || (root.down && !root.checked) || root.visualFocus) {
             const highlight = Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.backgroundColor, Kirigami.Theme.highlightColor, 0.3);
