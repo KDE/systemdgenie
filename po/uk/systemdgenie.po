@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-18 00:43+0000\n"
+"POT-Creation-Date: 2025-02-22 00:44+0000\n"
 "PO-Revision-Date: 2025-02-18 09:50+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -30,7 +30,78 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: src/main.cpp:29 src/mainwindow.cpp:52
+#: src/configfilemodel.cpp:21
+#, kde-format
+msgid "Coredump generation and storage"
+msgstr "Створення і збереження дампу ядра"
+
+#: src/configfilemodel.cpp:23
+#, kde-format
+msgid "Send journal messages over network"
+msgstr "Надсилати повідомлення журналу мережею"
+
+#: src/configfilemodel.cpp:24
+#, kde-format
+msgid "Journal manager settings"
+msgstr "Параметри керування журналом"
+
+#: src/configfilemodel.cpp:25
+#, kde-format
+msgid "Login manager configuration"
+msgstr "Налаштовування засобу входу до системи"
+
+#: src/configfilemodel.cpp:27
+#, kde-format
+msgid "Network name resolution configuration"
+msgstr "Налаштовування визначення назв у мережі"
+
+#: src/configfilemodel.cpp:29
+#, kde-format
+msgid "Systemd daemon configuration"
+msgstr "Налаштовування фонової служби systemd"
+
+#: src/configfilemodel.cpp:30
+#, kde-format
+msgid "Time synchronization settings"
+msgstr "Параметри синхронізації часу"
+
+#: src/configfilemodel.cpp:32
+#, kde-format
+msgid "Systemd user daemon configuration"
+msgstr "Налаштовування фонової служби користувачів systemd"
+
+#: src/configfilemodel.cpp:112
+#, fuzzy, kde-format
+#| msgid "File"
+msgctxt "@title:column"
+msgid "File"
+msgstr "Файл"
+
+#: src/configfilemodel.cpp:114
+#, fuzzy, kde-format
+#| msgid "Modified"
+msgctxt "@title:column"
+msgid "Modified"
+msgstr "Змінено"
+
+#: src/configfilemodel.cpp:116
+#, fuzzy, kde-format
+#| msgid "Description"
+msgctxt "@title:column"
+msgid "Description"
+msgstr "Опис"
+
+#: src/configfilemodel.cpp:140
+#, kde-format
+msgid ""
+"KHelpCenter executable not found in path. Please install KHelpCenter to view "
+"man pages."
+msgstr ""
+"У списках загальносистемних каталогів виконуваних файлів не знайдено "
+"виконуваного файла KHelpCenter. Будь ласка, встановіть KHelpCenter, щоб мати "
+"змогу переглядати файли підручника."
+
+#: src/main.cpp:29 src/mainwindow.cpp:55
 #, kde-format
 msgid "SystemdGenie"
 msgstr "SystemdGenie"
@@ -45,212 +116,157 @@ msgstr "Керування модулями, таймерами, сеансам�
 msgid "(c) 2016, Ragnar Thomsen"
 msgstr "© Ragnar Thomsen, 2016"
 
-#: src/main.cpp:40
+#: src/main.cpp:39
 #, kde-format
 msgid "Ragnar Thomsen"
 msgstr "Ragnar Thomsen"
 
-#: src/main.cpp:41
+#: src/main.cpp:39
 #, kde-format
 msgid "Maintainer"
 msgstr "Супровідник"
 
-#: src/mainwindow.cpp:52
+#: src/mainwindow.cpp:55
 #, kde-format
 msgid "Unable to contact the systemd daemon. Quitting..."
 msgstr ""
 "Спроби зв’язатися із фоновою службою systemd зазнали невдачі. Завершуємо "
 "роботу…"
 
-#: src/mainwindow.cpp:64
+#: src/mainwindow.cpp:67
 #, kde-format
 msgid "User dbus not found. Support for user units disabled."
 msgstr ""
 "Не знайдено каналу D-Bus користувачів. Підтримку модулів користувача "
 "вимкнено."
 
-#: src/mainwindow.cpp:73
+#: src/mainwindow.cpp:77
 #, kde-format
 msgid "All"
 msgstr "Усі"
 
-#: src/mainwindow.cpp:73
+#: src/mainwindow.cpp:78
 #, kde-format
 msgid "Services"
 msgstr "Служби"
 
-#: src/mainwindow.cpp:73
+#: src/mainwindow.cpp:79
 #, kde-format
 msgid "Automounts"
 msgstr "Автомонтування"
 
-#: src/mainwindow.cpp:73
+#: src/mainwindow.cpp:80
 #, kde-format
 msgid "Devices"
 msgstr "Пристрої"
 
-#: src/mainwindow.cpp:74
+#: src/mainwindow.cpp:81
 #, kde-format
 msgid "Mounts"
 msgstr "Монтування"
 
-#: src/mainwindow.cpp:74
+#: src/mainwindow.cpp:82
 #, kde-format
 msgid "Paths"
 msgstr "Шляхи"
 
-#: src/mainwindow.cpp:74
+#: src/mainwindow.cpp:83
 #, kde-format
 msgid "Scopes"
 msgstr "Області"
 
-#: src/mainwindow.cpp:74
+#: src/mainwindow.cpp:84
 #, kde-format
 msgid "Slices"
 msgstr "Зрізи"
 
-#. i18n: ectx: attribute (title), widget (QWidget, tabTimers)
-#: src/mainwindow.cpp:75 src/mainwindow.ui:531
-#, kde-format
-msgid "Timers"
-msgstr "Таймери"
-
-#: src/mainwindow.cpp:75
+#: src/mainwindow.cpp:85
 #, kde-format
 msgid "Sockets"
 msgstr "Сокети"
 
-#: src/mainwindow.cpp:75
+#: src/mainwindow.cpp:86
 #, kde-format
 msgid "Swaps"
 msgstr "Резерви"
 
-#: src/mainwindow.cpp:75
+#: src/mainwindow.cpp:87
 #, kde-format
 msgid "Targets"
 msgstr "Призначення"
 
-#: src/mainwindow.cpp:317
+#. i18n: ectx: attribute (title), widget (QWidget, tabTimers)
+#: src/mainwindow.cpp:88 src/mainwindow.ui:531
+#, kde-format
+msgid "Timers"
+msgstr "Таймери"
+
+#: src/mainwindow.cpp:299
 #, kde-format
 msgid "Session ID"
 msgstr "Ід. сеансу"
 
-#: src/mainwindow.cpp:318
+#: src/mainwindow.cpp:300
 #, kde-format
 msgid "Session Object Path"
 msgstr "Шлях до об’єкта сеансу"
 
-#: src/mainwindow.cpp:319
+#: src/mainwindow.cpp:301
 #, kde-format
 msgid "State"
 msgstr "Стан"
 
-#: src/mainwindow.cpp:320
+#: src/mainwindow.cpp:302
 #, kde-format
 msgid "User ID"
 msgstr "Ід. користувача"
 
-#: src/mainwindow.cpp:321
+#: src/mainwindow.cpp:303
 #, kde-format
 msgid "User Name"
 msgstr "Ім’я користувача"
 
-#: src/mainwindow.cpp:322
+#: src/mainwindow.cpp:304
 #, kde-format
 msgid "Seat ID"
 msgstr "Ід. місця"
 
-#: src/mainwindow.cpp:344
+#: src/mainwindow.cpp:326
 #, kde-format
 msgid "Timer"
 msgstr "Таймер"
 
-#: src/mainwindow.cpp:345
+#: src/mainwindow.cpp:327
 #, kde-format
 msgid "Next"
 msgstr "Наступний"
 
-#: src/mainwindow.cpp:346
+#: src/mainwindow.cpp:328
 #, kde-format
 msgid "Left"
 msgstr "Залишилося"
 
-#: src/mainwindow.cpp:347
+#: src/mainwindow.cpp:329
 #, kde-format
 msgid "Last"
 msgstr "Останній"
 
-#: src/mainwindow.cpp:348
+#: src/mainwindow.cpp:330
 #, kde-format
 msgid "Passed"
 msgstr "Пройдений"
 
-#: src/mainwindow.cpp:349
+#: src/mainwindow.cpp:331
 #, kde-format
 msgid "Activates"
 msgstr "Активує"
 
-#: src/mainwindow.cpp:367
-#, kde-format
-msgid "File"
-msgstr "Файл"
-
-#: src/mainwindow.cpp:368
-#, kde-format
-msgid "Modified"
-msgstr "Змінено"
-
-#: src/mainwindow.cpp:369
-#, kde-format
-msgid "Description"
-msgstr "Опис"
-
-#: src/mainwindow.cpp:377
-#, kde-format
-msgid "Coredump generation and storage"
-msgstr "Створення і збереження дампу ядра"
-
-#: src/mainwindow.cpp:380
-#, kde-format
-msgid "Send journal messages over network"
-msgstr "Надсилати повідомлення журналу мережею"
-
-#: src/mainwindow.cpp:383
-#, kde-format
-msgid "Journal manager settings"
-msgstr "Параметри керування журналом"
-
-#: src/mainwindow.cpp:386
-#, kde-format
-msgid "Login manager configuration"
-msgstr "Налаштовування засобу входу до системи"
-
-#: src/mainwindow.cpp:389
-#, kde-format
-msgid "Network name resolution configuration"
-msgstr "Налаштовування визначення назв у мережі"
-
-#: src/mainwindow.cpp:392
-#, kde-format
-msgid "Systemd daemon configuration"
-msgstr "Налаштовування фонової служби systemd"
-
-#: src/mainwindow.cpp:395
-#, kde-format
-msgid "Time synchronization settings"
-msgstr "Параметри синхронізації часу"
-
-#: src/mainwindow.cpp:398
-#, kde-format
-msgid "Systemd user daemon configuration"
-msgstr "Налаштовування фонової служби користувачів systemd"
-
-#: src/mainwindow.cpp:552
+#: src/mainwindow.cpp:461
 #, kde-format
 msgid "Unable to fetch sessions list: %1"
 msgstr "Не вдалося отримати список сеансів: %1"
 
-#: src/mainwindow.cpp:751 src/mainwindow.cpp:760
+#: src/mainwindow.cpp:633 src/mainwindow.cpp:639
 #, kde-format
 msgctxt "First part of 'Total: %1, %2, %3'"
 msgid "1 unit"
@@ -260,7 +276,7 @@ msgstr[1] "%1 модулі"
 msgstr[2] "%1 модулів"
 msgstr[3] "%1 модуль"
 
-#: src/mainwindow.cpp:753 src/mainwindow.cpp:762
+#: src/mainwindow.cpp:634 src/mainwindow.cpp:640
 #, kde-format
 msgctxt "Second part of 'Total: %1, %2, %3'"
 msgid "1 active"
@@ -270,7 +286,7 @@ msgstr[1] "%1 активних"
 msgstr[2] "%1 активних"
 msgstr[3] "%1 активний"
 
-#: src/mainwindow.cpp:755 src/mainwindow.cpp:764
+#: src/mainwindow.cpp:635 src/mainwindow.cpp:641
 #, kde-format
 msgctxt "Third part of 'Total: %1, %2, %3'"
 msgid "1 displayed"
@@ -280,233 +296,223 @@ msgstr[1] "%1 показано"
 msgstr[2] "%1 показано"
 msgstr[3] "%1 показано"
 
-#: src/mainwindow.cpp:757 src/mainwindow.cpp:766
+#: src/mainwindow.cpp:637 src/mainwindow.cpp:643
 #, kde-format
 msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
 msgid "Total: %1, %2, %3"
 msgstr "Загалом: %1, %2, %3"
 
-#: src/mainwindow.cpp:791 src/mainwindow.cpp:1560
+#: src/mainwindow.cpp:667 src/mainwindow.cpp:1408
 #, kde-format
 msgid "Unable to authenticate/execute the action: %1"
 msgstr "Не вдалося розпізнати/виконати дію: %1"
 
-#: src/mainwindow.cpp:971
+#: src/mainwindow.cpp:821
 #, kde-format
 msgid "&Refresh"
 msgstr "&Освіжити"
 
-#: src/mainwindow.cpp:973
+#: src/mainwindow.cpp:823
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Освіжити"
 
-#: src/mainwindow.cpp:979
+#: src/mainwindow.cpp:829
 #, kde-format
 msgid "Start Unit"
 msgstr "Запустити модуль"
 
-#: src/mainwindow.cpp:985
+#: src/mainwindow.cpp:837
 #, kde-format
 msgid "Stop Unit"
 msgstr "Зупинити модуль"
 
-#: src/mainwindow.cpp:991
+#: src/mainwindow.cpp:845
 #, kde-format
 msgid "Reload Unit"
 msgstr "Перезавантажити модуль"
 
-#: src/mainwindow.cpp:997
+#: src/mainwindow.cpp:853
 #, kde-format
 msgid "Restart Unit"
 msgstr "Перезапустити модуль"
 
-#: src/mainwindow.cpp:1003
+#: src/mainwindow.cpp:861
 #, kde-format
 msgid "Enable Unit"
 msgstr "Увімкнути модуль"
 
-#: src/mainwindow.cpp:1009
+#: src/mainwindow.cpp:869
 #, kde-format
 msgid "Disable Unit"
 msgstr "Вимкнути модуль"
 
-#: src/mainwindow.cpp:1015
+#: src/mainwindow.cpp:877
 #, kde-format
 msgid "Mask Unit"
 msgstr "Замаскувати модуль"
 
-#: src/mainwindow.cpp:1021
+#: src/mainwindow.cpp:885
 #, kde-format
 msgid "Unmask Unit"
 msgstr "Розмаскувати модуль"
 
-#: src/mainwindow.cpp:1027
+#: src/mainwindow.cpp:893
 #, kde-format
 msgid "Re&load systemd"
 msgstr "Перезаванта&жити systemd"
 
-#: src/mainwindow.cpp:1028
+#: src/mainwindow.cpp:894
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all unit files"
 msgstr "Натисніть, щоб перезавантажити усі файли модулів"
 
-#: src/mainwindow.cpp:1034
+#: src/mainwindow.cpp:902
 #, kde-format
 msgid "Re-e&xecute systemd"
 msgstr "Пов&торно виконати systemd"
 
-#: src/mainwindow.cpp:1035
+#: src/mainwindow.cpp:903
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the systemd daemon"
 msgstr "Натисніть, щоб повторно запустити фонову службу systemd"
 
-#: src/mainwindow.cpp:1041
+#: src/mainwindow.cpp:911
 #, kde-format
 msgid "Re&load user systemd"
 msgstr "Пе&резавантажити systemd користувача"
 
-#: src/mainwindow.cpp:1042
+#: src/mainwindow.cpp:912
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all user unit files"
 msgstr "Пе&резавантажити усі файли модулів користувача"
 
-#: src/mainwindow.cpp:1048
+#: src/mainwindow.cpp:920
 #, kde-format
 msgid "Re-e&xecute user systemd"
 msgstr "Пов&торно виконати systemd користувача"
 
-#: src/mainwindow.cpp:1049
+#: src/mainwindow.cpp:921
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the user systemd daemon"
 msgstr "Натисніть, щоб повторно запустити фонову службу користувачів systemd"
 
-#: src/mainwindow.cpp:1055
+#: src/mainwindow.cpp:929
 #, kde-format
 msgid "Edit Unit File…"
 msgstr "Редагувати файл модуля…"
 
-#: src/mainwindow.cpp:1061
+#: src/mainwindow.cpp:935
 #, kde-format
 msgid "Edit Configuration File…"
 msgstr "Редагувати файл налаштувань…"
 
-#: src/mainwindow.cpp:1067
+#: src/mainwindow.cpp:941
 #, kde-format
 msgid "Open Man Page"
 msgstr "Відкрити сторінку підручника"
 
-#: src/mainwindow.cpp:1073
+#: src/mainwindow.cpp:947
 #, kde-format
 msgid "Activate Session"
 msgstr "Активувати сеанс"
 
-#: src/mainwindow.cpp:1079
+#: src/mainwindow.cpp:955
 #, kde-format
 msgid "Terminate Session"
 msgstr "Перервати сеанс"
 
-#: src/mainwindow.cpp:1085
+#: src/mainwindow.cpp:963
 #, kde-format
 msgid "Lock Session"
 msgstr "Заблокувати сеанс"
 
-#: src/mainwindow.cpp:1106
-#, kde-format
-msgid ""
-"KHelpCenter executable not found in path. Please install KHelpCenter to view "
-"man pages."
-msgstr ""
-"У списках загальносистемних каталогів виконуваних файлів не знайдено "
-"виконуваного файла KHelpCenter. Будь ласка, встановіть KHelpCenter, щоб мати "
-"змогу переглядати файли підручника."
-
-#: src/mainwindow.cpp:1237
+#: src/mainwindow.cpp:1100
 #, kde-format
 msgid "<b>VT:</b> %1"
 msgstr "<b>ВТ:</b> %1"
 
-#: src/mainwindow.cpp:1242
+#: src/mainwindow.cpp:1104
 #, kde-format
 msgid "<br><b>Remote host:</b> %1"
 msgstr "<br><b>Віддалений вузол:</b> %1"
 
-#: src/mainwindow.cpp:1243
+#: src/mainwindow.cpp:1105
 #, kde-format
 msgid "<br><b>Remote user:</b> %1"
 msgstr "<br><b>Віддалений користувач:</b> %1"
 
-#: src/mainwindow.cpp:1245
+#: src/mainwindow.cpp:1107
 #, kde-format
 msgid "<br><b>Service:</b> %1"
 msgstr "<br><b>Служба:</b> %1"
 
-#: src/mainwindow.cpp:1246
+#: src/mainwindow.cpp:1108
 #, kde-format
 msgid "<br><b>Leader (PID):</b> %1"
 msgstr "<br><b>Лідер (PID):</b> %1"
 
-#: src/mainwindow.cpp:1249
+#: src/mainwindow.cpp:1111
 #, kde-format
 msgid "<br><b>Type:</b> %1"
 msgstr "<br><b>Тип:</b> %1"
 
-#: src/mainwindow.cpp:1251
+#: src/mainwindow.cpp:1113
 #, kde-format
 msgid " (display %1)"
 msgstr " (дисплей %1)"
 
-#: src/mainwindow.cpp:1261
+#: src/mainwindow.cpp:1122
 #, kde-format
 msgid "<br><b>Class:</b> %1"
 msgstr "<br><b>Клас:</b> %1"
 
-#: src/mainwindow.cpp:1262
+#: src/mainwindow.cpp:1123
 #, kde-format
 msgid "<br><b>State:</b> %1"
 msgstr "<br><b>Стан:</b> %1"
 
-#: src/mainwindow.cpp:1263
+#: src/mainwindow.cpp:1124
 #, kde-format
 msgid "<br><b>Scope:</b> %1"
 msgstr "<br><b>Область:</b> %1"
 
-#: src/mainwindow.cpp:1266
+#: src/mainwindow.cpp:1126
 #, kde-format
 msgid "<br><b>Created: </b>"
 msgstr "<br><b>Створено: </b>"
 
-#: src/mainwindow.cpp:1295
+#: src/mainwindow.cpp:1154
 #, kde-format
 msgid "%1: Systemd daemon reloaded..."
 msgstr "%1: перезавантажено фонову службу systemd…"
 
-#: src/mainwindow.cpp:1306
+#: src/mainwindow.cpp:1165
 #, kde-format
 msgid "%1: User daemon reloaded..."
 msgstr "%1: перезавантажено фонову службу користувачів…"
 
-#: src/mainwindow.cpp:1349
+#: src/mainwindow.cpp:1208
 #, kde-format
 msgid "%1: System units changed..."
 msgstr "%1: змінено модулі системи…"
 
-#: src/mainwindow.cpp:1499
+#: src/mainwindow.cpp:1352
 #, kde-format
 msgid "Editing %1"
 msgstr "Редагування %1"
 
-#: src/mainwindow.cpp:1511
+#: src/mainwindow.cpp:1362
 #, kde-format
 msgid "Editing file: <code>%1</code>"
 msgstr "Редагуємо файл: <code>%1</code>"
 
-#: src/mainwindow.cpp:1537
+#: src/mainwindow.cpp:1387
 #, kde-format
 msgid ""
 "Failed to open the unit file:\n"
@@ -515,8 +521,7 @@ msgstr ""
 "Не вдалося відкрити файл модуля:\n"
 "%1"
 
-#. i18n("Unit file successfully written."));
-#: src/mainwindow.cpp:1564
+#: src/mainwindow.cpp:1413
 #, kde-format
 msgid "%1: %2 successfully written..."
 msgstr "%1: успішно записано %2…"
@@ -658,47 +663,47 @@ msgstr "Стан активності"
 msgid "Unit State"
 msgstr "Стан модуля"
 
-#: src/unitmodel.cpp:131
+#: src/unitmodel.cpp:121
 #, kde-format
 msgid "<b>Description: </b>"
 msgstr "<b>Опис: </b>"
 
-#: src/unitmodel.cpp:136
+#: src/unitmodel.cpp:126
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
 msgstr "<br><b>Файл модуля: </b>%1"
 
-#: src/unitmodel.cpp:137 src/unitmodel.cpp:187
+#: src/unitmodel.cpp:127 src/unitmodel.cpp:174
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
 msgstr "<br><b>Стан файла модуля: </b>"
 
-#: src/unitmodel.cpp:143
+#: src/unitmodel.cpp:133
 #, kde-format
 msgid "<br><b>Source path: </b>%1"
 msgstr "<br><b>Шлях до джерела: </b>%1"
 
-#: src/unitmodel.cpp:147
+#: src/unitmodel.cpp:137
 #, kde-format
 msgid "<br><b>Activated: </b>"
 msgstr "<br><b>Увімкнено: </b>"
 
-#: src/unitmodel.cpp:158
+#: src/unitmodel.cpp:147
 #, kde-format
 msgid "<br><b>Deactivated: </b>"
 msgstr "<br><b>Вимкнено: </b>"
 
-#: src/unitmodel.cpp:182
+#: src/unitmodel.cpp:169
 #, kde-format
 msgid "<b>Unit file: </b>"
 msgstr "<b>Файл модуля: </b>"
 
-#: src/unitmodel.cpp:196
+#: src/unitmodel.cpp:183
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
 msgstr "<hr><b>Останні записи журналу:</b>"
 
-#: src/unitmodel.cpp:199
+#: src/unitmodel.cpp:186
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>Для цього модуля записів у журналі не виявлено.</i>"

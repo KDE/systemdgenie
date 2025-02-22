@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-18 00:43+0000\n"
+"POT-Creation-Date: 2025-02-22 00:44+0000\n"
 "PO-Revision-Date: 2025-02-18 22:09+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -29,7 +29,77 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "safa1996alfulaij@gmail.com"
 
-#: src/main.cpp:29 src/mainwindow.cpp:52
+#: src/configfilemodel.cpp:21
+#, kde-format
+msgid "Coredump generation and storage"
+msgstr "توليد وحفظ Coredump"
+
+#: src/configfilemodel.cpp:23
+#, kde-format
+msgid "Send journal messages over network"
+msgstr "أرسل رسائل الدفترية عبر الشبكة"
+
+#: src/configfilemodel.cpp:24
+#, kde-format
+msgid "Journal manager settings"
+msgstr "إعدادات مدير الدفتر"
+
+#: src/configfilemodel.cpp:25
+#, kde-format
+msgid "Login manager configuration"
+msgstr "ضبط مدير الولوج"
+
+#: src/configfilemodel.cpp:27
+#, kde-format
+msgid "Network name resolution configuration"
+msgstr "ضبط حل اسم الشبكة"
+
+#: src/configfilemodel.cpp:29
+#, kde-format
+msgid "Systemd daemon configuration"
+msgstr "ضبط عفريت Systemd"
+
+#: src/configfilemodel.cpp:30
+#, kde-format
+msgid "Time synchronization settings"
+msgstr "إعدادات تزامن الوقت"
+
+#: src/configfilemodel.cpp:32
+#, kde-format
+msgid "Systemd user daemon configuration"
+msgstr "ضبط عفريت Systemd للمستخدم"
+
+#: src/configfilemodel.cpp:112
+#, fuzzy, kde-format
+#| msgid "File"
+msgctxt "@title:column"
+msgid "File"
+msgstr "ملف"
+
+#: src/configfilemodel.cpp:114
+#, fuzzy, kde-format
+#| msgid "Modified"
+msgctxt "@title:column"
+msgid "Modified"
+msgstr "معدّل"
+
+#: src/configfilemodel.cpp:116
+#, fuzzy, kde-format
+#| msgid "Description"
+msgctxt "@title:column"
+msgid "Description"
+msgstr "الوصف"
+
+#: src/configfilemodel.cpp:140
+#, kde-format
+msgid ""
+"KHelpCenter executable not found in path. Please install KHelpCenter to view "
+"man pages."
+msgstr ""
+"لم يعثر على الملف التنفيذي KHelpCenter في المسار. الرجاء تثبيت KHelpCenter "
+"لعرض صفحات الدليل."
+
+#: src/main.cpp:29 src/mainwindow.cpp:55
 #, kde-format
 msgid "SystemdGenie"
 msgstr "جني Systemd"
@@ -44,208 +114,153 @@ msgstr "أدر وحدات systemd والمؤقتات والجلسات وملفا
 msgid "(c) 2016, Ragnar Thomsen"
 msgstr "(c) 2016، راجنار تومسون"
 
-#: src/main.cpp:40
+#: src/main.cpp:39
 #, kde-format
 msgid "Ragnar Thomsen"
 msgstr "راجنار تومسون"
 
-#: src/main.cpp:41
+#: src/main.cpp:39
 #, kde-format
 msgid "Maintainer"
 msgstr "المصين"
 
-#: src/mainwindow.cpp:52
+#: src/mainwindow.cpp:55
 #, kde-format
 msgid "Unable to contact the systemd daemon. Quitting..."
 msgstr "فشلت محاولة التّواصل مع عفريت systemd. يخرج..."
 
-#: src/mainwindow.cpp:64
+#: src/mainwindow.cpp:67
 #, kde-format
 msgid "User dbus not found. Support for user units disabled."
 msgstr "لم يعثر على حافلة dbus للمستخدم. عطل دعم وحدات المستخدم."
 
-#: src/mainwindow.cpp:73
+#: src/mainwindow.cpp:77
 #, kde-format
 msgid "All"
 msgstr "الكلّ"
 
-#: src/mainwindow.cpp:73
+#: src/mainwindow.cpp:78
 #, kde-format
 msgid "Services"
 msgstr "الخدمات"
 
-#: src/mainwindow.cpp:73
+#: src/mainwindow.cpp:79
 #, kde-format
 msgid "Automounts"
 msgstr "الضّمّ الآليّ"
 
-#: src/mainwindow.cpp:73
+#: src/mainwindow.cpp:80
 #, kde-format
 msgid "Devices"
 msgstr "الأجهزة"
 
-#: src/mainwindow.cpp:74
+#: src/mainwindow.cpp:81
 #, kde-format
 msgid "Mounts"
 msgstr "الضّمّ"
 
-#: src/mainwindow.cpp:74
+#: src/mainwindow.cpp:82
 #, kde-format
 msgid "Paths"
 msgstr "المسارات"
 
-#: src/mainwindow.cpp:74
+#: src/mainwindow.cpp:83
 #, kde-format
 msgid "Scopes"
 msgstr "النّطاقات"
 
-#: src/mainwindow.cpp:74
+#: src/mainwindow.cpp:84
 #, kde-format
 msgid "Slices"
 msgstr "الشرائح"
 
-#. i18n: ectx: attribute (title), widget (QWidget, tabTimers)
-#: src/mainwindow.cpp:75 src/mainwindow.ui:531
-#, kde-format
-msgid "Timers"
-msgstr "المؤقّتات"
-
-#: src/mainwindow.cpp:75
+#: src/mainwindow.cpp:85
 #, kde-format
 msgid "Sockets"
 msgstr "المقابس"
 
-#: src/mainwindow.cpp:75
+#: src/mainwindow.cpp:86
 #, kde-format
 msgid "Swaps"
 msgstr "التّباديل"
 
-#: src/mainwindow.cpp:75
+#: src/mainwindow.cpp:87
 #, kde-format
 msgid "Targets"
 msgstr "الأهداف"
 
-#: src/mainwindow.cpp:317
+#. i18n: ectx: attribute (title), widget (QWidget, tabTimers)
+#: src/mainwindow.cpp:88 src/mainwindow.ui:531
+#, kde-format
+msgid "Timers"
+msgstr "المؤقّتات"
+
+#: src/mainwindow.cpp:299
 #, kde-format
 msgid "Session ID"
 msgstr "معرّف الجلسة"
 
-#: src/mainwindow.cpp:318
+#: src/mainwindow.cpp:300
 #, kde-format
 msgid "Session Object Path"
 msgstr "مسار كائن الجلسة"
 
-#: src/mainwindow.cpp:319
+#: src/mainwindow.cpp:301
 #, kde-format
 msgid "State"
 msgstr "الحالة"
 
-#: src/mainwindow.cpp:320
+#: src/mainwindow.cpp:302
 #, kde-format
 msgid "User ID"
 msgstr "معرّف المستخدم"
 
-#: src/mainwindow.cpp:321
+#: src/mainwindow.cpp:303
 #, kde-format
 msgid "User Name"
 msgstr "اسم المستخدم"
 
-#: src/mainwindow.cpp:322
+#: src/mainwindow.cpp:304
 #, kde-format
 msgid "Seat ID"
 msgstr "معرّف المقعد"
 
-#: src/mainwindow.cpp:344
+#: src/mainwindow.cpp:326
 #, kde-format
 msgid "Timer"
 msgstr "المؤقّت"
 
-#: src/mainwindow.cpp:345
+#: src/mainwindow.cpp:327
 #, kde-format
 msgid "Next"
 msgstr "التّالي"
 
-#: src/mainwindow.cpp:346
+#: src/mainwindow.cpp:328
 #, kde-format
 msgid "Left"
 msgstr "الباقي"
 
-#: src/mainwindow.cpp:347
+#: src/mainwindow.cpp:329
 #, kde-format
 msgid "Last"
 msgstr "الأخير"
 
-#: src/mainwindow.cpp:348
+#: src/mainwindow.cpp:330
 #, kde-format
 msgid "Passed"
 msgstr "نجح"
 
-#: src/mainwindow.cpp:349
+#: src/mainwindow.cpp:331
 #, kde-format
 msgid "Activates"
 msgstr "يفعّل"
 
-#: src/mainwindow.cpp:367
-#, kde-format
-msgid "File"
-msgstr "ملف"
-
-#: src/mainwindow.cpp:368
-#, kde-format
-msgid "Modified"
-msgstr "معدّل"
-
-#: src/mainwindow.cpp:369
-#, kde-format
-msgid "Description"
-msgstr "الوصف"
-
-#: src/mainwindow.cpp:377
-#, kde-format
-msgid "Coredump generation and storage"
-msgstr "توليد وحفظ Coredump"
-
-#: src/mainwindow.cpp:380
-#, kde-format
-msgid "Send journal messages over network"
-msgstr "أرسل رسائل الدفترية عبر الشبكة"
-
-#: src/mainwindow.cpp:383
-#, kde-format
-msgid "Journal manager settings"
-msgstr "إعدادات مدير الدفتر"
-
-#: src/mainwindow.cpp:386
-#, kde-format
-msgid "Login manager configuration"
-msgstr "ضبط مدير الولوج"
-
-#: src/mainwindow.cpp:389
-#, kde-format
-msgid "Network name resolution configuration"
-msgstr "ضبط حل اسم الشبكة"
-
-#: src/mainwindow.cpp:392
-#, kde-format
-msgid "Systemd daemon configuration"
-msgstr "ضبط عفريت Systemd"
-
-#: src/mainwindow.cpp:395
-#, kde-format
-msgid "Time synchronization settings"
-msgstr "إعدادات تزامن الوقت"
-
-#: src/mainwindow.cpp:398
-#, kde-format
-msgid "Systemd user daemon configuration"
-msgstr "ضبط عفريت Systemd للمستخدم"
-
-#: src/mainwindow.cpp:552
+#: src/mainwindow.cpp:461
 #, kde-format
 msgid "Unable to fetch sessions list: %1"
 msgstr "غير قادر على جلب قائمة الجلسات: %1"
 
-#: src/mainwindow.cpp:751 src/mainwindow.cpp:760
+#: src/mainwindow.cpp:633 src/mainwindow.cpp:639
 #, kde-format
 msgctxt "First part of 'Total: %1, %2, %3'"
 msgid "1 unit"
@@ -257,7 +272,7 @@ msgstr[3] "%1 وحدات"
 msgstr[4] "%1 وحدة"
 msgstr[5] "%1 وحدة"
 
-#: src/mainwindow.cpp:753 src/mainwindow.cpp:762
+#: src/mainwindow.cpp:634 src/mainwindow.cpp:640
 #, kde-format
 msgctxt "Second part of 'Total: %1, %2, %3'"
 msgid "1 active"
@@ -269,7 +284,7 @@ msgstr[3] "%1 نشيطات"
 msgstr[4] "%1 نشطة"
 msgstr[5] "%1 نشطة"
 
-#: src/mainwindow.cpp:755 src/mainwindow.cpp:764
+#: src/mainwindow.cpp:635 src/mainwindow.cpp:641
 #, kde-format
 msgctxt "Third part of 'Total: %1, %2, %3'"
 msgid "1 displayed"
@@ -281,232 +296,223 @@ msgstr[3] "%1 معروضات"
 msgstr[4] "%1 معروضة"
 msgstr[5] "%1 معروضة"
 
-#: src/mainwindow.cpp:757 src/mainwindow.cpp:766
+#: src/mainwindow.cpp:637 src/mainwindow.cpp:643
 #, kde-format
 msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
 msgid "Total: %1, %2, %3"
 msgstr "المجموع: %1، %2، %3"
 
-#: src/mainwindow.cpp:791 src/mainwindow.cpp:1560
+#: src/mainwindow.cpp:667 src/mainwindow.cpp:1408
 #, kde-format
 msgid "Unable to authenticate/execute the action: %1"
 msgstr "تعذّر استيثاق/تنفيذ هذا الإجراء: %1"
 
-#: src/mainwindow.cpp:971
+#: src/mainwindow.cpp:821
 #, kde-format
 msgid "&Refresh"
 msgstr "أنعِش"
 
-#: src/mainwindow.cpp:973
+#: src/mainwindow.cpp:823
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "أنعش"
 
-#: src/mainwindow.cpp:979
+#: src/mainwindow.cpp:829
 #, kde-format
 msgid "Start Unit"
 msgstr "ابدأ الوحدة"
 
-#: src/mainwindow.cpp:985
+#: src/mainwindow.cpp:837
 #, kde-format
 msgid "Stop Unit"
 msgstr "أوقف الوحدة"
 
-#: src/mainwindow.cpp:991
+#: src/mainwindow.cpp:845
 #, kde-format
 msgid "Reload Unit"
 msgstr "أعد تحميل الوحدة"
 
-#: src/mainwindow.cpp:997
+#: src/mainwindow.cpp:853
 #, kde-format
 msgid "Restart Unit"
 msgstr "أعد تشغيل الوحدة"
 
-#: src/mainwindow.cpp:1003
+#: src/mainwindow.cpp:861
 #, kde-format
 msgid "Enable Unit"
 msgstr "فعّل الوحدة"
 
-#: src/mainwindow.cpp:1009
+#: src/mainwindow.cpp:869
 #, kde-format
 msgid "Disable Unit"
 msgstr "عطّل الوحدة"
 
-#: src/mainwindow.cpp:1015
+#: src/mainwindow.cpp:877
 #, kde-format
 msgid "Mask Unit"
 msgstr "قنّع الوحدة"
 
-#: src/mainwindow.cpp:1021
+#: src/mainwindow.cpp:885
 #, kde-format
 msgid "Unmask Unit"
 msgstr "أزل تقنيع الوحدة"
 
-#: src/mainwindow.cpp:1027
+#: src/mainwindow.cpp:893
 #, kde-format
 msgid "Re&load systemd"
 msgstr "أعد تحميل الوحدة"
 
-#: src/mainwindow.cpp:1028
+#: src/mainwindow.cpp:894
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all unit files"
 msgstr "أعد تحميل كلّ ملفّات الوحدات"
 
-#: src/mainwindow.cpp:1034
+#: src/mainwindow.cpp:902
 #, kde-format
 msgid "Re-e&xecute systemd"
 msgstr "أعد تنفيذ Systemd"
 
-#: src/mainwindow.cpp:1035
+#: src/mainwindow.cpp:903
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the systemd daemon"
 msgstr "انقر لتعيد تنفيذ Systemd"
 
-#: src/mainwindow.cpp:1041
+#: src/mainwindow.cpp:911
 #, kde-format
 msgid "Re&load user systemd"
 msgstr "أعد تنفيذ systemd المستخدم"
 
-#: src/mainwindow.cpp:1042
+#: src/mainwindow.cpp:912
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all user unit files"
 msgstr "أعد تحميل كلّ ملفّات وحدات المستخدم"
 
-#: src/mainwindow.cpp:1048
+#: src/mainwindow.cpp:920
 #, kde-format
 msgid "Re-e&xecute user systemd"
 msgstr "أعد تنفيذ systemd المستخدم"
 
-#: src/mainwindow.cpp:1049
+#: src/mainwindow.cpp:921
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the user systemd daemon"
 msgstr "انقر لتعيد تنفيذ Systemd للمستخدم"
 
-#: src/mainwindow.cpp:1055
+#: src/mainwindow.cpp:929
 #, kde-format
 msgid "Edit Unit File…"
 msgstr "حرّر ملفّ الوحدة…"
 
-#: src/mainwindow.cpp:1061
+#: src/mainwindow.cpp:935
 #, kde-format
 msgid "Edit Configuration File…"
 msgstr "حرر ملفّ الضّبط…"
 
-#: src/mainwindow.cpp:1067
+#: src/mainwindow.cpp:941
 #, kde-format
 msgid "Open Man Page"
 msgstr "افتح صفح مان"
 
-#: src/mainwindow.cpp:1073
+#: src/mainwindow.cpp:947
 #, kde-format
 msgid "Activate Session"
 msgstr "فعّل الجلسة"
 
-#: src/mainwindow.cpp:1079
+#: src/mainwindow.cpp:955
 #, kde-format
 msgid "Terminate Session"
 msgstr "أنهِ الجلسة"
 
-#: src/mainwindow.cpp:1085
+#: src/mainwindow.cpp:963
 #, kde-format
 msgid "Lock Session"
 msgstr "اقفل الجلسة"
 
-#: src/mainwindow.cpp:1106
-#, kde-format
-msgid ""
-"KHelpCenter executable not found in path. Please install KHelpCenter to view "
-"man pages."
-msgstr ""
-"لم يعثر على الملف التنفيذي KHelpCenter في المسار. الرجاء تثبيت KHelpCenter "
-"لعرض صفحات الدليل."
-
-#: src/mainwindow.cpp:1237
+#: src/mainwindow.cpp:1100
 #, kde-format
 msgid "<b>VT:</b> %1"
 msgstr "<b>VT:</b> %1"
 
-#: src/mainwindow.cpp:1242
+#: src/mainwindow.cpp:1104
 #, kde-format
 msgid "<br><b>Remote host:</b> %1"
 msgstr "<br><b>المضيف البعيد:</b> %1"
 
-#: src/mainwindow.cpp:1243
+#: src/mainwindow.cpp:1105
 #, kde-format
 msgid "<br><b>Remote user:</b> %1"
 msgstr "<br><b>المستخدم البعيد:</b> %1"
 
-#: src/mainwindow.cpp:1245
+#: src/mainwindow.cpp:1107
 #, kde-format
 msgid "<br><b>Service:</b> %1"
 msgstr "<br><b>الخدمة:</b> %1"
 
-#: src/mainwindow.cpp:1246
+#: src/mainwindow.cpp:1108
 #, kde-format
 msgid "<br><b>Leader (PID):</b> %1"
 msgstr "<br><b>القائد (PID):</b> %1"
 
-#: src/mainwindow.cpp:1249
+#: src/mainwindow.cpp:1111
 #, kde-format
 msgid "<br><b>Type:</b> %1"
 msgstr "<br><b>النّوع:</b> %1"
 
-#: src/mainwindow.cpp:1251
+#: src/mainwindow.cpp:1113
 #, kde-format
 msgid " (display %1)"
 msgstr " (العرض %1)"
 
-#: src/mainwindow.cpp:1261
+#: src/mainwindow.cpp:1122
 #, kde-format
 msgid "<br><b>Class:</b> %1"
 msgstr "<br><b>الصّنف:</b> %1"
 
-#: src/mainwindow.cpp:1262
+#: src/mainwindow.cpp:1123
 #, kde-format
 msgid "<br><b>State:</b> %1"
 msgstr "<br><b>الحالة:</b> %1"
 
-#: src/mainwindow.cpp:1263
+#: src/mainwindow.cpp:1124
 #, kde-format
 msgid "<br><b>Scope:</b> %1"
 msgstr "<br><b>النّطاق:</b> %1"
 
-#: src/mainwindow.cpp:1266
+#: src/mainwindow.cpp:1126
 #, kde-format
 msgid "<br><b>Created: </b>"
 msgstr "<br><b>أُنشئت في: </b>"
 
-#: src/mainwindow.cpp:1295
+#: src/mainwindow.cpp:1154
 #, kde-format
 msgid "%1: Systemd daemon reloaded..."
 msgstr "‏%1: أعيد تحميل عفريت Systemd..."
 
-#: src/mainwindow.cpp:1306
+#: src/mainwindow.cpp:1165
 #, kde-format
 msgid "%1: User daemon reloaded..."
 msgstr "‏%1: أعيد تحميل عفريت المستخدم..."
 
-#: src/mainwindow.cpp:1349
+#: src/mainwindow.cpp:1208
 #, kde-format
 msgid "%1: System units changed..."
 msgstr "‏%1: غيرت وحدات النظام..."
 
-#: src/mainwindow.cpp:1499
+#: src/mainwindow.cpp:1352
 #, kde-format
 msgid "Editing %1"
 msgstr "يحرّر %1"
 
-#: src/mainwindow.cpp:1511
+#: src/mainwindow.cpp:1362
 #, kde-format
 msgid "Editing file: <code>%1</code>"
 msgstr "يحرر الملف: <code>%1</code>"
 
-#: src/mainwindow.cpp:1537
+#: src/mainwindow.cpp:1387
 #, kde-format
 msgid ""
 "Failed to open the unit file:\n"
@@ -515,8 +521,7 @@ msgstr ""
 "فشل فتح ملفّ الوحدة:\n"
 "%1"
 
-#. i18n("Unit file successfully written."));
-#: src/mainwindow.cpp:1564
+#: src/mainwindow.cpp:1413
 #, kde-format
 msgid "%1: %2 successfully written..."
 msgstr "‏%1: %2 كُتب بنجاح."
@@ -655,47 +660,47 @@ msgstr "حالة النّشاط"
 msgid "Unit State"
 msgstr "حالة الوحدة"
 
-#: src/unitmodel.cpp:131
+#: src/unitmodel.cpp:121
 #, kde-format
 msgid "<b>Description: </b>"
 msgstr "<b>الوصف: </b>"
 
-#: src/unitmodel.cpp:136
+#: src/unitmodel.cpp:126
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
 msgstr "<br><b>ملفّ الوحدة: </b>%1"
 
-#: src/unitmodel.cpp:137 src/unitmodel.cpp:187
+#: src/unitmodel.cpp:127 src/unitmodel.cpp:174
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
 msgstr "<br><b>حالة ملفّ الوحدة: </b>"
 
-#: src/unitmodel.cpp:143
+#: src/unitmodel.cpp:133
 #, kde-format
 msgid "<br><b>Source path: </b>%1"
 msgstr "<br><b>مسار المصدر:</b> %1"
 
-#: src/unitmodel.cpp:147
+#: src/unitmodel.cpp:137
 #, kde-format
 msgid "<br><b>Activated: </b>"
 msgstr "<br><b>نُشّطت في: </b>"
 
-#: src/unitmodel.cpp:158
+#: src/unitmodel.cpp:147
 #, kde-format
 msgid "<br><b>Deactivated: </b>"
 msgstr "<br><b>عُطّلت في: </b>"
 
-#: src/unitmodel.cpp:182
+#: src/unitmodel.cpp:169
 #, kde-format
 msgid "<b>Unit file: </b>"
 msgstr "<b>ملفّ الوحدة: </b>"
 
-#: src/unitmodel.cpp:196
+#: src/unitmodel.cpp:183
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
 msgstr "<hr><b>مدخلات السّجلّ الأخيرة:</b>"
 
-#: src/unitmodel.cpp:199
+#: src/unitmodel.cpp:186
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>لم تُعثر على مدخلات سجلّ لهذه الوحدة.</i>"
