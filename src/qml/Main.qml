@@ -41,12 +41,18 @@ Kirigami.ApplicationWindow {
         id: systemUnitsAction
 
         text: i18nc("@action:button", "System Units")
+        onTriggered: root.pageStack.replace(Qt.resolvedUrl('./UnitsPage.qml'), {
+            type: UnitsPage.System,
+        });
     }
 
     Kirigami.Action {
         id: userUnitsAction
 
         text: i18nc("@action:button", "User Units")
+        onTriggered: root.pageStack.replace(Qt.resolvedUrl('./UnitsPage.qml'), {
+            type: UnitsPage.User,
+        });
     }
 
     Kirigami.Action {

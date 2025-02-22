@@ -51,6 +51,13 @@ QVariant UnitModel::headerData(int section, Qt::Orientation orientation, int rol
     return QVariant();
 }
 
+QHash<int, QByteArray> UnitModel::roleNames() const
+{
+    return {
+        {Qt::DisplayRole, "name"},
+    };
+}
+
 QVariant UnitModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid()) {

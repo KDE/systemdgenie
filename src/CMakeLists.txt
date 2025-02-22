@@ -10,6 +10,11 @@ set_source_files_properties(dbus/org.freedesktop.login1.Manager.xml PROPERTIES
     INCLUDE "systemdunit.h"
 )
 
+set_source_files_properties(dbus/org.freedesktop.login1.Session.xml PROPERTIES
+    NO_NAMESPACE TRUE
+    INCLUDE "loginddbustypes.h"
+)
+
 qt_add_dbus_interface(systemd_DBUS_SRCS
     dbus/org.freedesktop.systemd1.Manager.xml
     systemd_manager_interface
@@ -18,6 +23,11 @@ qt_add_dbus_interface(systemd_DBUS_SRCS
 qt_add_dbus_interface(systemd_DBUS_SRCS
     dbus/org.freedesktop.login1.Manager.xml
     login_manager_interface
+)
+
+qt_add_dbus_interface(systemd_DBUS_SRCS
+    dbus/org.freedesktop.login1.Session.xml
+    login_session_interface
 )
 
 set(systemdgenie_SRCS
@@ -32,6 +42,8 @@ set(systemdgenie_SRCS
     systemdunit.cpp
     configfilemodel.cpp
     configfilemodel.h
+    controller.cpp
+    controller.h
     ${systemd_DBUS_SRCS}
 )
 
@@ -50,6 +62,7 @@ qt_target_qml_sources(systemdgenie
         qml/ConfigFilesPage.qml
         qml/TableDelegate.qml
         qml/TablePage.qml
+        qml/UnitsPage.qml
 )
 
 target_link_libraries(systemdgenie PRIVATE
