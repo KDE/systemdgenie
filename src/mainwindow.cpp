@@ -32,6 +32,7 @@
 #include "configfilemodel.h"
 #include "controller.h"
 #include "sessionsfetchjob.h"
+#include "sortfilterunitmodel.h"
 #include "systemdunit.h"
 #include "unitsfetchjob.h"
 
@@ -161,21 +162,9 @@ void MainWindow::setupSignalSlots()
 
 void MainWindow::setupUnitslist()
 {
-    // Sets up the units list initially
-
-    QMap<filterType, QString> filters;
-    filters[activeState] = QString();
-    filters[unitType] = QString();
-    filters[unitName] = QString();
-
-    // QList<SystemdUnit> *ptrUnits;
-    // ptrUnits = &m_systemUnitsList;
-
     // Setup the system unit model
     ui.tblUnits->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     m_systemUnitFilterModel = new SortFilterUnitModel(this);
-    m_systemUnitFilterModel->setDynamicSortFilter(false);
-    m_systemUnitFilterModel->initFilterMap(filters);
     m_systemUnitFilterModel->setSourceModel(m_controller->systemUnitModel());
     ui.tblUnits->setModel(m_systemUnitFilterModel);
     ui.tblUnits->sortByColumn(0, Qt::AscendingOrder);
@@ -186,8 +175,6 @@ void MainWindow::setupUnitslist()
     // Setup the user unit model
     ui.tblUserUnits->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     m_userUnitFilterModel = new SortFilterUnitModel(this);
-    m_userUnitFilterModel->setDynamicSortFilter(false);
-    m_userUnitFilterModel->initFilterMap(filters);
     m_userUnitFilterModel->setSourceModel(m_controller->userUnitModel());
     ui.tblUserUnits->setModel(m_userUnitFilterModel);
     ui.tblUserUnits->sortByColumn(0, Qt::AscendingOrder);
@@ -263,12 +250,12 @@ void MainWindow::slotChkShowUnits(int state)
         if (!ui.chkInactiveUnits->isChecked()) {
             ui.chkUnloadedUnits->setEnabled(true);
             if (!ui.chkUnloadedUnits->isChecked())
-                m_systemUnitFilterModel->addFilterRegExp(activeState, QString());
+                m_systemUnitFilterModel->addFilterRegExp(SortFilterUnitModel::ActiveState, QString());
             else
-                m_systemUnitFilterModel->addFilterRegExp(activeState, QStringLiteral("active"));
+                m_systemUnitFilterModel->addFilterRegExp(SortFilterUnitModel::ActiveState, QStringLiteral("active"));
         } else {
             ui.chkUnloadedUnits->setEnabled(false);
-            m_systemUnitFilterModel->addFilterRegExp(activeState, QStringLiteral("^(active)"));
+            m_systemUnitFilterModel->addFilterRegExp(SortFilterUnitModel::ActiveState, QStringLiteral("^(active)"));
         }
         m_systemUnitFilterModel->invalidate();
         ui.tblUnits->sortByColumn(ui.tblUnits->horizontalHeader()->sortIndicatorSection(), ui.tblUnits->horizontalHeader()->sortIndicatorOrder());
@@ -279,12 +266,12 @@ void MainWindow::slotChkShowUnits(int state)
         if (!ui.chkInactiveUserUnits->isChecked()) {
             ui.chkUnloadedUserUnits->setEnabled(true);
             if (!ui.chkUnloadedUserUnits->isChecked())
-                m_userUnitFilterModel->addFilterRegExp(activeState, QString());
+                m_userUnitFilterModel->addFilterRegExp(SortFilterUnitModel::ActiveState, QString());
             else
-                m_userUnitFilterModel->addFilterRegExp(activeState, QStringLiteral("active"));
+                m_userUnitFilterModel->addFilterRegExp(SortFilterUnitModel::ActiveState, QStringLiteral("active"));
         } else {
             ui.chkUnloadedUserUnits->setEnabled(false);
-            m_userUnitFilterModel->addFilterRegExp(activeState, QStringLiteral("^(active)"));
+            m_userUnitFilterModel->addFilterRegExp(SortFilterUnitModel::ActiveState, QStringLiteral("^(active)"));
         }
         m_userUnitFilterModel->invalidate();
         ui.tblUserUnits->sortByColumn(ui.tblUserUnits->horizontalHeader()->sortIndicatorSection(), ui.tblUserUnits->horizontalHeader()->sortIndicatorOrder());
@@ -297,11 +284,11 @@ void MainWindow::slotCmbUnitTypes(int index)
     // Filter unit list for a selected unit type
 
     if (QObject::sender()->objectName() == QLatin1String("cmbUnitTypes")) {
-        m_systemUnitFilterModel->addFilterRegExp(unitType, QStringLiteral("(%1)$").arg(unitTypeSufx.at(index)));
+        m_systemUnitFilterModel->addFilterRegExp(SortFilterUnitModel::UnitType, QStringLiteral("(%1)$").arg(unitTypeSufx.at(index)));
         m_systemUnitFilterModel->invalidate();
         ui.tblUnits->sortByColumn(ui.tblUnits->horizontalHeader()->sortIndicatorSection(), ui.tblUnits->horizontalHeader()->sortIndicatorOrder());
     } else if (QObject::sender()->objectName() == QLatin1String("cmbUserUnitTypes")) {
-        m_userUnitFilterModel->addFilterRegExp(unitType, QStringLiteral("(%1)$").arg(unitTypeSufx.at(index)));
+        m_userUnitFilterModel->addFilterRegExp(SortFilterUnitModel::UnitType, QStringLiteral("(%1)$").arg(unitTypeSufx.at(index)));
         m_userUnitFilterModel->invalidate();
         ui.tblUserUnits->sortByColumn(ui.tblUserUnits->horizontalHeader()->sortIndicatorSection(), ui.tblUserUnits->horizontalHeader()->sortIndicatorOrder());
     }
@@ -962,11 +949,11 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event)
 void MainWindow::slotLeSearchUnitChanged(QString term)
 {
     if (QObject::sender()->objectName() == QLatin1String("leSearchUnit")) {
-        m_systemUnitFilterModel->addFilterRegExp(unitName, term);
+        m_systemUnitFilterModel->addFilterRegExp(SortFilterUnitModel::UnitName, term);
         m_systemUnitFilterModel->invalidate();
         ui.tblUnits->sortByColumn(ui.tblUnits->horizontalHeader()->sortIndicatorSection(), ui.tblUnits->horizontalHeader()->sortIndicatorOrder());
     } else if (QObject::sender()->objectName() == QLatin1String("leSearchUserUnit")) {
-        m_userUnitFilterModel->addFilterRegExp(unitName, term);
+        m_userUnitFilterModel->addFilterRegExp(SortFilterUnitModel::UnitName, term);
         m_userUnitFilterModel->invalidate();
         ui.tblUserUnits->sortByColumn(ui.tblUserUnits->horizontalHeader()->sortIndicatorSection(), ui.tblUserUnits->horizontalHeader()->sortIndicatorOrder());
     }
