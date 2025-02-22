@@ -17,16 +17,20 @@ class UnitModel : public QAbstractTableModel
 
 public:
     explicit UnitModel(QObject *parent = nullptr);
-    explicit UnitModel(QObject *parent = nullptr, const QVector<SystemdUnit> *list = NULL, QString userBusPath = QString());
+    explicit UnitModel(QString userBusPath, QObject *parent = nullptr);
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     int columnCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QHash<int, QByteArray> roleNames() const override;
 
+    const QList<SystemdUnit> &unitsConst() const;
+    QList<SystemdUnit> units() const;
+    void setUnits(const QList<SystemdUnit> &units);
+
 private:
     QStringList getLastJrnlEntries(QString unit) const;
-    const QVector<SystemdUnit> *m_unitList;
+    QVector<SystemdUnit> m_units;
     QString m_userBus;
 };
 

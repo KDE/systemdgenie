@@ -33,8 +33,10 @@ public:
     SystemdUnit systemUnit(int index) const;
     SystemdUnit userUnit(int index) const;
 
+    Q_SLOT void slotRefreshUserUnitsList();
+    Q_SLOT void slotRefreshSystemUnitsList();
+    Q_SLOT void slotRefreshSessionList();
     void slotRefreshUnitsList(dbusBus bus);
-    void slotRefreshSessionList();
 
     int nonActiveUserUnits() const;
     int nonActiveSystemUnits() const;
@@ -67,8 +69,6 @@ private:
     UnitModel *m_systemUnitModel;
     UnitModel *m_userUnitModel;
     QStandardItemModel *const m_sessionModel;
-    QVector<SystemdUnit> m_systemUnitsList;
-    QVector<SystemdUnit> m_userUnitsList;
     QVector<SystemdSession> m_sessionList;
     QString m_userBusPath;
     int m_noActUserUnits = 0;
