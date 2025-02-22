@@ -103,7 +103,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui.tabWidget->tabBar()->setExpanding(true);
 
-    setupGUI(Default, QStringLiteral("systemdgenieui.rc"));
+    setupGUI(ToolBar | Keys | Create | Save, QStringLiteral("systemdgenieui.rc"));
 }
 
 MainWindow::~MainWindow()
