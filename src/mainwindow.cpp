@@ -30,6 +30,7 @@
 #include <unistd.h>
 
 #include "configfilemodel.h"
+#include "controller.h"
 #include "sessionsfetchjob.h"
 #include "systemdunit.h"
 #include "unitsfetchjob.h"
@@ -38,11 +39,8 @@ using namespace Qt::StringLiterals;
 
 MainWindow::MainWindow(QWidget *parent)
     : KXmlGuiWindow(parent)
+    , m_controller(new Controller(parent))
     , m_configFileModel(new ConfigFileModel(parent))
-    , m_systemManagerInterface(
-          new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd1"_s, u"/org/freedesktop/systemd1"_s, QDBusConnection::systemBus(), this))
-    , m_loginManagerInterface(
-          new OrgFreedesktopLogin1ManagerInterface(u"org.freedesktop.login1"_s, u"/org/freedesktop/login1"_s, QDBusConnection::systemBus(), this))
 {
     ui.setupUi(this);
 
@@ -70,12 +68,6 @@ MainWindow::MainWindow(QWidget *parent)
         enableUserUnits = false;
     }
 
-    if (!m_userBusPath.isEmpty()) {
-        auto connection = QDBusConnection::connectToBus(m_userBusPath, connSystemd);
-        m_sessionManagerInterface =
-            new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd.Manager"_s, u"/org/freedesktop/systemd1"_s, connection, this);
-    }
-
     QStringList allowUnitTypes = QStringList{i18n("All"),
                                              i18n("Services"),
                                              i18n("Automounts"),
@@ -92,8 +84,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui.cmbUserUnitTypes->addItems(allowUnitTypes);
 
     // Get list of units
-    slotRefreshUnitsList(true, sys);
-    slotRefreshUnitsList(true, user);
+    m_controller->slotRefreshUnitsList(sys);
+    m_controller->slotRefreshUnitsList(user);
 
     setupUnitslist();
     setupSessionlist();
@@ -106,6 +98,25 @@ MainWindow::MainWindow(QWidget *parent)
     ui.tabWidget->tabBar()->setExpanding(true);
 
     setupGUI(ToolBar | Keys | Create | Save, QStringLiteral("systemdgenieui.rc"));
+
+    connect(m_controller, &Controller::userUnitsRefreshed, this, [this]() {
+        m_userUnitFilterModel->invalidate();
+        updateUnitCount();
+        slotRefreshTimerList();
+        updateActions();
+    });
+
+    connect(m_controller, &Controller::systemUnitsRefreshed, this, [this]() {
+        m_systemUnitFilterModel->invalidate();
+        updateUnitCount();
+        slotRefreshTimerList();
+        updateActions();
+    });
+
+    connect(m_controller, &Controller::sessionsRefreshed, this, [this]() {
+        ui.tblSessions->resizeColumnsToContents();
+        ui.tblSessions->resizeRowsToContents();
+    });
 }
 
 MainWindow::~MainWindow()
@@ -146,100 +157,6 @@ void MainWindow::setupSignalSlots()
 
     // Connect signals for sessions tab.
     connect(ui.tblSessions, &QTableView::customContextMenuRequested, this, &MainWindow::slotSessionContextMenu);
-
-    // Subscribe to dbus signals from systemd system daemon and connect them to slots.
-    callDbusMethod(QStringLiteral("Subscribe"), sysdMgr);
-    m_systemBus.connect(connSystemd, pathSysdMgr, ifaceMgr, QStringLiteral("Reloading"), this, SLOT(slotSystemSystemdReloading(bool)));
-    /*m_systemBus.connect(connSystemd,
-                        pathSysdMgr,
-                        ifaceMgr,
-                        QStringLiteral("UnitNew"),
-                        this,
-                        SLOT(slotSystemUnitNew(const QString&, const QDBusObjectPath&)));
-    m_systemBus.connect(connSystemd,
-                        pathSysdMgr,
-                        ifaceMgr,
-                        QStringLiteral("UnitRemoved"),
-                        this,
-                        SLOT(slotSystemUnitRemoved(const QString&, const QDBusObjectPath&)));*/
-
-    m_systemBus
-        .connect(connSystemd, pathSysdMgr, ifaceMgr, QStringLiteral("JobNew"), this, SLOT(slotSystemJobNew(uint, const QDBusObjectPath &, const QString &)));
-    // We need to use the JobRemoved signal, because stopping units does not emit PropertiesChanged signal
-    m_systemBus.connect(connSystemd,
-                        pathSysdMgr,
-                        ifaceMgr,
-                        QStringLiteral("JobRemoved"),
-                        this,
-                        SLOT(slotSystemJobRemoved(uint, const QDBusObjectPath &, const QString &, const QString &)));
-
-    m_systemBus.connect(connSystemd, pathSysdMgr, ifaceMgr, QStringLiteral("UnitFilesChanged"), this, SLOT(slotSystemUnitFilesChanged()));
-    m_systemBus.connect(connSystemd,
-                        QString(),
-                        ifaceDbusProp,
-                        QStringLiteral("PropertiesChanged"),
-                        this,
-                        SLOT(slotSystemPropertiesChanged(const QString &, const QVariantMap &, const QStringList &)));
-
-    // Subscribe to dbus signals from systemd user daemon and connect them to slots
-    callDbusMethod(QStringLiteral("Subscribe"), sysdMgr, user);
-    QDBusConnection userbus = QDBusConnection::connectToBus(m_userBusPath, connSystemd);
-    userbus.connect(connSystemd, pathSysdMgr, ifaceMgr, QStringLiteral("Reloading"), this, SLOT(slotUserSystemdReloading(bool)));
-    /*userbus.connect(connSystemd,
-                    pathSysdMgr,
-                    ifaceMgr,
-                    QStringLiteral("UnitNew"),
-                    this,
-                    SLOT(slotUnitNew(const QString&, const QDBusObjectPath&)));
-    userbus.connect(connSystemd,
-                    pathSysdMgr,
-                    ifaceMgr,
-                    QStringLiteral("UnitRemoved"),
-                    this,
-                    SLOT(slotUnitRemoved(const QString&, const QDBusObjectPath&)));*/
-
-    userbus.connect(connSystemd, pathSysdMgr, ifaceMgr, QStringLiteral("JobNew"), this, SLOT(slotUserJobNew(uint, const QDBusObjectPath &, const QString &)));
-    // We need to use the JobRemoved signal, because stopping units does not emit PropertiesChanged signal
-    userbus.connect(connSystemd,
-                    pathSysdMgr,
-                    ifaceMgr,
-                    QStringLiteral("JobRemoved"),
-                    this,
-                    SLOT(slotUserJobRemoved(uint, const QDBusObjectPath &, const QString &, const QString &)));
-
-    userbus.connect(connSystemd, pathSysdMgr, ifaceMgr, QStringLiteral("UnitFilesChanged"), this, SLOT(slotUserUnitFilesChanged()));
-    userbus.connect(connSystemd,
-                    QString(),
-                    ifaceDbusProp,
-                    QStringLiteral("PropertiesChanged"),
-                    this,
-                    SLOT(slotUserPropertiesChanged(const QString &, const QVariantMap &, const QStringList &)));
-
-    /*
-    userbus.connect(connSystemd,
-                    pathSysdMgr,
-                    ifaceMgr,
-                    QStringLiteral("Reloading"),
-                    this,
-                    SLOT(slotUserSystemdReloading(bool)));
-    userbus.connect(connSystemd,
-                    pathSysdMgr,
-                    ifaceMgr,
-                    QStringLiteral("UnitFilesChanged"),
-                    this,
-                    SLOT(slotUserUnitsChanged()));
-    userbus.connect(connSystemd, QString(), ifaceDbusProp,
-                    QStringLiteral("PropertiesChanged"), this, SLOT(slotUserUnitsChanged()));
-    userbus.connect(connSystemd, pathSysdMgr, ifaceMgr,
-                    QStringLiteral("JobRemoved"), this, SLOT(slotUserUnitsChanged())); */
-
-    // logind.
-    m_systemBus.connect(connLogind,
-                        QString(),
-                        ifaceDbusProp,
-                        QStringLiteral("PropertiesChanged"),
-                        this,
-                        SLOT(slotLogindPropertiesChanged(QString, QVariantMap, QStringList)));
 }
 
 void MainWindow::setupUnitslist()
@@ -256,11 +173,10 @@ void MainWindow::setupUnitslist()
 
     // Setup the system unit model
     ui.tblUnits->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    m_systemUnitModel = new UnitModel(this, &m_systemUnitsList);
     m_systemUnitFilterModel = new SortFilterUnitModel(this);
     m_systemUnitFilterModel->setDynamicSortFilter(false);
     m_systemUnitFilterModel->initFilterMap(filters);
-    m_systemUnitFilterModel->setSourceModel(m_systemUnitModel);
+    m_systemUnitFilterModel->setSourceModel(m_controller->systemUnitModel());
     ui.tblUnits->setModel(m_systemUnitFilterModel);
     ui.tblUnits->sortByColumn(0, Qt::AscendingOrder);
     ui.tblUnits->resizeColumnsToContents();
@@ -269,11 +185,10 @@ void MainWindow::setupUnitslist()
 
     // Setup the user unit model
     ui.tblUserUnits->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    m_userUnitModel = new UnitModel(this, &m_userUnitsList, m_userBusPath);
     m_userUnitFilterModel = new SortFilterUnitModel(this);
     m_userUnitFilterModel->setDynamicSortFilter(false);
     m_userUnitFilterModel->initFilterMap(filters);
-    m_userUnitFilterModel->setSourceModel(m_userUnitModel);
+    m_userUnitFilterModel->setSourceModel(m_controller->userUnitModel());
     ui.tblUserUnits->setModel(m_userUnitFilterModel);
     ui.tblUserUnits->sortByColumn(0, Qt::AscendingOrder);
     ui.tblUserUnits->resizeColumnsToContents();
@@ -287,27 +202,17 @@ void MainWindow::setupSessionlist()
 {
     // Sets up the session list initially
 
-    // Setup model for session list
-    m_sessionModel = new QStandardItemModel(this);
-
     // Install eventfilter to capture mouse move events
     ui.tblSessions->viewport()->installEventFilter(this);
 
-    // Set header row
-    m_sessionModel->setHorizontalHeaderItem(0, new QStandardItem(i18n("Session ID")));
-    m_sessionModel->setHorizontalHeaderItem(1, new QStandardItem(i18n("Session Object Path"))); // This column is hidden
-    m_sessionModel->setHorizontalHeaderItem(2, new QStandardItem(i18n("State")));
-    m_sessionModel->setHorizontalHeaderItem(3, new QStandardItem(i18n("User ID")));
-    m_sessionModel->setHorizontalHeaderItem(4, new QStandardItem(i18n("User Name")));
-    m_sessionModel->setHorizontalHeaderItem(5, new QStandardItem(i18n("Seat ID")));
     ui.tblSessions->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
     // Set model for QTableView (should be called after headers are set)
-    ui.tblSessions->setModel(m_sessionModel);
+    ui.tblSessions->setModel(m_controller->sessionModel());
     ui.tblSessions->setColumnHidden(1, true);
 
     // Add all the sessions
-    slotRefreshSessionList();
+    m_controller->slotRefreshSessionList();
 }
 
 void MainWindow::setupTimerlist()
@@ -403,124 +308,6 @@ void MainWindow::slotCmbUnitTypes(int index)
     updateUnitCount();
 }
 
-void MainWindow::slotRefreshUnitsList(bool initial, dbusBus bus)
-{
-    if (bus == user && !enableUserUnits) {
-        return;
-    }
-
-    OrgFreedesktopSystemd1ManagerInterface *interface = bus == sys ? m_systemManagerInterface : m_sessionManagerInterface;
-
-    auto job = new UnitsFetchJob(m_systemManagerInterface);
-    connect(job, &UnitsFetchJob::finished, this, [this, bus, job](KJob *) {
-        if (bus == user) {
-            m_userUnitsList.clear();
-            m_userUnitsList = job->units();
-            m_noActUserUnits = 0;
-            for (const SystemdUnit &unit : m_userUnitsList) {
-                if (unit.active_state == QLatin1String("active"))
-                    m_noActUserUnits++;
-            }
-            m_userUnitModel->dataChanged(m_userUnitModel->index(0, 0), m_userUnitModel->index(m_userUnitModel->rowCount(), 0));
-            m_userUnitFilterModel->invalidate();
-            updateUnitCount();
-            slotRefreshTimerList();
-            updateActions();
-        } else {
-            m_systemUnitsList.clear();
-            m_systemUnitsList = job->units();
-
-            for (const SystemdUnit &unit : m_systemUnitsList) {
-                if (unit.active_state == QLatin1String("active"))
-                    m_noActSystemUnits++;
-            }
-
-            m_systemUnitModel->dataChanged(m_systemUnitModel->index(0, 0), m_systemUnitModel->index(m_systemUnitModel->rowCount(), 0));
-            m_systemUnitFilterModel->invalidate();
-            updateUnitCount();
-            slotRefreshTimerList();
-            updateActions();
-        }
-    });
-    job->start();
-}
-
-void MainWindow::slotRefreshSessionList()
-{
-    // Updates the session list
-    qDebug() << "Refreshing session list...";
-
-    // clear list
-    m_sessionList.clear();
-
-    auto job = new SessionsFetchJob(m_loginManagerInterface);
-    connect(job, &SessionsFetchJob::finished, this, [this, job](KJob *) {
-        if (job->error()) {
-            displayMsgWidget(KMessageWidget::Error, i18n("Unable to fetch sessions list: %1", job->error()));
-            return;
-        }
-
-        m_sessionList = job->sessions();
-
-        // Iterate through the new list and compare to model
-        for (const SystemdSession &s : m_sessionList) {
-            // This is needed to get the "State" property
-
-            QList<QStandardItem *> items = m_sessionModel->findItems(s.session_id, Qt::MatchExactly, 0);
-
-            if (items.isEmpty()) {
-                // New session discovered so add it to the model
-                QList<QStandardItem *> row;
-                row << new QStandardItem(s.session_id) << new QStandardItem(s.session_path.path())
-                    << new QStandardItem(getDbusProperty(QStringLiteral("State"), logdSession, s.session_path).toString())
-                    << new QStandardItem(QString::number(s.user_id)) << new QStandardItem(s.user_name) << new QStandardItem(s.seat_id);
-                m_sessionModel->appendRow(row);
-            } else {
-                m_sessionModel->item(items.at(0)->row(), 2)
-                    ->setData(getDbusProperty(QStringLiteral("State"), logdSession, s.session_path).toString(), Qt::DisplayRole);
-            }
-        }
-
-        // Check to see if any sessions were removed
-        if (m_sessionModel->rowCount() != m_sessionList.size()) {
-            QList<QPersistentModelIndex> indexes;
-            // Loop through model and compare to retrieved m_sessionList
-            for (int row = 0; row < m_sessionModel->rowCount(); ++row) {
-                SystemdSession session;
-                session.session_id = m_sessionModel->index(row, 0).data().toString();
-                if (!m_sessionList.contains(session)) {
-                    // Add removed units to list for deletion
-                    // qDebug() << "Unit removed: " << systemUnitModel->index(row,0).data().toString();
-                    indexes << m_sessionModel->index(row, 0);
-                }
-            }
-            // Delete the identified units from model
-            for (const QPersistentModelIndex &i : indexes)
-                m_sessionModel->removeRow(i.row());
-        }
-
-        // Update the text color in model
-        QColor newcolor;
-        for (int row = 0; row < m_sessionModel->rowCount(); ++row) {
-            QBrush newcolor;
-            const KColorScheme scheme(QPalette::Normal);
-            if (m_sessionModel->data(m_sessionModel->index(row, 2), Qt::DisplayRole) == QLatin1String("active"))
-                newcolor = scheme.foreground(KColorScheme::PositiveText);
-            else if (m_sessionModel->data(m_sessionModel->index(row, 2), Qt::DisplayRole) == QLatin1String("closing"))
-                newcolor = scheme.foreground(KColorScheme::InactiveText);
-            else
-                newcolor = scheme.foreground(KColorScheme::NormalText);
-
-            for (int col = 0; col < m_sessionModel->columnCount(); ++col)
-                m_sessionModel->setData(m_sessionModel->index(row, col), QVariant(newcolor), Qt::ForegroundRole);
-        }
-        ui.tblSessions->resizeColumnsToContents();
-        ui.tblSessions->resizeRowsToContents();
-    });
-
-    job->start();
-}
-
 void MainWindow::slotRefreshTimerList()
 {
     // Updates the timer list
@@ -529,18 +316,18 @@ void MainWindow::slotRefreshTimerList()
     m_timerModel->removeRows(0, m_timerModel->rowCount());
 
     // Iterate through system unitlist and add timers to the model
-    for (const SystemdUnit &unit : m_systemUnitsList) {
-        if (unit.id.endsWith(QLatin1String(".timer")) && unit.load_state != QLatin1String("unloaded")) {
-            m_timerModel->appendRow(buildTimerListRow(unit, m_systemUnitsList, sys));
-        }
-    }
+    // for (const SystemdUnit &unit : m_systemUnitsList) {
+    //    if (unit.id.endsWith(QLatin1String(".timer")) && unit.load_state != QLatin1String("unloaded")) {
+    //        m_timerModel->appendRow(buildTimerListRow(unit, m_systemUnitsList, sys));
+    //    }
+    //}
 
-    // Iterate through user unitlist and add timers to the model
-    for (const SystemdUnit &unit : m_userUnitsList) {
-        if (unit.id.endsWith(QLatin1String(".timer")) && unit.load_state != QLatin1String("unloaded")) {
-            m_timerModel->appendRow(buildTimerListRow(unit, m_userUnitsList, user));
-        }
-    }
+    //// Iterate through user unitlist and add timers to the model
+    // for (const SystemdUnit &unit : m_userUnitsList) {
+    //     if (unit.id.endsWith(QLatin1String(".timer")) && unit.load_state != QLatin1String("unloaded")) {
+    //         m_timerModel->appendRow(buildTimerListRow(unit, m_userUnitsList, user));
+    //     }
+    // }
 
     // Update the left and passed columns
     slotUpdateTimers();
@@ -628,14 +415,14 @@ QList<QStandardItem *> MainWindow::buildTimerListRow(const SystemdUnit &unit, co
 
 void MainWindow::updateUnitCount()
 {
-    QString systemUnits = i18ncp("First part of 'Total: %1, %2, %3'", "1 unit", "%1 units", m_systemUnitModel->rowCount());
-    QString systemActive = i18ncp("Second part of 'Total: %1, %2, %3'", "1 active", "%1 active", m_noActSystemUnits);
+    QString systemUnits = i18ncp("First part of 'Total: %1, %2, %3'", "1 unit", "%1 units", m_controller->systemUnitModel()->rowCount());
+    QString systemActive = i18ncp("Second part of 'Total: %1, %2, %3'", "1 active", "%1 active", m_controller->nonActiveSystemUnits());
     QString systemDisplayed = i18ncp("Third part of 'Total: %1, %2, %3'", "1 displayed", "%1 displayed", m_systemUnitFilterModel->rowCount());
     ui.lblUnitCount->setText(
         i18nc("%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'", "Total: %1, %2, %3", systemUnits, systemActive, systemDisplayed));
 
-    QString userUnits = i18ncp("First part of 'Total: %1, %2, %3'", "1 unit", "%1 units", m_userUnitModel->rowCount());
-    QString userActive = i18ncp("Second part of 'Total: %1, %2, %3'", "1 active", "%1 active", m_noActUserUnits);
+    QString userUnits = i18ncp("First part of 'Total: %1, %2, %3'", "1 unit", "%1 units", m_controller->userUnitModel()->rowCount());
+    QString userActive = i18ncp("Second part of 'Total: %1, %2, %3'", "1 active", "%1 active", m_controller->nonActiveUserUnits());
     QString userDisplayed = i18ncp("Third part of 'Total: %1, %2, %3'", "1 displayed", "%1 displayed", m_userUnitFilterModel->rowCount());
     ui.lblUserUnitCount->setText(
         i18nc("%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'", "Total: %1, %2, %3", userUnits, userActive, userDisplayed));
@@ -702,14 +489,11 @@ void MainWindow::updateActions()
     if ((ui.tabWidget->currentIndex() == 0 && !ui.tblUnits->selectionModel()->selectedRows(0).isEmpty())
         || (ui.tabWidget->currentIndex() == 1 && !ui.tblUserUnits->selectionModel()->selectedRows(0).isEmpty())) {
         QTableView *tblView;
-        QVector<SystemdUnit> *list;
         dbusBus bus;
         if (ui.tabWidget->currentIndex() == 0) {
-            list = &m_systemUnitsList;
             tblView = ui.tblUnits;
             bus = sys;
         } else if (ui.tabWidget->currentIndex() == 1) {
-            list = &m_userUnitsList;
             tblView = ui.tblUserUnits;
             bus = user;
         } else {
@@ -725,11 +509,17 @@ void MainWindow::updateActions()
             return;
         }
 
-        // Find name and object path of unit
-        const QString unit = tblView->selectionModel()->selectedRows(0).at(0).data().toString();
-        Q_ASSERT(!unit.isEmpty());
-        Q_ASSERT(list->contains(SystemdUnit(unit)));
-        const QDBusObjectPath pathUnit = list->at(list->indexOf(SystemdUnit(unit))).unit_path;
+        const QModelIndex index = tblView->selectionModel()->selectedRows(0).at(0);
+
+        SystemdUnit unit;
+
+        if (ui.tabWidget->currentIndex() == 0) {
+            unit = m_controller->systemUnit(m_systemUnitFilterModel->mapToSource(index).row());
+        } else if (ui.tabWidget->currentIndex() == 1) {
+            unit = m_controller->userUnit(m_userUnitFilterModel->mapToSource(index).row());
+        }
+
+        const QDBusObjectPath pathUnit = unit.unit_path;
 
         // Check capabilities of unit
         bool CanStart = false;
@@ -753,21 +543,17 @@ void MainWindow::updateActions()
         } else {
             hasUnitObject = false;
             // Get UnitFileState from Manager object.
-            unitFileState = callDbusMethod(QStringLiteral("GetUnitFileState"), sysdMgr, bus, QVariantList{unit}).arguments().at(0).toString();
+            unitFileState = callDbusMethod(QStringLiteral("GetUnitFileState"), sysdMgr, bus, QVariantList{unit.unit_file}).arguments().at(0).toString();
         }
 
         // Check if unit has a writable unit file, if not disable editing.
-        QString frpath;
-        int index = list->indexOf(SystemdUnit(unit));
-        if (index != -1) {
-            frpath = list->at(index).unit_file;
-        }
+        QString frpath = unit.unit_file;
 
         QFileInfo fileInfo(frpath);
         QStorageInfo storageInfo(frpath);
         bool isUnitWritable = fileInfo.permission(QFile::WriteOwner) && !storageInfo.isReadOnly();
 
-        bool isUnitSelected = !unit.isEmpty();
+        bool isUnitSelected = !unit.unit_file.isEmpty();
 
         m_startUnitAction->setEnabled(isUnitSelected && (CanStart || !hasUnitObject) && ActiveState != QLatin1String("active"));
 
@@ -1080,9 +866,9 @@ void MainWindow::executeUserDaemonAction(const QString &method)
 
 void MainWindow::slotRefreshAll()
 {
-    slotRefreshUnitsList(false, sys);
-    slotRefreshUnitsList(false, user);
-    slotRefreshSessionList();
+    m_controller->slotRefreshUnitsList(sys);
+    m_controller->slotRefreshUnitsList(user);
+    m_controller->slotRefreshSessionList();
 }
 
 void MainWindow::slotSessionContextMenu(const QPoint &pos)
@@ -1111,7 +897,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event)
         if (!inSessionModel.isValid())
             return false;
 
-        if (m_sessionModel->itemFromIndex(inSessionModel)->row() != lastSessionRowChecked) {
+        if (m_controller->sessionModel()->itemFromIndex(inSessionModel)->row() != lastSessionRowChecked) {
             // Cursor moved to a different row. Only build tooltips when moving
             // cursor to a new row to avoid excessive DBus calls.
 
@@ -1162,109 +948,15 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event)
             }
 
             toolTipText.append(QStringLiteral("</FONT"));
-            m_sessionModel->itemFromIndex(inSessionModel)->setToolTip(toolTipText);
+            m_controller->sessionModel()->itemFromIndex(inSessionModel)->setToolTip(toolTipText);
 
-            lastSessionRowChecked = m_sessionModel->itemFromIndex(inSessionModel)->row();
+            lastSessionRowChecked = m_controller->sessionModel()->itemFromIndex(inSessionModel)->row();
             return true;
 
         } // Row was different
     }
     return false;
     // return true;
-}
-
-void MainWindow::slotSystemSystemdReloading(bool status)
-{
-    if (status) {
-        qDebug() << "System daemon reloading...";
-    } else {
-        qDebug() << "System daemon reloaded";
-        slotRefreshUnitsList(false, sys);
-    }
-}
-
-void MainWindow::slotUserSystemdReloading(bool status)
-{
-    if (status) {
-        qDebug() << "User daemon reloading...";
-    } else {
-        qDebug() << "User daemon reloaded";
-        slotRefreshUnitsList(false, user);
-    }
-}
-
-/*
-void MainWindow::slotSystemUnitNew(const QString &id, const QDBusObjectPath &path)
-{
-    //qDebug() << "SystemUnitNew: " << id << path.path();
-}
-
-void MainWindow::slotSystemUnitRemoved(const QString &id, const QDBusObjectPath &path)
-{
-    //qDebug() << "SystemUnitRemoved: " << id << path.path();
-}
-*/
-
-void MainWindow::slotSystemJobNew(uint id, const QDBusObjectPath &path, const QString &unit)
-{
-    qDebug() << "SystemJobNew: " << id << path.path() << unit;
-}
-
-void MainWindow::slotSystemJobRemoved(uint id, const QDBusObjectPath &path, const QString &unit, const QString &result)
-{
-    qDebug() << "SystmJobRemoved: " << id << path.path() << unit << result;
-    slotRefreshUnitsList(false, sys);
-}
-
-void MainWindow::slotUserJobNew(uint id, const QDBusObjectPath &path, const QString &unit)
-{
-    qDebug() << "UserJobNew: " << id << path.path() << unit;
-}
-
-void MainWindow::slotUserJobRemoved(uint id, const QDBusObjectPath &path, const QString &unit, const QString &result)
-{
-    qDebug() << "UserJobRemoved: " << id << path.path() << unit << result;
-    slotRefreshUnitsList(false, user);
-}
-
-void MainWindow::slotSystemUnitFilesChanged()
-{
-    // qDebug() << "System unitFilesChanged";
-    slotRefreshUnitsList(false, sys);
-}
-
-void MainWindow::slotUserUnitFilesChanged()
-{
-    // qDebug() << "User unitFilesChanged";
-    slotRefreshUnitsList(false, user);
-}
-
-void MainWindow::slotSystemPropertiesChanged(const QString &iface, const QVariantMap &changedProps, const QStringList &invalidatedProps)
-{
-    Q_UNUSED(changedProps)
-    Q_UNUSED(invalidatedProps)
-
-    qDebug() << "systemPropertiesChanged:" << iface; // << changedProps << invalidatedProps;
-    slotRefreshUnitsList(false, sys);
-}
-
-void MainWindow::slotUserPropertiesChanged(const QString &iface, const QVariantMap &changedProps, const QStringList &invalidatedProps)
-{
-    Q_UNUSED(changedProps)
-    Q_UNUSED(invalidatedProps)
-
-    qDebug() << "userPropertiesChanged:" << iface; // << changedProps << invalidatedProps;
-    slotRefreshUnitsList(false, user);
-}
-
-void MainWindow::slotLogindPropertiesChanged(const QString &iface, const QVariantMap &changedProps, const QStringList &invalidatedProps)
-{
-    Q_UNUSED(iface)
-    Q_UNUSED(changedProps)
-    Q_UNUSED(invalidatedProps)
-
-    // qDebug() << "Logind properties changed on iface " << iface_name;
-    slotRefreshSessionList();
 }
 
 void MainWindow::slotLeSearchUnitChanged(QString term)
@@ -1332,13 +1024,10 @@ void MainWindow::slotUpdateTimers()
 void MainWindow::slotEditUnitFile()
 {
     QTableView *tblView;
-    QVector<SystemdUnit> *list;
     if (ui.tabWidget->currentIndex() == 0) {
         tblView = ui.tblUnits;
-        list = &m_systemUnitsList;
     } else {
         tblView = ui.tblUserUnits;
-        list = &m_userUnitsList;
     }
 
     if (tblView->selectionModel()->selectedRows(0).isEmpty()) {
@@ -1347,9 +1036,15 @@ void MainWindow::slotEditUnitFile()
 
     QModelIndex index = tblView->selectionModel()->selectedRows(0).at(0);
     Q_ASSERT(index.isValid());
-    QString file = list->at(list->indexOf(SystemdUnit(index.data().toString()))).unit_file;
-
-    openEditor(file);
+    if (ui.tabWidget->currentIndex() == 0) {
+        index = m_systemUnitFilterModel->mapToSource(index);
+        Q_ASSERT(index.isValid());
+        openEditor(m_controller->systemUnit(index.row()).unit_file);
+    } else {
+        index = m_userUnitFilterModel->mapToSource(index);
+        Q_ASSERT(index.isValid());
+        openEditor(m_controller->userUnit(index.row()).unit_file);
+    }
 }
 
 void MainWindow::slotEditConfFile()
