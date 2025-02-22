@@ -797,6 +797,7 @@ void MainWindow::updateActions()
         m_editUnitFileAction->setVisible(false);
     }
 
+    m_editConfFileAction->setVisible(ui.tabWidget->currentIndex() == 2);
     m_editConfFileAction->setEnabled(ui.tabWidget->currentIndex() == 2 && !ui.tblConfFiles->selectionModel()->selectedRows(0).isEmpty());
     m_openManPageAction->setEnabled(ui.tabWidget->currentIndex() == 2 && !ui.tblConfFiles->selectionModel()->selectedRows(0).isEmpty());
 
