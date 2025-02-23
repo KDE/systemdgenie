@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-22 00:44+0000\n"
-"PO-Revision-Date: 2025-02-18 03:52+0100\n"
+"POT-Creation-Date: 2025-02-23 00:43+0000\n"
+"PO-Revision-Date: 2025-02-22 06:25+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -69,22 +69,19 @@ msgid "Systemd user daemon configuration"
 msgstr "Systemd-ის მომხმარებლის დემონის მორგება"
 
 #: src/configfilemodel.cpp:112
-#, fuzzy, kde-format
-#| msgid "File"
+#, kde-format
 msgctxt "@title:column"
 msgid "File"
 msgstr "ფაილი"
 
 #: src/configfilemodel.cpp:114
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgctxt "@title:column"
 msgid "Modified"
-msgstr "შეცვლილია"
+msgstr "შეიცვალა"
 
 #: src/configfilemodel.cpp:116
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:column"
 msgid "Description"
 msgstr "აღწერა"
@@ -98,7 +95,7 @@ msgstr ""
 "KHelpCenter-ის გამშვები ფაილის პოვნის შეცდომა.სახელმძღვანელოს გვერდების "
 "სანახავად KHelpCenter-ის დაყენება აუცილებელია."
 
-#: src/main.cpp:29 src/mainwindow.cpp:55
+#: src/main.cpp:29 src/mainwindow.cpp:57
 #, kde-format
 msgid "SystemdGenie"
 msgstr "SystemdGenie"
@@ -124,145 +121,145 @@ msgstr "რაგნარ თომსენი"
 msgid "Maintainer"
 msgstr "წამყვანი პროგრამისტი"
 
-#: src/mainwindow.cpp:55
+#: src/mainwindow.cpp:57
 #, kde-format
 msgid "Unable to contact the systemd daemon. Quitting..."
 msgstr "Systemd-ის დემონთან დაკავშირების შეცდომა. მუშაობის დასასრული..."
 
-#: src/mainwindow.cpp:67
+#: src/mainwindow.cpp:69
 #, kde-format
 msgid "User dbus not found. Support for user units disabled."
 msgstr ""
 "მომხმარებლის dbus-ის პოვნა შეუძლებელია. მომხმარებლის სერვისების მხარდაჭერა "
 "გაითიშება."
 
-#: src/mainwindow.cpp:77
+#: src/mainwindow.cpp:79
 #, kde-format
 msgid "All"
 msgstr "ყველა"
 
-#: src/mainwindow.cpp:78
+#: src/mainwindow.cpp:80
 #, kde-format
 msgid "Services"
 msgstr "სერვისები"
 
-#: src/mainwindow.cpp:79
+#: src/mainwindow.cpp:81
 #, kde-format
 msgid "Automounts"
 msgstr "ავტომიმაგრებები"
 
-#: src/mainwindow.cpp:80
+#: src/mainwindow.cpp:82
 #, kde-format
 msgid "Devices"
 msgstr "მოწყობილობა"
 
-#: src/mainwindow.cpp:81
+#: src/mainwindow.cpp:83
 #, kde-format
 msgid "Mounts"
 msgstr "მიმაგრებები"
 
-#: src/mainwindow.cpp:82
+#: src/mainwindow.cpp:84
 #, kde-format
 msgid "Paths"
 msgstr "კონტურები"
 
-#: src/mainwindow.cpp:83
+#: src/mainwindow.cpp:85
 #, kde-format
 msgid "Scopes"
 msgstr "ფარგლები"
 
-#: src/mainwindow.cpp:84
+#: src/mainwindow.cpp:86
 #, kde-format
 msgid "Slices"
 msgstr "ფენები"
 
-#: src/mainwindow.cpp:85
+#: src/mainwindow.cpp:87
 #, kde-format
 msgid "Sockets"
 msgstr "სოკეტები"
 
-#: src/mainwindow.cpp:86
+#: src/mainwindow.cpp:88
 #, kde-format
 msgid "Swaps"
 msgstr "სვოპები"
 
-#: src/mainwindow.cpp:87
+#: src/mainwindow.cpp:89
 #, kde-format
 msgid "Targets"
 msgstr "სამიზნეები"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabTimers)
-#: src/mainwindow.cpp:88 src/mainwindow.ui:531
+#: src/mainwindow.cpp:90 src/mainwindow.ui:531
 #, kde-format
 msgid "Timers"
 msgstr "ტაიმერები"
 
-#: src/mainwindow.cpp:299
+#: src/mainwindow.cpp:297
 #, kde-format
 msgid "Session ID"
 msgstr "სესიის ID"
 
-#: src/mainwindow.cpp:300
+#: src/mainwindow.cpp:298
 #, kde-format
 msgid "Session Object Path"
 msgstr "სესიის ობიექტის ბილიკი"
 
-#: src/mainwindow.cpp:301
+#: src/mainwindow.cpp:299
 #, kde-format
 msgid "State"
 msgstr "State"
 
-#: src/mainwindow.cpp:302
+#: src/mainwindow.cpp:300
 #, kde-format
 msgid "User ID"
 msgstr "მომხმარებლის ID"
 
-#: src/mainwindow.cpp:303
+#: src/mainwindow.cpp:301
 #, kde-format
 msgid "User Name"
 msgstr "მომხმარებლის სახელი"
 
-#: src/mainwindow.cpp:304
+#: src/mainwindow.cpp:302
 #, kde-format
 msgid "Seat ID"
 msgstr "დასაჯდომი ადგილის ID"
 
-#: src/mainwindow.cpp:326
+#: src/mainwindow.cpp:324
 #, kde-format
 msgid "Timer"
 msgstr "წამმზომი"
 
-#: src/mainwindow.cpp:327
+#: src/mainwindow.cpp:325
 #, kde-format
 msgid "Next"
 msgstr "შემდეგი"
 
-#: src/mainwindow.cpp:328
+#: src/mainwindow.cpp:326
 #, kde-format
 msgid "Left"
 msgstr "მარცხენა"
 
-#: src/mainwindow.cpp:329
+#: src/mainwindow.cpp:327
 #, kde-format
 msgid "Last"
 msgstr "ბოლო"
 
-#: src/mainwindow.cpp:330
+#: src/mainwindow.cpp:328
 #, kde-format
 msgid "Passed"
 msgstr "გაიარა"
 
-#: src/mainwindow.cpp:331
+#: src/mainwindow.cpp:329
 #, kde-format
 msgid "Activates"
 msgstr "გაააქტიურებს"
 
-#: src/mainwindow.cpp:461
+#: src/mainwindow.cpp:459
 #, kde-format
 msgid "Unable to fetch sessions list: %1"
 msgstr "შეუძლებელია სესიების სიის გამოთხოვა: %1"
 
-#: src/mainwindow.cpp:633 src/mainwindow.cpp:639
+#: src/mainwindow.cpp:631 src/mainwindow.cpp:637
 #, kde-format
 msgctxt "First part of 'Total: %1, %2, %3'"
 msgid "1 unit"
@@ -270,7 +267,7 @@ msgid_plural "%1 units"
 msgstr[0] "1 სერვისი"
 msgstr[1] "%1 სერვისი"
 
-#: src/mainwindow.cpp:634 src/mainwindow.cpp:640
+#: src/mainwindow.cpp:632 src/mainwindow.cpp:638
 #, kde-format
 msgctxt "Second part of 'Total: %1, %2, %3'"
 msgid "1 active"
@@ -278,7 +275,7 @@ msgid_plural "%1 active"
 msgstr[0] "1 აქტიურია"
 msgstr[1] "%1 აქტიურია"
 
-#: src/mainwindow.cpp:635 src/mainwindow.cpp:641
+#: src/mainwindow.cpp:633 src/mainwindow.cpp:639
 #, kde-format
 msgctxt "Third part of 'Total: %1, %2, %3'"
 msgid "1 displayed"
@@ -286,223 +283,213 @@ msgid_plural "%1 displayed"
 msgstr[0] "1 ნაჩვენებია"
 msgstr[1] "%1 ნაჩვენებია"
 
-#: src/mainwindow.cpp:637 src/mainwindow.cpp:643
+#: src/mainwindow.cpp:635 src/mainwindow.cpp:641
 #, kde-format
 msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
 msgid "Total: %1, %2, %3"
 msgstr "სულ: %1, %2, %3"
 
-#: src/mainwindow.cpp:667 src/mainwindow.cpp:1408
+#: src/mainwindow.cpp:665 src/mainwindow.cpp:1429
 #, kde-format
 msgid "Unable to authenticate/execute the action: %1"
 msgstr "ქმედების ავთენტიკაციის/გაშვების შეცდომა: %1"
 
-#: src/mainwindow.cpp:821
+#: src/mainwindow.cpp:824
 #, kde-format
 msgid "&Refresh"
 msgstr "&განახლება"
 
-#: src/mainwindow.cpp:823
+#: src/mainwindow.cpp:826
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "განახლება"
 
-#: src/mainwindow.cpp:829
+#: src/mainwindow.cpp:832
 #, kde-format
 msgid "Start Unit"
 msgstr "სერვისის გაშვება"
 
-#: src/mainwindow.cpp:837
+#: src/mainwindow.cpp:840
 #, kde-format
 msgid "Stop Unit"
 msgstr "სერვისის გაჩერება"
 
-#: src/mainwindow.cpp:845
+#: src/mainwindow.cpp:848
 #, kde-format
 msgid "Reload Unit"
 msgstr "სერვისის თავიდან ჩატვირთვა"
 
-#: src/mainwindow.cpp:853
+#: src/mainwindow.cpp:856
 #, kde-format
 msgid "Restart Unit"
 msgstr "სერვისის თავიდან გაშვება"
 
-#: src/mainwindow.cpp:861
+#: src/mainwindow.cpp:864
 #, kde-format
 msgid "Enable Unit"
 msgstr "სერვისის ჩართვა"
 
-#: src/mainwindow.cpp:869
+#: src/mainwindow.cpp:872
 #, kde-format
 msgid "Disable Unit"
 msgstr "სერვისის გამორთვა"
 
-#: src/mainwindow.cpp:877
+#: src/mainwindow.cpp:880
 #, kde-format
 msgid "Mask Unit"
 msgstr "სერვისის შენიღბვა"
 
-#: src/mainwindow.cpp:885
+#: src/mainwindow.cpp:888
 #, kde-format
 msgid "Unmask Unit"
 msgstr "სერვისის ნიღბის მოხსნა"
 
-#: src/mainwindow.cpp:893
+#: src/mainwindow.cpp:896
 #, kde-format
 msgid "Re&load systemd"
 msgstr "Systemd-ის გადატვირთვა"
 
-#: src/mainwindow.cpp:894
+#: src/mainwindow.cpp:897
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all unit files"
 msgstr "ყველა სერვისის ფაილის თავიდან ჩასატვირთად დააწკაპუნეთ"
 
-#: src/mainwindow.cpp:902
+#: src/mainwindow.cpp:905
 #, kde-format
 msgid "Re-e&xecute systemd"
 msgstr "Systemd-ის თავიდან &გაშვება"
 
-#: src/mainwindow.cpp:903
+#: src/mainwindow.cpp:906
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the systemd daemon"
 msgstr "Systemd-ის დემონის თავიდან გასაშვებად დააწკაპუნეთ"
 
-#: src/mainwindow.cpp:911
+#: src/mainwindow.cpp:914
 #, kde-format
 msgid "Re&load user systemd"
 msgstr "მომხმარებლის Systemd-ის &თავიდან ჩატვირთვა"
 
-#: src/mainwindow.cpp:912
+#: src/mainwindow.cpp:915
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all user unit files"
 msgstr "მომხმარებლის ყველა სერვისის თავიდან ჩასატვირთად დააწკაპუნეთ"
 
-#: src/mainwindow.cpp:920
+#: src/mainwindow.cpp:923
 #, kde-format
 msgid "Re-e&xecute user systemd"
 msgstr "მოხმარებლის Systemd-ის თავიდან &გაშვება"
 
-#: src/mainwindow.cpp:921
+#: src/mainwindow.cpp:924
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the user systemd daemon"
 msgstr "მომხმარებლის Systemd-ის დემონის თავიდან გასაშვებად დააწკაპუნეთ"
 
-#: src/mainwindow.cpp:929
+#: src/mainwindow.cpp:932
 #, kde-format
 msgid "Edit Unit File…"
 msgstr "სერვისის ფაილის ჩასწორება…"
 
-#: src/mainwindow.cpp:935
+#: src/mainwindow.cpp:938
 #, kde-format
 msgid "Edit Configuration File…"
 msgstr "კონფიგურაციის ფაილის ჩასწორება…"
 
-#: src/mainwindow.cpp:941
+#: src/mainwindow.cpp:944
 #, kde-format
 msgid "Open Man Page"
 msgstr "სახელმძღვანელოს გვერდის გახსნა"
 
-#: src/mainwindow.cpp:947
+#: src/mainwindow.cpp:950
+#, kde-format
+msgid "View Logs"
+msgstr ""
+
+#: src/mainwindow.cpp:956
 #, kde-format
 msgid "Activate Session"
 msgstr "სესიის აქტივაცია"
 
-#: src/mainwindow.cpp:955
+#: src/mainwindow.cpp:964
 #, kde-format
 msgid "Terminate Session"
 msgstr "სესიის დასრულება"
 
-#: src/mainwindow.cpp:963
+#: src/mainwindow.cpp:972
 #, kde-format
 msgid "Lock Session"
 msgstr "სესიის ჩაკეტვა"
 
-#: src/mainwindow.cpp:1100
+#: src/mainwindow.cpp:1124
 #, kde-format
 msgid "<b>VT:</b> %1"
 msgstr "<b>VT:</b> %1"
 
-#: src/mainwindow.cpp:1104
+#: src/mainwindow.cpp:1128
 #, kde-format
 msgid "<br><b>Remote host:</b> %1"
 msgstr "<br><b>დაშორებული ჰოსტი:</b> %1"
 
-#: src/mainwindow.cpp:1105
+#: src/mainwindow.cpp:1129
 #, kde-format
 msgid "<br><b>Remote user:</b> %1"
 msgstr "<br><b>დაშორებული მომხმარებელი:</b> %1"
 
-#: src/mainwindow.cpp:1107
+#: src/mainwindow.cpp:1131
 #, kde-format
 msgid "<br><b>Service:</b> %1"
 msgstr "<br><b>სერვისი:</b> %1"
 
-#: src/mainwindow.cpp:1108
+#: src/mainwindow.cpp:1132
 #, kde-format
 msgid "<br><b>Leader (PID):</b> %1"
 msgstr "<br><b>ლიდერი (PID):</b> %1"
 
-#: src/mainwindow.cpp:1111
+#: src/mainwindow.cpp:1135
 #, kde-format
 msgid "<br><b>Type:</b> %1"
 msgstr "<br><b>ტიპი:</b> %1"
 
-#: src/mainwindow.cpp:1113
+#: src/mainwindow.cpp:1137
 #, kde-format
 msgid " (display %1)"
 msgstr " (ჩვენება %1)"
 
-#: src/mainwindow.cpp:1122
+#: src/mainwindow.cpp:1146
 #, kde-format
 msgid "<br><b>Class:</b> %1"
 msgstr "<br><b>კლასი:</b> %1"
 
-#: src/mainwindow.cpp:1123
+#: src/mainwindow.cpp:1147
 #, kde-format
 msgid "<br><b>State:</b> %1"
 msgstr "<br><b>მდგომარეობა:</b> %1"
 
-#: src/mainwindow.cpp:1124
+#: src/mainwindow.cpp:1148
 #, kde-format
 msgid "<br><b>Scope:</b> %1"
 msgstr "<br><b>დიაპაზონი:</b> %1"
 
-#: src/mainwindow.cpp:1126
+#: src/mainwindow.cpp:1150
 #, kde-format
 msgid "<br><b>Created: </b>"
 msgstr "<br><b>შეიქმნა: </b>"
 
-#: src/mainwindow.cpp:1154
-#, kde-format
-msgid "%1: Systemd daemon reloaded..."
-msgstr "%1: Systemd-ის დემონი გადაიტვირთა..."
-
-#: src/mainwindow.cpp:1165
-#, kde-format
-msgid "%1: User daemon reloaded..."
-msgstr "%1: მომხმარებლის დემონი გადაიტვირთა..."
-
-#: src/mainwindow.cpp:1208
-#, kde-format
-msgid "%1: System units changed..."
-msgstr "%1: სისტემური სერვისები შეიცვალა..."
-
-#: src/mainwindow.cpp:1352
+#: src/mainwindow.cpp:1373
 #, kde-format
 msgid "Editing %1"
 msgstr "%1-ის ჩასწორება"
 
-#: src/mainwindow.cpp:1362
+#: src/mainwindow.cpp:1383
 #, kde-format
 msgid "Editing file: <code>%1</code>"
 msgstr "მიმდინარეობს ჩასწორება ფაილისთვის: <code>%1</code>"
 
-#: src/mainwindow.cpp:1387
+#: src/mainwindow.cpp:1408
 #, kde-format
 msgid ""
 "Failed to open the unit file:\n"
@@ -510,11 +497,6 @@ msgid ""
 msgstr ""
 "სერვისის ფაილის გახსნის შეცდომა:\n"
 "%1"
-
-#: src/mainwindow.cpp:1413
-#, kde-format
-msgid "%1: %2 successfully written..."
-msgstr "%1: %2 წარმატებით ჩაიწერა..."
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
 #: src/mainwindow.ui:14
@@ -628,7 +610,7 @@ msgid "Unit Toolbar"
 msgstr "სერვისის ხელსაწყოების ზოლი"
 
 #. i18n: ectx: ToolBar (confFileToolBar)
-#: src/systemdgenieui.rc:56
+#: src/systemdgenieui.rc:57
 #, kde-format
 msgid "Config File Toolbar"
 msgstr "კონფიგურაციის ფაილის ხელსაწყოების ზოლი"
@@ -697,6 +679,18 @@ msgstr "<hr><b>ჟურნალის ბოლო ჩანაწერებ
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>ამ სერვისისთვის ჟურნალის ჩანაწერები არ არსებობსს.</i>"
+
+#~ msgid "%1: Systemd daemon reloaded..."
+#~ msgstr "%1: Systemd-ის დემონი გადაიტვირთა..."
+
+#~ msgid "%1: User daemon reloaded..."
+#~ msgstr "%1: მომხმარებლის დემონი გადაიტვირთა..."
+
+#~ msgid "%1: System units changed..."
+#~ msgstr "%1: სისტემური სერვისები შეიცვალა..."
+
+#~ msgid "%1: %2 successfully written..."
+#~ msgstr "%1: %2 წარმატებით ჩაიწერა..."
 
 #~ msgid "Systemd management utility"
 #~ msgstr "Systemd-ის მართვის ხელსაწყო"

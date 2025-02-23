@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-22 00:44+0000\n"
+"POT-Creation-Date: 2025-02-23 00:43+0000\n"
 "PO-Revision-Date: 2025-01-30 18:05+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -97,7 +97,7 @@ msgstr ""
 "L'eseguibile KHelpCenter non è stato trovato nel percorso. Installa "
 "KHelpCenter per visualizzare le pagine di manuale."
 
-#: src/main.cpp:29 src/mainwindow.cpp:55
+#: src/main.cpp:29 src/mainwindow.cpp:57
 #, kde-format
 msgid "SystemdGenie"
 msgstr "SystemdGenie"
@@ -122,145 +122,145 @@ msgstr "Ragnar Thomsen"
 msgid "Maintainer"
 msgstr "Responsabile"
 
-#: src/mainwindow.cpp:55
+#: src/mainwindow.cpp:57
 #, kde-format
 msgid "Unable to contact the systemd daemon. Quitting..."
 msgstr "Impossibile contattare il demone systemd. Chiusura in corso..."
 
-#: src/mainwindow.cpp:67
+#: src/mainwindow.cpp:69
 #, kde-format
 msgid "User dbus not found. Support for user units disabled."
 msgstr ""
 "L'utente dbus non è stato trovato. Il supporto per le unità utente sarà "
 "disabilitato."
 
-#: src/mainwindow.cpp:77
+#: src/mainwindow.cpp:79
 #, kde-format
 msgid "All"
 msgstr "Tutte"
 
-#: src/mainwindow.cpp:78
+#: src/mainwindow.cpp:80
 #, kde-format
 msgid "Services"
 msgstr "Servizi"
 
-#: src/mainwindow.cpp:79
+#: src/mainwindow.cpp:81
 #, kde-format
 msgid "Automounts"
 msgstr "Montaggio automatico"
 
-#: src/mainwindow.cpp:80
+#: src/mainwindow.cpp:82
 #, kde-format
 msgid "Devices"
 msgstr "Dispositivi"
 
-#: src/mainwindow.cpp:81
+#: src/mainwindow.cpp:83
 #, kde-format
 msgid "Mounts"
 msgstr "Punti di montaggio"
 
-#: src/mainwindow.cpp:82
+#: src/mainwindow.cpp:84
 #, kde-format
 msgid "Paths"
 msgstr "Percorsi"
 
-#: src/mainwindow.cpp:83
+#: src/mainwindow.cpp:85
 #, kde-format
 msgid "Scopes"
 msgstr "Scope"
 
-#: src/mainwindow.cpp:84
+#: src/mainwindow.cpp:86
 #, kde-format
 msgid "Slices"
 msgstr "Slice"
 
-#: src/mainwindow.cpp:85
+#: src/mainwindow.cpp:87
 #, kde-format
 msgid "Sockets"
 msgstr "Socket"
 
-#: src/mainwindow.cpp:86
+#: src/mainwindow.cpp:88
 #, kde-format
 msgid "Swaps"
 msgstr "Swap"
 
-#: src/mainwindow.cpp:87
+#: src/mainwindow.cpp:89
 #, kde-format
 msgid "Targets"
 msgstr "Target"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabTimers)
-#: src/mainwindow.cpp:88 src/mainwindow.ui:531
+#: src/mainwindow.cpp:90 src/mainwindow.ui:531
 #, kde-format
 msgid "Timers"
 msgstr "Timer"
 
-#: src/mainwindow.cpp:299
+#: src/mainwindow.cpp:297
 #, kde-format
 msgid "Session ID"
 msgstr "ID sessione"
 
-#: src/mainwindow.cpp:300
+#: src/mainwindow.cpp:298
 #, kde-format
 msgid "Session Object Path"
 msgstr "Percorso oggetto di sessione"
 
-#: src/mainwindow.cpp:301
+#: src/mainwindow.cpp:299
 #, kde-format
 msgid "State"
 msgstr "Stato"
 
-#: src/mainwindow.cpp:302
+#: src/mainwindow.cpp:300
 #, kde-format
 msgid "User ID"
 msgstr "ID utente"
 
-#: src/mainwindow.cpp:303
+#: src/mainwindow.cpp:301
 #, kde-format
 msgid "User Name"
 msgstr "Nome utente"
 
-#: src/mainwindow.cpp:304
+#: src/mainwindow.cpp:302
 #, kde-format
 msgid "Seat ID"
 msgstr "ID postazione"
 
-#: src/mainwindow.cpp:326
+#: src/mainwindow.cpp:324
 #, kde-format
 msgid "Timer"
 msgstr "Timer"
 
-#: src/mainwindow.cpp:327
+#: src/mainwindow.cpp:325
 #, kde-format
 msgid "Next"
 msgstr "Successivo"
 
-#: src/mainwindow.cpp:328
+#: src/mainwindow.cpp:326
 #, kde-format
 msgid "Left"
 msgstr "Rimanente"
 
-#: src/mainwindow.cpp:329
+#: src/mainwindow.cpp:327
 #, kde-format
 msgid "Last"
 msgstr "Ultimo"
 
-#: src/mainwindow.cpp:330
+#: src/mainwindow.cpp:328
 #, kde-format
 msgid "Passed"
 msgstr "Trascorso"
 
-#: src/mainwindow.cpp:331
+#: src/mainwindow.cpp:329
 #, kde-format
 msgid "Activates"
 msgstr "Attiva"
 
-#: src/mainwindow.cpp:461
+#: src/mainwindow.cpp:459
 #, kde-format
 msgid "Unable to fetch sessions list: %1"
 msgstr ""
 
-#: src/mainwindow.cpp:633 src/mainwindow.cpp:639
+#: src/mainwindow.cpp:631 src/mainwindow.cpp:637
 #, kde-format
 msgctxt "First part of 'Total: %1, %2, %3'"
 msgid "1 unit"
@@ -268,7 +268,7 @@ msgid_plural "%1 units"
 msgstr[0] "un'unità"
 msgstr[1] "%1 unità"
 
-#: src/mainwindow.cpp:634 src/mainwindow.cpp:640
+#: src/mainwindow.cpp:632 src/mainwindow.cpp:638
 #, kde-format
 msgctxt "Second part of 'Total: %1, %2, %3'"
 msgid "1 active"
@@ -276,7 +276,7 @@ msgid_plural "%1 active"
 msgstr[0] "una attiva"
 msgstr[1] "%1 attive"
 
-#: src/mainwindow.cpp:635 src/mainwindow.cpp:641
+#: src/mainwindow.cpp:633 src/mainwindow.cpp:639
 #, kde-format
 msgctxt "Third part of 'Total: %1, %2, %3'"
 msgid "1 displayed"
@@ -284,224 +284,214 @@ msgid_plural "%1 displayed"
 msgstr[0] "una mostrata"
 msgstr[1] "%1 mostrate"
 
-#: src/mainwindow.cpp:637 src/mainwindow.cpp:643
+#: src/mainwindow.cpp:635 src/mainwindow.cpp:641
 #, kde-format
 msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
 msgid "Total: %1, %2, %3"
 msgstr "Totale: %1, %2, %3"
 
-#: src/mainwindow.cpp:667 src/mainwindow.cpp:1408
+#: src/mainwindow.cpp:665 src/mainwindow.cpp:1429
 #, kde-format
 msgid "Unable to authenticate/execute the action: %1"
 msgstr "Impossibile autenticare/eseguire l'azione: %1"
 
-#: src/mainwindow.cpp:821
+#: src/mainwindow.cpp:824
 #, kde-format
 msgid "&Refresh"
 msgstr "Aggio&rna"
 
-#: src/mainwindow.cpp:823
+#: src/mainwindow.cpp:826
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Aggiorna"
 
-#: src/mainwindow.cpp:829
+#: src/mainwindow.cpp:832
 #, kde-format
 msgid "Start Unit"
 msgstr "Avvia unità"
 
-#: src/mainwindow.cpp:837
+#: src/mainwindow.cpp:840
 #, kde-format
 msgid "Stop Unit"
 msgstr "Ferma unità"
 
-#: src/mainwindow.cpp:845
+#: src/mainwindow.cpp:848
 #, kde-format
 msgid "Reload Unit"
 msgstr "Ricarica unità"
 
-#: src/mainwindow.cpp:853
+#: src/mainwindow.cpp:856
 #, kde-format
 msgid "Restart Unit"
 msgstr "Riavvia unità"
 
-#: src/mainwindow.cpp:861
+#: src/mainwindow.cpp:864
 #, kde-format
 msgid "Enable Unit"
 msgstr "Abilita unità"
 
-#: src/mainwindow.cpp:869
+#: src/mainwindow.cpp:872
 #, kde-format
 msgid "Disable Unit"
 msgstr "Disabilita unità"
 
-#: src/mainwindow.cpp:877
+#: src/mainwindow.cpp:880
 #, kde-format
 msgid "Mask Unit"
 msgstr "Maschera unità"
 
-#: src/mainwindow.cpp:885
+#: src/mainwindow.cpp:888
 #, kde-format
 msgid "Unmask Unit"
 msgstr "Smaschera unità"
 
-#: src/mainwindow.cpp:893
+#: src/mainwindow.cpp:896
 #, kde-format
 msgid "Re&load systemd"
 msgstr "Ri&carica systemd"
 
-#: src/mainwindow.cpp:894
+#: src/mainwindow.cpp:897
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all unit files"
 msgstr "Fai clic per ricaricare tutti i file di unità"
 
-#: src/mainwindow.cpp:902
+#: src/mainwindow.cpp:905
 #, kde-format
 msgid "Re-e&xecute systemd"
 msgstr "Rie&segui systemd"
 
-#: src/mainwindow.cpp:903
+#: src/mainwindow.cpp:906
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the systemd daemon"
 msgstr "Fai clic per rieseguire il demone systemd"
 
-#: src/mainwindow.cpp:911
+#: src/mainwindow.cpp:914
 #, kde-format
 msgid "Re&load user systemd"
 msgstr "Ri&carica systemd utente"
 
-#: src/mainwindow.cpp:912
+#: src/mainwindow.cpp:915
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all user unit files"
 msgstr "Fai clic per ricaricare tutti i file di unità utente"
 
-#: src/mainwindow.cpp:920
+#: src/mainwindow.cpp:923
 #, kde-format
 msgid "Re-e&xecute user systemd"
 msgstr "Rie&segui systemd utente"
 
-#: src/mainwindow.cpp:921
+#: src/mainwindow.cpp:924
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the user systemd daemon"
 msgstr "Fai clic per rieseguire il demone systemd utente"
 
-#: src/mainwindow.cpp:929
+#: src/mainwindow.cpp:932
 #, kde-format
 msgid "Edit Unit File…"
 msgstr "Modifica file dell'unità…"
 
-#: src/mainwindow.cpp:935
+#: src/mainwindow.cpp:938
 #, kde-format
 msgid "Edit Configuration File…"
 msgstr "Modifica file di configurazione…"
 
-#: src/mainwindow.cpp:941
+#: src/mainwindow.cpp:944
 #, kde-format
 msgid "Open Man Page"
 msgstr "Apri pagina di manuale"
 
-#: src/mainwindow.cpp:947
+#: src/mainwindow.cpp:950
+#, kde-format
+msgid "View Logs"
+msgstr ""
+
+#: src/mainwindow.cpp:956
 #, kde-format
 msgid "Activate Session"
 msgstr "Attiva sessione"
 
-#: src/mainwindow.cpp:955
+#: src/mainwindow.cpp:964
 #, kde-format
 msgid "Terminate Session"
 msgstr "Termina sessione"
 
-#: src/mainwindow.cpp:963
+#: src/mainwindow.cpp:972
 #, kde-format
 msgid "Lock Session"
 msgstr "Blocca sessione"
 
-#: src/mainwindow.cpp:1100
+#: src/mainwindow.cpp:1124
 #, kde-format
 msgid "<b>VT:</b> %1"
 msgstr "<b>VT:</b> %1"
 
-#: src/mainwindow.cpp:1104
+#: src/mainwindow.cpp:1128
 #, kde-format
 msgid "<br><b>Remote host:</b> %1"
 msgstr "<br><b>Host remoto:</b> %1"
 
-#: src/mainwindow.cpp:1105
+#: src/mainwindow.cpp:1129
 #, kde-format
 msgid "<br><b>Remote user:</b> %1"
 msgstr "<br><b>Utente remoto:</b> %1"
 
-#: src/mainwindow.cpp:1107
+#: src/mainwindow.cpp:1131
 #, kde-format
 msgid "<br><b>Service:</b> %1"
 msgstr "<br><b>Servizio:</b> %1"
 
-#: src/mainwindow.cpp:1108
+#: src/mainwindow.cpp:1132
 #, kde-format
 msgid "<br><b>Leader (PID):</b> %1"
 msgstr "<br><b>Leader (PID):</b> %1"
 
-#: src/mainwindow.cpp:1111
+#: src/mainwindow.cpp:1135
 #, kde-format
 msgid "<br><b>Type:</b> %1"
 msgstr "<br><b>Tipo:</b> %1"
 
-#: src/mainwindow.cpp:1113
+#: src/mainwindow.cpp:1137
 #, kde-format
 msgid " (display %1)"
 msgstr " (schermo %1)"
 
-#: src/mainwindow.cpp:1122
+#: src/mainwindow.cpp:1146
 #, kde-format
 msgid "<br><b>Class:</b> %1"
 msgstr "<br><b>Classe:</b> %1"
 
-#: src/mainwindow.cpp:1123
+#: src/mainwindow.cpp:1147
 #, kde-format
 msgid "<br><b>State:</b> %1"
 msgstr "<br><b>Stato:</b> %1"
 
-#: src/mainwindow.cpp:1124
+#: src/mainwindow.cpp:1148
 #, kde-format
 msgid "<br><b>Scope:</b> %1"
 msgstr "<br><b>Scope:</b> %1"
 
-#: src/mainwindow.cpp:1126
+#: src/mainwindow.cpp:1150
 #, kde-format
 msgid "<br><b>Created: </b>"
 msgstr "<br><b>Creato: </b>"
 
-#: src/mainwindow.cpp:1154
-#, kde-format
-msgid "%1: Systemd daemon reloaded..."
-msgstr "%1: demone systemd ricaricato..."
-
-#: src/mainwindow.cpp:1165
-#, kde-format
-msgid "%1: User daemon reloaded..."
-msgstr "%1: demone utente ricaricato..."
-
-#: src/mainwindow.cpp:1208
-#, kde-format
-msgid "%1: System units changed..."
-msgstr "%1: unità di sistema modificate..."
-
-#: src/mainwindow.cpp:1352
+#: src/mainwindow.cpp:1373
 #, kde-format
 msgid "Editing %1"
 msgstr "Modifica di %1"
 
-#: src/mainwindow.cpp:1362
+#: src/mainwindow.cpp:1383
 #, fuzzy, kde-format
 #| msgid "Editing file: %1"
 msgid "Editing file: <code>%1</code>"
 msgstr "Modifica del file: %1"
 
-#: src/mainwindow.cpp:1387
+#: src/mainwindow.cpp:1408
 #, kde-format
 msgid ""
 "Failed to open the unit file:\n"
@@ -509,11 +499,6 @@ msgid ""
 msgstr ""
 "Apertura del file di unità non riuscita:\n"
 "%1"
-
-#: src/mainwindow.cpp:1413
-#, kde-format
-msgid "%1: %2 successfully written..."
-msgstr "%1: %2 scritto correttamente..."
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
 #: src/mainwindow.ui:14
@@ -632,7 +617,7 @@ msgid "Unit Toolbar"
 msgstr "Barra degli strumenti dell'unità"
 
 #. i18n: ectx: ToolBar (confFileToolBar)
-#: src/systemdgenieui.rc:56
+#: src/systemdgenieui.rc:57
 #, kde-format
 msgid "Config File Toolbar"
 msgstr "Barra degli strumenti dei file di configurazione"
@@ -701,6 +686,18 @@ msgstr "<hr><b>Ultime voci del registro:</b>"
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>Nessuna voce di registro trovata per questa unità.</i>"
+
+#~ msgid "%1: Systemd daemon reloaded..."
+#~ msgstr "%1: demone systemd ricaricato..."
+
+#~ msgid "%1: User daemon reloaded..."
+#~ msgstr "%1: demone utente ricaricato..."
+
+#~ msgid "%1: System units changed..."
+#~ msgstr "%1: unità di sistema modificate..."
+
+#~ msgid "%1: %2 successfully written..."
+#~ msgstr "%1: %2 scritto correttamente..."
 
 #~ msgid "Systemd management utility"
 #~ msgstr "Programma per la gestione di systemd"
