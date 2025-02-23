@@ -48,7 +48,6 @@ private:
     void setupConfFilelist();
     void setupTimerlist();
     void authServiceAction(const QString &, const QString &, const QString &, const QString &, const QList<QVariant> &);
-    bool eventFilter(QObject *, QEvent *) override;
     void updateUnitCount();
     void displayMsgWidget(KMessageWidget::MessageType type, QString msg);
     void setupActions();
@@ -66,7 +65,6 @@ private:
     SortFilterUnitModel *m_userUnitFilterModel;
     QStandardItemModel *m_timerModel;
     ConfigFileModel *const m_configFileModel;
-    QVector<SystemdSession> m_sessionList;
     QString m_userBusPath;
     int systemdVersion;
     int lastSessionRowChecked = -1;

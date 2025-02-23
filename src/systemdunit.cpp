@@ -22,22 +22,6 @@ const QDBusArgument &operator>>(const QDBusArgument &argument, SystemdUnit &unit
     return argument;
 }
 
-QDBusArgument &operator<<(QDBusArgument &argument, const SystemdSession &session)
-{
-    argument.beginStructure();
-    argument << session.session_id << session.user_id << session.user_name << session.seat_id << session.session_path;
-    argument.endStructure();
-    return argument;
-}
-
-const QDBusArgument &operator>>(const QDBusArgument &argument, SystemdSession &session)
-{
-    argument.beginStructure();
-    argument >> session.session_id >> session.user_id >> session.user_name >> session.seat_id >> session.session_path;
-    argument.endStructure();
-    return argument;
-}
-
 QDBusArgument &operator<<(QDBusArgument &argument, const UnitFile &unitFile)
 {
     argument.beginStructure();
