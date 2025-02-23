@@ -15,6 +15,7 @@
 #include <QQmlApplicationEngine>
 #include <qdbusmetatype.h>
 
+#include "loginddbustypes.h"
 #include "mainwindow.h"
 #include "systemdgenie_version.h"
 #include "systemdunit.h"
@@ -60,8 +61,15 @@ int main(int argc, char *argv[])
     qDBusRegisterMetaType<SystemdUnit>();
     qDBusRegisterMetaType<QList<SystemdUnit>>();
 
-    qDBusRegisterMetaType<SystemdSession>();
-    qDBusRegisterMetaType<QList<SystemdSession>>();
+    qDBusRegisterMetaType<SessionInfo>();
+    qDBusRegisterMetaType<SessionInfoList>();
+    qDBusRegisterMetaType<UserInfo>();
+    qDBusRegisterMetaType<UserInfoList>();
+    qDBusRegisterMetaType<NamedSeatPath>();
+    qDBusRegisterMetaType<NamedSeatPathList>();
+    qDBusRegisterMetaType<NamedUserPath>();
+    qDBusRegisterMetaType<Inhibitor>();
+    qDBusRegisterMetaType<InhibitorList>();
 
     qDBusRegisterMetaType<UnitFile>();
     qDBusRegisterMetaType<QList<UnitFile>>();

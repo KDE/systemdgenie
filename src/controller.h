@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "sessionmodel.h"
 #include "systemdunit.h"
 #include "unitmodel.h"
 #include <QObject>
@@ -11,7 +12,6 @@
 
 class OrgFreedesktopSystemd1ManagerInterface;
 class OrgFreedesktopLogin1ManagerInterface;
-class OrgFreedesktopLogin1SessionInterface;
 
 class Controller : public QObject
 {
@@ -21,14 +21,14 @@ class Controller : public QObject
 
     Q_PROPERTY(UnitModel *systemUnitModel READ systemUnitModel CONSTANT)
     Q_PROPERTY(UnitModel *userUnitModel READ systemUnitModel CONSTANT)
-    Q_PROPERTY(QStandardItemModel *sessionModel READ sessionModel CONSTANT)
+    Q_PROPERTY(SessionModel *sessionModel READ sessionModel CONSTANT)
 
 public:
     explicit Controller(QObject *parent = nullptr);
 
     UnitModel *systemUnitModel() const;
     UnitModel *userUnitModel() const;
-    QStandardItemModel *sessionModel() const;
+    SessionModel *sessionModel() const;
 
     SystemdUnit systemUnit(int index) const;
     SystemdUnit userUnit(int index) const;
@@ -63,18 +63,13 @@ private:
     Q_SLOT void slotSystemPropertiesChanged(const QString &iface, const QVariantMap &changedProps, const QStringList &invalidatedProps);
     void slotSystemSystemdReloading(bool status);
 
-    // login slots
-    Q_SLOT void slotLoginPropertiesChanged(const QString &iface, const QVariantMap &changedProps, const QStringList &invalidatedProps);
-
     UnitModel *m_systemUnitModel;
     UnitModel *m_userUnitModel;
-    QStandardItemModel *const m_sessionModel;
-    QVector<SystemdSession> m_sessionList;
+    SessionModel *const m_sessionModel;
     QString m_userBusPath;
     int m_noActUserUnits = 0;
     int m_noActSystemUnits = 0;
 
     OrgFreedesktopSystemd1ManagerInterface *const m_systemManagerInterface;
     OrgFreedesktopSystemd1ManagerInterface *m_sessionManagerInterface = nullptr;
-    OrgFreedesktopLogin1ManagerInterface *const m_loginManagerInterface;
 };
