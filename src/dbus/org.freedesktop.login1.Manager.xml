@@ -193,7 +193,7 @@
   </method>
   <method name="ListSessions">
    <arg type="a(susso)" name="sessions" direction="out"/>
-   <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QList&lt;SystemdSession&gt;"/>
+   <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="SessionInfoList"/>
   </method>
   <method name="ListUsers">
    <arg type="a(uso)" name="users" direction="out"/>
