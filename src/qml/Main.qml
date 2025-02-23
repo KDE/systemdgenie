@@ -60,6 +60,13 @@ Kirigami.ApplicationWindow {
         onTriggered: root.pageStack.replace(Qt.resolvedUrl('./ConfigFilesPage.qml'));
     }
 
+    Kirigami.Action {
+        id: sessionsAction
+
+        text: i18nc("@action:button", "Sessions")
+        onTriggered: root.pageStack.replace(Qt.resolvedUrl('./SessionsPage.qml'));
+    }
+
     globalDrawer: Kirigami.OverlayDrawer {
         id: drawer
 
@@ -130,7 +137,7 @@ Kirigami.ApplicationWindow {
                     Repeater {
                         id: actionsRepeater
 
-                        model: [systemUnitsAction, userUnitsAction, configFilesAction]
+                        model: [systemUnitsAction, userUnitsAction, configFilesAction, sessionsAction]
 
                         delegate: Delegates.RoundedItemDelegate {
                             required property var modelData

@@ -79,9 +79,7 @@ QHash<int, QByteArray> UnitModel::roleNames() const
 
 QVariant UnitModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid()) {
-        return QVariant();
-    }
+    Q_ASSERT(checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid));
 
     const auto &unit = m_units.at(index.row());
 
@@ -153,6 +151,7 @@ QVariant UnitModel::data(const QModelIndex &index, int role) const
         const QString selUnitFile = unit.unit_file;
 
         QString toolTipText;
+        toolTipText.append(QStringLiteral("<FONT>"));
         toolTipText.append(QStringLiteral("<b>%1</b><hr>").arg(selUnit));
 
         // Create a DBus interface

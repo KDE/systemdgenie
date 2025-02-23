@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "sessionsfetchjob.h"
+#include "loginddbustypes.h"
 
 #include <QDBusMessage>
 #include <QDBusPendingCallWatcher>
@@ -23,7 +24,7 @@ void SessionsFetchJob::start()
 
 void SessionsFetchJob::slotListSessionsFinished(QDBusPendingCallWatcher *call)
 {
-    QDBusPendingReply<QList<SystemdSession>> reply = *call;
+    QDBusPendingReply<SessionInfoList> reply = *call;
     if (reply.isError()) {
         setErrorText(reply.error().message());
         setError(KJob::UserDefinedError);
@@ -37,7 +38,7 @@ void SessionsFetchJob::slotListSessionsFinished(QDBusPendingCallWatcher *call)
     call->deleteLater();
 }
 
-QList<SystemdSession> SessionsFetchJob::sessions() const
+SessionInfoList SessionsFetchJob::sessions() const
 {
     return m_sessions;
 }

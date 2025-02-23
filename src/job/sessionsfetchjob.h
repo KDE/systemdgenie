@@ -4,7 +4,7 @@
 #pragma once
 
 #include "login_manager_interface.h"
-#include "systemdunit.h"
+#include "loginddbustypes.h"
 #include <KJob>
 
 class SessionsFetchJob : public KJob
@@ -16,11 +16,11 @@ public:
 
     void start() override;
 
-    QVector<SystemdSession> sessions() const;
+    SessionInfoList sessions() const;
 
 private:
     void slotListSessionsFinished(QDBusPendingCallWatcher *call);
 
-    QVector<SystemdSession> m_sessions;
+    SessionInfoList m_sessions;
     OrgFreedesktopLogin1ManagerInterface *const m_loginManagerInterface;
 };

@@ -7,7 +7,7 @@ set_source_files_properties(dbus/org.freedesktop.systemd1.Manager.xml PROPERTIES
 
 set_source_files_properties(dbus/org.freedesktop.login1.Manager.xml PROPERTIES
     NO_NAMESPACE TRUE
-    INCLUDE "systemdunit.h"
+    INCLUDE "loginddbustypes.h"
 )
 
 set_source_files_properties(dbus/org.freedesktop.login1.Session.xml PROPERTIES
@@ -34,16 +34,20 @@ set(systemdgenie_SRCS
     main.cpp
     mainwindow.cpp
     unitmodel.cpp
-    unitsfetchjob.cpp
-    unitsfetchjob.h
-    sessionsfetchjob.cpp
-    sessionsfetchjob.h
     sortfilterunitmodel.cpp
     systemdunit.cpp
     configfilemodel.cpp
     configfilemodel.h
     controller.cpp
     controller.h
+    sessionmodel.cpp
+    sessionmodel.h
+
+    job/sessionsfetchjob.cpp
+    job/sessionsfetchjob.h
+    job/unitsfetchjob.cpp
+    job/unitsfetchjob.h
+
     ${systemd_DBUS_SRCS}
 )
 
@@ -63,6 +67,7 @@ qt_target_qml_sources(systemdgenie
         qml/TableDelegate.qml
         qml/TablePage.qml
         qml/UnitsPage.qml
+        qml/SessionsPage.qml
 )
 
 target_link_libraries(systemdgenie PRIVATE

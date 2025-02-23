@@ -31,10 +31,8 @@
 
 #include "configfilemodel.h"
 #include "controller.h"
-#include "sessionsfetchjob.h"
 #include "sortfilterunitmodel.h"
 #include "systemdunit.h"
-#include "unitsfetchjob.h"
 
 using namespace Qt::StringLiterals;
 
@@ -189,9 +187,6 @@ void MainWindow::setupSessionlist()
 {
     // Sets up the session list initially
 
-    // Install eventfilter to capture mouse move events
-    ui.tblSessions->viewport()->installEventFilter(this);
-
     ui.tblSessions->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
     // Set model for QTableView (should be called after headers are set)
@@ -208,9 +203,6 @@ void MainWindow::setupTimerlist()
 
     // Setup model for timer list
     m_timerModel = new QStandardItemModel(this);
-
-    // Install eventfilter to capture mouse move events
-    // ui.tblTimers->viewport()->installEventFilter(this);
 
     // Set header row
     m_timerModel->setHorizontalHeaderItem(0, new QStandardItem(i18n("Timer")));
@@ -870,80 +862,6 @@ void MainWindow::slotSessionContextMenu(const QPoint &pos)
 
     QMenu *popup = static_cast<QMenu *>(factory()->container(QStringLiteral("context_menu_session"), this));
     popup->popup(QCursor::pos());
-}
-
-bool MainWindow::eventFilter(QObject *obj, QEvent *event)
-{
-    // Eventfilter for catching mouse move events over session list
-    // Used for dynamically generating tooltips
-
-    if (event->type() == QEvent::MouseMove && obj->parent()->objectName() == QLatin1String("tblSessions")) {
-        // Session list
-        QMouseEvent *me = static_cast<QMouseEvent *>(event);
-        QModelIndex inSessionModel = ui.tblSessions->indexAt(me->pos());
-        if (!inSessionModel.isValid())
-            return false;
-
-        if (m_controller->sessionModel()->itemFromIndex(inSessionModel)->row() != lastSessionRowChecked) {
-            // Cursor moved to a different row. Only build tooltips when moving
-            // cursor to a new row to avoid excessive DBus calls.
-
-            QString selSession = ui.tblSessions->model()->index(ui.tblSessions->indexAt(me->pos()).row(), 0).data().toString();
-            QDBusObjectPath spath = QDBusObjectPath(ui.tblSessions->model()->index(ui.tblSessions->indexAt(me->pos()).row(), 1).data().toString());
-
-            QString toolTipText;
-            toolTipText.append(QStringLiteral("<FONT COLOR=white>"));
-            toolTipText.append(QStringLiteral("<b>%1</b><hr>").arg(selSession));
-
-            // Use the DBus interface to get session properties
-            if (getDbusProperty(QStringLiteral("test"), logdSession, spath) != QLatin1String("invalidIface")) {
-                // Session has a valid session DBus object
-                toolTipText.append(i18n("<b>VT:</b> %1", getDbusProperty(QStringLiteral("VTNr"), logdSession, spath).toString()));
-
-                QString remoteHost = getDbusProperty(QStringLiteral("RemoteHost"), logdSession, spath).toString();
-                if (getDbusProperty(QStringLiteral("Remote"), logdSession, spath).toBool()) {
-                    toolTipText.append(i18n("<br><b>Remote host:</b> %1", remoteHost));
-                    toolTipText.append(i18n("<br><b>Remote user:</b> %1", getDbusProperty(QStringLiteral("RemoteUser"), logdSession, spath).toString()));
-                }
-                toolTipText.append(i18n("<br><b>Service:</b> %1", getDbusProperty(QStringLiteral("Service"), logdSession, spath).toString()));
-                toolTipText.append(i18n("<br><b>Leader (PID):</b> %1", getDbusProperty(QStringLiteral("Leader"), logdSession, spath).toString()));
-
-                QString type = getDbusProperty(QStringLiteral("Type"), logdSession, spath).toString();
-                toolTipText.append(i18n("<br><b>Type:</b> %1", type));
-                if (type == QLatin1String("x11"))
-                    toolTipText.append(i18n(" (display %1)", getDbusProperty(QStringLiteral("Display"), logdSession, spath).toString()));
-                else if (type == QLatin1String("tty")) {
-                    QString path, tty = getDbusProperty(QStringLiteral("TTY"), logdSession, spath).toString();
-                    if (!tty.isEmpty())
-                        path = tty;
-                    else if (!remoteHost.isEmpty())
-                        path = QStringLiteral("%1@%2").arg(getDbusProperty(QStringLiteral("Name"), logdSession, spath).toString()).arg(remoteHost);
-                    toolTipText.append(QStringLiteral(" (%1)").arg(path));
-                }
-                toolTipText.append(i18n("<br><b>Class:</b> %1", getDbusProperty(QStringLiteral("Class"), logdSession, spath).toString()));
-                toolTipText.append(i18n("<br><b>State:</b> %1", getDbusProperty(QStringLiteral("State"), logdSession, spath).toString()));
-                toolTipText.append(i18n("<br><b>Scope:</b> %1", getDbusProperty(QStringLiteral("Scope"), logdSession, spath).toString()));
-
-                toolTipText.append(i18n("<br><b>Created: </b>"));
-                if (getDbusProperty(QStringLiteral("Timestamp"), logdSession, spath).toULongLong() == 0)
-                    toolTipText.append(QStringLiteral("n/a"));
-                else {
-                    QDateTime time;
-                    time.setMSecsSinceEpoch(getDbusProperty(QStringLiteral("Timestamp"), logdSession, spath).toULongLong() / 1000);
-                    toolTipText.append(time.toString());
-                }
-            }
-
-            toolTipText.append(QStringLiteral("</FONT"));
-            m_controller->sessionModel()->itemFromIndex(inSessionModel)->setToolTip(toolTipText);
-
-            lastSessionRowChecked = m_controller->sessionModel()->itemFromIndex(inSessionModel)->row();
-            return true;
-
-        } // Row was different
-    }
-    return false;
-    // return true;
 }
 
 void MainWindow::slotLeSearchUnitChanged(QString term)

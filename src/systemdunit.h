@@ -40,27 +40,6 @@ Q_DECLARE_METATYPE(SystemdUnit)
 QDBusArgument &operator<<(QDBusArgument &argument, const SystemdUnit &unit);
 const QDBusArgument &operator>>(const QDBusArgument &argument, SystemdUnit &unit);
 
-// struct for storing sessions retrieved from logind via DBus
-struct SystemdSession {
-    QString session_id, user_name, seat_id, session_state;
-    QDBusObjectPath session_path;
-    uint user_id;
-
-    // The == operator must be provided to use contains() and indexOf()
-    // on QLists of this struct
-    bool operator==(const SystemdSession &right) const
-    {
-        if (session_id == right.session_id)
-            return true;
-        else
-            return false;
-    }
-};
-Q_DECLARE_METATYPE(SystemdSession)
-
-QDBusArgument &operator<<(QDBusArgument &argument, const SystemdSession &session);
-const QDBusArgument &operator>>(const QDBusArgument &argument, SystemdSession &session);
-
 enum dbusBus {
     sys,
     session,

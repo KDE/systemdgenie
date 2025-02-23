@@ -8,11 +8,8 @@
 #include <KColorScheme>
 #include <KLocalizedString>
 
-#include "login_manager_interface.h"
-#include "login_session_interface.h"
-#include "sessionsfetchjob.h"
+#include "job/unitsfetchjob.h"
 #include "systemd_manager_interface.h"
-#include "unitsfetchjob.h"
 
 using namespace Qt::StringLiterals;
 
@@ -20,11 +17,9 @@ constexpr static const QLatin1StringView connSystemd = "org.freedesktop.systemd1
 
 Controller::Controller(QObject *parent)
     : QObject(parent)
-    , m_sessionModel(new QStandardItemModel(this))
+    , m_sessionModel(new SessionModel(this))
     , m_systemManagerInterface(
           new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd1"_s, u"/org/freedesktop/systemd1"_s, QDBusConnection::systemBus(), this))
-    , m_loginManagerInterface(
-          new OrgFreedesktopLogin1ManagerInterface(u"org.freedesktop.login1"_s, u"/org/freedesktop/login1"_s, QDBusConnection::systemBus(), this))
 {
     // Subscribe to dbus signals from systemd system daemon and connect them to slots.
     m_systemManagerInterface->Subscribe();
@@ -67,22 +62,6 @@ Controller::Controller(QObject *parent)
 
     m_systemUnitModel = new UnitModel(this);
     m_userUnitModel = new UnitModel(m_userBusPath, this);
-
-    // Set header row
-    m_sessionModel->setHorizontalHeaderItem(0, new QStandardItem(i18n("Session ID")));
-    m_sessionModel->setHorizontalHeaderItem(1, new QStandardItem(i18n("Session Object Path"))); // This column is hidden
-    m_sessionModel->setHorizontalHeaderItem(2, new QStandardItem(i18n("State")));
-    m_sessionModel->setHorizontalHeaderItem(3, new QStandardItem(i18n("User ID")));
-    m_sessionModel->setHorizontalHeaderItem(4, new QStandardItem(i18n("User Name")));
-    m_sessionModel->setHorizontalHeaderItem(5, new QStandardItem(i18n("Seat ID")));
-
-    connected = m_loginManagerInterface->connection().connect(u"org.freedesktop.login1"_s,
-                                                              {},
-                                                              u"org.freedesktop.DBus.Properties"_s,
-                                                              u"PropertiesChanged"_s,
-                                                              this,
-                                                              SLOT(slotLoginPropertiesChanged(QString, QVariantMap, QStringList)));
-    Q_ASSERT(connected);
 }
 
 UnitModel *Controller::systemUnitModel() const
@@ -95,7 +74,7 @@ UnitModel *Controller::userUnitModel() const
     return m_userUnitModel;
 }
 
-QStandardItemModel *Controller::sessionModel() const
+SessionModel *Controller::sessionModel() const
 {
     return m_sessionModel;
 }
@@ -108,6 +87,11 @@ int Controller::nonActiveUserUnits() const
 int Controller::nonActiveSystemUnits() const
 {
     return m_noActSystemUnits;
+}
+
+void Controller::slotRefreshSessionList()
+{
+    m_sessionModel->slotRefreshSessionList();
 }
 
 void Controller::slotRefreshSystemUnitsList()
@@ -152,81 +136,6 @@ void Controller::slotRefreshUnitsList(dbusBus bus)
             Q_EMIT systemUnitsRefreshed();
         }
     });
-    job->start();
-}
-
-void Controller::slotRefreshSessionList()
-{
-    // Updates the session list
-    qDebug() << "Refreshing session list...";
-
-    // clear list
-    m_sessionList.clear();
-
-    auto job = new SessionsFetchJob(m_loginManagerInterface);
-    connect(job, &SessionsFetchJob::finished, this, [this, job](KJob *) {
-        if (job->error()) {
-            Q_EMIT errorOccured(i18n("Unable to fetch sessions list: %1", job->error()));
-            return;
-        }
-
-        m_sessionList = job->sessions();
-
-        // Iterate through the new list and compare to model
-        for (const SystemdSession &s : m_sessionList) {
-            // This is needed to get the "State" property
-
-            QList<QStandardItem *> items = m_sessionModel->findItems(s.session_id, Qt::MatchExactly, 0);
-
-            auto session =
-                std::make_unique<OrgFreedesktopLogin1SessionInterface>(u"org.freedesktop.login1"_s, s.session_path.path(), QDBusConnection::systemBus());
-
-            if (items.isEmpty()) {
-                // New session discovered so add it to the model
-                QList<QStandardItem *> row;
-                row << new QStandardItem(s.session_id) << new QStandardItem(s.session_path.path()) << new QStandardItem(session->state())
-                    << new QStandardItem(QString::number(s.user_id)) << new QStandardItem(s.user_name) << new QStandardItem(s.seat_id);
-                m_sessionModel->appendRow(row);
-            } else {
-                m_sessionModel->item(items.at(0)->row(), 2)->setData(session->state(), Qt::DisplayRole);
-            }
-        }
-
-        // Check to see if any sessions were removed
-        if (m_sessionModel->rowCount() != m_sessionList.size()) {
-            QList<QPersistentModelIndex> indexes;
-            // Loop through model and compare to retrieved m_sessionList
-            for (int row = 0; row < m_sessionModel->rowCount(); ++row) {
-                SystemdSession session;
-                session.session_id = m_sessionModel->index(row, 0).data().toString();
-                if (!m_sessionList.contains(session)) {
-                    // Add removed units to list for deletion
-                    // qDebug() << "Unit removed: " << systemUnitModel->index(row,0).data().toString();
-                    indexes << m_sessionModel->index(row, 0);
-                }
-            }
-            // Delete the identified units from model
-            for (const QPersistentModelIndex &i : indexes)
-                m_sessionModel->removeRow(i.row());
-        }
-
-        // Update the text color in model
-        for (int row = 0; row < m_sessionModel->rowCount(); ++row) {
-            QBrush newcolor;
-            const KColorScheme scheme(QPalette::Normal);
-            if (m_sessionModel->data(m_sessionModel->index(row, 2), Qt::DisplayRole) == QLatin1String("active"))
-                newcolor = scheme.foreground(KColorScheme::PositiveText);
-            else if (m_sessionModel->data(m_sessionModel->index(row, 2), Qt::DisplayRole) == QLatin1String("closing"))
-                newcolor = scheme.foreground(KColorScheme::InactiveText);
-            else
-                newcolor = scheme.foreground(KColorScheme::NormalText);
-
-            for (int col = 0; col < m_sessionModel->columnCount(); ++col)
-                m_sessionModel->setData(m_sessionModel->index(row, col), QVariant(newcolor), Qt::ForegroundRole);
-        }
-        Q_EMIT sessionsRefreshed();
-    });
-
     job->start();
 }
 
@@ -296,16 +205,6 @@ void Controller::slotUserPropertiesChanged(const QString &iface, const QVariantM
 
     qDebug() << "userPropertiesChanged:" << iface; // << changedProps << invalidatedProps;
     slotRefreshUnitsList(user);
-}
-
-void Controller::slotLoginPropertiesChanged(const QString &iface, const QVariantMap &changedProps, const QStringList &invalidatedProps)
-{
-    Q_UNUSED(iface)
-    Q_UNUSED(changedProps)
-    Q_UNUSED(invalidatedProps)
-
-    // qDebug() << "Logind properties changed on iface " << iface_name;
-    slotRefreshSessionList();
 }
 
 void Controller::slotSystemUnitFilesChanged()
