@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-23 00:43+0000\n"
-"PO-Revision-Date: 2025-02-23 00:11+0100\n"
+"PO-Revision-Date: 2025-02-23 02:31+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -409,7 +409,7 @@ msgstr "Abrir página man"
 #: src/mainwindow.cpp:950
 #, kde-format
 msgid "View Logs"
-msgstr ""
+msgstr "Ver registros"
 
 #: src/mainwindow.cpp:956
 #, kde-format

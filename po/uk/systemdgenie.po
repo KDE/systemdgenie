@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-23 00:43+0000\n"
-"PO-Revision-Date: 2025-02-18 09:50+0200\n"
+"PO-Revision-Date: 2025-02-23 08:40+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -71,22 +71,19 @@ msgid "Systemd user daemon configuration"
 msgstr "Налаштовування фонової служби користувачів systemd"
 
 #: src/configfilemodel.cpp:112
-#, fuzzy, kde-format
-#| msgid "File"
+#, kde-format
 msgctxt "@title:column"
 msgid "File"
 msgstr "Файл"
 
 #: src/configfilemodel.cpp:114
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgctxt "@title:column"
 msgid "Modified"
 msgstr "Змінено"
 
 #: src/configfilemodel.cpp:116
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:column"
 msgid "Description"
 msgstr "Опис"
@@ -420,7 +417,7 @@ msgstr "Відкрити сторінку підручника"
 #: src/mainwindow.cpp:950
 #, kde-format
 msgid "View Logs"
-msgstr ""
+msgstr "Переглянути журнал"
 
 #: src/mainwindow.cpp:956
 #, kde-format

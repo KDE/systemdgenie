@@ -667,15 +667,3 @@ msgstr "<hr><b>最近日志条目：</b>"
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>未找到该单元的日志条目。</i>"
-
-#~ msgid "%1: Systemd daemon reloaded..."
-#~ msgstr "%1：Systemd 守护进程已重新加载..."
-
-#~ msgid "%1: User daemon reloaded..."
-#~ msgstr "%1：用户守护进程已重新加载..."
-
-#~ msgid "%1: System units changed..."
-#~ msgstr "%1：系统单元已更改..."
-
-#~ msgid "%1: %2 successfully written..."
-#~ msgstr "%1：%2 写入成功..."

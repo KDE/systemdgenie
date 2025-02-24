@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-23 00:43+0000\n"
-"PO-Revision-Date: 2025-02-22 08:43+0100\n"
+"PO-Revision-Date: 2025-02-23 08:13+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -412,7 +412,7 @@ msgstr "Odpri stran man"
 #: src/mainwindow.cpp:950
 #, kde-format
 msgid "View Logs"
-msgstr ""
+msgstr "Poglej dnevnike"
 
 #: src/mainwindow.cpp:956
 #, kde-format

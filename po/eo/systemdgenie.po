@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-23 00:43+0000\n"
-"PO-Revision-Date: 2025-02-22 21:54+0100\n"
+"PO-Revision-Date: 2025-02-23 13:36+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -103,7 +103,7 @@ msgstr "SystemdGenie"
 #: src/main.cpp:31
 #, kde-format
 msgid "Manage systemd units, timers, sessions and config files"
-msgstr ""
+msgstr "Administri systemd-unuojn, tempumilojn, seancojn kaj agorddosierojn"
 
 #: src/main.cpp:33
 #, kde-format
@@ -254,7 +254,7 @@ msgstr "Aktivigas"
 #: src/mainwindow.cpp:459
 #, kde-format
 msgid "Unable to fetch sessions list: %1"
-msgstr ""
+msgstr "Ne eblas alpreni seancliston: %1"
 
 #: src/mainwindow.cpp:631 src/mainwindow.cpp:637
 #, kde-format
@@ -404,7 +404,7 @@ msgstr "Malfermi Manlibran Paĝon"
 #: src/mainwindow.cpp:950
 #, kde-format
 msgid "View Logs"
-msgstr ""
+msgstr "Rigardi Protokolojn"
 
 #: src/mainwindow.cpp:956
 #, kde-format
@@ -675,15 +675,3 @@ msgstr "<hr><b>Lastaj protokolaj enskriboj:</b>"
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>Neniaj protokoloj trovitaj por ĉi tiu unuo.</i>"
-
-#~ msgid "%1: Systemd daemon reloaded..."
-#~ msgstr "%1: Systemd-demono reŝargita..."
-
-#~ msgid "%1: User daemon reloaded..."
-#~ msgstr "%1: Uzanta demono reŝargita..."
-
-#~ msgid "%1: System units changed..."
-#~ msgstr "%1: Sistemunuoj ŝanĝiĝis..."
-
-#~ msgid "%1: %2 successfully written..."
-#~ msgstr "%1: %2 sukcese skribita..."

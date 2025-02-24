@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-23 00:43+0000\n"
-"PO-Revision-Date: 2025-02-19 18:59+0100\n"
+"PO-Revision-Date: 2025-02-23 12:07+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -68,22 +68,19 @@ msgid "Systemd user daemon configuration"
 msgstr "Configuratie systemd-user-daemon"
 
 #: src/configfilemodel.cpp:112
-#, fuzzy, kde-format
-#| msgid "File"
+#, kde-format
 msgctxt "@title:column"
 msgid "File"
 msgstr "Bestand"
 
 #: src/configfilemodel.cpp:114
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgctxt "@title:column"
 msgid "Modified"
 msgstr "Gewijzigd"
 
 #: src/configfilemodel.cpp:116
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:column"
 msgid "Description"
 msgstr "Beschrijving"
@@ -408,7 +405,7 @@ msgstr "Man-pagina openen"
 #: src/mainwindow.cpp:950
 #, kde-format
 msgid "View Logs"
-msgstr ""
+msgstr "Logs bekijken"
 
 #: src/mainwindow.cpp:956
 #, kde-format

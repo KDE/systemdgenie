@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-23 00:43+0000\n"
-"PO-Revision-Date: 2025-02-18 22:09+0400\n"
+"PO-Revision-Date: 2025-02-23 19:11+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -70,22 +70,19 @@ msgid "Systemd user daemon configuration"
 msgstr "ضبط عفريت Systemd للمستخدم"
 
 #: src/configfilemodel.cpp:112
-#, fuzzy, kde-format
-#| msgid "File"
+#, kde-format
 msgctxt "@title:column"
 msgid "File"
 msgstr "ملف"
 
 #: src/configfilemodel.cpp:114
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgctxt "@title:column"
 msgid "Modified"
 msgstr "معدّل"
 
 #: src/configfilemodel.cpp:116
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:column"
 msgid "Description"
 msgstr "الوصف"
@@ -420,7 +417,7 @@ msgstr "افتح صفح مان"
 #: src/mainwindow.cpp:950
 #, kde-format
 msgid "View Logs"
-msgstr ""
+msgstr "اعرض السجل"
 
 #: src/mainwindow.cpp:956
 #, kde-format
