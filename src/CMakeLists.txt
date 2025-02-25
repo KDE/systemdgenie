@@ -38,8 +38,6 @@ set(systemdgenie_SRCS
     systemdunit.cpp
     configfilemodel.cpp
     configfilemodel.h
-    controller.cpp
-    controller.h
     sessionmodel.cpp
     sessionmodel.h
 

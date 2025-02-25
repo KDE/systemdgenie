@@ -199,6 +199,8 @@ void SessionModel::slotRefreshSessionList()
                 endInsertRows();
             }
         }
+
+        Q_EMIT sessionsRefreshed();
     });
 
     job->start();

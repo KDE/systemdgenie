@@ -30,15 +30,17 @@
 #include <unistd.h>
 
 #include "configfilemodel.h"
-#include "controller.h"
 #include "sortfilterunitmodel.h"
 #include "systemdunit.h"
+#include "unitmodel.h"
 
 using namespace Qt::StringLiterals;
 
 MainWindow::MainWindow(QWidget *parent)
     : KXmlGuiWindow(parent)
-    , m_controller(new Controller(parent))
+    , m_systemUnitModel(new UnitModel(parent))
+    , m_userUnitModel(new UnitModel(parent))
+    , m_sessionModel(new SessionModel(parent))
     , m_configFileModel(new ConfigFileModel(parent))
 {
     ui.setupUi(this);
@@ -54,6 +56,9 @@ MainWindow::MainWindow(QWidget *parent)
         KMessageBox::error(this, i18n("Unable to contact the systemd daemon. Quitting..."), i18n("SystemdGenie"));
         close();
     }
+
+    m_systemUnitModel->setType(UnitModel::SystemUnits);
+    m_userUnitModel->setType(UnitModel::UserUnits);
 
     // Search for user dbus.
     if (QFileInfo::exists(QStringLiteral("/run/user/%1/bus").arg(QString::number(getuid())))) {
@@ -82,10 +87,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui.cmbUnitTypes->addItems(allowUnitTypes);
     ui.cmbUserUnitTypes->addItems(allowUnitTypes);
 
-    // Get list of units
-    m_controller->slotRefreshUnitsList(sys);
-    m_controller->slotRefreshUnitsList(user);
-
     setupUnitslist();
     setupSessionlist();
     setupTimerlist();
@@ -98,21 +99,21 @@ MainWindow::MainWindow(QWidget *parent)
 
     setupGUI(ToolBar | Keys | Create | Save, QStringLiteral("systemdgenieui.rc"));
 
-    connect(m_controller, &Controller::userUnitsRefreshed, this, [this]() {
+    connect(m_userUnitModel, &UnitModel::unitsRefreshed, this, [this]() {
         m_userUnitFilterModel->invalidate();
         updateUnitCount();
         slotRefreshTimerList();
         updateActions();
     });
 
-    connect(m_controller, &Controller::systemUnitsRefreshed, this, [this]() {
+    connect(m_systemUnitModel, &UnitModel::unitsRefreshed, this, [this]() {
         m_systemUnitFilterModel->invalidate();
         updateUnitCount();
         slotRefreshTimerList();
         updateActions();
     });
 
-    connect(m_controller, &Controller::sessionsRefreshed, this, [this]() {
+    connect(m_sessionModel, &SessionModel::sessionsRefreshed, this, [this]() {
         ui.tblSessions->resizeColumnsToContents();
         ui.tblSessions->resizeRowsToContents();
     });
@@ -163,7 +164,7 @@ void MainWindow::setupUnitslist()
     // Setup the system unit model
     ui.tblUnits->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     m_systemUnitFilterModel = new SortFilterUnitModel(this);
-    m_systemUnitFilterModel->setSourceModel(m_controller->systemUnitModel());
+    m_systemUnitFilterModel->setSourceModel(m_systemUnitModel);
     ui.tblUnits->setModel(m_systemUnitFilterModel);
     ui.tblUnits->sortByColumn(0, Qt::AscendingOrder);
     ui.tblUnits->resizeColumnsToContents();
@@ -173,7 +174,7 @@ void MainWindow::setupUnitslist()
     // Setup the user unit model
     ui.tblUserUnits->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     m_userUnitFilterModel = new SortFilterUnitModel(this);
-    m_userUnitFilterModel->setSourceModel(m_controller->userUnitModel());
+    m_userUnitFilterModel->setSourceModel(m_userUnitModel);
     ui.tblUserUnits->setModel(m_userUnitFilterModel);
     ui.tblUserUnits->sortByColumn(0, Qt::AscendingOrder);
     ui.tblUserUnits->resizeColumnsToContents();
@@ -190,11 +191,11 @@ void MainWindow::setupSessionlist()
     ui.tblSessions->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
     // Set model for QTableView (should be called after headers are set)
-    ui.tblSessions->setModel(m_controller->sessionModel());
+    ui.tblSessions->setModel(m_sessionModel);
     ui.tblSessions->setColumnHidden(1, true);
 
     // Add all the sessions
-    m_controller->slotRefreshSessionList();
+    m_sessionModel->slotRefreshSessionList();
 }
 
 void MainWindow::setupTimerlist()
@@ -295,16 +296,16 @@ void MainWindow::slotRefreshTimerList()
     m_timerModel->removeRows(0, m_timerModel->rowCount());
 
     // Iterate through system unitlist and add timers to the model
-    for (const SystemdUnit &unit : m_controller->systemUnitModel()->unitsConst()) {
+    for (const SystemdUnit &unit : m_systemUnitModel->unitsConst()) {
         if (unit.id.endsWith(QLatin1String(".timer")) && unit.load_state != QLatin1String("unloaded")) {
-            m_timerModel->appendRow(buildTimerListRow(unit, m_controller->systemUnitModel()->unitsConst(), sys));
+            m_timerModel->appendRow(buildTimerListRow(unit, m_systemUnitModel->unitsConst(), sys));
         }
     }
 
     // Iterate through user unitlist and add timers to the model
-    for (const SystemdUnit &unit : m_controller->userUnitModel()->unitsConst()) {
+    for (const SystemdUnit &unit : m_userUnitModel->unitsConst()) {
         if (unit.id.endsWith(QLatin1String(".timer")) && unit.load_state != QLatin1String("unloaded")) {
-            m_timerModel->appendRow(buildTimerListRow(unit, m_controller->userUnitModel()->unitsConst(), user));
+            m_timerModel->appendRow(buildTimerListRow(unit, m_userUnitModel->unitsConst(), user));
         }
     }
 
@@ -394,14 +395,14 @@ QList<QStandardItem *> MainWindow::buildTimerListRow(const SystemdUnit &unit, co
 
 void MainWindow::updateUnitCount()
 {
-    QString systemUnits = i18ncp("First part of 'Total: %1, %2, %3'", "1 unit", "%1 units", m_controller->systemUnitModel()->rowCount());
-    QString systemActive = i18ncp("Second part of 'Total: %1, %2, %3'", "1 active", "%1 active", m_controller->nonActiveSystemUnits());
+    QString systemUnits = i18ncp("First part of 'Total: %1, %2, %3'", "1 unit", "%1 units", m_systemUnitModel->rowCount());
+    QString systemActive = i18ncp("Second part of 'Total: %1, %2, %3'", "1 active", "%1 active", m_systemUnitModel->nonActiveUnits());
     QString systemDisplayed = i18ncp("Third part of 'Total: %1, %2, %3'", "1 displayed", "%1 displayed", m_systemUnitFilterModel->rowCount());
     ui.lblUnitCount->setText(
         i18nc("%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'", "Total: %1, %2, %3", systemUnits, systemActive, systemDisplayed));
 
-    QString userUnits = i18ncp("First part of 'Total: %1, %2, %3'", "1 unit", "%1 units", m_controller->userUnitModel()->rowCount());
-    QString userActive = i18ncp("Second part of 'Total: %1, %2, %3'", "1 active", "%1 active", m_controller->nonActiveUserUnits());
+    QString userUnits = i18ncp("First part of 'Total: %1, %2, %3'", "1 unit", "%1 units", m_userUnitModel->rowCount());
+    QString userActive = i18ncp("Second part of 'Total: %1, %2, %3'", "1 active", "%1 active", m_userUnitModel->nonActiveUnits());
     QString userDisplayed = i18ncp("Third part of 'Total: %1, %2, %3'", "1 displayed", "%1 displayed", m_userUnitFilterModel->rowCount());
     ui.lblUserUnitCount->setText(
         i18nc("%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'", "Total: %1, %2, %3", userUnits, userActive, userDisplayed));
@@ -493,9 +494,9 @@ void MainWindow::updateActions()
         SystemdUnit unit;
 
         if (ui.tabWidget->currentIndex() == 0) {
-            unit = m_controller->systemUnit(m_systemUnitFilterModel->mapToSource(index).row());
+            unit = m_systemUnitModel->units().at(m_systemUnitFilterModel->mapToSource(index).row());
         } else if (ui.tabWidget->currentIndex() == 1) {
-            unit = m_controller->userUnit(m_userUnitFilterModel->mapToSource(index).row());
+            unit = m_userUnitModel->units().at(m_userUnitFilterModel->mapToSource(index).row());
         }
 
         const QDBusObjectPath pathUnit = unit.unit_path;
@@ -845,9 +846,9 @@ void MainWindow::executeUserDaemonAction(const QString &method)
 
 void MainWindow::slotRefreshAll()
 {
-    m_controller->slotRefreshUnitsList(sys);
-    m_controller->slotRefreshUnitsList(user);
-    m_controller->slotRefreshSessionList();
+    m_systemUnitModel->slotRefreshUnitsList();
+    m_userUnitModel->slotRefreshUnitsList();
+    m_sessionModel->slotRefreshSessionList();
 }
 
 void MainWindow::slotSessionContextMenu(const QPoint &pos)
@@ -944,11 +945,11 @@ void MainWindow::slotEditUnitFile()
     if (ui.tabWidget->currentIndex() == 0) {
         index = m_systemUnitFilterModel->mapToSource(index);
         Q_ASSERT(index.isValid());
-        openEditor(m_controller->systemUnit(index.row()).unit_file);
+        openEditor(m_systemUnitModel->units().at(index.row()).unit_file);
     } else {
         index = m_userUnitFilterModel->mapToSource(index);
         Q_ASSERT(index.isValid());
-        openEditor(m_controller->userUnit(index.row()).unit_file);
+        openEditor(m_userUnitModel->units().at(index.row()).unit_file);
     }
 }
 

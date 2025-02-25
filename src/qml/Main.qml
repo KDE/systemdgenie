@@ -7,6 +7,7 @@ import QtQuick.Controls as Controls
 import org.kde.coreaddons as Core
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.systemdgenie
 
 Kirigami.ApplicationWindow {
     id: root
@@ -40,7 +41,7 @@ Kirigami.ApplicationWindow {
 
         text: i18nc("@action:button", "System Units")
         onTriggered: root.pageStack.replace(Qt.resolvedUrl('./UnitsPage.qml'), {
-            type: UnitsPage.System,
+            type: UnitModel.SystemUnits,
         });
     }
 
@@ -49,7 +50,7 @@ Kirigami.ApplicationWindow {
 
         text: i18nc("@action:button", "User Units")
         onTriggered: root.pageStack.replace(Qt.resolvedUrl('./UnitsPage.qml'), {
-            type: UnitsPage.User,
+            type: UnitModel.UserUnits,
         });
     }
 

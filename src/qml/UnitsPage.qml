@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 import QtQuick
+import QtQuick.Layouts
 import QtQuick.Controls as Controls
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
@@ -10,19 +11,20 @@ import org.kde.systemdgenie
 TablePage {
     id: root
 
-    property int type
-
-    title: type === UnitsPage.System ? i18nc("@title", "System Units") : i18nc("@title", "User Units")
-
-    enum Type {
-        System,
-        User
+    readonly property int currentRow: {
+        if (tableView.selectionModel.selectedIndexes.length === 0) {
+            return -1;
+        }
+        return sortFilter.mapToSource(tableView.selectionModel.selectedIndexes[0]).row;
     }
+    property alias type: unitModel.type
 
     model: SortFilterUnitModel {
         id: sortFilter
 
-        sourceModel: root.type === UnitsPage.System ? Controller.systemUnitModel : Controller.userUnitModel
+        sourceModel: UnitModel {
+            id: unitModel
+        }
 
         function updateFilter(): void {
             if (!checkInactiveUnits.checked) {
@@ -42,23 +44,17 @@ TablePage {
         Kirigami.Action {
             id: checkInactiveUnits
             checkable: true
-            displayComponent: Controls.Switch {
-                checkable: true
-                text: i18nc("@option:check", "Hide inactive")
-                onCheckedChanged: checkInactiveUnits.checked = checked;
-            }
+            text: i18nc("@option:check", "Hide inactive")
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             onCheckedChanged: sortFilter.updateFilter();
         },
         Kirigami.Action {
             id: checkUnloadedUnits
             checkable: true
-            displayComponent: Controls.Switch {
-                checkable: true
-                text: i18nc("@option:check", "Hide unloaded")
-                enabled: !checkInactiveUnits.checked
-                onCheckedChanged: checkUnloadedUnits.checked = checked;
-            }
+            text: i18nc("@option:check", "Hide unloaded")
+            enabled: !checkInactiveUnits.checked
             onCheckedChanged: sortFilter.updateFilter();
+            displayHint: Kirigami.DisplayHint.AlwaysHide
         },
         Kirigami.Action {
             displayComponent: Kirigami.SearchField {
@@ -70,11 +66,36 @@ TablePage {
         }
     ]
 
-    Component.onCompleted: if (type === UnitsPage.System) {
-        Controller.slotRefreshSystemUnitsList();
-    } else {
-        Controller.slotRefreshUserUnitsList();
+    titleDelegate: RowLayout {
+        Repeater {
+            readonly property list<Controls.Action> actions: [
+                Controls.Action {
+                    id: unitStart
+                    icon.name: 'media-playback-start-symbolic'
+                    text: i18nc("@action", "Start")
+                    onTriggered: unitModel.executeUnitAction(root.currentRow, 'StartUnit')
+                },
+                Controls.Action {
+                    id: unitStop
+                    icon.name: 'media-playback-start-symbolic'
+                    text: i18nc("@action", "Stop")
+                    onTriggered: unitModel.executeUnitAction(root.currentRow, 'StopUnit')
+                },
+                Controls.Action {
+                    id: unitReload
+                    icon.name: 'view-refresh-symbolic'
+                    text: i18nc("@action", "Reload")
+                    onTriggered: unitModel.executeUnitAction(root.currentRow, 'RestartUnit')
+                }
+            ]
+
+            model: actions
+            delegate: Controls.ToolButton {
+                action: modelData
+            }
+        }
     }
+
     delegate: TableDelegate {
         id: delegate
 
