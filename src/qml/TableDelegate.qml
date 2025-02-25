@@ -39,6 +39,8 @@ T.ItemDelegate {
         const selectionModel = root.TableView.view.selectionModel
         selectionModel.clear();
         selectionModel.select(root.TableView.view.model.index(delegate.row, 0), ItemSelectionModel.Select | ItemSelectionModel.Rows)
+
+        console.log(root.TableView.view.currentRow, root.TableView.view.model.index(delegate.row, 0))
     }
 
     icon {

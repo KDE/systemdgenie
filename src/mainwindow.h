@@ -8,10 +8,11 @@
 #define MAINWINDOW_H
 
 #include "configfilemodel.h"
-#include "controller.h"
+#include "sessionmodel.h"
 #include "sortfilterunitmodel.h"
 #include "systemdunit.h"
 #include "ui_mainwindow.h"
+#include "unitmodel.h"
 
 #include <KMessageWidget>
 #include <KXmlGuiWindow>
@@ -60,7 +61,9 @@ private:
     void executeUserDaemonAction(const QString &method);
     void executeSessionAction(const QString &method);
 
-    Controller *m_controller;
+    UnitModel *const m_systemUnitModel;
+    UnitModel *const m_userUnitModel;
+    SessionModel *const m_sessionModel;
     SortFilterUnitModel *m_systemUnitFilterModel;
     SortFilterUnitModel *m_userUnitFilterModel;
     QStandardItemModel *m_timerModel;

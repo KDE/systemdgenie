@@ -15,15 +15,14 @@
 
 #include <systemd/sd-journal.h>
 
+#include "job/unitsfetchjob.h"
+#include "systemd_manager_interface.h"
+
+using namespace Qt::StringLiterals;
+
 UnitModel::UnitModel(QObject *parent)
     : QAbstractTableModel(parent)
 {
-}
-
-UnitModel::UnitModel(QString userBusPath, QObject *parent)
-    : QAbstractTableModel(parent)
-{
-    m_userBus = userBusPath;
 }
 
 const QList<SystemdUnit> &UnitModel::unitsConst() const
@@ -40,6 +39,11 @@ void UnitModel::setUnits(const QList<SystemdUnit> &units)
 {
     beginResetModel();
     m_units = units;
+    for (const SystemdUnit &unit : units) {
+        if (unit.active_state == "active"_L1) {
+            m_nonActiveUnitsCount++;
+        }
+    }
     endResetModel();
 }
 
@@ -333,4 +337,135 @@ QStringList UnitModel::getLastJrnlEntries(QString unit) const
     sd_journal_close(journal);
 
     return reply;
+}
+
+void UnitModel::executeUnitAction(int row, const QString &method)
+{
+    const auto idx = index(row, 0);
+    if (!idx.isValid()) {
+        qWarning() << "invalid index" << row;
+        return;
+    }
+    const QString unit = idx.data().toString();
+    // qDebug() << "unit:" << unit;
+
+    QVariantList args;
+    if (method == QLatin1String("EnableUnitFiles") || method == QLatin1String("MaskUnitFiles")) {
+        args << QVariant(QStringList{unit}) << false << true;
+    } else if (method == QLatin1String("DisableUnitFiles") || method == QLatin1String("UnmaskUnitFiles")) {
+        args << QVariant(QStringList{unit}) << false;
+    } else {
+        args = QVariantList{unit, QStringLiteral("replace")};
+    }
+
+    if (m_type == SystemUnits) {
+        // authServiceAction(connSystemd, pathSysdMgr, ifaceMgr, method, args);
+    } else {
+        m_managerIface->asyncCallWithArgumentList(method, args);
+    }
+}
+
+UnitModel::Type UnitModel::type() const
+{
+    return m_type;
+}
+
+void UnitModel::setType(Type type)
+{
+    if (m_type == type) {
+        return;
+    }
+    m_type = type;
+    Q_EMIT typeChanged();
+
+    if (m_type == UnitModel::SystemUnits) {
+        m_managerIface =
+            new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd1"_s, u"/org/freedesktop/systemd1"_s, QDBusConnection::systemBus(), this);
+        m_userBus.clear();
+    } else {
+        if (QFileInfo::exists(QStringLiteral("/run/user/%1/bus").arg(QString::number(getuid())))) {
+            m_userBus = QStringLiteral("unix:path=/run/user/%1/bus").arg(QString::number(getuid()));
+        } else if (QFileInfo::exists(QStringLiteral("/run/user/%1/dbus/user_bus_socket").arg(QString::number(getuid())))) {
+            m_userBus = QStringLiteral("unix:path=/run/user/%1/dbus/user_bus_socket").arg(QString::number(getuid()));
+        }
+
+        if (!m_userBus.isEmpty()) {
+            auto connection = QDBusConnection::connectToBus(m_userBus, u"org.freedesktop.systemd1"_s);
+            m_managerIface = new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd1"_s, u"/org/freedesktop/systemd1"_s, connection, this);
+        }
+    }
+
+    m_managerIface->Subscribe();
+    connect(m_managerIface, &OrgFreedesktopSystemd1ManagerInterface::Reloading, this, &UnitModel::slotReloading);
+    connect(m_managerIface, &OrgFreedesktopSystemd1ManagerInterface::UnitFilesChanged, this, &UnitModel::slotUnitFilesChanged);
+    connect(m_managerIface, &OrgFreedesktopSystemd1ManagerInterface::JobNew, this, &UnitModel::slotJobNew);
+    connect(m_managerIface, &OrgFreedesktopSystemd1ManagerInterface::JobRemoved, this, &UnitModel::slotJobRemoved);
+    auto connected = m_managerIface->connection().connect(u"org.freedesktop.systemd1"_s,
+                                                          {},
+                                                          u"org.freedesktop.DBus.Properties"_s,
+                                                          u"PropertiesChanged"_s,
+                                                          this,
+                                                          SLOT(slotPropertiesChanged(QString, QVariantMap, QStringList)));
+    Q_ASSERT(connected);
+
+    qWarning() << "called" << m_type;
+    slotRefreshUnitsList();
+}
+
+void UnitModel::slotRefreshUnitsList()
+{
+    if (!m_managerIface || m_refreshing) {
+        return;
+    }
+
+    m_refreshing = true;
+    auto job = new UnitsFetchJob(m_managerIface);
+    connect(job, &UnitsFetchJob::finished, this, [this, job](KJob *) {
+        const auto units = job->units();
+        qWarning() << "refreshed" << m_type;
+        setUnits(units);
+        Q_EMIT unitsRefreshed();
+        m_refreshing = false;
+    });
+    job->start();
+}
+
+void UnitModel::slotJobNew(uint id, const QDBusObjectPath &path, const QString &unit)
+{
+    qDebug() << "UserJobNew: " << id << path.path() << unit;
+    slotRefreshUnitsList();
+}
+
+void UnitModel::slotJobRemoved(uint id, const QDBusObjectPath &path, const QString &unit, const QString &result)
+{
+    qDebug() << "UserJobRemoved: " << id << path.path() << unit << result;
+    slotRefreshUnitsList();
+}
+
+void UnitModel::slotReloading(bool status)
+{
+    if (!status) {
+        Q_EMIT message(i18nc("%1 is a time", "%1: User daemon reloaded...", QLocale().toString(QDateTime::currentDateTime().time(), QLocale::ShortFormat)));
+        slotRefreshUnitsList();
+    }
+}
+
+void UnitModel::slotPropertiesChanged(const QString &iface, const QVariantMap &changedProps, const QStringList &invalidatedProps)
+{
+    Q_UNUSED(changedProps)
+    Q_UNUSED(invalidatedProps)
+
+    qDebug() << "userPropertiesChanged:" << iface; // << changedProps << invalidatedProps;
+    slotRefreshUnitsList();
+}
+
+void UnitModel::slotUnitFilesChanged()
+{
+    // qDebug() << "User unitFilesChanged";
+    slotRefreshUnitsList();
+}
+
+int UnitModel::nonActiveUnits() const
+{
+    return m_nonActiveUnitsCount;
 }
