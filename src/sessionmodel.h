@@ -6,12 +6,15 @@
 #include "login_session_interface.h"
 #include "loginddbustypes.h"
 #include <QAbstractTableModel>
+#include <qqmlregistration.h>
 
 class OrgFreedesktopLogin1ManagerInterface;
 
 class Login1SessionInterface : public OrgFreedesktopLogin1SessionInterface
 {
     Q_OBJECT
+    QML_ELEMENT
+
 public:
     explicit Login1SessionInterface(const QString &service, const QString &path, const QDBusConnection &connection, QObject *parent = nullptr);
 
@@ -51,6 +54,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void errorOccured(const QString &text);
+    void sessionsRefreshed();
 
 private:
     void slotSessionNew(const QString &id, const QDBusObjectPath &path);
