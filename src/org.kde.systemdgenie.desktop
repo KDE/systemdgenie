@@ -90,6 +90,7 @@ Comment[fr]=Gérer les unités du module « systemd », les chronomètres, les
 Comment[gl]=Xestionar as unidades, temporizadores, sesións e ficheiros de configuración de systemd.
 Comment[he]=ניהול יחידות, מתזמנים, הפעלות וקובצי הגדרות של systemd
 Comment[ia]=Gere unitates de systemd, horologios, sessiones e files de config
+Comment[it]=Gestisce unità, timer, sessioni e file di configurazione di systemd
 Comment[ka]=მართეთ systemd-ის ერთეულები, ტაიმერები, სესიები და კონფიგურაციის ფაილები
 Comment[lv]=Pārvalda „systemd“ vienības, taimerus, sesijas un konfigurācijas datnes
 Comment[nl]=Systemd-eenheden beheren, timers, sessies en configuratiebestanden
