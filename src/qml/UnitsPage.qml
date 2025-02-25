@@ -44,7 +44,7 @@ TablePage {
             checkable: true
             displayComponent: Controls.Switch {
                 checkable: true
-                text: i18nc("@option:check", "Hide innactive")
+                text: i18nc("@option:check", "Hide inactive")
                 onCheckedChanged: checkInactiveUnits.checked = checked;
             }
             onCheckedChanged: sortFilter.updateFilter();
