@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-23 00:43+0000\n"
-"PO-Revision-Date: 2025-02-18 15:36+0100\n"
+"PO-Revision-Date: 2025-02-24 16:30+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -68,22 +68,19 @@ msgid "Systemd user daemon configuration"
 msgstr "Configuration de demon de usator de systemd"
 
 #: src/configfilemodel.cpp:112
-#, fuzzy, kde-format
-#| msgid "File"
+#, kde-format
 msgctxt "@title:column"
 msgid "File"
 msgstr "File"
 
 #: src/configfilemodel.cpp:114
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgctxt "@title:column"
 msgid "Modified"
 msgstr "Modificate"
 
 #: src/configfilemodel.cpp:116
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:column"
 msgid "Description"
 msgstr "Description"
@@ -407,7 +404,7 @@ msgstr "Aperi pagina de Man"
 #: src/mainwindow.cpp:950
 #, kde-format
 msgid "View Logs"
-msgstr ""
+msgstr "Vide registros"
 
 #: src/mainwindow.cpp:956
 #, kde-format

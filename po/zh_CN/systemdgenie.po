@@ -399,7 +399,7 @@ msgstr "打开 Man 页面"
 #: src/mainwindow.cpp:950
 #, kde-format
 msgid "View Logs"
-msgstr ""
+msgstr "查看日志"
 
 #: src/mainwindow.cpp:956
 #, kde-format

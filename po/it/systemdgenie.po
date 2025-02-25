@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-23 00:43+0000\n"
-"PO-Revision-Date: 2025-01-30 18:05+0100\n"
+"PO-Revision-Date: 2025-02-23 14:13+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -68,22 +68,19 @@ msgid "Systemd user daemon configuration"
 msgstr "Configurazione del demone utente systemd"
 
 #: src/configfilemodel.cpp:112
-#, fuzzy, kde-format
-#| msgid "File"
+#, kde-format
 msgctxt "@title:column"
 msgid "File"
 msgstr "File"
 
 #: src/configfilemodel.cpp:114
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgctxt "@title:column"
 msgid "Modified"
 msgstr "Modificato"
 
 #: src/configfilemodel.cpp:116
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:column"
 msgid "Description"
 msgstr "Descrizione"
@@ -105,7 +102,7 @@ msgstr "SystemdGenie"
 #: src/main.cpp:31
 #, kde-format
 msgid "Manage systemd units, timers, sessions and config files"
-msgstr ""
+msgstr "Gestisce unità, timer, sessioni e file di configurazione di systemd"
 
 #: src/main.cpp:33
 #, kde-format
@@ -258,7 +255,7 @@ msgstr "Attiva"
 #: src/mainwindow.cpp:459
 #, kde-format
 msgid "Unable to fetch sessions list: %1"
-msgstr ""
+msgstr "Impossibile recuperare l'elenco delle sessioni: %1"
 
 #: src/mainwindow.cpp:631 src/mainwindow.cpp:637
 #, kde-format
@@ -408,7 +405,7 @@ msgstr "Apri pagina di manuale"
 #: src/mainwindow.cpp:950
 #, kde-format
 msgid "View Logs"
-msgstr ""
+msgstr "Visualizza i registri"
 
 #: src/mainwindow.cpp:956
 #, kde-format
@@ -486,10 +483,9 @@ msgid "Editing %1"
 msgstr "Modifica di %1"
 
 #: src/mainwindow.cpp:1383
-#, fuzzy, kde-format
-#| msgid "Editing file: %1"
+#, kde-format
 msgid "Editing file: <code>%1</code>"
-msgstr "Modifica del file: %1"
+msgstr "Modifica del file: <code>%1</code>"
 
 #: src/mainwindow.cpp:1408
 #, kde-format
@@ -502,10 +498,9 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
 #: src/mainwindow.ui:14
-#, fuzzy, kde-format
-#| msgid "Services"
+#, kde-format
 msgid "Services Manager"
-msgstr "Servizi"
+msgstr "Gestore dei servizi"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
 #: src/mainwindow.ui:85
@@ -522,8 +517,7 @@ msgstr "<html><head/><body><p>Filtri i tipi di unità.</p></body></html>"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUnits)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUserUnits)
 #: src/mainwindow.ui:194 src/mainwindow.ui:300
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+#, kde-format
 msgid "<html><head/><body><p>Toggle hiding inactive units.</p></body></html>"
 msgstr ""
 "<html><head/><body><p>Attiva/disattiva la visualizzazione delle unità "
@@ -532,28 +526,25 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUnits)
 #. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUserUnits)
 #: src/mainwindow.ui:197 src/mainwindow.ui:303
-#, fuzzy, kde-format
-#| msgid "Show inactive"
+#, kde-format
 msgid "Hide inactive"
-msgstr "Mostra inattive"
+msgstr "Nascondi inattive"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUnits)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUserUnits)
 #: src/mainwindow.ui:207 src/mainwindow.ui:313
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+#, kde-format
 msgid "<html><head/><body><p>Toggle hiding unloaded units.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Attiva/disattiva la visualizzazione delle unità "
-"inattive.</p></body></html>"
+"<html><head/><body><p>Attiva/disattiva la visualizzazione delle unità non "
+"caricate.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUnits)
 #. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUserUnits)
 #: src/mainwindow.ui:210 src/mainwindow.ui:316
-#, fuzzy, kde-format
-#| msgid "Show unloaded"
+#, kde-format
 msgid "Hide unloaded"
-msgstr "Mostra non caricate"
+msgstr "Nascondi non caricate"
 
 #. i18n: ectx: property (text), widget (QLabel, lblUnitCount)
 #. i18n: ectx: property (text), widget (QLabel, lblUserUnitCount)
