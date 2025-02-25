@@ -9,6 +9,8 @@
 #include <KColorScheme>
 #include <KLocalizedString>
 
+#include <KAuth/Action>
+#include <KAuth/ExecuteJob>
 #include <QColor>
 #include <QIcon>
 #include <QtDBus/QtDBus>
@@ -358,10 +360,30 @@ void UnitModel::executeUnitAction(int row, const QString &method)
         args = QVariantList{unit, QStringLiteral("replace")};
     }
 
-    if (m_type == SystemUnits) {
-        // authServiceAction(connSystemd, pathSysdMgr, ifaceMgr, method, args);
-    } else {
+    if (m_type == UserUnits) {
         m_managerIface->asyncCallWithArgumentList(method, args);
+        return;
+    }
+
+    QVariantMap helperArgs;
+    helperArgs[QStringLiteral("service")] = m_managerIface->service();
+    helperArgs[QStringLiteral("path")] = m_managerIface->path();
+    helperArgs[QStringLiteral("interface")] = m_managerIface->interface();
+    helperArgs[QStringLiteral("method")] = method;
+    helperArgs[QStringLiteral("argsForCall")] = args;
+
+    // Call the helper. This call causes the debug output: "QDBusArgument: read from a write-only object"
+    KAuth::Action serviceAction(QStringLiteral("org.kde.kcontrol.systemdgenie.dbusaction"));
+    serviceAction.setHelperId(QStringLiteral("org.kde.kcontrol.systemdgenie"));
+    serviceAction.setArguments(helperArgs);
+
+    KAuth::ExecuteJob *job = serviceAction.execute();
+    job->exec();
+
+    if (!job->exec())
+        Q_EMIT errorOccured(i18n("Unable to authenticate/execute the action: %1", job->errorString()));
+    else {
+        qDebug() << "DBus action successful.";
     }
 }
 
@@ -408,7 +430,6 @@ void UnitModel::setType(Type type)
                                                           SLOT(slotPropertiesChanged(QString, QVariantMap, QStringList)));
     Q_ASSERT(connected);
 
-    qWarning() << "called" << m_type;
     slotRefreshUnitsList();
 }
 
