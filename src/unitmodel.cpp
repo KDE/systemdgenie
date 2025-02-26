@@ -466,7 +466,8 @@ void UnitModel::slotJobRemoved(uint id, const QDBusObjectPath &path, const QStri
 void UnitModel::slotReloading(bool status)
 {
     if (!status) {
-        Q_EMIT message(i18nc("%1 is a time", "%1: User daemon reloaded...", QLocale().toString(QDateTime::currentDateTime().time(), QLocale::ShortFormat)));
+        Q_EMIT errorOccured(
+            i18nc("%1 is a time", "%1: User daemon reloaded...", QLocale().toString(QDateTime::currentDateTime().time(), QLocale::ShortFormat)));
         slotRefreshUnitsList();
     }
 }
