@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-23 00:43+0000\n"
-"PO-Revision-Date: 2025-02-18 09:55+0100\n"
+"PO-Revision-Date: 2025-02-23 08:31+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -72,22 +72,19 @@ msgid "Systemd user daemon configuration"
 msgstr "Configureu el dimoni d'usuari de «systemd»"
 
 #: src/configfilemodel.cpp:112
-#, fuzzy, kde-format
-#| msgid "File"
+#, kde-format
 msgctxt "@title:column"
 msgid "File"
 msgstr "Fitxer"
 
 #: src/configfilemodel.cpp:114
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgctxt "@title:column"
 msgid "Modified"
 msgstr "Modificat"
 
 #: src/configfilemodel.cpp:116
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:column"
 msgid "Description"
 msgstr "Descripció"
@@ -415,7 +412,7 @@ msgstr "Obri la pàgina «man»"
 #: src/mainwindow.cpp:950
 #, kde-format
 msgid "View Logs"
-msgstr ""
+msgstr "Visualitza els registres"
 
 #: src/mainwindow.cpp:956
 #, kde-format
@@ -688,15 +685,3 @@ msgstr "<hr><b>Últimes entrades del registre:</b>"
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>No s'han trobat entrades al registre per a esta unitat.</i>"
-
-#~ msgid "%1: Systemd daemon reloaded..."
-#~ msgstr "%1: S'ha tornat a carregar el dimoni «systemd»…"
-
-#~ msgid "%1: User daemon reloaded..."
-#~ msgstr "%1: S'ha tornat a carregar el dimoni de l'usuari…"
-
-#~ msgid "%1: System units changed..."
-#~ msgstr "%1: S'han canviat les unitats del sistema…"
-
-#~ msgid "%1: %2 successfully written..."
-#~ msgstr "%1: %2 s'ha escrit amb èxit…"
