@@ -58,7 +58,7 @@ public Q_SLOTS:
 Q_SIGNALS:
     void typeChanged();
     void unitsRefreshed();
-    void message(const QString &message);
+    void errorOccured(const QString &message);
 
 private:
     void slotJobNew(uint id, const QDBusObjectPath &path, const QString &unit);
