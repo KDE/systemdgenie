@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as Controls
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as Components
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.systemdgenie
 
@@ -67,32 +68,19 @@ TablePage {
     ]
 
     titleDelegate: RowLayout {
-        Repeater {
-            readonly property list<Controls.Action> actions: [
-                Controls.Action {
-                    id: unitStart
-                    icon.name: 'media-playback-start-symbolic'
-                    text: i18nc("@action", "Start")
-                    onTriggered: unitModel.executeUnitAction(root.currentRow, 'StartUnit')
-                },
-                Controls.Action {
-                    id: unitStop
-                    icon.name: 'media-playback-start-symbolic'
-                    text: i18nc("@action", "Stop")
-                    onTriggered: unitModel.executeUnitAction(root.currentRow, 'StopUnit')
-                },
-                Controls.Action {
-                    id: unitReload
-                    icon.name: 'view-refresh-symbolic'
-                    text: i18nc("@action", "Reload")
-                    onTriggered: unitModel.executeUnitAction(root.currentRow, 'RestartUnit')
-                }
-            ]
+        Controls.ToolButton {
+            text: i18nc("@action:intoolbar", "Start")
+            action: unitStart
+        }
 
-            model: actions
-            delegate: Controls.ToolButton {
-                action: modelData
-            }
+        Controls.ToolButton {
+            text: i18nc("@action:intoolbar", "Stop")
+            action: unitStop
+        }
+
+        Controls.ToolButton {
+            text: i18nc("@action:intoolbar", "Reload")
+            action: unitReload
         }
     }
 
@@ -117,6 +105,81 @@ TablePage {
             text: hovered ? model.tooltip : '' // only request tooltip when needed
             delay: Kirigami.Units.toolTipDelay
             visible: hovered && text.length > 0
+        }
+
+        TapHandler {
+            acceptedButtons: Qt.RightButton
+            onTapped: {
+                menu.popup();
+            }
+        }
+    }
+
+    Components.ConvergentContextMenu {
+        id: menu
+
+        Controls.Action {
+            id: unitStart
+            icon.name: 'media-playback-start-symbolic'
+            text: i18nc("@action", "Start Unit")
+            onTriggered: unitModel.executeUnitAction(root.currentRow, 'StartUnit')
+        }
+
+        Controls.Action {
+            id: unitStop
+            icon.name: 'media-playback-start-symbolic'
+            text: i18nc("@action", "Stop Unit")
+            onTriggered: unitModel.executeUnitAction(root.currentRow, 'StopUnit')
+        }
+
+        Controls.Action {
+            id: unitRestart
+            icon.name: 'start-over-symbolic'
+            text: i18nc("@action", "Restart Unit")
+            onTriggered: unitModel.executeUnitAction(root.currentRow, 'RestartUnit')
+        }
+
+        Controls.Action {
+            id: unitReload
+            icon.name: 'view-refresh-symbolic'
+            text: i18nc("@action", "Reload Unit")
+            onTriggered: unitModel.executeUnitAction(root.currentRow, 'ReloadUnit')
+        }
+
+        Kirigami.Action {
+            separator: true
+        }
+
+        Controls.Action {
+            id: unitEnable
+            icon.name: 'archive-insert-symbolic'
+            text: i18nc("@action", "Enable Unit")
+            onTriggered: unitModel.executeUnitAction(root.currentRow, 'EnableUnitFiles')
+        }
+
+        Controls.Action {
+            id: unitDisnable
+            icon.name: 'document-close-symbolic'
+            text: i18nc("@action", "Enable Unit")
+            onTriggered: unitModel.executeUnitAction(root.currentRow, 'DisableUnitFiles')
+        }
+
+        Kirigami.Action {
+            separator: true
+        }
+
+        Controls.Action {
+            id: unitUnmask
+            icon.name: 'password-show-off-symbolic'
+            text: i18nc("@action", "Mask Unit")
+            onTriggered: unitModel.executeUnitAction(root.currentRow, 'MaskUnitFiles')
+        }
+
+        Controls.Action {
+            id: unitMask
+            icon.name: 'password-show-symbolic'
+            text: i18nc("@action", "Unmask Unit")
+            onTriggered: unitModel.executeUnitAction(root.currentRow, 'UnmaskUnitFiles')
         }
     }
 
