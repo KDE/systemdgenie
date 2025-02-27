@@ -13,14 +13,24 @@ TablePage {
     id: root
 
     readonly property int currentRow: {
-        if (tableView.selectionModel.selectedIndexes.length === 0) {
+        if (tableView.currentRow === -1) {
             return -1;
         }
-        return sortFilter.mapToSource(tableView.selectionModel.selectedIndexes[0]).row;
+        return sortFilter.mapToSource(tableView.selectionModel.currentIndex).row;
     }
 
-    readonly property UnitInterface unitObject: currentRow === -1 ? null : unitModel.unitObject(currentRow);
+    readonly property UnitInterface unitObject: {
+        console.log("currentRow", currentRow)
+        const unit = currentRow === -1 ? null : unitModel.unitObject(currentRow);
+        console.log(unit)
+        for (let i in unit) {
+            console.log(i, unit[i]);
+        }
+        return unit;
+    }
     property alias type: unitModel.type
+
+    tableView.onCurrentRowChanged: console.log("tableView.currentRow", tableView.currentRow)
 
     model: SortFilterUnitModel {
         id: sortFilter
@@ -95,6 +105,7 @@ TablePage {
         required property color textColor
         required property var model
         required selected
+        required current
 
         text: displayName
         icon.name: iconName
@@ -112,6 +123,7 @@ TablePage {
         TapHandler {
             acceptedButtons: Qt.RightButton
             onTapped: {
+                delegate.clicked();
                 menu.popup();
             }
         }
@@ -125,7 +137,7 @@ TablePage {
             icon.name: 'media-playback-start-symbolic'
             text: i18nc("@action", "Start Unit")
             onTriggered: unitModel.executeUnitAction(root.currentRow, 'StartUnit')
-            enabled: (root.unitObject?.canStart && root.unitObject.activeState !== 'inactive' && root.unitObject.activeState !== 'failed') ?? false
+            enabled: (root.unitObject?.CanStart && root.unitObject.ActiveState !== 'inactive' && root.unitObject.ActiveState !== 'failed') ?? root.currentRow >= 0
         }
 
         Controls.Action {
@@ -133,7 +145,7 @@ TablePage {
             icon.name: 'media-playback-start-symbolic'
             text: i18nc("@action", "Stop Unit")
             onTriggered: unitModel.executeUnitAction(root.currentRow, 'StopUnit')
-            enabled: (root.unitObject?.CanStop && root.unitObject.activeState !== 'inactive' && root.unitObject.activeState !== 'failed') ?? false
+            enabled: (root.unitObject?.CanStop && root.unitObject.ActiveState !== 'inactive' && root.unitObject.ActiveState !== 'failed') ?? false
         }
 
         Controls.Action {

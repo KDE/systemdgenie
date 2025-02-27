@@ -14,6 +14,7 @@ T.ItemDelegate {
 
     required property int row
     required property bool selected
+    required property bool current
     readonly property bool rowHovered: root.TableView.view.hoveredRow === row || hovered
 
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
@@ -38,9 +39,7 @@ T.ItemDelegate {
     onClicked: {
         const selectionModel = root.TableView.view.selectionModel
         selectionModel.clear();
-        selectionModel.select(root.TableView.view.model.index(delegate.row, 0), ItemSelectionModel.Select | ItemSelectionModel.Rows)
-
-        console.log(root.TableView.view.currentRow, root.TableView.view.model.index(delegate.row, 0))
+        selectionModel.setCurrentIndex(root.TableView.view.model.index(delegate.row, 0), ItemSelectionModel.SelectCurrent | ItemSelectionModel.Rows)
     }
 
     icon {
@@ -58,7 +57,7 @@ T.ItemDelegate {
     }
 
     background: Rectangle {
-        color: if (root.highlighted || root.selected || (root.down && !root.checked) || root.visualFocus) {
+        color: if (root.highlighted || root.selected || root.current || (root.down && !root.checked) || root.visualFocus) {
             const highlight = Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.backgroundColor, Kirigami.Theme.highlightColor, 0.3);
             if (root.rowHovered) {
                 return Kirigami.ColorUtils.tintWithAlpha(highlight, Kirigami.Theme.textColor, 0.10);

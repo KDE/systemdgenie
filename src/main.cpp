@@ -70,6 +70,8 @@ int main(int argc, char *argv[])
     qDBusRegisterMetaType<NamedUserPath>();
     qDBusRegisterMetaType<Inhibitor>();
     qDBusRegisterMetaType<InhibitorList>();
+    qDBusRegisterMetaType<std::pair<QString, QString>>();
+    qDBusRegisterMetaType<QList<std::pair<QString, QString>>>();
 
     qDBusRegisterMetaType<UnitFile>();
     qDBusRegisterMetaType<QList<UnitFile>>();

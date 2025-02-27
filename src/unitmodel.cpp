@@ -491,14 +491,21 @@ int UnitModel::nonActiveUnits() const
     return m_nonActiveUnitsCount;
 }
 
-OrgFreedesktopSystemd1UnitInterface *UnitModel::unitObject(int row) const
+OrgFreedesktopSystemd1UnitInterface *UnitModel::unitObject(int row)
 {
-    const auto &unit = m_units.at(row);
+    auto &unit = m_units[row];
     const auto &path = unit.unit_path;
 
     if (path.path().isEmpty()) {
         return nullptr;
     }
 
-    return new OrgFreedesktopSystemd1UnitInterface(u"org.freedesktop.systemd1"_s, path.path(), m_connection, nullptr);
+    auto interface = new OrgFreedesktopSystemd1UnitInterface(u"org.freedesktop.systemd1"_s, path.path(), m_connection, nullptr);
+
+    unit.load_state = interface->loadState();
+    unit.active_state = interface->activeState();
+    unit.unit_file_status = interface->unitFileState();
+    Q_EMIT dataChanged(index(row, 0), index(row, 0), {});
+
+    return interface;
 }
