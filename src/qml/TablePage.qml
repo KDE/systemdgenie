@@ -64,14 +64,13 @@ Kirigami.Page {
                     id: selectionModel
                 }
 
-                contentWidth: availableWidth
-
                 delegate: root.delegate
 
                 columnWidthProvider: function(column) {
                     const w = explicitColumnWidth(column)
-                    if (w >= 0)
-                        return w;
+                    if (w >= 0) {
+                        return Math.min(w, width / 2);
+                    }
                     const implicit = implicitColumnWidth(column)
                     return Math.min(width / 2, implicit)
                 }

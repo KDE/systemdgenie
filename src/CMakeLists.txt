@@ -15,9 +15,19 @@ set_source_files_properties(dbus/org.freedesktop.login1.Session.xml PROPERTIES
     INCLUDE "loginddbustypes.h"
 )
 
+set_source_files_properties(dbus/org.freedesktop.systemd1.Unit.xml PROPERTIES
+    NO_NAMESPACE TRUE
+    HANDLE_PROPERTIES_CHANGED TRUE
+)
+
 qt_add_dbus_interface(systemd_DBUS_SRCS
     dbus/org.freedesktop.systemd1.Manager.xml
     systemd_manager_interface
+)
+
+qt_add_dbus_interface(systemd_DBUS_SRCS
+    dbus/org.freedesktop.systemd1.Unit.xml
+    systemd_unit_interface
 )
 
 qt_add_dbus_interface(systemd_DBUS_SRCS
@@ -40,6 +50,8 @@ set(systemdgenie_SRCS
     configfilemodel.h
     sessionmodel.cpp
     sessionmodel.h
+    types.cpp
+    types.h
 
     job/sessionsfetchjob.cpp
     job/sessionsfetchjob.h
