@@ -66,7 +66,7 @@ public:
     int nonActiveUnits() const;
 
     /// Caller take ownership of the returned OrgFreedesktopSystemd1ManagerInterface
-    Q_INVOKABLE OrgFreedesktopSystemd1UnitInterface *unitObject(int row) const;
+    Q_INVOKABLE OrgFreedesktopSystemd1UnitInterface *unitObject(int row);
 
 public Q_SLOTS:
     void executeUnitAction(int row, const QString &method);

@@ -159,3 +159,21 @@ inline const QDBusArgument &operator>>(const QDBusArgument &argument, Inhibitor 
     argument.endStructure();
     return argument;
 }
+
+inline QDBusArgument &operator<<(QDBusArgument &argument, const std::pair<QString, QString> &stringPair)
+{
+    argument.beginStructure();
+    argument << stringPair.first;
+    argument << stringPair.second;
+    argument.endStructure();
+    return argument;
+}
+
+inline const QDBusArgument &operator>>(const QDBusArgument &argument, std::pair<QString, QString> &stringPair)
+{
+    argument.beginStructure();
+    argument >> stringPair.first;
+    argument >> stringPair.second;
+    argument.endStructure();
+    return argument;
+}
