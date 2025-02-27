@@ -1,8 +1,6 @@
-/*
-    SPDX-FileCopyrightText: 2016 Ragnar Thomsen <rthomsen6@gmail.com>
-
-    SPDX-License-Identifier: GPL-2.0-or-later
-*/
+// SPDX-FileCopyrightText: 2016 Ragnar Thomsen <rthomsen6@gmail.com>
+// SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
+// SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "unitmodel.h"
 
@@ -24,6 +22,7 @@ using namespace Qt::StringLiterals;
 
 UnitModel::UnitModel(QObject *parent)
     : QAbstractTableModel(parent)
+    , m_connection(QDBusConnection::systemBus())
 {
 }
 
@@ -401,8 +400,8 @@ void UnitModel::setType(Type type)
     Q_EMIT typeChanged();
 
     if (m_type == UnitModel::SystemUnits) {
-        m_managerIface =
-            new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd1"_s, u"/org/freedesktop/systemd1"_s, QDBusConnection::systemBus(), this);
+        m_connection = QDBusConnection::systemBus();
+        m_managerIface = new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd1"_s, u"/org/freedesktop/systemd1"_s, m_connection, this);
         m_userBus.clear();
     } else {
         if (QFileInfo::exists(QStringLiteral("/run/user/%1/bus").arg(QString::number(getuid())))) {
@@ -412,8 +411,8 @@ void UnitModel::setType(Type type)
         }
 
         if (!m_userBus.isEmpty()) {
-            auto connection = QDBusConnection::connectToBus(m_userBus, u"org.freedesktop.systemd1"_s);
-            m_managerIface = new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd1"_s, u"/org/freedesktop/systemd1"_s, connection, this);
+            m_connection = QDBusConnection::connectToBus(m_userBus, u"org.freedesktop.systemd1"_s);
+            m_managerIface = new OrgFreedesktopSystemd1ManagerInterface(u"org.freedesktop.systemd1"_s, u"/org/freedesktop/systemd1"_s, m_connection, this);
         }
     }
 
@@ -490,4 +489,16 @@ void UnitModel::slotUnitFilesChanged()
 int UnitModel::nonActiveUnits() const
 {
     return m_nonActiveUnitsCount;
+}
+
+OrgFreedesktopSystemd1UnitInterface *UnitModel::unitObject(int row) const
+{
+    const auto &unit = m_units.at(row);
+    const auto &path = unit.unit_path;
+
+    if (path.path().isEmpty()) {
+        return nullptr;
+    }
+
+    return new OrgFreedesktopSystemd1UnitInterface(u"org.freedesktop.systemd1"_s, path.path(), m_connection, nullptr);
 }

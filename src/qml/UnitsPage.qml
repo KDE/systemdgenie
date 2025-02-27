@@ -18,6 +18,8 @@ TablePage {
         }
         return sortFilter.mapToSource(tableView.selectionModel.selectedIndexes[0]).row;
     }
+
+    readonly property UnitInterface unitObject: currentRow === -1 ? null : unitModel.unitObject(currentRow);
     property alias type: unitModel.type
 
     model: SortFilterUnitModel {
@@ -123,6 +125,7 @@ TablePage {
             icon.name: 'media-playback-start-symbolic'
             text: i18nc("@action", "Start Unit")
             onTriggered: unitModel.executeUnitAction(root.currentRow, 'StartUnit')
+            enabled: (root.unitObject?.canStart && root.unitObject.activeState !== 'inactive' && root.unitObject.activeState !== 'failed') ?? false
         }
 
         Controls.Action {
@@ -130,6 +133,7 @@ TablePage {
             icon.name: 'media-playback-start-symbolic'
             text: i18nc("@action", "Stop Unit")
             onTriggered: unitModel.executeUnitAction(root.currentRow, 'StopUnit')
+            enabled: (root.unitObject?.CanStop && root.unitObject.activeState !== 'inactive' && root.unitObject.activeState !== 'failed') ?? false
         }
 
         Controls.Action {
@@ -137,6 +141,7 @@ TablePage {
             icon.name: 'start-over-symbolic'
             text: i18nc("@action", "Restart Unit")
             onTriggered: unitModel.executeUnitAction(root.currentRow, 'RestartUnit')
+            enabled: (root.unitObject?.CanRestart && root.unitObject.ActiveState !== 'inactive' && root.unitObject.ActiveState !== 'failed') ?? false
         }
 
         Controls.Action {
@@ -144,28 +149,34 @@ TablePage {
             icon.name: 'view-refresh-symbolic'
             text: i18nc("@action", "Reload Unit")
             onTriggered: unitModel.executeUnitAction(root.currentRow, 'ReloadUnit')
+            enabled: (root.unitObject?.CanReload && root.unitObject.ActiveState !== 'inactive' && root.unitObject.ActiveState !== 'failed') ?? false
         }
 
         Kirigami.Action {
             separator: true
         }
 
-        Controls.Action {
+        Kirigami.Action {
             id: unitEnable
             icon.name: 'archive-insert-symbolic'
             text: i18nc("@action", "Enable Unit")
             onTriggered: unitModel.executeUnitAction(root.currentRow, 'EnableUnitFiles')
+            enabled: root.unitObject?.UnitFileState === 'disabled' ?? false
+            visible: root.unitObject?.UnitFileState.length > 0 ?? false
         }
 
-        Controls.Action {
-            id: unitDisnable
+        Kirigami.Action {
+            id: unitDisable
             icon.name: 'document-close-symbolic'
-            text: i18nc("@action", "Enable Unit")
+            text: i18nc("@action", "Disable Unit")
             onTriggered: unitModel.executeUnitAction(root.currentRow, 'DisableUnitFiles')
+            enabled: root.unitObject?.UnitFileState === 'enabled' ?? false
+            visible: root.unitObject?.UnitFileState.length > 0 ?? 0
         }
 
         Kirigami.Action {
             separator: true
+            visible: unitDisable.visible
         }
 
         Controls.Action {
