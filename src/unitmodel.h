@@ -7,17 +7,18 @@
 #ifndef UNITMODEL_H
 #define UNITMODEL_H
 
-#include "systemdunit.h"
-
 #include "systemd_unit_interface.h"
+#include "systemdunit.h"
 
 #include <QAbstractTableModel>
 #include <QDBusConnection>
+#include <QDBusContext>
+#include <QTimer>
 #include <qqmlintegration.h>
 
 class OrgFreedesktopSystemd1ManagerInterface;
 
-class UnitModel : public QAbstractTableModel
+class UnitModel : public QAbstractTableModel, protected QDBusContext
 {
     Q_OBJECT
     QML_ELEMENT
@@ -32,21 +33,16 @@ public:
     };
     Q_ENUM(Type);
 
-    enum UnitCapability {
-        None = 0,
-        CanStart = 1 << 0,
-        CanStop = 1 << 1,
-        CanReload = 1 << 2,
-        LoadState = 1 << 3,
-        ActiveState = 1 << 4,
-        HasUnitObject = 1 << 5,
-    };
-    Q_ENUM(UnitCapability);
-    Q_DECLARE_FLAGS(UnitCapabilities, UnitCapability)
-
     enum ExtraRoles {
         ColorRole = Qt::UserRole + 1,
         IconNameRole,
+    };
+
+    enum Columns {
+        UnitColumn,
+        LoadStateColumn,
+        ActiveStateColumn,
+        UnitStateColumn,
     };
 
     explicit UnitModel(QObject *parent = nullptr);
@@ -68,6 +64,10 @@ public:
     /// Caller take ownership of the returned OrgFreedesktopSystemd1ManagerInterface
     Q_INVOKABLE OrgFreedesktopSystemd1UnitInterface *unitObject(int row);
 
+    Q_INVOKABLE QStringList getLastJrnlEntries(const QString &unit) const;
+    Q_INVOKABLE QString unitFile(int row) const;
+    Q_INVOKABLE QString unitFileStatus(int row) const;
+
 public Q_SLOTS:
     void executeUnitAction(int row, const QString &method);
     void slotRefreshUnitsList();
@@ -79,18 +79,20 @@ Q_SIGNALS:
 
 private:
     void setUnits(const QList<SystemdUnit> &units);
-    void slotJobNew(uint id, const QDBusObjectPath &path, const QString &unit);
-    void slotJobRemoved(uint id, const QDBusObjectPath &path, const QString &unit, const QString &result);
     void slotUnitFilesChanged();
     Q_SLOT void slotPropertiesChanged(const QString &iface, const QVariantMap &changedProps, const QStringList &invalidatedProps);
     void slotReloading(bool status);
+    void slotUnitNew(const QString &id, const QDBusObjectPath &unit);
+    void slotUnitRemoved(const QString &id, const QDBusObjectPath &unit);
+    void slotRefreshUnit(const QString &unit);
 
-    QStringList getLastJrnlEntries(QString unit) const;
     QDBusConnection m_connection;
+    QTimer *const m_refreshTimer;
     QVector<SystemdUnit> m_units;
     QString m_userBus;
     Type m_type = Unknown;
     OrgFreedesktopSystemd1ManagerInterface *m_managerIface = nullptr;
+    QPointer<OrgFreedesktopSystemd1UnitInterface> m_selectedUnit;
     int m_nonActiveUnitsCount;
     bool m_refreshing = false;
 };
