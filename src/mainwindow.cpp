@@ -756,12 +756,16 @@ void MainWindow::updateActions()
             unitFileState = callDbusMethod(QStringLiteral("GetUnitFileState"), sysdMgr, bus, QVariantList{unit}).arguments().at(0).toString();
         }
 
-        // Check if unit has a unit file, if not disable editing.
+        // Check if unit has a writable unit file, if not disable editing.
         QString frpath;
         int index = list->indexOf(SystemdUnit(unit));
         if (index != -1) {
             frpath = list->at(index).unit_file;
         }
+
+        QFileInfo fileInfo(frpath);
+        QStorageInfo storageInfo(frpath);
+        bool isUnitWritable = fileInfo.permission(QFile::WriteOwner) && !storageInfo.isReadOnly();
 
         bool isUnitSelected = !unit.isEmpty();
 
@@ -782,7 +786,7 @@ void MainWindow::updateActions()
 
         m_unmaskUnitAction->setEnabled(isUnitSelected && LoadState == QLatin1String("masked"));
 
-        m_editUnitFileAction->setVisible(isUnitSelected && !frpath.isEmpty() && QFileInfo(frpath).permission(QFile::WriteOwner));
+        m_editUnitFileAction->setVisible(isUnitSelected && !frpath.isEmpty() && isUnitWritable);
     } else {
         m_startUnitAction->setEnabled(false);
         m_stopUnitAction->setEnabled(false);
