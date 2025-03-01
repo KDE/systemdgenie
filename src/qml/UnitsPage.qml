@@ -19,18 +19,10 @@ TablePage {
         return sortFilter.mapToSource(tableView.selectionModel.currentIndex).row;
     }
 
-    readonly property UnitInterface unitObject: {
-        console.log("currentRow", currentRow)
-        const unit = currentRow === -1 ? null : unitModel.unitObject(currentRow);
-        console.log(unit)
-        for (let i in unit) {
-            console.log(i, unit[i]);
-        }
-        return unit;
-    }
+    readonly property UnitInterface unitObject: currentRow === -1 ? null : unitModel.unitObject(currentRow)
     property alias type: unitModel.type
 
-    tableView.onCurrentRowChanged: console.log("tableView.currentRow", tableView.currentRow)
+    Kirigami.ColumnView.fillWidth: true
 
     model: SortFilterUnitModel {
         id: sortFilter
@@ -114,12 +106,6 @@ TablePage {
             labelItem.color: delegate.textColor
         }
 
-        Controls.ToolTip {
-            text: hovered ? model.tooltip : '' // only request tooltip when needed
-            delay: Kirigami.Units.toolTipDelay
-            visible: hovered && text.length > 0
-        }
-
         TapHandler {
             acceptedButtons: Qt.RightButton
             onTapped: {
@@ -127,6 +113,12 @@ TablePage {
                 menu.popup();
             }
         }
+
+        onClicked: root.Controls.ApplicationWindow.window.pageStack.push(Qt.resolvedUrl("./UnitPage.qml"), {
+            unitObject: root.unitObject,
+            unitFile: unitModel.unitFile(sortFilter.mapToSource(sortFilter.index(index, 0)).row),
+            unitFileStatus: unitModel.unitFileStatus(sortFilter.mapToSource(sortFilter.index(index, 0)).row),
+        })
     }
 
     Components.ConvergentContextMenu {
@@ -137,7 +129,7 @@ TablePage {
             icon.name: 'media-playback-start-symbolic'
             text: i18nc("@action", "Start Unit")
             onTriggered: unitModel.executeUnitAction(root.currentRow, 'StartUnit')
-            enabled: (root.unitObject?.CanStart && root.unitObject.ActiveState !== 'inactive' && root.unitObject.ActiveState !== 'failed') ?? root.currentRow >= 0
+            enabled: root.unitObject?.CanStart ?? root.currentRow >= 0
         }
 
         Controls.Action {
@@ -200,7 +192,7 @@ TablePage {
 
         Controls.Action {
             id: unitMask
-            icon.name: 'password-show-symbolic'
+            icon.name: 'password-show-on-symbolic'
             text: i18nc("@action", "Unmask Unit")
             onTriggered: unitModel.executeUnitAction(root.currentRow, 'UnmaskUnitFiles')
         }

@@ -18,8 +18,6 @@ Kirigami.ApplicationWindow {
     minimumHeight: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 20
 
     pageStack {
-        defaultColumnWidth: root.width
-
         globalToolBar {
             canContainHandles: true
             style: Kirigami.ApplicationHeaderStyle.ToolBar
@@ -31,6 +29,8 @@ Kirigami.ApplicationWindow {
             }
         }
 
+        columnView.columnResizeMode: Kirigami.ColumnView.DynamicColumns
+
         initialPage: Kirigami.Page {} // just so that it can be replaced
     }
 
@@ -40,32 +40,44 @@ Kirigami.ApplicationWindow {
         id: systemUnitsAction
 
         text: i18nc("@action:button", "System Units")
-        onTriggered: root.pageStack.replace(Qt.resolvedUrl('./UnitsPage.qml'), {
-            type: UnitModel.SystemUnits,
-        });
+        onTriggered: {
+            root.pageStack.clear();
+            root.pageStack.replace(Qt.resolvedUrl('./UnitsPage.qml'), {
+                type: UnitModel.SystemUnits,
+            });
+        }
     }
 
     Kirigami.Action {
         id: userUnitsAction
 
         text: i18nc("@action:button", "User Units")
-        onTriggered: root.pageStack.replace(Qt.resolvedUrl('./UnitsPage.qml'), {
-            type: UnitModel.UserUnits,
-        });
+        onTriggered: {
+            root.pageStack.clear();
+            root.pageStack.replace(Qt.resolvedUrl('./UnitsPage.qml'), {
+                type: UnitModel.UserUnits,
+            });
+        }
     }
 
     Kirigami.Action {
         id: configFilesAction
 
         text: i18nc("@action:button", "Config Files")
-        onTriggered: root.pageStack.replace(Qt.resolvedUrl('./ConfigFilesPage.qml'));
+        onTriggered: {
+            root.pageStack.clear();
+            root.pageStack.replace(Qt.resolvedUrl('./ConfigFilesPage.qml'));
+        }
     }
 
     Kirigami.Action {
         id: sessionsAction
 
         text: i18nc("@action:button", "Sessions")
-        onTriggered: root.pageStack.replace(Qt.resolvedUrl('./SessionsPage.qml'));
+        onTriggered: {
+            root.pageStack.clear();
+            root.pageStack.replace(Qt.resolvedUrl('./SessionsPage.qml'));
+        }
     }
 
     globalDrawer: Kirigami.OverlayDrawer {

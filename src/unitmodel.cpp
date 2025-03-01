@@ -11,19 +11,27 @@
 #include <KAuth/ExecuteJob>
 #include <QColor>
 #include <QIcon>
-#include <QtDBus/QtDBus>
+#include <QTimer>
 
+#include <qtmetamacros.h>
 #include <systemd/sd-journal.h>
 
 #include "job/unitsfetchjob.h"
 #include "systemd_manager_interface.h"
+#include "systemd_unit_interface.h"
 
 using namespace Qt::StringLiterals;
+using namespace std::chrono_literals;
 
 UnitModel::UnitModel(QObject *parent)
     : QAbstractTableModel(parent)
     , m_connection(QDBusConnection::systemBus())
+    , m_refreshTimer(new QTimer(this))
 {
+    m_refreshTimer->setInterval(1s);
+    connect(m_refreshTimer, &QTimer::timeout, this, [this]() {
+        slotRefreshUnitsList();
+    });
 }
 
 const QList<SystemdUnit> &UnitModel::unitsConst() const
@@ -38,14 +46,37 @@ QList<SystemdUnit> UnitModel::units() const
 
 void UnitModel::setUnits(const QList<SystemdUnit> &units)
 {
-    beginResetModel();
-    m_units = units;
+    if (m_units.isEmpty()) {
+        beginResetModel();
+        m_units = units;
+        endResetModel();
+    } else {
+        for (const auto &unit : units) {
+            auto it = std::ranges::find_if(m_units, [unit](const auto &existingUnit) {
+                return existingUnit.id == unit.id;
+            });
+            if (it == m_units.cend()) {
+                beginInsertRows({}, m_units.count(), m_units.count());
+                m_units << unit;
+                endInsertRows();
+                continue;
+            }
+            if (it->active_state != unit.active_state || it->load_state != unit.load_state || it->unit_file_status != unit.unit_file_status) {
+                it->load_state = unit.load_state;
+                it->active_state = unit.active_state;
+                it->unit_file_status = unit.unit_file_status;
+                const size_t row = std::distance(std::begin(m_units), it);
+                Q_EMIT dataChanged(index(row, 0), index(row, columnCount() - 1), {});
+            }
+        }
+    }
+
     for (const SystemdUnit &unit : units) {
         if (unit.active_state == "active"_L1) {
             m_nonActiveUnitsCount++;
         }
     }
-    endResetModel();
+    Q_EMIT unitsRefreshed();
 }
 
 int UnitModel::rowCount(const QModelIndex &) const
@@ -60,13 +91,13 @@ int UnitModel::columnCount(const QModelIndex &) const
 
 QVariant UnitModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
-    if (orientation == Qt::Horizontal && role == Qt::DisplayRole && section == 0) {
+    if (orientation == Qt::Horizontal && role == Qt::DisplayRole && section == UnitColumn) {
         return i18n("Unit");
-    } else if (orientation == Qt::Horizontal && role == Qt::DisplayRole && section == 1) {
+    } else if (orientation == Qt::Horizontal && role == Qt::DisplayRole && section == LoadStateColumn) {
         return i18n("Load State");
-    } else if (orientation == Qt::Horizontal && role == Qt::DisplayRole && section == 2) {
+    } else if (orientation == Qt::Horizontal && role == Qt::DisplayRole && section == ActiveStateColumn) {
         return i18n("Active State");
-    } else if (orientation == Qt::Horizontal && role == Qt::DisplayRole && section == 3) {
+    } else if (orientation == Qt::Horizontal && role == Qt::DisplayRole && section == UnitStateColumn) {
         return i18n("Unit State");
     }
     return QVariant();
@@ -255,7 +286,7 @@ QVariant UnitModel::data(const QModelIndex &index, int role) const
     }
 }
 
-QStringList UnitModel::getLastJrnlEntries(QString unit) const
+QStringList UnitModel::getLastJrnlEntries(const QString &unit) const
 {
     QString match1, match2;
     int r, jflags;
@@ -348,7 +379,6 @@ void UnitModel::executeUnitAction(int row, const QString &method)
         return;
     }
     const QString unit = idx.data().toString();
-    // qDebug() << "unit:" << unit;
 
     QVariantList args;
     if (method == QLatin1String("EnableUnitFiles") || method == QLatin1String("MaskUnitFiles")) {
@@ -360,7 +390,16 @@ void UnitModel::executeUnitAction(int row, const QString &method)
     }
 
     if (m_type == UserUnits) {
-        m_managerIface->asyncCallWithArgumentList(method, args);
+        auto pendingReply = m_managerIface->asyncCallWithArgumentList(method, args);
+        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(pendingReply, this);
+        connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, watcher, pendingReply](QDBusPendingCallWatcher *) {
+            if (pendingReply.isError()) {
+                qWarning() << pendingReply.error().message();
+                Q_EMIT errorOccured(pendingReply.error().message());
+            }
+            qWarning() << pendingReply.reply();
+            watcher->deleteLater();
+        });
         return;
     }
 
@@ -419,8 +458,8 @@ void UnitModel::setType(Type type)
     m_managerIface->Subscribe();
     connect(m_managerIface, &OrgFreedesktopSystemd1ManagerInterface::Reloading, this, &UnitModel::slotReloading);
     connect(m_managerIface, &OrgFreedesktopSystemd1ManagerInterface::UnitFilesChanged, this, &UnitModel::slotUnitFilesChanged);
-    connect(m_managerIface, &OrgFreedesktopSystemd1ManagerInterface::JobNew, this, &UnitModel::slotJobNew);
-    connect(m_managerIface, &OrgFreedesktopSystemd1ManagerInterface::JobRemoved, this, &UnitModel::slotJobRemoved);
+    connect(m_managerIface, &OrgFreedesktopSystemd1ManagerInterface::UnitNew, this, &UnitModel::slotUnitNew);
+    connect(m_managerIface, &OrgFreedesktopSystemd1ManagerInterface::UnitRemoved, this, &UnitModel::slotUnitRemoved);
     auto connected = m_managerIface->connection().connect(u"org.freedesktop.systemd1"_s,
                                                           {},
                                                           u"org.freedesktop.DBus.Properties"_s,
@@ -442,7 +481,6 @@ void UnitModel::slotRefreshUnitsList()
     auto job = new UnitsFetchJob(m_managerIface);
     connect(job, &UnitsFetchJob::finished, this, [this, job](KJob *) {
         const auto units = job->units();
-        qWarning() << "refreshed" << m_type;
         setUnits(units);
         Q_EMIT unitsRefreshed();
         m_refreshing = false;
@@ -450,24 +488,10 @@ void UnitModel::slotRefreshUnitsList()
     job->start();
 }
 
-void UnitModel::slotJobNew(uint id, const QDBusObjectPath &path, const QString &unit)
-{
-    qDebug() << "UserJobNew: " << id << path.path() << unit;
-    slotRefreshUnitsList();
-}
-
-void UnitModel::slotJobRemoved(uint id, const QDBusObjectPath &path, const QString &unit, const QString &result)
-{
-    qDebug() << "UserJobRemoved: " << id << path.path() << unit << result;
-    slotRefreshUnitsList();
-}
-
 void UnitModel::slotReloading(bool status)
 {
-    if (!status) {
-        Q_EMIT errorOccured(
-            i18nc("%1 is a time", "%1: User daemon reloaded...", QLocale().toString(QDateTime::currentDateTime().time(), QLocale::ShortFormat)));
-        slotRefreshUnitsList();
+    if (!status && !m_refreshTimer->isActive()) {
+        m_refreshTimer->start();
     }
 }
 
@@ -475,15 +499,83 @@ void UnitModel::slotPropertiesChanged(const QString &iface, const QVariantMap &c
 {
     Q_UNUSED(changedProps)
     Q_UNUSED(invalidatedProps)
+    Q_UNUSED(iface)
 
-    qDebug() << "userPropertiesChanged:" << iface; // << changedProps << invalidatedProps;
-    slotRefreshUnitsList();
+    const QString pathFull = message().path();
+
+    if (m_selectedUnit && m_selectedUnit->path() == pathFull) {
+        m_selectedUnit->handlePropertiesChanged(iface, changedProps, invalidatedProps);
+    }
+
+    auto it = std::ranges::find_if(m_units, [pathFull](const auto &unitObject) {
+        return unitObject.unit_path.path() == pathFull;
+    });
+
+    if (it == m_units.cend()) {
+        return;
+    }
+
+    bool changed = false;
+    if (changedProps.contains("ActiveState"_L1)) {
+        it->active_state = changedProps["ActiveState"_L1].toString();
+        changed = true;
+    }
+
+    if (changedProps.contains("LoadState"_L1)) {
+        it->load_state = changedProps["LoadState"_L1].toString();
+        changed = true;
+    }
+
+    if (changed) {
+        const size_t row = std::distance(std::begin(m_units), it);
+        Q_EMIT dataChanged(index(row, 0), index(row, columnCount() - 1), {});
+    }
+}
+
+void UnitModel::slotRefreshUnit(const QString &unit)
+{
+    const auto getUnit = [this](const QString &unit) {
+        return std::ranges::find_if(m_units, [unit](const auto &unitObject) {
+            return unitObject.id == unit;
+        });
+    };
+
+    const auto unitIt = getUnit(unit);
+    if (unitIt == std::cend(m_units)) {
+        qWarning() << "unit refreshed not found";
+        return;
+    }
+
+    auto reply = m_managerIface->GetUnit(unit);
+    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, [reply, watcher, unit, getUnit, this](QDBusPendingCallWatcher *) {
+        watcher->deleteLater();
+        if (reply.isError()) {
+            qWarning() << reply.error().message();
+            return;
+        }
+
+        const auto unitIt = getUnit(unit);
+        if (unitIt == std::cend(m_units)) {
+            qWarning() << "unit refreshed not found";
+            return;
+        }
+
+        OrgFreedesktopSystemd1UnitInterface interface(u"org.freedesktop.systemd1"_s, reply.value().path(), m_connection, nullptr);
+
+        unitIt->load_state = interface.loadState();
+        unitIt->active_state = interface.activeState();
+        unitIt->unit_file_status = interface.unitFileState();
+        const size_t row = std::distance(std::begin(m_units), unitIt);
+        Q_EMIT dataChanged(index(row, 0), index(row, columnCount() - 1), {});
+    });
 }
 
 void UnitModel::slotUnitFilesChanged()
 {
-    // qDebug() << "User unitFilesChanged";
-    slotRefreshUnitsList();
+    if (!m_refreshTimer->isActive()) {
+        m_refreshTimer->start();
+    }
 }
 
 int UnitModel::nonActiveUnits() const
@@ -505,7 +597,47 @@ OrgFreedesktopSystemd1UnitInterface *UnitModel::unitObject(int row)
     unit.load_state = interface->loadState();
     unit.active_state = interface->activeState();
     unit.unit_file_status = interface->unitFileState();
-    Q_EMIT dataChanged(index(row, 0), index(row, 0), {});
+    Q_EMIT dataChanged(index(row, 0), index(row, columnCount() - 1), {});
+
+    m_selectedUnit = interface;
 
     return interface;
+}
+
+QString UnitModel::unitFile(int row) const
+{
+    auto &unit = m_units[row];
+    return unit.unit_file;
+}
+
+QString UnitModel::unitFileStatus(int row) const
+{
+    auto &unit = m_units[row];
+    return unit.unit_file_status;
+}
+
+void UnitModel::slotUnitNew(const QString &id, const QDBusObjectPath &unit)
+{
+    Q_UNUSED(id);
+    Q_UNUSED(unit);
+    slotRefreshUnitsList();
+}
+
+void UnitModel::slotUnitRemoved(const QString &id, const QDBusObjectPath &unit)
+{
+    Q_UNUSED(unit);
+
+    const auto unitIt = std::ranges::find_if(m_units, [id](const auto &unitObject) {
+        return unitObject.id == id;
+    });
+
+    if (unitIt == std::cend(m_units)) {
+        qWarning() << "unit to delete not found";
+        return;
+    }
+
+    const size_t row = std::distance(std::begin(m_units), unitIt);
+    beginRemoveRows({}, row, row);
+    m_units.remove(row);
+    endRemoveRows();
 }
