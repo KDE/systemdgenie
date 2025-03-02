@@ -336,6 +336,8 @@ QList<QStandardItem *> MainWindow::buildTimerListRow(const SystemdUnit &unit, co
     qlonglong nextElapseRealtimeMsec = getDbusProperty(QStringLiteral("NextElapseUSecRealtime"), sysdTimer, path, bus).toULongLong() / 1000;
     qlonglong lastTriggerMSec = getDbusProperty(QStringLiteral("LastTriggerUSec"), sysdTimer, path, bus).toULongLong() / 1000;
 
+    qWarning() << nextElapseMonotonicMsec << nextElapseRealtimeMsec;
+
     if (nextElapseMonotonicMsec == 0) {
         // Timer is calendar-based
         time.setMSecsSinceEpoch(nextElapseRealtimeMsec);
@@ -1065,6 +1067,7 @@ QVariant MainWindow::getDbusProperty(QString prop, dbusIface ifaceName, QDBusObj
     QDBusInterface *iface = new QDBusInterface(conn, path.path(), ifc, abus, this);
     if (iface->isValid()) {
         r = iface->property(prop.toLatin1().constData());
+        qWarning() << conn << path.path() << ifc << prop << r;
         delete iface;
         return r;
     }

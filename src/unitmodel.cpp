@@ -657,3 +657,8 @@ void UnitModel::slotUnitRemoved(const QString &id, const QDBusObjectPath &unit)
     m_units.remove(row);
     endRemoveRows();
 }
+
+QDBusConnection UnitModel::connection() const
+{
+    return m_connection;
+}

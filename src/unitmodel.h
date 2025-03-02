@@ -1,8 +1,6 @@
-/*
-    SPDX-FileCopyrightText: 2016 Ragnar Thomsen <rthomsen6@gmail.com>
-
-    SPDX-License-Identifier: GPL-2.0-or-later
-*/
+// SPDX-FileCopyrightText: 2016 Ragnar Thomsen <rthomsen6@gmail.com>
+// SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
+// SPDX-License-Identifier: GPL-2.0-or-later
 
 #ifndef UNITMODEL_H
 #define UNITMODEL_H
@@ -60,6 +58,8 @@ public:
 
     Type type() const;
     void setType(Type type);
+
+    QDBusConnection connection() const;
 
     int nonActiveUnits() const;
 

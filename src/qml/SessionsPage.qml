@@ -39,7 +39,7 @@ TablePage {
         Controls.Action {
             id: sessionStop
             icon.name: 'media-playback-stop-symbolic'
-            text: i18nc("@action", "Terminate Unit")
+            text: i18nc("@action", "Terminate Session")
             onTriggered: sessionModel.executeAction(root.currentRow, "Terminate", root.Controls.ApplicationWindow.window);
             enabled: root.currentRow !== -1
         }
@@ -47,7 +47,7 @@ TablePage {
         Controls.Action {
             id: sessionLock
             icon.name: 'lock-symbolic'
-            text: i18nc("@action", "Restart Unit")
+            text: i18nc("@action", "Restart Session")
             onTriggered: sessionModel.executeAction(root.currentRow, "Lock", root.Controls.ApplicationWindow.window);
             enabled: root.currentRow !== -1
         }
