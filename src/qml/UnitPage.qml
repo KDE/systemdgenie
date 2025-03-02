@@ -23,6 +23,11 @@ FormCard.FormCardPage {
 
     Kirigami.ColumnView.fillWidth: false
 
+    actions: Kirigami.Action {
+        text: i18nc("@action:intoolbar", "Close")
+        onTriggered: root.Controls.ApplicationWindow.window.pageStack.pop()
+    }
+
     FormCard.FormCard {
         Layout.topMargin: Kirigami.Units.gridUnit
         FormCard.FormTextDelegate {

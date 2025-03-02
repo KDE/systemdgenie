@@ -36,7 +36,9 @@ public:
     enum ExtraRoles {
         ColorRole = Qt::UserRole + 1,
         IconNameRole,
+        UnitPathRole,
     };
+    Q_ENUM(ExtraRoles);
 
     enum Columns {
         UnitColumn,

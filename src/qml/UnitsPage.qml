@@ -109,7 +109,9 @@ TablePage {
         TapHandler {
             acceptedButtons: Qt.RightButton
             onTapped: {
-                delegate.clicked();
+                const selectionModel = root.tableView.selectionModel
+                selectionModel.clear();
+                selectionModel.setCurrentIndex(root.tableView.model.index(delegate.row, 0), ItemSelectionModel.SelectCurrent | ItemSelectionModel.Rows)
                 menu.popup();
             }
         }
@@ -195,6 +197,19 @@ TablePage {
             icon.name: 'password-show-on-symbolic'
             text: i18nc("@action", "Unmask Unit")
             onTriggered: unitModel.executeUnitAction(root.currentRow, 'UnmaskUnitFiles')
+        }
+
+        Kirigami.Action {
+            separator: true
+        }
+
+        Controls.Action {
+            id: editUnit
+            readonly property string unitFile: root.currentRow === -1 ? '' : unitModel.data(unitModel.index(root.currentRow, 0), UnitModel.UnitPathRole)
+            icon.name: 'document-edit-symbolic'
+            text: i18nc("@action", "Edit Unit")
+            enabled: unitFile.length > 0
+            onTriggered: Editor.openEditor(unitFile, Controls.ApplicationWindow.window)
         }
     }
 
