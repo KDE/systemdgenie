@@ -5,7 +5,9 @@
 
 #include "login_session_interface.h"
 #include "loginddbustypes.h"
+
 #include <QAbstractTableModel>
+#include <QWindow>
 #include <qqmlregistration.h>
 
 class OrgFreedesktopLogin1ManagerInterface;
@@ -49,6 +51,8 @@ public:
     QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QHash<int, QByteArray> roleNames() const override;
+
+    Q_INVOKABLE void executeAction(int row, const QString &method, QWindow *window);
 
 public Q_SLOTS:
     void slotRefreshSessionList();

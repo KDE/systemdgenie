@@ -8,6 +8,7 @@ import QtQuick.Controls as Controls
 import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.kirigamiaddons.components as Components
 
 T.ItemDelegate {
     id: root
@@ -15,6 +16,7 @@ T.ItemDelegate {
     required property int row
     required property bool selected
     required property bool current
+    required property Components.ConvergentContextMenu contextMenu
     readonly property bool rowHovered: root.TableView.view.hoveredRow === row || hovered
 
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
@@ -89,4 +91,14 @@ T.ItemDelegate {
     }
 
     Accessible.role: Accessible.Cell
+
+    TapHandler {
+        acceptedButtons: Qt.RightButton
+        onTapped: {
+            const selectionModel = root.TableView.view.selectionModel
+            selectionModel.clear();
+            selectionModel.setCurrentIndex(root.TableView.view.model.index(delegate.row, 0), ItemSelectionModel.SelectCurrent | ItemSelectionModel.Rows)
+            contextMenu.popup();
+        }
+    }
 }

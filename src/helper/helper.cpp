@@ -43,6 +43,7 @@ ActionReply Helper::dbusaction(const QVariantMap &args)
     QList<QVariant> argsForCall = args[QStringLiteral("argsForCall")].toList();
 
     QDBusInterface *iface = new QDBusInterface(service, path, interface, QDBusConnection::systemBus(), this);
+    qWarning() << iface << iface->isValid();
     if (iface->isValid())
         dbusreply = iface->callWithArgumentList(QDBus::AutoDetect, method, argsForCall);
     delete iface;

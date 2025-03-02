@@ -5,7 +5,10 @@
 #include "job/sessionsfetchjob.h"
 #include "login_manager_interface.h"
 
+#include <KAuth/Action>
+#include <KAuth/ExecuteJob>
 #include <KColorScheme>
+#include <KIO/JobUiDelegateFactory>
 #include <KLocalizedString>
 
 using namespace Qt::StringLiterals;
@@ -229,5 +232,38 @@ void SessionModel::slotSessionRemoved(const QString &id, const QDBusObjectPath &
         beginRemoveRows({}, m_sessions.cbegin() - it, m_sessions.cbegin() - it);
         m_sessions.erase(it);
         endInsertRows();
+    }
+}
+
+void SessionModel::executeAction(int row, const QString &method, QWindow *window)
+{
+    const auto idx = index(row, 0);
+    if (!idx.isValid()) {
+        qWarning() << "invalid index" << row;
+        return;
+    }
+    const auto &session = m_sessions.at(row);
+
+    QVariantMap helperArgs;
+    helperArgs[QStringLiteral("service")] = m_loginManagerInterface->service();
+    helperArgs[QStringLiteral("path")] = session.sessionIface->path();
+    helperArgs[QStringLiteral("interface")] = m_loginManagerInterface->interface();
+    helperArgs[QStringLiteral("method")] = method;
+    helperArgs[QStringLiteral("argsForCall")] = QVariantList{};
+
+    // Call the helper. This call causes the debug output: "QDBusArgument: read from a write-only object"
+    KAuth::Action serviceAction(QStringLiteral("org.kde.kcontrol.systemdgenie.dbusaction"));
+    serviceAction.setHelperId(QStringLiteral("org.kde.kcontrol.systemdgenie"));
+    serviceAction.setArguments(helperArgs);
+    serviceAction.setParentWindow(window);
+
+    KAuth::ExecuteJob *job = serviceAction.execute();
+    job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+    job->exec();
+
+    if (!job->exec())
+        Q_EMIT errorOccured(i18n("Unable to authenticate/execute the action: %1", job->errorString()));
+    else {
+        qDebug() << "DBus action successful.";
     }
 }
