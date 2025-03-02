@@ -109,6 +109,7 @@ QHash<int, QByteArray> UnitModel::roleNames() const
         {Qt::DisplayRole, "displayName"},
         {IconNameRole, "iconName"},
         {ColorRole, "textColor"},
+        {UnitPathRole, "unitPath"},
         {Qt::ToolTipRole, "tooltip"},
     };
 }
@@ -133,6 +134,15 @@ QVariant UnitModel::data(const QModelIndex &index, int role) const
         default:
             return {};
         }
+    case UnitPathRole: {
+        // Check if unit has a writable unit file, if not disable editing.
+        QString frpath = unit.unit_file;
+
+        QFileInfo fileInfo(frpath);
+        QStorageInfo storageInfo(frpath);
+        bool isUnitWritable = fileInfo.permission(QFile::WriteOwner) && !storageInfo.isReadOnly();
+        return isUnitWritable ? frpath : QString();
+    }
     case Qt::ForegroundRole: {
         const KColorScheme scheme(QPalette::Normal);
         if (unit.active_state == QLatin1String("active"))
