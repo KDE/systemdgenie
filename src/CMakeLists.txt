@@ -46,6 +46,8 @@ set(systemdgenie_SRCS
     editor.h
     timermodel.cpp
     timermodel.h
+    controller.cpp
+    controller.h
 
     job/sessionsfetchjob.cpp
     job/sessionsfetchjob.h

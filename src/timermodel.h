@@ -91,6 +91,7 @@ Q_SIGNALS:
 
 private:
     void slotRefreshTimerList();
+    void refreshData();
 
     UnitModel *m_systemModel = nullptr;
     UnitModel *m_userModel = nullptr;

@@ -7,6 +7,7 @@ import QtQuick.Controls as Controls
 import org.kde.coreaddons as Core
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.kirigamiaddons.components as Components
 import org.kde.systemdgenie
 
 Kirigami.ApplicationWindow {
@@ -142,14 +143,52 @@ Kirigami.ApplicationWindow {
                 Layout.preferredHeight: pageStack.globalToolBar.preferredHeight
 
                 leftPadding: Kirigami.Units.largeSpacing
-                rightPadding: Kirigami.Units.largeSpacing
-                topPadding: Kirigami.Units.largeSpacing
+                rightPadding: 0
+                topPadding: 0
                 bottomPadding: 0
 
                 visible: !drawer.shouldCollapse
 
-                contentItem: Kirigami.Heading {
-                    text: Core.AboutData.displayName
+                contentItem: RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
+
+                    Kirigami.Heading {
+                        text: Core.AboutData.displayName
+                    }
+
+                    Controls.ToolButton {
+                        icon.name: 'application-menu-symbolic'
+                        onClicked: menu.popup()
+                        down: menu.opened
+
+                        Components.ConvergentContextMenu {
+                            id: menu
+
+                            Controls.Action {
+                                text: i18nc("@action:inmenu", "Reload systemd")
+                                icon.name: 'applications-system-symbolic'
+                                onTriggered: Controller.executeSystemDaemonAction("Reload")
+                            }
+
+                            Controls.Action {
+                                text: i18nc("@action:inmenu", "Re-execute systemd")
+                                icon.name: 'applications-system-symbolic'
+                                onTriggered: Controller.executeSystemDaemonAction("Reexecute")
+                            }
+
+                            Controls.Action {
+                                text: i18nc("@action:inmenu", "Reload user systemd")
+                                icon.name: 'user-identity-symbolic'
+                                onTriggered: Controller.executeUserDaemonAction("Reload")
+                            }
+
+                            Controls.Action {
+                                text: i18nc("@action:inmenu", "Re-execute user systemd")
+                                icon.name: 'user-identity-symbolic'
+                                onTriggered: Controller.executeUserDaemonAction("Reexecute")
+                            }
+                        }
+                    }
                 }
             }
 
