@@ -29,7 +29,7 @@ Kirigami.ApplicationWindow {
             }
         }
 
-        columnView.columnResizeMode: Kirigami.ColumnView.DynamicColumns
+        columnView.columnResizeMode: wideMode ? Kirigami.ColumnView.DynamicColumns : Kirigami.ColumnView.SingleColumn
 
         initialPage: Kirigami.Page {} // just so that it can be replaced
     }

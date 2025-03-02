@@ -606,12 +606,18 @@ OrgFreedesktopSystemd1UnitInterface *UnitModel::unitObject(int row)
 
 QString UnitModel::unitFile(int row) const
 {
+    if (row < 0) {
+        return {};
+    }
     auto &unit = m_units[row];
     return unit.unit_file;
 }
 
 QString UnitModel::unitFileStatus(int row) const
 {
+    if (row < 0) {
+        return {};
+    }
     auto &unit = m_units[row];
     return unit.unit_file_status;
 }
