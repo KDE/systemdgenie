@@ -72,6 +72,7 @@ TablePage {
     ]
 
     titleDelegate: RowLayout {
+        spacing: Kirigami.Units.smallSpacing
         Controls.ToolButton {
             text: i18nc("@action:intoolbar", "Start")
             action: unitStart
