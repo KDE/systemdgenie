@@ -27,7 +27,9 @@ public:
     }
 
 public:
-    OrgFreedesktopSystemd1UnitInterface(const QString &service, const QString &path, const QDBusConnection &connection, QObject *parent = nullptr);
+    OrgFreedesktopSystemd1UnitInterface(const QString &service, const QString &path, const QDBusConnection &connection, const char *interface, QObject *parent);
+
+    OrgFreedesktopSystemd1UnitInterface(const QString &service, const QString &path, const QDBusConnection &connection, QObject *parent);
 
     ~OrgFreedesktopSystemd1UnitInterface();
 

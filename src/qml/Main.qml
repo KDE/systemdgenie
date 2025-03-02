@@ -36,14 +36,30 @@ Kirigami.ApplicationWindow {
 
     Component.onCompleted: systemUnitsAction.trigger();
 
+    UnitModel {
+        id: systemUnitModel
+        type: UnitModel.SystemUnits
+    }
+
+    UnitModel {
+        id: userUnitModel
+        type: UnitModel.UserUnits
+    }
+
+    TimerModel {
+        id: timerModel
+        userModel: userUnitModel
+        systemModel: systemUnitModel
+    }
+
     Kirigami.Action {
         id: systemUnitsAction
 
         text: i18nc("@action:button", "System Units")
         onTriggered: {
             root.pageStack.clear();
-            root.pageStack.replace(Qt.resolvedUrl('./UnitsPage.qml'), {
-                type: UnitModel.SystemUnits,
+            root.pageStack.push(Qt.resolvedUrl('./UnitsPage.qml'), {
+                unitModel: systemUnitModel,
             });
         }
     }
@@ -54,8 +70,8 @@ Kirigami.ApplicationWindow {
         text: i18nc("@action:button", "User Units")
         onTriggered: {
             root.pageStack.clear();
-            root.pageStack.replace(Qt.resolvedUrl('./UnitsPage.qml'), {
-                type: UnitModel.UserUnits,
+            root.pageStack.push(Qt.resolvedUrl('./UnitsPage.qml'), {
+                unitModel: userUnitModel,
             });
         }
     }
@@ -66,7 +82,7 @@ Kirigami.ApplicationWindow {
         text: i18nc("@action:button", "Config Files")
         onTriggered: {
             root.pageStack.clear();
-            root.pageStack.replace(Qt.resolvedUrl('./ConfigFilesPage.qml'));
+            root.pageStack.push(Qt.resolvedUrl('./ConfigFilesPage.qml'));
         }
     }
 
@@ -76,7 +92,19 @@ Kirigami.ApplicationWindow {
         text: i18nc("@action:button", "Sessions")
         onTriggered: {
             root.pageStack.clear();
-            root.pageStack.replace(Qt.resolvedUrl('./SessionsPage.qml'));
+            root.pageStack.push(Qt.resolvedUrl('./SessionsPage.qml'));
+        }
+    }
+
+    Kirigami.Action {
+        id: timersAction
+
+        text: i18nc("@action:button", "Timers")
+        onTriggered: {
+            root.pageStack.clear();
+            root.pageStack.push(Qt.resolvedUrl('./TimersPage.qml'), {
+                model: timerModel,
+            });
         }
     }
 
@@ -150,7 +178,7 @@ Kirigami.ApplicationWindow {
                     Repeater {
                         id: actionsRepeater
 
-                        model: [systemUnitsAction, userUnitsAction, configFilesAction, sessionsAction]
+                        model: [systemUnitsAction, userUnitsAction, configFilesAction, sessionsAction, timersAction]
 
                         delegate: Delegates.RoundedItemDelegate {
                             required property var modelData

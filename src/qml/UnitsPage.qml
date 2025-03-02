@@ -20,16 +20,12 @@ TablePage {
     }
 
     readonly property UnitInterface unitObject: currentRow === -1 ? null : unitModel.unitObject(currentRow)
-    property alias type: unitModel.type
+    property alias unitModel: sortFilter.sourceModel
 
     Kirigami.ColumnView.fillWidth: true
 
     model: SortFilterUnitModel {
         id: sortFilter
-
-        sourceModel: UnitModel {
-            id: unitModel
-        }
 
         function updateFilter(): void {
             if (!checkInactiveUnits.checked) {

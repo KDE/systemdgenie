@@ -10,6 +10,16 @@
  */
 
 using namespace Qt::StringLiterals;
+
+OrgFreedesktopSystemd1UnitInterface::OrgFreedesktopSystemd1UnitInterface(const QString &service,
+                                                                         const QString &path,
+                                                                         const QDBusConnection &_connection,
+                                                                         const char *interface,
+                                                                         QObject *parent)
+    : QDBusAbstractInterface(service, path, interface, _connection, parent)
+{
+}
+
 OrgFreedesktopSystemd1UnitInterface::OrgFreedesktopSystemd1UnitInterface(const QString &service,
                                                                          const QString &path,
                                                                          const QDBusConnection &_connection,

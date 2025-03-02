@@ -16,7 +16,7 @@ T.ItemDelegate {
     required property int row
     required property bool selected
     required property bool current
-    required property Components.ConvergentContextMenu contextMenu
+    property Components.ConvergentContextMenu contextMenu: null
     readonly property bool rowHovered: root.TableView.view.hoveredRow === row || hovered
 
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
@@ -98,7 +98,9 @@ T.ItemDelegate {
             const selectionModel = root.TableView.view.selectionModel
             selectionModel.clear();
             selectionModel.setCurrentIndex(root.TableView.view.model.index(delegate.row, 0), ItemSelectionModel.SelectCurrent | ItemSelectionModel.Rows)
-            contextMenu.popup();
+            if (root.contextMenu) {
+                root.contextMenu.popup();
+            }
         }
     }
 }
