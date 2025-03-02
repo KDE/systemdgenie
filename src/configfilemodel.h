@@ -21,6 +21,7 @@ public:
         ModifiedColumn,
         DescriptionColumn,
     };
+    Q_ENUM(Columns);
 
     explicit ConfigFileModel(QObject *parent = nullptr);
 
@@ -31,7 +32,7 @@ public:
 
     QHash<int, QByteArray> roleNames() const override;
 
-    void openManPage(int index);
+    Q_INVOKABLE void openManPage(int index);
 
 Q_SIGNALS:
     void errorOccurred(const QString &error);
