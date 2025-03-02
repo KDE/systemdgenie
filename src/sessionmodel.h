@@ -28,6 +28,7 @@ Q_SIGNALS:
 class SessionModel : public QAbstractTableModel
 {
     Q_OBJECT
+    QML_ELEMENT
 
 public:
     enum Columns {

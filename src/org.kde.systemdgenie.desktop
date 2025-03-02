@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=SystemdGenie
+Name=systemdGenie
 Name[ar]=جني Systemd
 Name[ast]=SystemdGenie
 Name[az]=Systemd
@@ -40,7 +40,7 @@ Name[uk]=SystemdGenie
 Name[x-test]=xxSystemdGeniexx
 Name[zh_CN]=SystemdGenie
 Name[zh_TW]=SystemdGenie
-GenericName=Systemd Management Tool
+GenericName=systemd Management Tool
 GenericName[ar]=أداة إدارة Systemd
 GenericName[az]=Systemd İdarəetmə Aləti
 GenericName[bg]=Инструмент за настройване на systemd
@@ -103,7 +103,7 @@ Comment[zh_CN]=管理 systemd 单元、计时器、会话和配置文件
 Comment[zh_TW]=管理 systemd 單元、計時器、工作階段與設定檔案
 Type=Application
 Icon=preferences-system-services
-Exec=systemdgenie
+Exec=systsmdgenie
 Categories=Qt;KDE;System;
 X-DBUS-StartupType=Multi
 X-DBUS-ServiceName=org.kde.systemdgenie
