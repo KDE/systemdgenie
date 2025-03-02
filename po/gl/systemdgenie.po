@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-23 00:43+0000\n"
+"POT-Creation-Date: 2025-03-02 00:43+0000\n"
 "PO-Revision-Date: 2025-02-24 07:20+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -290,207 +290,207 @@ msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
 msgid "Total: %1, %2, %3"
 msgstr "Total: %1, %2, %3."
 
-#: src/mainwindow.cpp:665 src/mainwindow.cpp:1429
+#: src/mainwindow.cpp:665 src/mainwindow.cpp:1433
 #, kde-format
 msgid "Unable to authenticate/execute the action: %1"
 msgstr "Non é posíbel autenticar/executar a acción: %1"
 
-#: src/mainwindow.cpp:824
+#: src/mainwindow.cpp:828
 #, kde-format
 msgid "&Refresh"
 msgstr "&Actualizar"
 
-#: src/mainwindow.cpp:826
+#: src/mainwindow.cpp:830
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Actualizar."
 
-#: src/mainwindow.cpp:832
+#: src/mainwindow.cpp:836
 #, kde-format
 msgid "Start Unit"
 msgstr "Iniciar a unidade"
 
-#: src/mainwindow.cpp:840
+#: src/mainwindow.cpp:844
 #, kde-format
 msgid "Stop Unit"
 msgstr "Deter a unidade"
 
-#: src/mainwindow.cpp:848
+#: src/mainwindow.cpp:852
 #, kde-format
 msgid "Reload Unit"
 msgstr "Cargar de novo a unidade"
 
-#: src/mainwindow.cpp:856
+#: src/mainwindow.cpp:860
 #, kde-format
 msgid "Restart Unit"
 msgstr "Reiniciar a unidade"
 
-#: src/mainwindow.cpp:864
+#: src/mainwindow.cpp:868
 #, kde-format
 msgid "Enable Unit"
 msgstr "Activar a unidade"
 
-#: src/mainwindow.cpp:872
+#: src/mainwindow.cpp:876
 #, kde-format
 msgid "Disable Unit"
 msgstr "Desactivar a unidade"
 
-#: src/mainwindow.cpp:880
+#: src/mainwindow.cpp:884
 #, kde-format
 msgid "Mask Unit"
 msgstr "Enmascarar a unidade"
 
-#: src/mainwindow.cpp:888
+#: src/mainwindow.cpp:892
 #, kde-format
 msgid "Unmask Unit"
 msgstr "Desenmascarar a unidade"
 
-#: src/mainwindow.cpp:896
+#: src/mainwindow.cpp:900
 #, kde-format
 msgid "Re&load systemd"
 msgstr "&Cargar de novo Systemd"
 
-#: src/mainwindow.cpp:897
+#: src/mainwindow.cpp:901
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all unit files"
 msgstr "Prema para cargar de novo todos os ficheiros de unidade."
 
-#: src/mainwindow.cpp:905
+#: src/mainwindow.cpp:909
 #, kde-format
 msgid "Re-e&xecute systemd"
 msgstr "E&xecutar de novo Systemd"
 
-#: src/mainwindow.cpp:906
+#: src/mainwindow.cpp:910
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the systemd daemon"
 msgstr "Prema para executar de novo o servizo Systemd."
 
-#: src/mainwindow.cpp:914
+#: src/mainwindow.cpp:918
 #, kde-format
 msgid "Re&load user systemd"
 msgstr "&Cargar de novo o Systemd do usuario"
 
-#: src/mainwindow.cpp:915
+#: src/mainwindow.cpp:919
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all user unit files"
 msgstr "Prema para cargar de novo todos os ficheiros de unidade do usuario."
 
-#: src/mainwindow.cpp:923
+#: src/mainwindow.cpp:927
 #, kde-format
 msgid "Re-e&xecute user systemd"
 msgstr "E&xecutar de novo o Systemd do usuario"
 
-#: src/mainwindow.cpp:924
+#: src/mainwindow.cpp:928
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the user systemd daemon"
 msgstr "Prema para executar de novo o servizo Systemd do usuario."
 
-#: src/mainwindow.cpp:932
+#: src/mainwindow.cpp:936
 #, kde-format
 msgid "Edit Unit File…"
 msgstr "Editar o ficheiro de unidade…"
 
-#: src/mainwindow.cpp:938
+#: src/mainwindow.cpp:942
 #, kde-format
 msgid "Edit Configuration File…"
 msgstr "Editar o ficheiro de configuración…"
 
-#: src/mainwindow.cpp:944
+#: src/mainwindow.cpp:948
 #, kde-format
 msgid "Open Man Page"
 msgstr "Abrir a páxina man"
 
-#: src/mainwindow.cpp:950
+#: src/mainwindow.cpp:954
 #, kde-format
 msgid "View Logs"
 msgstr "Ver os rexistros"
 
-#: src/mainwindow.cpp:956
+#: src/mainwindow.cpp:960
 #, kde-format
 msgid "Activate Session"
 msgstr "Activar a sesión"
 
-#: src/mainwindow.cpp:964
+#: src/mainwindow.cpp:968
 #, kde-format
 msgid "Terminate Session"
 msgstr "Terminar a sesión"
 
-#: src/mainwindow.cpp:972
+#: src/mainwindow.cpp:976
 #, kde-format
 msgid "Lock Session"
 msgstr "Bloquear a sesión"
 
-#: src/mainwindow.cpp:1124
+#: src/mainwindow.cpp:1128
 #, kde-format
 msgid "<b>VT:</b> %1"
 msgstr "<b>Terminais virtuais:</b> %1"
 
-#: src/mainwindow.cpp:1128
+#: src/mainwindow.cpp:1132
 #, kde-format
 msgid "<br><b>Remote host:</b> %1"
 msgstr "<br><b>Máquina remota:</b> %1"
 
-#: src/mainwindow.cpp:1129
+#: src/mainwindow.cpp:1133
 #, kde-format
 msgid "<br><b>Remote user:</b> %1"
 msgstr "<br><b>Usuario remoto:</b> %1"
 
-#: src/mainwindow.cpp:1131
+#: src/mainwindow.cpp:1135
 #, kde-format
 msgid "<br><b>Service:</b> %1"
 msgstr "<br><b>Servizo:</b> %1"
 
-#: src/mainwindow.cpp:1132
+#: src/mainwindow.cpp:1136
 #, kde-format
 msgid "<br><b>Leader (PID):</b> %1"
 msgstr "<br><b>Líder (PID):</b> %1"
 
-#: src/mainwindow.cpp:1135
+#: src/mainwindow.cpp:1139
 #, kde-format
 msgid "<br><b>Type:</b> %1"
 msgstr "<br><b>Tipo:</b> %1"
 
-#: src/mainwindow.cpp:1137
+#: src/mainwindow.cpp:1141
 #, kde-format
 msgid " (display %1)"
 msgstr " (pantalla %1)"
 
-#: src/mainwindow.cpp:1146
+#: src/mainwindow.cpp:1150
 #, kde-format
 msgid "<br><b>Class:</b> %1"
 msgstr "<br><b>Clase:</b> %1"
 
-#: src/mainwindow.cpp:1147
+#: src/mainwindow.cpp:1151
 #, kde-format
 msgid "<br><b>State:</b> %1"
 msgstr "<br><b>Estado:</b> %1"
 
-#: src/mainwindow.cpp:1148
+#: src/mainwindow.cpp:1152
 #, kde-format
 msgid "<br><b>Scope:</b> %1"
 msgstr "<br><b>Ámbito:</b> %1"
 
-#: src/mainwindow.cpp:1150
+#: src/mainwindow.cpp:1154
 #, kde-format
 msgid "<br><b>Created: </b>"
 msgstr "<br><b>Creado: </b>"
 
-#: src/mainwindow.cpp:1373
+#: src/mainwindow.cpp:1377
 #, kde-format
 msgid "Editing %1"
 msgstr "Editando %1"
 
-#: src/mainwindow.cpp:1383
+#: src/mainwindow.cpp:1387
 #, kde-format
 msgid "Editing file: <code>%1</code>"
 msgstr "Editando un ficheiro: <code>%1</code>"
 
-#: src/mainwindow.cpp:1408
+#: src/mainwindow.cpp:1412
 #, kde-format
 msgid ""
 "Failed to open the unit file:\n"

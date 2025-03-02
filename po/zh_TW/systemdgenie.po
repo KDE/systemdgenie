@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.2.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-23 00:43+0000\n"
+"POT-Creation-Date: 2025-03-02 00:43+0000\n"
 "PO-Revision-Date: 2025-02-18 16:12+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -285,207 +285,207 @@ msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
 msgid "Total: %1, %2, %3"
 msgstr "總計：%1, %2, %3"
 
-#: src/mainwindow.cpp:665 src/mainwindow.cpp:1429
+#: src/mainwindow.cpp:665 src/mainwindow.cpp:1433
 #, kde-format
 msgid "Unable to authenticate/execute the action: %1"
 msgstr "無法驗證/執行動作： %1"
 
-#: src/mainwindow.cpp:824
+#: src/mainwindow.cpp:828
 #, kde-format
 msgid "&Refresh"
 msgstr "重新整理(&R)"
 
-#: src/mainwindow.cpp:826
+#: src/mainwindow.cpp:830
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "重新整理"
 
-#: src/mainwindow.cpp:832
+#: src/mainwindow.cpp:836
 #, kde-format
 msgid "Start Unit"
 msgstr "啟動單元"
 
-#: src/mainwindow.cpp:840
+#: src/mainwindow.cpp:844
 #, kde-format
 msgid "Stop Unit"
 msgstr "停止單元"
 
-#: src/mainwindow.cpp:848
+#: src/mainwindow.cpp:852
 #, kde-format
 msgid "Reload Unit"
 msgstr "重新載入單元"
 
-#: src/mainwindow.cpp:856
+#: src/mainwindow.cpp:860
 #, kde-format
 msgid "Restart Unit"
 msgstr "重新啟動單元"
 
-#: src/mainwindow.cpp:864
+#: src/mainwindow.cpp:868
 #, kde-format
 msgid "Enable Unit"
 msgstr "啟用單元"
 
-#: src/mainwindow.cpp:872
+#: src/mainwindow.cpp:876
 #, kde-format
 msgid "Disable Unit"
 msgstr "停用單元"
 
-#: src/mainwindow.cpp:880
+#: src/mainwindow.cpp:884
 #, kde-format
 msgid "Mask Unit"
 msgstr "遮蔽單元"
 
-#: src/mainwindow.cpp:888
+#: src/mainwindow.cpp:892
 #, kde-format
 msgid "Unmask Unit"
 msgstr "解除遮蔽單元"
 
-#: src/mainwindow.cpp:896
+#: src/mainwindow.cpp:900
 #, kde-format
 msgid "Re&load systemd"
 msgstr "重新載入 Systemd(&L)"
 
-#: src/mainwindow.cpp:897
+#: src/mainwindow.cpp:901
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all unit files"
 msgstr "點此重新載入所有單元檔案"
 
-#: src/mainwindow.cpp:905
+#: src/mainwindow.cpp:909
 #, kde-format
 msgid "Re-e&xecute systemd"
 msgstr "重新執行 systemd(&X)"
 
-#: src/mainwindow.cpp:906
+#: src/mainwindow.cpp:910
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the systemd daemon"
 msgstr "按此重新執行 Systemd 守護程式"
 
-#: src/mainwindow.cpp:914
+#: src/mainwindow.cpp:918
 #, kde-format
 msgid "Re&load user systemd"
 msgstr "重新載入使用者的 systemd(&L)"
 
-#: src/mainwindow.cpp:915
+#: src/mainwindow.cpp:919
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to reload all user unit files"
 msgstr "點此重新載入全部使用者單元檔案"
 
-#: src/mainwindow.cpp:923
+#: src/mainwindow.cpp:927
 #, kde-format
 msgid "Re-e&xecute user systemd"
 msgstr "重新執行使用者的 systemd(&X)"
 
-#: src/mainwindow.cpp:924
+#: src/mainwindow.cpp:928
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Click to re-execute the user systemd daemon"
 msgstr "按此重新執行使用者 Systemd 守護程式"
 
-#: src/mainwindow.cpp:932
+#: src/mainwindow.cpp:936
 #, kde-format
 msgid "Edit Unit File…"
 msgstr "編輯單元檔案…"
 
-#: src/mainwindow.cpp:938
+#: src/mainwindow.cpp:942
 #, kde-format
 msgid "Edit Configuration File…"
 msgstr "編輯設定檔案…"
 
-#: src/mainwindow.cpp:944
+#: src/mainwindow.cpp:948
 #, kde-format
 msgid "Open Man Page"
 msgstr "打開 man 頁面"
 
-#: src/mainwindow.cpp:950
+#: src/mainwindow.cpp:954
 #, kde-format
 msgid "View Logs"
 msgstr ""
 
-#: src/mainwindow.cpp:956
+#: src/mainwindow.cpp:960
 #, kde-format
 msgid "Activate Session"
 msgstr "啟動工作階段"
 
-#: src/mainwindow.cpp:964
+#: src/mainwindow.cpp:968
 #, kde-format
 msgid "Terminate Session"
 msgstr "終止工作階段"
 
-#: src/mainwindow.cpp:972
+#: src/mainwindow.cpp:976
 #, kde-format
 msgid "Lock Session"
 msgstr "鎖定工作階段"
 
-#: src/mainwindow.cpp:1124
+#: src/mainwindow.cpp:1128
 #, kde-format
 msgid "<b>VT:</b> %1"
 msgstr "<b>虛擬終端機：</b> %1"
 
-#: src/mainwindow.cpp:1128
+#: src/mainwindow.cpp:1132
 #, kde-format
 msgid "<br><b>Remote host:</b> %1"
 msgstr "<br/><b>遠端主機：</b> %1"
 
-#: src/mainwindow.cpp:1129
+#: src/mainwindow.cpp:1133
 #, kde-format
 msgid "<br><b>Remote user:</b> %1"
 msgstr "<br/><b>遠端使用者：</b> %1"
 
-#: src/mainwindow.cpp:1131
+#: src/mainwindow.cpp:1135
 #, kde-format
 msgid "<br><b>Service:</b> %1"
 msgstr "<br/><b>服務：</b> %1"
 
-#: src/mainwindow.cpp:1132
+#: src/mainwindow.cpp:1136
 #, kde-format
 msgid "<br><b>Leader (PID):</b> %1"
 msgstr "<br/><b>引導程式 (PID)：</b> %1"
 
-#: src/mainwindow.cpp:1135
+#: src/mainwindow.cpp:1139
 #, kde-format
 msgid "<br><b>Type:</b> %1"
 msgstr "<br/><b>類型：</b> %1"
 
-#: src/mainwindow.cpp:1137
+#: src/mainwindow.cpp:1141
 #, kde-format
 msgid " (display %1)"
 msgstr " (顯示 %1)"
 
-#: src/mainwindow.cpp:1146
+#: src/mainwindow.cpp:1150
 #, kde-format
 msgid "<br><b>Class:</b> %1"
 msgstr "<br/><b>類別：</b> %1"
 
-#: src/mainwindow.cpp:1147
+#: src/mainwindow.cpp:1151
 #, kde-format
 msgid "<br><b>State:</b> %1"
 msgstr "<br/><b>狀態：</b> %1"
 
-#: src/mainwindow.cpp:1148
+#: src/mainwindow.cpp:1152
 #, kde-format
 msgid "<br><b>Scope:</b> %1"
 msgstr "<br/><b>觀測器：</b> %1"
 
-#: src/mainwindow.cpp:1150
+#: src/mainwindow.cpp:1154
 #, kde-format
 msgid "<br><b>Created: </b>"
 msgstr "<br/><b>已建立： </b>"
 
-#: src/mainwindow.cpp:1373
+#: src/mainwindow.cpp:1377
 #, kde-format
 msgid "Editing %1"
 msgstr "正在編輯 %1"
 
-#: src/mainwindow.cpp:1383
+#: src/mainwindow.cpp:1387
 #, kde-format
 msgid "Editing file: <code>%1</code>"
 msgstr "正在編輯檔案：<code>%1</code>"
 
-#: src/mainwindow.cpp:1408
+#: src/mainwindow.cpp:1412
 #, kde-format
 msgid ""
 "Failed to open the unit file:\n"
