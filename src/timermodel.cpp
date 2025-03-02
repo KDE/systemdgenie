@@ -16,63 +16,7 @@ TimerModel::TimerModel(QObject *parent)
     : QAbstractTableModel(parent)
 {
     auto timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, [this]() {
-        for (auto &timer : m_timers) {
-            {
-                QDateTime time;
-                qlonglong nextElapseMonotonicMsec = timer.interface->nextElapseUSecMonotonic() / 1000;
-                qlonglong nextElapseRealtimeMsec = timer.interface->nextElapseUSecRealtime() / 1000;
-
-                if (nextElapseMonotonicMsec == 0) {
-                    // Timer is calendar-based
-                    time.setMSecsSinceEpoch(nextElapseRealtimeMsec);
-                } else {
-                    // Timer is monotonic
-                    time = QDateTime().currentDateTime();
-                    time = time.addMSecs(nextElapseMonotonicMsec);
-
-                    // Get the monotonic system clock
-                    struct timespec ts;
-                    if (clock_gettime(CLOCK_MONOTONIC, &ts) != 0)
-                        qDebug() << "Failed to get the monotonic system clock!";
-
-                    // Convert the monotonic system clock to microseconds
-                    qlonglong now_mono_usec = ts.tv_sec * 1000000 + ts.tv_nsec / 1000;
-
-                    // And subtract it.
-                    time = time.addMSecs(-now_mono_usec / 1000);
-                }
-                timer.next = time;
-            }
-            {
-                QDateTime time;
-                qlonglong nextElapseMonotonicMsec = timer.interface->nextElapseUSecMonotonic() / 1000;
-                qlonglong nextElapseRealtimeMsec = timer.interface->nextElapseUSecRealtime() / 1000;
-
-                if (nextElapseMonotonicMsec == 0) {
-                    // Timer is calendar-based
-                    time.setMSecsSinceEpoch(nextElapseRealtimeMsec);
-                } else {
-                    // Timer is monotonic
-                    time = QDateTime().currentDateTime();
-                    time = time.addMSecs(nextElapseMonotonicMsec);
-
-                    // Get the monotonic system clock
-                    struct timespec ts;
-                    if (clock_gettime(CLOCK_MONOTONIC, &ts) != 0)
-                        qDebug() << "Failed to get the monotonic system clock!";
-
-                    // Convert the monotonic system clock to microseconds
-                    qlonglong now_mono_usec = ts.tv_sec * 1000000 + ts.tv_nsec / 1000;
-
-                    // And subtract it.
-                    time = time.addMSecs(-now_mono_usec / 1000);
-                }
-                timer.next = time;
-            }
-        }
-        Q_EMIT dataChanged(index(0, LeftColumn), index(rowCount() - 1, LastColumn), {});
-    });
+    connect(timer, &QTimer::timeout, this, &TimerModel::refreshData);
     timer->setInterval(1min);
     timer->start();
 }
@@ -282,4 +226,65 @@ void TimerModel::slotRefreshTimerList()
         }
     }
     endResetModel();
+
+    refreshData();
+}
+
+void TimerModel::refreshData()
+{
+    for (auto &timer : m_timers) {
+        {
+            QDateTime time;
+            qlonglong nextElapseMonotonicMsec = timer.interface->nextElapseUSecMonotonic() / 1000;
+            qlonglong nextElapseRealtimeMsec = timer.interface->nextElapseUSecRealtime() / 1000;
+
+            if (nextElapseMonotonicMsec == 0) {
+                // Timer is calendar-based
+                time.setMSecsSinceEpoch(nextElapseRealtimeMsec);
+            } else {
+                // Timer is monotonic
+                time = QDateTime().currentDateTime();
+                time = time.addMSecs(nextElapseMonotonicMsec);
+
+                // Get the monotonic system clock
+                struct timespec ts;
+                if (clock_gettime(CLOCK_MONOTONIC, &ts) != 0)
+                    qDebug() << "Failed to get the monotonic system clock!";
+
+                // Convert the monotonic system clock to microseconds
+                qlonglong now_mono_usec = ts.tv_sec * 1000000 + ts.tv_nsec / 1000;
+
+                // And subtract it.
+                time = time.addMSecs(-now_mono_usec / 1000);
+            }
+            timer.next = time;
+        }
+        {
+            QDateTime time;
+            qlonglong nextElapseMonotonicMsec = timer.interface->nextElapseUSecMonotonic() / 1000;
+            qlonglong nextElapseRealtimeMsec = timer.interface->nextElapseUSecRealtime() / 1000;
+
+            if (nextElapseMonotonicMsec == 0) {
+                // Timer is calendar-based
+                time.setMSecsSinceEpoch(nextElapseRealtimeMsec);
+            } else {
+                // Timer is monotonic
+                time = QDateTime().currentDateTime();
+                time = time.addMSecs(nextElapseMonotonicMsec);
+
+                // Get the monotonic system clock
+                struct timespec ts;
+                if (clock_gettime(CLOCK_MONOTONIC, &ts) != 0)
+                    qDebug() << "Failed to get the monotonic system clock!";
+
+                // Convert the monotonic system clock to microseconds
+                qlonglong now_mono_usec = ts.tv_sec * 1000000 + ts.tv_nsec / 1000;
+
+                // And subtract it.
+                time = time.addMSecs(-now_mono_usec / 1000);
+            }
+            timer.next = time;
+        }
+    }
+    Q_EMIT dataChanged(index(0, LeftColumn), index(rowCount() - 1, LastColumn), {});
 }
