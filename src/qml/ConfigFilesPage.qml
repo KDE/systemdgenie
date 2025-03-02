@@ -25,16 +25,7 @@ TablePage {
 
         text: displayName
         icon.name: iconName
-
-        TapHandler {
-            acceptedButtons: Qt.RightButton
-            onTapped: {
-                const selectionModel = root.tableView.selectionModel
-                selectionModel.clear();
-                selectionModel.setCurrentIndex(root.tableView.model.index(delegate.row, 0), ItemSelectionModel.SelectCurrent | ItemSelectionModel.Rows)
-                menu.popup();
-            }
-        }
+        contextMenu: menu
     }
 
     titleDelegate: RowLayout {
@@ -55,7 +46,7 @@ TablePage {
         id: menu
 
         Controls.Action {
-            id: opemManual
+            id: openManual
             icon.name: "help-contents-symbolic"
             text: i18n("Open Man Page")
             onTriggered: configFileModel.openManPage(root.tableView.currentRow)

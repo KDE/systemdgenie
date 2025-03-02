@@ -73,6 +73,7 @@ TablePage {
 
     titleDelegate: RowLayout {
         spacing: Kirigami.Units.smallSpacing
+
         Controls.ToolButton {
             text: i18nc("@action:intoolbar", "Start")
             action: unitStart
@@ -101,20 +102,11 @@ TablePage {
         required current
 
         text: displayName
+        contextMenu: menu
         icon.name: iconName
         contentItem: Delegates.DefaultContentItem {
             itemDelegate: delegate
             labelItem.color: delegate.textColor
-        }
-
-        TapHandler {
-            acceptedButtons: Qt.RightButton
-            onTapped: {
-                const selectionModel = root.tableView.selectionModel
-                selectionModel.clear();
-                selectionModel.setCurrentIndex(root.tableView.model.index(delegate.row, 0), ItemSelectionModel.SelectCurrent | ItemSelectionModel.Rows)
-                menu.popup();
-            }
         }
 
         onClicked: root.Controls.ApplicationWindow.window.pageStack.push(Qt.resolvedUrl("./UnitPage.qml"), {
