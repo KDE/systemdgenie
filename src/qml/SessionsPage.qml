@@ -7,7 +7,7 @@ import org.kde.systemdgenie
 TablePage {
     id: root
 
-    model: Controller.sessionModel
+    model: SessionModel {}
     delegate: TableDelegate {
         id: delegate
 
