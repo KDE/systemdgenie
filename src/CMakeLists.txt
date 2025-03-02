@@ -52,6 +52,8 @@ set(systemdgenie_SRCS
     sessionmodel.h
     types.cpp
     types.h
+    editor.cpp
+    editor.h
 
     job/sessionsfetchjob.cpp
     job/sessionsfetchjob.h
