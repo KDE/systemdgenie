@@ -17,6 +17,7 @@ Kirigami.ApplicationWindow {
 
     minimumWidth: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 22
     minimumHeight: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 20
+    title: pageButtonGroup.checkedButton?.text ?? ''
 
     pageStack {
         globalToolBar {
