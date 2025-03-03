@@ -71,9 +71,10 @@ void UnitModel::setUnits(const QList<SystemdUnit> &units)
         }
     }
 
+    m_activeUnitsCount = 0;
     for (const SystemdUnit &unit : units) {
         if (unit.active_state == "active"_L1) {
-            m_nonActiveUnitsCount++;
+            m_activeUnitsCount++;
         }
     }
     Q_EMIT unitsRefreshed();
@@ -588,9 +589,9 @@ void UnitModel::slotUnitFilesChanged()
     }
 }
 
-int UnitModel::nonActiveUnits() const
+int UnitModel::activeUnitsCount() const
 {
-    return m_nonActiveUnitsCount;
+    return m_activeUnitsCount;
 }
 
 OrgFreedesktopSystemd1UnitInterface *UnitModel::unitObject(int row)
