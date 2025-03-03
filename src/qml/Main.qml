@@ -199,6 +199,22 @@ Kirigami.ApplicationWindow {
                                 onTriggered: Controller.viewLogs()
                                 enabled: Controller.canViewLogs
                             }
+
+                            Kirigami.Action {
+                                separator: true
+                            }
+
+                            Controls.Action {
+                                text: i18nc("@action:inmenu", "About %1", Core.AboutData.displayName)
+                                icon.name: 'preferences-system-services-symbolic'
+                                onTriggered: root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutPage"))
+                            }
+
+                            Controls.Action {
+                                text: i18nc("@action:inmenu", "About KDE")
+                                icon.name: 'kde-symbolic'
+                                onTriggered: root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutKDEPage"))
+                            }
                         }
                     }
                 }
