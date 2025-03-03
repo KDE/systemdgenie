@@ -21,7 +21,8 @@ class UnitModel : public QAbstractTableModel, protected QDBusContext
     Q_OBJECT
     QML_ELEMENT
     Q_PROPERTY(Type type READ type WRITE setType NOTIFY typeChanged)
-    Q_PROPERTY(int nonActiveUnits READ nonActiveUnits NOTIFY unitsRefreshed)
+    Q_PROPERTY(int activeUnitsCount READ activeUnitsCount NOTIFY unitsRefreshed)
+    Q_PROPERTY(int count READ rowCount NOTIFY unitsRefreshed)
 
 public:
     enum Type {
@@ -61,7 +62,7 @@ public:
 
     QDBusConnection connection() const;
 
-    int nonActiveUnits() const;
+    int activeUnitsCount() const;
 
     /// Caller take ownership of the returned OrgFreedesktopSystemd1ManagerInterface
     Q_INVOKABLE OrgFreedesktopSystemd1UnitInterface *unitObject(int row);
@@ -95,7 +96,7 @@ private:
     Type m_type = Unknown;
     OrgFreedesktopSystemd1ManagerInterface *m_managerIface = nullptr;
     QPointer<OrgFreedesktopSystemd1UnitInterface> m_selectedUnit;
-    int m_nonActiveUnitsCount;
+    int m_activeUnitsCount;
     bool m_refreshing = false;
 };
 

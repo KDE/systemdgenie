@@ -86,6 +86,22 @@ TablePage {
         }
     }
 
+    footer: Controls.ToolBar {
+        leftPadding: Kirigami.Units.smallSpacing
+        rightPadding: Kirigami.Units.smallSpacing
+        topPadding: Kirigami.Units.smallSpacing
+        bottomPadding: Kirigami.Units.smallSpacing
+        background.implicitHeight: 0
+        contentItem: Controls.Label {
+            text: {
+                const units = i18ncp("First part of 'Total: %1, %2, %3'", "1 unit", "%1 units", unitModel.count);
+                const active = i18ncp("Second part of 'Total: %1, %2, %3'", "1 active", "%1 active", unitModel.activeUnitsCount);
+                const displayed = i18ncp("Third part of 'Total: %1, %2, %3'", "1 displayed", "%1 displayed", root.tableView.count);
+                return i18nc("%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'", "Total: %1, %2, %3", units, active, displayed);
+            }
+        }
+    }
+
     delegate: TableDelegate {
         id: delegate
 
