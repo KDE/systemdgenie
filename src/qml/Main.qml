@@ -148,7 +148,7 @@ Kirigami.ApplicationWindow {
                 Layout.preferredHeight: pageStack.globalToolBar.preferredHeight
 
                 leftPadding: Kirigami.Units.largeSpacing
-                rightPadding: 0
+                rightPadding: Kirigami.Units.smallSpacing
                 topPadding: 0
                 bottomPadding: 0
 
@@ -159,12 +159,16 @@ Kirigami.ApplicationWindow {
 
                     Kirigami.Heading {
                         text: Core.AboutData.displayName
+                        Layout.fillWidth: true
                     }
 
                     Controls.ToolButton {
-                        icon.name: 'application-menu-symbolic'
+                        icon.name: 'overflow-menu-symbolic'
                         onClicked: menu.popup()
+                        checkable: true
                         checked: menu.opened
+                        text: i18nc("@action:button", "Open Menu")
+                        display: Controls.ToolButton.IconOnly
 
                         Components.ConvergentContextMenu {
                             id: menu
