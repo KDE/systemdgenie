@@ -72,7 +72,9 @@ Kirigami.Page {
                         return Math.min(w, width / 2);
                     }
                     const implicit = implicitColumnWidth(column)
-                    return Math.min(width / 2, implicit)
+                    const headingImplicit = heading.implicitColumnWidth(column)
+                    const max = Math.max(implicit, headingImplicit);
+                    return Math.min(width / 2, max)
                 }
             }
         }
