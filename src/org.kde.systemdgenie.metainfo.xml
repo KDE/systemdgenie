@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  - SPDX-License-Identifier: CC0-1.0
+  - SPDX-FileCopyrightText: 2025 Carl Schwan <carlschwan@kde.org>
+ -->
+<component type="desktop">
+  <id>org.kde.systemdgenie</id>
+  <provides>
+    <binary>systemdgenie</binary>
+  </provides>
+  <name>systemdGenie</name>
+  <summary>System service manager</summary>
+  <description>
+    <p>systemdGenie allows graphical management of systemd units, including user units, and provides control over logind sessions. It also includes an integrated text editor for easy modification of unit and configuration files. </p>
+  </description>
+  <url type="homepage">https://apps.kde.org/systemdgenie/</url>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=systemdGenie</url>
+  <categories>
+    <category>System</category>
+  </categories>
+  <developer id="kde.org">
+    <name translate="no">KDE</name>
+  </developer>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <branding>
+    <color type="primary" scheme_preference="light">#cdecfc</color>
+    <color type="primary" scheme_preference="dark">#17a3ea</color>
+  </branding>
+  <custom>
+    <value key="KDE::matrix">#kde-devel:kde.org</value>
+  </custom>
+  <launchable type="desktop-id">org.kde.systemdgenie.desktop</launchable>
+  <content_rating type="oars-1.1" />
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+</component>
