@@ -32,8 +32,11 @@ FormCard.FormCardPage {
         onTriggered: root.Controls.ApplicationWindow.window.pageStack.pop()
     }
 
+    FormCard.FormHeader {
+        title: i18nc("@title:group", "Information")
+    }
+
     FormCard.FormCard {
-        Layout.topMargin: Kirigami.Units.gridUnit
         FormCard.FormTextDelegate {
             id: descriptionDelegate
             text: i18nc("@label", "Description:")
