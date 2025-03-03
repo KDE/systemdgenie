@@ -5,6 +5,9 @@
 #include "systemd_manager_interface.h"
 #include <KAuth/Action>
 #include <KAuth/ExecuteJob>
+#include <KIO/ApplicationLauncherJob>
+#include <KIO/JobUiDelegateFactory>
+#include <KService>
 #include <QDBusPendingCall>
 
 using namespace Qt::StringLiterals;
@@ -58,4 +61,25 @@ void Controller::executeUserDaemonAction(const QString &method)
             m_interfaceUser->Reload();
         }
     });
+}
+
+bool Controller::canViewLogs() const
+{
+    const bool hasLogViewer = KService::serviceByDesktopName(u"org.kde.kjournaldbrowser"_s) || KService::serviceByDesktopName(u"org.kde.ksystemlog.desktop"_s);
+    return hasLogViewer;
+}
+
+void Controller::viewLogs()
+{
+    const auto kJournaldBrowser = KService::serviceByDesktopName(u"org.kde.kjournaldbrowser"_s);
+    const auto kSystemLog = KService::serviceByDesktopName(u"org.kde.ksystemlog.desktop"_s);
+    if (!kJournaldBrowser && !kSystemLog) {
+        return;
+    }
+
+    auto availableLogViewer = kJournaldBrowser ? kJournaldBrowser : kSystemLog;
+
+    auto job = new KIO::ApplicationLauncherJob(availableLogViewer);
+    job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+    job->start();
 }

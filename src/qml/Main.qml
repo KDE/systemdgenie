@@ -159,7 +159,7 @@ Kirigami.ApplicationWindow {
                     Controls.ToolButton {
                         icon.name: 'application-menu-symbolic'
                         onClicked: menu.popup()
-                        down: menu.opened
+                        checked: menu.opened
 
                         Components.ConvergentContextMenu {
                             id: menu
@@ -186,6 +186,13 @@ Kirigami.ApplicationWindow {
                                 text: i18nc("@action:inmenu", "Re-execute user systemd")
                                 icon.name: 'user-identity-symbolic'
                                 onTriggered: Controller.executeUserDaemonAction("Reexecute")
+                            }
+
+                            Controls.Action {
+                                text: i18nc("@action:inmenu", "View Logs")
+                                icon.name: "folder-log-symbolic"
+                                onTriggered: Controller.viewLogs()
+                                enabled: Controller.canViewLogs
                             }
                         }
                     }
