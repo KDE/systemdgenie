@@ -56,6 +56,7 @@ Kirigami.ApplicationWindow {
     Kirigami.Action {
         id: systemUnitsAction
 
+        icon.name: 'emblem-system-symbolic'
         text: i18nc("@action:button", "System Units")
         onTriggered: {
             root.pageStack.clear();
@@ -68,6 +69,7 @@ Kirigami.ApplicationWindow {
     Kirigami.Action {
         id: userUnitsAction
 
+        icon.name: 'user-symbolic'
         text: i18nc("@action:button", "User Units")
         onTriggered: {
             root.pageStack.clear();
@@ -80,6 +82,7 @@ Kirigami.ApplicationWindow {
     Kirigami.Action {
         id: configFilesAction
 
+        icon.name: 'configure-symbolic'
         text: i18nc("@action:button", "Config Files")
         onTriggered: {
             root.pageStack.clear();
@@ -90,6 +93,7 @@ Kirigami.ApplicationWindow {
     Kirigami.Action {
         id: sessionsAction
 
+        icon.name: 'system-users-symbolic'
         text: i18nc("@action:button", "Sessions")
         onTriggered: {
             root.pageStack.clear();
@@ -101,6 +105,7 @@ Kirigami.ApplicationWindow {
         id: timersAction
 
         text: i18nc("@action:button", "Timers")
+        icon.name: 'player-time-symbolic'
         onTriggered: {
             root.pageStack.clear();
             root.pageStack.push(Qt.resolvedUrl('./TimersPage.qml'), {
