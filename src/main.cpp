@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
                          QStringLiteral(SYSTEMDGENIE_VERSION_STRING),
                          i18n("Manage systemd units, timers, sessions and config files"),
                          KAboutLicense::GPL,
-                         i18n("(c) 2016 Ragnar Thomsen, %1 KDE Community", QDate::currentDate().year()),
+                         i18nc("@about:credit", "(c) 2016 Ragnar Thomsen, %1 KDE Community", QString::number(QDate::currentDate().year())),
                          QString(),
                          QString());
 
