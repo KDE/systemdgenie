@@ -107,8 +107,9 @@ TablePage {
 
         onClicked: root.Controls.ApplicationWindow.window.pageStack.push(Qt.resolvedUrl("./UnitPage.qml"), {
             unitObject: root.unitObject,
-            unitFile: unitModel.unitFile(sortFilter.mapToSource(sortFilter.index(index, 0)).row),
-            unitFileStatus: unitModel.unitFileStatus(sortFilter.mapToSource(sortFilter.index(index, 0)).row),
+            model: root.unitModel,
+            unitFile: root.unitModel.unitFile(sortFilter.mapToSource(sortFilter.index(index, 0)).row),
+            unitFileStatus: root.unitModel.unitFileStatus(sortFilter.mapToSource(sortFilter.index(index, 0)).row),
         })
     }
 

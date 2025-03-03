@@ -16,6 +16,7 @@ FormCard.FormCardPage {
     required property UnitInterface unitObject
     required property string unitFile
     required property string unitFileStatus
+    required property UnitModel model
 
     implicitWidth: Kirigami.Units.gridUnit * 20
 
@@ -38,14 +39,57 @@ FormCard.FormCardPage {
         }
 
         FormCard.FormDelegateSeparator {
-            visible: descriptionDelegate.text.length > 0
+            visible: descriptionDelegate.visible
         }
 
         FormCard.FormTextDelegate {
+            id: unitFileDelegate
             text: i18nc("@label", "Unit file:")
             description: unitObject?.FragmentPath ?? root.unitFile
             visible: description.length > 0
             // UnitFileState
+        }
+
+        FormCard.FormDelegateSeparator {
+            visible: unitFileDelegate.visible
+        }
+
+        FormCard.FormTextDelegate {
+            id: sourcePathDelegate
+            text: i18nc("@label", "Source path:")
+            description: unitObject?.SourcePath ?? ''
+            visible: description.length > 0
+        }
+
+        FormCard.FormDelegateSeparator {
+            visible: sourcePathDelegate.visible
+        }
+
+        FormCard.FormTextDelegate {
+            readonly property int enterTimestamp: unitObject ? unitObject.ActiveEnterTimestamp : 0
+            text: i18nc("@label", "Activated:")
+            description: enterTimestamp === 0 ? i18nc("invalid", "n/a") : Date(enterTimestamp).toLocaleString()
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormTextDelegate {
+            readonly property int timestamp: unitObject ? unitObject.InactiveEnterTimestamp : 0
+            text: i18nc("@label", "Desactivated:")
+            description: timestamp === 0 ? i18nc("invalid", "n/a") : Date(timestamp).toLocaleString()
+        }
+    }
+
+    FormCard.FormHeader {
+        title: i18nc("@title:group", "Last log entries")
+    }
+
+    FormCard.FormCard {
+        FormCard.FormTextDelegate {
+            readonly property var entries: unitObject ? root.model.lastJrnlEntries(unitObject.Id) : [];
+
+            text: ''
+            description: entries.join('<br />');
         }
     }
 }
