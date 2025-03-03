@@ -59,7 +59,7 @@ public Q_SLOTS:
     void slotRefreshSessionList();
 
 Q_SIGNALS:
-    void errorOccured(const QString &text);
+    void errorOccurred(const QString &text);
     void sessionsRefreshed();
 
 private:

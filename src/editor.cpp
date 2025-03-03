@@ -69,7 +69,7 @@ void Editor::openEditor(const QString &file, QWindow *parentWindow)
 
     // Read contents of unit file.
     if (!document->openUrl(QUrl::fromLocalFile(file))) {
-        Q_EMIT errorOccured(i18n("Failed to open the unit file:\n%1", file));
+        Q_EMIT errorOccurred(i18n("Failed to open the unit file:\n%1", file));
         return;
     }
 
@@ -90,7 +90,7 @@ void Editor::openEditor(const QString &file, QWindow *parentWindow)
 
         KAuth::ExecuteJob *job = action.execute();
         if (!job->exec()) {
-            Q_EMIT errorOccured(i18n("Unable to authenticate/execute the action: %1", job->error()));
+            Q_EMIT errorOccurred(i18n("Unable to authenticate/execute the action: %1", job->error()));
         }
     });
 

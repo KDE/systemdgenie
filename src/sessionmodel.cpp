@@ -182,7 +182,7 @@ void SessionModel::slotRefreshSessionList()
     auto job = new SessionsFetchJob(m_loginManagerInterface);
     connect(job, &SessionsFetchJob::finished, this, [this, job](KJob *) {
         if (job->error()) {
-            Q_EMIT errorOccured(i18n("Unable to fetch sessions list: %1", job->error()));
+            Q_EMIT errorOccurred(i18n("Unable to fetch sessions list: %1", job->error()));
             return;
         }
 
@@ -262,7 +262,7 @@ void SessionModel::executeAction(int row, const QString &method, QWindow *window
     job->exec();
 
     if (!job->exec()) {
-        Q_EMIT errorOccured(i18n("Unable to authenticate/execute the action: %1", job->errorString()));
+        Q_EMIT errorOccurred(i18n("Unable to authenticate/execute the action: %1", job->errorString()));
     }
 }
 
