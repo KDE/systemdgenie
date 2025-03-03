@@ -100,3 +100,4 @@ install(TARGETS systemdgenie ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES systemdgenieui.rc DESTINATION ${KDE_INSTALL_KXMLGUIDIR}/systemdgenie)
 install(FILES org.kde.systemdgenie.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(FILES org.kde.systemdgenie.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
