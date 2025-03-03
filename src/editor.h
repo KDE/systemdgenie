@@ -19,5 +19,5 @@ public:
     Q_INVOKABLE void openEditor(const QString &file, QWindow *parentWindow);
 
 Q_SIGNALS:
-    void errorOccured(const QString &error);
+    void errorOccurred(const QString &error);
 };

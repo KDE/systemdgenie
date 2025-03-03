@@ -49,7 +49,6 @@ void Controller::executeSystemDaemonAction(const QString &method)
 
 void Controller::executeUserDaemonAction(const QString &method)
 {
-    qWarning() << method;
     auto call = m_interfaceUser->asyncCallWithArgumentList(method, {});
     auto watcher = new QDBusPendingCallWatcher(call, this);
 

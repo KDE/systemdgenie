@@ -13,7 +13,6 @@
 #include <QIcon>
 #include <QTimer>
 
-#include <qtmetamacros.h>
 #include <systemd/sd-journal.h>
 
 #include "job/unitsfetchjob.h"
@@ -406,7 +405,7 @@ void UnitModel::executeUnitAction(int row, const QString &method)
         connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, watcher, pendingReply](QDBusPendingCallWatcher *) {
             if (pendingReply.isError()) {
                 qWarning() << pendingReply.error().message();
-                Q_EMIT errorOccured(pendingReply.error().message());
+                Q_EMIT errorOccurred(pendingReply.error().message());
             }
             qWarning() << pendingReply.reply();
             watcher->deleteLater();
@@ -430,7 +429,7 @@ void UnitModel::executeUnitAction(int row, const QString &method)
     job->exec();
 
     if (!job->exec())
-        Q_EMIT errorOccured(i18n("Unable to authenticate/execute the action: %1", job->errorString()));
+        Q_EMIT errorOccurred(i18n("Unable to authenticate/execute the action: %1", job->errorString()));
     else {
         qDebug() << "DBus action successful.";
     }

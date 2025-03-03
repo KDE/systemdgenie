@@ -53,7 +53,6 @@ FormCard.FormCardPage {
             text: i18nc("@label", "Unit file:")
             description: unitObject?.FragmentPath ?? root.unitFile
             visible: description.length > 0
-            // UnitFileState
         }
 
         FormCard.FormDelegateSeparator {

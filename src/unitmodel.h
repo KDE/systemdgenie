@@ -78,7 +78,7 @@ public Q_SLOTS:
 Q_SIGNALS:
     void typeChanged();
     void unitsRefreshed();
-    void errorOccured(const QString &message);
+    void errorOccurred(const QString &message);
 
 private:
     void setUnits(const QList<SystemdUnit> &units);
