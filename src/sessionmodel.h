@@ -53,6 +53,7 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     Q_INVOKABLE void executeAction(int row, const QString &method, QWindow *window);
+    Q_INVOKABLE bool canLock(int row);
 
 public Q_SLOTS:
     void slotRefreshSessionList();
