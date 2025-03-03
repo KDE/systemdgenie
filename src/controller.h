@@ -12,11 +12,16 @@ class Controller : public QObject
     QML_ELEMENT
     QML_SINGLETON
 
+    Q_PROPERTY(bool canViewLogs READ canViewLogs CONSTANT)
+
 public:
     explicit Controller(QObject *parent = nullptr);
 
     Q_INVOKABLE void executeSystemDaemonAction(const QString &method);
     Q_INVOKABLE void executeUserDaemonAction(const QString &method);
+    Q_INVOKABLE void viewLogs();
+
+    bool canViewLogs() const;
 
 private:
     OrgFreedesktopSystemd1ManagerInterface *const m_interface;
