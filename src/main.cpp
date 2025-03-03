@@ -12,11 +12,11 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDebug>
+#include <QIcon>
 #include <QQmlApplicationEngine>
 #include <qdbusmetatype.h>
 
 #include "loginddbustypes.h"
-#include "mainwindow.h"
 #include "systemdgenie_version.h"
 #include "systemdunit.h"
 
@@ -35,21 +35,20 @@ int main(int argc, char *argv[])
                          QStringLiteral(SYSTEMDGENIE_VERSION_STRING),
                          i18n("Manage systemd units, timers, sessions and config files"),
                          KAboutLicense::GPL,
-                         i18n("(c) 2016, Ragnar Thomsen"),
+                         i18n("(c) 2016 Ragnar Thomsen, %1 KDE Community", QDate::currentDate().year()),
                          QString(),
                          QString());
 
     aboutData.setOrganizationDomain("kde.org");
 
-    aboutData.addAuthor(i18n("Ragnar Thomsen"), i18n("Maintainer"), QStringLiteral("rthomsen6@gmail.com"));
+    aboutData.addAuthor(i18n("Ragnar Thomsen"), i18n("Former Maintainer"), QStringLiteral("rthomsen6@gmail.com"));
+    aboutData.addAuthor(i18n("Carl Schwan"), i18n("Maintainer"), QStringLiteral("carl@carlschwan.eu"));
 
     KAboutData::setApplicationData(aboutData);
 
     application.setWindowIcon(QIcon::fromTheme(QStringLiteral("preferences-system-services")));
 
     QCommandLineParser parser;
-    QCommandLineOption quick(QStringList{QStringLiteral("q"), QStringLiteral("quick")}, QStringLiteral("Use qml view"));
-    parser.addOption(quick);
     aboutData.setupCommandLine(&parser);
 
     // Do the command line parsing.
@@ -76,15 +75,8 @@ int main(int argc, char *argv[])
     qDBusRegisterMetaType<UnitFile>();
     qDBusRegisterMetaType<QList<UnitFile>>();
 
-    if (parser.isSet(quick)) {
-        QQmlApplicationEngine engine;
-        KLocalization::setupLocalizedContext(&engine);
-        engine.loadFromModule("org.kde.systemdgenie", "Main");
-        return application.exec();
-    } else {
-        MainWindow *window = new MainWindow;
-        window->show();
-        qDebug() << "Entering application loop";
-        return application.exec();
-    }
+    QQmlApplicationEngine engine;
+    KLocalization::setupLocalizedContext(&engine);
+    engine.loadFromModule("org.kde.systemdgenie", "Main");
+    return application.exec();
 }

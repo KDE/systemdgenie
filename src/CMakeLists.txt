@@ -32,7 +32,6 @@ qt_add_dbus_interface(systemd_DBUS_SRCS
 
 set(systemdgenie_SRCS
     main.cpp
-    mainwindow.cpp
     unitmodel.cpp
     sortfilterunitmodel.cpp
     systemdunit.cpp
@@ -62,8 +61,6 @@ set(systemdgenie_SRCS
     ${systemd_DBUS_SRCS}
 )
 
-ki18n_wrap_ui(systemdgenie_SRCS mainwindow.ui)
-
 add_executable(systemdgenie ${systemdgenie_SRCS})
 
 ecm_add_qml_module(systemdgenie
@@ -91,13 +88,11 @@ target_link_libraries(systemdgenie PRIVATE
     KF6::Crash
     KF6::I18n
     KF6::I18nQml
-    KF6::XmlGui
     KF6::TextEditor
     KF6::KIOGui
     PkgConfig::JOURNALD
 )
 install(TARGETS systemdgenie ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
-install(FILES systemdgenieui.rc DESTINATION ${KDE_INSTALL_KXMLGUIDIR}/systemdgenie)
 install(FILES org.kde.systemdgenie.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.systemdgenie.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
