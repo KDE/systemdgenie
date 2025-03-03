@@ -58,6 +58,30 @@ TablePage {
             displayHint: Kirigami.DisplayHint.AlwaysHide
         },
         Kirigami.Action {
+            displayComponent: Controls.ComboBox {
+                model: [
+                    i18nc("@item:inlistbox", "All"),
+                    i18nc("@item:inlistbox", "Services"),
+                    i18nc("@item:inlistbox", "Automounts"),
+                    i18nc("@item:inlistbox", "Devices"),
+                    i18nc("@item:inlistbox", "Mounts"),
+                    i18nc("@item:inlistbox", "Paths"),
+                    i18nc("@item:inlistbox", "Scopes"),
+                    i18nc("@item:inlistbox", "Slices"),
+                    i18nc("@item:inlistbox", "Sockets"),
+                    i18nc("@item:inlistbox", "Swaps"),
+                    i18nc("@item:inlistbox", "Targets"),
+                    i18nc("@item:inlistbox", "Timers")
+                ]
+
+                onActivated: (index) => {
+                    const data = ['', '.service', '.automount', '.device', '.mount', '.path', '.scope', '.slice', '.socket', '.swap', '.target', '.timer'];
+                    sortFilter.addFilterRegExp(SortFilterUnitModel.UnitType, `(${data[index]})$`);
+                    sortFilter.invalidate();
+                }
+            }
+        },
+        Kirigami.Action {
             displayComponent: Kirigami.SearchField {
                 onAccepted: {
                     sortFilter.addFilterRegExp(SortFilterUnitModel.UnitName, text);
