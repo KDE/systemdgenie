@@ -261,9 +261,16 @@ void SessionModel::executeAction(int row, const QString &method, QWindow *window
     job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
     job->exec();
 
-    if (!job->exec())
+    if (!job->exec()) {
         Q_EMIT errorOccured(i18n("Unable to authenticate/execute the action: %1", job->errorString()));
-    else {
-        qDebug() << "DBus action successful.";
     }
+}
+
+bool SessionModel::canLock(int row)
+{
+    if (row == -1 || row >= (int)m_sessions.size()) {
+        return false;
+    }
+
+    return m_sessions.at(row).sessionIface->type() != "tty"_L1;
 }

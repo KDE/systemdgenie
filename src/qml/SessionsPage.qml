@@ -47,9 +47,9 @@ TablePage {
         Controls.Action {
             id: sessionLock
             icon.name: 'lock-symbolic'
-            text: i18nc("@action", "Restart Session")
+            text: i18nc("@action", "Lock Session")
             onTriggered: sessionModel.executeAction(root.currentRow, "Lock", root.Controls.ApplicationWindow.window);
-            enabled: root.currentRow !== -1
+            enabled: root.currentRow !== -1 && sessionModel.canLock(root.currentRow);
         }
     }
 }
