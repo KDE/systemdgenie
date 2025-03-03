@@ -277,7 +277,7 @@ QVariant UnitModel::data(const QModelIndex &index, int role) const
 
         // Journal entries for units
         toolTipText.append(i18n("<hr><b>Last log entries:</b>"));
-        QStringList log = getLastJrnlEntries(selUnit);
+        QStringList log = lastJrnlEntries(selUnit);
         if (log.isEmpty()) {
             toolTipText.append(i18n("<br><i>No log entries found for this unit.</i>"));
         } else {
@@ -296,7 +296,7 @@ QVariant UnitModel::data(const QModelIndex &index, int role) const
     }
 }
 
-QStringList UnitModel::getLastJrnlEntries(const QString &unit) const
+QStringList UnitModel::lastJrnlEntries(const QString &unit) const
 {
     QString match1, match2;
     int r, jflags;

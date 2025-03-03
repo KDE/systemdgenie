@@ -66,7 +66,7 @@ public:
     /// Caller take ownership of the returned OrgFreedesktopSystemd1ManagerInterface
     Q_INVOKABLE OrgFreedesktopSystemd1UnitInterface *unitObject(int row);
 
-    Q_INVOKABLE QStringList getLastJrnlEntries(const QString &unit) const;
+    Q_INVOKABLE QStringList lastJrnlEntries(const QString &unit) const;
     Q_INVOKABLE QString unitFile(int row) const;
     Q_INVOKABLE QString unitFileStatus(int row) const;
 
