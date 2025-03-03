@@ -37,7 +37,6 @@ find_package(KF6 REQUIRED COMPONENTS
     CoreAddons
     Crash
     I18n
-    XmlGui
     TextEditor
     KIO
 )
