@@ -197,7 +197,7 @@ TablePage {
             id: editUnit
             readonly property string unitFile: root.currentRow === -1 ? '' : unitModel.data(unitModel.index(root.currentRow, 0), UnitModel.UnitPathRole)
             icon.name: 'document-edit-symbolic'
-            text: i18nc("@action", "Edit Unit")
+            text: i18nc("@action", "Edit Unit File…")
             enabled: unitFile.length > 0
             onTriggered: Editor.openEditor(unitFile, Controls.ApplicationWindow.window)
         }

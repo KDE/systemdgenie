@@ -26,6 +26,9 @@ FormCard.FormCardPage {
 
     actions: Kirigami.Action {
         text: i18nc("@action:intoolbar", "Close")
+        icon.name: 'dialog-close-symbolic'
+        displayHint: Kirigami.DisplayHint.IconOnly
+
         onTriggered: root.Controls.ApplicationWindow.window.pageStack.pop()
     }
 
