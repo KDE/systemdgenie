@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmsystemd\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 00:43+0000\n"
+"POT-Creation-Date: 2025-03-07 00:44+0000\n"
 "PO-Revision-Date: 2018-07-14 15:32+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -78,28 +78,28 @@ msgstr "Configuração da sincronização da hora"
 msgid "Systemd user daemon configuration"
 msgstr "Configuração do servidor dos utilizadores do 'systemd'"
 
-#: src/configfilemodel.cpp:112
+#: src/configfilemodel.cpp:109
 #, fuzzy, kde-format
 #| msgid "File"
 msgctxt "@title:column"
 msgid "File"
 msgstr "Ficheiro"
 
-#: src/configfilemodel.cpp:114
+#: src/configfilemodel.cpp:111
 #, fuzzy, kde-format
 #| msgid "Modified"
 msgctxt "@title:column"
 msgid "Modified"
 msgstr "Modificado"
 
-#: src/configfilemodel.cpp:116
+#: src/configfilemodel.cpp:113
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title:column"
 msgid "Description"
 msgstr "Descrição"
 
-#: src/configfilemodel.cpp:140
+#: src/configfilemodel.cpp:136
 #, kde-format
 msgid ""
 "KHelpCenter executable not found in path. Please install KHelpCenter to view "
@@ -108,403 +108,18 @@ msgstr ""
 "O executável KHelpCenter não foi encontrado na 'path'. Instale por favor o "
 "KHelpCenter para ver as páginas do manual."
 
-#: src/main.cpp:29 src/mainwindow.cpp:57
-#, kde-format
-msgid "SystemdGenie"
-msgstr "SystemdGenie"
-
-#: src/main.cpp:31
-#, kde-format
-msgid "Manage systemd units, timers, sessions and config files"
-msgstr ""
-
-#: src/main.cpp:33
-#, kde-format
-msgid "(c) 2016, Ragnar Thomsen"
-msgstr "(c) 2016, Ragnar Thomsen"
-
-#: src/main.cpp:39
-#, kde-format
-msgid "Ragnar Thomsen"
-msgstr "Ragnar Thomsen"
-
-#: src/main.cpp:39
-#, kde-format
-msgid "Maintainer"
-msgstr "Manutenção"
-
-#: src/mainwindow.cpp:57
-#, kde-format
-msgid "Unable to contact the systemd daemon. Quitting..."
-msgstr "Não foi possível contactar o serviço 'systemd'. A sair..."
-
-#: src/mainwindow.cpp:69
-#, kde-format
-msgid "User dbus not found. Support for user units disabled."
-msgstr ""
-"O utilizador 'dbus' não foi encontrado. O suporte para as unidades dos "
-"utilizadores está desactivado."
-
-#: src/mainwindow.cpp:79
-#, kde-format
-msgid "All"
-msgstr "Tudo"
-
-#: src/mainwindow.cpp:80
-#, kde-format
-msgid "Services"
-msgstr "Serviços"
-
-#: src/mainwindow.cpp:81
-#, kde-format
-msgid "Automounts"
-msgstr "Montagens Automáticas"
-
-#: src/mainwindow.cpp:82
-#, kde-format
-msgid "Devices"
-msgstr "Dispositivos"
-
-#: src/mainwindow.cpp:83
-#, kde-format
-msgid "Mounts"
-msgstr "Montagens"
-
-#: src/mainwindow.cpp:84
-#, kde-format
-msgid "Paths"
-msgstr "Localizações"
-
-#: src/mainwindow.cpp:85
-#, kde-format
-msgid "Scopes"
-msgstr "Âmbitos"
-
-#: src/mainwindow.cpp:86
-#, kde-format
-msgid "Slices"
-msgstr "Fatias"
-
-#: src/mainwindow.cpp:87
-#, kde-format
-msgid "Sockets"
-msgstr "'Sockets'"
-
-#: src/mainwindow.cpp:88
-#, kde-format
-msgid "Swaps"
-msgstr "Memória Virtual"
-
-#: src/mainwindow.cpp:89
-#, kde-format
-msgid "Targets"
-msgstr "Alvos"
-
-#. i18n: ectx: attribute (title), widget (QWidget, tabTimers)
-#: src/mainwindow.cpp:90 src/mainwindow.ui:531
-#, kde-format
-msgid "Timers"
-msgstr "Cronómetros"
-
-#: src/mainwindow.cpp:297
-#, kde-format
-msgid "Session ID"
-msgstr "ID da Sessão"
-
-#: src/mainwindow.cpp:298
-#, kde-format
-msgid "Session Object Path"
-msgstr "Localização do Objecto da Sessão"
-
-#: src/mainwindow.cpp:299
-#, kde-format
-msgid "State"
-msgstr "Estado"
-
-#: src/mainwindow.cpp:300
-#, kde-format
-msgid "User ID"
-msgstr "ID do Utilizador"
-
-#: src/mainwindow.cpp:301
-#, kde-format
-msgid "User Name"
-msgstr "Nome do Utilizador"
-
-#: src/mainwindow.cpp:302
-#, kde-format
-msgid "Seat ID"
-msgstr "ID do Local"
-
-#: src/mainwindow.cpp:324
-#, kde-format
-msgid "Timer"
-msgstr "Temporizador"
-
-#: src/mainwindow.cpp:325
-#, kde-format
-msgid "Next"
-msgstr "Seguinte"
-
-#: src/mainwindow.cpp:326
-#, kde-format
-msgid "Left"
-msgstr "Falta"
-
-#: src/mainwindow.cpp:327
-#, kde-format
-msgid "Last"
-msgstr "Último"
-
-#: src/mainwindow.cpp:328
-#, kde-format
-msgid "Passed"
-msgstr "Passou"
-
-#: src/mainwindow.cpp:329
-#, kde-format
-msgid "Activates"
-msgstr "Activa"
-
-#: src/mainwindow.cpp:459
-#, kde-format
-msgid "Unable to fetch sessions list: %1"
-msgstr ""
-
-#: src/mainwindow.cpp:631 src/mainwindow.cpp:637
-#, kde-format
-msgctxt "First part of 'Total: %1, %2, %3'"
-msgid "1 unit"
-msgid_plural "%1 units"
-msgstr[0] "1 unidade"
-msgstr[1] "%1 unidades"
-
-#: src/mainwindow.cpp:632 src/mainwindow.cpp:638
-#, kde-format
-msgctxt "Second part of 'Total: %1, %2, %3'"
-msgid "1 active"
-msgid_plural "%1 active"
-msgstr[0] "1 activa"
-msgstr[1] "%1 activas"
-
-#: src/mainwindow.cpp:633 src/mainwindow.cpp:639
-#, kde-format
-msgctxt "Third part of 'Total: %1, %2, %3'"
-msgid "1 displayed"
-msgid_plural "%1 displayed"
-msgstr[0] "1 apresentada"
-msgstr[1] "%1 apresentadas"
-
-#: src/mainwindow.cpp:635 src/mainwindow.cpp:641
-#, kde-format
-msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
-msgid "Total: %1, %2, %3"
-msgstr "Total: %1, %2, %3"
-
-#: src/mainwindow.cpp:665 src/mainwindow.cpp:1433
-#, kde-format
-msgid "Unable to authenticate/execute the action: %1"
-msgstr "Não é possível autenticar/executar a acção: %1"
-
-#: src/mainwindow.cpp:828
-#, kde-format
-msgid "&Refresh"
-msgstr "Actualiza&r"
-
-#: src/mainwindow.cpp:830
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Refresh"
-msgstr "Actualizar"
-
-#: src/mainwindow.cpp:836
-#, kde-format
-msgid "Start Unit"
-msgstr "Iniciar a Unidade"
-
-#: src/mainwindow.cpp:844
-#, kde-format
-msgid "Stop Unit"
-msgstr "Parar a Unidade"
-
-#: src/mainwindow.cpp:852
-#, kde-format
-msgid "Reload Unit"
-msgstr "Recarregar a Unidade"
-
-#: src/mainwindow.cpp:860
-#, kde-format
-msgid "Restart Unit"
-msgstr "Reiniciar a Unidade"
-
-#: src/mainwindow.cpp:868
-#, kde-format
-msgid "Enable Unit"
-msgstr "Activar a Unidade"
-
-#: src/mainwindow.cpp:876
-#, kde-format
-msgid "Disable Unit"
-msgstr "Desactivar a Unidade"
-
-#: src/mainwindow.cpp:884
-#, kde-format
-msgid "Mask Unit"
-msgstr "Mascarar a Unidade"
-
-#: src/mainwindow.cpp:892
-#, kde-format
-msgid "Unmask Unit"
-msgstr "Desmascarar a Unidade"
-
-#: src/mainwindow.cpp:900
-#, kde-format
-msgid "Re&load systemd"
-msgstr "Re&carregar o 'systemd'"
-
-#: src/mainwindow.cpp:901
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Click to reload all unit files"
-msgstr "Carregue para recarregar todos os ficheiros da unidade"
-
-#: src/mainwindow.cpp:909
-#, kde-format
-msgid "Re-e&xecute systemd"
-msgstr "Ree&xecutar o 'systemd'"
-
-#: src/mainwindow.cpp:910
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Click to re-execute the systemd daemon"
-msgstr "Carregue para executar de novo o serviço 'systemd'"
-
-#: src/mainwindow.cpp:918
-#, kde-format
-msgid "Re&load user systemd"
-msgstr "Ree&xecutar o 'systemd' do utilizador"
-
-#: src/mainwindow.cpp:919
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Click to reload all user unit files"
-msgstr "Carregue para recarregar todos os ficheiros da unidade do utilizador"
-
-#: src/mainwindow.cpp:927
-#, kde-format
-msgid "Re-e&xecute user systemd"
-msgstr "Ree&xecutar o 'systemd' do utilizador"
-
-#: src/mainwindow.cpp:928
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Click to re-execute the user systemd daemon"
-msgstr "Carregue para executar de novo o serviço 'systemd' do utilizador"
-
-#: src/mainwindow.cpp:936
-#, fuzzy, kde-format
-#| msgid "Edit Unit File"
-msgid "Edit Unit File…"
-msgstr "Editar o Ficheiro da Unidade"
-
-#: src/mainwindow.cpp:942
-#, fuzzy, kde-format
-#| msgid "Edit Configuration File"
-msgid "Edit Configuration File…"
-msgstr "Editar o Ficheiro de Configuração"
-
-#: src/mainwindow.cpp:948
-#, kde-format
-msgid "Open Man Page"
-msgstr "Abrir a Página do Manual"
-
-#: src/mainwindow.cpp:954
-#, kde-format
-msgid "View Logs"
-msgstr ""
-
-#: src/mainwindow.cpp:960
-#, kde-format
-msgid "Activate Session"
-msgstr "Activar a Sessão"
-
-#: src/mainwindow.cpp:968
-#, kde-format
-msgid "Terminate Session"
-msgstr "Terminar a Sessão"
-
-#: src/mainwindow.cpp:976
-#, kde-format
-msgid "Lock Session"
-msgstr "Bloquear a Sessão"
-
-#: src/mainwindow.cpp:1128
-#, kde-format
-msgid "<b>VT:</b> %1"
-msgstr "<b>VT:</b> %1"
-
-#: src/mainwindow.cpp:1132
-#, kde-format
-msgid "<br><b>Remote host:</b> %1"
-msgstr "<br><b>Máquina remota:</b> %1"
-
-#: src/mainwindow.cpp:1133
-#, kde-format
-msgid "<br><b>Remote user:</b> %1"
-msgstr "<br><b>Utilizador remoto:</b> %1"
-
-#: src/mainwindow.cpp:1135
-#, kde-format
-msgid "<br><b>Service:</b> %1"
-msgstr "<br><b>Serviço:</b> %1"
-
-#: src/mainwindow.cpp:1136
-#, kde-format
-msgid "<br><b>Leader (PID):</b> %1"
-msgstr "<br><b>Líder (PID):</b> %1"
-
-#: src/mainwindow.cpp:1139
-#, kde-format
-msgid "<br><b>Type:</b> %1"
-msgstr "<br><b>Tipo:</b> %1"
-
-#: src/mainwindow.cpp:1141
-#, kde-format
-msgid " (display %1)"
-msgstr " (ecrã %1)"
-
-#: src/mainwindow.cpp:1150
-#, kde-format
-msgid "<br><b>Class:</b> %1"
-msgstr "<br><b>Classe:</b> %1"
-
-#: src/mainwindow.cpp:1151
-#, kde-format
-msgid "<br><b>State:</b> %1"
-msgstr "<br><b>Estado:</b> %1"
-
-#: src/mainwindow.cpp:1152
-#, kde-format
-msgid "<br><b>Scope:</b> %1"
-msgstr "<br><b>Âmbito:</b> %1"
-
-#: src/mainwindow.cpp:1154
-#, kde-format
-msgid "<br><b>Created: </b>"
-msgstr "<br><b>Criado: </b>"
-
-#: src/mainwindow.cpp:1377
+#: src/editor.cpp:37
 #, kde-format
 msgid "Editing %1"
 msgstr "A editar o %1"
 
-#: src/mainwindow.cpp:1387
+#: src/editor.cpp:47
 #, fuzzy, kde-format
 #| msgid "Editing file: %1"
 msgid "Editing file: <code>%1</code>"
 msgstr "A editar o ficheiro: %1"
 
-#: src/mainwindow.cpp:1412
+#: src/editor.cpp:72
 #, kde-format
 msgid ""
 "Failed to open the unit file:\n"
@@ -513,192 +128,471 @@ msgstr ""
 "Não foi possível abrir o ficheiro da unidade:\n"
 "%1"
 
-#. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
-#: src/mainwindow.ui:14
-#, fuzzy, kde-format
-#| msgid "Services"
-msgid "Services Manager"
-msgstr "Serviços"
-
-#. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
-#: src/mainwindow.ui:85
+#: src/editor.cpp:93 src/sessionmodel.cpp:265 src/unitmodel.cpp:432
 #, kde-format
-msgid "System Units"
-msgstr "Unidades do Sistema"
+msgid "Unable to authenticate/execute the action: %1"
+msgstr "Não é possível autenticar/executar a acção: %1"
 
-#. i18n: ectx: property (toolTip), widget (QComboBox, cmbUnitTypes)
-#: src/mainwindow.ui:184
-#, kde-format
-msgid "<html><head/><body><p>Filter unit types.</p></body></html>"
-msgstr "<html><head/><body><p>Filtra os tipos de unidades.</p></body></html>"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUnits)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUserUnits)
-#: src/mainwindow.ui:194 src/mainwindow.ui:300
+#: src/main.cpp:34
 #, fuzzy, kde-format
-#| msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
-msgid "<html><head/><body><p>Toggle hiding inactive units.</p></body></html>"
+#| msgid "SystemdGenie"
+msgid "systemdGenie"
+msgstr "SystemdGenie"
+
+#: src/main.cpp:36
+#, kde-format
+msgid "Manage systemd units, timers, sessions and config files"
 msgstr ""
-"<html><head/><body><p>Comutar a apresentação de unidades inactivas.</p></"
-"body></html>"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUnits)
-#. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUserUnits)
-#: src/mainwindow.ui:197 src/mainwindow.ui:303
+#: src/main.cpp:38
 #, fuzzy, kde-format
-#| msgid "Show inactive"
-msgid "Hide inactive"
-msgstr "Mostrar as inactivas"
+#| msgid "(c) 2016, Ragnar Thomsen"
+msgctxt "@about:credit"
+msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
+msgstr "(c) 2016, Ragnar Thomsen"
 
-#. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUnits)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUserUnits)
-#: src/mainwindow.ui:207 src/mainwindow.ui:313
+#: src/main.cpp:44
+#, kde-format
+msgid "Ragnar Thomsen"
+msgstr "Ragnar Thomsen"
+
+#: src/main.cpp:44
 #, fuzzy, kde-format
-#| msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
-msgid "<html><head/><body><p>Toggle hiding unloaded units.</p></body></html>"
+#| msgid "Maintainer"
+msgid "Former Maintainer"
+msgstr "Manutenção"
+
+#: src/main.cpp:45
+#, kde-format
+msgid "Carl Schwan"
 msgstr ""
-"<html><head/><body><p>Comutar a apresentação de unidades inactivas.</p></"
-"body></html>"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUnits)
-#. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUserUnits)
-#: src/mainwindow.ui:210 src/mainwindow.ui:316
+#: src/main.cpp:45
+#, kde-format
+msgid "Maintainer"
+msgstr "Manutenção"
+
+#: src/sessionmodel.cpp:72
+#, kde-format
+msgid "Session ID"
+msgstr "ID da Sessão"
+
+#: src/sessionmodel.cpp:74
+#, kde-format
+msgid "Session Object Path"
+msgstr "Localização do Objecto da Sessão"
+
+#: src/sessionmodel.cpp:76
+#, kde-format
+msgid "State"
+msgstr "Estado"
+
+#: src/sessionmodel.cpp:78
+#, kde-format
+msgid "User ID"
+msgstr "ID do Utilizador"
+
+#: src/sessionmodel.cpp:80
+#, kde-format
+msgid "User Name"
+msgstr "Nome do Utilizador"
+
+#: src/sessionmodel.cpp:82
+#, kde-format
+msgid "Seat ID"
+msgstr "ID do Local"
+
+#: src/sessionmodel.cpp:119
+#, kde-format
+msgid "<b>VT:</b> %1"
+msgstr "<b>VT:</b> %1"
+
+#: src/sessionmodel.cpp:123
+#, kde-format
+msgid "<br><b>Remote host:</b> %1"
+msgstr "<br><b>Máquina remota:</b> %1"
+
+#: src/sessionmodel.cpp:124
+#, kde-format
+msgid "<br><b>Remote user:</b> %1"
+msgstr "<br><b>Utilizador remoto:</b> %1"
+
+#: src/sessionmodel.cpp:126
+#, kde-format
+msgid "<br><b>Service:</b> %1"
+msgstr "<br><b>Serviço:</b> %1"
+
+#: src/sessionmodel.cpp:127
+#, kde-format
+msgid "<br><b>Leader (PID):</b> %1"
+msgstr "<br><b>Líder (PID):</b> %1"
+
+#: src/sessionmodel.cpp:130
+#, kde-format
+msgid "<br><b>Type:</b> %1"
+msgstr "<br><b>Tipo:</b> %1"
+
+#: src/sessionmodel.cpp:132
+#, kde-format
+msgid " (display %1)"
+msgstr " (ecrã %1)"
+
+#: src/sessionmodel.cpp:141
+#, kde-format
+msgid "<br><b>Class:</b> %1"
+msgstr "<br><b>Classe:</b> %1"
+
+#: src/sessionmodel.cpp:142
+#, kde-format
+msgid "<br><b>State:</b> %1"
+msgstr "<br><b>Estado:</b> %1"
+
+#: src/sessionmodel.cpp:143
+#, kde-format
+msgid "<br><b>Scope:</b> %1"
+msgstr "<br><b>Âmbito:</b> %1"
+
+#: src/sessionmodel.cpp:145
+#, kde-format
+msgid "<br><b>Created: </b>"
+msgstr "<br><b>Criado: </b>"
+
+#: src/sessionmodel.cpp:185
+#, kde-format
+msgid "Unable to fetch sessions list: %1"
+msgstr ""
+
+#: src/timermodel.cpp:44
 #, fuzzy, kde-format
-#| msgid "Show unloaded"
-msgid "Hide unloaded"
-msgstr "Mostrar as não-carregadas"
+#| msgid "Timer"
+msgctxt "@title:column"
+msgid "Timer"
+msgstr "Temporizador"
 
-#. i18n: ectx: property (text), widget (QLabel, lblUnitCount)
-#. i18n: ectx: property (text), widget (QLabel, lblUserUnitCount)
-#: src/mainwindow.ui:246 src/mainwindow.ui:389
+#: src/timermodel.cpp:46
+#, fuzzy, kde-format
+#| msgid "Next"
+msgctxt "@title:column"
+msgid "Next"
+msgstr "Seguinte"
+
+#: src/timermodel.cpp:48
+#, fuzzy, kde-format
+#| msgid "Left"
+msgctxt "@title:column"
+msgid "Left"
+msgstr "Falta"
+
+#: src/timermodel.cpp:50
+#, fuzzy, kde-format
+#| msgid "Last"
+msgctxt "@title:column"
+msgid "Last"
+msgstr "Último"
+
+#: src/timermodel.cpp:52
+#, fuzzy, kde-format
+#| msgid "Passed"
+msgctxt "@title:column"
+msgid "Passed"
+msgstr "Passou"
+
+#: src/timermodel.cpp:54
+#, fuzzy, kde-format
+#| msgid "Activates"
+msgctxt "@title:column"
+msgid "Activates"
+msgstr "Activa"
+
+#: src/timermodel.cpp:75 src/timermodel.cpp:100
 #, kde-format
-msgid "Overall stats:"
-msgstr "Estatísticas globais:"
+msgctxt "invalid"
+msgid "n/a"
+msgstr ""
 
-#. i18n: ectx: attribute (title), widget (QWidget, tabUserUnits)
-#: src/mainwindow.ui:259
-#, kde-format
-msgid "User Units"
-msgstr "Unidades do Utilizador"
-
-#. i18n: ectx: attribute (title), widget (QWidget, tabConf)
-#: src/mainwindow.ui:405
-#, kde-format
-msgid "Config Files"
-msgstr "Ficheiros de Configuração"
-
-#. i18n: ectx: attribute (title), widget (QWidget, tabSessions)
-#: src/mainwindow.ui:462
-#, kde-format
-msgid "Sessions"
-msgstr "Sessões"
-
-#. i18n: ectx: Menu (file)
-#: src/systemdgenieui.rc:10
-#, kde-format
-msgid "&File"
-msgstr "&Ficheiro"
-
-#. i18n: ectx: Menu (view)
-#: src/systemdgenieui.rc:13
-#, kde-format
-msgid "&View"
-msgstr "&Ver"
-
-#. i18n: ectx: Menu (daemon)
-#: src/systemdgenieui.rc:17
-#, kde-format
-msgid "&Daemon"
-msgstr "&Servidor"
-
-#. i18n: ectx: Menu (unit)
-#: src/systemdgenieui.rc:25
-#, kde-format
-msgid "&Unit"
-msgstr "&Unidade"
-
-#. i18n: ectx: Menu (session)
-#: src/systemdgenieui.rc:41
-#, kde-format
-msgid "&Session"
-msgstr "&Sessão"
-
-#. i18n: ectx: ToolBar (unitToolBar)
-#: src/systemdgenieui.rc:49
-#, kde-format
-msgid "Unit Toolbar"
-msgstr "Barra das Unidades"
-
-#. i18n: ectx: ToolBar (confFileToolBar)
-#: src/systemdgenieui.rc:57
-#, kde-format
-msgid "Config File Toolbar"
-msgstr "Barra do Ficheiro de Configuração"
-
-#: src/unitmodel.cpp:43
+#: src/unitmodel.cpp:95
 #, kde-format
 msgid "Unit"
 msgstr "Unidade"
 
-#: src/unitmodel.cpp:45
+#: src/unitmodel.cpp:97
 #, kde-format
 msgid "Load State"
 msgstr "Carregar o Estado"
 
-#: src/unitmodel.cpp:47
+#: src/unitmodel.cpp:99
 #, kde-format
 msgid "Active State"
 msgstr "Estado Activo"
 
-#: src/unitmodel.cpp:49
+#: src/unitmodel.cpp:101
 #, kde-format
 msgid "Unit State"
 msgstr "Estado da Unidade"
 
-#: src/unitmodel.cpp:121
+#: src/unitmodel.cpp:217
 #, kde-format
 msgid "<b>Description: </b>"
 msgstr "<b>Descrição: </b>"
 
-#: src/unitmodel.cpp:126
+#: src/unitmodel.cpp:222
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
 msgstr "<br/><b>Ficheiro da unidade: </b>%1"
 
-#: src/unitmodel.cpp:127 src/unitmodel.cpp:174
+#: src/unitmodel.cpp:223 src/unitmodel.cpp:270
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
 msgstr "<br/><b>Estado do ficheiro da unidade: </b>"
 
-#: src/unitmodel.cpp:133
+#: src/unitmodel.cpp:229
 #, kde-format
 msgid "<br><b>Source path: </b>%1"
 msgstr "<br/><b>Local de origem: </b> %1"
 
-#: src/unitmodel.cpp:137
+#: src/unitmodel.cpp:233
 #, kde-format
 msgid "<br><b>Activated: </b>"
 msgstr "<br/><b>Activou-se: </b>"
 
-#: src/unitmodel.cpp:147
+#: src/unitmodel.cpp:243
 #, kde-format
 msgid "<br><b>Deactivated: </b>"
 msgstr "<br/><b>Desactivou-se: </b>"
 
-#: src/unitmodel.cpp:169
+#: src/unitmodel.cpp:265
 #, kde-format
 msgid "<b>Unit file: </b>"
 msgstr "<b>Ficheiro da unidade: </b>"
 
-#: src/unitmodel.cpp:183
+#: src/unitmodel.cpp:279
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
 msgstr "<hr><b>Últimos itens do registo:</b>"
 
-#: src/unitmodel.cpp:186
+#: src/unitmodel.cpp:282
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>Não foram encontrados itens do registo para esta unidade.</i>"
+
+#~ msgid "Unable to contact the systemd daemon. Quitting..."
+#~ msgstr "Não foi possível contactar o serviço 'systemd'. A sair..."
+
+#~ msgid "User dbus not found. Support for user units disabled."
+#~ msgstr ""
+#~ "O utilizador 'dbus' não foi encontrado. O suporte para as unidades dos "
+#~ "utilizadores está desactivado."
+
+#~ msgid "All"
+#~ msgstr "Tudo"
+
+#~ msgid "Services"
+#~ msgstr "Serviços"
+
+#~ msgid "Automounts"
+#~ msgstr "Montagens Automáticas"
+
+#~ msgid "Devices"
+#~ msgstr "Dispositivos"
+
+#~ msgid "Mounts"
+#~ msgstr "Montagens"
+
+#~ msgid "Paths"
+#~ msgstr "Localizações"
+
+#~ msgid "Scopes"
+#~ msgstr "Âmbitos"
+
+#~ msgid "Slices"
+#~ msgstr "Fatias"
+
+#~ msgid "Sockets"
+#~ msgstr "'Sockets'"
+
+#~ msgid "Swaps"
+#~ msgstr "Memória Virtual"
+
+#~ msgid "Targets"
+#~ msgstr "Alvos"
+
+#~ msgid "Timers"
+#~ msgstr "Cronómetros"
+
+#~ msgctxt "First part of 'Total: %1, %2, %3'"
+#~ msgid "1 unit"
+#~ msgid_plural "%1 units"
+#~ msgstr[0] "1 unidade"
+#~ msgstr[1] "%1 unidades"
+
+#~ msgctxt "Second part of 'Total: %1, %2, %3'"
+#~ msgid "1 active"
+#~ msgid_plural "%1 active"
+#~ msgstr[0] "1 activa"
+#~ msgstr[1] "%1 activas"
+
+#~ msgctxt "Third part of 'Total: %1, %2, %3'"
+#~ msgid "1 displayed"
+#~ msgid_plural "%1 displayed"
+#~ msgstr[0] "1 apresentada"
+#~ msgstr[1] "%1 apresentadas"
+
+#~ msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
+#~ msgid "Total: %1, %2, %3"
+#~ msgstr "Total: %1, %2, %3"
+
+#~ msgid "&Refresh"
+#~ msgstr "Actualiza&r"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Refresh"
+#~ msgstr "Actualizar"
+
+#~ msgid "Start Unit"
+#~ msgstr "Iniciar a Unidade"
+
+#~ msgid "Stop Unit"
+#~ msgstr "Parar a Unidade"
+
+#~ msgid "Reload Unit"
+#~ msgstr "Recarregar a Unidade"
+
+#~ msgid "Restart Unit"
+#~ msgstr "Reiniciar a Unidade"
+
+#~ msgid "Enable Unit"
+#~ msgstr "Activar a Unidade"
+
+#~ msgid "Disable Unit"
+#~ msgstr "Desactivar a Unidade"
+
+#~ msgid "Mask Unit"
+#~ msgstr "Mascarar a Unidade"
+
+#~ msgid "Unmask Unit"
+#~ msgstr "Desmascarar a Unidade"
+
+#~ msgid "Re&load systemd"
+#~ msgstr "Re&carregar o 'systemd'"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Click to reload all unit files"
+#~ msgstr "Carregue para recarregar todos os ficheiros da unidade"
+
+#~ msgid "Re-e&xecute systemd"
+#~ msgstr "Ree&xecutar o 'systemd'"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Click to re-execute the systemd daemon"
+#~ msgstr "Carregue para executar de novo o serviço 'systemd'"
+
+#~ msgid "Re&load user systemd"
+#~ msgstr "Ree&xecutar o 'systemd' do utilizador"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Click to reload all user unit files"
+#~ msgstr ""
+#~ "Carregue para recarregar todos os ficheiros da unidade do utilizador"
+
+#~ msgid "Re-e&xecute user systemd"
+#~ msgstr "Ree&xecutar o 'systemd' do utilizador"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Click to re-execute the user systemd daemon"
+#~ msgstr "Carregue para executar de novo o serviço 'systemd' do utilizador"
+
+#, fuzzy
+#~| msgid "Edit Unit File"
+#~ msgid "Edit Unit File…"
+#~ msgstr "Editar o Ficheiro da Unidade"
+
+#, fuzzy
+#~| msgid "Edit Configuration File"
+#~ msgid "Edit Configuration File…"
+#~ msgstr "Editar o Ficheiro de Configuração"
+
+#~ msgid "Open Man Page"
+#~ msgstr "Abrir a Página do Manual"
+
+#~ msgid "Activate Session"
+#~ msgstr "Activar a Sessão"
+
+#~ msgid "Terminate Session"
+#~ msgstr "Terminar a Sessão"
+
+#~ msgid "Lock Session"
+#~ msgstr "Bloquear a Sessão"
+
+#, fuzzy
+#~| msgid "Services"
+#~ msgid "Services Manager"
+#~ msgstr "Serviços"
+
+#~ msgid "System Units"
+#~ msgstr "Unidades do Sistema"
+
+#~ msgid "<html><head/><body><p>Filter unit types.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>Filtra os tipos de unidades.</p></body></html>"
+
+#, fuzzy
+#~| msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+#~ msgid ""
+#~ "<html><head/><body><p>Toggle hiding inactive units.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>Comutar a apresentação de unidades inactivas.</p></"
+#~ "body></html>"
+
+#, fuzzy
+#~| msgid "Show inactive"
+#~ msgid "Hide inactive"
+#~ msgstr "Mostrar as inactivas"
+
+#, fuzzy
+#~| msgid "<html><head/><body><p>Toggle show inactive units.</p></body></html>"
+#~ msgid ""
+#~ "<html><head/><body><p>Toggle hiding unloaded units.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>Comutar a apresentação de unidades inactivas.</p></"
+#~ "body></html>"
+
+#, fuzzy
+#~| msgid "Show unloaded"
+#~ msgid "Hide unloaded"
+#~ msgstr "Mostrar as não-carregadas"
+
+#~ msgid "Overall stats:"
+#~ msgstr "Estatísticas globais:"
+
+#~ msgid "User Units"
+#~ msgstr "Unidades do Utilizador"
+
+#~ msgid "Config Files"
+#~ msgstr "Ficheiros de Configuração"
+
+#~ msgid "Sessions"
+#~ msgstr "Sessões"
+
+#~ msgid "&File"
+#~ msgstr "&Ficheiro"
+
+#~ msgid "&View"
+#~ msgstr "&Ver"
+
+#~ msgid "&Daemon"
+#~ msgstr "&Servidor"
+
+#~ msgid "&Unit"
+#~ msgstr "&Unidade"
+
+#~ msgid "&Session"
+#~ msgstr "&Sessão"
+
+#~ msgid "Unit Toolbar"
+#~ msgstr "Barra das Unidades"
+
+#~ msgid "Config File Toolbar"
+#~ msgstr "Barra do Ficheiro de Configuração"
 
 #~ msgid "%1: Systemd daemon reloaded..."
 #~ msgstr "%1: O serviço do 'systemd' foi reiniciado..."

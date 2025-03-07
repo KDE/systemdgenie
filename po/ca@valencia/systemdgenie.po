@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 00:43+0000\n"
+"POT-Creation-Date: 2025-03-07 00:44+0000\n"
 "PO-Revision-Date: 2025-02-23 08:31+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -71,25 +71,25 @@ msgstr "Configureu la sincronització del temps"
 msgid "Systemd user daemon configuration"
 msgstr "Configureu el dimoni d'usuari de «systemd»"
 
-#: src/configfilemodel.cpp:112
+#: src/configfilemodel.cpp:109
 #, kde-format
 msgctxt "@title:column"
 msgid "File"
 msgstr "Fitxer"
 
-#: src/configfilemodel.cpp:114
+#: src/configfilemodel.cpp:111
 #, kde-format
 msgctxt "@title:column"
 msgid "Modified"
 msgstr "Modificat"
 
-#: src/configfilemodel.cpp:116
+#: src/configfilemodel.cpp:113
 #, kde-format
 msgctxt "@title:column"
 msgid "Description"
 msgstr "Descripció"
 
-#: src/configfilemodel.cpp:140
+#: src/configfilemodel.cpp:136
 #, kde-format
 msgid ""
 "KHelpCenter executable not found in path. Please install KHelpCenter to view "
@@ -98,403 +98,17 @@ msgstr ""
 "No s'ha trobat l'executable de KHelpCenter. Torneu a instal·lar-lo per a "
 "veure les pàgines «man»."
 
-#: src/main.cpp:29 src/mainwindow.cpp:57
-#, kde-format
-msgid "SystemdGenie"
-msgstr "SystemdGenie"
-
-#: src/main.cpp:31
-#, kde-format
-msgid "Manage systemd units, timers, sessions and config files"
-msgstr ""
-"Gestiona les unitats del sistema, els temporitzadors, les sessions i els "
-"fitxers de configuració"
-
-#: src/main.cpp:33
-#, kde-format
-msgid "(c) 2016, Ragnar Thomsen"
-msgstr "(c) 2016, Ragnar Thomsen"
-
-#: src/main.cpp:39
-#, kde-format
-msgid "Ragnar Thomsen"
-msgstr "Ragnar Thomsen"
-
-#: src/main.cpp:39
-#, kde-format
-msgid "Maintainer"
-msgstr "Mantenidor"
-
-#: src/mainwindow.cpp:57
-#, kde-format
-msgid "Unable to contact the systemd daemon. Quitting..."
-msgstr "No s'ha pogut contactar amb el dimoni «systemd». S'està eixint…"
-
-#: src/mainwindow.cpp:69
-#, kde-format
-msgid "User dbus not found. Support for user units disabled."
-msgstr ""
-"No s'ha trobat l'usuari «dbus». La implementació per a les unitats de "
-"l'usuari ha sigut inhabilitada."
-
-#: src/mainwindow.cpp:79
-#, kde-format
-msgid "All"
-msgstr "Tot"
-
-#: src/mainwindow.cpp:80
-#, kde-format
-msgid "Services"
-msgstr "Serveis"
-
-#: src/mainwindow.cpp:81
-#, kde-format
-msgid "Automounts"
-msgstr "Muntatges automàtics"
-
-#: src/mainwindow.cpp:82
-#, kde-format
-msgid "Devices"
-msgstr "Dispositius"
-
-#: src/mainwindow.cpp:83
-#, kde-format
-msgid "Mounts"
-msgstr "Muntatges"
-
-#: src/mainwindow.cpp:84
-#, kde-format
-msgid "Paths"
-msgstr "Camins"
-
-#: src/mainwindow.cpp:85
-#, kde-format
-msgid "Scopes"
-msgstr "Àmbits"
-
-#: src/mainwindow.cpp:86
-#, kde-format
-msgid "Slices"
-msgstr "Seccions"
-
-#: src/mainwindow.cpp:87
-#, kde-format
-msgid "Sockets"
-msgstr "Sòcols"
-
-#: src/mainwindow.cpp:88
-#, kde-format
-msgid "Swaps"
-msgstr "Memòria d'intercanvi"
-
-#: src/mainwindow.cpp:89
-#, kde-format
-msgid "Targets"
-msgstr "Objectius"
-
-#. i18n: ectx: attribute (title), widget (QWidget, tabTimers)
-#: src/mainwindow.cpp:90 src/mainwindow.ui:531
-#, kde-format
-msgid "Timers"
-msgstr "Temporitzadors"
-
-#: src/mainwindow.cpp:297
-#, kde-format
-msgid "Session ID"
-msgstr "ID de la sessió"
-
-#: src/mainwindow.cpp:298
-#, kde-format
-msgid "Session Object Path"
-msgstr "Camí cap a l'objecte de la sessió"
-
-#: src/mainwindow.cpp:299
-#, kde-format
-msgid "State"
-msgstr "Estat"
-
-#: src/mainwindow.cpp:300
-#, kde-format
-msgid "User ID"
-msgstr "ID de l'usuari"
-
-#: src/mainwindow.cpp:301
-#, kde-format
-msgid "User Name"
-msgstr "Nom de l'usuari"
-
-#: src/mainwindow.cpp:302
-#, kde-format
-msgid "Seat ID"
-msgstr "ID assentat"
-
-#: src/mainwindow.cpp:324
-#, kde-format
-msgid "Timer"
-msgstr "Temporitzador"
-
-#: src/mainwindow.cpp:325
-#, kde-format
-msgid "Next"
-msgstr "Següent"
-
-#: src/mainwindow.cpp:326
-#, kde-format
-msgid "Left"
-msgstr "Falta"
-
-#: src/mainwindow.cpp:327
-#, kde-format
-msgid "Last"
-msgstr "Últim"
-
-#: src/mainwindow.cpp:328
-#, kde-format
-msgid "Passed"
-msgstr "Ha passat"
-
-#: src/mainwindow.cpp:329
-#, kde-format
-msgid "Activates"
-msgstr "Activa"
-
-#: src/mainwindow.cpp:459
-#, kde-format
-msgid "Unable to fetch sessions list: %1"
-msgstr "No s'ha pogut recuperar la llista de sessions: %1"
-
-#: src/mainwindow.cpp:631 src/mainwindow.cpp:637
-#, kde-format
-msgctxt "First part of 'Total: %1, %2, %3'"
-msgid "1 unit"
-msgid_plural "%1 units"
-msgstr[0] "1 unitat"
-msgstr[1] "%1 unitats"
-
-#: src/mainwindow.cpp:632 src/mainwindow.cpp:638
-#, kde-format
-msgctxt "Second part of 'Total: %1, %2, %3'"
-msgid "1 active"
-msgid_plural "%1 active"
-msgstr[0] "1 actiu"
-msgstr[1] "%1 actius"
-
-#: src/mainwindow.cpp:633 src/mainwindow.cpp:639
-#, kde-format
-msgctxt "Third part of 'Total: %1, %2, %3'"
-msgid "1 displayed"
-msgid_plural "%1 displayed"
-msgstr[0] "1 mostrat"
-msgstr[1] "%1 mostrats"
-
-#: src/mainwindow.cpp:635 src/mainwindow.cpp:641
-#, kde-format
-msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
-msgid "Total: %1, %2, %3"
-msgstr "Total: %1, %2, %3"
-
-#: src/mainwindow.cpp:665 src/mainwindow.cpp:1433
-#, kde-format
-msgid "Unable to authenticate/execute the action: %1"
-msgstr "No s'ha pogut autenticar/executar l'acció: %1"
-
-#: src/mainwindow.cpp:828
-#, kde-format
-msgid "&Refresh"
-msgstr "Act&ualitza"
-
-#: src/mainwindow.cpp:830
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Refresh"
-msgstr "Actualitza"
-
-#: src/mainwindow.cpp:836
-#, kde-format
-msgid "Start Unit"
-msgstr "Inicia la unitat"
-
-#: src/mainwindow.cpp:844
-#, kde-format
-msgid "Stop Unit"
-msgstr "Para la unitat"
-
-#: src/mainwindow.cpp:852
-#, kde-format
-msgid "Reload Unit"
-msgstr "Torna a carregar la unitat"
-
-#: src/mainwindow.cpp:860
-#, kde-format
-msgid "Restart Unit"
-msgstr "Reinicia la unitat"
-
-#: src/mainwindow.cpp:868
-#, kde-format
-msgid "Enable Unit"
-msgstr "Habilita la unitat"
-
-#: src/mainwindow.cpp:876
-#, kde-format
-msgid "Disable Unit"
-msgstr "Inhabilita la unitat"
-
-#: src/mainwindow.cpp:884
-#, kde-format
-msgid "Mask Unit"
-msgstr "Emmascara la unitat"
-
-#: src/mainwindow.cpp:892
-#, kde-format
-msgid "Unmask Unit"
-msgstr "Desemmascara la unitat"
-
-#: src/mainwindow.cpp:900
-#, kde-format
-msgid "Re&load systemd"
-msgstr "Torna a carregar «systemd»"
-
-#: src/mainwindow.cpp:901
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Click to reload all unit files"
-msgstr "Feu clic per a tornar a carregar tots els fitxers de la unitat"
-
-#: src/mainwindow.cpp:909
-#, kde-format
-msgid "Re-e&xecute systemd"
-msgstr "Torna a e&xecutar «systemd»"
-
-#: src/mainwindow.cpp:910
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Click to re-execute the systemd daemon"
-msgstr "Feu clic per a tornar a executar el dimoni «systemd»"
-
-#: src/mainwindow.cpp:918
-#, kde-format
-msgid "Re&load user systemd"
-msgstr "Torna a carre&gar «systemd» de l'usuari"
-
-#: src/mainwindow.cpp:919
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Click to reload all user unit files"
-msgstr ""
-"Feu clic per a tornar a carregar tots els fitxers de la unitat de l'usuari"
-
-#: src/mainwindow.cpp:927
-#, kde-format
-msgid "Re-e&xecute user systemd"
-msgstr "Torna a e&xecutar «systemd» de l'usuari"
-
-#: src/mainwindow.cpp:928
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Click to re-execute the user systemd daemon"
-msgstr "Feu clic per a tornar a executar el dimoni «systemd» de l'usuari"
-
-#: src/mainwindow.cpp:936
-#, kde-format
-msgid "Edit Unit File…"
-msgstr "Edita el fitxer de la unitat…"
-
-#: src/mainwindow.cpp:942
-#, kde-format
-msgid "Edit Configuration File…"
-msgstr "Edita el fitxer de configuració…"
-
-#: src/mainwindow.cpp:948
-#, kde-format
-msgid "Open Man Page"
-msgstr "Obri la pàgina «man»"
-
-#: src/mainwindow.cpp:954
-#, kde-format
-msgid "View Logs"
-msgstr "Visualitza els registres"
-
-#: src/mainwindow.cpp:960
-#, kde-format
-msgid "Activate Session"
-msgstr "Activa la sessió"
-
-#: src/mainwindow.cpp:968
-#, kde-format
-msgid "Terminate Session"
-msgstr "Finalitza la sessió"
-
-#: src/mainwindow.cpp:976
-#, kde-format
-msgid "Lock Session"
-msgstr "Bloqueja la sessió"
-
-#: src/mainwindow.cpp:1128
-#, kde-format
-msgid "<b>VT:</b> %1"
-msgstr "<b>TV:</b> %1"
-
-#: src/mainwindow.cpp:1132
-#, kde-format
-msgid "<br><b>Remote host:</b> %1"
-msgstr "<br><b>Màquina remota:</b> %1"
-
-#: src/mainwindow.cpp:1133
-#, kde-format
-msgid "<br><b>Remote user:</b> %1"
-msgstr "<br><b>Usuari remot:</b> %1"
-
-#: src/mainwindow.cpp:1135
-#, kde-format
-msgid "<br><b>Service:</b> %1"
-msgstr "<br><b>Servei:</b> %1"
-
-#: src/mainwindow.cpp:1136
-#, kde-format
-msgid "<br><b>Leader (PID):</b> %1"
-msgstr "<br><b>Líder (PID):</b> %1"
-
-#: src/mainwindow.cpp:1139
-#, kde-format
-msgid "<br><b>Type:</b> %1"
-msgstr "<br><b>Tipus:</b> %1"
-
-#: src/mainwindow.cpp:1141
-#, kde-format
-msgid " (display %1)"
-msgstr " (pantalla %1)"
-
-#: src/mainwindow.cpp:1150
-#, kde-format
-msgid "<br><b>Class:</b> %1"
-msgstr "<br><b>Classe:</b> %1"
-
-#: src/mainwindow.cpp:1151
-#, kde-format
-msgid "<br><b>State:</b> %1"
-msgstr "<br><b>Estat:</b> %1"
-
-#: src/mainwindow.cpp:1152
-#, kde-format
-msgid "<br><b>Scope:</b> %1"
-msgstr "<br><b>Àmbit:</b> %1"
-
-#: src/mainwindow.cpp:1154
-#, kde-format
-msgid "<br><b>Created: </b>"
-msgstr "<br><b>Creat: </b>"
-
-#: src/mainwindow.cpp:1377
+#: src/editor.cpp:37
 #, kde-format
 msgid "Editing %1"
 msgstr "S'està editant %1"
 
-#: src/mainwindow.cpp:1387
+#: src/editor.cpp:47
 #, kde-format
 msgid "Editing file: <code>%1</code>"
 msgstr "Edició de fitxer: <code>%1</code>"
 
-#: src/mainwindow.cpp:1412
+#: src/editor.cpp:72
 #, kde-format
 msgid ""
 "Failed to open the unit file:\n"
@@ -503,185 +117,459 @@ msgstr ""
 "No s'ha pogut obrir el fitxer de la unitat:\n"
 "%1"
 
-#. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
-#: src/mainwindow.ui:14
+#: src/editor.cpp:93 src/sessionmodel.cpp:265 src/unitmodel.cpp:432
 #, kde-format
-msgid "Services Manager"
-msgstr "Gestor de serveis"
+msgid "Unable to authenticate/execute the action: %1"
+msgstr "No s'ha pogut autenticar/executar l'acció: %1"
 
-#. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
-#: src/mainwindow.ui:85
-#, kde-format
-msgid "System Units"
-msgstr "Unitats del sistema"
+#: src/main.cpp:34
+#, fuzzy, kde-format
+#| msgid "SystemdGenie"
+msgid "systemdGenie"
+msgstr "SystemdGenie"
 
-#. i18n: ectx: property (toolTip), widget (QComboBox, cmbUnitTypes)
-#: src/mainwindow.ui:184
+#: src/main.cpp:36
 #, kde-format
-msgid "<html><head/><body><p>Filter unit types.</p></body></html>"
+msgid "Manage systemd units, timers, sessions and config files"
 msgstr ""
-"<html><head/><body><p>Filtra els tipus de les unitats.</p></body></html>"
+"Gestiona les unitats del sistema, els temporitzadors, les sessions i els "
+"fitxers de configuració"
 
-#. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUnits)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUserUnits)
-#: src/mainwindow.ui:194 src/mainwindow.ui:300
+#: src/main.cpp:38
+#, fuzzy, kde-format
+#| msgid "(c) 2016, Ragnar Thomsen"
+msgctxt "@about:credit"
+msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
+msgstr "(c) 2016, Ragnar Thomsen"
+
+#: src/main.cpp:44
 #, kde-format
-msgid "<html><head/><body><p>Toggle hiding inactive units.</p></body></html>"
+msgid "Ragnar Thomsen"
+msgstr "Ragnar Thomsen"
+
+#: src/main.cpp:44
+#, fuzzy, kde-format
+#| msgid "Maintainer"
+msgid "Former Maintainer"
+msgstr "Mantenidor"
+
+#: src/main.cpp:45
+#, kde-format
+msgid "Carl Schwan"
 msgstr ""
-"<html><head/><body><p>Alterna l'ocultació de les unitats inactives.</p></"
-"body></html>"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUnits)
-#. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUserUnits)
-#: src/mainwindow.ui:197 src/mainwindow.ui:303
+#: src/main.cpp:45
 #, kde-format
-msgid "Hide inactive"
-msgstr "Oculta les inactives"
+msgid "Maintainer"
+msgstr "Mantenidor"
 
-#. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUnits)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUserUnits)
-#: src/mainwindow.ui:207 src/mainwindow.ui:313
+#: src/sessionmodel.cpp:72
 #, kde-format
-msgid "<html><head/><body><p>Toggle hiding unloaded units.</p></body></html>"
+msgid "Session ID"
+msgstr "ID de la sessió"
+
+#: src/sessionmodel.cpp:74
+#, kde-format
+msgid "Session Object Path"
+msgstr "Camí cap a l'objecte de la sessió"
+
+#: src/sessionmodel.cpp:76
+#, kde-format
+msgid "State"
+msgstr "Estat"
+
+#: src/sessionmodel.cpp:78
+#, kde-format
+msgid "User ID"
+msgstr "ID de l'usuari"
+
+#: src/sessionmodel.cpp:80
+#, kde-format
+msgid "User Name"
+msgstr "Nom de l'usuari"
+
+#: src/sessionmodel.cpp:82
+#, kde-format
+msgid "Seat ID"
+msgstr "ID assentat"
+
+#: src/sessionmodel.cpp:119
+#, kde-format
+msgid "<b>VT:</b> %1"
+msgstr "<b>TV:</b> %1"
+
+#: src/sessionmodel.cpp:123
+#, kde-format
+msgid "<br><b>Remote host:</b> %1"
+msgstr "<br><b>Màquina remota:</b> %1"
+
+#: src/sessionmodel.cpp:124
+#, kde-format
+msgid "<br><b>Remote user:</b> %1"
+msgstr "<br><b>Usuari remot:</b> %1"
+
+#: src/sessionmodel.cpp:126
+#, kde-format
+msgid "<br><b>Service:</b> %1"
+msgstr "<br><b>Servei:</b> %1"
+
+#: src/sessionmodel.cpp:127
+#, kde-format
+msgid "<br><b>Leader (PID):</b> %1"
+msgstr "<br><b>Líder (PID):</b> %1"
+
+#: src/sessionmodel.cpp:130
+#, kde-format
+msgid "<br><b>Type:</b> %1"
+msgstr "<br><b>Tipus:</b> %1"
+
+#: src/sessionmodel.cpp:132
+#, kde-format
+msgid " (display %1)"
+msgstr " (pantalla %1)"
+
+#: src/sessionmodel.cpp:141
+#, kde-format
+msgid "<br><b>Class:</b> %1"
+msgstr "<br><b>Classe:</b> %1"
+
+#: src/sessionmodel.cpp:142
+#, kde-format
+msgid "<br><b>State:</b> %1"
+msgstr "<br><b>Estat:</b> %1"
+
+#: src/sessionmodel.cpp:143
+#, kde-format
+msgid "<br><b>Scope:</b> %1"
+msgstr "<br><b>Àmbit:</b> %1"
+
+#: src/sessionmodel.cpp:145
+#, kde-format
+msgid "<br><b>Created: </b>"
+msgstr "<br><b>Creat: </b>"
+
+#: src/sessionmodel.cpp:185
+#, kde-format
+msgid "Unable to fetch sessions list: %1"
+msgstr "No s'ha pogut recuperar la llista de sessions: %1"
+
+#: src/timermodel.cpp:44
+#, fuzzy, kde-format
+#| msgid "Timer"
+msgctxt "@title:column"
+msgid "Timer"
+msgstr "Temporitzador"
+
+#: src/timermodel.cpp:46
+#, fuzzy, kde-format
+#| msgid "Next"
+msgctxt "@title:column"
+msgid "Next"
+msgstr "Següent"
+
+#: src/timermodel.cpp:48
+#, fuzzy, kde-format
+#| msgid "Left"
+msgctxt "@title:column"
+msgid "Left"
+msgstr "Falta"
+
+#: src/timermodel.cpp:50
+#, fuzzy, kde-format
+#| msgid "Last"
+msgctxt "@title:column"
+msgid "Last"
+msgstr "Últim"
+
+#: src/timermodel.cpp:52
+#, fuzzy, kde-format
+#| msgid "Passed"
+msgctxt "@title:column"
+msgid "Passed"
+msgstr "Ha passat"
+
+#: src/timermodel.cpp:54
+#, fuzzy, kde-format
+#| msgid "Activates"
+msgctxt "@title:column"
+msgid "Activates"
+msgstr "Activa"
+
+#: src/timermodel.cpp:75 src/timermodel.cpp:100
+#, kde-format
+msgctxt "invalid"
+msgid "n/a"
 msgstr ""
-"<html><head/><body><p>Alterna l'ocultació de les unitats no carregades.</p></"
-"body></html>"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUnits)
-#. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUserUnits)
-#: src/mainwindow.ui:210 src/mainwindow.ui:316
-#, kde-format
-msgid "Hide unloaded"
-msgstr "Oculta les no carregades"
-
-#. i18n: ectx: property (text), widget (QLabel, lblUnitCount)
-#. i18n: ectx: property (text), widget (QLabel, lblUserUnitCount)
-#: src/mainwindow.ui:246 src/mainwindow.ui:389
-#, kde-format
-msgid "Overall stats:"
-msgstr "Estat global:"
-
-#. i18n: ectx: attribute (title), widget (QWidget, tabUserUnits)
-#: src/mainwindow.ui:259
-#, kde-format
-msgid "User Units"
-msgstr "Unitats de l'usuari"
-
-#. i18n: ectx: attribute (title), widget (QWidget, tabConf)
-#: src/mainwindow.ui:405
-#, kde-format
-msgid "Config Files"
-msgstr "Fitxers de configuració"
-
-#. i18n: ectx: attribute (title), widget (QWidget, tabSessions)
-#: src/mainwindow.ui:462
-#, kde-format
-msgid "Sessions"
-msgstr "Sessions"
-
-#. i18n: ectx: Menu (file)
-#: src/systemdgenieui.rc:10
-#, kde-format
-msgid "&File"
-msgstr "Fi&txer"
-
-#. i18n: ectx: Menu (view)
-#: src/systemdgenieui.rc:13
-#, kde-format
-msgid "&View"
-msgstr "Vi&sualitza"
-
-#. i18n: ectx: Menu (daemon)
-#: src/systemdgenieui.rc:17
-#, kde-format
-msgid "&Daemon"
-msgstr "&Dimoni"
-
-#. i18n: ectx: Menu (unit)
-#: src/systemdgenieui.rc:25
-#, kde-format
-msgid "&Unit"
-msgstr "&Unitat"
-
-#. i18n: ectx: Menu (session)
-#: src/systemdgenieui.rc:41
-#, kde-format
-msgid "&Session"
-msgstr "&Sessió"
-
-#. i18n: ectx: ToolBar (unitToolBar)
-#: src/systemdgenieui.rc:49
-#, kde-format
-msgid "Unit Toolbar"
-msgstr "Barra d'eines de la unitat"
-
-#. i18n: ectx: ToolBar (confFileToolBar)
-#: src/systemdgenieui.rc:57
-#, kde-format
-msgid "Config File Toolbar"
-msgstr "Barra d'eines del fitxer de configuració"
-
-#: src/unitmodel.cpp:43
+#: src/unitmodel.cpp:95
 #, kde-format
 msgid "Unit"
 msgstr "Unitat"
 
-#: src/unitmodel.cpp:45
+#: src/unitmodel.cpp:97
 #, kde-format
 msgid "Load State"
 msgstr "Estat de càrrega"
 
-#: src/unitmodel.cpp:47
+#: src/unitmodel.cpp:99
 #, kde-format
 msgid "Active State"
 msgstr "Estat d'activitat"
 
-#: src/unitmodel.cpp:49
+#: src/unitmodel.cpp:101
 #, kde-format
 msgid "Unit State"
 msgstr "Estat de la unitat"
 
-#: src/unitmodel.cpp:121
+#: src/unitmodel.cpp:217
 #, kde-format
 msgid "<b>Description: </b>"
 msgstr "<b>Descripció: </b>"
 
-#: src/unitmodel.cpp:126
+#: src/unitmodel.cpp:222
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
 msgstr "<br><b>Fitxer de la unitat: </b>%1"
 
-#: src/unitmodel.cpp:127 src/unitmodel.cpp:174
+#: src/unitmodel.cpp:223 src/unitmodel.cpp:270
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
 msgstr "<br><b>Estat del fitxer de la unitat: </b>"
 
-#: src/unitmodel.cpp:133
+#: src/unitmodel.cpp:229
 #, kde-format
 msgid "<br><b>Source path: </b>%1"
 msgstr "<br><b>Camí de l'origen: </b>%1"
 
-#: src/unitmodel.cpp:137
+#: src/unitmodel.cpp:233
 #, kde-format
 msgid "<br><b>Activated: </b>"
 msgstr "<br><b>Activada: </b>"
 
-#: src/unitmodel.cpp:147
+#: src/unitmodel.cpp:243
 #, kde-format
 msgid "<br><b>Deactivated: </b>"
 msgstr "<br><b>Desactivada: </b>"
 
-#: src/unitmodel.cpp:169
+#: src/unitmodel.cpp:265
 #, kde-format
 msgid "<b>Unit file: </b>"
 msgstr "<b>Fitxer de la unitat: </b>"
 
-#: src/unitmodel.cpp:183
+#: src/unitmodel.cpp:279
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
 msgstr "<hr><b>Últimes entrades del registre:</b>"
 
-#: src/unitmodel.cpp:186
+#: src/unitmodel.cpp:282
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>No s'han trobat entrades al registre per a esta unitat.</i>"
+
+#~ msgid "Unable to contact the systemd daemon. Quitting..."
+#~ msgstr "No s'ha pogut contactar amb el dimoni «systemd». S'està eixint…"
+
+#~ msgid "User dbus not found. Support for user units disabled."
+#~ msgstr ""
+#~ "No s'ha trobat l'usuari «dbus». La implementació per a les unitats de "
+#~ "l'usuari ha sigut inhabilitada."
+
+#~ msgid "All"
+#~ msgstr "Tot"
+
+#~ msgid "Services"
+#~ msgstr "Serveis"
+
+#~ msgid "Automounts"
+#~ msgstr "Muntatges automàtics"
+
+#~ msgid "Devices"
+#~ msgstr "Dispositius"
+
+#~ msgid "Mounts"
+#~ msgstr "Muntatges"
+
+#~ msgid "Paths"
+#~ msgstr "Camins"
+
+#~ msgid "Scopes"
+#~ msgstr "Àmbits"
+
+#~ msgid "Slices"
+#~ msgstr "Seccions"
+
+#~ msgid "Sockets"
+#~ msgstr "Sòcols"
+
+#~ msgid "Swaps"
+#~ msgstr "Memòria d'intercanvi"
+
+#~ msgid "Targets"
+#~ msgstr "Objectius"
+
+#~ msgid "Timers"
+#~ msgstr "Temporitzadors"
+
+#~ msgctxt "First part of 'Total: %1, %2, %3'"
+#~ msgid "1 unit"
+#~ msgid_plural "%1 units"
+#~ msgstr[0] "1 unitat"
+#~ msgstr[1] "%1 unitats"
+
+#~ msgctxt "Second part of 'Total: %1, %2, %3'"
+#~ msgid "1 active"
+#~ msgid_plural "%1 active"
+#~ msgstr[0] "1 actiu"
+#~ msgstr[1] "%1 actius"
+
+#~ msgctxt "Third part of 'Total: %1, %2, %3'"
+#~ msgid "1 displayed"
+#~ msgid_plural "%1 displayed"
+#~ msgstr[0] "1 mostrat"
+#~ msgstr[1] "%1 mostrats"
+
+#~ msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
+#~ msgid "Total: %1, %2, %3"
+#~ msgstr "Total: %1, %2, %3"
+
+#~ msgid "&Refresh"
+#~ msgstr "Act&ualitza"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Refresh"
+#~ msgstr "Actualitza"
+
+#~ msgid "Start Unit"
+#~ msgstr "Inicia la unitat"
+
+#~ msgid "Stop Unit"
+#~ msgstr "Para la unitat"
+
+#~ msgid "Reload Unit"
+#~ msgstr "Torna a carregar la unitat"
+
+#~ msgid "Restart Unit"
+#~ msgstr "Reinicia la unitat"
+
+#~ msgid "Enable Unit"
+#~ msgstr "Habilita la unitat"
+
+#~ msgid "Disable Unit"
+#~ msgstr "Inhabilita la unitat"
+
+#~ msgid "Mask Unit"
+#~ msgstr "Emmascara la unitat"
+
+#~ msgid "Unmask Unit"
+#~ msgstr "Desemmascara la unitat"
+
+#~ msgid "Re&load systemd"
+#~ msgstr "Torna a carregar «systemd»"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Click to reload all unit files"
+#~ msgstr "Feu clic per a tornar a carregar tots els fitxers de la unitat"
+
+#~ msgid "Re-e&xecute systemd"
+#~ msgstr "Torna a e&xecutar «systemd»"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Click to re-execute the systemd daemon"
+#~ msgstr "Feu clic per a tornar a executar el dimoni «systemd»"
+
+#~ msgid "Re&load user systemd"
+#~ msgstr "Torna a carre&gar «systemd» de l'usuari"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Click to reload all user unit files"
+#~ msgstr ""
+#~ "Feu clic per a tornar a carregar tots els fitxers de la unitat de l'usuari"
+
+#~ msgid "Re-e&xecute user systemd"
+#~ msgstr "Torna a e&xecutar «systemd» de l'usuari"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Click to re-execute the user systemd daemon"
+#~ msgstr "Feu clic per a tornar a executar el dimoni «systemd» de l'usuari"
+
+#~ msgid "Edit Unit File…"
+#~ msgstr "Edita el fitxer de la unitat…"
+
+#~ msgid "Edit Configuration File…"
+#~ msgstr "Edita el fitxer de configuració…"
+
+#~ msgid "Open Man Page"
+#~ msgstr "Obri la pàgina «man»"
+
+#~ msgid "View Logs"
+#~ msgstr "Visualitza els registres"
+
+#~ msgid "Activate Session"
+#~ msgstr "Activa la sessió"
+
+#~ msgid "Terminate Session"
+#~ msgstr "Finalitza la sessió"
+
+#~ msgid "Lock Session"
+#~ msgstr "Bloqueja la sessió"
+
+#~ msgid "Services Manager"
+#~ msgstr "Gestor de serveis"
+
+#~ msgid "System Units"
+#~ msgstr "Unitats del sistema"
+
+#~ msgid "<html><head/><body><p>Filter unit types.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>Filtra els tipus de les unitats.</p></body></html>"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Toggle hiding inactive units.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>Alterna l'ocultació de les unitats inactives.</p></"
+#~ "body></html>"
+
+#~ msgid "Hide inactive"
+#~ msgstr "Oculta les inactives"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Toggle hiding unloaded units.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>Alterna l'ocultació de les unitats no carregades.</"
+#~ "p></body></html>"
+
+#~ msgid "Hide unloaded"
+#~ msgstr "Oculta les no carregades"
+
+#~ msgid "Overall stats:"
+#~ msgstr "Estat global:"
+
+#~ msgid "User Units"
+#~ msgstr "Unitats de l'usuari"
+
+#~ msgid "Config Files"
+#~ msgstr "Fitxers de configuració"
+
+#~ msgid "Sessions"
+#~ msgstr "Sessions"
+
+#~ msgid "&File"
+#~ msgstr "Fi&txer"
+
+#~ msgid "&View"
+#~ msgstr "Vi&sualitza"
+
+#~ msgid "&Daemon"
+#~ msgstr "&Dimoni"
+
+#~ msgid "&Unit"
+#~ msgstr "&Unitat"
+
+#~ msgid "&Session"
+#~ msgstr "&Sessió"
+
+#~ msgid "Unit Toolbar"
+#~ msgstr "Barra d'eines de la unitat"
+
+#~ msgid "Config File Toolbar"
+#~ msgstr "Barra d'eines del fitxer de configuració"

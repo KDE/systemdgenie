@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 00:43+0000\n"
+"POT-Creation-Date: 2025-03-07 00:44+0000\n"
 "PO-Revision-Date: 2021-08-20 12:53+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -68,430 +68,46 @@ msgstr ""
 msgid "Systemd user daemon configuration"
 msgstr ""
 
-#: src/configfilemodel.cpp:112
+#: src/configfilemodel.cpp:109
 #, fuzzy, kde-format
 #| msgid "File"
 msgctxt "@title:column"
 msgid "File"
 msgstr "Soubor"
 
-#: src/configfilemodel.cpp:114
+#: src/configfilemodel.cpp:111
 #, fuzzy, kde-format
 #| msgid "Modified"
 msgctxt "@title:column"
 msgid "Modified"
 msgstr "Změněno"
 
-#: src/configfilemodel.cpp:116
+#: src/configfilemodel.cpp:113
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title:column"
 msgid "Description"
 msgstr "Popis"
 
-#: src/configfilemodel.cpp:140
+#: src/configfilemodel.cpp:136
 #, kde-format
 msgid ""
 "KHelpCenter executable not found in path. Please install KHelpCenter to view "
 "man pages."
 msgstr ""
 
-#: src/main.cpp:29 src/mainwindow.cpp:57
-#, kde-format
-msgid "SystemdGenie"
-msgstr "SystemdGenie"
-
-#: src/main.cpp:31
-#, kde-format
-msgid "Manage systemd units, timers, sessions and config files"
-msgstr ""
-
-#: src/main.cpp:33
-#, kde-format
-msgid "(c) 2016, Ragnar Thomsen"
-msgstr "(c) 2016, Ragnar Thomsen"
-
-#: src/main.cpp:39
-#, kde-format
-msgid "Ragnar Thomsen"
-msgstr "Ragnar Thomsen"
-
-#: src/main.cpp:39
-#, kde-format
-msgid "Maintainer"
-msgstr "Správce"
-
-#: src/mainwindow.cpp:57
-#, kde-format
-msgid "Unable to contact the systemd daemon. Quitting..."
-msgstr ""
-
-#: src/mainwindow.cpp:69
-#, kde-format
-msgid "User dbus not found. Support for user units disabled."
-msgstr ""
-
-#: src/mainwindow.cpp:79
-#, kde-format
-msgid "All"
-msgstr "Vše"
-
-#: src/mainwindow.cpp:80
-#, kde-format
-msgid "Services"
-msgstr "Služby"
-
-#: src/mainwindow.cpp:81
-#, kde-format
-msgid "Automounts"
-msgstr ""
-
-#: src/mainwindow.cpp:82
-#, kde-format
-msgid "Devices"
-msgstr "Zařízení"
-
-#: src/mainwindow.cpp:83
-#, kde-format
-msgid "Mounts"
-msgstr ""
-
-#: src/mainwindow.cpp:84
-#, kde-format
-msgid "Paths"
-msgstr "Cesty"
-
-#: src/mainwindow.cpp:85
-#, kde-format
-msgid "Scopes"
-msgstr "Rozsahy"
-
-#: src/mainwindow.cpp:86
-#, kde-format
-msgid "Slices"
-msgstr ""
-
-#: src/mainwindow.cpp:87
-#, kde-format
-msgid "Sockets"
-msgstr "Sokety"
-
-#: src/mainwindow.cpp:88
-#, kde-format
-msgid "Swaps"
-msgstr ""
-
-#: src/mainwindow.cpp:89
-#, kde-format
-msgid "Targets"
-msgstr "Cíle"
-
-#. i18n: ectx: attribute (title), widget (QWidget, tabTimers)
-#: src/mainwindow.cpp:90 src/mainwindow.ui:531
-#, kde-format
-msgid "Timers"
-msgstr "Časovače"
-
-#: src/mainwindow.cpp:297
-#, kde-format
-msgid "Session ID"
-msgstr "ID sezení"
-
-#: src/mainwindow.cpp:298
-#, kde-format
-msgid "Session Object Path"
-msgstr ""
-
-#: src/mainwindow.cpp:299
-#, kde-format
-msgid "State"
-msgstr "Stav"
-
-#: src/mainwindow.cpp:300
-#, kde-format
-msgid "User ID"
-msgstr "ID uživatele"
-
-#: src/mainwindow.cpp:301
-#, kde-format
-msgid "User Name"
-msgstr "Uživatelské jméno"
-
-#: src/mainwindow.cpp:302
-#, kde-format
-msgid "Seat ID"
-msgstr ""
-
-#: src/mainwindow.cpp:324
-#, kde-format
-msgid "Timer"
-msgstr "Časovač"
-
-#: src/mainwindow.cpp:325
-#, kde-format
-msgid "Next"
-msgstr "Následující"
-
-#: src/mainwindow.cpp:326
-#, kde-format
-msgid "Left"
-msgstr "Zbývá"
-
-#: src/mainwindow.cpp:327
-#, kde-format
-msgid "Last"
-msgstr "Poslední"
-
-#: src/mainwindow.cpp:328
-#, kde-format
-msgid "Passed"
-msgstr "Prošlo"
-
-#: src/mainwindow.cpp:329
-#, kde-format
-msgid "Activates"
-msgstr "Aktivuje"
-
-#: src/mainwindow.cpp:459
-#, kde-format
-msgid "Unable to fetch sessions list: %1"
-msgstr ""
-
-#: src/mainwindow.cpp:631 src/mainwindow.cpp:637
-#, kde-format
-msgctxt "First part of 'Total: %1, %2, %3'"
-msgid "1 unit"
-msgid_plural "%1 units"
-msgstr[0] "1 jednotka"
-msgstr[1] "%1 jednotky"
-msgstr[2] "%1 jednotek"
-
-#: src/mainwindow.cpp:632 src/mainwindow.cpp:638
-#, kde-format
-msgctxt "Second part of 'Total: %1, %2, %3'"
-msgid "1 active"
-msgid_plural "%1 active"
-msgstr[0] "1 aktivní"
-msgstr[1] "%1 aktivní"
-msgstr[2] "%1 aktivních"
-
-#: src/mainwindow.cpp:633 src/mainwindow.cpp:639
-#, kde-format
-msgctxt "Third part of 'Total: %1, %2, %3'"
-msgid "1 displayed"
-msgid_plural "%1 displayed"
-msgstr[0] "1 zobrazen"
-msgstr[1] "%1 zobrazeny"
-msgstr[2] "%1 zobrazeno"
-
-#: src/mainwindow.cpp:635 src/mainwindow.cpp:641
-#, kde-format
-msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
-msgid "Total: %1, %2, %3"
-msgstr "Celkem: %1, %2, %3"
-
-#: src/mainwindow.cpp:665 src/mainwindow.cpp:1433
-#, kde-format
-msgid "Unable to authenticate/execute the action: %1"
-msgstr "Nelze ověřit/vykonat činnost: %1"
-
-#: src/mainwindow.cpp:828
-#, kde-format
-msgid "&Refresh"
-msgstr "O&bnovit"
-
-#: src/mainwindow.cpp:830
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Refresh"
-msgstr "Obnovit"
-
-#: src/mainwindow.cpp:836
-#, kde-format
-msgid "Start Unit"
-msgstr "Spustit jednotku"
-
-#: src/mainwindow.cpp:844
-#, kde-format
-msgid "Stop Unit"
-msgstr "Zastavit jednotku"
-
-#: src/mainwindow.cpp:852
-#, kde-format
-msgid "Reload Unit"
-msgstr "Znovu načíst jednotku"
-
-#: src/mainwindow.cpp:860
-#, kde-format
-msgid "Restart Unit"
-msgstr "Restartovat jednotku"
-
-#: src/mainwindow.cpp:868
-#, kde-format
-msgid "Enable Unit"
-msgstr "Povolit jednotku"
-
-#: src/mainwindow.cpp:876
-#, kde-format
-msgid "Disable Unit"
-msgstr "Zakázat jednotku"
-
-#: src/mainwindow.cpp:884
-#, kde-format
-msgid "Mask Unit"
-msgstr "Maskovat jednotku"
-
-#: src/mainwindow.cpp:892
-#, kde-format
-msgid "Unmask Unit"
-msgstr "Odmaskovat jednotku"
-
-#: src/mainwindow.cpp:900
-#, kde-format
-msgid "Re&load systemd"
-msgstr "Znovu načíst systemd"
-
-#: src/mainwindow.cpp:901
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Click to reload all unit files"
-msgstr ""
-
-#: src/mainwindow.cpp:909
-#, kde-format
-msgid "Re-e&xecute systemd"
-msgstr "Znovu spustit systemd"
-
-#: src/mainwindow.cpp:910
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Click to re-execute the systemd daemon"
-msgstr ""
-
-#: src/mainwindow.cpp:918
-#, kde-format
-msgid "Re&load user systemd"
-msgstr ""
-
-#: src/mainwindow.cpp:919
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Click to reload all user unit files"
-msgstr ""
-
-#: src/mainwindow.cpp:927
-#, kde-format
-msgid "Re-e&xecute user systemd"
-msgstr ""
-
-#: src/mainwindow.cpp:928
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Click to re-execute the user systemd daemon"
-msgstr ""
-
-#: src/mainwindow.cpp:936
-#, kde-format
-msgid "Edit Unit File…"
-msgstr ""
-
-#: src/mainwindow.cpp:942
-#, kde-format
-msgid "Edit Configuration File…"
-msgstr ""
-
-#: src/mainwindow.cpp:948
-#, kde-format
-msgid "Open Man Page"
-msgstr "Otevřít manuálovou stránku"
-
-#: src/mainwindow.cpp:954
-#, kde-format
-msgid "View Logs"
-msgstr ""
-
-#: src/mainwindow.cpp:960
-#, kde-format
-msgid "Activate Session"
-msgstr "Aktivovat sezení"
-
-#: src/mainwindow.cpp:968
-#, kde-format
-msgid "Terminate Session"
-msgstr "Ukončit sezení"
-
-#: src/mainwindow.cpp:976
-#, kde-format
-msgid "Lock Session"
-msgstr "Uzamknout sezení"
-
-#: src/mainwindow.cpp:1128
-#, kde-format
-msgid "<b>VT:</b> %1"
-msgstr "<b>VT:</b> %1"
-
-#: src/mainwindow.cpp:1132
-#, kde-format
-msgid "<br><b>Remote host:</b> %1"
-msgstr "<br><b>Vzdálený hostitel:</b> %1"
-
-#: src/mainwindow.cpp:1133
-#, kde-format
-msgid "<br><b>Remote user:</b> %1"
-msgstr "<br><b>Vzdálený uživatel:</b> %1"
-
-#: src/mainwindow.cpp:1135
-#, kde-format
-msgid "<br><b>Service:</b> %1"
-msgstr "<br><b>Služba:</b> %1"
-
-#: src/mainwindow.cpp:1136
-#, kde-format
-msgid "<br><b>Leader (PID):</b> %1"
-msgstr ""
-
-#: src/mainwindow.cpp:1139
-#, kde-format
-msgid "<br><b>Type:</b> %1"
-msgstr "<br><b>Typ:</b> %1"
-
-#: src/mainwindow.cpp:1141
-#, kde-format
-msgid " (display %1)"
-msgstr " (obrazovka %1)"
-
-#: src/mainwindow.cpp:1150
-#, kde-format
-msgid "<br><b>Class:</b> %1"
-msgstr "<br><b>Třída:</b> %1"
-
-#: src/mainwindow.cpp:1151
-#, kde-format
-msgid "<br><b>State:</b> %1"
-msgstr "<br><b>Stav:</b> %1"
-
-#: src/mainwindow.cpp:1152
-#, kde-format
-msgid "<br><b>Scope:</b> %1"
-msgstr "<br><b>Rozsah:</b> %1"
-
-#: src/mainwindow.cpp:1154
-#, kde-format
-msgid "<br><b>Created: </b>"
-msgstr "<br><b>Vytvořeno: </b>"
-
-#: src/mainwindow.cpp:1377
+#: src/editor.cpp:37
 #, kde-format
 msgid "Editing %1"
 msgstr "Úprava %1"
 
-#: src/mainwindow.cpp:1387
+#: src/editor.cpp:47
 #, fuzzy, kde-format
 #| msgid "Editing file: %1"
 msgid "Editing file: <code>%1</code>"
 msgstr "Upravuji soubor: %1"
 
-#: src/mainwindow.cpp:1412
+#: src/editor.cpp:72
 #, kde-format
 msgid ""
 "Failed to open the unit file:\n"
@@ -500,186 +116,401 @@ msgstr ""
 "Nelze otevřít soubor jednotky:\n"
 "%1"
 
-#. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
-#: src/mainwindow.ui:14
+#: src/editor.cpp:93 src/sessionmodel.cpp:265 src/unitmodel.cpp:432
+#, kde-format
+msgid "Unable to authenticate/execute the action: %1"
+msgstr "Nelze ověřit/vykonat činnost: %1"
+
+#: src/main.cpp:34
 #, fuzzy, kde-format
-#| msgid "Services"
-msgid "Services Manager"
-msgstr "Služby"
+#| msgid "SystemdGenie"
+msgid "systemdGenie"
+msgstr "SystemdGenie"
 
-#. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
-#: src/mainwindow.ui:85
+#: src/main.cpp:36
 #, kde-format
-msgid "System Units"
-msgstr "Systémové jednotky"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, cmbUnitTypes)
-#: src/mainwindow.ui:184
-#, kde-format
-msgid "<html><head/><body><p>Filter unit types.</p></body></html>"
+msgid "Manage systemd units, timers, sessions and config files"
 msgstr ""
 
-#. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUnits)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUserUnits)
-#: src/mainwindow.ui:194 src/mainwindow.ui:300
+#: src/main.cpp:38
+#, fuzzy, kde-format
+#| msgid "(c) 2016, Ragnar Thomsen"
+msgctxt "@about:credit"
+msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
+msgstr "(c) 2016, Ragnar Thomsen"
+
+#: src/main.cpp:44
 #, kde-format
-msgid "<html><head/><body><p>Toggle hiding inactive units.</p></body></html>"
+msgid "Ragnar Thomsen"
+msgstr "Ragnar Thomsen"
+
+#: src/main.cpp:44
+#, fuzzy, kde-format
+#| msgid "Maintainer"
+msgid "Former Maintainer"
+msgstr "Správce"
+
+#: src/main.cpp:45
+#, kde-format
+msgid "Carl Schwan"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUnits)
-#. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUserUnits)
-#: src/mainwindow.ui:197 src/mainwindow.ui:303
-#, fuzzy, kde-format
-#| msgid "Show inactive"
-msgid "Hide inactive"
-msgstr "Zobrazit neaktivní"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUnits)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUserUnits)
-#: src/mainwindow.ui:207 src/mainwindow.ui:313
+#: src/main.cpp:45
 #, kde-format
-msgid "<html><head/><body><p>Toggle hiding unloaded units.</p></body></html>"
+msgid "Maintainer"
+msgstr "Správce"
+
+#: src/sessionmodel.cpp:72
+#, kde-format
+msgid "Session ID"
+msgstr "ID sezení"
+
+#: src/sessionmodel.cpp:74
+#, kde-format
+msgid "Session Object Path"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUnits)
-#. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUserUnits)
-#: src/mainwindow.ui:210 src/mainwindow.ui:316
+#: src/sessionmodel.cpp:76
+#, kde-format
+msgid "State"
+msgstr "Stav"
+
+#: src/sessionmodel.cpp:78
+#, kde-format
+msgid "User ID"
+msgstr "ID uživatele"
+
+#: src/sessionmodel.cpp:80
+#, kde-format
+msgid "User Name"
+msgstr "Uživatelské jméno"
+
+#: src/sessionmodel.cpp:82
+#, kde-format
+msgid "Seat ID"
+msgstr ""
+
+#: src/sessionmodel.cpp:119
+#, kde-format
+msgid "<b>VT:</b> %1"
+msgstr "<b>VT:</b> %1"
+
+#: src/sessionmodel.cpp:123
+#, kde-format
+msgid "<br><b>Remote host:</b> %1"
+msgstr "<br><b>Vzdálený hostitel:</b> %1"
+
+#: src/sessionmodel.cpp:124
+#, kde-format
+msgid "<br><b>Remote user:</b> %1"
+msgstr "<br><b>Vzdálený uživatel:</b> %1"
+
+#: src/sessionmodel.cpp:126
+#, kde-format
+msgid "<br><b>Service:</b> %1"
+msgstr "<br><b>Služba:</b> %1"
+
+#: src/sessionmodel.cpp:127
+#, kde-format
+msgid "<br><b>Leader (PID):</b> %1"
+msgstr ""
+
+#: src/sessionmodel.cpp:130
+#, kde-format
+msgid "<br><b>Type:</b> %1"
+msgstr "<br><b>Typ:</b> %1"
+
+#: src/sessionmodel.cpp:132
+#, kde-format
+msgid " (display %1)"
+msgstr " (obrazovka %1)"
+
+#: src/sessionmodel.cpp:141
+#, kde-format
+msgid "<br><b>Class:</b> %1"
+msgstr "<br><b>Třída:</b> %1"
+
+#: src/sessionmodel.cpp:142
+#, kde-format
+msgid "<br><b>State:</b> %1"
+msgstr "<br><b>Stav:</b> %1"
+
+#: src/sessionmodel.cpp:143
+#, kde-format
+msgid "<br><b>Scope:</b> %1"
+msgstr "<br><b>Rozsah:</b> %1"
+
+#: src/sessionmodel.cpp:145
+#, kde-format
+msgid "<br><b>Created: </b>"
+msgstr "<br><b>Vytvořeno: </b>"
+
+#: src/sessionmodel.cpp:185
+#, kde-format
+msgid "Unable to fetch sessions list: %1"
+msgstr ""
+
+#: src/timermodel.cpp:44
 #, fuzzy, kde-format
-#| msgid "Show unloaded"
-msgid "Hide unloaded"
-msgstr "Zobrazit nenačtené"
+#| msgid "Timer"
+msgctxt "@title:column"
+msgid "Timer"
+msgstr "Časovač"
 
-#. i18n: ectx: property (text), widget (QLabel, lblUnitCount)
-#. i18n: ectx: property (text), widget (QLabel, lblUserUnitCount)
-#: src/mainwindow.ui:246 src/mainwindow.ui:389
+#: src/timermodel.cpp:46
+#, fuzzy, kde-format
+#| msgid "Next"
+msgctxt "@title:column"
+msgid "Next"
+msgstr "Následující"
+
+#: src/timermodel.cpp:48
+#, fuzzy, kde-format
+#| msgid "Left"
+msgctxt "@title:column"
+msgid "Left"
+msgstr "Zbývá"
+
+#: src/timermodel.cpp:50
+#, fuzzy, kde-format
+#| msgid "Last"
+msgctxt "@title:column"
+msgid "Last"
+msgstr "Poslední"
+
+#: src/timermodel.cpp:52
+#, fuzzy, kde-format
+#| msgid "Passed"
+msgctxt "@title:column"
+msgid "Passed"
+msgstr "Prošlo"
+
+#: src/timermodel.cpp:54
+#, fuzzy, kde-format
+#| msgid "Activates"
+msgctxt "@title:column"
+msgid "Activates"
+msgstr "Aktivuje"
+
+#: src/timermodel.cpp:75 src/timermodel.cpp:100
 #, kde-format
-msgid "Overall stats:"
-msgstr "Celkový přehled:"
+msgctxt "invalid"
+msgid "n/a"
+msgstr ""
 
-#. i18n: ectx: attribute (title), widget (QWidget, tabUserUnits)
-#: src/mainwindow.ui:259
-#, kde-format
-msgid "User Units"
-msgstr "Uživatelské jednotky"
-
-#. i18n: ectx: attribute (title), widget (QWidget, tabConf)
-#: src/mainwindow.ui:405
-#, kde-format
-msgid "Config Files"
-msgstr "Soubory nastavení"
-
-#. i18n: ectx: attribute (title), widget (QWidget, tabSessions)
-#: src/mainwindow.ui:462
-#, kde-format
-msgid "Sessions"
-msgstr "Sezení"
-
-#. i18n: ectx: Menu (file)
-#: src/systemdgenieui.rc:10
-#, kde-format
-msgid "&File"
-msgstr "&Soubor"
-
-#. i18n: ectx: Menu (view)
-#: src/systemdgenieui.rc:13
-#, kde-format
-msgid "&View"
-msgstr "Po&hled"
-
-#. i18n: ectx: Menu (daemon)
-#: src/systemdgenieui.rc:17
-#, kde-format
-msgid "&Daemon"
-msgstr "&Démon"
-
-#. i18n: ectx: Menu (unit)
-#: src/systemdgenieui.rc:25
-#, kde-format
-msgid "&Unit"
-msgstr "&Jednotka"
-
-#. i18n: ectx: Menu (session)
-#: src/systemdgenieui.rc:41
-#, kde-format
-msgid "&Session"
-msgstr "&Sezení"
-
-#. i18n: ectx: ToolBar (unitToolBar)
-#: src/systemdgenieui.rc:49
-#, kde-format
-msgid "Unit Toolbar"
-msgstr "Panel nástrojů jednotky"
-
-#. i18n: ectx: ToolBar (confFileToolBar)
-#: src/systemdgenieui.rc:57
-#, kde-format
-msgid "Config File Toolbar"
-msgstr "Nástrojový panel konfiguračního souboru"
-
-#: src/unitmodel.cpp:43
+#: src/unitmodel.cpp:95
 #, kde-format
 msgid "Unit"
 msgstr "Jednotka"
 
-#: src/unitmodel.cpp:45
+#: src/unitmodel.cpp:97
 #, kde-format
 msgid "Load State"
 msgstr "Načtení"
 
-#: src/unitmodel.cpp:47
+#: src/unitmodel.cpp:99
 #, kde-format
 msgid "Active State"
 msgstr "Aktivita"
 
-#: src/unitmodel.cpp:49
+#: src/unitmodel.cpp:101
 #, kde-format
 msgid "Unit State"
 msgstr "Stav jednotky"
 
-#: src/unitmodel.cpp:121
+#: src/unitmodel.cpp:217
 #, kde-format
 msgid "<b>Description: </b>"
 msgstr "<b>Popis: </b>"
 
-#: src/unitmodel.cpp:126
+#: src/unitmodel.cpp:222
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
 msgstr ""
 
-#: src/unitmodel.cpp:127 src/unitmodel.cpp:174
+#: src/unitmodel.cpp:223 src/unitmodel.cpp:270
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
 msgstr "<br><b>Soubor stavu jednotky: </b>"
 
-#: src/unitmodel.cpp:133
+#: src/unitmodel.cpp:229
 #, kde-format
 msgid "<br><b>Source path: </b>%1"
 msgstr "<br><b>Cesta ke zdroji: </b>%1"
 
-#: src/unitmodel.cpp:137
+#: src/unitmodel.cpp:233
 #, kde-format
 msgid "<br><b>Activated: </b>"
 msgstr "<br><b>Aktivováno: </b>"
 
-#: src/unitmodel.cpp:147
+#: src/unitmodel.cpp:243
 #, kde-format
 msgid "<br><b>Deactivated: </b>"
 msgstr "<br><b>Deaktivováno: </b>"
 
-#: src/unitmodel.cpp:169
+#: src/unitmodel.cpp:265
 #, kde-format
 msgid "<b>Unit file: </b>"
 msgstr "<b>Soubor jednotky: </b>"
 
-#: src/unitmodel.cpp:183
+#: src/unitmodel.cpp:279
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
 msgstr ""
 
-#: src/unitmodel.cpp:186
+#: src/unitmodel.cpp:282
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr ""
+
+#~ msgid "All"
+#~ msgstr "Vše"
+
+#~ msgid "Services"
+#~ msgstr "Služby"
+
+#~ msgid "Devices"
+#~ msgstr "Zařízení"
+
+#~ msgid "Paths"
+#~ msgstr "Cesty"
+
+#~ msgid "Scopes"
+#~ msgstr "Rozsahy"
+
+#~ msgid "Sockets"
+#~ msgstr "Sokety"
+
+#~ msgid "Targets"
+#~ msgstr "Cíle"
+
+#~ msgid "Timers"
+#~ msgstr "Časovače"
+
+#~ msgctxt "First part of 'Total: %1, %2, %3'"
+#~ msgid "1 unit"
+#~ msgid_plural "%1 units"
+#~ msgstr[0] "1 jednotka"
+#~ msgstr[1] "%1 jednotky"
+#~ msgstr[2] "%1 jednotek"
+
+#~ msgctxt "Second part of 'Total: %1, %2, %3'"
+#~ msgid "1 active"
+#~ msgid_plural "%1 active"
+#~ msgstr[0] "1 aktivní"
+#~ msgstr[1] "%1 aktivní"
+#~ msgstr[2] "%1 aktivních"
+
+#~ msgctxt "Third part of 'Total: %1, %2, %3'"
+#~ msgid "1 displayed"
+#~ msgid_plural "%1 displayed"
+#~ msgstr[0] "1 zobrazen"
+#~ msgstr[1] "%1 zobrazeny"
+#~ msgstr[2] "%1 zobrazeno"
+
+#~ msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
+#~ msgid "Total: %1, %2, %3"
+#~ msgstr "Celkem: %1, %2, %3"
+
+#~ msgid "&Refresh"
+#~ msgstr "O&bnovit"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Refresh"
+#~ msgstr "Obnovit"
+
+#~ msgid "Start Unit"
+#~ msgstr "Spustit jednotku"
+
+#~ msgid "Stop Unit"
+#~ msgstr "Zastavit jednotku"
+
+#~ msgid "Reload Unit"
+#~ msgstr "Znovu načíst jednotku"
+
+#~ msgid "Restart Unit"
+#~ msgstr "Restartovat jednotku"
+
+#~ msgid "Enable Unit"
+#~ msgstr "Povolit jednotku"
+
+#~ msgid "Disable Unit"
+#~ msgstr "Zakázat jednotku"
+
+#~ msgid "Mask Unit"
+#~ msgstr "Maskovat jednotku"
+
+#~ msgid "Unmask Unit"
+#~ msgstr "Odmaskovat jednotku"
+
+#~ msgid "Re&load systemd"
+#~ msgstr "Znovu načíst systemd"
+
+#~ msgid "Re-e&xecute systemd"
+#~ msgstr "Znovu spustit systemd"
+
+#~ msgid "Open Man Page"
+#~ msgstr "Otevřít manuálovou stránku"
+
+#~ msgid "Activate Session"
+#~ msgstr "Aktivovat sezení"
+
+#~ msgid "Terminate Session"
+#~ msgstr "Ukončit sezení"
+
+#~ msgid "Lock Session"
+#~ msgstr "Uzamknout sezení"
+
+#, fuzzy
+#~| msgid "Services"
+#~ msgid "Services Manager"
+#~ msgstr "Služby"
+
+#~ msgid "System Units"
+#~ msgstr "Systémové jednotky"
+
+#, fuzzy
+#~| msgid "Show inactive"
+#~ msgid "Hide inactive"
+#~ msgstr "Zobrazit neaktivní"
+
+#, fuzzy
+#~| msgid "Show unloaded"
+#~ msgid "Hide unloaded"
+#~ msgstr "Zobrazit nenačtené"
+
+#~ msgid "Overall stats:"
+#~ msgstr "Celkový přehled:"
+
+#~ msgid "User Units"
+#~ msgstr "Uživatelské jednotky"
+
+#~ msgid "Config Files"
+#~ msgstr "Soubory nastavení"
+
+#~ msgid "Sessions"
+#~ msgstr "Sezení"
+
+#~ msgid "&File"
+#~ msgstr "&Soubor"
+
+#~ msgid "&View"
+#~ msgstr "Po&hled"
+
+#~ msgid "&Daemon"
+#~ msgstr "&Démon"
+
+#~ msgid "&Unit"
+#~ msgstr "&Jednotka"
+
+#~ msgid "&Session"
+#~ msgstr "&Sezení"
+
+#~ msgid "Unit Toolbar"
+#~ msgstr "Panel nástrojů jednotky"
+
+#~ msgid "Config File Toolbar"
+#~ msgstr "Nástrojový panel konfiguračního souboru"
 
 #~ msgid "%1: Systemd daemon reloaded..."
 #~ msgstr "%1: Démon systemd byl znovu načten..."

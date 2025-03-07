@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-02 00:43+0000\n"
+"POT-Creation-Date: 2025-03-07 00:44+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -67,25 +67,25 @@ msgstr "时间同步设置"
 msgid "Systemd user daemon configuration"
 msgstr "Systemd 用户守护进程配置"
 
-#: src/configfilemodel.cpp:112
+#: src/configfilemodel.cpp:109
 #, kde-format
 msgctxt "@title:column"
 msgid "File"
 msgstr "文件"
 
-#: src/configfilemodel.cpp:114
+#: src/configfilemodel.cpp:111
 #, kde-format
 msgctxt "@title:column"
 msgid "Modified"
 msgstr "修改日期"
 
-#: src/configfilemodel.cpp:116
+#: src/configfilemodel.cpp:113
 #, kde-format
 msgctxt "@title:column"
 msgid "Description"
 msgstr "描述"
 
-#: src/configfilemodel.cpp:140
+#: src/configfilemodel.cpp:136
 #, kde-format
 msgid ""
 "KHelpCenter executable not found in path. Please install KHelpCenter to view "
@@ -93,395 +93,17 @@ msgid ""
 msgstr ""
 "无法在路径中找到 KHelpCenter 可执行程序。请安装 KHelpCenter 以查看 man 页面。"
 
-#: src/main.cpp:29 src/mainwindow.cpp:57
-#, kde-format
-msgid "SystemdGenie"
-msgstr "SystemdGenie"
-
-#: src/main.cpp:31
-#, kde-format
-msgid "Manage systemd units, timers, sessions and config files"
-msgstr "管理 systemd 单元、计时器、会话和配置文件"
-
-#: src/main.cpp:33
-#, kde-format
-msgid "(c) 2016, Ragnar Thomsen"
-msgstr "(c) 2016, Ragnar Thomsen"
-
-#: src/main.cpp:39
-#, kde-format
-msgid "Ragnar Thomsen"
-msgstr "Ragnar Thomsen"
-
-#: src/main.cpp:39
-#, kde-format
-msgid "Maintainer"
-msgstr "维护者"
-
-#: src/mainwindow.cpp:57
-#, kde-format
-msgid "Unable to contact the systemd daemon. Quitting..."
-msgstr "无法与 systemd 守护进程通信。正在退出..."
-
-#: src/mainwindow.cpp:69
-#, kde-format
-msgid "User dbus not found. Support for user units disabled."
-msgstr "找不到用户 dbus。用户单元支持已禁用。"
-
-#: src/mainwindow.cpp:79
-#, kde-format
-msgid "All"
-msgstr "全部"
-
-#: src/mainwindow.cpp:80
-#, kde-format
-msgid "Services"
-msgstr "服务"
-
-#: src/mainwindow.cpp:81
-#, kde-format
-msgid "Automounts"
-msgstr "自动挂载"
-
-#: src/mainwindow.cpp:82
-#, kde-format
-msgid "Devices"
-msgstr "设备"
-
-#: src/mainwindow.cpp:83
-#, kde-format
-msgid "Mounts"
-msgstr "挂载"
-
-#: src/mainwindow.cpp:84
-#, kde-format
-msgid "Paths"
-msgstr "路径"
-
-#: src/mainwindow.cpp:85
-#, kde-format
-msgid "Scopes"
-msgstr "域"
-
-#: src/mainwindow.cpp:86
-#, kde-format
-msgid "Slices"
-msgstr "切片"
-
-#: src/mainwindow.cpp:87
-#, kde-format
-msgid "Sockets"
-msgstr "套接字"
-
-#: src/mainwindow.cpp:88
-#, kde-format
-msgid "Swaps"
-msgstr "交换空间"
-
-#: src/mainwindow.cpp:89
-#, kde-format
-msgid "Targets"
-msgstr "目标"
-
-#. i18n: ectx: attribute (title), widget (QWidget, tabTimers)
-#: src/mainwindow.cpp:90 src/mainwindow.ui:531
-#, kde-format
-msgid "Timers"
-msgstr "计时器"
-
-#: src/mainwindow.cpp:297
-#, kde-format
-msgid "Session ID"
-msgstr "会话 ID"
-
-#: src/mainwindow.cpp:298
-#, kde-format
-msgid "Session Object Path"
-msgstr "会话对象路径"
-
-#: src/mainwindow.cpp:299
-#, kde-format
-msgid "State"
-msgstr "状态"
-
-#: src/mainwindow.cpp:300
-#, kde-format
-msgid "User ID"
-msgstr "用户 ID"
-
-#: src/mainwindow.cpp:301
-#, kde-format
-msgid "User Name"
-msgstr "用户名"
-
-#: src/mainwindow.cpp:302
-#, kde-format
-msgid "Seat ID"
-msgstr "座位 ID"
-
-#: src/mainwindow.cpp:324
-#, kde-format
-msgid "Timer"
-msgstr "计时器"
-
-#: src/mainwindow.cpp:325
-#, kde-format
-msgid "Next"
-msgstr "下次执行"
-
-#: src/mainwindow.cpp:326
-#, kde-format
-msgid "Left"
-msgstr "剩余"
-
-#: src/mainwindow.cpp:327
-#, kde-format
-msgid "Last"
-msgstr "上次执行"
-
-#: src/mainwindow.cpp:328
-#, kde-format
-msgid "Passed"
-msgstr "已过去"
-
-#: src/mainwindow.cpp:329
-#, kde-format
-msgid "Activates"
-msgstr "激活"
-
-#: src/mainwindow.cpp:459
-#, kde-format
-msgid "Unable to fetch sessions list: %1"
-msgstr "无法获取会话列表：%1"
-
-#: src/mainwindow.cpp:631 src/mainwindow.cpp:637
-#, kde-format
-msgctxt "First part of 'Total: %1, %2, %3'"
-msgid "1 unit"
-msgid_plural "%1 units"
-msgstr[0] "%1 个单元"
-
-#: src/mainwindow.cpp:632 src/mainwindow.cpp:638
-#, kde-format
-msgctxt "Second part of 'Total: %1, %2, %3'"
-msgid "1 active"
-msgid_plural "%1 active"
-msgstr[0] "%1 个活动单元"
-
-#: src/mainwindow.cpp:633 src/mainwindow.cpp:639
-#, kde-format
-msgctxt "Third part of 'Total: %1, %2, %3'"
-msgid "1 displayed"
-msgid_plural "%1 displayed"
-msgstr[0] "%1 个显示单元"
-
-#: src/mainwindow.cpp:635 src/mainwindow.cpp:641
-#, kde-format
-msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
-msgid "Total: %1, %2, %3"
-msgstr "总计：%1，%2，%3"
-
-#: src/mainwindow.cpp:665 src/mainwindow.cpp:1433
-#, kde-format
-msgid "Unable to authenticate/execute the action: %1"
-msgstr "无法验证身份/执行操作：%1"
-
-#: src/mainwindow.cpp:828
-#, kde-format
-msgid "&Refresh"
-msgstr "刷新(&R)"
-
-#: src/mainwindow.cpp:830
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Refresh"
-msgstr "刷新"
-
-#: src/mainwindow.cpp:836
-#, kde-format
-msgid "Start Unit"
-msgstr "启动单元"
-
-#: src/mainwindow.cpp:844
-#, kde-format
-msgid "Stop Unit"
-msgstr "停止单元"
-
-#: src/mainwindow.cpp:852
-#, kde-format
-msgid "Reload Unit"
-msgstr "重新加载单元"
-
-#: src/mainwindow.cpp:860
-#, kde-format
-msgid "Restart Unit"
-msgstr "重启单元"
-
-#: src/mainwindow.cpp:868
-#, kde-format
-msgid "Enable Unit"
-msgstr "启用单元"
-
-#: src/mainwindow.cpp:876
-#, kde-format
-msgid "Disable Unit"
-msgstr "禁用单元"
-
-#: src/mainwindow.cpp:884
-#, kde-format
-msgid "Mask Unit"
-msgstr "屏蔽单元"
-
-#: src/mainwindow.cpp:892
-#, kde-format
-msgid "Unmask Unit"
-msgstr "解除屏蔽单元"
-
-#: src/mainwindow.cpp:900
-#, kde-format
-msgid "Re&load systemd"
-msgstr "重新加载 systemd(&L)"
-
-#: src/mainwindow.cpp:901
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Click to reload all unit files"
-msgstr "点击重新加载所有单元文件"
-
-#: src/mainwindow.cpp:909
-#, kde-format
-msgid "Re-e&xecute systemd"
-msgstr "重新执行 systemd(&X)"
-
-#: src/mainwindow.cpp:910
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Click to re-execute the systemd daemon"
-msgstr "点击以重新执行 systemd 守护进程"
-
-#: src/mainwindow.cpp:918
-#, kde-format
-msgid "Re&load user systemd"
-msgstr "重新加载用户 systemd(&L)"
-
-#: src/mainwindow.cpp:919
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Click to reload all user unit files"
-msgstr "点击重新加载所有用户单元文件"
-
-#: src/mainwindow.cpp:927
-#, kde-format
-msgid "Re-e&xecute user systemd"
-msgstr "重新执行用户 systemd(&X)"
-
-#: src/mainwindow.cpp:928
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Click to re-execute the user systemd daemon"
-msgstr "点击以重新执行用户 systemd 守护进程"
-
-#: src/mainwindow.cpp:936
-#, kde-format
-msgid "Edit Unit File…"
-msgstr "编辑单元文件…"
-
-#: src/mainwindow.cpp:942
-#, kde-format
-msgid "Edit Configuration File…"
-msgstr "编辑配置文件…"
-
-#: src/mainwindow.cpp:948
-#, kde-format
-msgid "Open Man Page"
-msgstr "打开 Man 页面"
-
-#: src/mainwindow.cpp:954
-#, kde-format
-msgid "View Logs"
-msgstr "查看日志"
-
-#: src/mainwindow.cpp:960
-#, kde-format
-msgid "Activate Session"
-msgstr "激活会话"
-
-#: src/mainwindow.cpp:968
-#, kde-format
-msgid "Terminate Session"
-msgstr "终止会话"
-
-#: src/mainwindow.cpp:976
-#, kde-format
-msgid "Lock Session"
-msgstr "锁定会话"
-
-#: src/mainwindow.cpp:1128
-#, kde-format
-msgid "<b>VT:</b> %1"
-msgstr "<b>虚拟终端：</b>%1"
-
-#: src/mainwindow.cpp:1132
-#, kde-format
-msgid "<br><b>Remote host:</b> %1"
-msgstr "<br><b>远程主机：</b>%1"
-
-#: src/mainwindow.cpp:1133
-#, kde-format
-msgid "<br><b>Remote user:</b> %1"
-msgstr "<br><b>远程用户：</b>%1"
-
-#: src/mainwindow.cpp:1135
-#, kde-format
-msgid "<br><b>Service:</b> %1"
-msgstr "<br><b>服务：</b>%1"
-
-#: src/mainwindow.cpp:1136
-#, kde-format
-msgid "<br><b>Leader (PID):</b> %1"
-msgstr "<br><b>引导 (PID)：</b>%1"
-
-#: src/mainwindow.cpp:1139
-#, kde-format
-msgid "<br><b>Type:</b> %1"
-msgstr "<br><b>类型：</b>%1"
-
-#: src/mainwindow.cpp:1141
-#, kde-format
-msgid " (display %1)"
-msgstr "(显示 %1)"
-
-#: src/mainwindow.cpp:1150
-#, kde-format
-msgid "<br><b>Class:</b> %1"
-msgstr "<br><b>类：</b>%1"
-
-#: src/mainwindow.cpp:1151
-#, kde-format
-msgid "<br><b>State:</b> %1"
-msgstr "<br><b>状态：</b>%1"
-
-#: src/mainwindow.cpp:1152
-#, kde-format
-msgid "<br><b>Scope:</b> %1"
-msgstr "<br><b>域：</b> %1"
-
-#: src/mainwindow.cpp:1154
-#, kde-format
-msgid "<br><b>Created: </b>"
-msgstr "<br><b>创建于：</b>"
-
-#: src/mainwindow.cpp:1377
+#: src/editor.cpp:37
 #, kde-format
 msgid "Editing %1"
 msgstr "正在编辑 %1"
 
-#: src/mainwindow.cpp:1387
+#: src/editor.cpp:47
 #, kde-format
 msgid "Editing file: <code>%1</code>"
 msgstr "正在编辑文件：<code>%1</code>"
 
-#: src/mainwindow.cpp:1412
+#: src/editor.cpp:72
 #, kde-format
 msgid ""
 "Failed to open the unit file:\n"
@@ -490,180 +112,446 @@ msgstr ""
 "无法打开单元文件：\n"
 "%1"
 
-#. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindow)
-#: src/mainwindow.ui:14
+#: src/editor.cpp:93 src/sessionmodel.cpp:265 src/unitmodel.cpp:432
 #, kde-format
-msgid "Services Manager"
-msgstr "服务管理器"
+msgid "Unable to authenticate/execute the action: %1"
+msgstr "无法验证身份/执行操作：%1"
 
-#. i18n: ectx: attribute (title), widget (QWidget, tabUnits)
-#: src/mainwindow.ui:85
+#: src/main.cpp:34
+#, fuzzy, kde-format
+#| msgid "SystemdGenie"
+msgid "systemdGenie"
+msgstr "SystemdGenie"
+
+#: src/main.cpp:36
 #, kde-format
-msgid "System Units"
-msgstr "系统单元"
+msgid "Manage systemd units, timers, sessions and config files"
+msgstr "管理 systemd 单元、计时器、会话和配置文件"
 
-#. i18n: ectx: property (toolTip), widget (QComboBox, cmbUnitTypes)
-#: src/mainwindow.ui:184
+#: src/main.cpp:38
+#, fuzzy, kde-format
+#| msgid "(c) 2016, Ragnar Thomsen"
+msgctxt "@about:credit"
+msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
+msgstr "(c) 2016, Ragnar Thomsen"
+
+#: src/main.cpp:44
 #, kde-format
-msgid "<html><head/><body><p>Filter unit types.</p></body></html>"
-msgstr "<html><head/><body><p>过滤单元类型。</p></body></html>"
+msgid "Ragnar Thomsen"
+msgstr "Ragnar Thomsen"
 
-#. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUnits)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, chkInactiveUserUnits)
-#: src/mainwindow.ui:194 src/mainwindow.ui:300
+#: src/main.cpp:44
+#, fuzzy, kde-format
+#| msgid "Maintainer"
+msgid "Former Maintainer"
+msgstr "维护者"
+
+#: src/main.cpp:45
 #, kde-format
-msgid "<html><head/><body><p>Toggle hiding inactive units.</p></body></html>"
-msgstr "<html><head/><body><p>隐藏/显示非活动单元。</p></body></html>"
+msgid "Carl Schwan"
+msgstr ""
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUnits)
-#. i18n: ectx: property (text), widget (QCheckBox, chkInactiveUserUnits)
-#: src/mainwindow.ui:197 src/mainwindow.ui:303
+#: src/main.cpp:45
 #, kde-format
-msgid "Hide inactive"
-msgstr "隐藏非活动单元"
+msgid "Maintainer"
+msgstr "维护者"
 
-#. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUnits)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, chkUnloadedUserUnits)
-#: src/mainwindow.ui:207 src/mainwindow.ui:313
+#: src/sessionmodel.cpp:72
 #, kde-format
-msgid "<html><head/><body><p>Toggle hiding unloaded units.</p></body></html>"
-msgstr "<html><head/><body><p>隐藏/显示已卸载单元。</p></body></html>"
+msgid "Session ID"
+msgstr "会话 ID"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUnits)
-#. i18n: ectx: property (text), widget (QCheckBox, chkUnloadedUserUnits)
-#: src/mainwindow.ui:210 src/mainwindow.ui:316
+#: src/sessionmodel.cpp:74
 #, kde-format
-msgid "Hide unloaded"
-msgstr "隐藏已卸载单元"
+msgid "Session Object Path"
+msgstr "会话对象路径"
 
-#. i18n: ectx: property (text), widget (QLabel, lblUnitCount)
-#. i18n: ectx: property (text), widget (QLabel, lblUserUnitCount)
-#: src/mainwindow.ui:246 src/mainwindow.ui:389
+#: src/sessionmodel.cpp:76
 #, kde-format
-msgid "Overall stats:"
-msgstr "整体状态："
+msgid "State"
+msgstr "状态"
 
-#. i18n: ectx: attribute (title), widget (QWidget, tabUserUnits)
-#: src/mainwindow.ui:259
+#: src/sessionmodel.cpp:78
 #, kde-format
-msgid "User Units"
-msgstr "用户单元"
+msgid "User ID"
+msgstr "用户 ID"
 
-#. i18n: ectx: attribute (title), widget (QWidget, tabConf)
-#: src/mainwindow.ui:405
+#: src/sessionmodel.cpp:80
 #, kde-format
-msgid "Config Files"
-msgstr "配置文件"
+msgid "User Name"
+msgstr "用户名"
 
-#. i18n: ectx: attribute (title), widget (QWidget, tabSessions)
-#: src/mainwindow.ui:462
+#: src/sessionmodel.cpp:82
 #, kde-format
-msgid "Sessions"
-msgstr "会话"
+msgid "Seat ID"
+msgstr "座位 ID"
 
-#. i18n: ectx: Menu (file)
-#: src/systemdgenieui.rc:10
+#: src/sessionmodel.cpp:119
 #, kde-format
-msgid "&File"
-msgstr "文件(&F)"
+msgid "<b>VT:</b> %1"
+msgstr "<b>虚拟终端：</b>%1"
 
-#. i18n: ectx: Menu (view)
-#: src/systemdgenieui.rc:13
+#: src/sessionmodel.cpp:123
 #, kde-format
-msgid "&View"
-msgstr "视图(&V)"
+msgid "<br><b>Remote host:</b> %1"
+msgstr "<br><b>远程主机：</b>%1"
 
-#. i18n: ectx: Menu (daemon)
-#: src/systemdgenieui.rc:17
+#: src/sessionmodel.cpp:124
 #, kde-format
-msgid "&Daemon"
-msgstr "守护进程(&D)"
+msgid "<br><b>Remote user:</b> %1"
+msgstr "<br><b>远程用户：</b>%1"
 
-#. i18n: ectx: Menu (unit)
-#: src/systemdgenieui.rc:25
+#: src/sessionmodel.cpp:126
 #, kde-format
-msgid "&Unit"
-msgstr "单元(&U)"
+msgid "<br><b>Service:</b> %1"
+msgstr "<br><b>服务：</b>%1"
 
-#. i18n: ectx: Menu (session)
-#: src/systemdgenieui.rc:41
+#: src/sessionmodel.cpp:127
 #, kde-format
-msgid "&Session"
-msgstr "会话(&S)"
+msgid "<br><b>Leader (PID):</b> %1"
+msgstr "<br><b>引导 (PID)：</b>%1"
 
-#. i18n: ectx: ToolBar (unitToolBar)
-#: src/systemdgenieui.rc:49
+#: src/sessionmodel.cpp:130
 #, kde-format
-msgid "Unit Toolbar"
-msgstr "单元工具栏"
+msgid "<br><b>Type:</b> %1"
+msgstr "<br><b>类型：</b>%1"
 
-#. i18n: ectx: ToolBar (confFileToolBar)
-#: src/systemdgenieui.rc:57
+#: src/sessionmodel.cpp:132
 #, kde-format
-msgid "Config File Toolbar"
-msgstr "配置文件工具栏"
+msgid " (display %1)"
+msgstr "(显示 %1)"
 
-#: src/unitmodel.cpp:43
+#: src/sessionmodel.cpp:141
+#, kde-format
+msgid "<br><b>Class:</b> %1"
+msgstr "<br><b>类：</b>%1"
+
+#: src/sessionmodel.cpp:142
+#, kde-format
+msgid "<br><b>State:</b> %1"
+msgstr "<br><b>状态：</b>%1"
+
+#: src/sessionmodel.cpp:143
+#, kde-format
+msgid "<br><b>Scope:</b> %1"
+msgstr "<br><b>域：</b> %1"
+
+#: src/sessionmodel.cpp:145
+#, kde-format
+msgid "<br><b>Created: </b>"
+msgstr "<br><b>创建于：</b>"
+
+#: src/sessionmodel.cpp:185
+#, kde-format
+msgid "Unable to fetch sessions list: %1"
+msgstr "无法获取会话列表：%1"
+
+#: src/timermodel.cpp:44
+#, fuzzy, kde-format
+#| msgid "Timer"
+msgctxt "@title:column"
+msgid "Timer"
+msgstr "计时器"
+
+#: src/timermodel.cpp:46
+#, fuzzy, kde-format
+#| msgid "Next"
+msgctxt "@title:column"
+msgid "Next"
+msgstr "下次执行"
+
+#: src/timermodel.cpp:48
+#, fuzzy, kde-format
+#| msgid "Left"
+msgctxt "@title:column"
+msgid "Left"
+msgstr "剩余"
+
+#: src/timermodel.cpp:50
+#, fuzzy, kde-format
+#| msgid "Last"
+msgctxt "@title:column"
+msgid "Last"
+msgstr "上次执行"
+
+#: src/timermodel.cpp:52
+#, fuzzy, kde-format
+#| msgid "Passed"
+msgctxt "@title:column"
+msgid "Passed"
+msgstr "已过去"
+
+#: src/timermodel.cpp:54
+#, fuzzy, kde-format
+#| msgid "Activates"
+msgctxt "@title:column"
+msgid "Activates"
+msgstr "激活"
+
+#: src/timermodel.cpp:75 src/timermodel.cpp:100
+#, kde-format
+msgctxt "invalid"
+msgid "n/a"
+msgstr ""
+
+#: src/unitmodel.cpp:95
 #, kde-format
 msgid "Unit"
 msgstr "单元"
 
-#: src/unitmodel.cpp:45
+#: src/unitmodel.cpp:97
 #, kde-format
 msgid "Load State"
 msgstr "加载状态"
 
-#: src/unitmodel.cpp:47
+#: src/unitmodel.cpp:99
 #, kde-format
 msgid "Active State"
 msgstr "活动状态"
 
-#: src/unitmodel.cpp:49
+#: src/unitmodel.cpp:101
 #, kde-format
 msgid "Unit State"
 msgstr "单元状态"
 
-#: src/unitmodel.cpp:121
+#: src/unitmodel.cpp:217
 #, kde-format
 msgid "<b>Description: </b>"
 msgstr "<b>描述：</b>"
 
-#: src/unitmodel.cpp:126
+#: src/unitmodel.cpp:222
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
 msgstr "<br><b>单元文件：</b>%1"
 
-#: src/unitmodel.cpp:127 src/unitmodel.cpp:174
+#: src/unitmodel.cpp:223 src/unitmodel.cpp:270
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
 msgstr "<br><b>单元文件状态：</b>"
 
-#: src/unitmodel.cpp:133
+#: src/unitmodel.cpp:229
 #, kde-format
 msgid "<br><b>Source path: </b>%1"
 msgstr "<br><b>来源路径：</b>%1"
 
-#: src/unitmodel.cpp:137
+#: src/unitmodel.cpp:233
 #, kde-format
 msgid "<br><b>Activated: </b>"
 msgstr "<br><b>已激活：</b>"
 
-#: src/unitmodel.cpp:147
+#: src/unitmodel.cpp:243
 #, kde-format
 msgid "<br><b>Deactivated: </b>"
 msgstr "<br><b>已停止：</b>"
 
-#: src/unitmodel.cpp:169
+#: src/unitmodel.cpp:265
 #, kde-format
 msgid "<b>Unit file: </b>"
 msgstr "<b>单元文件：</b>"
 
-#: src/unitmodel.cpp:183
+#: src/unitmodel.cpp:279
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
 msgstr "<hr><b>最近日志条目：</b>"
 
-#: src/unitmodel.cpp:186
+#: src/unitmodel.cpp:282
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>未找到该单元的日志条目。</i>"
+
+#~ msgid "Unable to contact the systemd daemon. Quitting..."
+#~ msgstr "无法与 systemd 守护进程通信。正在退出..."
+
+#~ msgid "User dbus not found. Support for user units disabled."
+#~ msgstr "找不到用户 dbus。用户单元支持已禁用。"
+
+#~ msgid "All"
+#~ msgstr "全部"
+
+#~ msgid "Services"
+#~ msgstr "服务"
+
+#~ msgid "Automounts"
+#~ msgstr "自动挂载"
+
+#~ msgid "Devices"
+#~ msgstr "设备"
+
+#~ msgid "Mounts"
+#~ msgstr "挂载"
+
+#~ msgid "Paths"
+#~ msgstr "路径"
+
+#~ msgid "Scopes"
+#~ msgstr "域"
+
+#~ msgid "Slices"
+#~ msgstr "切片"
+
+#~ msgid "Sockets"
+#~ msgstr "套接字"
+
+#~ msgid "Swaps"
+#~ msgstr "交换空间"
+
+#~ msgid "Targets"
+#~ msgstr "目标"
+
+#~ msgid "Timers"
+#~ msgstr "计时器"
+
+#~ msgctxt "First part of 'Total: %1, %2, %3'"
+#~ msgid "1 unit"
+#~ msgid_plural "%1 units"
+#~ msgstr[0] "%1 个单元"
+
+#~ msgctxt "Second part of 'Total: %1, %2, %3'"
+#~ msgid "1 active"
+#~ msgid_plural "%1 active"
+#~ msgstr[0] "%1 个活动单元"
+
+#~ msgctxt "Third part of 'Total: %1, %2, %3'"
+#~ msgid "1 displayed"
+#~ msgid_plural "%1 displayed"
+#~ msgstr[0] "%1 个显示单元"
+
+#~ msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
+#~ msgid "Total: %1, %2, %3"
+#~ msgstr "总计：%1，%2，%3"
+
+#~ msgid "&Refresh"
+#~ msgstr "刷新(&R)"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Refresh"
+#~ msgstr "刷新"
+
+#~ msgid "Start Unit"
+#~ msgstr "启动单元"
+
+#~ msgid "Stop Unit"
+#~ msgstr "停止单元"
+
+#~ msgid "Reload Unit"
+#~ msgstr "重新加载单元"
+
+#~ msgid "Restart Unit"
+#~ msgstr "重启单元"
+
+#~ msgid "Enable Unit"
+#~ msgstr "启用单元"
+
+#~ msgid "Disable Unit"
+#~ msgstr "禁用单元"
+
+#~ msgid "Mask Unit"
+#~ msgstr "屏蔽单元"
+
+#~ msgid "Unmask Unit"
+#~ msgstr "解除屏蔽单元"
+
+#~ msgid "Re&load systemd"
+#~ msgstr "重新加载 systemd(&L)"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Click to reload all unit files"
+#~ msgstr "点击重新加载所有单元文件"
+
+#~ msgid "Re-e&xecute systemd"
+#~ msgstr "重新执行 systemd(&X)"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Click to re-execute the systemd daemon"
+#~ msgstr "点击以重新执行 systemd 守护进程"
+
+#~ msgid "Re&load user systemd"
+#~ msgstr "重新加载用户 systemd(&L)"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Click to reload all user unit files"
+#~ msgstr "点击重新加载所有用户单元文件"
+
+#~ msgid "Re-e&xecute user systemd"
+#~ msgstr "重新执行用户 systemd(&X)"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Click to re-execute the user systemd daemon"
+#~ msgstr "点击以重新执行用户 systemd 守护进程"
+
+#~ msgid "Edit Unit File…"
+#~ msgstr "编辑单元文件…"
+
+#~ msgid "Edit Configuration File…"
+#~ msgstr "编辑配置文件…"
+
+#~ msgid "Open Man Page"
+#~ msgstr "打开 Man 页面"
+
+#~ msgid "View Logs"
+#~ msgstr "查看日志"
+
+#~ msgid "Activate Session"
+#~ msgstr "激活会话"
+
+#~ msgid "Terminate Session"
+#~ msgstr "终止会话"
+
+#~ msgid "Lock Session"
+#~ msgstr "锁定会话"
+
+#~ msgid "Services Manager"
+#~ msgstr "服务管理器"
+
+#~ msgid "System Units"
+#~ msgstr "系统单元"
+
+#~ msgid "<html><head/><body><p>Filter unit types.</p></body></html>"
+#~ msgstr "<html><head/><body><p>过滤单元类型。</p></body></html>"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Toggle hiding inactive units.</p></body></html>"
+#~ msgstr "<html><head/><body><p>隐藏/显示非活动单元。</p></body></html>"
+
+#~ msgid "Hide inactive"
+#~ msgstr "隐藏非活动单元"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Toggle hiding unloaded units.</p></body></html>"
+#~ msgstr "<html><head/><body><p>隐藏/显示已卸载单元。</p></body></html>"
+
+#~ msgid "Hide unloaded"
+#~ msgstr "隐藏已卸载单元"
+
+#~ msgid "Overall stats:"
+#~ msgstr "整体状态："
+
+#~ msgid "User Units"
+#~ msgstr "用户单元"
+
+#~ msgid "Config Files"
+#~ msgstr "配置文件"
+
+#~ msgid "Sessions"
+#~ msgstr "会话"
+
+#~ msgid "&File"
+#~ msgstr "文件(&F)"
+
+#~ msgid "&View"
+#~ msgstr "视图(&V)"
+
+#~ msgid "&Daemon"
+#~ msgstr "守护进程(&D)"
+
+#~ msgid "&Unit"
+#~ msgstr "单元(&U)"
+
+#~ msgid "&Session"
+#~ msgstr "会话(&S)"
+
+#~ msgid "Unit Toolbar"
+#~ msgstr "单元工具栏"
+
+#~ msgid "Config File Toolbar"
+#~ msgstr "配置文件工具栏"
