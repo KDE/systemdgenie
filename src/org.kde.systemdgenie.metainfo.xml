@@ -9,9 +9,36 @@
     <binary>systemdgenie</binary>
   </provides>
   <name>systemdGenie</name>
+  <name xml:lang="ca">systemdGenie</name>
+  <name xml:lang="ca-valencia">systemdGenie</name>
+  <name xml:lang="es">systemdGenie</name>
+  <name xml:lang="he">systemdGenie</name>
+  <name xml:lang="nl">systemdGenie</name>
+  <name xml:lang="sl">systemdGenie</name>
+  <name xml:lang="tr">systemdGenie</name>
+  <name xml:lang="uk">SystemdGenie</name>
+  <name xml:lang="x-test">xxsystemdGeniexx</name>
   <summary>System service manager</summary>
+  <summary xml:lang="ca">Gestor de serveis del sistema</summary>
+  <summary xml:lang="ca-valencia">Gestor de serveis del sistema</summary>
+  <summary xml:lang="es">Gestor de servicios del sistema</summary>
+  <summary xml:lang="he">מנהל שירותי מערכת</summary>
+  <summary xml:lang="nl">Beheerder van systeemservices</summary>
+  <summary xml:lang="sl">Upravljalnik storitev sistema</summary>
+  <summary xml:lang="tr">Sistem hizmeti yöneticisi</summary>
+  <summary xml:lang="uk">Менеджер системних служб</summary>
+  <summary xml:lang="x-test">xxSystem service managerxx</summary>
   <description>
     <p>systemdGenie allows graphical management of systemd units, including user units, and provides control over logind sessions. It also includes an integrated text editor for easy modification of unit and configuration files. </p>
+    <p xml:lang="ca">El systemdGenie permet la gestió gràfica de les unitats del systemd, incloses les unitats d'usuari, i proporciona control sobre les sessions del «logind». També inclou un editor de text integrat que facilita la modificació dels fitxers d'unitats i de configuració.</p>
+    <p xml:lang="ca-valencia">systemdGenie permet la gestió gràfica de les unitats de systemd, incloses les unitats d'usuari, i proporciona control sobre les sessions de «logind». També inclou un editor de text integrat que facilita la modificació dels fitxers d'unitats i de configuració.</p>
+    <p xml:lang="es">systemdGenie permite la gestión gráfica de unidades de systemd, incluidas las del usuario, y proporciona control sobre las sesiones de logind. También incluye un editor de texto integrado para poder modificar con facilidad unidades y archivos de configuración.</p>
+    <p xml:lang="he">systemdGenie מאפשר ניהול חזותי של יחידות systemd, כולל יחידות משתמש ומספק שליטה בהפעלות logind. הוא כולל גם עורך טקסט מובנה לעריכה פשוטה של קובצי יחידות והגדרות.</p>
+    <p xml:lang="nl">systemdGenie biedt grafisch beheer van systemd-eenheden, inclusief gebruikerseenheden en levert controle over logind-sessies. Het omvat ook een geïntegreerde tekstbewerker voor gemakkelijk modificeren van eenheid- en configuratiebestanden.</p>
+    <p xml:lang="sl">systemdGenie omogoča grafično upravljanje sistemskih enot, vključno z enoto uporabnika in zagotavlja nadzor nad sejami logind. Vključuje tudi vgrajen urejevalnik besedil za enostavno spreminjanje enot in konfiguracijskih datotek.</p>
+    <p xml:lang="tr">systemdGenie, kullanıcı birimleri de dahil olmak üzere systemd birimlerinin grafiksel yönetimine izin verir ve oturum açma oturumları üzerinde denetim sağlar. Ayrıca, birim ve yapılandırma dosyalarının kolayca değiştirilmesi için tümleşik bir metin düzenleyicisi içerir.</p>
+    <p xml:lang="uk">За допомогою systemdGenie можна керувати модулями systemd у графічному режимі, зокрема модулями користувача і сеансами logind. До програми також включено текстовий редактор для спрощення внесення змін до файлів модулів і налаштувань.</p>
+    <p xml:lang="x-test">xxsystemdGenie allows graphical management of systemd units, including user units, and provides control over logind sessions. It also includes an integrated text editor for easy modification of unit and configuration files.xx</p>
   </description>
   <url type="homepage">https://apps.kde.org/systemdgenie/</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=systemdGenie</url>
@@ -31,7 +58,7 @@
     <value key="KDE::matrix">#kde-devel:kde.org</value>
   </custom>
   <launchable type="desktop-id">org.kde.systemdgenie.desktop</launchable>
-  <content_rating type="oars-1.1" />
+  <content_rating type="oars-1.1"/>
   <requires>
     <display_length compare="ge">360</display_length>
   </requires>
