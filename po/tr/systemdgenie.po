@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-07 00:44+0000\n"
-"PO-Revision-Date: 2025-02-23 12:09+0300\n"
+"PO-Revision-Date: 2025-03-07 15:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -121,24 +121,22 @@ msgid "Unable to authenticate/execute the action: %1"
 msgstr "Eylemi doğrulama/yürütme başarısız: %1"
 
 #: src/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "SystemdGenie"
+#, kde-format
 msgid "systemdGenie"
-msgstr "SystemdGenie"
+msgstr "systemdGenie"
 
 #: src/main.cpp:36
 #, kde-format
 msgid "Manage systemd units, timers, sessions and config files"
 msgstr ""
-"SystemD birimlerini, sayaçlarını, oturumlarını ve yapılandırma dosyalarını "
+"systemd birimlerini, sayaçlarını, oturumlarını ve yapılandırma dosyalarını "
 "yönetin"
 
 #: src/main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2016, Ragnar Thomsen"
+#, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr "© 2016, Ragnar Thomsen"
+msgstr "© 2016, Ragnar Thomsen, %1 KDE Topluluğu"
 
 #: src/main.cpp:44
 #, kde-format
@@ -146,20 +144,19 @@ msgid "Ragnar Thomsen"
 msgstr "Ragnar Thomsen"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Maintainer"
+#, kde-format
 msgid "Former Maintainer"
-msgstr "Proje Yöneticisi"
+msgstr "Önceki bakımcı"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "Maintainer"
-msgstr "Proje Yöneticisi"
+msgstr "Bakımcı"
 
 #: src/sessionmodel.cpp:72
 #, kde-format
@@ -252,52 +249,46 @@ msgid "Unable to fetch sessions list: %1"
 msgstr "Oturumlar listesi getirilemedi: %1"
 
 #: src/timermodel.cpp:44
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "Sayaç"
 
 #: src/timermodel.cpp:46
-#, fuzzy, kde-format
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column"
 msgid "Next"
 msgstr "Sonraki"
 
 #: src/timermodel.cpp:48
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column"
 msgid "Left"
 msgstr "Kalan"
 
 #: src/timermodel.cpp:50
-#, fuzzy, kde-format
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column"
 msgid "Last"
 msgstr "Son"
 
 #: src/timermodel.cpp:52
-#, fuzzy, kde-format
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column"
 msgid "Passed"
-msgstr "Geçildi"
+msgstr "Geçilen"
 
 #: src/timermodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column"
 msgid "Activates"
-msgstr "Etkinleştirmeler"
+msgstr "Etkinleştirir"
 
 #: src/timermodel.cpp:75 src/timermodel.cpp:100
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
-msgstr ""
+msgstr "yok"
 
 #: src/unitmodel.cpp:95
 #, kde-format
@@ -347,7 +338,7 @@ msgstr "<br><b>Etkin: </b>"
 #: src/unitmodel.cpp:243
 #, kde-format
 msgid "<br><b>Deactivated: </b>"
-msgstr "<br><b>Devre Dışı: </b>"
+msgstr "<br><b>Devre dışı: </b>"
 
 #: src/unitmodel.cpp:265
 #, kde-format

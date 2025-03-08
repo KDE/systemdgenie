@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-07 00:44+0000\n"
-"PO-Revision-Date: 2025-02-23 08:40+0200\n"
+"PO-Revision-Date: 2025-03-07 16:28+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -123,10 +123,9 @@ msgid "Unable to authenticate/execute the action: %1"
 msgstr "Не вдалося розпізнати/виконати дію: %1"
 
 #: src/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "SystemdGenie"
+#, kde-format
 msgid "systemdGenie"
-msgstr "SystemdGenie"
+msgstr "systemdGenie"
 
 #: src/main.cpp:36
 #, kde-format
@@ -134,11 +133,10 @@ msgid "Manage systemd units, timers, sessions and config files"
 msgstr "Керування модулями, таймерами, сеансами та файлами налаштувань systemd"
 
 #: src/main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2016, Ragnar Thomsen"
+#, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr "© Ragnar Thomsen, 2016"
+msgstr "© Ragnar Thomsen, 2016, спільнота KDE %1"
 
 #: src/main.cpp:44
 #, kde-format
@@ -146,15 +144,14 @@ msgid "Ragnar Thomsen"
 msgstr "Ragnar Thomsen"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Maintainer"
+#, kde-format
 msgid "Former Maintainer"
-msgstr "Супровідник"
+msgstr "Колишній супровідник"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: src/main.cpp:45
 #, kde-format
@@ -252,43 +249,37 @@ msgid "Unable to fetch sessions list: %1"
 msgstr "Не вдалося отримати список сеансів: %1"
 
 #: src/timermodel.cpp:44
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "Таймер"
 
 #: src/timermodel.cpp:46
-#, fuzzy, kde-format
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column"
 msgid "Next"
-msgstr "Наступний"
+msgstr "Наступне"
 
 #: src/timermodel.cpp:48
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column"
 msgid "Left"
 msgstr "Залишилося"
 
 #: src/timermodel.cpp:50
-#, fuzzy, kde-format
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column"
 msgid "Last"
-msgstr "Останній"
+msgstr "Останнє"
 
 #: src/timermodel.cpp:52
-#, fuzzy, kde-format
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column"
 msgid "Passed"
-msgstr "Пройдений"
+msgstr "Пройдене"
 
 #: src/timermodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column"
 msgid "Activates"
 msgstr "Активує"
@@ -297,7 +288,7 @@ msgstr "Активує"
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
-msgstr ""
+msgstr "н/д"
 
 #: src/unitmodel.cpp:95
 #, kde-format

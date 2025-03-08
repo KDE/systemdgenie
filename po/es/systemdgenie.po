@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-07 00:44+0000\n"
-"PO-Revision-Date: 2025-02-23 02:31+0100\n"
+"PO-Revision-Date: 2025-03-07 16:56+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -121,10 +121,9 @@ msgid "Unable to authenticate/execute the action: %1"
 msgstr "No se ha podido autenticar o ejecutar la acción: %1"
 
 #: src/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "SystemdGenie"
+#, kde-format
 msgid "systemdGenie"
-msgstr "SystemdGenie"
+msgstr "systemdGenie"
 
 #: src/main.cpp:36
 #, kde-format
@@ -134,11 +133,10 @@ msgstr ""
 "configuración"
 
 #: src/main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2016, Ragnar Thomsen"
+#, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr "© 2016, Ragnar Thomsen"
+msgstr "© 2016 Ragnar Thomsen, %1 La Comunidad KDE"
 
 #: src/main.cpp:44
 #, kde-format
@@ -146,15 +144,14 @@ msgid "Ragnar Thomsen"
 msgstr "Ragnar Thomsen"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Maintainer"
+#, kde-format
 msgid "Former Maintainer"
-msgstr "Responsable"
+msgstr "Encargado anterior"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: src/main.cpp:45
 #, kde-format
@@ -252,52 +249,46 @@ msgid "Unable to fetch sessions list: %1"
 msgstr "No se ha podido obtener la lista de sesiones: %1"
 
 #: src/timermodel.cpp:44
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "Temporizador"
 
 #: src/timermodel.cpp:46
-#, fuzzy, kde-format
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column"
 msgid "Next"
 msgstr "Siguiente"
 
 #: src/timermodel.cpp:48
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column"
 msgid "Left"
-msgstr "Izquierda"
+msgstr "Restante"
 
 #: src/timermodel.cpp:50
-#, fuzzy, kde-format
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column"
 msgid "Last"
 msgstr "Último"
 
 #: src/timermodel.cpp:52
-#, fuzzy, kde-format
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column"
 msgid "Passed"
 msgstr "Pasado"
 
 #: src/timermodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column"
 msgid "Activates"
-msgstr "Activa"
+msgstr "Activación"
 
 #: src/timermodel.cpp:75 src/timermodel.cpp:100
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
-msgstr ""
+msgstr "n/d"
 
 #: src/unitmodel.cpp:95
 #, kde-format
@@ -364,222 +355,3 @@ msgstr "<hr><b>Últimas entradas del registro:</b>"
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr ""
 "<br><i>No se han encontrado entradas del registro para esta unidad.</i>"
-
-#~ msgid "Unable to contact the systemd daemon. Quitting..."
-#~ msgstr "No se ha podido contactar con el demonio systemd. Saliendo…"
-
-#~ msgid "User dbus not found. Support for user units disabled."
-#~ msgstr ""
-#~ "DBus del usuario no encontrado. Se ha desactivado el uso de las unidades "
-#~ "del usuario."
-
-#~ msgid "All"
-#~ msgstr "Todo"
-
-#~ msgid "Services"
-#~ msgstr "Servicios"
-
-#~ msgid "Automounts"
-#~ msgstr "Montajes automáticos"
-
-#~ msgid "Devices"
-#~ msgstr "Dispositivos"
-
-#~ msgid "Mounts"
-#~ msgstr "Montajes"
-
-#~ msgid "Paths"
-#~ msgstr "Rutas"
-
-#~ msgid "Scopes"
-#~ msgstr "Alcances"
-
-#~ msgid "Slices"
-#~ msgstr "Intervalos"
-
-#~ msgid "Sockets"
-#~ msgstr "Conectores"
-
-#~ msgid "Swaps"
-#~ msgstr "Áreas de intercambio"
-
-#~ msgid "Targets"
-#~ msgstr "Destinos"
-
-#~ msgid "Timers"
-#~ msgstr "Temporizadores"
-
-#~ msgctxt "First part of 'Total: %1, %2, %3'"
-#~ msgid "1 unit"
-#~ msgid_plural "%1 units"
-#~ msgstr[0] "1 unidad"
-#~ msgstr[1] "%1 unidades"
-
-#~ msgctxt "Second part of 'Total: %1, %2, %3'"
-#~ msgid "1 active"
-#~ msgid_plural "%1 active"
-#~ msgstr[0] "1 activa"
-#~ msgstr[1] "%1 activas"
-
-#~ msgctxt "Third part of 'Total: %1, %2, %3'"
-#~ msgid "1 displayed"
-#~ msgid_plural "%1 displayed"
-#~ msgstr[0] "1 mostrada"
-#~ msgstr[1] "%1 mostradas"
-
-#~ msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
-#~ msgid "Total: %1, %2, %3"
-#~ msgstr "Total: %1, %2, %3"
-
-#~ msgid "&Refresh"
-#~ msgstr "&Actualizar"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Refresh"
-#~ msgstr "Actualizar"
-
-#~ msgid "Start Unit"
-#~ msgstr "Iniciar unidad"
-
-#~ msgid "Stop Unit"
-#~ msgstr "Detener unidad"
-
-#~ msgid "Reload Unit"
-#~ msgstr "Volver a cargar unidad"
-
-#~ msgid "Restart Unit"
-#~ msgstr "Reiniciar unidad"
-
-#~ msgid "Enable Unit"
-#~ msgstr "Activar unidad"
-
-#~ msgid "Disable Unit"
-#~ msgstr "Desactivar unidad"
-
-#~ msgid "Mask Unit"
-#~ msgstr "Enmascarar unidad"
-
-#~ msgid "Unmask Unit"
-#~ msgstr "Desenmascarar unidad"
-
-#~ msgid "Re&load systemd"
-#~ msgstr "Vo&lver a cargar systemd"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Click to reload all unit files"
-#~ msgstr "Pulse para volver a cargar todos los archivos de unidades"
-
-#~ msgid "Re-e&xecute systemd"
-#~ msgstr "Volver a e&jecutar systemd"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Click to re-execute the systemd daemon"
-#~ msgstr "Pulse para volver a ejecutar el demonio systemd"
-
-#~ msgid "Re&load user systemd"
-#~ msgstr "Vo&lver a cargar systemd"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Click to reload all user unit files"
-#~ msgstr ""
-#~ "Pulsar para volver a cargar todos los archivos de unidades del usuario"
-
-#~ msgid "Re-e&xecute user systemd"
-#~ msgstr "Volver a e&jecutar systemd del usuario"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Click to re-execute the user systemd daemon"
-#~ msgstr "Pulse para volver a ejecutar el servicio systemd del usuario"
-
-#~ msgid "Edit Unit File…"
-#~ msgstr "Editar archivo de la unidad…"
-
-#~ msgid "Edit Configuration File…"
-#~ msgstr "Editar archivo de configuración…"
-
-#~ msgid "Open Man Page"
-#~ msgstr "Abrir página man"
-
-#~ msgid "View Logs"
-#~ msgstr "Ver registros"
-
-#~ msgid "Activate Session"
-#~ msgstr "Activar sesión"
-
-#~ msgid "Terminate Session"
-#~ msgstr "Terminar sesión"
-
-#~ msgid "Lock Session"
-#~ msgstr "Bloquear sesión"
-
-#~ msgid "Services Manager"
-#~ msgstr "Gestor de servicios"
-
-#~ msgid "System Units"
-#~ msgstr "Unidades del sistema"
-
-#~ msgid "<html><head/><body><p>Filter unit types.</p></body></html>"
-#~ msgstr "<html><head/><body><p>Filtrar tipos de unidades.</p></body></html>"
-
-#~ msgid ""
-#~ "<html><head/><body><p>Toggle hiding inactive units.</p></body></html>"
-#~ msgstr ""
-#~ "<html><head/><body><p>Conmutar la ocultación de las unidades inactivas.</"
-#~ "p></body></html>"
-
-#~ msgid "Hide inactive"
-#~ msgstr "Ocultar inactivas"
-
-#~ msgid ""
-#~ "<html><head/><body><p>Toggle hiding unloaded units.</p></body></html>"
-#~ msgstr ""
-#~ "<html><head/><body><p>Conmutar la ocultación de las unidades descargadas."
-#~ "</p></body></html>"
-
-#~ msgid "Hide unloaded"
-#~ msgstr "Ocultar descargadas"
-
-#~ msgid "Overall stats:"
-#~ msgstr "Estados generales:"
-
-#~ msgid "User Units"
-#~ msgstr "Unidades del usuario"
-
-#~ msgid "Config Files"
-#~ msgstr "Archivos de configuración"
-
-#~ msgid "Sessions"
-#~ msgstr "Sesiones"
-
-#~ msgid "&File"
-#~ msgstr "&Archivo"
-
-#~ msgid "&View"
-#~ msgstr "&Ver"
-
-#~ msgid "&Daemon"
-#~ msgstr "&Demonio"
-
-#~ msgid "&Unit"
-#~ msgstr "&Unidad"
-
-#~ msgid "&Session"
-#~ msgstr "&Sesión"
-
-#~ msgid "Unit Toolbar"
-#~ msgstr "Barra de herramientas de la unidad"
-
-#~ msgid "Config File Toolbar"
-#~ msgstr "Barra de herramientas del archivo de configuración"
-
-#~ msgid "%1: Systemd daemon reloaded..."
-#~ msgstr "%1: El servicio systemd se ha vuelto a cargar…"
-
-#~ msgid "%1: User daemon reloaded..."
-#~ msgstr "%1: El servicio del usuario se ha vuelto a cargar…"
-
-#~ msgid "%1: System units changed..."
-#~ msgstr "%1: Unidades del sistema cambiadas…"
-
-#~ msgid "%1: %2 successfully written..."
-#~ msgstr "%1: %2 se ha escrito con éxito…"

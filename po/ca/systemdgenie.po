@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-07 00:44+0000\n"
-"PO-Revision-Date: 2025-02-23 08:31+0100\n"
+"PO-Revision-Date: 2025-03-07 11:14+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -123,10 +123,9 @@ msgid "Unable to authenticate/execute the action: %1"
 msgstr "No s'ha pogut autenticar/executar l'acció: %1"
 
 #: src/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "SystemdGenie"
+#, kde-format
 msgid "systemdGenie"
-msgstr "SystemdGenie"
+msgstr "systemdGenie"
 
 #: src/main.cpp:36
 #, kde-format
@@ -136,11 +135,10 @@ msgstr ""
 "fitxers de configuració"
 
 #: src/main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2016, Ragnar Thomsen"
+#, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr "(c) 2016, Ragnar Thomsen"
+msgstr "(c) 2016 Ragnar Thomsen, %1 KDE Community"
 
 #: src/main.cpp:44
 #, kde-format
@@ -148,15 +146,14 @@ msgid "Ragnar Thomsen"
 msgstr "Ragnar Thomsen"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Maintainer"
+#, kde-format
 msgid "Former Maintainer"
-msgstr "Mantenidor"
+msgstr "Mantenidor anterior"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: src/main.cpp:45
 #, kde-format
@@ -254,43 +251,37 @@ msgid "Unable to fetch sessions list: %1"
 msgstr "No s'ha pogut recuperar la llista de sessions: %1"
 
 #: src/timermodel.cpp:44
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "Temporitzador"
 
 #: src/timermodel.cpp:46
-#, fuzzy, kde-format
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column"
 msgid "Next"
 msgstr "Següent"
 
 #: src/timermodel.cpp:48
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column"
 msgid "Left"
 msgstr "Manca"
 
 #: src/timermodel.cpp:50
-#, fuzzy, kde-format
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column"
 msgid "Last"
 msgstr "Últim"
 
 #: src/timermodel.cpp:52
-#, fuzzy, kde-format
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column"
 msgid "Passed"
 msgstr "Ha passat"
 
 #: src/timermodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column"
 msgid "Activates"
 msgstr "Activa"
@@ -299,7 +290,7 @@ msgstr "Activa"
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
-msgstr ""
+msgstr "n/d"
 
 #: src/unitmodel.cpp:95
 #, kde-format
@@ -365,211 +356,3 @@ msgstr "<hr><b>Últimes entrades del registre:</b>"
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>No s'han trobat entrades al registre per a aquesta unitat.</i>"
-
-#~ msgid "Unable to contact the systemd daemon. Quitting..."
-#~ msgstr "No s'ha pogut contactar amb el dimoni «systemd». S'està sortint..."
-
-#~ msgid "User dbus not found. Support for user units disabled."
-#~ msgstr ""
-#~ "No s'ha trobat l'usuari «dbus». La implementació per a les unitats de "
-#~ "l'usuari ha estat inhabilitada."
-
-#~ msgid "All"
-#~ msgstr "Tot"
-
-#~ msgid "Services"
-#~ msgstr "Serveis"
-
-#~ msgid "Automounts"
-#~ msgstr "Muntatges automàtics"
-
-#~ msgid "Devices"
-#~ msgstr "Dispositius"
-
-#~ msgid "Mounts"
-#~ msgstr "Muntatges"
-
-#~ msgid "Paths"
-#~ msgstr "Camins"
-
-#~ msgid "Scopes"
-#~ msgstr "Àmbits"
-
-#~ msgid "Slices"
-#~ msgstr "Seccions"
-
-#~ msgid "Sockets"
-#~ msgstr "Sòcols"
-
-#~ msgid "Swaps"
-#~ msgstr "Memòria d'intercanvi"
-
-#~ msgid "Targets"
-#~ msgstr "Objectius"
-
-#~ msgid "Timers"
-#~ msgstr "Temporitzadors"
-
-#~ msgctxt "First part of 'Total: %1, %2, %3'"
-#~ msgid "1 unit"
-#~ msgid_plural "%1 units"
-#~ msgstr[0] "1 unitat"
-#~ msgstr[1] "%1 unitats"
-
-#~ msgctxt "Second part of 'Total: %1, %2, %3'"
-#~ msgid "1 active"
-#~ msgid_plural "%1 active"
-#~ msgstr[0] "1 actiu"
-#~ msgstr[1] "%1 actius"
-
-#~ msgctxt "Third part of 'Total: %1, %2, %3'"
-#~ msgid "1 displayed"
-#~ msgid_plural "%1 displayed"
-#~ msgstr[0] "1 mostrat"
-#~ msgstr[1] "%1 mostrats"
-
-#~ msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
-#~ msgid "Total: %1, %2, %3"
-#~ msgstr "Total: %1, %2, %3"
-
-#~ msgid "&Refresh"
-#~ msgstr "&Actualitza"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Refresh"
-#~ msgstr "Actualitza"
-
-#~ msgid "Start Unit"
-#~ msgstr "Inicia la unitat"
-
-#~ msgid "Stop Unit"
-#~ msgstr "Atura la unitat"
-
-#~ msgid "Reload Unit"
-#~ msgstr "Torna a carregar la unitat"
-
-#~ msgid "Restart Unit"
-#~ msgstr "Reinicia la unitat"
-
-#~ msgid "Enable Unit"
-#~ msgstr "Habilita la unitat"
-
-#~ msgid "Disable Unit"
-#~ msgstr "Inhabilita la unitat"
-
-#~ msgid "Mask Unit"
-#~ msgstr "Emmascara la unitat"
-
-#~ msgid "Unmask Unit"
-#~ msgstr "Desemmascara la unitat"
-
-#~ msgid "Re&load systemd"
-#~ msgstr "Torna a carregar el «systemd»"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Click to reload all unit files"
-#~ msgstr "Feu clic per a tornar a carregar tots els fitxers de la unitat"
-
-#~ msgid "Re-e&xecute systemd"
-#~ msgstr "Torna a e&xecutar el «systemd»"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Click to re-execute the systemd daemon"
-#~ msgstr "Feu clic per a tornar a executar el dimoni «systemd»"
-
-#~ msgid "Re&load user systemd"
-#~ msgstr "Torna a carre&gar el «systemd» de l'usuari"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Click to reload all user unit files"
-#~ msgstr ""
-#~ "Feu clic per a tornar a carregar tots els fitxers de la unitat de l'usuari"
-
-#~ msgid "Re-e&xecute user systemd"
-#~ msgstr "Torna a e&xecutar el «systemd» de l'usuari"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Click to re-execute the user systemd daemon"
-#~ msgstr "Feu clic per a tornar a executar el dimoni «systemd» de l'usuari"
-
-#~ msgid "Edit Unit File…"
-#~ msgstr "Edita el fitxer de la unitat…"
-
-#~ msgid "Edit Configuration File…"
-#~ msgstr "Edita el fitxer de configuració…"
-
-#~ msgid "Open Man Page"
-#~ msgstr "Obre la pàgina «man»"
-
-#~ msgid "View Logs"
-#~ msgstr "Visualitza els registres"
-
-#~ msgid "Activate Session"
-#~ msgstr "Activa la sessió"
-
-#~ msgid "Terminate Session"
-#~ msgstr "Finalitza la sessió"
-
-#~ msgid "Lock Session"
-#~ msgstr "Bloqueja la sessió"
-
-#~ msgid "Services Manager"
-#~ msgstr "Gestor de serveis"
-
-#~ msgid "System Units"
-#~ msgstr "Unitats del sistema"
-
-#~ msgid "<html><head/><body><p>Filter unit types.</p></body></html>"
-#~ msgstr ""
-#~ "<html><head/><body><p>Filtra els tipus de les unitats.</p></body></html>"
-
-#~ msgid ""
-#~ "<html><head/><body><p>Toggle hiding inactive units.</p></body></html>"
-#~ msgstr ""
-#~ "<html><head/><body><p>Alterna l'ocultació de les unitats inactives.</p></"
-#~ "body></html>"
-
-#~ msgid "Hide inactive"
-#~ msgstr "Oculta les inactives"
-
-#~ msgid ""
-#~ "<html><head/><body><p>Toggle hiding unloaded units.</p></body></html>"
-#~ msgstr ""
-#~ "<html><head/><body><p>Alterna l'ocultació de les unitats no carregades.</"
-#~ "p></body></html>"
-
-#~ msgid "Hide unloaded"
-#~ msgstr "Oculta les no carregades"
-
-#~ msgid "Overall stats:"
-#~ msgstr "Estat global:"
-
-#~ msgid "User Units"
-#~ msgstr "Unitats de l'usuari"
-
-#~ msgid "Config Files"
-#~ msgstr "Fitxers de configuració"
-
-#~ msgid "Sessions"
-#~ msgstr "Sessions"
-
-#~ msgid "&File"
-#~ msgstr "&Fitxer"
-
-#~ msgid "&View"
-#~ msgstr "&Visualitza"
-
-#~ msgid "&Daemon"
-#~ msgstr "&Dimoni"
-
-#~ msgid "&Unit"
-#~ msgstr "&Unitat"
-
-#~ msgid "&Session"
-#~ msgstr "&Sessió"
-
-#~ msgid "Unit Toolbar"
-#~ msgstr "Barra d'eines de la unitat"
-
-#~ msgid "Config File Toolbar"
-#~ msgstr "Barra d'eines del fitxer de configuració"

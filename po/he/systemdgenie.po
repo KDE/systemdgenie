@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-07 00:44+0000\n"
-"PO-Revision-Date: 2025-02-24 08:05+0200\n"
+"PO-Revision-Date: 2025-03-07 10:22+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -120,10 +120,9 @@ msgid "Unable to authenticate/execute the action: %1"
 msgstr "לא ניתן ליצור אימות/להריץ את הפעולה: %1"
 
 #: src/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "SystemdGenie"
+#, kde-format
 msgid "systemdGenie"
-msgstr "SystemdGenie"
+msgstr "systemdGenie"
 
 #: src/main.cpp:36
 #, kde-format
@@ -131,11 +130,10 @@ msgid "Manage systemd units, timers, sessions and config files"
 msgstr "ניהול יחידות, מתזמנים, הפעלות וקובצי הגדרות של systemd"
 
 #: src/main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2016, Ragnar Thomsen"
+#, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr "(c) 2016, רגנר תומסן"
+msgstr "‏(c) 2016, רגנר תומסן, %1 קהילת KDE"
 
 #: src/main.cpp:44
 #, kde-format
@@ -143,15 +141,14 @@ msgid "Ragnar Thomsen"
 msgstr "רגנר תומסן"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Maintainer"
+#, kde-format
 msgid "Former Maintainer"
-msgstr "מתחזק"
+msgstr "מתחזק לשעבר"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "Carl Schwan"
-msgstr ""
+msgstr "קארל שוואן"
 
 #: src/main.cpp:45
 #, kde-format
@@ -249,43 +246,37 @@ msgid "Unable to fetch sessions list: %1"
 msgstr "לא ניתן למשוך את רשימת ההפעלות: %1"
 
 #: src/timermodel.cpp:44
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "קוצב זמן"
 
 #: src/timermodel.cpp:46
-#, fuzzy, kde-format
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column"
 msgid "Next"
 msgstr "הבא"
 
 #: src/timermodel.cpp:48
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column"
 msgid "Left"
 msgstr "שמאל"
 
 #: src/timermodel.cpp:50
-#, fuzzy, kde-format
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column"
 msgid "Last"
 msgstr "אחרון"
 
 #: src/timermodel.cpp:52
-#, fuzzy, kde-format
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column"
 msgid "Passed"
 msgstr "דולג"
 
 #: src/timermodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column"
 msgid "Activates"
 msgstr "מפעיל"
@@ -294,7 +285,7 @@ msgstr "מפעיל"
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
-msgstr ""
+msgstr "לא זמין"
 
 #: src/unitmodel.cpp:95
 #, kde-format
