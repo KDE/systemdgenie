@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=systemdGenie
+Name[ar]=جني Systemd
 Name[ca]=systemdGenie
 Name[ca@valencia]=systemdGenie
 Name[es]=systemdGenie
@@ -11,6 +12,7 @@ Name[tr]=systemdGenie
 Name[uk]=systemdGenie
 Name[x-test]=xxsystemdGeniexx
 GenericName=systemd Management Tool
+GenericName[ar]=أداة إدارة Systemd
 GenericName[ca]=Eina per a la gestió del «systemd»
 GenericName[ca@valencia]=Eina per a la gestió de «systemd»
 GenericName[es]=Herramienta de gestión de systemd
