@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-07 00:44+0000\n"
-"PO-Revision-Date: 2025-02-23 19:11+0400\n"
+"PO-Revision-Date: 2025-03-08 22:37+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -121,8 +121,7 @@ msgid "Unable to authenticate/execute the action: %1"
 msgstr "تعذّر استيثاق/تنفيذ هذا الإجراء: %1"
 
 #: src/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "SystemdGenie"
+#, kde-format
 msgid "systemdGenie"
 msgstr "جني Systemd"
 
@@ -132,11 +131,10 @@ msgid "Manage systemd units, timers, sessions and config files"
 msgstr "أدر وحدات systemd والمؤقتات والجلسات وملفات الضبط"
 
 #: src/main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2016, Ragnar Thomsen"
+#, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr "(c) 2016، راجنار تومسون"
+msgstr "(ج) 2016 راجنار تومسن، %1 مجتمع كِيدي"
 
 #: src/main.cpp:44
 #, kde-format
@@ -144,15 +142,14 @@ msgid "Ragnar Thomsen"
 msgstr "راجنار تومسون"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Maintainer"
+#, kde-format
 msgid "Former Maintainer"
-msgstr "المصين"
+msgstr "الصائن السابق"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "Carl Schwan"
-msgstr ""
+msgstr "كارل شوان"
 
 #: src/main.cpp:45
 #, kde-format
@@ -250,43 +247,37 @@ msgid "Unable to fetch sessions list: %1"
 msgstr "غير قادر على جلب قائمة الجلسات: %1"
 
 #: src/timermodel.cpp:44
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "المؤقّت"
 
 #: src/timermodel.cpp:46
-#, fuzzy, kde-format
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column"
 msgid "Next"
 msgstr "التّالي"
 
 #: src/timermodel.cpp:48
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column"
 msgid "Left"
 msgstr "الباقي"
 
 #: src/timermodel.cpp:50
-#, fuzzy, kde-format
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column"
 msgid "Last"
 msgstr "الأخير"
 
 #: src/timermodel.cpp:52
-#, fuzzy, kde-format
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column"
 msgid "Passed"
 msgstr "نجح"
 
 #: src/timermodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column"
 msgid "Activates"
 msgstr "يفعّل"
@@ -295,7 +286,7 @@ msgstr "يفعّل"
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
-msgstr ""
+msgstr "غ/م"
 
 #: src/unitmodel.cpp:95
 #, kde-format

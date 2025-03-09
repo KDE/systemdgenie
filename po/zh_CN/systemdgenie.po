@@ -118,10 +118,9 @@ msgid "Unable to authenticate/execute the action: %1"
 msgstr "无法验证身份/执行操作：%1"
 
 #: src/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "SystemdGenie"
+#, kde-format
 msgid "systemdGenie"
-msgstr "SystemdGenie"
+msgstr ""
 
 #: src/main.cpp:36
 #, kde-format
@@ -129,11 +128,10 @@ msgid "Manage systemd units, timers, sessions and config files"
 msgstr "管理 systemd 单元、计时器、会话和配置文件"
 
 #: src/main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2016, Ragnar Thomsen"
+#, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr "(c) 2016, Ragnar Thomsen"
+msgstr ""
 
 #: src/main.cpp:44
 #, kde-format
@@ -141,10 +139,9 @@ msgid "Ragnar Thomsen"
 msgstr "Ragnar Thomsen"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Maintainer"
+#, kde-format
 msgid "Former Maintainer"
-msgstr "维护者"
+msgstr ""
 
 #: src/main.cpp:45
 #, kde-format
@@ -247,43 +244,37 @@ msgid "Unable to fetch sessions list: %1"
 msgstr "无法获取会话列表：%1"
 
 #: src/timermodel.cpp:44
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "计时器"
 
 #: src/timermodel.cpp:46
-#, fuzzy, kde-format
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column"
 msgid "Next"
 msgstr "下次执行"
 
 #: src/timermodel.cpp:48
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column"
 msgid "Left"
 msgstr "剩余"
 
 #: src/timermodel.cpp:50
-#, fuzzy, kde-format
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column"
 msgid "Last"
 msgstr "上次执行"
 
 #: src/timermodel.cpp:52
-#, fuzzy, kde-format
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column"
 msgid "Passed"
 msgstr "已过去"
 
 #: src/timermodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column"
 msgid "Activates"
 msgstr "激活"
@@ -358,200 +349,3 @@ msgstr "<hr><b>最近日志条目：</b>"
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>未找到该单元的日志条目。</i>"
-
-#~ msgid "Unable to contact the systemd daemon. Quitting..."
-#~ msgstr "无法与 systemd 守护进程通信。正在退出..."
-
-#~ msgid "User dbus not found. Support for user units disabled."
-#~ msgstr "找不到用户 dbus。用户单元支持已禁用。"
-
-#~ msgid "All"
-#~ msgstr "全部"
-
-#~ msgid "Services"
-#~ msgstr "服务"
-
-#~ msgid "Automounts"
-#~ msgstr "自动挂载"
-
-#~ msgid "Devices"
-#~ msgstr "设备"
-
-#~ msgid "Mounts"
-#~ msgstr "挂载"
-
-#~ msgid "Paths"
-#~ msgstr "路径"
-
-#~ msgid "Scopes"
-#~ msgstr "域"
-
-#~ msgid "Slices"
-#~ msgstr "切片"
-
-#~ msgid "Sockets"
-#~ msgstr "套接字"
-
-#~ msgid "Swaps"
-#~ msgstr "交换空间"
-
-#~ msgid "Targets"
-#~ msgstr "目标"
-
-#~ msgid "Timers"
-#~ msgstr "计时器"
-
-#~ msgctxt "First part of 'Total: %1, %2, %3'"
-#~ msgid "1 unit"
-#~ msgid_plural "%1 units"
-#~ msgstr[0] "%1 个单元"
-
-#~ msgctxt "Second part of 'Total: %1, %2, %3'"
-#~ msgid "1 active"
-#~ msgid_plural "%1 active"
-#~ msgstr[0] "%1 个活动单元"
-
-#~ msgctxt "Third part of 'Total: %1, %2, %3'"
-#~ msgid "1 displayed"
-#~ msgid_plural "%1 displayed"
-#~ msgstr[0] "%1 个显示单元"
-
-#~ msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
-#~ msgid "Total: %1, %2, %3"
-#~ msgstr "总计：%1，%2，%3"
-
-#~ msgid "&Refresh"
-#~ msgstr "刷新(&R)"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Refresh"
-#~ msgstr "刷新"
-
-#~ msgid "Start Unit"
-#~ msgstr "启动单元"
-
-#~ msgid "Stop Unit"
-#~ msgstr "停止单元"
-
-#~ msgid "Reload Unit"
-#~ msgstr "重新加载单元"
-
-#~ msgid "Restart Unit"
-#~ msgstr "重启单元"
-
-#~ msgid "Enable Unit"
-#~ msgstr "启用单元"
-
-#~ msgid "Disable Unit"
-#~ msgstr "禁用单元"
-
-#~ msgid "Mask Unit"
-#~ msgstr "屏蔽单元"
-
-#~ msgid "Unmask Unit"
-#~ msgstr "解除屏蔽单元"
-
-#~ msgid "Re&load systemd"
-#~ msgstr "重新加载 systemd(&L)"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Click to reload all unit files"
-#~ msgstr "点击重新加载所有单元文件"
-
-#~ msgid "Re-e&xecute systemd"
-#~ msgstr "重新执行 systemd(&X)"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Click to re-execute the systemd daemon"
-#~ msgstr "点击以重新执行 systemd 守护进程"
-
-#~ msgid "Re&load user systemd"
-#~ msgstr "重新加载用户 systemd(&L)"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Click to reload all user unit files"
-#~ msgstr "点击重新加载所有用户单元文件"
-
-#~ msgid "Re-e&xecute user systemd"
-#~ msgstr "重新执行用户 systemd(&X)"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Click to re-execute the user systemd daemon"
-#~ msgstr "点击以重新执行用户 systemd 守护进程"
-
-#~ msgid "Edit Unit File…"
-#~ msgstr "编辑单元文件…"
-
-#~ msgid "Edit Configuration File…"
-#~ msgstr "编辑配置文件…"
-
-#~ msgid "Open Man Page"
-#~ msgstr "打开 Man 页面"
-
-#~ msgid "View Logs"
-#~ msgstr "查看日志"
-
-#~ msgid "Activate Session"
-#~ msgstr "激活会话"
-
-#~ msgid "Terminate Session"
-#~ msgstr "终止会话"
-
-#~ msgid "Lock Session"
-#~ msgstr "锁定会话"
-
-#~ msgid "Services Manager"
-#~ msgstr "服务管理器"
-
-#~ msgid "System Units"
-#~ msgstr "系统单元"
-
-#~ msgid "<html><head/><body><p>Filter unit types.</p></body></html>"
-#~ msgstr "<html><head/><body><p>过滤单元类型。</p></body></html>"
-
-#~ msgid ""
-#~ "<html><head/><body><p>Toggle hiding inactive units.</p></body></html>"
-#~ msgstr "<html><head/><body><p>隐藏/显示非活动单元。</p></body></html>"
-
-#~ msgid "Hide inactive"
-#~ msgstr "隐藏非活动单元"
-
-#~ msgid ""
-#~ "<html><head/><body><p>Toggle hiding unloaded units.</p></body></html>"
-#~ msgstr "<html><head/><body><p>隐藏/显示已卸载单元。</p></body></html>"
-
-#~ msgid "Hide unloaded"
-#~ msgstr "隐藏已卸载单元"
-
-#~ msgid "Overall stats:"
-#~ msgstr "整体状态："
-
-#~ msgid "User Units"
-#~ msgstr "用户单元"
-
-#~ msgid "Config Files"
-#~ msgstr "配置文件"
-
-#~ msgid "Sessions"
-#~ msgstr "会话"
-
-#~ msgid "&File"
-#~ msgstr "文件(&F)"
-
-#~ msgid "&View"
-#~ msgstr "视图(&V)"
-
-#~ msgid "&Daemon"
-#~ msgstr "守护进程(&D)"
-
-#~ msgid "&Unit"
-#~ msgstr "单元(&U)"
-
-#~ msgid "&Session"
-#~ msgstr "会话(&S)"
-
-#~ msgid "Unit Toolbar"
-#~ msgstr "单元工具栏"
-
-#~ msgid "Config File Toolbar"
-#~ msgstr "配置文件工具栏"
