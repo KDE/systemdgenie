@@ -9,6 +9,7 @@
     <binary>systemdgenie</binary>
   </provides>
   <name>systemdGenie</name>
+  <name xml:lang="ar">جني Systemd</name>
   <name xml:lang="ca">systemdGenie</name>
   <name xml:lang="ca-valencia">systemdGenie</name>
   <name xml:lang="es">systemdGenie</name>
@@ -19,6 +20,7 @@
   <name xml:lang="uk">SystemdGenie</name>
   <name xml:lang="x-test">xxsystemdGeniexx</name>
   <summary>System service manager</summary>
+  <summary xml:lang="ar">مدير خدمات النظام</summary>
   <summary xml:lang="ca">Gestor de serveis del sistema</summary>
   <summary xml:lang="ca-valencia">Gestor de serveis del sistema</summary>
   <summary xml:lang="es">Gestor de servicios del sistema</summary>
@@ -30,6 +32,7 @@
   <summary xml:lang="x-test">xxSystem service managerxx</summary>
   <description>
     <p>systemdGenie allows graphical management of systemd units, including user units, and provides control over logind sessions. It also includes an integrated text editor for easy modification of unit and configuration files. </p>
+    <p xml:lang="ar">يتيح لك جني Systemd إدارة وحدات systemd بشكل رسومي، بما في ذلك وحدات المستخدم، ويوفر التحكم في جلسات تسجيل الدخول. كما يتضمن محرر نصي متكامل لتعديل ملفات الوحدات والضبط بسهولة.</p>
     <p xml:lang="ca">El systemdGenie permet la gestió gràfica de les unitats del systemd, incloses les unitats d'usuari, i proporciona control sobre les sessions del «logind». També inclou un editor de text integrat que facilita la modificació dels fitxers d'unitats i de configuració.</p>
     <p xml:lang="ca-valencia">systemdGenie permet la gestió gràfica de les unitats de systemd, incloses les unitats d'usuari, i proporciona control sobre les sessions de «logind». També inclou un editor de text integrat que facilita la modificació dels fitxers d'unitats i de configuració.</p>
     <p xml:lang="es">systemdGenie permite la gestión gráfica de unidades de systemd, incluidas las del usuario, y proporciona control sobre las sesiones de logind. También incluye un editor de texto integrado para poder modificar con facilidad unidades y archivos de configuración.</p>
