@@ -4,9 +4,7 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef HELPER_H
-#define HELPER_H
-
+#pragma once
 #include <KAuth/ActionReply>
 using namespace KAuth;
 
@@ -18,5 +16,3 @@ public Q_SLOTS:
     ActionReply saveunitfile(const QVariantMap &args);
     ActionReply dbusaction(const QVariantMap &args);
 };
-
-#endif
