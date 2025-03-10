@@ -16,6 +16,7 @@ class Login1SessionInterface : public OrgFreedesktopLogin1SessionInterface
 {
     Q_OBJECT
     QML_ELEMENT
+    QML_UNCREATABLE("")
 
 public:
     explicit Login1SessionInterface(const QString &service, const QString &path, const QDBusConnection &connection, QObject *parent = nullptr);
