@@ -11,13 +11,11 @@
 #include <KAuth/ExecuteJob>
 #include <QColor>
 #include <QIcon>
-#include <QTimer>
 
 #include <systemd/sd-journal.h>
 
 #include "job/unitsfetchjob.h"
 #include "systemd_manager_interface.h"
-#include "systemd_unit_interface.h"
 
 using namespace Qt::StringLiterals;
 using namespace std::chrono_literals;

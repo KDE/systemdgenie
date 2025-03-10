@@ -19,7 +19,6 @@
 #include <QPushButton>
 #include <QStyle>
 #include <QVBoxLayout>
-#include <QWindow>
 
 Editor::Editor(QObject *parent)
     : QObject(parent)

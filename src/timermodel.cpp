@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "timermodel.h"
-#include "systemd_timer_interface.h"
 
 #include <KLocalizedString>
 #include <QIcon>

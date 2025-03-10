@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "sessionsfetchjob.h"
-#include "loginddbustypes.h"
 
 #include <QDBusMessage>
 #include <QDBusPendingCallWatcher>
