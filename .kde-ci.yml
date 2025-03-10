@@ -2,8 +2,8 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-- 'on': ['@all']
-  'require':
+ - 'on': ['@all']
+   'require':
     'frameworks/extra-cmake-modules': 'latest-kf6'
     'frameworks/kauth': '@latest-kf6'
     'frameworks/kcrash': '@latest-kf6'
@@ -12,4 +12,4 @@ Dependencies:
     'frameworks/ktexteditor': '@latest-kf6'
 
 Options:
-  require-passing-tests-on: ['Linux', 'FreeBSD', 'Windows']
+ require-passing-tests-on: ['Linux', 'FreeBSD', 'Windows']
