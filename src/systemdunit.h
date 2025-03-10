@@ -30,7 +30,7 @@ struct SystemdUnit {
     {
     }
 
-    SystemdUnit(QString newId)
+    SystemdUnit(const QString &newId)
     {
         id = newId;
     }
