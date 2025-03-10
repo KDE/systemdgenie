@@ -166,7 +166,7 @@ TablePage {
 
         Controls.Action {
             id: unitStop
-            icon.name: 'media-playback-start-symbolic'
+            icon.name: 'media-playback-stop-symbolic'
             text: i18nc("@action", "Stop Unit")
             onTriggered: unitModel.executeUnitAction(root.currentRow, 'StopUnit')
             enabled: (root.unitObject?.CanStop && root.unitObject.ActiveState !== 'inactive' && root.unitObject.ActiveState !== 'failed') ?? false
