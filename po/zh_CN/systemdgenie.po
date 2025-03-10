@@ -120,7 +120,7 @@ msgstr "无法验证身份/执行操作：%1"
 #: src/main.cpp:34
 #, kde-format
 msgid "systemdGenie"
-msgstr ""
+msgstr "systemdGenie"
 
 #: src/main.cpp:36
 #, kde-format
@@ -131,7 +131,7 @@ msgstr "管理 systemd 单元、计时器、会话和配置文件"
 #, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr ""
+msgstr "(c) 2016 Ragnar Thomsen, %1 KDE Community"
 
 #: src/main.cpp:44
 #, kde-format
@@ -141,12 +141,12 @@ msgstr "Ragnar Thomsen"
 #: src/main.cpp:44
 #, kde-format
 msgid "Former Maintainer"
-msgstr ""
+msgstr "前任维护者"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: src/main.cpp:45
 #, kde-format
@@ -283,7 +283,7 @@ msgstr "激活"
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
-msgstr ""
+msgstr "n/a"
 
 #: src/unitmodel.cpp:95
 #, kde-format
