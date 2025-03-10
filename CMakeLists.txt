@@ -19,6 +19,7 @@ include(KDECompilerSettings)
 include(KDECMakeSettings)
 include(KDEGitCommitHooks)
 include(KDEClangFormat)
+include(ECMDeprecationSettings)
 
 include(ECMQmlModule)
 
@@ -64,6 +65,11 @@ add_definitions(-DTRANSLATION_DOMAIN=\"systemdgenie\")
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_BINARY_DIR}
+)
+
+ecm_set_disabled_deprecation_versions(
+    QT 6.9.0
+    KF 6.12.0
 )
 
 add_subdirectory(src)
