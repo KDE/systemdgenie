@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-2.0-or-later
-
+#pragma once
 #include <QObject>
 #include <qqmlregistration.h>
 
