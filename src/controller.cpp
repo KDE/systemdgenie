@@ -82,3 +82,5 @@ void Controller::viewLogs()
     job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
     job->start();
 }
+
+#include "moc_controller.cpp"

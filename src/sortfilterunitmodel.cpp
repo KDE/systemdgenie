@@ -47,3 +47,5 @@ bool SortFilterUnitModel::filterAcceptsRow(int sourceRow, const QModelIndex &sou
 
     return ret;
 }
+
+#include "moc_sortfilterunitmodel.cpp"

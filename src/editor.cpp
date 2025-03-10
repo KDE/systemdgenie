@@ -99,3 +99,5 @@ void Editor::openEditor(const QString &file, QWindow *parentWindow)
     handle->setTransientParent(parentWindow);
     dlgEditor->show();
 }
+
+#include "moc_editor.cpp"

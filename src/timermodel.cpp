@@ -288,3 +288,5 @@ void TimerModel::refreshData()
     }
     Q_EMIT dataChanged(index(0, LeftColumn), index(rowCount() - 1, LastColumn), {});
 }
+
+#include "moc_timermodel.cpp"

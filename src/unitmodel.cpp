@@ -662,3 +662,5 @@ QDBusConnection UnitModel::connection() const
 {
     return m_connection;
 }
+
+#include "moc_unitmodel.cpp"

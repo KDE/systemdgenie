@@ -274,3 +274,5 @@ bool SessionModel::canLock(int row)
 
     return m_sessions.at(row).sessionIface->type() != "tty"_L1;
 }
+
+#include "moc_sessionmodel.cpp"

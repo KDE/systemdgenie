@@ -72,3 +72,5 @@ ActionReply Helper::dbusaction(const QVariantMap &args)
 }
 
 KAUTH_HELPER_MAIN("org.kde.kcontrol.systemdgenie", Helper)
+
+#include "moc_helper.cpp"

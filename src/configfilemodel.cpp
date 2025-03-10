@@ -142,3 +142,5 @@ void ConfigFileModel::openManPage(int index)
     job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
     job->start();
 }
+
+#include "moc_configfilemodel.cpp"

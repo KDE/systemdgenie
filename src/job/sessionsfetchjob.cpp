@@ -42,3 +42,5 @@ SessionInfoList SessionsFetchJob::sessions() const
 {
     return m_sessions;
 }
+
+#include "moc_sessionsfetchjob.cpp"

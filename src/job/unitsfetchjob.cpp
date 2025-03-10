@@ -85,3 +85,5 @@ QList<SystemdUnit> UnitsFetchJob::units() const
 {
     return m_units;
 }
+
+#include "moc_unitsfetchjob.cpp"
