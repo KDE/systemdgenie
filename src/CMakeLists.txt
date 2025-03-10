@@ -33,8 +33,11 @@ qt_add_dbus_interface(systemd_DBUS_SRCS
 set(systemdgenie_SRCS
     main.cpp
     unitmodel.cpp
+    unitmodel.h
     sortfilterunitmodel.cpp
+    sortfilterunitmodel.h
     systemdunit.cpp
+    systemdunit.h
     configfilemodel.cpp
     configfilemodel.h
     sessionmodel.cpp

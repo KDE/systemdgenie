@@ -1,5 +1,5 @@
 # Build & Link
-add_executable(systemdgeniehelper helper.cpp)
+add_executable(systemdgeniehelper helper.cpp helper.h)
 target_link_libraries(systemdgeniehelper Qt::DBus KF6::AuthCore)
 
 # Install
