@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-07 00:44+0000\n"
+"POT-Creation-Date: 2025-03-11 00:43+0000\n"
 "PO-Revision-Date: 2025-03-07 16:56+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -96,17 +96,17 @@ msgstr ""
 "El ejecutable de KHelpCenter no se ha encontrado en la ruta. Por favor, "
 "instale KHelpCenter para poder ver páginas man."
 
-#: src/editor.cpp:37
+#: src/editor.cpp:36
 #, kde-format
 msgid "Editing %1"
 msgstr "Editando %1"
 
-#: src/editor.cpp:47
+#: src/editor.cpp:46
 #, kde-format
 msgid "Editing file: <code>%1</code>"
 msgstr "Editando el archivo: <code>%1</code>"
 
-#: src/editor.cpp:72
+#: src/editor.cpp:71
 #, kde-format
 msgid ""
 "Failed to open the unit file:\n"
@@ -115,7 +115,7 @@ msgstr ""
 "Ha fallado la apertura del archivo de unidad:\n"
 "%1"
 
-#: src/editor.cpp:93 src/sessionmodel.cpp:265 src/unitmodel.cpp:432
+#: src/editor.cpp:92 src/sessionmodel.cpp:265 src/unitmodel.cpp:430
 #, kde-format
 msgid "Unable to authenticate/execute the action: %1"
 msgstr "No se ha podido autenticar o ejecutar la acción: %1"
@@ -248,109 +248,109 @@ msgstr "<br><b>Creación: </b>"
 msgid "Unable to fetch sessions list: %1"
 msgstr "No se ha podido obtener la lista de sesiones: %1"
 
-#: src/timermodel.cpp:44
+#: src/timermodel.cpp:43
 #, kde-format
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "Temporizador"
 
-#: src/timermodel.cpp:46
+#: src/timermodel.cpp:45
 #, kde-format
 msgctxt "@title:column"
 msgid "Next"
 msgstr "Siguiente"
 
-#: src/timermodel.cpp:48
+#: src/timermodel.cpp:47
 #, kde-format
 msgctxt "@title:column"
 msgid "Left"
 msgstr "Restante"
 
-#: src/timermodel.cpp:50
+#: src/timermodel.cpp:49
 #, kde-format
 msgctxt "@title:column"
 msgid "Last"
 msgstr "Último"
 
-#: src/timermodel.cpp:52
+#: src/timermodel.cpp:51
 #, kde-format
 msgctxt "@title:column"
 msgid "Passed"
 msgstr "Pasado"
 
-#: src/timermodel.cpp:54
+#: src/timermodel.cpp:53
 #, kde-format
 msgctxt "@title:column"
 msgid "Activates"
 msgstr "Activación"
 
-#: src/timermodel.cpp:75 src/timermodel.cpp:100
+#: src/timermodel.cpp:74 src/timermodel.cpp:99
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
 msgstr "n/d"
 
-#: src/unitmodel.cpp:95
+#: src/unitmodel.cpp:93
 #, kde-format
 msgid "Unit"
 msgstr "Unidad"
 
-#: src/unitmodel.cpp:97
+#: src/unitmodel.cpp:95
 #, kde-format
 msgid "Load State"
 msgstr "Estado de carga"
 
-#: src/unitmodel.cpp:99
+#: src/unitmodel.cpp:97
 #, kde-format
 msgid "Active State"
 msgstr "Estado activo"
 
-#: src/unitmodel.cpp:101
+#: src/unitmodel.cpp:99
 #, kde-format
 msgid "Unit State"
 msgstr "Estado de la unidad"
 
-#: src/unitmodel.cpp:217
+#: src/unitmodel.cpp:215
 #, kde-format
 msgid "<b>Description: </b>"
 msgstr "<b>Descripción: </b>"
 
-#: src/unitmodel.cpp:222
+#: src/unitmodel.cpp:220
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
 msgstr "<br><b>Archivo de la unidad: </b>%1"
 
-#: src/unitmodel.cpp:223 src/unitmodel.cpp:270
+#: src/unitmodel.cpp:221 src/unitmodel.cpp:268
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
 msgstr "<br><b>Estado del archivo de la unidad: </b>"
 
-#: src/unitmodel.cpp:229
+#: src/unitmodel.cpp:227
 #, kde-format
 msgid "<br><b>Source path: </b>%1"
 msgstr "<br><b>Ruta de origen: </b>%1"
 
-#: src/unitmodel.cpp:233
+#: src/unitmodel.cpp:231
 #, kde-format
 msgid "<br><b>Activated: </b>"
 msgstr "<br><b>Activado: </b>"
 
-#: src/unitmodel.cpp:243
+#: src/unitmodel.cpp:241
 #, kde-format
 msgid "<br><b>Deactivated: </b>"
 msgstr "<br><b>Desactivado: </b>"
 
-#: src/unitmodel.cpp:265
+#: src/unitmodel.cpp:263
 #, kde-format
 msgid "<b>Unit file: </b>"
 msgstr "<b>Archivo de la unidad: </b>"
 
-#: src/unitmodel.cpp:279
+#: src/unitmodel.cpp:277
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
 msgstr "<hr><b>Últimas entradas del registro:</b>"
 
-#: src/unitmodel.cpp:282
+#: src/unitmodel.cpp:280
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr ""

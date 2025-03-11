@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-07 00:44+0000\n"
+"POT-Creation-Date: 2025-03-11 00:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -93,17 +93,17 @@ msgid ""
 msgstr ""
 "无法在路径中找到 KHelpCenter 可执行程序。请安装 KHelpCenter 以查看 man 页面。"
 
-#: src/editor.cpp:37
+#: src/editor.cpp:36
 #, kde-format
 msgid "Editing %1"
 msgstr "正在编辑 %1"
 
-#: src/editor.cpp:47
+#: src/editor.cpp:46
 #, kde-format
 msgid "Editing file: <code>%1</code>"
 msgstr "正在编辑文件：<code>%1</code>"
 
-#: src/editor.cpp:72
+#: src/editor.cpp:71
 #, kde-format
 msgid ""
 "Failed to open the unit file:\n"
@@ -112,7 +112,7 @@ msgstr ""
 "无法打开单元文件：\n"
 "%1"
 
-#: src/editor.cpp:93 src/sessionmodel.cpp:265 src/unitmodel.cpp:432
+#: src/editor.cpp:92 src/sessionmodel.cpp:265 src/unitmodel.cpp:430
 #, kde-format
 msgid "Unable to authenticate/execute the action: %1"
 msgstr "无法验证身份/执行操作：%1"
@@ -243,109 +243,109 @@ msgstr "<br><b>创建于：</b>"
 msgid "Unable to fetch sessions list: %1"
 msgstr "无法获取会话列表：%1"
 
-#: src/timermodel.cpp:44
+#: src/timermodel.cpp:43
 #, kde-format
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "计时器"
 
-#: src/timermodel.cpp:46
+#: src/timermodel.cpp:45
 #, kde-format
 msgctxt "@title:column"
 msgid "Next"
 msgstr "下次执行"
 
-#: src/timermodel.cpp:48
+#: src/timermodel.cpp:47
 #, kde-format
 msgctxt "@title:column"
 msgid "Left"
 msgstr "剩余"
 
-#: src/timermodel.cpp:50
+#: src/timermodel.cpp:49
 #, kde-format
 msgctxt "@title:column"
 msgid "Last"
 msgstr "上次执行"
 
-#: src/timermodel.cpp:52
+#: src/timermodel.cpp:51
 #, kde-format
 msgctxt "@title:column"
 msgid "Passed"
 msgstr "已过去"
 
-#: src/timermodel.cpp:54
+#: src/timermodel.cpp:53
 #, kde-format
 msgctxt "@title:column"
 msgid "Activates"
 msgstr "激活"
 
-#: src/timermodel.cpp:75 src/timermodel.cpp:100
+#: src/timermodel.cpp:74 src/timermodel.cpp:99
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
 msgstr "n/a"
 
-#: src/unitmodel.cpp:95
+#: src/unitmodel.cpp:93
 #, kde-format
 msgid "Unit"
 msgstr "单元"
 
-#: src/unitmodel.cpp:97
+#: src/unitmodel.cpp:95
 #, kde-format
 msgid "Load State"
 msgstr "加载状态"
 
-#: src/unitmodel.cpp:99
+#: src/unitmodel.cpp:97
 #, kde-format
 msgid "Active State"
 msgstr "活动状态"
 
-#: src/unitmodel.cpp:101
+#: src/unitmodel.cpp:99
 #, kde-format
 msgid "Unit State"
 msgstr "单元状态"
 
-#: src/unitmodel.cpp:217
+#: src/unitmodel.cpp:215
 #, kde-format
 msgid "<b>Description: </b>"
 msgstr "<b>描述：</b>"
 
-#: src/unitmodel.cpp:222
+#: src/unitmodel.cpp:220
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
 msgstr "<br><b>单元文件：</b>%1"
 
-#: src/unitmodel.cpp:223 src/unitmodel.cpp:270
+#: src/unitmodel.cpp:221 src/unitmodel.cpp:268
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
 msgstr "<br><b>单元文件状态：</b>"
 
-#: src/unitmodel.cpp:229
+#: src/unitmodel.cpp:227
 #, kde-format
 msgid "<br><b>Source path: </b>%1"
 msgstr "<br><b>来源路径：</b>%1"
 
-#: src/unitmodel.cpp:233
+#: src/unitmodel.cpp:231
 #, kde-format
 msgid "<br><b>Activated: </b>"
 msgstr "<br><b>已激活：</b>"
 
-#: src/unitmodel.cpp:243
+#: src/unitmodel.cpp:241
 #, kde-format
 msgid "<br><b>Deactivated: </b>"
 msgstr "<br><b>已停止：</b>"
 
-#: src/unitmodel.cpp:265
+#: src/unitmodel.cpp:263
 #, kde-format
 msgid "<b>Unit file: </b>"
 msgstr "<b>单元文件：</b>"
 
-#: src/unitmodel.cpp:279
+#: src/unitmodel.cpp:277
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
 msgstr "<hr><b>最近日志条目：</b>"
 
-#: src/unitmodel.cpp:282
+#: src/unitmodel.cpp:280
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>未找到该单元的日志条目。</i>"

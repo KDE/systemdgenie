@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-07 00:44+0000\n"
+"POT-Creation-Date: 2025-03-11 00:43+0000\n"
 "PO-Revision-Date: 2025-03-07 13:22+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -94,17 +94,17 @@ msgstr ""
 "Programmabestand van KHelpCenter niet in pad gevonden. Installeer "
 "KHelpCenter om man-pagina's te bekijken."
 
-#: src/editor.cpp:37
+#: src/editor.cpp:36
 #, kde-format
 msgid "Editing %1"
 msgstr "Bewerking van %1"
 
-#: src/editor.cpp:47
+#: src/editor.cpp:46
 #, kde-format
 msgid "Editing file: <code>%1</code>"
 msgstr "Bewerken van bestand: <code>%1</code>"
 
-#: src/editor.cpp:72
+#: src/editor.cpp:71
 #, kde-format
 msgid ""
 "Failed to open the unit file:\n"
@@ -113,7 +113,7 @@ msgstr ""
 "Eenheidsbestand openen is mislukt:\n"
 "%1"
 
-#: src/editor.cpp:93 src/sessionmodel.cpp:265 src/unitmodel.cpp:432
+#: src/editor.cpp:92 src/sessionmodel.cpp:265 src/unitmodel.cpp:430
 #, kde-format
 msgid "Unable to authenticate/execute the action: %1"
 msgstr "Authenticatie/uitvoeren van de actie %1 lukt niet"
@@ -244,109 +244,109 @@ msgstr "<br><b>Aangemaakt: </b>"
 msgid "Unable to fetch sessions list: %1"
 msgstr "Sessieslijst ophalen lukt niet: %1"
 
-#: src/timermodel.cpp:44
+#: src/timermodel.cpp:43
 #, kde-format
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "Timer"
 
-#: src/timermodel.cpp:46
+#: src/timermodel.cpp:45
 #, kde-format
 msgctxt "@title:column"
 msgid "Next"
 msgstr "Volgende"
 
-#: src/timermodel.cpp:48
+#: src/timermodel.cpp:47
 #, kde-format
 msgctxt "@title:column"
 msgid "Left"
 msgstr "Links"
 
-#: src/timermodel.cpp:50
+#: src/timermodel.cpp:49
 #, kde-format
 msgctxt "@title:column"
 msgid "Last"
 msgstr "Laatste"
 
-#: src/timermodel.cpp:52
+#: src/timermodel.cpp:51
 #, kde-format
 msgctxt "@title:column"
 msgid "Passed"
 msgstr "Geslaagd"
 
-#: src/timermodel.cpp:54
+#: src/timermodel.cpp:53
 #, kde-format
 msgctxt "@title:column"
 msgid "Activates"
 msgstr "Activeert"
 
-#: src/timermodel.cpp:75 src/timermodel.cpp:100
+#: src/timermodel.cpp:74 src/timermodel.cpp:99
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
 msgstr "n.v.t."
 
-#: src/unitmodel.cpp:95
+#: src/unitmodel.cpp:93
 #, kde-format
 msgid "Unit"
 msgstr "Eenheid"
 
-#: src/unitmodel.cpp:97
+#: src/unitmodel.cpp:95
 #, kde-format
 msgid "Load State"
 msgstr "Status laden"
 
-#: src/unitmodel.cpp:99
+#: src/unitmodel.cpp:97
 #, kde-format
 msgid "Active State"
 msgstr "Actieve status"
 
-#: src/unitmodel.cpp:101
+#: src/unitmodel.cpp:99
 #, kde-format
 msgid "Unit State"
 msgstr "Status van eenheid"
 
-#: src/unitmodel.cpp:217
+#: src/unitmodel.cpp:215
 #, kde-format
 msgid "<b>Description: </b>"
 msgstr "<b>Beschrijving: </b>"
 
-#: src/unitmodel.cpp:222
+#: src/unitmodel.cpp:220
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
 msgstr "<br><b>Bestand van eenheid: </b>%1"
 
-#: src/unitmodel.cpp:223 src/unitmodel.cpp:270
+#: src/unitmodel.cpp:221 src/unitmodel.cpp:268
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
 msgstr "<<b>Status van bestand van eenheid: </b>"
 
-#: src/unitmodel.cpp:229
+#: src/unitmodel.cpp:227
 #, kde-format
 msgid "<br><b>Source path: </b>%1"
 msgstr "<br><b>Pad van bron: </b>%1"
 
-#: src/unitmodel.cpp:233
+#: src/unitmodel.cpp:231
 #, kde-format
 msgid "<br><b>Activated: </b>"
 msgstr "<br><b>Geactiveerd: </b>"
 
-#: src/unitmodel.cpp:243
+#: src/unitmodel.cpp:241
 #, kde-format
 msgid "<br><b>Deactivated: </b>"
 msgstr "<br><b>Gedeactiveerd: </b>"
 
-#: src/unitmodel.cpp:265
+#: src/unitmodel.cpp:263
 #, kde-format
 msgid "<b>Unit file: </b>"
 msgstr "<b>Bestand van eenheid: </b>"
 
-#: src/unitmodel.cpp:279
+#: src/unitmodel.cpp:277
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
 msgstr "<hr><b>Laatste regels in log:</b>"
 
-#: src/unitmodel.cpp:282
+#: src/unitmodel.cpp:280
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>Geen logregels voor deze eenheid gevonden.</i>"

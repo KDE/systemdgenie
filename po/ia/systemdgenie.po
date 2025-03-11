@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-07 00:44+0000\n"
+"POT-Creation-Date: 2025-03-11 00:43+0000\n"
 "PO-Revision-Date: 2025-02-24 16:30+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -94,17 +94,17 @@ msgstr ""
 "Executabile de KHelpCenter non trovate in percurso. Pro favor tu installa "
 "KHelpCenter per vider paginas de man."
 
-#: src/editor.cpp:37
+#: src/editor.cpp:36
 #, kde-format
 msgid "Editing %1"
 msgstr "Editar %1"
 
-#: src/editor.cpp:47
+#: src/editor.cpp:46
 #, kde-format
 msgid "Editing file: <code>%1</code>"
 msgstr "Editar  file: <code>%1</code>"
 
-#: src/editor.cpp:72
+#: src/editor.cpp:71
 #, kde-format
 msgid ""
 "Failed to open the unit file:\n"
@@ -113,7 +113,7 @@ msgstr ""
 "Falleva a aperir le file de unitate:\n"
 "%1"
 
-#: src/editor.cpp:93 src/sessionmodel.cpp:265 src/unitmodel.cpp:432
+#: src/editor.cpp:92 src/sessionmodel.cpp:265 src/unitmodel.cpp:430
 #, kde-format
 msgid "Unable to authenticate/execute the action: %1"
 msgstr "Il non pote authenticar/executar le action: %1"
@@ -247,115 +247,115 @@ msgstr "<br><b>Create: </b>"
 msgid "Unable to fetch sessions list: %1"
 msgstr "Incapace de reportar lista de sessiones: %1"
 
-#: src/timermodel.cpp:44
+#: src/timermodel.cpp:43
 #, fuzzy, kde-format
 #| msgid "Timer"
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "Temporisator o Chronometro"
 
-#: src/timermodel.cpp:46
+#: src/timermodel.cpp:45
 #, fuzzy, kde-format
 #| msgid "Next"
 msgctxt "@title:column"
 msgid "Next"
 msgstr "Proxime"
 
-#: src/timermodel.cpp:48
+#: src/timermodel.cpp:47
 #, fuzzy, kde-format
 #| msgid "Left"
 msgctxt "@title:column"
 msgid "Left"
 msgstr "Sinistra"
 
-#: src/timermodel.cpp:50
+#: src/timermodel.cpp:49
 #, fuzzy, kde-format
 #| msgid "Last"
 msgctxt "@title:column"
 msgid "Last"
 msgstr "Ultime"
 
-#: src/timermodel.cpp:52
+#: src/timermodel.cpp:51
 #, fuzzy, kde-format
 #| msgid "Passed"
 msgctxt "@title:column"
 msgid "Passed"
 msgstr "Passate"
 
-#: src/timermodel.cpp:54
+#: src/timermodel.cpp:53
 #, fuzzy, kde-format
 #| msgid "Activates"
 msgctxt "@title:column"
 msgid "Activates"
 msgstr "Activates"
 
-#: src/timermodel.cpp:75 src/timermodel.cpp:100
+#: src/timermodel.cpp:74 src/timermodel.cpp:99
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
 msgstr ""
 
-#: src/unitmodel.cpp:95
+#: src/unitmodel.cpp:93
 #, kde-format
 msgid "Unit"
 msgstr "Unitate"
 
-#: src/unitmodel.cpp:97
+#: src/unitmodel.cpp:95
 #, kde-format
 msgid "Load State"
 msgstr "Carga Stato"
 
-#: src/unitmodel.cpp:99
+#: src/unitmodel.cpp:97
 #, kde-format
 msgid "Active State"
 msgstr "Stato Active"
 
-#: src/unitmodel.cpp:101
+#: src/unitmodel.cpp:99
 #, kde-format
 msgid "Unit State"
 msgstr "Stato de Unitate"
 
-#: src/unitmodel.cpp:217
+#: src/unitmodel.cpp:215
 #, kde-format
 msgid "<b>Description: </b>"
 msgstr "<b>Description: </b>"
 
-#: src/unitmodel.cpp:222
+#: src/unitmodel.cpp:220
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
 msgstr "<br><b>File de Unitate: </b>%1"
 
-#: src/unitmodel.cpp:223 src/unitmodel.cpp:270
+#: src/unitmodel.cpp:221 src/unitmodel.cpp:268
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
 msgstr "<br><b>Stato de File de Unitate: </b>"
 
-#: src/unitmodel.cpp:229
+#: src/unitmodel.cpp:227
 #, kde-format
 msgid "<br><b>Source path: </b>%1"
 msgstr "<br><b>Percurso de Fonte: </b>%1"
 
-#: src/unitmodel.cpp:233
+#: src/unitmodel.cpp:231
 #, kde-format
 msgid "<br><b>Activated: </b>"
 msgstr "<br><b>Activate: </b>"
 
-#: src/unitmodel.cpp:243
+#: src/unitmodel.cpp:241
 #, kde-format
 msgid "<br><b>Deactivated: </b>"
 msgstr "<br><b>Deactivate: </b>"
 
-#: src/unitmodel.cpp:265
+#: src/unitmodel.cpp:263
 #, kde-format
 msgid "<b>Unit file: </b>"
 msgstr "<b>File de Unitate: </b>"
 
-#: src/unitmodel.cpp:279
+#: src/unitmodel.cpp:277
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
 msgstr "<hr><b>Ultime entratas de regiostro:</b>"
 
-#: src/unitmodel.cpp:282
+#: src/unitmodel.cpp:280
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>Nulle entratas de registro trovate per iste unitate.</i>"

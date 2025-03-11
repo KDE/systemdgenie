@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-07 00:44+0000\n"
+"POT-Creation-Date: 2025-03-11 00:43+0000\n"
 "PO-Revision-Date: 2017-11-13 19:59+0200\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish\n"
@@ -96,18 +96,18 @@ msgstr ""
 "KHelpCenter-kørbar blev ikke fundet i stien. Installér venligst KHelpCenter "
 "for at vise man-sider."
 
-#: src/editor.cpp:37
+#: src/editor.cpp:36
 #, kde-format
 msgid "Editing %1"
 msgstr "Redigerer %1"
 
-#: src/editor.cpp:47
+#: src/editor.cpp:46
 #, fuzzy, kde-format
 #| msgid "Editing file: %1"
 msgid "Editing file: <code>%1</code>"
 msgstr "Redigerer filen: %1"
 
-#: src/editor.cpp:72
+#: src/editor.cpp:71
 #, kde-format
 msgid ""
 "Failed to open the unit file:\n"
@@ -116,7 +116,7 @@ msgstr ""
 "Kunne ikke åbne enhedsfilen:\n"
 "%1"
 
-#: src/editor.cpp:93 src/sessionmodel.cpp:265 src/unitmodel.cpp:432
+#: src/editor.cpp:92 src/sessionmodel.cpp:265 src/unitmodel.cpp:430
 #, kde-format
 msgid "Unable to authenticate/execute the action: %1"
 msgstr "Kan ikke autenticere/udføre handlingen: %1"
@@ -250,115 +250,115 @@ msgstr "<br><b>Oprettet: </b>"
 msgid "Unable to fetch sessions list: %1"
 msgstr ""
 
-#: src/timermodel.cpp:44
+#: src/timermodel.cpp:43
 #, fuzzy, kde-format
 #| msgid "Timer"
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "Timer"
 
-#: src/timermodel.cpp:46
+#: src/timermodel.cpp:45
 #, fuzzy, kde-format
 #| msgid "Next"
 msgctxt "@title:column"
 msgid "Next"
 msgstr "Næste"
 
-#: src/timermodel.cpp:48
+#: src/timermodel.cpp:47
 #, fuzzy, kde-format
 #| msgid "Left"
 msgctxt "@title:column"
 msgid "Left"
 msgstr "Tilbage"
 
-#: src/timermodel.cpp:50
+#: src/timermodel.cpp:49
 #, fuzzy, kde-format
 #| msgid "Last"
 msgctxt "@title:column"
 msgid "Last"
 msgstr "Sidste"
 
-#: src/timermodel.cpp:52
+#: src/timermodel.cpp:51
 #, fuzzy, kde-format
 #| msgid "Passed"
 msgctxt "@title:column"
 msgid "Passed"
 msgstr "Videregivet"
 
-#: src/timermodel.cpp:54
+#: src/timermodel.cpp:53
 #, fuzzy, kde-format
 #| msgid "Activates"
 msgctxt "@title:column"
 msgid "Activates"
 msgstr "Aktiveringer"
 
-#: src/timermodel.cpp:75 src/timermodel.cpp:100
+#: src/timermodel.cpp:74 src/timermodel.cpp:99
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
 msgstr ""
 
-#: src/unitmodel.cpp:95
+#: src/unitmodel.cpp:93
 #, kde-format
 msgid "Unit"
 msgstr "Enhed"
 
-#: src/unitmodel.cpp:97
+#: src/unitmodel.cpp:95
 #, kde-format
 msgid "Load State"
 msgstr "Indlæs tilstand"
 
-#: src/unitmodel.cpp:99
+#: src/unitmodel.cpp:97
 #, kde-format
 msgid "Active State"
 msgstr "Aktiv tilstand"
 
-#: src/unitmodel.cpp:101
+#: src/unitmodel.cpp:99
 #, kde-format
 msgid "Unit State"
 msgstr "Enhedstilstand"
 
-#: src/unitmodel.cpp:217
+#: src/unitmodel.cpp:215
 #, kde-format
 msgid "<b>Description: </b>"
 msgstr "<b>Beskrivelse: </b>"
 
-#: src/unitmodel.cpp:222
+#: src/unitmodel.cpp:220
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
 msgstr "<br><b>Enhdedsfil: </b>%1"
 
-#: src/unitmodel.cpp:223 src/unitmodel.cpp:270
+#: src/unitmodel.cpp:221 src/unitmodel.cpp:268
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
 msgstr "<br><b>Enhedsfiltilstand: </b>"
 
-#: src/unitmodel.cpp:229
+#: src/unitmodel.cpp:227
 #, kde-format
 msgid "<br><b>Source path: </b>%1"
 msgstr "<br><b>Kildesti: </b>%1"
 
-#: src/unitmodel.cpp:233
+#: src/unitmodel.cpp:231
 #, kde-format
 msgid "<br><b>Activated: </b>"
 msgstr "<br><b>Aktiveret: </b>"
 
-#: src/unitmodel.cpp:243
+#: src/unitmodel.cpp:241
 #, kde-format
 msgid "<br><b>Deactivated: </b>"
 msgstr "<br><b>Deaktiveret: </b>"
 
-#: src/unitmodel.cpp:265
+#: src/unitmodel.cpp:263
 #, kde-format
 msgid "<b>Unit file: </b>"
 msgstr "<b>Enhedsfil: </b>"
 
-#: src/unitmodel.cpp:279
+#: src/unitmodel.cpp:277
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
 msgstr "<hr><b>Seneste logbeskeder:</b>"
 
-#: src/unitmodel.cpp:282
+#: src/unitmodel.cpp:280
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>Ingen logbeskeder fundet for denne enhed.</i>"
