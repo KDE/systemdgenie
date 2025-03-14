@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-11 00:43+0000\n"
-"PO-Revision-Date: 2025-02-19 13:09+0200\n"
+"PO-Revision-Date: 2025-03-12 16:27+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -69,22 +69,19 @@ msgid "Systemd user daemon configuration"
 msgstr "„Systemd“ lietotāja dēmona konfigurācija"
 
 #: src/configfilemodel.cpp:109
-#, fuzzy, kde-format
-#| msgid "File"
+#, kde-format
 msgctxt "@title:column"
 msgid "File"
 msgstr "Datne"
 
 #: src/configfilemodel.cpp:111
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgctxt "@title:column"
 msgid "Modified"
-msgstr "Modificēts"
+msgstr "Modificēta"
 
 #: src/configfilemodel.cpp:113
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:column"
 msgid "Description"
 msgstr "Apraksts"
@@ -123,10 +120,9 @@ msgid "Unable to authenticate/execute the action: %1"
 msgstr "Neizdodas autentificēt/izpildīt darbību: %1"
 
 #: src/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "SystemdGenie"
+#, kde-format
 msgid "systemdGenie"
-msgstr "SystemdGenie"
+msgstr "systemdGenie"
 
 #: src/main.cpp:36
 #, kde-format
@@ -135,11 +131,10 @@ msgstr ""
 "Pārvalda „systemd“ vienības, taimerus, sesijas un konfigurācijas datnes"
 
 #: src/main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2016, Ragnar Thomsen"
+#, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr "(c) 2016, Ragnar Thomsen"
+msgstr "(c) 2016 Ragnar Thomsen, %1 KDE kopiena"
 
 #: src/main.cpp:44
 #, kde-format
@@ -147,15 +142,14 @@ msgid "Ragnar Thomsen"
 msgstr "Ragnar Thomsen"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Maintainer"
+#, kde-format
 msgid "Former Maintainer"
-msgstr "Uzturētājs"
+msgstr "Kādreizējais uzturētājs"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: src/main.cpp:45
 #, kde-format
@@ -253,43 +247,37 @@ msgid "Unable to fetch sessions list: %1"
 msgstr "Neizdodas izgūt sesiju sarakstu: %1"
 
 #: src/timermodel.cpp:43
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "Taimeris"
 
 #: src/timermodel.cpp:45
-#, fuzzy, kde-format
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column"
 msgid "Next"
 msgstr "Nākamais"
 
 #: src/timermodel.cpp:47
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column"
 msgid "Left"
 msgstr "Atlicis"
 
 #: src/timermodel.cpp:49
-#, fuzzy, kde-format
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column"
 msgid "Last"
 msgstr "Pēdējais"
 
 #: src/timermodel.cpp:51
-#, fuzzy, kde-format
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column"
 msgid "Passed"
 msgstr "Pagājis"
 
 #: src/timermodel.cpp:53
-#, fuzzy, kde-format
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column"
 msgid "Activates"
 msgstr "Aktivitātes"
@@ -298,7 +286,7 @@ msgstr "Aktivitātes"
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
-msgstr ""
+msgstr "n/p"
 
 #: src/unitmodel.cpp:93
 #, kde-format
