@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-11 00:43+0000\n"
-"PO-Revision-Date: 2025-02-23 13:36+0100\n"
+"PO-Revision-Date: 2025-03-15 22:36+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -120,10 +120,9 @@ msgid "Unable to authenticate/execute the action: %1"
 msgstr "Ne eblas aŭtentikigi/efektivigi la agon: %1"
 
 #: src/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "SystemdGenie"
+#, kde-format
 msgid "systemdGenie"
-msgstr "SystemdGenie"
+msgstr "systemdGenie"
 
 #: src/main.cpp:36
 #, kde-format
@@ -131,11 +130,10 @@ msgid "Manage systemd units, timers, sessions and config files"
 msgstr "Administri systemd-unuojn, tempumilojn, seancojn kaj agorddosierojn"
 
 #: src/main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2016, Ragnar Thomsen"
+#, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr "(c) 2016, Ragnar Thomsen"
+msgstr "(c) 2016, Ragnar Thomsen %1 Komunumo de KDE"
 
 #: src/main.cpp:44
 #, kde-format
@@ -143,15 +141,14 @@ msgid "Ragnar Thomsen"
 msgstr "Ragnar Thomsen"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Maintainer"
+#, kde-format
 msgid "Former Maintainer"
-msgstr "Prizorganto"
+msgstr "Antaŭa Prizorganto"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: src/main.cpp:45
 #, kde-format
@@ -249,43 +246,37 @@ msgid "Unable to fetch sessions list: %1"
 msgstr "Ne eblas alpreni seancliston: %1"
 
 #: src/timermodel.cpp:43
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "Tempumilo"
 
 #: src/timermodel.cpp:45
-#, fuzzy, kde-format
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column"
 msgid "Next"
 msgstr "Sekva"
 
 #: src/timermodel.cpp:47
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column"
 msgid "Left"
 msgstr "Maldekstra"
 
 #: src/timermodel.cpp:49
-#, fuzzy, kde-format
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column"
 msgid "Last"
-msgstr "Laste"
+msgstr "Lasta"
 
 #: src/timermodel.cpp:51
-#, fuzzy, kde-format
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column"
 msgid "Passed"
 msgstr "Pasita"
 
 #: src/timermodel.cpp:53
-#, fuzzy, kde-format
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column"
 msgid "Activates"
 msgstr "Aktivigas"
@@ -294,7 +285,7 @@ msgstr "Aktivigas"
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
-msgstr ""
+msgstr "n/a"
 
 #: src/unitmodel.cpp:93
 #, kde-format
@@ -360,207 +351,3 @@ msgstr "<hr><b>Lastaj protokolaj enskriboj:</b>"
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>Neniaj protokoloj trovitaj por ĉi tiu unuo.</i>"
-
-#~ msgid "Unable to contact the systemd daemon. Quitting..."
-#~ msgstr "Ne eblas kontakti la systemd-demonon. Rezignante..."
-
-#~ msgid "User dbus not found. Support for user units disabled."
-#~ msgstr "Uzanto dbus ne trovita. Subteno por uzantunuoj malebligita."
-
-#~ msgid "All"
-#~ msgstr "Ĉiuj"
-
-#~ msgid "Services"
-#~ msgstr "Servoj"
-
-#~ msgid "Automounts"
-#~ msgstr "Aŭtomataj muntoj"
-
-#~ msgid "Devices"
-#~ msgstr "Aparatoj"
-
-#~ msgid "Mounts"
-#~ msgstr "Muntoj"
-
-#~ msgid "Paths"
-#~ msgstr "Vojetoj"
-
-#~ msgid "Scopes"
-#~ msgstr "Ampleksoj"
-
-#~ msgid "Slices"
-#~ msgstr "Tranĉaĵoj"
-
-#~ msgid "Sockets"
-#~ msgstr "Ingoj"
-
-#~ msgid "Swaps"
-#~ msgstr "Interŝanĝoj"
-
-#~ msgid "Targets"
-#~ msgstr "Celoj"
-
-#~ msgid "Timers"
-#~ msgstr "Tempigiloj"
-
-#~ msgctxt "First part of 'Total: %1, %2, %3'"
-#~ msgid "1 unit"
-#~ msgid_plural "%1 units"
-#~ msgstr[0] "1 unuo"
-#~ msgstr[1] "%1 unuoj"
-
-#~ msgctxt "Second part of 'Total: %1, %2, %3'"
-#~ msgid "1 active"
-#~ msgid_plural "%1 active"
-#~ msgstr[0] "1 aktiva"
-#~ msgstr[1] "%1 aktivaj"
-
-#~ msgctxt "Third part of 'Total: %1, %2, %3'"
-#~ msgid "1 displayed"
-#~ msgid_plural "%1 displayed"
-#~ msgstr[0] "1 montrita"
-#~ msgstr[1] "%1 montritaj"
-
-#~ msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
-#~ msgid "Total: %1, %2, %3"
-#~ msgstr "Sumoj: %1, %2, %3"
-
-#~ msgid "&Refresh"
-#~ msgstr "&Refreŝigi"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Refresh"
-#~ msgstr "Refreŝigi"
-
-#~ msgid "Start Unit"
-#~ msgstr "Startigi Unuon"
-
-#~ msgid "Stop Unit"
-#~ msgstr "Haltigi Unuon"
-
-#~ msgid "Reload Unit"
-#~ msgstr "Reŝargi Unuon"
-
-#~ msgid "Restart Unit"
-#~ msgstr "Restartigi Unuon"
-
-#~ msgid "Enable Unit"
-#~ msgstr "Ebligi Unuon"
-
-#~ msgid "Disable Unit"
-#~ msgstr "Malebligi Unuon"
-
-#~ msgid "Mask Unit"
-#~ msgstr "Maski Unuon"
-
-#~ msgid "Unmask Unit"
-#~ msgstr "Malmaski Unuon"
-
-#~ msgid "Re&load systemd"
-#~ msgstr "Re&ŝargi systemd"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Click to reload all unit files"
-#~ msgstr "Alklaku por reŝargi ĉiujn unuodosierojn"
-
-#~ msgid "Re-e&xecute systemd"
-#~ msgstr "Re-e&fektivigi systemd"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Click to re-execute the systemd daemon"
-#~ msgstr "Alklaku por reruligi la systemd-demonon"
-
-#~ msgid "Re&load user systemd"
-#~ msgstr "Re&ŝargi uzant-systemd"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Click to reload all user unit files"
-#~ msgstr "Alklaku por reŝargi ĉiujn unuodosierojn de uzantoj"
-
-#~ msgid "Re-e&xecute user systemd"
-#~ msgstr "Re-e&fektivigi uzant-systemd"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Click to re-execute the user systemd daemon"
-#~ msgstr "Alklaku por reruligi la uzantan systemd-demonon"
-
-#~ msgid "Edit Unit File…"
-#~ msgstr "Redakti Unuo-Dosieron…"
-
-#~ msgid "Edit Configuration File…"
-#~ msgstr "Redakti Agord-Dosieron…"
-
-#~ msgid "Open Man Page"
-#~ msgstr "Malfermi Manlibran Paĝon"
-
-#~ msgid "View Logs"
-#~ msgstr "Rigardi Protokolojn"
-
-#~ msgid "Activate Session"
-#~ msgstr "Aktivigi Seancon"
-
-#~ msgid "Terminate Session"
-#~ msgstr "Fini Seancon"
-
-#~ msgid "Lock Session"
-#~ msgstr "Ŝlosi Seancon"
-
-#~ msgid "Services Manager"
-#~ msgstr "Administranto de Servoj"
-
-#~ msgid "System Units"
-#~ msgstr "Sistemunuoj"
-
-#~ msgid "<html><head/><body><p>Filter unit types.</p></body></html>"
-#~ msgstr "<html><head/><body><p>Filtrilaj unuotipoj.</p></body></html>"
-
-#~ msgid ""
-#~ "<html><head/><body><p>Toggle hiding inactive units.</p></body></html>"
-#~ msgstr ""
-#~ "<html><head/><body><p>Baskuligi kaŝadon de neaktivaj unuoj.</p></body></"
-#~ "html>"
-
-#~ msgid "Hide inactive"
-#~ msgstr "Kaŝi neaktivajn"
-
-#~ msgid ""
-#~ "<html><head/><body><p>Toggle hiding unloaded units.</p></body></html>"
-#~ msgstr ""
-#~ "<html><head/><body><p>Baskuligi kaŝadon de neŝargitaj unuoj.</p></body></"
-#~ "html>"
-
-#~ msgid "Hide unloaded"
-#~ msgstr "Kaŝi malŝargitajn"
-
-#~ msgid "Overall stats:"
-#~ msgstr "Ĝeneralaj statistikoj:"
-
-#~ msgid "User Units"
-#~ msgstr "Uzant-Unuoj"
-
-#~ msgid "Config Files"
-#~ msgstr "Agordaj Dosieroj"
-
-#~ msgid "Sessions"
-#~ msgstr "Seancoj"
-
-#~ msgid "&File"
-#~ msgstr "&Dosiero"
-
-#~ msgid "&View"
-#~ msgstr "&Vido"
-
-#~ msgid "&Daemon"
-#~ msgstr "&Demono"
-
-#~ msgid "&Unit"
-#~ msgstr "&Unuo"
-
-#~ msgid "&Session"
-#~ msgstr "&Seanco"
-
-#~ msgid "Unit Toolbar"
-#~ msgstr "Unuo-Ilobreto"
-
-#~ msgid "Config File Toolbar"
-#~ msgstr "Agord-Dosiera Ilobreto"
