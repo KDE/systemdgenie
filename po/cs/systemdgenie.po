@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-11 00:43+0000\n"
 "PO-Revision-Date: 2021-08-20 12:53+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -69,22 +69,19 @@ msgid "Systemd user daemon configuration"
 msgstr ""
 
 #: src/configfilemodel.cpp:109
-#, fuzzy, kde-format
-#| msgid "File"
+#, kde-format
 msgctxt "@title:column"
 msgid "File"
 msgstr "Soubor"
 
 #: src/configfilemodel.cpp:111
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgctxt "@title:column"
 msgid "Modified"
 msgstr "Změněno"
 
 #: src/configfilemodel.cpp:113
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:column"
 msgid "Description"
 msgstr "Popis"
@@ -145,15 +142,14 @@ msgid "Ragnar Thomsen"
 msgstr "Ragnar Thomsen"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Maintainer"
+#, kde-format
 msgid "Former Maintainer"
-msgstr "Správce"
+msgstr "Bývalý správce"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: src/main.cpp:45
 #, kde-format
