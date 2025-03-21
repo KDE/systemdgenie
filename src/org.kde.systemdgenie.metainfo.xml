@@ -14,6 +14,7 @@
   <name xml:lang="ca-valencia">systemdGenie</name>
   <name xml:lang="es">systemdGenie</name>
   <name xml:lang="fr">systemdGenie</name>
+  <name xml:lang="gl">systemdGenie</name>
   <name xml:lang="he">systemdGenie</name>
   <name xml:lang="ia">systemdGenie</name>
   <name xml:lang="it">systemdGenie</name>
@@ -31,6 +32,7 @@
   <summary xml:lang="ca-valencia">Gestor de serveis del sistema</summary>
   <summary xml:lang="es">Gestor de servicios del sistema</summary>
   <summary xml:lang="fr">Gestionnaire de services du système</summary>
+  <summary xml:lang="gl">Xestor de servizos do sistema</summary>
   <summary xml:lang="he">מנהל שירותי מערכת</summary>
   <summary xml:lang="ia">Gerente de servicio de Systema</summary>
   <summary xml:lang="it">Gestore dei servizi di sistema</summary>
@@ -49,6 +51,7 @@
     <p xml:lang="ca-valencia">systemdGenie permet la gestió gràfica de les unitats de systemd, incloses les unitats d'usuari, i proporciona control sobre les sessions de «logind». També inclou un editor de text integrat que facilita la modificació dels fitxers d'unitats i de configuració.</p>
     <p xml:lang="es">systemdGenie permite la gestión gráfica de unidades de systemd, incluidas las del usuario, y proporciona control sobre las sesiones de logind. También incluye un editor de texto integrado para poder modificar con facilidad unidades y archivos de configuración.</p>
     <p xml:lang="fr">L'application systemdGenie permet la gestion graphique des unités pour le processus « systemd », y compris les unités utilisateur. Elle fournit un contrôle sur les sessions de connexion avec « logind ». Elle comprend également un éditeur de texte intégré pour une modification facile des fichiers d'unité et de configuration.</p>
+    <p xml:lang="gl">systemdGenie permite a xestión gráfica de unidades de systemd, incluídas unidades de persoa usuaria, e permite controlar sesións de logind. Tamén inclúe un editor de texto integrado para modificar facilmente ficheiros de unidades e de configuración.</p>
     <p xml:lang="he">systemdGenie מאפשר ניהול חזותי של יחידות systemd, כולל יחידות משתמש ומספק שליטה בהפעלות logind. הוא כולל גם עורך טקסט מובנה לעריכה פשוטה של קובצי יחידות והגדרות.</p>
     <p xml:lang="ia">systemdGenie permitte gerer graphicamente unitates de systemd, includente unitates de usator, e forni controlos sur sessiones de logind. Il anque include editor de texto per modificar facilmente unitates e files de configuration.</p>
     <p xml:lang="it">systemdGenie permette la gestione grafica dell unità (unit) di systemd, incluse le unità utente, e fornisce il controllo sulle sessioni di logind. Include anche un editor di testo integrato per una modifica facilitata delle unità e dei file di configurazione.</p>
