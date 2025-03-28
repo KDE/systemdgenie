@@ -26,6 +26,7 @@
   <name xml:lang="uk">SystemdGenie</name>
   <name xml:lang="x-test">xxsystemdGeniexx</name>
   <name xml:lang="zh-CN">systemdGenie</name>
+  <name xml:lang="zh-TW">systemd 精靈</name>
   <summary>System service manager</summary>
   <summary xml:lang="ar">مدير خدمات النظام</summary>
   <summary xml:lang="ca">Gestor de serveis del sistema</summary>
@@ -44,6 +45,7 @@
   <summary xml:lang="uk">Менеджер системних служб</summary>
   <summary xml:lang="x-test">xxSystem service managerxx</summary>
   <summary xml:lang="zh-CN">系统服务管理器</summary>
+  <summary xml:lang="zh-TW">系統服務管理員</summary>
   <description>
     <p>systemdGenie allows graphical management of systemd units, including user units, and provides control over logind sessions. It also includes an integrated text editor for easy modification of unit and configuration files. </p>
     <p xml:lang="ar">يتيح لك جني Systemd إدارة وحدات systemd بشكل رسومي، بما في ذلك وحدات المستخدم، ويوفر التحكم في جلسات تسجيل الدخول. كما يتضمن محرر نصي متكامل لتعديل ملفات الوحدات والضبط بسهولة.</p>
@@ -63,6 +65,7 @@
     <p xml:lang="uk">За допомогою systemdGenie можна керувати модулями systemd у графічному режимі, зокрема модулями користувача і сеансами logind. До програми також включено текстовий редактор для спрощення внесення змін до файлів модулів і налаштувань.</p>
     <p xml:lang="x-test">xxsystemdGenie allows graphical management of systemd units, including user units, and provides control over logind sessions. It also includes an integrated text editor for easy modification of unit and configuration files.xx</p>
     <p xml:lang="zh-CN">systemdGenie 支持图形化管理 systemd 单元，包括用户单元，并提供对 logind 会话的控制。它还集成了一个文本编辑器，方便对单元和配置文件进行修改。</p>
+    <p xml:lang="zh-TW">《systemd 精靈》提供 systemd 單元的圖形管理介面</p>
   </description>
   <url type="homepage">https://apps.kde.org/systemdgenie/</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=systemdGenie</url>
