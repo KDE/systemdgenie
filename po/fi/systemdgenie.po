@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-11 00:43+0000\n"
-"PO-Revision-Date: 2025-02-17 15:20+0200\n"
+"PO-Revision-Date: 2025-03-23 18:36+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -69,22 +69,19 @@ msgid "Systemd user daemon configuration"
 msgstr "Systemd:n käyttäjäpalvelun asetukset"
 
 #: src/configfilemodel.cpp:109
-#, fuzzy, kde-format
-#| msgid "File"
+#, kde-format
 msgctxt "@title:column"
 msgid "File"
 msgstr "Tiedosto"
 
 #: src/configfilemodel.cpp:111
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgctxt "@title:column"
 msgid "Modified"
-msgstr "Muutettu"
+msgstr "Muuttunut"
 
 #: src/configfilemodel.cpp:113
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:column"
 msgid "Description"
 msgstr "Kuvaus"
@@ -123,22 +120,21 @@ msgid "Unable to authenticate/execute the action: %1"
 msgstr "Ei voitu todentaa tai suorittaa toimintoa: %1"
 
 #: src/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "SystemdGenie"
+#, kde-format
 msgid "systemdGenie"
-msgstr "SystemdGenie"
+msgstr "systemdGenie"
 
 #: src/main.cpp:36
 #, kde-format
 msgid "Manage systemd units, timers, sessions and config files"
 msgstr ""
+"Hallinnoi systemd-yksiköitä, -ajastimia, -istuntoja ja -asetustiedostoja."
 
 #: src/main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2016, Ragnar Thomsen"
+#, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr "© 2016 Ragnar Thomsen"
+msgstr "© 2016 Ragnar Thomsen, %1 KDE-yhteisö"
 
 #: src/main.cpp:44
 #, kde-format
@@ -146,15 +142,14 @@ msgid "Ragnar Thomsen"
 msgstr "Ragnar Thomsen"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Maintainer"
+#, kde-format
 msgid "Former Maintainer"
-msgstr "Ylläpitäjä"
+msgstr "Aiempi ylläpitäjä"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: src/main.cpp:45
 #, kde-format
@@ -250,46 +245,40 @@ msgstr "<br><b>Luotu: </b>"
 #: src/sessionmodel.cpp:185
 #, kde-format
 msgid "Unable to fetch sessions list: %1"
-msgstr ""
+msgstr "Istuntoluettelon noutaminen epäonnistui: %1"
 
 #: src/timermodel.cpp:43
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "Ajastin"
 
 #: src/timermodel.cpp:45
-#, fuzzy, kde-format
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column"
 msgid "Next"
 msgstr "Seuraava"
 
 #: src/timermodel.cpp:47
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column"
 msgid "Left"
 msgstr "Jäljellä"
 
 #: src/timermodel.cpp:49
-#, fuzzy, kde-format
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column"
 msgid "Last"
 msgstr "Viimeisin"
 
 #: src/timermodel.cpp:51
-#, fuzzy, kde-format
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column"
 msgid "Passed"
 msgstr "Mennyt"
 
 #: src/timermodel.cpp:53
-#, fuzzy, kde-format
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column"
 msgid "Activates"
 msgstr "Aktivoi"
@@ -298,7 +287,7 @@ msgstr "Aktivoi"
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
-msgstr ""
+msgstr "ei käyt."
 
 #: src/unitmodel.cpp:93
 #, kde-format
