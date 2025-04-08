@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the systemdgenie package.
-# Shinjo Park <kde@peremen.name>, 2019, 2020.
+# SPDX-FileCopyrightText: 2019, 2020, 2025 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-11 00:43+0000\n"
-"PO-Revision-Date: 2020-04-06 23:39+0200\n"
+"PO-Revision-Date: 2025-04-07 23:40+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 19.04.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -68,22 +68,19 @@ msgid "Systemd user daemon configuration"
 msgstr "Systemd 사용자 데몬 설정"
 
 #: src/configfilemodel.cpp:109
-#, fuzzy, kde-format
-#| msgid "File"
+#, kde-format
 msgctxt "@title:column"
 msgid "File"
 msgstr "파일"
 
 #: src/configfilemodel.cpp:111
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgctxt "@title:column"
 msgid "Modified"
 msgstr "수정됨"
 
 #: src/configfilemodel.cpp:113
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:column"
 msgid "Description"
 msgstr "설명"
@@ -103,10 +100,9 @@ msgid "Editing %1"
 msgstr "%1 편집"
 
 #: src/editor.cpp:46
-#, fuzzy, kde-format
-#| msgid "Editing file: %1"
+#, kde-format
 msgid "Editing file: <code>%1</code>"
-msgstr "파일 편집: %1"
+msgstr "파일 편집: <code>%1</code>"
 
 #: src/editor.cpp:71
 #, kde-format
@@ -123,22 +119,20 @@ msgid "Unable to authenticate/execute the action: %1"
 msgstr "동작을 인증/실행할 수 없음: %1"
 
 #: src/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "SystemdGenie"
+#, kde-format
 msgid "systemdGenie"
-msgstr "SystemdGenie"
+msgstr "Systemd 지니"
 
 #: src/main.cpp:36
 #, kde-format
 msgid "Manage systemd units, timers, sessions and config files"
-msgstr ""
+msgstr "systemd 단위, 타이머, 세션, 설정 파일 관리"
 
 #: src/main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2016, Ragnar Thomsen"
+#, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr "(c) 2016, Ragnar Thomsen"
+msgstr "(c) 2016 Ragnar Thomsen, %1 KDE Community"
 
 #: src/main.cpp:44
 #, kde-format
@@ -146,15 +140,14 @@ msgid "Ragnar Thomsen"
 msgstr "Ragnar Thomsen"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Maintainer"
+#, kde-format
 msgid "Former Maintainer"
-msgstr "관리자"
+msgstr "이전 관리자"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: src/main.cpp:45
 #, kde-format
@@ -249,46 +242,40 @@ msgstr "<br><b>생성됨: </b>"
 #: src/sessionmodel.cpp:185
 #, kde-format
 msgid "Unable to fetch sessions list: %1"
-msgstr ""
+msgstr "세션 목록을 가져올 수 없음: %1"
 
 #: src/timermodel.cpp:43
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "타이머"
 
 #: src/timermodel.cpp:45
-#, fuzzy, kde-format
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column"
 msgid "Next"
 msgstr "다음"
 
 #: src/timermodel.cpp:47
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column"
 msgid "Left"
-msgstr "왼쪽"
+msgstr "남음"
 
 #: src/timermodel.cpp:49
-#, fuzzy, kde-format
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column"
 msgid "Last"
 msgstr "마지막"
 
 #: src/timermodel.cpp:51
-#, fuzzy, kde-format
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column"
 msgid "Passed"
 msgstr "통과함"
 
 #: src/timermodel.cpp:53
-#, fuzzy, kde-format
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column"
 msgid "Activates"
 msgstr "다음을 활성화함"
@@ -297,7 +284,7 @@ msgstr "다음을 활성화함"
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
-msgstr ""
+msgstr "없음"
 
 #: src/unitmodel.cpp:93
 #, kde-format
