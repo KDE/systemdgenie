@@ -99,10 +99,9 @@ msgid "Editing %1"
 msgstr "Úprava %1"
 
 #: src/editor.cpp:46
-#, fuzzy, kde-format
-#| msgid "Editing file: %1"
+#, kde-format
 msgid "Editing file: <code>%1</code>"
-msgstr "Upravuji soubor: %1"
+msgstr ""
 
 #: src/editor.cpp:71
 #, kde-format
@@ -119,10 +118,9 @@ msgid "Unable to authenticate/execute the action: %1"
 msgstr "Nelze ověřit/vykonat činnost: %1"
 
 #: src/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "SystemdGenie"
+#, kde-format
 msgid "systemdGenie"
-msgstr "SystemdGenie"
+msgstr ""
 
 #: src/main.cpp:36
 #, kde-format
@@ -130,11 +128,10 @@ msgid "Manage systemd units, timers, sessions and config files"
 msgstr ""
 
 #: src/main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2016, Ragnar Thomsen"
+#, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr "(c) 2016, Ragnar Thomsen"
+msgstr ""
 
 #: src/main.cpp:44
 #, kde-format
@@ -247,46 +244,40 @@ msgid "Unable to fetch sessions list: %1"
 msgstr ""
 
 #: src/timermodel.cpp:43
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column"
 msgid "Timer"
-msgstr "Časovač"
+msgstr ""
 
 #: src/timermodel.cpp:45
-#, fuzzy, kde-format
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column"
 msgid "Next"
-msgstr "Následující"
+msgstr ""
 
 #: src/timermodel.cpp:47
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column"
 msgid "Left"
-msgstr "Zbývá"
+msgstr ""
 
 #: src/timermodel.cpp:49
-#, fuzzy, kde-format
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column"
 msgid "Last"
-msgstr "Poslední"
+msgstr ""
 
 #: src/timermodel.cpp:51
-#, fuzzy, kde-format
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column"
 msgid "Passed"
-msgstr "Prošlo"
+msgstr ""
 
 #: src/timermodel.cpp:53
-#, fuzzy, kde-format
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column"
 msgid "Activates"
-msgstr "Aktivuje"
+msgstr ""
 
 #: src/timermodel.cpp:74 src/timermodel.cpp:99
 #, kde-format
@@ -358,158 +349,3 @@ msgstr ""
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr ""
-
-#~ msgid "All"
-#~ msgstr "Vše"
-
-#~ msgid "Services"
-#~ msgstr "Služby"
-
-#~ msgid "Devices"
-#~ msgstr "Zařízení"
-
-#~ msgid "Paths"
-#~ msgstr "Cesty"
-
-#~ msgid "Scopes"
-#~ msgstr "Rozsahy"
-
-#~ msgid "Sockets"
-#~ msgstr "Sokety"
-
-#~ msgid "Targets"
-#~ msgstr "Cíle"
-
-#~ msgid "Timers"
-#~ msgstr "Časovače"
-
-#~ msgctxt "First part of 'Total: %1, %2, %3'"
-#~ msgid "1 unit"
-#~ msgid_plural "%1 units"
-#~ msgstr[0] "1 jednotka"
-#~ msgstr[1] "%1 jednotky"
-#~ msgstr[2] "%1 jednotek"
-
-#~ msgctxt "Second part of 'Total: %1, %2, %3'"
-#~ msgid "1 active"
-#~ msgid_plural "%1 active"
-#~ msgstr[0] "1 aktivní"
-#~ msgstr[1] "%1 aktivní"
-#~ msgstr[2] "%1 aktivních"
-
-#~ msgctxt "Third part of 'Total: %1, %2, %3'"
-#~ msgid "1 displayed"
-#~ msgid_plural "%1 displayed"
-#~ msgstr[0] "1 zobrazen"
-#~ msgstr[1] "%1 zobrazeny"
-#~ msgstr[2] "%1 zobrazeno"
-
-#~ msgctxt "%1 is '%1 units' and %2 is '%2 active' and %3 is '%3 displayed'"
-#~ msgid "Total: %1, %2, %3"
-#~ msgstr "Celkem: %1, %2, %3"
-
-#~ msgid "&Refresh"
-#~ msgstr "O&bnovit"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Refresh"
-#~ msgstr "Obnovit"
-
-#~ msgid "Start Unit"
-#~ msgstr "Spustit jednotku"
-
-#~ msgid "Stop Unit"
-#~ msgstr "Zastavit jednotku"
-
-#~ msgid "Reload Unit"
-#~ msgstr "Znovu načíst jednotku"
-
-#~ msgid "Restart Unit"
-#~ msgstr "Restartovat jednotku"
-
-#~ msgid "Enable Unit"
-#~ msgstr "Povolit jednotku"
-
-#~ msgid "Disable Unit"
-#~ msgstr "Zakázat jednotku"
-
-#~ msgid "Mask Unit"
-#~ msgstr "Maskovat jednotku"
-
-#~ msgid "Unmask Unit"
-#~ msgstr "Odmaskovat jednotku"
-
-#~ msgid "Re&load systemd"
-#~ msgstr "Znovu načíst systemd"
-
-#~ msgid "Re-e&xecute systemd"
-#~ msgstr "Znovu spustit systemd"
-
-#~ msgid "Open Man Page"
-#~ msgstr "Otevřít manuálovou stránku"
-
-#~ msgid "Activate Session"
-#~ msgstr "Aktivovat sezení"
-
-#~ msgid "Terminate Session"
-#~ msgstr "Ukončit sezení"
-
-#~ msgid "Lock Session"
-#~ msgstr "Uzamknout sezení"
-
-#, fuzzy
-#~| msgid "Services"
-#~ msgid "Services Manager"
-#~ msgstr "Služby"
-
-#~ msgid "System Units"
-#~ msgstr "Systémové jednotky"
-
-#, fuzzy
-#~| msgid "Show inactive"
-#~ msgid "Hide inactive"
-#~ msgstr "Zobrazit neaktivní"
-
-#, fuzzy
-#~| msgid "Show unloaded"
-#~ msgid "Hide unloaded"
-#~ msgstr "Zobrazit nenačtené"
-
-#~ msgid "Overall stats:"
-#~ msgstr "Celkový přehled:"
-
-#~ msgid "User Units"
-#~ msgstr "Uživatelské jednotky"
-
-#~ msgid "Config Files"
-#~ msgstr "Soubory nastavení"
-
-#~ msgid "Sessions"
-#~ msgstr "Sezení"
-
-#~ msgid "&File"
-#~ msgstr "&Soubor"
-
-#~ msgid "&View"
-#~ msgstr "Po&hled"
-
-#~ msgid "&Daemon"
-#~ msgstr "&Démon"
-
-#~ msgid "&Unit"
-#~ msgstr "&Jednotka"
-
-#~ msgid "&Session"
-#~ msgstr "&Sezení"
-
-#~ msgid "Unit Toolbar"
-#~ msgstr "Panel nástrojů jednotky"
-
-#~ msgid "Config File Toolbar"
-#~ msgstr "Nástrojový panel konfiguračního souboru"
-
-#~ msgid "%1: Systemd daemon reloaded..."
-#~ msgstr "%1: Démon systemd byl znovu načten..."
-
-#~ msgid "Systemd management utility"
-#~ msgstr "Nástroj pro správu Systemd"
