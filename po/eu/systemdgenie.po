@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-11 00:43+0000\n"
-"PO-Revision-Date: 2025-01-28 18:26+0100\n"
+"PO-Revision-Date: 2025-06-08 11:53+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -28,12 +28,12 @@ msgstr "Iñigo Salvador Azurmendi"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "xalba@euskalnet.net"
+msgstr "xalba@ni.eus"
 
 #: src/configfilemodel.cpp:21
 #, kde-format
 msgid "Coredump generation and storage"
-msgstr "«Coredump» sortzea eta biltegiratzea"
+msgstr "Coredump sortzea eta biltegiratzea"
 
 #: src/configfilemodel.cpp:23
 #, kde-format
@@ -58,7 +58,7 @@ msgstr "Sareko izenen ebazpenaren konfigurazioa"
 #: src/configfilemodel.cpp:29
 #, kde-format
 msgid "Systemd daemon configuration"
-msgstr "«Systemd» daimona konfiguratzea"
+msgstr "Systemd daimona konfiguratzea"
 
 #: src/configfilemodel.cpp:30
 #, kde-format
@@ -71,25 +71,22 @@ msgid "Systemd user daemon configuration"
 msgstr "«Systemd» erabiltzaile daimona konfiguratzea"
 
 #: src/configfilemodel.cpp:109
-#, fuzzy, kde-format
-#| msgid "File"
+#, kde-format
 msgctxt "@title:column"
 msgid "File"
 msgstr "Fitxategia"
 
 #: src/configfilemodel.cpp:111
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgctxt "@title:column"
 msgid "Modified"
 msgstr "Aldatua"
 
 #: src/configfilemodel.cpp:113
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:column"
 msgid "Description"
-msgstr "Azalpena"
+msgstr "Deskribapena"
 
 #: src/configfilemodel.cpp:136
 #, kde-format
@@ -106,10 +103,9 @@ msgid "Editing %1"
 msgstr "%1 editatzea"
 
 #: src/editor.cpp:46
-#, fuzzy, kde-format
-#| msgid "Editing file: %1"
+#, kde-format
 msgid "Editing file: <code>%1</code>"
-msgstr "Fitxategia editatzea: %1"
+msgstr "Fitxategia editatzea: <code>%1</code>"
 
 #: src/editor.cpp:71
 #, kde-format
@@ -117,31 +113,31 @@ msgid ""
 "Failed to open the unit file:\n"
 "%1"
 msgstr ""
-"Huts egin du unitate fitxategi irekitzea:\n"
+"Unitate-fitxategi irekitzea huts egin du:\n"
 "%1"
 
 #: src/editor.cpp:92 src/sessionmodel.cpp:265 src/unitmodel.cpp:430
 #, kde-format
 msgid "Unable to authenticate/execute the action: %1"
-msgstr "Ez da ekintza autentifikatu/exekutatzeko gai: %1"
+msgstr "Ezin da ekintza autentifikatzeko/exekutatzeko gai: %1"
 
 #: src/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "SystemdGenie"
+#, kde-format
 msgid "systemdGenie"
-msgstr "SystemdGenie"
+msgstr "systemdGenie"
 
 #: src/main.cpp:36
 #, kde-format
 msgid "Manage systemd units, timers, sessions and config files"
 msgstr ""
+"Kudeatu systemd unitateak, tenporizadoreak, saioak eta konfiguratzeko "
+"fitxategiak"
 
 #: src/main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2016, Ragnar Thomsen"
+#, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr "(c) 2016, Ragnar Thomsen"
+msgstr "(c) 2016, Ragnar Thomsen, %1 KDE komunitatea"
 
 #: src/main.cpp:44
 #, kde-format
@@ -149,15 +145,14 @@ msgid "Ragnar Thomsen"
 msgstr "Ragnar Thomsen"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Maintainer"
+#, kde-format
 msgid "Former Maintainer"
-msgstr "Mantentzailea"
+msgstr "Aurreko mantentzailea"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: src/main.cpp:45
 #, kde-format
@@ -252,55 +247,49 @@ msgstr "<br><b>Sortua: </b>"
 #: src/sessionmodel.cpp:185
 #, kde-format
 msgid "Unable to fetch sessions list: %1"
-msgstr ""
+msgstr "Ez da saio-zerrenda ekartzeko gai: %1"
 
 #: src/timermodel.cpp:43
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "Tenporizadorea"
 
 #: src/timermodel.cpp:45
-#, fuzzy, kde-format
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column"
 msgid "Next"
 msgstr "Hurrengoa"
 
 #: src/timermodel.cpp:47
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column"
 msgid "Left"
 msgstr "Falta dena"
 
 #: src/timermodel.cpp:49
-#, fuzzy, kde-format
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column"
 msgid "Last"
 msgstr "Azkena"
 
 #: src/timermodel.cpp:51
-#, fuzzy, kde-format
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column"
 msgid "Passed"
-msgstr "Pasa du"
+msgstr "Igarota"
 
 #: src/timermodel.cpp:53
-#, fuzzy, kde-format
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column"
 msgid "Activates"
-msgstr "Aktibo"
+msgstr "Aktibatzen du"
 
 #: src/timermodel.cpp:74 src/timermodel.cpp:99
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
-msgstr ""
+msgstr "e/e"
 
 #: src/unitmodel.cpp:93
 #, kde-format
@@ -310,7 +299,7 @@ msgstr "Unitatea"
 #: src/unitmodel.cpp:95
 #, kde-format
 msgid "Load State"
-msgstr "Zama egoera"
+msgstr "Zamaren egoera"
 
 #: src/unitmodel.cpp:97
 #, kde-format
