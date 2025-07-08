@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Alois Spitzbart <spitz234@hotmail.com>
 # Burkhard Lück <lueck@hube-lueck.de>, 2015, 2016, 2017, 2018, 2019, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2016.
 msgid ""
@@ -5,14 +6,15 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-11 00:43+0000\n"
-"PO-Revision-Date: 2021-05-28 05:19+0200\n"
-"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"PO-Revision-Date: 2025-06-29 15:13+0200\n"
+"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -65,22 +67,19 @@ msgid "Systemd user daemon configuration"
 msgstr ""
 
 #: src/configfilemodel.cpp:109
-#, fuzzy, kde-format
-#| msgid "File"
+#, kde-format
 msgctxt "@title:column"
 msgid "File"
 msgstr "Datei"
 
 #: src/configfilemodel.cpp:111
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgctxt "@title:column"
 msgid "Modified"
 msgstr "Geändert"
 
 #: src/configfilemodel.cpp:113
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:column"
 msgid "Description"
 msgstr "Beschreibung"
@@ -100,10 +99,9 @@ msgid "Editing %1"
 msgstr "%1 wird bearbeitet"
 
 #: src/editor.cpp:46
-#, fuzzy, kde-format
-#| msgid "Editing file: %1"
+#, kde-format
 msgid "Editing file: <code>%1</code>"
-msgstr "Datei %1 wird bearbeitet"
+msgstr "Datei bearbeiten: <code>%1</code>"
 
 #: src/editor.cpp:71
 #, kde-format
@@ -111,7 +109,7 @@ msgid ""
 "Failed to open the unit file:\n"
 "%1"
 msgstr ""
-"Das Öffnen der Einheitendatei ist fehlgeschlagen:\n"
+"Das Öffnen der Unit-Datei ist fehlgeschlagen:\n"
 "%1"
 
 #: src/editor.cpp:92 src/sessionmodel.cpp:265 src/unitmodel.cpp:430
@@ -121,10 +119,9 @@ msgstr ""
 "Authentifizierung nicht möglich, Aktion kann nicht ausgeführt werden: %1"
 
 #: src/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "SystemdGenie"
+#, kde-format
 msgid "systemdGenie"
-msgstr "SystemdGenie"
+msgstr "systemdGenie"
 
 #: src/main.cpp:36
 #, kde-format
@@ -132,11 +129,10 @@ msgid "Manage systemd units, timers, sessions and config files"
 msgstr ""
 
 #: src/main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2016, Ragnar Thomsen"
+#, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr "(c) 2016, Ragnar Thomsen"
+msgstr "© 2016, Ragnar Thomsen, %1 KDE-Gemeinschaft"
 
 #: src/main.cpp:44
 #, kde-format
@@ -144,15 +140,14 @@ msgid "Ragnar Thomsen"
 msgstr "Ragnar Thomsen"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Maintainer"
+#, kde-format
 msgid "Former Maintainer"
-msgstr "Betreuer"
+msgstr "Ehemaliger Betreuer"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: src/main.cpp:45
 #, kde-format
@@ -248,45 +243,40 @@ msgstr "<br><b>Erstellt: </b>"
 #: src/sessionmodel.cpp:185
 #, kde-format
 msgid "Unable to fetch sessions list: %1"
-msgstr ""
+msgstr "Sitzungsliste kann nicht geholt werden: %1"
 
 #: src/timermodel.cpp:43
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column"
 msgid "Timer"
-msgstr "Zeitmesser"
+msgstr "Timer"
 
 #: src/timermodel.cpp:45
-#, fuzzy, kde-format
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column"
 msgid "Next"
-msgstr "Nächster"
+msgstr "Nächstes Mal"
 
 #: src/timermodel.cpp:47
 #, kde-format
 msgctxt "@title:column"
 msgid "Left"
-msgstr ""
+msgstr "Verbleibend"
 
 #: src/timermodel.cpp:49
-#, fuzzy, kde-format
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column"
 msgid "Last"
-msgstr "Letzter"
+msgstr "Zuletzt"
 
 #: src/timermodel.cpp:51
-#, fuzzy, kde-format
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column"
 msgid "Passed"
-msgstr "Erfolgreich"
+msgstr "Vergangen"
 
 #: src/timermodel.cpp:53
-#, fuzzy, kde-format
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column"
 msgid "Activates"
 msgstr "Aktiviert"
@@ -295,12 +285,12 @@ msgstr "Aktiviert"
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
-msgstr ""
+msgstr "n/v"
 
 #: src/unitmodel.cpp:93
 #, kde-format
 msgid "Unit"
-msgstr "Einheit"
+msgstr "Unit"
 
 #: src/unitmodel.cpp:95
 #, kde-format
@@ -315,7 +305,7 @@ msgstr "Aktivierungsstatus"
 #: src/unitmodel.cpp:99
 #, kde-format
 msgid "Unit State"
-msgstr "Einheiten-Status"
+msgstr "Unit-Status"
 
 #: src/unitmodel.cpp:215
 #, kde-format
@@ -325,12 +315,12 @@ msgstr "<b>Beschreibung: </b>"
 #: src/unitmodel.cpp:220
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
-msgstr "<br><b>Einheitendatei: </b>%1"
+msgstr "<br><b>Unit-Datei: </b>%1"
 
 #: src/unitmodel.cpp:221 src/unitmodel.cpp:268
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
-msgstr "<br><b>Einheitendateistatus: </b>"
+msgstr "<br><b>Unit-Dateistatus: </b>"
 
 #: src/unitmodel.cpp:227
 #, kde-format
@@ -350,7 +340,7 @@ msgstr "<br><b>Deaktiviert: </b>"
 #: src/unitmodel.cpp:263
 #, kde-format
 msgid "<b>Unit file: </b>"
-msgstr "<b>Einheitendatei: </b>"
+msgstr "<b>Unit-Datei: </b>"
 
 #: src/unitmodel.cpp:277
 #, kde-format
@@ -360,7 +350,7 @@ msgstr "<hr><b>Letzte Protokolleinträge:</b>"
 #: src/unitmodel.cpp:280
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
-msgstr "<br><i>Keine Protokolleinträge für diese Einheit gefunden.</i>"
+msgstr "<br><i>Keine Protokolleinträge für diese Unit gefunden.</i>"
 
 #~ msgid "Unable to contact the systemd daemon. Quitting..."
 #~ msgstr ""
