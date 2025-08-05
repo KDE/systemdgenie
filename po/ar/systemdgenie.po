@@ -154,7 +154,7 @@ msgstr "كارل شوان"
 #: src/main.cpp:45
 #, kde-format
 msgid "Maintainer"
-msgstr "المصين"
+msgstr "الصائن"
 
 #: src/sessionmodel.cpp:72
 #, kde-format
@@ -346,7 +346,7 @@ msgstr "<b>ملفّ الوحدة: </b>"
 #: src/unitmodel.cpp:277
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
-msgstr "<hr><b>مدخلات السّجلّ الأخيرة:</b>"
+msgstr "<hr><b>مدخلات السجل الأخيرة:</b>"
 
 #: src/unitmodel.cpp:280
 #, kde-format
