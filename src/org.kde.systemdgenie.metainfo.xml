@@ -12,6 +12,7 @@
   <name xml:lang="ar">جني Systemd</name>
   <name xml:lang="ca">systemdGenie</name>
   <name xml:lang="ca-valencia">systemdGenie</name>
+  <name xml:lang="cs">systemdGenie</name>
   <name xml:lang="de">systemdGenie</name>
   <name xml:lang="es">systemdGenie</name>
   <name xml:lang="eu">systemdGenie</name>
@@ -36,6 +37,7 @@
   <summary xml:lang="ar">مدير خدمات النظام</summary>
   <summary xml:lang="ca">Gestor de serveis del sistema</summary>
   <summary xml:lang="ca-valencia">Gestor de serveis del sistema</summary>
+  <summary xml:lang="cs">Správce systémových služeb</summary>
   <summary xml:lang="de">Systemservicemanager</summary>
   <summary xml:lang="es">Gestor de servicios del sistema</summary>
   <summary xml:lang="eu">Sistemaren zerbitzu kudeatzailea</summary>
