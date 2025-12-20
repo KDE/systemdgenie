@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Vít Pelčák <vit@pelcak.org>, 2015, 2016, 2017, 2018.
+# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2025 Vít Pelčák <vit@pelcak.org>
 # Vit Pelcak <vit@pelcak.org>, 2021.
 #
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:55+0000\n"
-"PO-Revision-Date: 2021-08-20 12:53+0200\n"
+"PO-Revision-Date: 2025-12-17 11:32+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.08.0\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -101,7 +101,7 @@ msgstr "Úprava %1"
 #: src/editor.cpp:46
 #, kde-format
 msgid "Editing file: <code>%1</code>"
-msgstr ""
+msgstr "Upravuji soubor: <code>%1</code>"
 
 #: src/editor.cpp:71
 #, kde-format
@@ -120,7 +120,7 @@ msgstr "Nelze ověřit/vykonat činnost: %1"
 #: src/main.cpp:34
 #, kde-format
 msgid "systemdGenie"
-msgstr ""
+msgstr "systemdGenie"
 
 #: src/main.cpp:36
 #, kde-format
@@ -131,7 +131,7 @@ msgstr ""
 #, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr ""
+msgstr "(c) 2016 Ragnar Thomsen, %1 Komunita KDE"
 
 #: src/main.cpp:44
 #, kde-format
@@ -241,49 +241,49 @@ msgstr "<br><b>Vytvořeno: </b>"
 #: src/sessionmodel.cpp:185
 #, kde-format
 msgid "Unable to fetch sessions list: %1"
-msgstr ""
+msgstr "Nelze načíst seznam sezení: %1"
 
 #: src/timermodel.cpp:43
 #, kde-format
 msgctxt "@title:column"
 msgid "Timer"
-msgstr ""
+msgstr "Časovač"
 
 #: src/timermodel.cpp:45
 #, kde-format
 msgctxt "@title:column"
 msgid "Next"
-msgstr ""
+msgstr "Následující"
 
 #: src/timermodel.cpp:47
 #, kde-format
 msgctxt "@title:column"
 msgid "Left"
-msgstr ""
+msgstr "Zbývá"
 
 #: src/timermodel.cpp:49
 #, kde-format
 msgctxt "@title:column"
 msgid "Last"
-msgstr ""
+msgstr "Poslední"
 
 #: src/timermodel.cpp:51
 #, kde-format
 msgctxt "@title:column"
 msgid "Passed"
-msgstr ""
+msgstr "Prošlo"
 
 #: src/timermodel.cpp:53
 #, kde-format
 msgctxt "@title:column"
 msgid "Activates"
-msgstr ""
+msgstr "Aktivuje"
 
 #: src/timermodel.cpp:74 src/timermodel.cpp:99
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
-msgstr ""
+msgstr "nedostupné"
 
 #: src/unitmodel.cpp:93
 #, kde-format
