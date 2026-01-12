@@ -114,7 +114,7 @@ msgid ""
 "Failed to open the unit file:\n"
 "%1"
 msgstr ""
-"No s'ha pogut obrir el fitxer de la unitat:\n"
+"Ha fallat mentre s'obria el fitxer de la unitat:\n"
 "%1"
 
 #: src/editor.cpp:92 src/sessionmodel.cpp:265 src/unitmodel.cpp:430
@@ -198,7 +198,7 @@ msgstr "<b>TV:</b> %1"
 #: src/sessionmodel.cpp:123
 #, kde-format
 msgid "<br><b>Remote host:</b> %1"
-msgstr "<br><b>Màquina remota:</b> %1"
+msgstr "<br><b>Amfitrió remot:</b> %1"
 
 #: src/sessionmodel.cpp:124
 #, kde-format
