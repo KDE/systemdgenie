@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the systemdgenie package.
-# Sergiu Bivol <sergiu@cip.md>, 2024.
+# SPDX-FileCopyrightText: 2024, 2026 Sergiu Bivol <sergiu@cip.md>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:55+0000\n"
-"PO-Revision-Date: 2024-02-27 21:12+0000\n"
+"PO-Revision-Date: 2026-04-01 15:07+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -69,22 +69,19 @@ msgid "Systemd user daemon configuration"
 msgstr ""
 
 #: src/configfilemodel.cpp:109
-#, fuzzy, kde-format
-#| msgid "File"
+#, kde-format
 msgctxt "@title:column"
 msgid "File"
 msgstr "Fișier"
 
 #: src/configfilemodel.cpp:111
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgctxt "@title:column"
 msgid "Modified"
 msgstr "Modificat"
 
 #: src/configfilemodel.cpp:113
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:column"
 msgid "Description"
 msgstr "Descriere"
@@ -99,12 +96,12 @@ msgstr ""
 #: src/editor.cpp:36
 #, kde-format
 msgid "Editing %1"
-msgstr ""
+msgstr "Se modifică %1"
 
 #: src/editor.cpp:46
 #, kde-format
 msgid "Editing file: <code>%1</code>"
-msgstr ""
+msgstr "Se modifică fișierul: <code>%1</code>"
 
 #: src/editor.cpp:71
 #, kde-format
@@ -119,22 +116,22 @@ msgid "Unable to authenticate/execute the action: %1"
 msgstr "Imposibil de autentificat/executat acțiunea: %1"
 
 #: src/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "SystemdGenie"
+#, kde-format
 msgid "systemdGenie"
-msgstr "SystemdGenie"
+msgstr "systemdGenie"
 
 #: src/main.cpp:36
 #, kde-format
 msgid "Manage systemd units, timers, sessions and config files"
 msgstr ""
+"Gestionează unități systemd, temporizatoare, sesiuni și fișiere de "
+"configurare"
 
 #: src/main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2016, Ragnar Thomsen"
+#, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr "(c) 2016, Ragnar Thomsen"
+msgstr "(c) 2016 Ragnar Thomsen, %1 Comunitatea KDE"
 
 #: src/main.cpp:44
 #, kde-format
@@ -142,15 +139,14 @@ msgid "Ragnar Thomsen"
 msgstr "Ragnar Thomsen"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Maintainer"
+#, kde-format
 msgid "Former Maintainer"
-msgstr "Responsabil"
+msgstr "Fostul responsabil"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: src/main.cpp:45
 #, kde-format
@@ -190,57 +186,57 @@ msgstr "Id. scaun"
 #: src/sessionmodel.cpp:119
 #, kde-format
 msgid "<b>VT:</b> %1"
-msgstr ""
+msgstr "<b>VT:</b> %1"
 
 #: src/sessionmodel.cpp:123
 #, kde-format
 msgid "<br><b>Remote host:</b> %1"
-msgstr ""
+msgstr "<br><b>Gazda distantă:</b> %1"
 
 #: src/sessionmodel.cpp:124
 #, kde-format
 msgid "<br><b>Remote user:</b> %1"
-msgstr ""
+msgstr "<br><b>Utilizatorul distant:<b> %1"
 
 #: src/sessionmodel.cpp:126
 #, kde-format
 msgid "<br><b>Service:</b> %1"
-msgstr ""
+msgstr "<br><b>Serviciu:</b> %1"
 
 #: src/sessionmodel.cpp:127
 #, kde-format
 msgid "<br><b>Leader (PID):</b> %1"
-msgstr ""
+msgstr "<br><b>Lider (PID):</b> %1"
 
 #: src/sessionmodel.cpp:130
 #, kde-format
 msgid "<br><b>Type:</b> %1"
-msgstr ""
+msgstr "<br><b>Tip:</b> %1"
 
 #: src/sessionmodel.cpp:132
 #, kde-format
 msgid " (display %1)"
-msgstr ""
+msgstr " (afișaj %1)"
 
 #: src/sessionmodel.cpp:141
 #, kde-format
 msgid "<br><b>Class:</b> %1"
-msgstr ""
+msgstr "<br><b>Clasă:</b> %1"
 
 #: src/sessionmodel.cpp:142
 #, kde-format
 msgid "<br><b>State:</b> %1"
-msgstr ""
+msgstr "<br><b>Stare:</b> %1"
 
 #: src/sessionmodel.cpp:143
 #, kde-format
 msgid "<br><b>Scope:</b> %1"
-msgstr ""
+msgstr "<br><b>Domeniu:</b> %1"
 
 #: src/sessionmodel.cpp:145
 #, kde-format
 msgid "<br><b>Created: </b>"
-msgstr ""
+msgstr "<br><b>Creat: </b>"
 
 #: src/sessionmodel.cpp:185
 #, kde-format
@@ -248,43 +244,37 @@ msgid "Unable to fetch sessions list: %1"
 msgstr ""
 
 #: src/timermodel.cpp:43
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "Temporizator"
 
 #: src/timermodel.cpp:45
-#, fuzzy, kde-format
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column"
 msgid "Next"
 msgstr "Următor"
 
 #: src/timermodel.cpp:47
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column"
 msgid "Left"
 msgstr "Rămas"
 
 #: src/timermodel.cpp:49
-#, fuzzy, kde-format
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column"
 msgid "Last"
 msgstr "Ultimul"
 
 #: src/timermodel.cpp:51
-#, fuzzy, kde-format
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column"
 msgid "Passed"
 msgstr "Trecut"
 
 #: src/timermodel.cpp:53
-#, fuzzy, kde-format
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column"
 msgid "Activates"
 msgstr "Activează"
@@ -293,12 +283,12 @@ msgstr "Activează"
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
-msgstr ""
+msgstr "indisp."
 
 #: src/unitmodel.cpp:93
 #, kde-format
 msgid "Unit"
-msgstr ""
+msgstr "Unitate"
 
 #: src/unitmodel.cpp:95
 #, kde-format
@@ -338,12 +328,12 @@ msgstr ""
 #: src/unitmodel.cpp:231
 #, kde-format
 msgid "<br><b>Activated: </b>"
-msgstr ""
+msgstr "<br><b>Activat: </b>"
 
 #: src/unitmodel.cpp:241
 #, kde-format
 msgid "<br><b>Deactivated: </b>"
-msgstr ""
+msgstr "<br><b>Dezactivat: </b>"
 
 #: src/unitmodel.cpp:263
 #, kde-format
