@@ -28,6 +28,7 @@
   <name xml:lang="lv">systemdGenie</name>
   <name xml:lang="nl">systemdGenie</name>
   <name xml:lang="pt-BR">systemdGenie</name>
+  <name xml:lang="ro">systemdGenie</name>
   <name xml:lang="ru">systemdGenie</name>
   <name xml:lang="sl">systemdGenie</name>
   <name xml:lang="sv">systemdGenie</name>
@@ -55,6 +56,7 @@
   <summary xml:lang="lv">Sistēmas servisu pārvaldnieks</summary>
   <summary xml:lang="nl">Beheerder van systeemservices</summary>
   <summary xml:lang="pt-BR">Gerenciador de serviços do sistema</summary>
+  <summary xml:lang="ro">Gestionar pentru servicii de sistem</summary>
   <summary xml:lang="ru">Диспетчер системных служб</summary>
   <summary xml:lang="sl">Upravljalnik storitev sistema</summary>
   <summary xml:lang="sv">Systemtjänsthanterare</summary>
@@ -82,6 +84,7 @@
     <p xml:lang="lv">„systemdGenie“ ļauj no grafiskās saskarnes pārvaldīt „systemd“ vienības, tostarp lietotāju vienības, kā ļauj kontrolēt „logind“ sesijas. Tāpat šī programma satur iebūvētu teksta redaktoru, ļaujot ērti rediģēt vienības un konfigurācijas datnes.</p>
     <p xml:lang="nl">systemdGenie biedt grafisch beheer van systemd-eenheden, inclusief gebruikerseenheden en levert controle over logind-sessies. Het omvat ook een geïntegreerde tekstbewerker voor gemakkelijk modificeren van eenheid- en configuratiebestanden.</p>
     <p xml:lang="pt-BR">O systemdGenie permite o gerenciamento gráfico de unidades systemd, incluindo unidades de usuário, e fornece controle sobre sessões de logind. Ele também inclui um editor de texto integrado para facilitar a modificação de unidades e arquivos de configuração.</p>
+    <p xml:lang="ro">systemdGenie permite gestiunea grafică a unităților systemd, inclusiv a celor de utilizator, și oferă control asupra sesiunilor logind. Acesta include și un redactor de text integrat pentru modificarea ușoară a fișierelor cu unități și a celor de configurare.</p>
     <p xml:lang="ru">systemdGenie предоставляет графическое управление модулями systemd, включая пользовательские модули, а также управление сеансами logind. Также включён встроенный текстовый редактор для удобного изменения модулей и файлов конфигурации.</p>
     <p xml:lang="sl">systemdGenie omogoča grafično upravljanje sistemskih enot, vključno z enoto uporabnika in zagotavlja nadzor nad sejami logind. Vključuje tudi vgrajen urejevalnik besedil za enostavno spreminjanje enot in konfiguracijskih datotek.</p>
     <p xml:lang="sv">systemdGenie tillåter grafisk hantering av systemd-enheter, inklusive användarenheter, och ger kontroll av logind-sessioner. Det inkluderar också en integrerad texteditor för enkel modifiering av enheter och inställningsfiler.</p>
