@@ -12,8 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -66,22 +66,19 @@ msgid "Systemd user daemon configuration"
 msgstr ""
 
 #: src/configfilemodel.cpp:109
-#, fuzzy, kde-format
-#| msgid "File"
+#, kde-format
 msgctxt "@title:column"
 msgid "File"
 msgstr "Súbor"
 
 #: src/configfilemodel.cpp:111
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgctxt "@title:column"
 msgid "Modified"
-msgstr "Zmenené"
+msgstr "Modified"
 
 #: src/configfilemodel.cpp:113
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:column"
 msgid "Description"
 msgstr "Popis"
@@ -99,10 +96,9 @@ msgid "Editing %1"
 msgstr "Editovanie %1"
 
 #: src/editor.cpp:46
-#, fuzzy, kde-format
-#| msgid "Editing %1"
+#, kde-format
 msgid "Editing file: <code>%1</code>"
-msgstr "Upravujem 1 súbor"
+msgstr ""
 
 #: src/editor.cpp:71
 #, kde-format
@@ -117,8 +113,7 @@ msgid "Unable to authenticate/execute the action: %1"
 msgstr "Nepodarilo sa overiť/spustiť akciu: %1"
 
 #: src/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "kcmsystemd"
+#, kde-format
 msgid "systemdGenie"
 msgstr "kcmsystemd"
 
@@ -128,11 +123,10 @@ msgid "Manage systemd units, timers, sessions and config files"
 msgstr ""
 
 #: src/main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2016, Ragnar Thomsen"
+#, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr "(c) 2016, Ragnar Thomsen"
+msgstr ""
 
 #: src/main.cpp:44
 #, kde-format
@@ -140,15 +134,14 @@ msgid "Ragnar Thomsen"
 msgstr "Ragnar Thomsen"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Maintainer"
+#, kde-format
 msgid "Former Maintainer"
-msgstr "Správca"
+msgstr "Pôvodný správca"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: src/main.cpp:45
 #, kde-format
@@ -206,8 +199,7 @@ msgid "<br><b>Service:</b> %1"
 msgstr "<br><b>Služba:</b> %1"
 
 #: src/sessionmodel.cpp:127
-#, fuzzy, kde-format
-#| msgid "<br><b>State:</b> %1"
+#, kde-format
 msgid "<br><b>Leader (PID):</b> %1"
 msgstr "<br><b>Stav:</b> %1"
 
@@ -247,36 +239,31 @@ msgid "Unable to fetch sessions list: %1"
 msgstr ""
 
 #: src/timermodel.cpp:43
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column"
 msgid "Timer"
 msgstr "Časovač"
 
 #: src/timermodel.cpp:45
-#, fuzzy, kde-format
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column"
 msgid "Next"
 msgstr "Ďalej"
 
 #: src/timermodel.cpp:47
-#, fuzzy, kde-format
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column"
 msgid "Left"
 msgstr "Vľavo"
 
 #: src/timermodel.cpp:49
-#, fuzzy, kde-format
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column"
 msgid "Last"
 msgstr "Posledný"
 
 #: src/timermodel.cpp:51
-#, fuzzy, kde-format
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column"
 msgid "Passed"
 msgstr "Úspešné"
@@ -285,13 +272,13 @@ msgstr "Úspešné"
 #, kde-format
 msgctxt "@title:column"
 msgid "Activates"
-msgstr ""
+msgstr "Activates"
 
 #: src/timermodel.cpp:74 src/timermodel.cpp:99
 #, kde-format
 msgctxt "invalid"
 msgid "n/a"
-msgstr ""
+msgstr "n/a"
 
 #: src/unitmodel.cpp:93
 #, kde-format
@@ -299,19 +286,17 @@ msgid "Unit"
 msgstr "Jednotka"
 
 #: src/unitmodel.cpp:95
-#, fuzzy, kde-format
-#| msgid "State"
+#, kde-format
 msgid "Load State"
 msgstr "Stav"
 
 #: src/unitmodel.cpp:97
 #, kde-format
 msgid "Active State"
-msgstr ""
+msgstr "Active State"
 
 #: src/unitmodel.cpp:99
-#, fuzzy, kde-format
-#| msgid "State"
+#, kde-format
 msgid "Unit State"
 msgstr "Stav"
 
@@ -321,10 +306,9 @@ msgid "<b>Description: </b>"
 msgstr "<b>Popis: </b>"
 
 #: src/unitmodel.cpp:220
-#, fuzzy, kde-format
-#| msgid "<br><b>Activated: </b>"
+#, kde-format
 msgid "<br><b>Unit file: </b>%1"
-msgstr "<br><b>Aktivované: </b>"
+msgstr ""
 
 #: src/unitmodel.cpp:221 src/unitmodel.cpp:268
 #, kde-format
@@ -332,8 +316,7 @@ msgid "<br><b>Unit file state: </b>"
 msgstr ""
 
 #: src/unitmodel.cpp:227
-#, fuzzy, kde-format
-#| msgid "<br><b>Service:</b> %1"
+#, kde-format
 msgid "<br><b>Source path: </b>%1"
 msgstr "<br><b>Služba:</b> %1"
 
@@ -348,8 +331,7 @@ msgid "<br><b>Deactivated: </b>"
 msgstr "<br><b>Deacktivované: </b>"
 
 #: src/unitmodel.cpp:263
-#, fuzzy, kde-format
-#| msgid "<b>Description: </b>"
+#, kde-format
 msgid "<b>Unit file: </b>"
 msgstr "<b>Popis: </b>"
 
@@ -432,22 +414,18 @@ msgstr ""
 #~ msgstr "Obnoviť"
 
 #, fuzzy
-#~| msgid "Unit"
 #~ msgid "Stop Unit"
 #~ msgstr "Jednotka"
 
 #, fuzzy
-#~| msgid "Unit"
 #~ msgid "Mask Unit"
 #~ msgstr "Jednotka"
 
 #, fuzzy
-#~| msgid "Configuration file:"
 #~ msgid "Edit Unit File…"
 #~ msgstr "Konfiguračný súbor:"
 
 #, fuzzy
-#~| msgid "Configuration file:"
 #~ msgid "Edit Configuration File…"
 #~ msgstr "Konfiguračný súbor:"
 
@@ -455,29 +433,22 @@ msgstr ""
 #~ msgstr "Zamknúť sedenie"
 
 #, fuzzy
-#~| msgid "Services"
 #~ msgid "Services Manager"
 #~ msgstr "Služby"
 
 #, fuzzy
-#~| msgid "Units"
 #~ msgid "System Units"
 #~ msgstr "Jednotky"
 
 #, fuzzy
-#~| msgctxt "Second part of 'Total: %1, %2, %3'"
-#~| msgid "1 active"
-#~| msgid_plural "%1 active"
 #~ msgid "Hide inactive"
 #~ msgstr "1 aktívne"
 
 #, fuzzy
-#~| msgid "Units"
 #~ msgid "User Units"
 #~ msgstr "Jednotky"
 
 #, fuzzy
-#~| msgid "Configuration file:"
 #~ msgid "Config Files"
 #~ msgstr "Konfiguračný súbor:"
 
@@ -518,7 +489,6 @@ msgstr ""
 #~ msgstr "%1 (%2)"
 
 #, fuzzy
-#~| msgid "kcmsystemd"
 #~ msgid "systemd-kcm"
 #~ msgstr "kcmsystemd"
 
