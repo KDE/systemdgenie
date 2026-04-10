@@ -28,42 +28,42 @@ msgstr "wizzardsk@gmail.com"
 #: src/configfilemodel.cpp:21
 #, kde-format
 msgid "Coredump generation and storage"
-msgstr ""
+msgstr "Generovanie a ukladanie výpisov jadra"
 
 #: src/configfilemodel.cpp:23
 #, kde-format
 msgid "Send journal messages over network"
-msgstr ""
+msgstr "Odosielanie správ žurnálu cez sieť"
 
 #: src/configfilemodel.cpp:24
 #, kde-format
 msgid "Journal manager settings"
-msgstr ""
+msgstr "Nastavenia správcu žurnálu"
 
 #: src/configfilemodel.cpp:25
 #, kde-format
 msgid "Login manager configuration"
-msgstr ""
+msgstr "Konfigurácia správcu prihlásenia"
 
 #: src/configfilemodel.cpp:27
 #, kde-format
 msgid "Network name resolution configuration"
-msgstr ""
+msgstr "Konfigurácia rozlíšenia sieťových mien"
 
 #: src/configfilemodel.cpp:29
 #, kde-format
 msgid "Systemd daemon configuration"
-msgstr ""
+msgstr "Konfigurácia démona systemd"
 
 #: src/configfilemodel.cpp:30
 #, kde-format
 msgid "Time synchronization settings"
-msgstr ""
+msgstr "Nastavenia synchronizácie času"
 
 #: src/configfilemodel.cpp:32
 #, kde-format
 msgid "Systemd user daemon configuration"
-msgstr ""
+msgstr "Konfigurácia používateľského démona systemd"
 
 #: src/configfilemodel.cpp:109
 #, kde-format
@@ -89,6 +89,8 @@ msgid ""
 "KHelpCenter executable not found in path. Please install KHelpCenter to view "
 "man pages."
 msgstr ""
+"Spustiteľný súbor KHelpCenter nebol nájdený v ceste. Nainštalujte prosím "
+"KHelpCenter na zobrazenie man stránok."
 
 #: src/editor.cpp:36
 #, kde-format
@@ -98,7 +100,7 @@ msgstr "Editovanie %1"
 #: src/editor.cpp:46
 #, kde-format
 msgid "Editing file: <code>%1</code>"
-msgstr ""
+msgstr "Úprava súboru: <code>%1</code>"
 
 #: src/editor.cpp:71
 #, kde-format
@@ -106,6 +108,8 @@ msgid ""
 "Failed to open the unit file:\n"
 "%1"
 msgstr ""
+"Nepodarilo sa otvoriť súbor jednotky:\n"
+"%1"
 
 #: src/editor.cpp:92 src/sessionmodel.cpp:265 src/unitmodel.cpp:430
 #, kde-format
@@ -120,13 +124,13 @@ msgstr "kcmsystemd"
 #: src/main.cpp:36
 #, kde-format
 msgid "Manage systemd units, timers, sessions and config files"
-msgstr ""
+msgstr "Spravovať jednotky, časovače, relácie a konfiguračné súbory systemd"
 
 #: src/main.cpp:38
 #, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr ""
+msgstr "(c) 2016 Ragnar Thomsen, %1 KDE Community"
 
 #: src/main.cpp:44
 #, kde-format
@@ -156,7 +160,7 @@ msgstr "ID sedenia"
 #: src/sessionmodel.cpp:74
 #, kde-format
 msgid "Session Object Path"
-msgstr ""
+msgstr "Session Object Path"
 
 #: src/sessionmodel.cpp:76
 #, kde-format
@@ -176,22 +180,22 @@ msgstr "Meno užívateľa"
 #: src/sessionmodel.cpp:82
 #, kde-format
 msgid "Seat ID"
-msgstr ""
+msgstr "ID miesta"
 
 #: src/sessionmodel.cpp:119
 #, kde-format
 msgid "<b>VT:</b> %1"
-msgstr ""
+msgstr "<b>VT:</b> %1"
 
 #: src/sessionmodel.cpp:123
 #, kde-format
 msgid "<br><b>Remote host:</b> %1"
-msgstr ""
+msgstr "<br><b>Vzdialený hostiteľ:</b> %1"
 
 #: src/sessionmodel.cpp:124
 #, kde-format
 msgid "<br><b>Remote user:</b> %1"
-msgstr ""
+msgstr "<br><b>Vzdialený používateľ:</b> %1"
 
 #: src/sessionmodel.cpp:126
 #, kde-format
@@ -236,7 +240,7 @@ msgstr "<br><b>Vytvorené: </b>"
 #: src/sessionmodel.cpp:185
 #, kde-format
 msgid "Unable to fetch sessions list: %1"
-msgstr ""
+msgstr "Nie je možné získať zoznam relácií: %1"
 
 #: src/timermodel.cpp:43
 #, kde-format
@@ -308,12 +312,12 @@ msgstr "<b>Popis: </b>"
 #: src/unitmodel.cpp:220
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
-msgstr ""
+msgstr "<br><b>Súbor jednotky: </b>%1"
 
 #: src/unitmodel.cpp:221 src/unitmodel.cpp:268
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
-msgstr ""
+msgstr "<br><b>Stav súboru jednotky: </b>"
 
 #: src/unitmodel.cpp:227
 #, kde-format
@@ -338,12 +342,12 @@ msgstr "<b>Popis: </b>"
 #: src/unitmodel.cpp:277
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
-msgstr ""
+msgstr "<hr><b>Posledné záznamy logu:</b>"
 
 #: src/unitmodel.cpp:280
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
-msgstr ""
+msgstr "<br><i>Pre túto jednotku neboli nájdené žiadne záznamy logu.</i>"
 
 #~ msgid "All"
 #~ msgstr "Všetko"
