@@ -40,17 +40,17 @@ QVariant TimerModel::headerData(int section, Qt::Orientation orientation, int ro
 
     switch (section) {
     case TimerColumn:
-        return i18nc("@title:column", "Timer");
+        return i18nc("@title:column (name of the timer)", "Timer");
     case NextColumn:
-        return i18nc("@title:column", "Next");
+        return i18nc("@title:column (date of the next timer's activation)", "Next");
     case LeftColumn:
-        return i18nc("@title:column", "Left");
+        return i18nc("@title:column (time left to the next timer's activation)", "Left");
     case LastColumn:
-        return i18nc("@title:column", "Last");
+        return i18nc("@title:column (date of the previous timer's activation)", "Last");
     case PassedColumn:
-        return i18nc("@title:column", "Passed");
+        return i18nc("@title:column (time passed since the previous timer's activation)", "Passed");
     case ActivatesColumn:
-        return i18nc("@title:column", "Activates");
+        return i18nc("@title:column (name of the service activated by the timer)", "Activates");
     default:
         return {};
     }

@@ -43,7 +43,7 @@ void Editor::openEditor(const QString &file, QWindow *parentWindow)
     connect(buttonBox, SIGNAL(rejected()), dlgEditor, SLOT(reject()));
     buttonBox->button(QDialogButtonBox::Save)->setEnabled(false);
 
-    QLabel *lblFilePath = new QLabel(i18n("Editing file: <code>%1</code>", file));
+    QLabel *lblFilePath = new QLabel(i18nc("Editing file: <path to the edited file>", "Editing file: <code>%1</code>", file));
     lblFilePath->setTextFormat(Qt::RichText);
 
     QVBoxLayout *vlayout = new QVBoxLayout(dlgEditor);
