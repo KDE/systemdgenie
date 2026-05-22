@@ -91,6 +91,7 @@ private:
 
     QDBusConnection m_connection;
     QTimer *const m_refreshTimer;
+    QTimer *const m_periodicalRefreshTimer;
     QVector<SystemdUnit> m_units;
     QString m_userBus;
     Type m_type = Unknown;

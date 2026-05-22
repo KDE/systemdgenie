@@ -4,6 +4,27 @@
 
 #include "systemdunit.h"
 
+bool SystemdUnit::update(const SystemdUnit &newOne)
+{
+    if (this->description == newOne.description && this->load_state == newOne.load_state && this->active_state == newOne.active_state
+        && this->sub_state == newOne.sub_state && this->following == newOne.following && this->job_type == newOne.job_type
+        && this->unit_file == newOne.unit_file && this->unit_file_status == newOne.unit_file_status && this->unit_path == newOne.unit_path
+        && this->job_path == newOne.job_path) {
+        return false;
+    }
+    this->description = newOne.description;
+    this->load_state = newOne.load_state;
+    this->active_state = newOne.active_state;
+    this->sub_state = newOne.sub_state;
+    this->following = newOne.following;
+    this->job_type = newOne.job_type;
+    this->unit_file = newOne.unit_file;
+    this->unit_file_status = newOne.unit_file_status;
+    this->unit_path = newOne.unit_path;
+    this->job_path = newOne.job_path;
+    return true;
+}
+
 QDBusArgument &operator<<(QDBusArgument &argument, const SystemdUnit &unit)
 {
     argument.beginStructure();

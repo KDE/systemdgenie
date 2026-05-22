@@ -34,6 +34,8 @@ struct SystemdUnit {
     {
         id = newId;
     }
+
+    bool update(const SystemdUnit &newOne);
 };
 Q_DECLARE_METATYPE(SystemdUnit)
 

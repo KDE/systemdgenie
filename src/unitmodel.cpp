@@ -7,7 +7,6 @@
 #include <KColorScheme>
 #include <KLocalizedString>
 
-#include <KAuth/Action>
 #include <KAuth/ExecuteJob>
 #include <QColor>
 #include <QIcon>
@@ -25,11 +24,21 @@ UnitModel::UnitModel(QObject *parent)
     : QAbstractTableModel(parent)
     , m_connection(QDBusConnection::systemBus())
     , m_refreshTimer(new QTimer(this))
+    , m_periodicalRefreshTimer(new QTimer(this))
 {
     m_refreshTimer->setInterval(1s);
+    m_refreshTimer->setSingleShot(true);
     connect(m_refreshTimer, &QTimer::timeout, this, [this]() {
+        qDebug() << "Scheduled refresh of units list";
         slotRefreshUnitsList();
     });
+    m_periodicalRefreshTimer->setInterval(10s);
+    m_periodicalRefreshTimer->setSingleShot(false);
+    connect(m_periodicalRefreshTimer, &QTimer::timeout, this, [this]() {
+        qDebug() << "Periodical refresh of units list";
+        m_refreshTimer->start();
+    });
+    m_periodicalRefreshTimer->start();
 }
 
 const QList<SystemdUnit> &UnitModel::unitsConst() const
@@ -49,6 +58,26 @@ void UnitModel::setUnits(const QList<SystemdUnit> &units)
         m_units = units;
         endResetModel();
     } else {
+        auto removedUnits = QList<SystemdUnit>();
+        for (const auto &unit : m_units) {
+            auto it = std::ranges::find_if(units, [unit](const auto &existingUnit) {
+                return existingUnit.id == unit.id;
+            });
+
+            if (it == units.cend()) {
+                removedUnits << unit;
+            }
+        }
+
+        for (auto unit : removedUnits) {
+            const size_t row = std::distance(std::begin(m_units), std::ranges::find_if(m_units, [unit](const auto &existingUnit) {
+                                                 return existingUnit.id == unit.id;
+                                             }));
+            beginRemoveRows({}, row, row);
+            m_units.removeOne(unit);
+            endRemoveRows();
+        }
+
         for (const auto &unit : units) {
             auto it = std::ranges::find_if(m_units, [unit](const auto &existingUnit) {
                 return existingUnit.id == unit.id;
@@ -59,10 +88,7 @@ void UnitModel::setUnits(const QList<SystemdUnit> &units)
                 endInsertRows();
                 continue;
             }
-            if (it->active_state != unit.active_state || it->load_state != unit.load_state || it->unit_file_status != unit.unit_file_status) {
-                it->load_state = unit.load_state;
-                it->active_state = unit.active_state;
-                it->unit_file_status = unit.unit_file_status;
+            if (it->update(unit)) {
                 const size_t row = std::distance(std::begin(m_units), it);
                 Q_EMIT dataChanged(index(row, 0), index(row, columnCount() - 1), {});
             }
@@ -477,7 +503,7 @@ void UnitModel::setType(Type type)
                                                           SLOT(slotPropertiesChanged(QString, QVariantMap, QStringList)));
     Q_ASSERT(connected);
 
-    slotRefreshUnitsList();
+    m_refreshTimer->start();
 }
 
 void UnitModel::slotRefreshUnitsList()
@@ -499,7 +525,8 @@ void UnitModel::slotRefreshUnitsList()
 
 void UnitModel::slotReloading(bool status)
 {
-    if (!status && !m_refreshTimer->isActive()) {
+    qDebug() << "SystemD Signal: Reloading" << status;
+    if (!status) {
         m_refreshTimer->start();
     }
 }
@@ -582,9 +609,8 @@ void UnitModel::slotRefreshUnit(const QString &unit)
 
 void UnitModel::slotUnitFilesChanged()
 {
-    if (!m_refreshTimer->isActive()) {
-        m_refreshTimer->start();
-    }
+    qDebug() << "SystemD Signal: Unit files changed";
+    m_refreshTimer->start();
 }
 
 int UnitModel::activeUnitsCount() const
@@ -635,26 +661,15 @@ void UnitModel::slotUnitNew(const QString &id, const QDBusObjectPath &unit)
 {
     Q_UNUSED(id);
     Q_UNUSED(unit);
-    slotRefreshUnitsList();
+    qDebug() << "SystemD Signal: New unit" << id;
+    m_refreshTimer->start();
 }
 
 void UnitModel::slotUnitRemoved(const QString &id, const QDBusObjectPath &unit)
 {
     Q_UNUSED(unit);
-
-    const auto unitIt = std::ranges::find_if(m_units, [id](const auto &unitObject) {
-        return unitObject.id == id;
-    });
-
-    if (unitIt == std::cend(m_units)) {
-        qWarning() << "unit to delete not found";
-        return;
-    }
-
-    const size_t row = std::distance(std::begin(m_units), unitIt);
-    beginRemoveRows({}, row, row);
-    m_units.remove(row);
-    endRemoveRows();
+    qDebug() << "SystemD Signal: Removed unit" << id;
+    m_refreshTimer->start();
 }
 
 QDBusConnection UnitModel::connection() const
