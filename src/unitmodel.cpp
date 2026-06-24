@@ -13,6 +13,7 @@
 #include <QIcon>
 
 #include <systemd/sd-journal.h>
+#include <unistd.h>
 
 #include "job/unitsfetchjob.h"
 #include "systemd_manager_interface.h"

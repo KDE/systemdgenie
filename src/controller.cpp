@@ -10,6 +10,8 @@
 #include <KService>
 #include <QDBusPendingCall>
 
+#include <unistd.h>
+
 using namespace Qt::StringLiterals;
 
 Controller::Controller(QObject *parent)
