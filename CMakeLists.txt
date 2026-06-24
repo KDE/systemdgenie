@@ -1,10 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+
 project(SYSTEMD-GENIE)
 set(PROJECT_VERSION "0.100.0")
-
-cmake_minimum_required(VERSION 3.20 FATAL_ERROR)
-
-# Silence a warning
-cmake_policy(SET CMP0063 NEW)
 
 find_package(ECM 6.9.0 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
