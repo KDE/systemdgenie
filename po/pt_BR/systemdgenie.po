@@ -5,21 +5,21 @@
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2015, 2016.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2015, 2020.
 # SPDX-FileCopyrightText: 2025, 2026 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
-# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: systemd-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-25 00:47+0000\n"
-"PO-Revision-Date: 2026-03-06 16:12-0300\n"
-"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
+"PO-Revision-Date: 2026-06-25 05:21-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -104,8 +104,7 @@ msgid "Editing %1"
 msgstr "Editando %1"
 
 #: src/editor.cpp:46
-#, fuzzy, kde-format
-#| msgid "Editing file: <code>%1</code>"
+#, kde-format
 msgctxt "Editing file: <path to the edited file>"
 msgid "Editing file: <code>%1</code>"
 msgstr "Editando arquivo: <code>%1</code>"
@@ -253,49 +252,37 @@ msgid "Unable to fetch sessions list: %1"
 msgstr "Não foi possível obter a lista de sessões: %1"
 
 #: src/timermodel.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column (name of the timer)"
 msgid "Timer"
 msgstr "Temporizador"
 
 #: src/timermodel.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column (date of the next timer's activation)"
 msgid "Next"
-msgstr "Próximo"
+msgstr "Próxima"
 
 #: src/timermodel.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column (time left to the next timer's activation)"
 msgid "Left"
 msgstr "Restante"
 
 #: src/timermodel.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column (date of the previous timer's activation)"
 msgid "Last"
-msgstr "Último"
+msgstr "Última"
 
 #: src/timermodel.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column (time passed since the previous timer's activation)"
 msgid "Passed"
 msgstr "Passou"
 
 #: src/timermodel.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column (name of the service activated by the timer)"
 msgid "Activates"
 msgstr "Ativa"

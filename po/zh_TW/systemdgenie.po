@@ -3,13 +3,13 @@
 #
 # Jeff Huang <s8321414@gmail.com>, 2015, 2016.
 # pan93412 <pan93412@gmail.com>, 2018, 2019.
-# SPDX-FileCopyrightText: 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2025-2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.2.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-25 00:47+0000\n"
-"PO-Revision-Date: 2025-03-27 21:58+0900\n"
+"PO-Revision-Date: 2026-06-26 00:00+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 26.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -100,8 +100,7 @@ msgid "Editing %1"
 msgstr "正在編輯 %1"
 
 #: src/editor.cpp:46
-#, fuzzy, kde-format
-#| msgid "Editing file: <code>%1</code>"
+#, kde-format
 msgctxt "Editing file: <path to the edited file>"
 msgid "Editing file: <code>%1</code>"
 msgstr "正在編輯檔案：<code>%1</code>"
@@ -247,52 +246,40 @@ msgid "Unable to fetch sessions list: %1"
 msgstr "無法取得工作階段清單：%1"
 
 #: src/timermodel.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column (name of the timer)"
 msgid "Timer"
 msgstr "計時器"
 
 #: src/timermodel.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column (date of the next timer's activation)"
 msgid "Next"
 msgstr "下一個"
 
 #: src/timermodel.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column (time left to the next timer's activation)"
 msgid "Left"
 msgstr "剩餘"
 
 #: src/timermodel.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column (date of the previous timer's activation)"
 msgid "Last"
 msgstr "上一個"
 
 #: src/timermodel.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column (time passed since the previous timer's activation)"
 msgid "Passed"
 msgstr "已通過"
 
 #: src/timermodel.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column (name of the service activated by the timer)"
 msgid "Activates"
-msgstr "活躍狀態"
+msgstr "會觸發"
 
 #: src/timermodel.cpp:74 src/timermodel.cpp:99
 #, kde-format
