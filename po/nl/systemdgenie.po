@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-25 00:47+0000\n"
+"POT-Creation-Date: 2026-07-02 00:47+0000\n"
 "PO-Revision-Date: 2026-06-25 13:41+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -114,7 +114,7 @@ msgstr ""
 "Eenheidsbestand openen is mislukt:\n"
 "%1"
 
-#: src/editor.cpp:92 src/sessionmodel.cpp:265 src/unitmodel.cpp:431
+#: src/editor.cpp:92 src/sessionmodel.cpp:265 src/unitmodel.cpp:457
 #, kde-format
 msgid "Unable to authenticate/execute the action: %1"
 msgstr "Authenticatie/uitvoeren van de actie %1 lukt niet"
@@ -287,67 +287,67 @@ msgctxt "invalid"
 msgid "n/a"
 msgstr "n.v.t."
 
-#: src/unitmodel.cpp:94
+#: src/unitmodel.cpp:120
 #, kde-format
 msgid "Unit"
 msgstr "Eenheid"
 
-#: src/unitmodel.cpp:96
+#: src/unitmodel.cpp:122
 #, kde-format
 msgid "Load State"
 msgstr "Status laden"
 
-#: src/unitmodel.cpp:98
+#: src/unitmodel.cpp:124
 #, kde-format
 msgid "Active State"
 msgstr "Actieve status"
 
-#: src/unitmodel.cpp:100
+#: src/unitmodel.cpp:126
 #, kde-format
 msgid "Unit State"
 msgstr "Status van eenheid"
 
-#: src/unitmodel.cpp:216
+#: src/unitmodel.cpp:242
 #, kde-format
 msgid "<b>Description: </b>"
 msgstr "<b>Beschrijving: </b>"
 
-#: src/unitmodel.cpp:221
+#: src/unitmodel.cpp:247
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
 msgstr "<br><b>Bestand van eenheid: </b>%1"
 
-#: src/unitmodel.cpp:222 src/unitmodel.cpp:269
+#: src/unitmodel.cpp:248 src/unitmodel.cpp:295
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
 msgstr "<<b>Status van bestand van eenheid: </b>"
 
-#: src/unitmodel.cpp:228
+#: src/unitmodel.cpp:254
 #, kde-format
 msgid "<br><b>Source path: </b>%1"
 msgstr "<br><b>Pad van bron: </b>%1"
 
-#: src/unitmodel.cpp:232
+#: src/unitmodel.cpp:258
 #, kde-format
 msgid "<br><b>Activated: </b>"
 msgstr "<br><b>Geactiveerd: </b>"
 
-#: src/unitmodel.cpp:242
+#: src/unitmodel.cpp:268
 #, kde-format
 msgid "<br><b>Deactivated: </b>"
 msgstr "<br><b>Gedeactiveerd: </b>"
 
-#: src/unitmodel.cpp:264
+#: src/unitmodel.cpp:290
 #, kde-format
 msgid "<b>Unit file: </b>"
 msgstr "<b>Bestand van eenheid: </b>"
 
-#: src/unitmodel.cpp:278
+#: src/unitmodel.cpp:304
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
 msgstr "<hr><b>Laatste regels in log:</b>"
 
-#: src/unitmodel.cpp:281
+#: src/unitmodel.cpp:307
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>Geen logregels voor deze eenheid gevonden.</i>"

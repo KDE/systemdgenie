@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-25 00:47+0000\n"
+"POT-Creation-Date: 2026-07-02 00:47+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -113,7 +113,7 @@ msgstr ""
 "无法打开单元文件：\n"
 "%1"
 
-#: src/editor.cpp:92 src/sessionmodel.cpp:265 src/unitmodel.cpp:431
+#: src/editor.cpp:92 src/sessionmodel.cpp:265 src/unitmodel.cpp:457
 #, kde-format
 msgid "Unable to authenticate/execute the action: %1"
 msgstr "无法验证身份/执行操作：%1"
@@ -286,67 +286,67 @@ msgctxt "invalid"
 msgid "n/a"
 msgstr "n/a"
 
-#: src/unitmodel.cpp:94
+#: src/unitmodel.cpp:120
 #, kde-format
 msgid "Unit"
 msgstr "单元"
 
-#: src/unitmodel.cpp:96
+#: src/unitmodel.cpp:122
 #, kde-format
 msgid "Load State"
 msgstr "加载状态"
 
-#: src/unitmodel.cpp:98
+#: src/unitmodel.cpp:124
 #, kde-format
 msgid "Active State"
 msgstr "活动状态"
 
-#: src/unitmodel.cpp:100
+#: src/unitmodel.cpp:126
 #, kde-format
 msgid "Unit State"
 msgstr "单元状态"
 
-#: src/unitmodel.cpp:216
+#: src/unitmodel.cpp:242
 #, kde-format
 msgid "<b>Description: </b>"
 msgstr "<b>描述：</b>"
 
-#: src/unitmodel.cpp:221
+#: src/unitmodel.cpp:247
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
 msgstr "<br><b>单元文件：</b>%1"
 
-#: src/unitmodel.cpp:222 src/unitmodel.cpp:269
+#: src/unitmodel.cpp:248 src/unitmodel.cpp:295
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
 msgstr "<br><b>单元文件状态：</b>"
 
-#: src/unitmodel.cpp:228
+#: src/unitmodel.cpp:254
 #, kde-format
 msgid "<br><b>Source path: </b>%1"
 msgstr "<br><b>来源路径：</b>%1"
 
-#: src/unitmodel.cpp:232
+#: src/unitmodel.cpp:258
 #, kde-format
 msgid "<br><b>Activated: </b>"
 msgstr "<br><b>已激活：</b>"
 
-#: src/unitmodel.cpp:242
+#: src/unitmodel.cpp:268
 #, kde-format
 msgid "<br><b>Deactivated: </b>"
 msgstr "<br><b>已停止：</b>"
 
-#: src/unitmodel.cpp:264
+#: src/unitmodel.cpp:290
 #, kde-format
 msgid "<b>Unit file: </b>"
 msgstr "<b>单元文件：</b>"
 
-#: src/unitmodel.cpp:278
+#: src/unitmodel.cpp:304
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
 msgstr "<hr><b>最近日志条目：</b>"
 
-#: src/unitmodel.cpp:281
+#: src/unitmodel.cpp:307
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>未找到该单元的日志条目。</i>"

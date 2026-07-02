@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-25 00:47+0000\n"
+"POT-Creation-Date: 2026-07-02 00:47+0000\n"
 "PO-Revision-Date: 2026-06-26 22:24+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -114,7 +114,7 @@ msgstr ""
 "Apertura del file di unità non riuscita:\n"
 "%1"
 
-#: src/editor.cpp:92 src/sessionmodel.cpp:265 src/unitmodel.cpp:431
+#: src/editor.cpp:92 src/sessionmodel.cpp:265 src/unitmodel.cpp:457
 #, kde-format
 msgid "Unable to authenticate/execute the action: %1"
 msgstr "Impossibile autenticare/eseguire l'azione: %1"
@@ -287,67 +287,67 @@ msgctxt "invalid"
 msgid "n/a"
 msgstr "n.d."
 
-#: src/unitmodel.cpp:94
+#: src/unitmodel.cpp:120
 #, kde-format
 msgid "Unit"
 msgstr "Unità"
 
-#: src/unitmodel.cpp:96
+#: src/unitmodel.cpp:122
 #, kde-format
 msgid "Load State"
 msgstr "Stato caricamento"
 
-#: src/unitmodel.cpp:98
+#: src/unitmodel.cpp:124
 #, kde-format
 msgid "Active State"
 msgstr "Stato attivazione"
 
-#: src/unitmodel.cpp:100
+#: src/unitmodel.cpp:126
 #, kde-format
 msgid "Unit State"
 msgstr "Stato unità"
 
-#: src/unitmodel.cpp:216
+#: src/unitmodel.cpp:242
 #, kde-format
 msgid "<b>Description: </b>"
 msgstr "<b>Descrizione: </b>"
 
-#: src/unitmodel.cpp:221
+#: src/unitmodel.cpp:247
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
 msgstr "<br><b>File dell'unità: </b>%1"
 
-#: src/unitmodel.cpp:222 src/unitmodel.cpp:269
+#: src/unitmodel.cpp:248 src/unitmodel.cpp:295
 #, kde-format
 msgid "<br><b>Unit file state: </b>"
 msgstr "<br><b>File di stato dell'unità: </b>"
 
-#: src/unitmodel.cpp:228
+#: src/unitmodel.cpp:254
 #, kde-format
 msgid "<br><b>Source path: </b>%1"
 msgstr "<br><b>Percorso sorgente: </b>%1"
 
-#: src/unitmodel.cpp:232
+#: src/unitmodel.cpp:258
 #, kde-format
 msgid "<br><b>Activated: </b>"
 msgstr "<br><b>Attivata il: </b>"
 
-#: src/unitmodel.cpp:242
+#: src/unitmodel.cpp:268
 #, kde-format
 msgid "<br><b>Deactivated: </b>"
 msgstr "<br><b>Disattivata il: </b>"
 
-#: src/unitmodel.cpp:264
+#: src/unitmodel.cpp:290
 #, kde-format
 msgid "<b>Unit file: </b>"
 msgstr "<b>File dell'unità: </b>"
 
-#: src/unitmodel.cpp:278
+#: src/unitmodel.cpp:304
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
 msgstr "<hr><b>Ultime voci del registro:</b>"
 
-#: src/unitmodel.cpp:281
+#: src/unitmodel.cpp:307
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
 msgstr "<br><i>Nessuna voce di registro trovata per questa unità.</i>"
