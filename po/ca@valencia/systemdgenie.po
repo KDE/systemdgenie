@@ -139,7 +139,7 @@ msgstr ""
 #, kde-format
 msgctxt "@about:credit"
 msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
-msgstr "(c) 2016 Ragnar Thomsen, %1 Comunitat KDE"
+msgstr "(c) 2016 Ragnar Thomsen, %1 La comunitat KDE"
 
 #: src/main.cpp:44
 #, kde-format
