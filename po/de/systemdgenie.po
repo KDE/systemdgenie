@@ -1,20 +1,21 @@
 # SPDX-FileCopyrightText: 2015-2019, 2021 Burkhard Lück <lueck@hube-lueck.de>
 # SPDX-FileCopyrightText: 2016 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2025 Alois Spitzbart <spitz234@hotmail.com>
+# SPDX-FileCopyrightText: 2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-02 00:47+0000\n"
-"PO-Revision-Date: 2025-06-29 15:13+0200\n"
-"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
+"PO-Revision-Date: 2026-08-27 16:31+0200\n"
+"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -29,7 +30,7 @@ msgstr "kde-i18n-de@kde.org"
 #: src/configfilemodel.cpp:21
 #, kde-format
 msgid "Coredump generation and storage"
-msgstr ""
+msgstr "Erstellung und Speicherung von Coredumps"
 
 #: src/configfilemodel.cpp:23
 #, kde-format
@@ -64,7 +65,7 @@ msgstr "Einstellungen zum Zeitabgleich"
 #: src/configfilemodel.cpp:32
 #, kde-format
 msgid "Systemd user daemon configuration"
-msgstr ""
+msgstr "Einrichtung des Systemd-Benutzerdienstes"
 
 #: src/configfilemodel.cpp:109
 #, kde-format
@@ -99,8 +100,7 @@ msgid "Editing %1"
 msgstr "%1 wird bearbeitet"
 
 #: src/editor.cpp:46
-#, fuzzy, kde-format
-#| msgid "Editing file: <code>%1</code>"
+#, kde-format
 msgctxt "Editing file: <path to the edited file>"
 msgid "Editing file: <code>%1</code>"
 msgstr "Datei bearbeiten: <code>%1</code>"
@@ -128,7 +128,7 @@ msgstr "systemdGenie"
 #: src/main.cpp:36
 #, kde-format
 msgid "Manage systemd units, timers, sessions and config files"
-msgstr ""
+msgstr "Systemd-Units, Timer, Sitzungen und Konfigurationsdateien verwalten"
 
 #: src/main.cpp:38
 #, kde-format
@@ -207,10 +207,9 @@ msgid "<br><b>Service:</b> %1"
 msgstr "<br><b>Dienst:</b> %1"
 
 #: src/sessionmodel.cpp:127
-#, fuzzy, kde-format
-#| msgid "<br><b>State:</b> %1"
+#, kde-format
 msgid "<br><b>Leader (PID):</b> %1"
-msgstr "<br><b>Status:</b> %1"
+msgstr "<br><b>Leader (PID):</b> %1"
 
 #: src/sessionmodel.cpp:130
 #, kde-format
@@ -248,49 +247,37 @@ msgid "Unable to fetch sessions list: %1"
 msgstr "Sitzungsliste kann nicht geholt werden: %1"
 
 #: src/timermodel.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column (name of the timer)"
 msgid "Timer"
 msgstr "Timer"
 
 #: src/timermodel.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column (date of the next timer's activation)"
 msgid "Next"
 msgstr "Nächstes Mal"
 
 #: src/timermodel.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column (time left to the next timer's activation)"
 msgid "Left"
 msgstr "Verbleibend"
 
 #: src/timermodel.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column (date of the previous timer's activation)"
 msgid "Last"
 msgstr "Zuletzt"
 
 #: src/timermodel.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column (time passed since the previous timer's activation)"
 msgid "Passed"
 msgstr "Vergangen"
 
 #: src/timermodel.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column (name of the service activated by the timer)"
 msgid "Activates"
 msgstr "Aktiviert"
