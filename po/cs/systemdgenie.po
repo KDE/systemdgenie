@@ -2,71 +2,72 @@
 # This file is distributed under the same license as the PACKAGE package.
 # SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2025 Vít Pelčák <vit@pelcak.org>
 # Vit Pelcak <vit@pelcak.org>, 2021.
+# SPDX-FileCopyrightText: 2026 Libor Filipek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-02 00:47+0000\n"
-"PO-Revision-Date: 2025-12-17 11:32+0100\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-09-04 00:49+0200\n"
+"Last-Translator: Libor Filipek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Vít Pelčák"
+msgstr "Vít Pelčák,Libor Filípek"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "vit@pelcak.org"
+msgstr "vit@pelcak.org,libor.filipek@gmail.com"
 
 #: src/configfilemodel.cpp:21
 #, kde-format
 msgid "Coredump generation and storage"
-msgstr ""
+msgstr "Vytváření a ukládání výpisů paměti"
 
 #: src/configfilemodel.cpp:23
 #, kde-format
 msgid "Send journal messages over network"
-msgstr ""
+msgstr "Odesílání zpráv žurnálu přes síť"
 
 #: src/configfilemodel.cpp:24
 #, kde-format
 msgid "Journal manager settings"
-msgstr ""
+msgstr "Nastavení správce žurnálu"
 
 #: src/configfilemodel.cpp:25
 #, kde-format
 msgid "Login manager configuration"
-msgstr ""
+msgstr "Nastavení správce přihlášení"
 
 #: src/configfilemodel.cpp:27
 #, kde-format
 msgid "Network name resolution configuration"
-msgstr ""
+msgstr "Nastavení překladu názvů v síti"
 
 #: src/configfilemodel.cpp:29
 #, kde-format
 msgid "Systemd daemon configuration"
-msgstr ""
+msgstr "Nastavení démona systemd"
 
 #: src/configfilemodel.cpp:30
 #, kde-format
 msgid "Time synchronization settings"
-msgstr ""
+msgstr "Nastavení synchronizace času"
 
 #: src/configfilemodel.cpp:32
 #, kde-format
 msgid "Systemd user daemon configuration"
-msgstr ""
+msgstr "Konfigurace uživatelského démona systemd"
 
 #: src/configfilemodel.cpp:109
 #, kde-format
@@ -92,6 +93,8 @@ msgid ""
 "KHelpCenter executable not found in path. Please install KHelpCenter to view "
 "man pages."
 msgstr ""
+"Spustitelný soubor KHelpCenter nebyl nalezen v cestě. Chcete-li zobrazit "
+"manuálové stránky, nainstalujte prosím KHelpCenter."
 
 #: src/editor.cpp:36
 #, kde-format
@@ -99,11 +102,10 @@ msgid "Editing %1"
 msgstr "Úprava %1"
 
 #: src/editor.cpp:46
-#, fuzzy, kde-format
-#| msgid "Editing file: <code>%1</code>"
+#, kde-format
 msgctxt "Editing file: <path to the edited file>"
 msgid "Editing file: <code>%1</code>"
-msgstr "Upravuji soubor: <code>%1</code>"
+msgstr "Úprava souboru: <code>%1</code>"
 
 #: src/editor.cpp:71
 #, kde-format
@@ -127,7 +129,7 @@ msgstr "systemdGenie"
 #: src/main.cpp:36
 #, kde-format
 msgid "Manage systemd units, timers, sessions and config files"
-msgstr ""
+msgstr "Správa jednotek systemd, časovačů, relací a konfiguračních souborů"
 
 #: src/main.cpp:38
 #, kde-format
@@ -163,7 +165,7 @@ msgstr "ID sezení"
 #: src/sessionmodel.cpp:74
 #, kde-format
 msgid "Session Object Path"
-msgstr ""
+msgstr "Cesta k objektu sezení"
 
 #: src/sessionmodel.cpp:76
 #, kde-format
@@ -183,7 +185,7 @@ msgstr "Uživatelské jméno"
 #: src/sessionmodel.cpp:82
 #, kde-format
 msgid "Seat ID"
-msgstr ""
+msgstr "ID sezení"
 
 #: src/sessionmodel.cpp:119
 #, kde-format
@@ -208,7 +210,7 @@ msgstr "<br><b>Služba:</b> %1"
 #: src/sessionmodel.cpp:127
 #, kde-format
 msgid "<br><b>Leader (PID):</b> %1"
-msgstr ""
+msgstr "<br><b>Hlavní (PID):</b> %1"
 
 #: src/sessionmodel.cpp:130
 #, kde-format
@@ -246,52 +248,40 @@ msgid "Unable to fetch sessions list: %1"
 msgstr "Nelze načíst seznam sezení: %1"
 
 #: src/timermodel.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column (name of the timer)"
 msgid "Timer"
 msgstr "Časovač"
 
 #: src/timermodel.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column (date of the next timer's activation)"
 msgid "Next"
 msgstr "Následující"
 
 #: src/timermodel.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column (time left to the next timer's activation)"
 msgid "Left"
-msgstr "Zbývá"
+msgstr "Pozůstatek"
 
 #: src/timermodel.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column (date of the previous timer's activation)"
 msgid "Last"
 msgstr "Poslední"
 
 #: src/timermodel.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column (time passed since the previous timer's activation)"
 msgid "Passed"
-msgstr "Prošlo"
+msgstr "V pořádku"
 
 #: src/timermodel.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column (name of the service activated by the timer)"
 msgid "Activates"
-msgstr "Aktivuje"
+msgstr "Aktivace"
 
 #: src/timermodel.cpp:74 src/timermodel.cpp:99
 #, kde-format
@@ -307,12 +297,12 @@ msgstr "Jednotka"
 #: src/unitmodel.cpp:122
 #, kde-format
 msgid "Load State"
-msgstr "Načtení"
+msgstr "Stav načtení"
 
 #: src/unitmodel.cpp:124
 #, kde-format
 msgid "Active State"
-msgstr "Aktivita"
+msgstr "Stav aktivity"
 
 #: src/unitmodel.cpp:126
 #, kde-format
@@ -327,7 +317,7 @@ msgstr "<b>Popis: </b>"
 #: src/unitmodel.cpp:247
 #, kde-format
 msgid "<br><b>Unit file: </b>%1"
-msgstr ""
+msgstr "<br><b>Soubor jednotky: </b>%1"
 
 #: src/unitmodel.cpp:248 src/unitmodel.cpp:295
 #, kde-format
@@ -357,9 +347,9 @@ msgstr "<b>Soubor jednotky: </b>"
 #: src/unitmodel.cpp:304
 #, kde-format
 msgid "<hr><b>Last log entries:</b>"
-msgstr ""
+msgstr "<hr><b>Poslední položky záznamu:</b>"
 
 #: src/unitmodel.cpp:307
 #, kde-format
 msgid "<br><i>No log entries found for this unit.</i>"
-msgstr ""
+msgstr "<br><i>Pro tuto jednotku nebyly nalezeny žádné záznamy.</i>"
