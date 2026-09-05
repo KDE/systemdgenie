@@ -66,6 +66,7 @@ Comment=Manage systemd units, timers, sessions and config files
 Comment[ar]=أدر وحدات systemd والمؤقتات والجلسات وملفات الضبط
 Comment[ca]=Gestiona les unitats del sistema, els temporitzadors, les sessions i els fitxers de configuració
 Comment[ca@valencia]=Gestiona les unitats del sistema, els temporitzadors, les sessions i els fitxers de configuració
+Comment[cs]=Správa jednotek systemd, časovačů, relací a konfiguračních souborů
 Comment[de]=Systemd-Units, Timer, Sitzungen und Konfigurationsdateien verwalten
 Comment[eo]=Mastrumu systemd-unuojn, tempumilojn, seancojn kaj agorddosierojn
 Comment[es]=Gestión de unidades de systemd, temporizadores, sesiones y archivos de configuración
