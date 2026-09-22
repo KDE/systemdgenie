@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-02 00:47+0000\n"
-"PO-Revision-Date: 2026-06-01 18:51-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -145,7 +145,7 @@ msgstr "سابىق ئاسرىغۇچى"
 #: src/main.cpp:45
 #, kde-format
 msgid "Carl Schwan"
-msgstr "Carl Schwan"
+msgstr ""
 
 #: src/main.cpp:45
 #, kde-format
@@ -243,41 +243,31 @@ msgid "Unable to fetch sessions list: %1"
 msgstr ""
 
 #: src/timermodel.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column (name of the timer)"
 msgid "Timer"
 msgstr "ۋاقىت خاتىرىلىگۈچ"
 
 #: src/timermodel.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column (date of the next timer's activation)"
 msgid "Next"
 msgstr "كېيىنكى"
 
 #: src/timermodel.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column (time left to the next timer's activation)"
 msgid "Left"
 msgstr "سول"
 
 #: src/timermodel.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column (date of the previous timer's activation)"
 msgid "Last"
 msgstr "ئاخىرقى"
 
 #: src/timermodel.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column (time passed since the previous timer's activation)"
 msgid "Passed"
 msgstr "ئۆتتى"
