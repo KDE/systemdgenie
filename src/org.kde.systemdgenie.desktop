@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=systemdGenie
 Name[ar]=جني Systemd
+Name[az]=systemdGenie
 Name[ca]=systemdGenie
 Name[ca@valencia]=systemdGenie
 Name[cs]=systemdGenie
@@ -32,6 +33,7 @@ Name[zh_CN]=systemdGenie
 Name[zh_TW]=systemd 精靈
 GenericName=systemd Management Tool
 GenericName[ar]=أداة إدارة Systemd
+GenericName[az]=systemd idarəetmə aləti
 GenericName[ca]=Eina per a la gestió del «systemd»
 GenericName[ca@valencia]=Eina per a la gestió de «systemd»
 GenericName[cs]=Nástroj pro správu Systemd
@@ -64,6 +66,7 @@ GenericName[zh_CN]=systemd 管理工具
 GenericName[zh_TW]=systemd 管理工具
 Comment=Manage systemd units, timers, sessions and config files
 Comment[ar]=أدر وحدات systemd والمؤقتات والجلسات وملفات الضبط
+Comment[az]=systemd modullarını, vaxtölçənləri, sessiyaları və tənzimləmə fayllarını idarə etmək
 Comment[ca]=Gestiona les unitats del sistema, els temporitzadors, les sessions i els fitxers de configuració
 Comment[ca@valencia]=Gestiona les unitats del sistema, els temporitzadors, les sessions i els fitxers de configuració
 Comment[cs]=Správa jednotek systemd, časovačů, relací a konfiguračních souborů
