@@ -10,6 +10,7 @@
   </provides>
   <name>systemdGenie</name>
   <name xml:lang="ar">جني Systemd</name>
+  <name xml:lang="az">systemdGenie</name>
   <name xml:lang="ca">systemdGenie</name>
   <name xml:lang="ca-valencia">systemdGenie</name>
   <name xml:lang="cs">systemdGenie</name>
@@ -39,6 +40,7 @@
   <name xml:lang="zh-TW">systemd 精靈</name>
   <summary>System service manager</summary>
   <summary xml:lang="ar">مدير خدمات النظام</summary>
+  <summary xml:lang="az">Sistem xidmətlərini idarə etmək</summary>
   <summary xml:lang="ca">Gestor de serveis del sistema</summary>
   <summary xml:lang="ca-valencia">Gestor de serveis del sistema</summary>
   <summary xml:lang="cs">Správce systémových služeb</summary>
@@ -70,6 +72,7 @@
   <description>
     <p>systemdGenie allows graphical management of systemd units, including user units, and provides control over logind sessions. It also includes an integrated text editor for easy modification of unit and configuration files. </p>
     <p xml:lang="ar">يتيح لك جني Systemd إدارة وحدات systemd بشكل رسومي، بما في ذلك وحدات المستخدم، ويوفر التحكم في جلسات تسجيل الدخول. كما يتضمن محرر نصي متكامل لتعديل ملفات الوحدات والضبط بسهولة.</p>
+    <p xml:lang="az">systemdGenie istifadəçi qurğuları da daxil olmaqla systemd qurğularının qrafik idarə olunmasına imkan verir və logind sessiyalarına nəzarəti təmin edir. O, həmçinin qurğu və konfiqurasiya fayllarının asan dəyişdirilməsi üçün inteqrasiya olunmuş mətn redaktorunu özündə birləşdirir.</p>
     <p xml:lang="ca">El systemdGenie permet la gestió gràfica de les unitats del systemd, incloses les unitats d'usuari, i proporciona control sobre les sessions del «logind». També inclou un editor de text integrat que facilita la modificació dels fitxers d'unitats i de configuració.</p>
     <p xml:lang="ca-valencia">systemdGenie permet la gestió gràfica de les unitats de systemd, incloses les unitats d'usuari, i proporciona control sobre les sessions de «logind». També inclou un editor de text integrat que facilita la modificació dels fitxers d'unitats i de configuració.</p>
     <p xml:lang="cs">systemdGenie umožňuje grafickou správu jednotek systemd, včetně uživatelských jednotek, a poskytuje kontrolu nad sezeními logind. Obsahuje také integrovaný textový editor pro snadnou úpravu souborů jednotek a konfiguračních souborů.</p>
