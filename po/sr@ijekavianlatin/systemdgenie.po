@@ -1,0 +1,355 @@
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmsystemd\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-07-02 00:47+0000\n"
+"PO-Revision-Date: 2026-10-10 13:47+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@ijekavianlatin\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Nemanja Hiršl"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "nemhirsl@gmail.com"
+
+#: src/configfilemodel.cpp:21
+#, kde-format
+msgid "Coredump generation and storage"
+msgstr "Pravljenje i skladištenje popisa jezgra"
+
+#: src/configfilemodel.cpp:23
+#, kde-format
+msgid "Send journal messages over network"
+msgstr "Slanje poruka dnevnika preko mreže"
+
+#: src/configfilemodel.cpp:24
+#, kde-format
+msgid "Journal manager settings"
+msgstr "Postavke menadžera dnevnika"
+
+#: src/configfilemodel.cpp:25
+#, kde-format
+msgid "Login manager configuration"
+msgstr "Postava menadžera prijavljivanja"
+
+#: src/configfilemodel.cpp:27
+#, kde-format
+msgid "Network name resolution configuration"
+msgstr "Postava mrežnog određivanja imena"
+
+#: src/configfilemodel.cpp:29
+#, kde-format
+msgid "Systemd daemon configuration"
+msgstr "Postava demona systemd‑a"
+
+#: src/configfilemodel.cpp:30
+#, kde-format
+msgid "Time synchronization settings"
+msgstr "Postavke usklađivanja vremena"
+
+#: src/configfilemodel.cpp:32
+#, kde-format
+msgid "Systemd user daemon configuration"
+msgstr "Postava korisničkog demona systemd‑a"
+
+#: src/configfilemodel.cpp:109
+#, kde-format
+msgctxt "@title:column"
+msgid "File"
+msgstr "fajl"
+
+#: src/configfilemodel.cpp:111
+#, kde-format
+msgctxt "@title:column"
+msgid "Modified"
+msgstr "izmijenjeno"
+
+#: src/configfilemodel.cpp:113
+#, kde-format
+msgctxt "@title:column"
+msgid "Description"
+msgstr "opis"
+
+#: src/configfilemodel.cpp:136
+#, kde-format
+msgid ""
+"KHelpCenter executable not found in path. Please install KHelpCenter to view "
+"man pages."
+msgstr ""
+"Izvršni fajl K‑centra-pomoći nije nađen u putanji. Instalirajte K‑centar-"
+"pomoći da biste vidjeli uputne stranice."
+
+#: src/editor.cpp:36
+#, kde-format
+msgid "Editing %1"
+msgstr "Uređivanje %1"
+
+#: src/editor.cpp:46
+#, kde-format
+msgctxt "Editing file: <path to the edited file>"
+msgid "Editing file: <code>%1</code>"
+msgstr "Uređivanje fajla: <code>%1</code>"
+
+#: src/editor.cpp:71
+#, kde-format
+msgid ""
+"Failed to open the unit file:\n"
+"%1"
+msgstr ""
+"Ne mogu da otvorim fajl jedinice:\n"
+"%1"
+
+#: src/editor.cpp:92 src/sessionmodel.cpp:265 src/unitmodel.cpp:457
+#, kde-format
+msgid "Unable to authenticate/execute the action: %1"
+msgstr "Ne mogu da autentifikujem/izvršim radnju: %1"
+
+#: src/main.cpp:34
+#, kde-format
+msgid "systemdGenie"
+msgstr "systemdGenie"
+
+#: src/main.cpp:36
+#, kde-format
+msgid "Manage systemd units, timers, sessions and config files"
+msgstr ""
+"Upravljanje jedinicama, odbrojavačima i sesijama systemd‑a i postavnim "
+"fajlovima"
+
+#: src/main.cpp:38
+#, kde-format
+msgctxt "@about:credit"
+msgid "(c) 2016 Ragnar Thomsen, %1 KDE Community"
+msgstr "© 2016, Ragnar Tomsen; %1, zajednica KDE‑a"
+
+#: src/main.cpp:44
+#, kde-format
+msgid "Ragnar Thomsen"
+msgstr "Ragnar Tomsen"
+
+#: src/main.cpp:44
+#, kde-format
+msgid "Former Maintainer"
+msgstr "Bivši održavalac"
+
+#: src/main.cpp:45
+#, kde-format
+msgid "Carl Schwan"
+msgstr "Carl Schwan"
+
+#: src/main.cpp:45
+#, kde-format
+msgid "Maintainer"
+msgstr "Održavalac"
+
+#: src/sessionmodel.cpp:72
+#, kde-format
+msgid "Session ID"
+msgstr "ID sesije"
+
+#: src/sessionmodel.cpp:74
+#, kde-format
+msgid "Session Object Path"
+msgstr "putanja objekta sesije"
+
+#: src/sessionmodel.cpp:76
+#, kde-format
+msgid "State"
+msgstr "stanje"
+
+#: src/sessionmodel.cpp:78
+#, kde-format
+msgid "User ID"
+msgstr "ID korisnika"
+
+#: src/sessionmodel.cpp:80
+#, kde-format
+msgid "User Name"
+msgstr "korisničko ime"
+
+#: src/sessionmodel.cpp:82
+#, kde-format
+msgid "Seat ID"
+msgstr "ID sjedišta"
+
+#: src/sessionmodel.cpp:119
+#, kde-format
+msgid "<b>VT:</b> %1"
+msgstr "<b>Virtuelni terminal:</b> %1"
+
+#: src/sessionmodel.cpp:123
+#, kde-format
+msgid "<br><b>Remote host:</b> %1"
+msgstr "<br/><b>Udaljeni domaćin:</b> %1"
+
+#: src/sessionmodel.cpp:124
+#, kde-format
+msgid "<br><b>Remote user:</b> %1"
+msgstr "<br/><b>Udaljeni korisnik:</b> %1"
+
+#: src/sessionmodel.cpp:126
+#, kde-format
+msgid "<br><b>Service:</b> %1"
+msgstr "<br/><b>Servis:</b> %1"
+
+#: src/sessionmodel.cpp:127
+#, kde-format
+msgid "<br><b>Leader (PID):</b> %1"
+msgstr "<br/><b>Vođa (PID):</b> %1"
+
+#: src/sessionmodel.cpp:130
+#, kde-format
+msgid "<br><b>Type:</b> %1"
+msgstr "<br/><b>Tip:</b> %1"
+
+#: src/sessionmodel.cpp:132
+#, kde-format
+msgid " (display %1)"
+msgstr " (ekran %1)"
+
+#: src/sessionmodel.cpp:141
+#, kde-format
+msgid "<br><b>Class:</b> %1"
+msgstr "<br/><b>Klasa:</b> %1"
+
+#: src/sessionmodel.cpp:142
+#, kde-format
+msgid "<br><b>State:</b> %1"
+msgstr "<br/><b>Stanje:</b> %1"
+
+#: src/sessionmodel.cpp:143
+#, kde-format
+msgid "<br><b>Scope:</b> %1"
+msgstr "<br/><b>Opseg:</b> %1"
+
+#: src/sessionmodel.cpp:145
+#, kde-format
+msgid "<br><b>Created: </b>"
+msgstr "<br/><b>Napravljena: </b>"
+
+#: src/sessionmodel.cpp:185
+#, kde-format
+msgid "Unable to fetch sessions list: %1"
+msgstr "Ne mogu da dobavim spisak sesija: %1"
+
+#: src/timermodel.cpp:43
+#, kde-format
+msgctxt "@title:column (name of the timer)"
+msgid "Timer"
+msgstr "odbrojavač"
+
+#: src/timermodel.cpp:45
+#, kde-format
+msgctxt "@title:column (date of the next timer's activation)"
+msgid "Next"
+msgstr "sljedeće"
+
+#: src/timermodel.cpp:47
+#, kde-format
+msgctxt "@title:column (time left to the next timer's activation)"
+msgid "Left"
+msgstr "preostalo"
+
+#: src/timermodel.cpp:49
+#, kde-format
+msgctxt "@title:column (date of the previous timer's activation)"
+msgid "Last"
+msgstr "posljednje"
+
+#: src/timermodel.cpp:51
+#, kde-format
+msgctxt "@title:column (time passed since the previous timer's activation)"
+msgid "Passed"
+msgstr "prošlo"
+
+#: src/timermodel.cpp:53
+#, kde-format
+msgctxt "@title:column (name of the service activated by the timer)"
+msgid "Activates"
+msgstr "aktivira"
+
+#: src/timermodel.cpp:74 src/timermodel.cpp:99
+#, kde-format
+msgctxt "invalid"
+msgid "n/a"
+msgstr "n/d"
+
+#: src/unitmodel.cpp:120
+#, kde-format
+msgid "Unit"
+msgstr "jedinica"
+
+#: src/unitmodel.cpp:122
+#, kde-format
+msgid "Load State"
+msgstr "stanje učitavanja"
+
+#: src/unitmodel.cpp:124
+#, kde-format
+msgid "Active State"
+msgstr "stanje aktivnosti"
+
+#: src/unitmodel.cpp:126
+#, kde-format
+msgid "Unit State"
+msgstr "stanje jedinice"
+
+#: src/unitmodel.cpp:242
+#, kde-format
+msgid "<b>Description: </b>"
+msgstr "<b>Opis: </b>"
+
+#: src/unitmodel.cpp:247
+#, kde-format
+msgid "<br><b>Unit file: </b>%1"
+msgstr "<br/><b>Fajl jedinice: </b>%1"
+
+#: src/unitmodel.cpp:248 src/unitmodel.cpp:295
+#, kde-format
+msgid "<br><b>Unit file state: </b>"
+msgstr "<br/><b>Stanje fajla jedinice: </b>"
+
+#: src/unitmodel.cpp:254
+#, kde-format
+msgid "<br><b>Source path: </b>%1"
+msgstr "<br/><b>Izvorna putanja: </b>%1"
+
+#: src/unitmodel.cpp:258
+#, kde-format
+msgid "<br><b>Activated: </b>"
+msgstr "<br/><b>Aktivirana: </b>"
+
+#: src/unitmodel.cpp:268
+#, kde-format
+msgid "<br><b>Deactivated: </b>"
+msgstr "<br/><b>Deaktivirana: </b>"
+
+#: src/unitmodel.cpp:290
+#, kde-format
+msgid "<b>Unit file: </b>"
+msgstr "<b>Fajl jedinice: </b>"
+
+#: src/unitmodel.cpp:304
+#, kde-format
+msgid "<hr><b>Last log entries:</b>"
+msgstr "<hr/><b>Posljednji unosi dnevnika:</b>"
+
+#: src/unitmodel.cpp:307
+#, kde-format
+msgid "<br><i>No log entries found for this unit.</i>"
+msgstr "<br/><i>Nisu nađeni unosi dnevnika za ovu jedinicu.</i>"
