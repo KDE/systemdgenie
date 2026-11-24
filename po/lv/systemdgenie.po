@@ -1,14 +1,14 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the systemdgenie package.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2024-2026 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: systemdgenie\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-02 00:47+0000\n"
-"PO-Revision-Date: 2025-03-12 16:27+0200\n"
-"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"PO-Revision-Date: 2026-11-20 15:13+0200\n"
+"Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -101,8 +101,7 @@ msgid "Editing %1"
 msgstr "Rediģē „%1“"
 
 #: src/editor.cpp:46
-#, fuzzy, kde-format
-#| msgid "Editing file: <code>%1</code>"
+#, kde-format
 msgctxt "Editing file: <path to the edited file>"
 msgid "Editing file: <code>%1</code>"
 msgstr "Rediģē datni: <code>%1</code>"
@@ -249,49 +248,37 @@ msgid "Unable to fetch sessions list: %1"
 msgstr "Neizdodas izgūt sesiju sarakstu: %1"
 
 #: src/timermodel.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Timer"
+#, kde-format
 msgctxt "@title:column (name of the timer)"
 msgid "Timer"
 msgstr "Taimeris"
 
 #: src/timermodel.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Next"
+#, kde-format
 msgctxt "@title:column (date of the next timer's activation)"
 msgid "Next"
 msgstr "Nākamais"
 
 #: src/timermodel.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Left"
+#, kde-format
 msgctxt "@title:column (time left to the next timer's activation)"
 msgid "Left"
 msgstr "Atlicis"
 
 #: src/timermodel.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Last"
+#, kde-format
 msgctxt "@title:column (date of the previous timer's activation)"
 msgid "Last"
-msgstr "Pēdējais"
+msgstr "Iepriekšējais"
 
 #: src/timermodel.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Passed"
+#, kde-format
 msgctxt "@title:column (time passed since the previous timer's activation)"
 msgid "Passed"
 msgstr "Pagājis"
 
 #: src/timermodel.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title:column"
-#| msgid "Activates"
+#, kde-format
 msgctxt "@title:column (name of the service activated by the timer)"
 msgid "Activates"
 msgstr "Aktivitātes"
